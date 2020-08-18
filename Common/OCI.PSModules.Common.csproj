@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>OCI.PSModules.Common</AssemblyName>
+    <PackageId>OCI.PSModules.Common</PackageId>
+    <Authors>Oracle Cloud Infrastructure</Authors>
+    <Company>Oracle</Company>
+    <LangVersion>8.0</LangVersion>
+    <PackageTags>Oracle;OCI;Cloud;oci-sdk;OracleCloudInfrastructure;Budget</PackageTags>
+    <Description>Module contains OCI Cmdlets</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Management.Automation" Version="6.0.4" />
+    <PackageReference Include="OCI.DotNetSdk.Common" Version="$(SDKVersion)" />
+    <PackageReference Include="Portable.BouncyCastle" Version="1.8.6.7"/>
+    <PackageReference Include="NLog" Version="4.7.2"/>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <!-- 
+  *
+  * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+  *
+  -->
+  <ViewDefinitions>
+  <View>
+  <Name>Oci.PSModules.Common.Cmdlets.CmdletHistory.OCICmdletHistory</Name>
+  <ViewSelectedBy>
+    <TypeName>Oci.PSModules.Common.Cmdlets.CmdletHistory.OCICmdletHistory</TypeName>
+  </ViewSelectedBy>
+  <TableControl>
+    <TableHeaders>
+      <TableColumnHeader>
+        <Width>20</Width>
+      </TableColumnHeader>
+      <TableColumnHeader>
+        <Width>20</Width>
+      </TableColumnHeader>
+      <TableColumnHeader>
+        <Label>Command</Label>
+        <Width>40</Width>
+      </TableColumnHeader>
+      <TableColumnHeader>
+        <Width>50</Width>
+      </TableColumnHeader>
+    </TableHeaders>
+    <TableRowEntries>
+      <TableRowEntry>
+        <TableColumnItems>
+          <TableColumnItem>
+           <PropertyName>StartTime</PropertyName>
+          </TableColumnItem>
+          <TableColumnItem>
+           <PropertyName>EndTime</PropertyName>
+          </TableColumnItem>
+          <TableColumnItem>
+            <ScriptBlock>
+              $_.Command.InvocationName
+            </ScriptBlock>
+          </TableColumnItem>
+          <TableColumnItem>
+            <PropertyName>Response</PropertyName>
+          </TableColumnItem>
+        </TableColumnItems>
+      </TableRowEntry>
+    </TableRowEntries>
+  </TableControl>
+</View>
+</ViewDefinitions>
+</Configuration>
+
