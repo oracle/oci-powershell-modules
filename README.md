@@ -25,8 +25,8 @@ Install-Module OCI.PSModules.Audit
 #### From Github:
 PowerShell modules are published to [GitHub](https://github.com/oracle/oci-powershell-modules/releases).
 
-* Download `oci-powershell-modules-artifacts.zip` file attached to the latest release in the Assets section.
-* Extract `oci-powershell-modules-artifacts.zip` to a local directory.
+* Download `oci-psmodules-artifacts-<version>.zip` file attached to the latest release in the Assets section.
+* Extract `oci-psmodules-artifacts-<version>.zip` to a local directory.
 * Register the extracted directory as the local PowerShell repository using the following cmdlet:
     ```powershell
     Register-PSRepository -Name "LocalRepo" -SourceLocation <extractedlocation>
@@ -141,4 +141,4 @@ You can find information on any known issues with the OCI modules for PowerShell
 
 ### Related Links
 
-Read more about OCI Modules for PowerShell at https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/ocimodulesforpowershell.htm
+Read more about OCI Modules for PowerShell at https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/powershell.htm
