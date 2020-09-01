@@ -2,7 +2,7 @@
 
 ### About
 
-[Oracle Cloud Infrastructure(OCI) Modules for PowerShell](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/ocimodulesforpowershell.htm) is a set of binary Cmdlet modules that can be used with PowerShell Core to manage Oracle Cloud Infrastructure resources. These modules are written in C# using [Oracle Cloud Infrastructure SDK for .NET](https://github.com/oracle/oci-dotnet-sdk) and it provides Cmdlets(commands) that gives the same core functionality as the Oracle Cloud Console. Cmdlets offered by these modules can be invoked from the PowerShell command-line and with the associated PowerShell scripting language.
+[Oracle Cloud Infrastructure(OCI) Modules for PowerShell](https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/powershell.htm) is a set of cmdlet modules that can be used with PowerShell Core to manage Oracle Cloud Infrastructure resources. You can invoke these cmdlets from the PowerShell command-line and with the associated PowerShell scripting language.
 
 The project is open source and maintained by Oracle Corp.
 
@@ -43,7 +43,7 @@ PowerShell modules are published to [GitHub](https://github.com/oracle/oci-power
 
 ### Configuring
 
-Before using the cmdlets, set up a config file with the required credentials. See [SDK and Tool Configuration](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm) for instructions.
+Before using the cmdlets, set up a config file with the required credentials. Refer [setup](https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/powershellgettingstarted.htm#powershellsdkgettingstarted_topic_setup) for instructions.
 
 ```
 Import-Module OCI.PSModules.Common

@@ -15,19 +15,34 @@ using Oci.Common.Waiters;
 
 namespace Oci.DatabaseService.Cmdlets
 {
-    [Cmdlet("New", "OCIDatabaseDbSystem", DefaultParameterSetName = Default)]
-    [OutputType(new System.Type[] { typeof(Oci.DatabaseService.Models.DbSystem), typeof(Oci.DatabaseService.Responses.LaunchDbSystemResponse) })]
-    public class NewOCIDatabaseDbSystem : OCIDatabaseCmdlet
+    [Cmdlet("Invoke", "OCIDatabaseAutonomousDatabaseManualRefresh", DefaultParameterSetName = Default)]
+    [OutputType(new System.Type[] { typeof(Oci.DatabaseService.Models.AutonomousDatabase), typeof(Oci.DatabaseService.Responses.AutonomousDatabaseManualRefreshResponse) })]
+    public class InvokeOCIDatabaseAutonomousDatabaseManualRefresh : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to launch a DB system. This parameter also accepts subtypes <Oci.DatabaseService.Models.LaunchDbSystemDetails>, <Oci.DatabaseService.Models.LaunchDbSystemFromDbSystemDetails>, <Oci.DatabaseService.Models.LaunchDbSystemFromDatabaseDetails>, <Oci.DatabaseService.Models.LaunchDbSystemFromBackupDetails> of type <Oci.DatabaseService.Models.LaunchDbSystemBase>.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to launch a DB system. This parameter also accepts subtypes <Oci.DatabaseService.Models.LaunchDbSystemDetails>, <Oci.DatabaseService.Models.LaunchDbSystemFromDbSystemDetails>, <Oci.DatabaseService.Models.LaunchDbSystemFromDatabaseDetails>, <Oci.DatabaseService.Models.LaunchDbSystemFromBackupDetails> of type <Oci.DatabaseService.Models.LaunchDbSystemBase>.", ParameterSetName = Default)]
-        public LaunchDbSystemBase LaunchDbSystemDetails { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).", ParameterSetName = Default)]
+        public string AutonomousDatabaseId { get; set; }
+
+        
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request details for manually refreshing an Autonomous Database refreshable clone.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request details for manually refreshing an Autonomous Database refreshable clone.", ParameterSetName = Default)]
+        public AutonomousDatabaseManualRefreshDetails AutonomousDatabaseManualRefreshDetails { get; set; }
+
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.", ParameterSetName = Default)]
+        public string IfMatch { get; set; }
 
         
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).", ParameterSetName = StatusParamSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).", ParameterSetName = Default)]
         public string OpcRetryToken { get; set; }
+
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.", ParameterSetName = Default)]
+        public string OpcRequestId { get; set; }
 
         [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = StatusParamSet)]
         public WorkrequestsService.Models.WorkRequest.StatusEnum[] WaitForStatus { get; set; }
@@ -41,14 +56,17 @@ namespace Oci.DatabaseService.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            LaunchDbSystemRequest request;
+            AutonomousDatabaseManualRefreshRequest request;
 
             try
             {
-                request = new LaunchDbSystemRequest
+                request = new AutonomousDatabaseManualRefreshRequest
                 {
-                    LaunchDbSystemDetails = LaunchDbSystemDetails,
-                    OpcRetryToken = OpcRetryToken
+                    AutonomousDatabaseId = AutonomousDatabaseId,
+                    AutonomousDatabaseManualRefreshDetails = AutonomousDatabaseManualRefreshDetails,
+                    IfMatch = IfMatch,
+                    OpcRetryToken = OpcRetryToken,
+                    OpcRequestId = OpcRequestId
                 };
 
                 HandleOutput(request);
@@ -66,7 +84,7 @@ namespace Oci.DatabaseService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private void HandleOutput(LaunchDbSystemRequest request)
+        private void HandleOutput(AutonomousDatabaseManualRefreshRequest request)
         {
             var waiterConfig = new WaiterConfiguration
             {
@@ -77,17 +95,17 @@ namespace Oci.DatabaseService.Cmdlets
             switch (ParameterSetName)
             { 
                 case StatusParamSet:
-                    response = client.Waiters.ForLaunchDbSystem(request, waiterConfig, WaitForStatus).Execute();
+                    response = client.Waiters.ForAutonomousDatabaseManualRefresh(request, waiterConfig, WaitForStatus).Execute();
                     break;
 
                 case Default:
-                    response = client.LaunchDbSystem(request).GetAwaiter().GetResult();
+                    response = client.AutonomousDatabaseManualRefresh(request).GetAwaiter().GetResult();
                     break;
             }
-            WriteOutput(response, response.DbSystem);
+            WriteOutput(response, response.AutonomousDatabase);
         }
 
-        private LaunchDbSystemResponse response;
+        private AutonomousDatabaseManualRefreshResponse response;
         private const string StatusParamSet = "StatusParamSet";
         private const string Default = "Default";
     }

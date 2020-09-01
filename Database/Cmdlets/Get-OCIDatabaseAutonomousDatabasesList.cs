@@ -61,6 +61,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.")]
+        public System.Nullable<bool> IsRefreshableClone { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that have Data Guard enabled.")]
         public System.Nullable<bool> IsDataGuardEnabled { get; set; }
 
@@ -89,6 +92,7 @@ namespace Oci.DatabaseService.Cmdlets
                     IsFreeTier = IsFreeTier,
                     DisplayName = DisplayName,
                     OpcRequestId = OpcRequestId,
+                    IsRefreshableClone = IsRefreshableClone,
                     IsDataGuardEnabled = IsDataGuardEnabled
                 };
                 IEnumerable<ListAutonomousDatabasesResponse> responses = GetRequestDelegate().Invoke(request);
