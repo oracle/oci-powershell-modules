@@ -27,6 +27,9 @@ namespace Oci.ResourcesearchService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The page at which to start retrieving results.")]
         public string Page { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The tenancy ID, which can be used to specify a different tenancy (for cross-tenancy authorization) when searching for resources in a different tenancy.")]
+        public string TenantId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the complete request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -42,6 +45,7 @@ namespace Oci.ResourcesearchService.Cmdlets
                     SearchDetails = SearchDetails,
                     Limit = Limit,
                     Page = Page,
+                    TenantId = TenantId,
                     OpcRequestId = OpcRequestId
                 };
 
