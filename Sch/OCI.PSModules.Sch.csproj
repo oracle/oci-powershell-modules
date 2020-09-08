@@ -1,0 +1,23 @@
+<!-- Generated using OracleSDKGenerator, API Version: 20200909 -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>OCI.PSModules.Sch</AssemblyName>
+    <PackageId>OCI.PSModules.Sch</PackageId>
+    <Authors>Oracle Cloud Infrastructure</Authors>
+    <Company>Oracle</Company>
+    <LangVersion>8.0</LangVersion>
+    <PackageTags>Oracle;OCI;Cloud;oci-sdk;OracleCloudInfrastructure;Sch</PackageTags>
+    <Description>Sch Service</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OCI.DotNetSdk.Sch" Version="$(SDKVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\OCI.PSModules.Common.csproj" />
+  </ItemGroup>
+
+</Project>

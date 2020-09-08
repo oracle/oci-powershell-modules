@@ -1,0 +1,23 @@
+<!-- Generated using OracleSDKGenerator, API Version: 20200601 -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>OCI.PSModules.Loganalytics</AssemblyName>
+    <PackageId>OCI.PSModules.Loganalytics</PackageId>
+    <Authors>Oracle Cloud Infrastructure</Authors>
+    <Company>Oracle</Company>
+    <LangVersion>8.0</LangVersion>
+    <PackageTags>Oracle;OCI;Cloud;oci-sdk;OracleCloudInfrastructure;Loganalytics</PackageTags>
+    <Description>Loganalytics Service</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OCI.DotNetSdk.Loganalytics" Version="$(SDKVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\OCI.PSModules.Common.csproj" />
+  </ItemGroup>
+
+</Project>
