@@ -38,6 +38,9 @@ namespace Oci.KeymanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (`ASC`) or descending (`DESC`).")]
         public System.Nullable<Oci.KeymanagementService.Requests.ListKeysRequest.SortOrderEnum> SortOrder { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server.")]
+        public System.Nullable<Oci.KeymanagementService.Requests.ListKeysRequest.ProtectionModeEnum> ProtectionMode { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -55,7 +58,8 @@ namespace Oci.KeymanagementService.Cmdlets
                     Page = Page,
                     OpcRequestId = OpcRequestId,
                     SortBy = SortBy,
-                    SortOrder = SortOrder
+                    SortOrder = SortOrder,
+                    ProtectionMode = ProtectionMode
                 };
                 IEnumerable<ListKeysResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
