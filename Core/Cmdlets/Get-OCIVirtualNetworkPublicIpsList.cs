@@ -46,6 +46,9 @@ Example: `Uocm:PHX-AD-1`")]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only public IPs that match given lifetime.")]
         public System.Nullable<Oci.CoreService.Requests.ListPublicIpsRequest.LifetimeEnum> Lifetime { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that belong to the given public IP pool.")]
+        public string PublicIpPoolId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -63,7 +66,8 @@ Example: `Uocm:PHX-AD-1`")]
                     Limit = Limit,
                     Page = Page,
                     AvailabilityDomain = AvailabilityDomain,
-                    Lifetime = Lifetime
+                    Lifetime = Lifetime,
+                    PublicIpPoolId = PublicIpPoolId
                 };
                 IEnumerable<ListPublicIpsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

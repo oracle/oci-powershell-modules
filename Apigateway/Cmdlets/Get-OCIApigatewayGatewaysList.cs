@@ -23,6 +23,9 @@ namespace Oci.ApigatewayService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ocid of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter gateways by the certificate ocid.")]
+        public string CertificateId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A user-friendly name. Does not have to be unique, and it's changeable.
 
 Example: `My new resource`")]
@@ -61,6 +64,7 @@ Example: `SUCCEEDED`")]
                 request = new ListGatewaysRequest
                 {
                     CompartmentId = CompartmentId,
+                    CertificateId = CertificateId,
                     DisplayName = DisplayName,
                     LifecycleState = LifecycleState,
                     Limit = Limit,

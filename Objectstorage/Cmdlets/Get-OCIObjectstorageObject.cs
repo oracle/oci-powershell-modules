@@ -55,6 +55,24 @@ namespace Oci.ObjectstorageService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This value is used to check the integrity of the encryption key. For more information, see [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).")]
         public string OpcSseCustomerKeySha256 { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This value will be used in Content-Disposition header of the response.")]
+        public string HttpResponseContentDisposition { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This value will be used in Cache-Control header of the response.")]
+        public string HttpResponseCacheControl { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This value will be used in Content-Type header of the response.")]
+        public string HttpResponseContentType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This value will be used in Content-Language header of the response.")]
+        public string HttpResponseContentLanguage { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This value will be used in Content-Encoding header of the response")]
+        public string HttpResponseContentEncoding { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This value will be used in Expires header of the response")]
+        public string HttpResponseExpires { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = "Path to the output file.", ParameterSetName = WriteToFileSet)]
         public string OutputFile { get; set; }
 
@@ -80,7 +98,13 @@ namespace Oci.ObjectstorageService.Cmdlets
                     Range = Range,
                     OpcSseCustomerAlgorithm = OpcSseCustomerAlgorithm,
                     OpcSseCustomerKey = OpcSseCustomerKey,
-                    OpcSseCustomerKeySha256 = OpcSseCustomerKeySha256
+                    OpcSseCustomerKeySha256 = OpcSseCustomerKeySha256,
+                    HttpResponseContentDisposition = HttpResponseContentDisposition,
+                    HttpResponseCacheControl = HttpResponseCacheControl,
+                    HttpResponseContentType = HttpResponseContentType,
+                    HttpResponseContentLanguage = HttpResponseContentLanguage,
+                    HttpResponseContentEncoding = HttpResponseContentEncoding,
+                    HttpResponseExpires = HttpResponseExpires
                 };
 
                 response = client.GetObject(request).GetAwaiter().GetResult();
