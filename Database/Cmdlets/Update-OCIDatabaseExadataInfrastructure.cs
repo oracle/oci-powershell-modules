@@ -25,8 +25,8 @@ namespace Oci.DatabaseService.Cmdlets
         public string ExadataInfrastructureId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the properties of an Exadata infrastructure", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the properties of an Exadata infrastructure", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the properties of an Exadata Cloud@Customer infrastructure.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the properties of an Exadata Cloud@Customer infrastructure.", ParameterSetName = Default)]
         public UpdateExadataInfrastructureDetails UpdateExadataInfrastructureDetails { get; set; }
 
         

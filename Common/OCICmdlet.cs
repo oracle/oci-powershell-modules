@@ -2,7 +2,7 @@
  * Copyright (c) 2020, Oracle and/or its affiliates.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-﻿using System;
+using System;
 using System.IO;
 using System.Management.Automation;
 using Oci.Common.Auth;
@@ -32,12 +32,18 @@ namespace Oci.PSModules.Common.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "Output the complete response returned by the API Operation. Using this switch will make this Cmdlet output an object containing response headers in-addition to an optional response body.")]
         public virtual SwitchParameter FullResponse { get; set; }
 
-        [Parameter(Mandatory = false, HelpMessage = "Max wait time in milliseconds for the API request to complete. Default is 100000 millis(100 secs)")]
-        public int TimeOutInMillis { get; set; } = 100 * 1000;
+        [Parameter(Mandatory = false, HelpMessage = "Max wait time in milliseconds for the API request to complete. Default is 100000 millis(100 secs).")]
+        [ValidateRange(1, int.MaxValue)]
+        public int TimeOutInMillis { get; set; } = TIMEOUT_MILLIS;
+
+        [Parameter(Mandatory = false, HelpMessage = "Type of authentication to use for making API requests. Default is Key based Authentication.")]
+        public AuthenticationType AuthType { get; set; } = default(AuthenticationType);
 
         public const int MAX_WAITER_ATTEMPTS = 3;
 
         public const int WAIT_INTERVAL_SECONDS = 30;
+
+        public const int TIMEOUT_MILLIS = 100 * 1000;
 
         public IBasicAuthenticationDetailsProvider AuthProvider { get; set; }
 
@@ -48,31 +54,21 @@ namespace Oci.PSModules.Common.Cmdlets
         protected override void BeginProcessing()
         {
             base.BeginProcessing();
-            SetLoggingPreferences();
-            string config = GetPreferredConfig();
-            string profile = GetPreferredProfile();
-            if (config != null)
+            start = DateTime.Now;
+            try
             {
-                WriteDebug("Choosing Config:" + config);
+                SetLoggingPreferences();
+                this.AuthProvider = GetAuthenticationDetailsProvider();
             }
-            if (profile != null)
+            catch (Exception ex)
             {
-                WriteDebug("Choosing Profile:" + profile);
-            }
-            if (config == null)
-            {
-                this.AuthProvider = new ConfigFileAuthenticationDetailsProvider(profile);
-            }
-            else
-            {
-                this.AuthProvider = new ConfigFileAuthenticationDetailsProvider(config, profile);
+                TerminatingErrorDuringExecution(ex);
             }
         }
 
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            start = DateTime.Now;
             WriteDebug("Choosing Parameter Set:" + ParameterSetName);
         }
 
@@ -183,6 +179,55 @@ namespace Oci.PSModules.Common.Cmdlets
         }
 
         /// <summary>
+        /// Gets the preferred authentication type for the current invocation
+        /// </summary>
+        /// <returns>Oci.PSModules.Common.Cmdlets.AuthenticatonType</returns>
+        protected AuthenticationType GetPreferredAuthType()
+        {
+            if (MyInvocation.BoundParameters.ContainsKey("AuthType"))
+            {
+                return AuthType;
+            }
+            else if (null != OCIClientSession.Instance.AuthType)
+            {
+                return (AuthenticationType)OCIClientSession.Instance.AuthType;
+            }
+            WriteVerbose($"Authentication type defaults to {AuthType}");
+            return AuthType;
+        }
+
+        /// <summary>
+        /// Gets if the cmdlet invocation prefers to avoid retrying failed API calls with retriable error codes.
+        /// </summary>
+        /// <returns>Bool true/false indicating to avoid/allow retries. </returns>
+        protected bool AvoidRetry()
+        {
+            if (MyInvocation.BoundParameters.ContainsKey("NoRetry"))
+            {
+                return NoRetry;
+            }
+            return OCIClientSession.Instance.NoRetry ?? false;
+        }
+
+        /// <summary>
+        /// Gets the preferred max timeout milliseconds for a cmdlet invocation.
+        /// </summary>
+        /// <returns>int indicating time in millis.</returns>
+        protected int GetPreferredTimeout()
+        {
+            if (MyInvocation.BoundParameters.ContainsKey("TimeOutInMillis"))
+            {
+                return TimeOutInMillis;
+            }
+            else if (null != OCIClientSession.Instance.TimeOutInMillis)
+            {
+                return (int)OCIClientSession.Instance.TimeOutInMillis;
+            }
+            WriteVerbose($"Cmdlet timeout defaults to {TimeOutInMillis} milliseconds.");
+            return TimeOutInMillis;
+        }
+
+        /// <summary>
         /// Creates a work request wrapper object for the passed opcWorkRequestID
         /// </summary>
         /// <param name="opcWorkRequestId">The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.</param>
@@ -227,6 +272,32 @@ namespace Oci.PSModules.Common.Cmdlets
             }
         }
 
+        /// <summary>
+        /// This method updates the OCI Cmdlet history and throws a terminating error.
+        /// </summary>
+        /// <returns>void</returns>
+        protected virtual void TerminatingErrorDuringExecution(Exception ex)
+        {
+            ErrorRecord er;
+            if (ex == null)
+            {
+                ex = new OperationCanceledException("Cmdlet execution interrupted");
+                er = new ErrorRecord(ex, "Interrupted", ErrorCategory.OperationStopped, null);
+            }
+            else
+            {
+                er = new ErrorRecord(ex, ex.GetType().ToString(), ErrorCategory.NotSpecified, null);
+                if (ex is OperationCanceledException)
+                {
+                    er.ErrorDetails = new ErrorDetails("Operation timed out. Retry with a larger TimeOutInMillis value");
+                }
+            }
+            FinishProcessing(ex);
+            //ThrowTerminatingError will be the last statement as this throws pipeline stopped
+            //exception which is unhandled by any OCICmdlet and control flow goes to the caller of the cmdlet
+            ThrowTerminatingError(er);
+        }
+
         private void SetLoggingPreferences()
         {
             if (MyInvocation.BoundParameters.ContainsKey("Verbose") || MyInvocation.BoundParameters.ContainsKey("Debug"))
@@ -249,6 +320,31 @@ namespace Oci.PSModules.Common.Cmdlets
         private void ResetLoggingPreferences()
         {
             NLog.LogManager.Configuration = null;
+        }
+
+        private IBasicAuthenticationDetailsProvider GetAuthenticationDetailsProvider()
+        {
+            string config = GetPreferredConfig();
+            string profile = GetPreferredProfile();
+            switch (GetPreferredAuthType())
+            {
+                case AuthenticationType.InstancePrincipal:
+                    WriteDebug($"Authentication Type: {AuthenticationType.InstancePrincipal}");
+                    return new InstancePrincipalsAuthenticationDetailsProvider();
+
+                default:
+                    WriteDebug($"Authentication Type: {AuthenticationType.ApiKey}");
+                    if (profile != null)
+                    {
+                        WriteDebug("Choosing Profile:" + profile);
+                    }
+                    if (config != null)
+                    {
+                        WriteDebug("Choosing Config:" + config);
+                        return new ConfigFileAuthenticationDetailsProvider(config, profile);
+                    }
+                    return new ConfigFileAuthenticationDetailsProvider(profile);
+            }
         }
         #endregion
 

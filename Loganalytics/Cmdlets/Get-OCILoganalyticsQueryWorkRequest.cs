@@ -11,21 +11,37 @@ using System.Management.Automation;
 using Oci.LoganalyticsService.Requests;
 using Oci.LoganalyticsService.Responses;
 using Oci.LoganalyticsService.Models;
+using Oci.Common.Waiters;
 
 namespace Oci.LoganalyticsService.Cmdlets
 {
-    [Cmdlet("Get", "OCILoganalyticsQueryWorkRequest")]
+    [Cmdlet("Get", "OCILoganalyticsQueryWorkRequest", DefaultParameterSetName = Default)]
     [OutputType(new System.Type[] { typeof(Oci.LoganalyticsService.Models.QueryWorkRequest), typeof(Oci.LoganalyticsService.Responses.GetQueryWorkRequestResponse) })]
     public class GetOCILoganalyticsQueryWorkRequest : OCILogAnalyticsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Log Analytics namespace used for the request.")]
+        
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Log Analytics namespace used for the request.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Log Analytics namespace used for the request.", ParameterSetName = Default)]
         public string NamespaceName { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.")]
+        
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.", ParameterSetName = Default)]
         public string WorkRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.", ParameterSetName = Default)]
         public string OpcRequestId { get; set; }
+
+        [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = StatusParamSet)]
+        public Oci.LoganalyticsService.Models.WorkRequestStatus[] WaitForStatus { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = @"Check every WaitIntervalSeconds to see whether the resource has reached a desired state.", ParameterSetName = StatusParamSet)]
+        public int WaitIntervalSeconds { get; set; } = WAIT_INTERVAL_SECONDS;
+
+        [Parameter(Mandatory = false, HelpMessage = @"Maximum number of attempts to be made until the resource reaches a desired state.", ParameterSetName = StatusParamSet)]
+        public int MaxWaitAttempts { get; set; } = MAX_WAITER_ATTEMPTS;
 
         protected override void ProcessRecord()
         {
@@ -41,8 +57,7 @@ namespace Oci.LoganalyticsService.Cmdlets
                     OpcRequestId = OpcRequestId
                 };
 
-                response = client.GetQueryWorkRequest(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.QueryWorkRequest);
+                HandleOutput(request);
                 FinishProcessing(response);
             }
             catch (Exception ex)
@@ -57,6 +72,29 @@ namespace Oci.LoganalyticsService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
+        private void HandleOutput(GetQueryWorkRequestRequest request)
+        {
+            var waiterConfig = new WaiterConfiguration
+            {
+                MaxAttempts = MaxWaitAttempts,
+                GetNextDelayInSeconds = (_) => WaitIntervalSeconds
+            };
+
+            switch (ParameterSetName)
+            { 
+                case StatusParamSet:
+                    response = client.Waiters.ForQueryWorkRequest(request, waiterConfig, WaitForStatus).Execute();
+                    break;
+
+                case Default:
+                    response = client.GetQueryWorkRequest(request).GetAwaiter().GetResult();
+                    break;
+            }
+            WriteOutput(response, response.QueryWorkRequest);
+        }
+
         private GetQueryWorkRequestResponse response;
+        private const string StatusParamSet = "StatusParamSet";
+        private const string Default = "Default";
     }
 }

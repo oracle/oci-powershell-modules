@@ -20,8 +20,8 @@ namespace Oci.DataintegrationService.Cmdlets
     public class GetOCIDataintegrationWorkRequest : OCIDataIntegrationCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the asynchronous request.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the asynchronous request.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the asynchronous work request to retrieve.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the asynchronous work request to retrieve.", ParameterSetName = Default)]
         public string WorkRequestId { get; set; }
 
         

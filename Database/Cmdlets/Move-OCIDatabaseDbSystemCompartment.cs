@@ -20,8 +20,8 @@ namespace Oci.DatabaseService.Cmdlets
     public class MoveOCIDatabaseDbSystemCompartment : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to move Db System to a different compartment", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to move Db System to a different compartment", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to move the DB system to a different compartment.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to move the DB system to a different compartment.", ParameterSetName = Default)]
         public ChangeCompartmentDetails ChangeCompartmentDetails { get; set; }
 
         

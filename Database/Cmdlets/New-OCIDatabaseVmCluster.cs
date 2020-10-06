@@ -20,8 +20,8 @@ namespace Oci.DatabaseService.Cmdlets
     public class NewOCIDatabaseVmCluster : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create a VM cluster.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create a VM cluster.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create an Exadata Cloud@Customer VM cluster.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create an Exadata Cloud@Customer VM cluster.", ParameterSetName = Default)]
         public CreateVmClusterDetails CreateVmClusterDetails { get; set; }
 
         

@@ -18,19 +18,19 @@ namespace Oci.DataintegrationService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DataintegrationService.Models.Connection), typeof(Oci.DataintegrationService.Responses.UpdateConnectionResponse) })]
     public class UpdateOCIDataintegrationConnection : OCIDataIntegrationCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"DIS workspace id")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The workspace ID.")]
         public string WorkspaceId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The connection key")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The connection key.")]
         public string ConnectionKey { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request body parameter for connection details. This parameter also accepts subtypes <Oci.DataintegrationService.Models.UpdateConnectionFromObjectStorage>, <Oci.DataintegrationService.Models.UpdateConnectionFromAtp>, <Oci.DataintegrationService.Models.UpdateConnectionFromOracle>, <Oci.DataintegrationService.Models.UpdateConnectionFromAdwc> of type <Oci.DataintegrationService.Models.UpdateConnectionDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information needed to update a connection. This parameter also accepts subtypes <Oci.DataintegrationService.Models.UpdateConnectionFromJdbc>, <Oci.DataintegrationService.Models.UpdateConnectionFromObjectStorage>, <Oci.DataintegrationService.Models.UpdateConnectionFromAtp>, <Oci.DataintegrationService.Models.UpdateConnectionFromOracle>, <Oci.DataintegrationService.Models.UpdateConnectionFromAdwc>, <Oci.DataintegrationService.Models.UpdateConnectionFromMySQL> of type <Oci.DataintegrationService.Models.UpdateConnectionDetails>.")]
         public UpdateConnectionDetails UpdateConnectionDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Update and Delete operations should accept an optional If-Match header, in which clients can send a previously-received ETag. When If-Match is provided and its value does not exactly match the ETag of the resource on the server, the request should fail with HTTP response status code 412")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource. The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value. When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.")]
         public string IfMatch { get; set; }
 
         protected override void ProcessRecord()

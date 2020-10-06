@@ -11,15 +11,27 @@ using System.Management.Automation;
 using Oci.IdentityService.Requests;
 using Oci.IdentityService.Responses;
 using Oci.IdentityService.Models;
+using Oci.Common.Waiters;
 
 namespace Oci.IdentityService.Cmdlets
 {
-    [Cmdlet("Get", "OCIIdentityTaggingWorkRequest")]
+    [Cmdlet("Get", "OCIIdentityTaggingWorkRequest", DefaultParameterSetName = Default)]
     [OutputType(new System.Type[] { typeof(Oci.IdentityService.Models.TaggingWorkRequest), typeof(Oci.IdentityService.Responses.GetTaggingWorkRequestResponse) })]
     public class GetOCIIdentityTaggingWorkRequest : OCIIdentityCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the work request.")]
+        
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the work request.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the work request.", ParameterSetName = Default)]
         public string WorkRequestId { get; set; }
+
+        [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = StatusParamSet)]
+        public Oci.IdentityService.Models.TaggingWorkRequest.StatusEnum[] WaitForStatus { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = @"Check every WaitIntervalSeconds to see whether the resource has reached a desired state.", ParameterSetName = StatusParamSet)]
+        public int WaitIntervalSeconds { get; set; } = WAIT_INTERVAL_SECONDS;
+
+        [Parameter(Mandatory = false, HelpMessage = @"Maximum number of attempts to be made until the resource reaches a desired state.", ParameterSetName = StatusParamSet)]
+        public int MaxWaitAttempts { get; set; } = MAX_WAITER_ATTEMPTS;
 
         protected override void ProcessRecord()
         {
@@ -33,8 +45,7 @@ namespace Oci.IdentityService.Cmdlets
                     WorkRequestId = WorkRequestId
                 };
 
-                response = client.GetTaggingWorkRequest(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.TaggingWorkRequest);
+                HandleOutput(request);
                 FinishProcessing(response);
             }
             catch (Exception ex)
@@ -49,6 +60,29 @@ namespace Oci.IdentityService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
+        private void HandleOutput(GetTaggingWorkRequestRequest request)
+        {
+            var waiterConfig = new WaiterConfiguration
+            {
+                MaxAttempts = MaxWaitAttempts,
+                GetNextDelayInSeconds = (_) => WaitIntervalSeconds
+            };
+
+            switch (ParameterSetName)
+            { 
+                case StatusParamSet:
+                    response = client.Waiters.ForTaggingWorkRequest(request, waiterConfig, WaitForStatus).Execute();
+                    break;
+
+                case Default:
+                    response = client.GetTaggingWorkRequest(request).GetAwaiter().GetResult();
+                    break;
+            }
+            WriteOutput(response, response.TaggingWorkRequest);
+        }
+
         private GetTaggingWorkRequestResponse response;
+        private const string StatusParamSet = "StatusParamSet";
+        private const string Default = "Default";
     }
 }
