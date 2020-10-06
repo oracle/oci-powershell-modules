@@ -25,8 +25,8 @@ namespace Oci.DatabaseService.Cmdlets
         public string ExadataInfrastructureId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create the VM cluster network.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create the VM cluster network.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create the Cloud@Customer VM cluster network.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create the Cloud@Customer VM cluster network.", ParameterSetName = Default)]
         public VmClusterNetworkDetails VmClusterNetworkDetails { get; set; }
 
         

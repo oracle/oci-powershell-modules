@@ -20,8 +20,8 @@ namespace Oci.DatabaseService.Cmdlets
     public class MoveOCIDatabaseVmClusterCompartment : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to move VM cluster to a different compartment", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to move VM cluster to a different compartment", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to move the Exadata Cloud@Customer VM cluster to a different compartment.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to move the Exadata Cloud@Customer VM cluster to a different compartment.", ParameterSetName = Default)]
         public ChangeVmClusterCompartmentDetails ChangeVmClusterCompartmentDetails { get; set; }
 
         

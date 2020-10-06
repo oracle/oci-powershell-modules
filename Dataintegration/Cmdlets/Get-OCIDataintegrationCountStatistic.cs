@@ -18,7 +18,7 @@ namespace Oci.DataintegrationService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DataintegrationService.Models.CountStatistic), typeof(Oci.DataintegrationService.Responses.GetCountStatisticResponse) })]
     public class GetOCIDataintegrationCountStatistic : OCIDataIntegrationCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"DIS workspace id")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The workspace ID.")]
         public string WorkspaceId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique key of the container object, such as workspace, project, and so on, to count statistics for. The statistics is fetched for the given key.")]

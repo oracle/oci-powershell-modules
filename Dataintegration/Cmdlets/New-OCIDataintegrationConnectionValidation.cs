@@ -18,16 +18,16 @@ namespace Oci.DataintegrationService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DataintegrationService.Models.ConnectionValidation), typeof(Oci.DataintegrationService.Responses.CreateConnectionValidationResponse) })]
     public class NewOCIDataintegrationConnectionValidation : OCIDataIntegrationCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"DIS workspace id")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The workspace ID.")]
         public string WorkspaceId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Connection info")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information needed to validate a connection.")]
         public CreateConnectionValidationDetails CreateConnectionValidationDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Caller may provide ""retry tokens"" allowing them to retry an operation")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.")]
         public string OpcRetryToken { get; set; }
 
         protected override void ProcessRecord()

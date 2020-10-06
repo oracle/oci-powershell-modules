@@ -18,10 +18,10 @@ namespace Oci.DataintegrationService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.DataintegrationService.Responses.CreateWorkspaceResponse) })]
     public class NewOCIDataintegrationWorkspace : OCIDataIntegrationCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new Data Integration Workspace.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information needed to create a new Data Integration workspace.")]
         public CreateWorkspaceDetails CreateWorkspaceDetails { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Caller may provide ""retry tokens"" allowing them to retry an operation")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.")]
         public string OpcRetryToken { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

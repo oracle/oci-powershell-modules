@@ -20,8 +20,8 @@ namespace Oci.DatabaseService.Cmdlets
     public class InvokeOCIDatabaseLaunchAutonomousExadataInfrastructure : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to launch a Autonomous Exadata Infrastructure.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to launch a Autonomous Exadata Infrastructure.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create an Autonomous Exadata Infrastructure resource.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create an Autonomous Exadata Infrastructure resource.", ParameterSetName = Default)]
         public LaunchAutonomousExadataInfrastructureDetails LaunchAutonomousExadataInfrastructureDetails { get; set; }
 
         

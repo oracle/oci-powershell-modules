@@ -19,21 +19,32 @@ namespace Oci.SchService.Cmdlets
         protected override void BeginProcessing()
         {
             base.BeginProcessing();
-            retryConfig = (NoRetry) ? null : new RetryConfiguration();
+            try
+            {
+                bool noretry = AvoidRetry();
+                WriteDebug($"Retry strategy : {!noretry}");
+                retryConfig = (noretry) ? null : new RetryConfiguration();
+            }
+            catch (Exception ex)
+            {
+                TerminatingErrorDuringExecution(ex);
+            }
         }
 
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            client?.Dispose();
-            client = new ServiceConnectorClient(AuthProvider, new Oci.Common.ClientConfiguration
-            {
-                RetryConfiguration = retryConfig,
-                TimeoutMillis = TimeOutInMillis,
-                ClientUserAgent = PSUserAgent
-            });
             try
             {
+                client?.Dispose();
+                int timeout = GetPreferredTimeout();
+                WriteDebug($"Cmdlet Timeout : {timeout} milliseconds.");
+                client = new ServiceConnectorClient(AuthProvider, new Oci.Common.ClientConfiguration
+                {
+                    RetryConfiguration = retryConfig,
+                    TimeoutMillis = timeout,
+                    ClientUserAgent = PSUserAgent
+                });
                 string region = GetPreferredRegion();
                 if (region != null)
                 {
@@ -63,27 +74,10 @@ namespace Oci.SchService.Cmdlets
             client.Dispose();
         }
 
-        protected void TerminatingErrorDuringExecution(Exception ex)
+        protected override void TerminatingErrorDuringExecution(Exception ex)
         {
-            ErrorRecord er;
-            if (ex == null)
-            {
-                ex = new OperationCanceledException("Cmdlet execution interrupted");
-                er = new ErrorRecord(ex, "Interrupted", ErrorCategory.OperationStopped, null);
-            }
-            else
-            {
-                er = new ErrorRecord(ex, ex.GetType().ToString(), ErrorCategory.NotSpecified, client);
-                if (ex is OperationCanceledException)
-                {
-                    er.ErrorDetails = new ErrorDetails("Operation timed out. Retry with a larger TimeOutInMillis value");
-                }
-            }
-            client.Dispose();
-            FinishProcessing(ex);
-            //ThrowTerminatingError will be the last statement as this throws pipeline stopped
-            //exception which is unhandled by any OCICmdlet and control flow goes to the caller of the cmdlet
-            ThrowTerminatingError(er);
+            client?.Dispose();
+            base.TerminatingErrorDuringExecution(ex);
         }
 
         protected ServiceConnectorClient client;

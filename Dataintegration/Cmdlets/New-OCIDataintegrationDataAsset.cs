@@ -18,16 +18,16 @@ namespace Oci.DataintegrationService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DataintegrationService.Models.DataAsset), typeof(Oci.DataintegrationService.Responses.CreateDataAssetResponse) })]
     public class NewOCIDataintegrationDataAsset : OCIDataIntegrationCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"DIS workspace id")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The workspace ID.")]
         public string WorkspaceId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request body parameter for data asset details. This parameter also accepts subtypes <Oci.DataintegrationService.Models.CreateDataAssetFromOracle>, <Oci.DataintegrationService.Models.CreateDataAssetFromAdwc>, <Oci.DataintegrationService.Models.CreateDataAssetFromAtp>, <Oci.DataintegrationService.Models.CreateDataAssetFromObjectStorage> of type <Oci.DataintegrationService.Models.CreateDataAssetDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information needed to create a data asset. This parameter also accepts subtypes <Oci.DataintegrationService.Models.CreateDataAssetFromJdbc>, <Oci.DataintegrationService.Models.CreateDataAssetFromMySQL>, <Oci.DataintegrationService.Models.CreateDataAssetFromOracle>, <Oci.DataintegrationService.Models.CreateDataAssetFromAdwc>, <Oci.DataintegrationService.Models.CreateDataAssetFromAtp>, <Oci.DataintegrationService.Models.CreateDataAssetFromObjectStorage> of type <Oci.DataintegrationService.Models.CreateDataAssetDetails>.")]
         public CreateDataAssetDetails CreateDataAssetDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Caller may provide ""retry tokens"" allowing them to retry an operation")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.")]
         public string OpcRetryToken { get; set; }
 
         protected override void ProcessRecord()

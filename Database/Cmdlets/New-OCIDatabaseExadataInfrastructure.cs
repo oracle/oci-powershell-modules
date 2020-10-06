@@ -20,8 +20,8 @@ namespace Oci.DatabaseService.Cmdlets
     public class NewOCIDatabaseExadataInfrastructure : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create Exadata infrastructure.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create Exadata infrastructure.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create Exadata Cloud@Customer infrastructure.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create Exadata Cloud@Customer infrastructure.", ParameterSetName = Default)]
         public CreateExadataInfrastructureDetails CreateExadataInfrastructureDetails { get; set; }
 
         

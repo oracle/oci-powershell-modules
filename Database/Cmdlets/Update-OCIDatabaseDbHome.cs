@@ -25,8 +25,8 @@ namespace Oci.DatabaseService.Cmdlets
         public string DbHomeId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the properties of a DB Home.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the properties of a DB Home.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the properties of a Database Home.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the properties of a Database Home.", ParameterSetName = Default)]
         public UpdateDbHomeDetails UpdateDbHomeDetails { get; set; }
 
         
