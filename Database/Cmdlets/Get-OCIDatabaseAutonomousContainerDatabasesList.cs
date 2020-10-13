@@ -55,6 +55,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given. The match is not case sensitive.")]
         public string DisplayName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given service-level agreement type exactly.")]
+        public string ServiceLevelAgreementType { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -77,7 +80,8 @@ namespace Oci.DatabaseService.Cmdlets
                     SortOrder = SortOrder,
                     LifecycleState = LifecycleState,
                     AvailabilityDomain = AvailabilityDomain,
-                    DisplayName = DisplayName
+                    DisplayName = DisplayName,
+                    ServiceLevelAgreementType = ServiceLevelAgreementType
                 };
                 IEnumerable<ListAutonomousContainerDatabasesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

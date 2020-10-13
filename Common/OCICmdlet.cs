@@ -324,26 +324,35 @@ namespace Oci.PSModules.Common.Cmdlets
 
         private IBasicAuthenticationDetailsProvider GetAuthenticationDetailsProvider()
         {
-            string config = GetPreferredConfig();
-            string profile = GetPreferredProfile();
-            switch (GetPreferredAuthType())
+            AuthenticationType? auth = null;
+            try
             {
-                case AuthenticationType.InstancePrincipal:
-                    WriteDebug($"Authentication Type: {AuthenticationType.InstancePrincipal}");
-                    return new InstancePrincipalsAuthenticationDetailsProvider();
+                auth = GetPreferredAuthType();
+                string config = GetPreferredConfig();
+                string profile = GetPreferredProfile();
+                switch (auth)
+                {
+                    case AuthenticationType.InstancePrincipal:
+                        WriteDebug($"Authentication Type: {AuthenticationType.InstancePrincipal}");
+                        return new InstancePrincipalsAuthenticationDetailsProvider();
 
-                default:
-                    WriteDebug($"Authentication Type: {AuthenticationType.ApiKey}");
-                    if (profile != null)
-                    {
-                        WriteDebug("Choosing Profile:" + profile);
-                    }
-                    if (config != null)
-                    {
-                        WriteDebug("Choosing Config:" + config);
-                        return new ConfigFileAuthenticationDetailsProvider(config, profile);
-                    }
-                    return new ConfigFileAuthenticationDetailsProvider(profile);
+                    default:
+                        WriteDebug($"Authentication Type: {AuthenticationType.ApiKey}");
+                        if (profile != null)
+                        {
+                            WriteDebug("Choosing Profile:" + profile);
+                        }
+                        if (config != null)
+                        {
+                            WriteDebug("Choosing Config:" + config);
+                            return new ConfigFileAuthenticationDetailsProvider(config, profile);
+                        }
+                        return new ConfigFileAuthenticationDetailsProvider(profile);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error instantiating {auth} authentication provider. {ex.Message}");
             }
         }
         #endregion

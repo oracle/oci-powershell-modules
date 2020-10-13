@@ -50,6 +50,9 @@ namespace Oci.DatacatalogService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique external identifier of this resource in the external source system.")]
         public string ExternalKey { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique pattern key.")]
+        public string PatternKey { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Last modified timestamp of this object in the external system.")]
         public System.Nullable<System.DateTime> TimeExternal { get; set; }
 
@@ -114,6 +117,7 @@ namespace Oci.DatacatalogService.Cmdlets
                     CreatedById = CreatedById,
                     UpdatedById = UpdatedById,
                     ExternalKey = ExternalKey,
+                    PatternKey = PatternKey,
                     TimeExternal = TimeExternal,
                     TimeStatusUpdated = TimeStatusUpdated,
                     IsLogical = IsLogical,

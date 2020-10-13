@@ -44,17 +44,21 @@ try {
     Write-Host "Get-OCIClientSession"
     Get-OCIClientSession | Out-Host
 
-    #To Clear an existing session preference set it to ""
-    Write-Host "Set-OCIClientSession -Profile ''"
-    Set-OCIClientSession -Profile '' | Out-Host
+    #To clear an existing profile - session preference
+    Write-Host "Clear-OCIClientSession -Profile"
+    Clear-OCIClientSession -Profile | Out-Host
+
+    Get-OCIClientSession
 
     #Get the limits for the first definition in the list
     Write-Host "LimitDefinitions[0] | Get-OCILimitsLimitValuesList -CompartmentId $TenancyId"
     $LimitDefinitions[0] | Get-OCILimitsLimitValuesList -CompartmentId $TenancyId | Out-Host
 
     #Remove session preferences
-    Write-Host "Set-OCICLientSession -Profile '' -RegionId '' -Config ''"
-    Set-OCIClientSession -Profile '' -RegionId '' -Config '' | Out-Host
+    Write-Host "Clear-OCIClientSession -All"
+    Clear-OCIClientSession -All | Out-Host
+
+    Get-OCIClientSession
 
     #Get the limits for the first definition in the list
     Write-Host "LimitDefinitions[0] | Get-OCILimitsLimitValuesList -CompartmentId $TenancyId"

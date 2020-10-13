@@ -3,17 +3,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 1.8.0 - 2020-10-13
+### Added
+
+- Support for API definitions in the API Gateway service
+- Support for pattern-based logical entities, namespace-bound custom properties, and faceted search in the Data Catalog service
+- Support for autonomous Data Guard on autonomous infrastructure in the Database service
+- Support for creating a Data Guard association on an existing standby database home in the Database service
+- Support for upgrading cloud VM cluster grid infrastructure in the Database service
+
 ## 1.7.0 - 2020-10-06
-    ### Added
+### Added
     
-    - Support for calling Oracle Cloud Infrastructure services in the me-dubai-1 region
-    - Support for rotating keys on autonomous container databases and autonomous databases in the Database service
-    - Support for cloud Exadata infrastructure and cloud VM clusters in the Database service
-    - Support for controlling the display of tax banners in the Marketplace service
-    - Support for application references, patch changes, generic JDBC and MySQL data asset types, and publishing tasks to OCI Dataflow in the Data Integration service
-    - Support for disabling the legacy Instance Metadata endpoints v1 in the Compute service
-    - Support for instance configurations specifying instance options in the Compute Management service
-    - Support for Instance Principal Authentication
+- Support for calling Oracle Cloud Infrastructure services in the me-dubai-1 region
+- Support for rotating keys on autonomous container databases and autonomous databases in the Database service
+- Support for cloud Exadata infrastructure and cloud VM clusters in the Database service
+- Support for controlling the display of tax banners in the Marketplace service
+- Support for application references, patch changes, generic JDBC and MySQL data asset types, and publishing tasks to OCI Dataflow in the Data Integration service
+- Support for disabling the legacy Instance Metadata endpoints v1 in the Compute service
+- Support for instance configurations specifying instance options in the Compute Management service
+- Support for Instance Principal Authentication
 
 ## 1.6.0 - 2020-09-29
 ### Added

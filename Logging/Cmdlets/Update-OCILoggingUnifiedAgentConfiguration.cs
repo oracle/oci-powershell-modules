@@ -18,7 +18,7 @@ namespace Oci.LoggingService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.LoggingService.Responses.UpdateUnifiedAgentConfigurationResponse) })]
     public class UpdateOCILoggingUnifiedAgentConfiguration : OCILoggingManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the unified agent configuration.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the Unified Agent configuration.")]
         public string UnifiedAgentConfigurationId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unified agent configuration to update. Empty group associations list doesn't modify the list, null value for group association clears all the previous associations.")]
