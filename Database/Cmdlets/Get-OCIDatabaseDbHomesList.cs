@@ -32,6 +32,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.")]
         public string BackupId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only DB Homes that match the specified dbVersion.")]
+        public string DbVersion { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return per page.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -66,6 +69,7 @@ namespace Oci.DatabaseService.Cmdlets
                     DbSystemId = DbSystemId,
                     VmClusterId = VmClusterId,
                     BackupId = BackupId,
+                    DbVersion = DbVersion,
                     Limit = Limit,
                     Page = Page,
                     SortBy = SortBy,

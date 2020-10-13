@@ -11,18 +11,32 @@ using System.Management.Automation;
 using Oci.LoggingService.Requests;
 using Oci.LoggingService.Responses;
 using Oci.LoggingService.Models;
+using Oci.Common.Waiters;
 
 namespace Oci.LoggingService.Cmdlets
 {
-    [Cmdlet("Get", "OCILoggingLogSavedSearch")]
+    [Cmdlet("Get", "OCILoggingLogSavedSearch", DefaultParameterSetName = Default)]
     [OutputType(new System.Type[] { typeof(Oci.LoggingService.Models.LogSavedSearch), typeof(Oci.LoggingService.Responses.GetLogSavedSearchResponse) })]
     public class GetOCILoggingLogSavedSearch : OCILoggingManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the logSavedSearch")]
+        
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the logSavedSearch", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the logSavedSearch", ParameterSetName = Default)]
         public string LogSavedSearchId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.", ParameterSetName = Default)]
         public string OpcRequestId { get; set; }
+
+        [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = LifecycleStateParamSet)]
+        public Oci.LoggingService.Models.LogSavedSearchLifecycleState[] WaitForLifecycleState { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = @"Check every WaitIntervalSeconds to see whether the resource has reached a desired state.", ParameterSetName = LifecycleStateParamSet)]
+        public int WaitIntervalSeconds { get; set; } = WAIT_INTERVAL_SECONDS;
+
+        [Parameter(Mandatory = false, HelpMessage = @"Maximum number of attempts to be made until the resource reaches a desired state.", ParameterSetName = LifecycleStateParamSet)]
+        public int MaxWaitAttempts { get; set; } = MAX_WAITER_ATTEMPTS;
 
         protected override void ProcessRecord()
         {
@@ -37,8 +51,7 @@ namespace Oci.LoggingService.Cmdlets
                     OpcRequestId = OpcRequestId
                 };
 
-                response = client.GetLogSavedSearch(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.LogSavedSearch);
+                HandleOutput(request);
                 FinishProcessing(response);
             }
             catch (Exception ex)
@@ -53,6 +66,29 @@ namespace Oci.LoggingService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
+        private void HandleOutput(GetLogSavedSearchRequest request)
+        {
+            var waiterConfig = new WaiterConfiguration
+            {
+                MaxAttempts = MaxWaitAttempts,
+                GetNextDelayInSeconds = (_) => WaitIntervalSeconds
+            };
+
+            switch (ParameterSetName)
+            { 
+                case LifecycleStateParamSet:
+                    response = client.Waiters.ForLogSavedSearch(request, waiterConfig, WaitForLifecycleState).Execute();
+                    break;
+
+                case Default:
+                    response = client.GetLogSavedSearch(request).GetAwaiter().GetResult();
+                    break;
+            }
+            WriteOutput(response, response.LogSavedSearch);
+        }
+
         private GetLogSavedSearchResponse response;
+        private const string LifecycleStateParamSet = "LifecycleStateParamSet";
+        private const string Default = "Default";
     }
 }

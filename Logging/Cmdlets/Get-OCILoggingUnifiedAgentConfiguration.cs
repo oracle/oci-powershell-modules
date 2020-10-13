@@ -20,8 +20,8 @@ namespace Oci.LoggingService.Cmdlets
     public class GetOCILoggingUnifiedAgentConfiguration : OCILoggingManagementCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the unified agent configuration.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the unified agent configuration.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the Unified Agent configuration.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the Unified Agent configuration.", ParameterSetName = Default)]
         public string UnifiedAgentConfigurationId { get; set; }
 
         

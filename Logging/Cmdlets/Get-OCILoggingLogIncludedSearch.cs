@@ -18,7 +18,7 @@ namespace Oci.LoggingService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.LoggingService.Models.LogIncludedSearch), typeof(Oci.LoggingService.Responses.GetLogIncludedSearchResponse) })]
     public class GetOCILoggingLogIncludedSearch : OCILoggingManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Compartment OCID to list resources in. Please see compartmentIdInSubtree      for nested compartments traversal.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Compartment OCID to list resources in. See compartmentIdInSubtree      for nested compartments traversal.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the included search")]
