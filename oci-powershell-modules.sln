@@ -119,6 +119,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Cloudguard", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Opsi", "Opsi\OCI.PSModules.Opsi.csproj", "{BF976460-D185-4C4E-983C-2622A9C4680A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Computeinstanceagent", "Computeinstanceagent\OCI.PSModules.Computeinstanceagent.csproj", "{33B53A82-64F5-4973-A4A9-05B9A772840A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -840,5 +842,17 @@ Global
         {BF976460-D185-4C4E-983C-2622A9C4680A}.Release|x64.Build.0 = Release|Any CPU
         {BF976460-D185-4C4E-983C-2622A9C4680A}.Release|x86.ActiveCfg = Release|Any CPU
         {BF976460-D185-4C4E-983C-2622A9C4680A}.Release|x86.Build.0 = Release|Any CPU
+        {33B53A82-64F5-4973-A4A9-05B9A772840A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {33B53A82-64F5-4973-A4A9-05B9A772840A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {33B53A82-64F5-4973-A4A9-05B9A772840A}.Debug|x64.ActiveCfg = Debug|Any CPU
+        {33B53A82-64F5-4973-A4A9-05B9A772840A}.Debug|x64.Build.0 = Debug|Any CPU
+        {33B53A82-64F5-4973-A4A9-05B9A772840A}.Debug|x86.ActiveCfg = Debug|Any CPU
+        {33B53A82-64F5-4973-A4A9-05B9A772840A}.Debug|x86.Build.0 = Debug|Any CPU
+        {33B53A82-64F5-4973-A4A9-05B9A772840A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {33B53A82-64F5-4973-A4A9-05B9A772840A}.Release|Any CPU.Build.0 = Release|Any CPU
+        {33B53A82-64F5-4973-A4A9-05B9A772840A}.Release|x64.ActiveCfg = Release|Any CPU
+        {33B53A82-64F5-4973-A4A9-05B9A772840A}.Release|x64.Build.0 = Release|Any CPU
+        {33B53A82-64F5-4973-A4A9-05B9A772840A}.Release|x86.ActiveCfg = Release|Any CPU
+        {33B53A82-64F5-4973-A4A9-05B9A772840A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
