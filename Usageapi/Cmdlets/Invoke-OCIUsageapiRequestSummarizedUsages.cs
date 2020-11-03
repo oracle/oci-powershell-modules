@@ -18,7 +18,7 @@ namespace Oci.UsageapiService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.UsageapiService.Models.UsageAggregation), typeof(Oci.UsageapiService.Responses.RequestSummarizedUsagesResponse) })]
     public class InvokeOCIUsageapiRequestSummarizedUsages : OCIUsageapiCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"getUsageRequest contain query inforamtion")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"getUsageRequest contains query inforamtion.")]
         public RequestSummarizedUsagesDetails RequestSummarizedUsagesDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
