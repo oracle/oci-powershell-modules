@@ -20,7 +20,7 @@ namespace Oci.ApplicationmigrationService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ApplicationmigrationService.Models.WorkRequestError), typeof(Oci.ApplicationmigrationService.Responses.ListWorkRequestErrorsResponse) })]
     public class GetOCIApplicationmigrationWorkRequestErrorsList : OCIApplicationMigrationCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the work request.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.")]
         public string WorkRequestId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The number of items returned in a paginated `List` call. For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).", ParameterSetName = LimitSet)]

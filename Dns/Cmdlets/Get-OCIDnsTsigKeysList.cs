@@ -47,6 +47,9 @@ namespace Oci.DnsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The order to sort the resources.")]
         public System.Nullable<Oci.DnsService.Models.SortOrder> SortOrder { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies to operate only on resources that have a matching DNS scope.")]
+        public System.Nullable<Oci.DnsService.Models.Scope> Scope { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -67,7 +70,8 @@ namespace Oci.DnsService.Cmdlets
                     Name = Name,
                     LifecycleState = LifecycleState,
                     SortBy = SortBy,
-                    SortOrder = SortOrder
+                    SortOrder = SortOrder,
+                    Scope = Scope
                 };
                 IEnumerable<ListTsigKeysResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

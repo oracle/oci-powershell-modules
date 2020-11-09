@@ -24,6 +24,9 @@ namespace Oci.MysqlService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Customer-defined unique identifier for the request. If you need to contact Oracle about a specific request, please provide the request ID that you supplied in this header with the request.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Return shapes that are supported by the service feature.")]
+        public System.Collections.Generic.List<Oci.MysqlService.Requests.ListShapesRequest.IsSupportedForEnum> IsSupportedFor { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the Availability Domain.")]
         public string AvailabilityDomain { get; set; }
 
@@ -41,6 +44,7 @@ namespace Oci.MysqlService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     OpcRequestId = OpcRequestId,
+                    IsSupportedFor = IsSupportedFor,
                     AvailabilityDomain = AvailabilityDomain,
                     Name = Name
                 };

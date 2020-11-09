@@ -39,6 +39,11 @@ namespace Oci.DnsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.", ParameterSetName = Default)]
         public string OpcRequestId { get; set; }
 
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies to operate only on resources that have a matching DNS scope.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies to operate only on resources that have a matching DNS scope.", ParameterSetName = Default)]
+        public System.Nullable<Oci.DnsService.Models.Scope> Scope { get; set; }
+
         [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = LifecycleStateParamSet)]
         public Oci.DnsService.Models.TsigKey.LifecycleStateEnum[] WaitForLifecycleState { get; set; }
 
@@ -60,7 +65,8 @@ namespace Oci.DnsService.Cmdlets
                     TsigKeyId = TsigKeyId,
                     IfNoneMatch = IfNoneMatch,
                     IfModifiedSince = IfModifiedSince,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    Scope = Scope
                 };
 
                 HandleOutput(request);

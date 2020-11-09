@@ -47,6 +47,12 @@ namespace Oci.DnsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.")]
         public string Rtype { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies to operate only on resources that have a matching DNS scope.")]
+        public System.Nullable<Oci.DnsService.Models.Scope> Scope { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the view the resource is associated with.")]
+        public string ViewId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field by which to sort records.")]
         public System.Nullable<Oci.DnsService.Requests.GetDomainRecordsRequest.SortByEnum> SortBy { get; set; }
 
@@ -77,6 +83,8 @@ namespace Oci.DnsService.Cmdlets
                     Page = Page,
                     ZoneVersion = ZoneVersion,
                     Rtype = Rtype,
+                    Scope = Scope,
+                    ViewId = ViewId,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     CompartmentId = CompartmentId
