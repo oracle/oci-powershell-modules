@@ -30,6 +30,9 @@ namespace Oci.DnsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies to operate only on resources that have a matching DNS scope.")]
+        public System.Nullable<Oci.DnsService.Models.Scope> Scope { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "Ignore confirmation and force the Cmdlet to complete action.")]
         public SwitchParameter Force { get; set; }
 
@@ -51,7 +54,8 @@ namespace Oci.DnsService.Cmdlets
                     SteeringPolicyAttachmentId = SteeringPolicyAttachmentId,
                     IfMatch = IfMatch,
                     IfUnmodifiedSince = IfUnmodifiedSince,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    Scope = Scope
                 };
 
                 response = client.DeleteSteeringPolicyAttachment(request).GetAwaiter().GetResult();

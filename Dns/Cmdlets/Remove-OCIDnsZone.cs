@@ -15,7 +15,7 @@ using Oci.DnsService.Models;
 namespace Oci.DnsService.Cmdlets
 {
     [Cmdlet("Remove", "OCIDnsZone", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
-    [OutputType(new System.Type[] { typeof(void), typeof(Oci.DnsService.Responses.DeleteZoneResponse) })]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.DnsService.Responses.DeleteZoneResponse) })]
     public class RemoveOCIDnsZone : OCIDnsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name or OCID of the target zone.")]
@@ -29,6 +29,12 @@ namespace Oci.DnsService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies to operate only on resources that have a matching DNS scope.")]
+        public System.Nullable<Oci.DnsService.Models.Scope> Scope { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the view the resource is associated with.")]
+        public string ViewId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment the resource belongs to.")]
         public string CompartmentId { get; set; }
@@ -55,11 +61,13 @@ namespace Oci.DnsService.Cmdlets
                     IfMatch = IfMatch,
                     IfUnmodifiedSince = IfUnmodifiedSince,
                     OpcRequestId = OpcRequestId,
+                    Scope = Scope,
+                    ViewId = ViewId,
                     CompartmentId = CompartmentId
                 };
 
                 response = client.DeleteZone(request).GetAwaiter().GetResult();
-                WriteOutput(response);
+                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
             }
             catch (Exception ex)

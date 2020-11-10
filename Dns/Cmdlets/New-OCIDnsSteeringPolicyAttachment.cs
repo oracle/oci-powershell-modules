@@ -27,6 +27,9 @@ namespace Oci.DnsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies to operate only on resources that have a matching DNS scope.")]
+        public System.Nullable<Oci.DnsService.Models.Scope> Scope { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -38,7 +41,8 @@ namespace Oci.DnsService.Cmdlets
                 {
                     CreateSteeringPolicyAttachmentDetails = CreateSteeringPolicyAttachmentDetails,
                     OpcRetryToken = OpcRetryToken,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    Scope = Scope
                 };
 
                 response = client.CreateSteeringPolicyAttachment(request).GetAwaiter().GetResult();

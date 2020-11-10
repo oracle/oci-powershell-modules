@@ -40,6 +40,16 @@ namespace Oci.DnsService.Cmdlets
         public string OpcRequestId { get; set; }
 
         
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies to operate only on resources that have a matching DNS scope.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies to operate only on resources that have a matching DNS scope.", ParameterSetName = Default)]
+        public System.Nullable<Oci.DnsService.Models.Scope> Scope { get; set; }
+
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the view the resource is associated with.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the view the resource is associated with.", ParameterSetName = Default)]
+        public string ViewId { get; set; }
+
+        
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment the resource belongs to.", ParameterSetName = LifecycleStateParamSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment the resource belongs to.", ParameterSetName = Default)]
         public string CompartmentId { get; set; }
@@ -66,6 +76,8 @@ namespace Oci.DnsService.Cmdlets
                     IfNoneMatch = IfNoneMatch,
                     IfModifiedSince = IfModifiedSince,
                     OpcRequestId = OpcRequestId,
+                    Scope = Scope,
+                    ViewId = ViewId,
                     CompartmentId = CompartmentId
                 };
 

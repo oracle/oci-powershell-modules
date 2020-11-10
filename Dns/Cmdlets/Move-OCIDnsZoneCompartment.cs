@@ -15,7 +15,7 @@ using Oci.DnsService.Models;
 namespace Oci.DnsService.Cmdlets
 {
     [Cmdlet("Move", "OCIDnsZoneCompartment")]
-    [OutputType(new System.Type[] { typeof(void), typeof(Oci.DnsService.Responses.ChangeZoneCompartmentResponse) })]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.DnsService.Responses.ChangeZoneCompartmentResponse) })]
     public class MoveOCIDnsZoneCompartment : OCIDnsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the target zone.")]
@@ -33,6 +33,9 @@ namespace Oci.DnsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies to operate only on resources that have a matching DNS scope.")]
+        public System.Nullable<Oci.DnsService.Models.Scope> Scope { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -46,11 +49,12 @@ namespace Oci.DnsService.Cmdlets
                     ChangeZoneCompartmentDetails = ChangeZoneCompartmentDetails,
                     IfMatch = IfMatch,
                     OpcRetryToken = OpcRetryToken,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    Scope = Scope
                 };
 
                 response = client.ChangeZoneCompartment(request).GetAwaiter().GetResult();
-                WriteOutput(response);
+                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
             }
             catch (Exception ex)

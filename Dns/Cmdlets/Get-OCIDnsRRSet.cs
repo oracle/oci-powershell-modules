@@ -50,6 +50,12 @@ namespace Oci.DnsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment the resource belongs to.")]
         public string CompartmentId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies to operate only on resources that have a matching DNS scope.")]
+        public System.Nullable<Oci.DnsService.Models.Scope> Scope { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the view the resource is associated with.")]
+        public string ViewId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -71,7 +77,9 @@ namespace Oci.DnsService.Cmdlets
                     Limit = Limit,
                     Page = Page,
                     ZoneVersion = ZoneVersion,
-                    CompartmentId = CompartmentId
+                    CompartmentId = CompartmentId,
+                    Scope = Scope,
+                    ViewId = ViewId
                 };
                 IEnumerable<GetRRSetResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
