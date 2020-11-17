@@ -18,10 +18,10 @@ namespace Oci.ManagementdashboardService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ManagementdashboardService.Models.ManagementSavedSearch), typeof(Oci.ManagementdashboardService.Responses.UpdateManagementSavedSearchResponse) })]
     public class UpdateOCIManagementdashboardManagementSavedSearch : OCIDashxApisCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique saved search identifier")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique saved search identifier.")]
         public string ManagementSavedSearchId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Json metadata for changed properties in existing saved search.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"JSON metadata for changed saved search properties.")]
         public UpdateManagementSavedSearchDetails UpdateManagementSavedSearchDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

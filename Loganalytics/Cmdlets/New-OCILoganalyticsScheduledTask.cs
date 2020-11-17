@@ -18,7 +18,7 @@ namespace Oci.LoganalyticsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.LoganalyticsService.Models.ScheduledTask), typeof(Oci.LoganalyticsService.Responses.CreateScheduledTaskResponse) })]
     public class NewOCILoganalyticsScheduledTask : OCILogAnalyticsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Log Analytics namespace used for the request.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics namespace used for the request.")]
         public string NamespaceName { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Scheduled task to be created. This parameter also accepts subtypes <Oci.LoganalyticsService.Models.CreateStandardTaskDetails>, <Oci.LoganalyticsService.Models.CreateAccelerationTaskDetails> of type <Oci.LoganalyticsService.Models.CreateScheduledTaskDetails>.")]

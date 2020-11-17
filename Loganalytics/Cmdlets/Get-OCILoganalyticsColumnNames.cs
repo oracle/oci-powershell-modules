@@ -15,10 +15,10 @@ using Oci.LoganalyticsService.Models;
 namespace Oci.LoganalyticsService.Cmdlets
 {
     [Cmdlet("Get", "OCILoganalyticsColumnNames")]
-    [OutputType(new System.Type[] { typeof(void), typeof(Oci.LoganalyticsService.Responses.GetColumnNamesResponse) })]
+    [OutputType(new System.Type[] { typeof(Oci.LoganalyticsService.Models.ColumnNameCollection), typeof(Oci.LoganalyticsService.Responses.GetColumnNamesResponse) })]
     public class GetOCILoganalyticsColumnNames : OCILogAnalyticsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Log Analytics namespace used for the request.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics namespace used for the request.")]
         public string NamespaceName { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"sql query to get the columns")]
@@ -46,7 +46,7 @@ namespace Oci.LoganalyticsService.Cmdlets
                 };
 
                 response = client.GetColumnNames(request).GetAwaiter().GetResult();
-                WriteOutput(response);
+                WriteOutput(response, response.ColumnNameCollection);
                 FinishProcessing(response);
             }
             catch (Exception ex)

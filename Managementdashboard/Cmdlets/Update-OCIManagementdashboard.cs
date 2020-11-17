@@ -18,10 +18,10 @@ namespace Oci.ManagementdashboardService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ManagementdashboardService.Models.ManagementDashboard), typeof(Oci.ManagementdashboardService.Responses.UpdateManagementDashboardResponse) })]
     public class UpdateOCIManagementdashboard : OCIDashxApisCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique dashboard identifier")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique dashboard identifier.")]
         public string ManagementDashboardId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Json Metadata for changed dashboard properties.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"JSON metadata for changed dashboard properties.")]
         public UpdateManagementDashboardDetails UpdateManagementDashboardDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

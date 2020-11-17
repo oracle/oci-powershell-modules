@@ -38,6 +38,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The DB system storage management option. Used to list database versions available for that storage manager. Valid values are: * ASM - Automatic storage management * LVM - Logical volume management")]
         public System.Nullable<Oci.DatabaseService.Models.DbSystemOptions.StorageManagementEnum> StorageManagement { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If provided, filters the results to the set of database versions which are supported for Upgrade.")]
+        public System.Nullable<bool> IsUpgradeSupported { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -55,7 +58,8 @@ namespace Oci.DatabaseService.Cmdlets
                     Page = Page,
                     DbSystemShape = DbSystemShape,
                     DbSystemId = DbSystemId,
-                    StorageManagement = StorageManagement
+                    StorageManagement = StorageManagement,
+                    IsUpgradeSupported = IsUpgradeSupported
                 };
                 IEnumerable<ListDbVersionsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

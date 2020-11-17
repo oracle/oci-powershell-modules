@@ -47,6 +47,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given image shape family exactly.")]
         public System.Nullable<Oci.DatabaseService.Models.DatabaseSoftwareImageSummary.ImageShapeFamilyEnum> ImageShapeFamily { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If provided, filters the results to the set of database versions which are supported for Upgrade.")]
+        public System.Nullable<bool> IsUpgradeSupported { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -67,7 +70,8 @@ namespace Oci.DatabaseService.Cmdlets
                     LifecycleState = LifecycleState,
                     DisplayName = DisplayName,
                     ImageType = ImageType,
-                    ImageShapeFamily = ImageShapeFamily
+                    ImageShapeFamily = ImageShapeFamily,
+                    IsUpgradeSupported = IsUpgradeSupported
                 };
                 IEnumerable<ListDatabaseSoftwareImagesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
