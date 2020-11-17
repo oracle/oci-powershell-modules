@@ -20,13 +20,13 @@ namespace Oci.LoganalyticsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.LoganalyticsService.Models.LogAnalyticsLogGroupSummaryCollection), typeof(Oci.LoganalyticsService.Responses.ListLogAnalyticsLogGroupsResponse) })]
     public class GetOCILoganalyticsLogGroupsList : OCILogAnalyticsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Log Analytics namespace used for the request.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics namespace used for the request.")]
         public string NamespaceName { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only log analytics entities whose displayName matches the entire display name given. The match is case-insensitive.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only log analytics log groups whose displayName matches the entire display name given. The match is case-insensitive.")]
         public string DisplayName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]

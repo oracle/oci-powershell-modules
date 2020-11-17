@@ -3,6 +3,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2.0.0 - 2020-11-17
+### Added
+
+- Support for specifying memory for AMD E3 shapes during node pool creation and update in the Container Engine for Kubernetes service
+- Support for upgrading a database on a VM database system in the Database service
+- Support for listing autonomous database clones in the Database service
+- Support for Data Guard with autonomous container databases on Exadata Cloud at Customer in the Database service
+- Support for getting the last login time of a user in the Identity service
+- Support to bulk editing tags on resources in the Identity service
+- Property Id in CreateManagementSavedSearchDetails model is changed from required to optional in the Management Dashboard service
+- Support for registering new regions and realms not supported by current version of OCI PowerShell Modules
+
+### Breaking Changes
+
+- The base type of parameter `Status` in `Get-OCIContainerengineWorkRequestsList` is changed from `Oci.ContainerengineService.Models.WorkRequestStatus` enum to `String` in the Container Engine for Kubernetes service
+- The property `ErrorDetails` is removed from `Oci.LoganalyticsService.Responses.DeleteAssociationsResponse` in the `Remove-OCILoganalyticsAssociations` Cmdlet of Log Analytics module
+- The enum `name` removed value `CuslterSplit` and added `ClusterSplit` in the Log Analytics service
+- The type of property `Id` in `LogAnalyticsParserFilter` model is changed from `Object` to `String` in the Log Analytics service
+
 ## 1.12.0 - 2020-11-10
 ### Added
 - Support for the 21C autonomous database version in the Database service

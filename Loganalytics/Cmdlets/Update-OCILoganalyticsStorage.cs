@@ -18,10 +18,10 @@ namespace Oci.LoganalyticsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.LoganalyticsService.Models.Storage), typeof(Oci.LoganalyticsService.Responses.UpdateStorageResponse) })]
     public class UpdateOCILoganalyticsStorage : OCILogAnalyticsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Log Analytics namespace used for the request.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics namespace used for the request.")]
         public string NamespaceName { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"archiving configuration")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"This is the archiving configuration")]
         public UpdateStorageDetails UpdateStorageDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

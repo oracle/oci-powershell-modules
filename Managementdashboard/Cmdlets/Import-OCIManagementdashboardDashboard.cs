@@ -18,7 +18,7 @@ namespace Oci.ManagementdashboardService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.ManagementdashboardService.Responses.ImportDashboardResponse) })]
     public class ImportOCIManagementdashboardDashboard : OCIDashxApisCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Json metadata for dashboards and their saved searches to import.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"JSON metadata for importing dashboards and their saved searches.")]
         public ManagementDashboardImportDetails ManagementDashboardImportDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

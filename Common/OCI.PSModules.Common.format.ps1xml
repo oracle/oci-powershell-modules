@@ -48,6 +48,52 @@
       </TableRowEntry>
     </TableRowEntries>
   </TableControl>
+  </View>
+  <View>
+  <Name>Oci.Common.Region</Name>
+  <ViewSelectedBy>
+    <TypeName>Oci.Common.Region</TypeName>
+  </ViewSelectedBy>
+  <TableControl>
+    <TableHeaders>
+      <TableColumnHeader>
+        <Width>15</Width>
+      </TableColumnHeader>
+      <TableColumnHeader>
+        <Width>10</Width>
+      </TableColumnHeader>
+      <TableColumnHeader>
+        <Label>RealmId</Label>
+        <Width>10</Width>
+      </TableColumnHeader>
+      <TableColumnHeader>
+        <Label>SecondLevelDomain</Label>
+        <Width>20</Width>
+      </TableColumnHeader>
+    </TableHeaders>
+    <TableRowEntries>
+      <TableRowEntry>
+        <TableColumnItems>
+          <TableColumnItem>
+           <PropertyName>RegionId</PropertyName>
+          </TableColumnItem>
+          <TableColumnItem>
+           <PropertyName>RegionCode</PropertyName>
+          </TableColumnItem>
+          <TableColumnItem>
+            <ScriptBlock>
+              $_.Realm.RealmId
+            </ScriptBlock>
+          </TableColumnItem>
+          <TableColumnItem>
+            <ScriptBlock>
+              $_.Realm.SecondLevelDomain
+            </ScriptBlock>
+          </TableColumnItem>
+        </TableColumnItems>
+      </TableRowEntry>
+    </TableRowEntries>
+  </TableControl>
 </View>
 </ViewDefinitions>
 </Configuration>

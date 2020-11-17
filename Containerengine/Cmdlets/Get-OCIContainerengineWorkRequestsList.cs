@@ -33,7 +33,7 @@ namespace Oci.ContainerengineService.Cmdlets
         public System.Nullable<Oci.ContainerengineService.Requests.ListWorkRequestsRequest.ResourceTypeEnum> ResourceType { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A work request status to filter on. Can have multiple parameters of this name.")]
-        public System.Collections.Generic.List<Oci.ContainerengineService.Models.WorkRequestStatus> Status { get; set; }
+        public System.Collections.Generic.List<string> Status { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. 1 is the minimum, 1000 is the maximum. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }

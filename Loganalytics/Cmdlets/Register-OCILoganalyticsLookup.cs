@@ -18,7 +18,7 @@ namespace Oci.LoganalyticsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.LoganalyticsService.Models.LogAnalyticsLookup), typeof(Oci.LoganalyticsService.Responses.RegisterLookupResponse) })]
     public class RegisterOCILoganalyticsLookup : OCILogAnalyticsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Log Analytics namespace used for the request.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics namespace used for the request.")]
         public string NamespaceName { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"type - possible values are Lookup or Dictionary")]
@@ -36,7 +36,7 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Description of the fields to get")]
         public string Description { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"character Encoding")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Character Encoding")]
         public string CharEncoding { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"is hidden")]

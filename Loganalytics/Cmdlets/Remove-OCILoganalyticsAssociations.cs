@@ -15,10 +15,10 @@ using Oci.LoganalyticsService.Models;
 namespace Oci.LoganalyticsService.Cmdlets
 {
     [Cmdlet("Remove", "OCILoganalyticsAssociations")]
-    [OutputType(new System.Type[] { typeof(Oci.LoganalyticsService.Models.ErrorDetails), typeof(Oci.LoganalyticsService.Responses.DeleteAssociationsResponse) })]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.LoganalyticsService.Responses.DeleteAssociationsResponse) })]
     public class RemoveOCILoganalyticsAssociations : OCILogAnalyticsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Log Analytics namespace used for the request.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics namespace used for the request.")]
         public string NamespaceName { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"details for association")]
@@ -46,7 +46,7 @@ namespace Oci.LoganalyticsService.Cmdlets
                 };
 
                 response = client.DeleteAssociations(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.ErrorDetails);
+                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
             }
             catch (Exception ex)
