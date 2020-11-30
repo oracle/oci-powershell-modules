@@ -38,6 +38,9 @@ namespace Oci.MysqlService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resource matching the given display name exactly.")]
         public string DisplayName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Backup creationType")]
+        public System.Nullable<Oci.MysqlService.Models.Backup.CreationTypeEnum> CreationType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Time fields are default ordered as descending.")]
         public System.Nullable<Oci.MysqlService.Requests.ListBackupsRequest.SortByEnum> SortBy { get; set; }
 
@@ -68,6 +71,7 @@ namespace Oci.MysqlService.Cmdlets
                     LifecycleState = LifecycleState,
                     DbSystemId = DbSystemId,
                     DisplayName = DisplayName,
+                    CreationType = CreationType,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     Limit = Limit,

@@ -55,22 +55,22 @@ namespace Oci.ObjectstorageService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This value is used to check the integrity of the encryption key. For more information, see [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).")]
         public string OpcSseCustomerKeySha256 { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This value will be used in Content-Disposition header of the response.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specify this query parameter to override the value of the Content-Disposition response header in the GetObject response.")]
         public string HttpResponseContentDisposition { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This value will be used in Cache-Control header of the response.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specify this query parameter to override the Cache-Control response header in the GetObject response.")]
         public string HttpResponseCacheControl { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This value will be used in Content-Type header of the response.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specify this query parameter to override the Content-Type response header in the GetObject response.")]
         public string HttpResponseContentType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This value will be used in Content-Language header of the response.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specify this query parameter to override the Content-Language response header in the GetObject response.")]
         public string HttpResponseContentLanguage { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This value will be used in Content-Encoding header of the response")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specify this query parameter to override the Content-Encoding response header in the GetObject response.")]
         public string HttpResponseContentEncoding { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This value will be used in Expires header of the response")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specify this query parameter to override the Expires response header in the GetObject response.")]
         public string HttpResponseExpires { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = "Path to the output file.", ParameterSetName = WriteToFileSet)]

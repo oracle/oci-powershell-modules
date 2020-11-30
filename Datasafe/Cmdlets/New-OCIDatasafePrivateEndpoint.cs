@@ -15,7 +15,7 @@ using Oci.DatasafeService.Models;
 namespace Oci.DatasafeService.Cmdlets
 {
     [Cmdlet("New", "OCIDatasafePrivateEndpoint")]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.DatasafeService.Responses.CreateDataSafePrivateEndpointResponse) })]
+    [OutputType(new System.Type[] { typeof(Oci.DatasafeService.Models.DataSafePrivateEndpoint), typeof(Oci.DatasafeService.Responses.CreateDataSafePrivateEndpointResponse) })]
     public class NewOCIDatasafePrivateEndpoint : OCIDataSafeCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details to create a new private endpoint.")]
@@ -42,7 +42,7 @@ namespace Oci.DatasafeService.Cmdlets
                 };
 
                 response = client.CreateDataSafePrivateEndpoint(request).GetAwaiter().GetResult();
-                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
+                WriteOutput(response, response.DataSafePrivateEndpoint);
                 FinishProcessing(response);
             }
             catch (Exception ex)
