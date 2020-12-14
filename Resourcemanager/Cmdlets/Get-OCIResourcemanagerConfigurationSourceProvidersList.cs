@@ -44,6 +44,9 @@ namespace Oci.ResourcemanagerService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The value of the `opc-next-page` response header from the preceding `List` call. For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only configuration source providers of the specified type (GitHub or GitLab).")]
+        public string ConfigSourceProviderType { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -63,7 +66,8 @@ namespace Oci.ResourcemanagerService.Cmdlets
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     Limit = Limit,
-                    Page = Page
+                    Page = Page,
+                    ConfigSourceProviderType = ConfigSourceProviderType
                 };
                 IEnumerable<ListConfigurationSourceProvidersResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

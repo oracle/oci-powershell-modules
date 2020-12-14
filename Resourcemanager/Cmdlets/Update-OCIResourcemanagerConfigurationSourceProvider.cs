@@ -21,7 +21,7 @@ namespace Oci.ResourcemanagerService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration source provider.")]
         public string ConfigurationSourceProviderId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Updated information provided for the ConfigurationSourceProvider. This parameter also accepts subtype <Oci.ResourcemanagerService.Models.UpdateGitlabAccessTokenConfigurationSourceProviderDetails> of type <Oci.ResourcemanagerService.Models.UpdateConfigurationSourceProviderDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Updated information provided for the ConfigurationSourceProvider. This parameter also accepts subtypes <Oci.ResourcemanagerService.Models.UpdateGitlabAccessTokenConfigurationSourceProviderDetails>, <Oci.ResourcemanagerService.Models.UpdateGithubAccessTokenConfigurationSourceProviderDetails> of type <Oci.ResourcemanagerService.Models.UpdateConfigurationSourceProviderDetails>.")]
         public UpdateConfigurationSourceProviderDetails UpdateConfigurationSourceProviderDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
