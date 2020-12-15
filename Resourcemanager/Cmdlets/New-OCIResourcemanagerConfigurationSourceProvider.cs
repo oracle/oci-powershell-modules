@@ -18,7 +18,7 @@ namespace Oci.ResourcemanagerService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ResourcemanagerService.Models.ConfigurationSourceProvider), typeof(Oci.ResourcemanagerService.Responses.CreateConfigurationSourceProviderResponse) })]
     public class NewOCIResourcemanagerConfigurationSourceProvider : OCIResourceManagerCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The properties for creating a ConfigurationSourceProvider. This parameter also accepts subtype <Oci.ResourcemanagerService.Models.CreateGitlabAccessTokenConfigurationSourceProviderDetails> of type <Oci.ResourcemanagerService.Models.CreateConfigurationSourceProviderDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The properties for creating a ConfigurationSourceProvider. This parameter also accepts subtypes <Oci.ResourcemanagerService.Models.CreateGitlabAccessTokenConfigurationSourceProviderDetails>, <Oci.ResourcemanagerService.Models.CreateGithubAccessTokenConfigurationSourceProviderDetails> of type <Oci.ResourcemanagerService.Models.CreateConfigurationSourceProviderDetails>.")]
         public CreateConfigurationSourceProviderDetails CreateConfigurationSourceProviderDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

@@ -24,6 +24,21 @@ namespace Oci.DatacatalogService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique pattern key.")]
         public string PatternKey { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match display name pattern given. The match is not case sensitive. For Example : /folders?displayNameContains=Cu.* The above would match all folders with display name that starts with ""Cu"".")]
+        public string DisplayNameContains { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.")]
+        public System.Nullable<Oci.DatacatalogService.Requests.ListDerivedLogicalEntitiesRequest.SortByEnum> SortBy { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'asc' or 'desc'.")]
+        public System.Nullable<Oci.DatacatalogService.Requests.ListDerivedLogicalEntitiesRequest.SortOrderEnum> SortOrder { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.")]
+        public System.Nullable<int> Limit { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.")]
+        public string Page { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
@@ -44,6 +59,11 @@ namespace Oci.DatacatalogService.Cmdlets
                 {
                     CatalogId = CatalogId,
                     PatternKey = PatternKey,
+                    DisplayNameContains = DisplayNameContains,
+                    SortBy = SortBy,
+                    SortOrder = SortOrder,
+                    Limit = Limit,
+                    Page = Page,
                     OpcRequestId = OpcRequestId,
                     IfMatch = IfMatch,
                     OpcRetryToken = OpcRetryToken
