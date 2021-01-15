@@ -24,7 +24,7 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique scheduledTask id returned from task create. If invalid will lead to a 404 not found.")]
         public string ScheduledTaskId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Update details. Schedules may be updated only for taskType SAVED_SEARCH and PURGE.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Update details. Schedules may be updated only for taskType SAVED_SEARCH and PURGE. This parameter also accepts subtype <Oci.LoganalyticsService.Models.UpdateStandardTaskDetails> of type <Oci.LoganalyticsService.Models.UpdateScheduledTaskDetails>.")]
         public UpdateScheduledTaskDetails UpdateScheduledTaskDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
