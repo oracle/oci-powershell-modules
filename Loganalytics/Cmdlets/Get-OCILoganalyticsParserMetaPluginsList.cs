@@ -30,7 +30,7 @@ namespace Oci.LoganalyticsService.Cmdlets
         public string Page { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"sort by field")]
-        public string SortBy { get; set; }
+        public System.Nullable<Oci.LoganalyticsService.Requests.ListParserMetaPluginsRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (`ASC`) or descending (`DESC`).")]
         public System.Nullable<Oci.LoganalyticsService.Requests.ListParserMetaPluginsRequest.SortOrderEnum> SortOrder { get; set; }

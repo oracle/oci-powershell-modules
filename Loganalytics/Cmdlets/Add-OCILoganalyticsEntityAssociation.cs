@@ -24,7 +24,7 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The log analytics entity OCID.")]
         public string LogAnalyticsEntityId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"This parameter specifies the entity OCIDs with which associations are to be created. Specify destination OCIDs as comma separated string.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"This parameter specifies the destination entity OCIDs with which associations are to be created.")]
         public AddEntityAssociationDetails AddEntityAssociationDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

@@ -25,8 +25,8 @@ namespace Oci.LoganalyticsService.Cmdlets
         public string NamespaceName { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).", ParameterSetName = Default)]
         public string LogAnalyticsObjectCollectionRuleId { get; set; }
 
         
@@ -35,7 +35,7 @@ namespace Oci.LoganalyticsService.Cmdlets
         public string OpcRequestId { get; set; }
 
         [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = LifecycleStateParamSet)]
-        public Oci.LoganalyticsService.Models.LogAnalyticsObjectCollectionRule.LifecycleStateEnum[] WaitForLifecycleState { get; set; }
+        public Oci.LoganalyticsService.Models.ObjectCollectionRuleLifecycleStates[] WaitForLifecycleState { get; set; }
 
         [Parameter(Mandatory = false, HelpMessage = @"Check every WaitIntervalSeconds to see whether the resource has reached a desired state.", ParameterSetName = LifecycleStateParamSet)]
         public int WaitIntervalSeconds { get; set; } = WAIT_INTERVAL_SECONDS;

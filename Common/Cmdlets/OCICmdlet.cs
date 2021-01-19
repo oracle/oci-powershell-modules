@@ -72,6 +72,12 @@ namespace Oci.PSModules.Common.Cmdlets
             WriteDebug("Choosing Parameter Set:" + ParameterSetName);
         }
 
+        protected override void StopProcessing()
+        {
+            base.StopProcessing();
+            ResetLoggingPreferences();
+        }
+
         protected override void EndProcessing()
         {
             base.EndProcessing();
@@ -300,21 +306,28 @@ namespace Oci.PSModules.Common.Cmdlets
 
         private void SetLoggingPreferences()
         {
-            if (MyInvocation.BoundParameters.ContainsKey("Verbose") || MyInvocation.BoundParameters.ContainsKey("Debug"))
-            {
-                var config = new NLog.Config.LoggingConfiguration();
-                var console = new NLog.Targets.ConsoleTarget("logconsole");
-                // If both Debug and Verbose are passed, Debug takes priority as NLog.Debug loglevel ranks lower than NLog.Info.
-                // We will display all the log levels in between NLOG.Debug to NLog.Fatal(includes NLog.Info).
-                NLog.LogLevel minLogLevel = NLog.LogLevel.Debug;
+            var config = new NLog.Config.LoggingConfiguration();
+            var console = new NLog.Targets.ConsoleTarget("logconsole");
+            // Keep loglevel off by default.
+            NLog.LogLevel minLogLevel;
 
-                if (!MyInvocation.BoundParameters.ContainsKey("Debug"))
-                {
-                    minLogLevel = NLog.LogLevel.Info;
-                }
-                config.AddRule(minLogLevel, NLog.LogLevel.Fatal, console);
-                NLog.LogManager.Configuration = config;
+            // If both Debug and Verbose are passed, Debug takes priority as NLog.Debug loglevel ranks lower than NLog.Info.
+            // We will display all the log levels in between NLOG.Debug to NLog.Fatal(includes NLog.Info).
+            if (MyInvocation.BoundParameters.ContainsKey("Debug"))
+            {
+                minLogLevel = NLog.LogLevel.Debug;
             }
+            else if (MyInvocation.BoundParameters.ContainsKey("Verbose"))
+            {
+                minLogLevel = NLog.LogLevel.Info;
+            }
+            else
+            {
+                minLogLevel = NLog.LogLevel.Off;
+            }
+
+            config.AddRule(minLogLevel, NLog.LogLevel.Fatal, console);
+            NLog.LogManager.Configuration = config;
         }
 
         private void ResetLoggingPreferences()

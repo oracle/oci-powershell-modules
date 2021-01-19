@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 6.0.0 - 2021-01-19
+### Added
+- Support for Logging Analytics as a target in the Service Connector Hub service
+- Support for lookups, agent collection warnings, task commands, and data archive/recall in the Logging Analytics service
+
+### Fixed
+- Fixed a bug in the endpoint used for the Management Dashboard service
+
+### Breaking Changes
+- Parameter `SortBy` in cmdlets `Get-OCILoganalyticsMetaSourceTypesList`, `Get-OCILoganalyticsParserFunctionsList`, `Get-OCILoganalyticsParserMetaPluginsList`, `Get-OCILoganalyticsSourceLabelOperatorsList`, `Get-OCILoganalyticsSourceMetaFunctionsList` has changed its datatype from `String` to `Oci.LoganalyticsService.Requests.ListSourceMetaFunctionsRequest.SortByEnum` in the Logging Analytics service
+- Parameter `WaitForLifecycleState` in cmdlet `Get-OCILoganalyticsObjectCollectionRule` has changed its datatype from `LogAnalyticsObjectCollectionRule.LifecycleStateEnum` to `ObjectCollectionRuleLifecycleStates` in the Logging Analytics Service
+
 ## 5.0.0 - 2021-01-12
 ### Added
 - Support for auto-scaling in the Big Data service
