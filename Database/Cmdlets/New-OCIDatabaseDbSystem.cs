@@ -20,8 +20,16 @@ namespace Oci.DatabaseService.Cmdlets
     public class NewOCIDatabaseDbSystem : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to launch a DB system. This parameter also accepts subtypes <Oci.DatabaseService.Models.LaunchDbSystemDetails>, <Oci.DatabaseService.Models.LaunchDbSystemFromDbSystemDetails>, <Oci.DatabaseService.Models.LaunchDbSystemFromDatabaseDetails>, <Oci.DatabaseService.Models.LaunchDbSystemFromBackupDetails> of type <Oci.DatabaseService.Models.LaunchDbSystemBase>.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to launch a DB system. This parameter also accepts subtypes <Oci.DatabaseService.Models.LaunchDbSystemDetails>, <Oci.DatabaseService.Models.LaunchDbSystemFromDbSystemDetails>, <Oci.DatabaseService.Models.LaunchDbSystemFromDatabaseDetails>, <Oci.DatabaseService.Models.LaunchDbSystemFromBackupDetails> of type <Oci.DatabaseService.Models.LaunchDbSystemBase>.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to launch a DB system.
+
+**Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
+
+For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model. This parameter also accepts subtypes <Oci.DatabaseService.Models.LaunchDbSystemDetails>, <Oci.DatabaseService.Models.LaunchDbSystemFromDbSystemDetails>, <Oci.DatabaseService.Models.LaunchDbSystemFromDatabaseDetails>, <Oci.DatabaseService.Models.LaunchDbSystemFromBackupDetails> of type <Oci.DatabaseService.Models.LaunchDbSystemBase>.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to launch a DB system.
+
+**Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
+
+For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model. This parameter also accepts subtypes <Oci.DatabaseService.Models.LaunchDbSystemDetails>, <Oci.DatabaseService.Models.LaunchDbSystemFromDbSystemDetails>, <Oci.DatabaseService.Models.LaunchDbSystemFromDatabaseDetails>, <Oci.DatabaseService.Models.LaunchDbSystemFromBackupDetails> of type <Oci.DatabaseService.Models.LaunchDbSystemBase>.", ParameterSetName = Default)]
         public LaunchDbSystemBase LaunchDbSystemDetails { get; set; }
 
         

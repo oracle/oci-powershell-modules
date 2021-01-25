@@ -30,6 +30,9 @@ namespace Oci.ResourcemanagerService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of retrying the same action. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected.")]
         public string OpcRetryToken { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details for detecting drift in a stack")]
+        public DetectStackDriftDetails DetectStackDriftDetails { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -42,7 +45,8 @@ namespace Oci.ResourcemanagerService.Cmdlets
                     StackId = StackId,
                     IfMatch = IfMatch,
                     OpcRequestId = OpcRequestId,
-                    OpcRetryToken = OpcRetryToken
+                    OpcRetryToken = OpcRetryToken,
+                    DetectStackDriftDetails = DetectStackDriftDetails
                 };
 
                 response = client.DetectStackDrift(request).GetAwaiter().GetResult();

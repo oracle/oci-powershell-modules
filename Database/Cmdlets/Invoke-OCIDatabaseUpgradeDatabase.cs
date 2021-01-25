@@ -25,8 +25,8 @@ namespace Oci.DatabaseService.Cmdlets
         public string DatabaseId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to perform database upgrade.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to perform database upgrade.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to perform a database upgrade.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to perform a database upgrade.", ParameterSetName = Default)]
         public UpgradeDatabaseDetails UpgradeDatabaseDetails { get; set; }
 
         

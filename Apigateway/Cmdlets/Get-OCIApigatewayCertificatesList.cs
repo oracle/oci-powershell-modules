@@ -75,6 +75,10 @@ Example: `ACTIVE` or `DELETED`")]
                     response = item;
                     WriteOutput(response, response.CertificateCollection, true);
                 }
+                if(!ParameterSetName.Equals(AllPageSet) && response.OpcNextPage != null)
+                {
+                    WriteWarning("This operation supports pagination and not all resources were returned.  Re-run using the -all option to auto paginate and list all resources.");
+                }
                 FinishProcessing(response);
             }
             catch (Exception ex)

@@ -41,11 +41,14 @@ namespace Oci.KeymanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server.")]
         public System.Nullable<Oci.KeymanagementService.Requests.ListKeysRequest.ProtectionModeEnum> ProtectionMode { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The algorithm used by a key's key versions to encrypt or decrypt. Currently, only AES is supported.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The algorithm used by a key's key versions to encrypt or decrypt. Currently, only AES, RSA and ECDSA are supported.")]
         public System.Nullable<Oci.KeymanagementService.Requests.ListKeysRequest.AlgorithmEnum> Algorithm { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The length of the key in bytes, expressed as an integer. Values of 16, 24, or 32 are supported.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The length of the key in bytes, expressed as an integer. Values of 16, 24, 32 are supported.")]
         public System.Nullable<int> Length { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The curve Id of the keys in case of ECDSA keys")]
+        public System.Nullable<Oci.KeymanagementService.Requests.ListKeysRequest.CurveIdEnum> CurveId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
@@ -67,13 +70,18 @@ namespace Oci.KeymanagementService.Cmdlets
                     SortOrder = SortOrder,
                     ProtectionMode = ProtectionMode,
                     Algorithm = Algorithm,
-                    Length = Length
+                    Length = Length,
+                    CurveId = CurveId
                 };
                 IEnumerable<ListKeysResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
                 {
                     response = item;
                     WriteOutput(response, response.Items, true);
+                }
+                if(!ParameterSetName.Equals(AllPageSet) && response.OpcNextPage != null)
+                {
+                    WriteWarning("This operation supports pagination and not all resources were returned.  Re-run using the -all option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
             }

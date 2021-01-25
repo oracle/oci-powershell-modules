@@ -73,6 +73,10 @@ The default sort order for the time fields is descending. The default order for 
                     response = item;
                     WriteOutput(response, response.Items, true);
                 }
+                if(!ParameterSetName.Equals(AllPageSet) && response.OpcNextPage != null)
+                {
+                    WriteWarning("This operation supports pagination and not all resources were returned.  Re-run using the -all option to auto paginate and list all resources.");
+                }
                 FinishProcessing(response);
             }
             catch (Exception ex)
