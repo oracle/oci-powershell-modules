@@ -93,6 +93,10 @@ Can only be set to true when performing ListCompartments on the tenancy (root co
                     response = item;
                     WriteOutput(response, response.HistoryCollection, true);
                 }
+                if(!ParameterSetName.Equals(AllPageSet) && response.OpcNextPage != null)
+                {
+                    WriteWarning("This operation supports pagination and not all resources were returned.  Re-run using the -all option to auto paginate and list all resources.");
+                }
                 FinishProcessing(response);
             }
             catch (Exception ex)

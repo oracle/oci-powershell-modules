@@ -18,10 +18,10 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.PublicIpPool), typeof(Oci.CoreService.Responses.RemovePublicIpPoolCapacityResponse) })]
     public class RemoveOCIVirtualNetworkPublicIpPoolCapacity : OCIVirtualNetworkCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the Public Ip Pool object.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the public IP pool.")]
         public string PublicIpPoolId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Cidr to be removed from the Public Ip Pool")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The CIDR block to remove from the IP pool.")]
         public RemovePublicIpPoolCapacityDetails RemovePublicIpPoolCapacityDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

@@ -26,7 +26,7 @@ namespace Oci.AnalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the resource associated with a work request.")]
         public string ResourceId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Type of the resource associated with a work request")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Type of the resource associated with a work request.")]
         public System.Nullable<Oci.AnalyticsService.Models.WorkRequestResourceType> ResourceType { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"One or more work request status values to filter on.")]
@@ -76,6 +76,10 @@ Example: `50`", ParameterSetName = LimitSet)]
                 {
                     response = item;
                     WriteOutput(response, response.Items, true);
+                }
+                if(!ParameterSetName.Equals(AllPageSet) && response.OpcNextPage != null)
+                {
+                    WriteWarning("This operation supports pagination and not all resources were returned.  Re-run using the -all option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
             }

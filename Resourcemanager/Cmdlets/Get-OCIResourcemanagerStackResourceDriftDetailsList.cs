@@ -26,6 +26,9 @@ namespace Oci.ResourcemanagerService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.")]
+        public string WorkRequestId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter that returns only resources that match the given drift status. The value is case-insensitive. Allowable values -   - NOT_CHECKED   - MODIFIED   - IN_SYNC   - DELETED")]
         public System.Collections.Generic.List<Oci.ResourcemanagerService.Models.StackResourceDriftSummary.ResourceDriftStatusEnum> ResourceDriftStatus { get; set; }
 
@@ -49,6 +52,7 @@ namespace Oci.ResourcemanagerService.Cmdlets
                 {
                     StackId = StackId,
                     OpcRequestId = OpcRequestId,
+                    WorkRequestId = WorkRequestId,
                     ResourceDriftStatus = ResourceDriftStatus,
                     Limit = Limit,
                     Page = Page
@@ -58,6 +62,10 @@ namespace Oci.ResourcemanagerService.Cmdlets
                 {
                     response = item;
                     WriteOutput(response, response.StackResourceDriftCollection, true);
+                }
+                if(!ParameterSetName.Equals(AllPageSet) && response.OpcNextPage != null)
+                {
+                    WriteWarning("This operation supports pagination and not all resources were returned.  Re-run using the -all option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
             }
