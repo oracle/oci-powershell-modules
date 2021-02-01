@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 8.0.0 - 2021-02-02
+### Added
+- Support for checking if a contact for Exadata infrastructure is valid in My Oracle Support in the Database service.
+- Support for checking if Exadata infrastructure is in a degraded state in the Database service.
+- Support for updating the operating system on a VM cluster in the Database service.
+- Support for external databases in the Database service.
+- Support for uploading objects to the infrequent access storage tier in the Object Storage service.
+- Support for changing the storage tier of existing objects in the Object Storage service.
+- Support for private templates in the Resource Manager service.
+- Support for multiple encryption domains on IPSec tunnels in the Networking service.
+
+### Breaking Changes
+- `ListAppCatalogListingResourceVersionsResponse` in `Get-OCIComputeAppCatalogListingResourceVersionsList` no longer supports the `etag` parameter.
+- Property `vnicId` in model `Oci.CoreService.Models.Ipv6` was removed as a parameter from the Core service.
+- `ArchivalStateEnum` enum was replaced by `ArchivalState` in response `GetObjectResponse` in cmdlet `Get-OCIObjectStorageObject` in the Object Storage Service.
+
 ## 7.0.0 - 2021-01-26
 ### Added
 - Support for creating, managing, and using asymmetric keys in the Key Management service.
