@@ -36,10 +36,10 @@ namespace Oci.ObjectstorageService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Use this parameter to provide the file location from where the input stream to be read. The object to upload to the object store.", ParameterSetName = FromFileSet)]
         public String PutObjectBodyFromFile { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload the resource.")]
         public string IfMatch { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the object already exists. For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail if the resource already exists.")]
         public string IfNoneMatch { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
@@ -77,6 +77,9 @@ namespace Oci.ObjectstorageService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This value is used to check the integrity of the encryption key. For more information, see [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).")]
         public string OpcSseCustomerKeySha256 { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.")]
+        public System.Nullable<Oci.ObjectstorageService.Models.StorageTier> StorageTier { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional user-defined metadata key and value.")]
         public System.Collections.Generic.Dictionary<string, string> OpcMeta { get; set; }
 
@@ -113,6 +116,7 @@ namespace Oci.ObjectstorageService.Cmdlets
                     OpcSseCustomerAlgorithm = OpcSseCustomerAlgorithm,
                     OpcSseCustomerKey = OpcSseCustomerKey,
                     OpcSseCustomerKeySha256 = OpcSseCustomerKeySha256,
+                    StorageTier = StorageTier,
                     OpcMeta = OpcMeta
                 };
 

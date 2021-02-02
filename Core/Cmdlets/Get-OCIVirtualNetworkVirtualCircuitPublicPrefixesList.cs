@@ -21,7 +21,9 @@ namespace Oci.CoreService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the virtual circuit.")]
         public string VirtualCircuitId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to only return resources that match the given verification state. The state value is case-insensitive.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to only return resources that match the given verification state.
+
+The state value is case-insensitive.")]
         public System.Nullable<Oci.CoreService.Models.VirtualCircuitPublicPrefix.VerificationStateEnum> VerificationState { get; set; }
 
         protected override void ProcessRecord()
