@@ -65,7 +65,7 @@ For example, a start value of `2017-01-01T00:00:00Z` and an end value of `2017-0
                 }
                 if(!ParameterSetName.Equals(AllPageSet) && response.OpcNextPage != null)
                 {
-                    WriteWarning("This operation supports pagination and not all resources were returned.  Re-run using the -all option to auto paginate and list all resources.");
+                    WriteWarning("This operation supports pagination and not all resources were returned. Re-run using the -All option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
             }

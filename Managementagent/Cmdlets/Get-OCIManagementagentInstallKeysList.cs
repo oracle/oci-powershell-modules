@@ -77,7 +77,7 @@ namespace Oci.ManagementagentService.Cmdlets
                 }
                 if(!ParameterSetName.Equals(AllPageSet) && response.OpcNextPage != null)
                 {
-                    WriteWarning("This operation supports pagination and not all resources were returned.  Re-run using the -all option to auto paginate and list all resources.");
+                    WriteWarning("This operation supports pagination and not all resources were returned. Re-run using the -All option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
             }
