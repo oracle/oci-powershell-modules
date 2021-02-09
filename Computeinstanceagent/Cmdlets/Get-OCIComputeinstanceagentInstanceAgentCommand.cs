@@ -18,10 +18,10 @@ namespace Oci.ComputeinstanceagentService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ComputeinstanceagentService.Models.InstanceAgentCommand), typeof(Oci.ComputeinstanceagentService.Responses.GetInstanceAgentCommandResponse) })]
     public class GetOCIComputeinstanceagentInstanceAgentCommand : OCIComputeInstanceAgentCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the command.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the command.")]
         public string InstanceAgentCommandId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
         protected override void ProcessRecord()

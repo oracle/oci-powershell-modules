@@ -1,0 +1,23 @@
+<!-- Generated using OracleSDKGenerator, API Version: 20201101 -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>OCI.PSModules.Databasemanagement</AssemblyName>
+    <PackageId>OCI.PSModules.Databasemanagement</PackageId>
+    <Authors>Oracle Cloud Infrastructure</Authors>
+    <Company>Oracle</Company>
+    <LangVersion>8.0</LangVersion>
+    <PackageTags>Oracle;OCI;Cloud;oci-sdk;OracleCloudInfrastructure;Databasemanagement</PackageTags>
+    <Description>Databasemanagement Service</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OCI.DotNetSdk.Databasemanagement" Version="$(SDKVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\OCI.PSModules.Common.csproj" />
+  </ItemGroup>
+
+</Project>

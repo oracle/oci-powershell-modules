@@ -71,9 +71,9 @@ namespace Oci.BlockchainService.Cmdlets
                     response = item;
                     WriteOutput(response, response.BlockchainPlatformCollection, true);
                 }
-                if(!ParameterSetName.Equals(AllPageSet) && response.OpcNextPage != null)
+                if(!ParameterSetName.Equals(AllPageSet) && !ParameterSetName.Equals(LimitSet) && response.OpcNextPage != null)
                 {
-                    WriteWarning("This operation supports pagination and not all resources were returned.  Re-run using the -all option to auto paginate and list all resources.");
+                    WriteWarning("This operation supports pagination and not all resources were returned. Re-run using the -All option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
             }
