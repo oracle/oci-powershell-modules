@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 9.1.0 - 2021-02-16
+### Added
+- Support for scan DNS names and zone ids on database system, cloud VM cluster, and autonomous Exadata infrastructure responses in the Database service.
+- Support for specifying ACL rules to limit ingress into public load balancers in the Integration service.
+- Support for Cloud at Customer as a source type in the Application Migration service.
+- Support for selective migration of specific resources in the Application Migration service.
+
 ## 9.0.0 - 2021-02-09
 ### Added
 - Support for the Database Management service.
