@@ -18,7 +18,7 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.ByoipRange), typeof(Oci.CoreService.Responses.UpdateByoipRangeResponse) })]
     public class UpdateOCIVirtualNetworkByoipRange : OCIVirtualNetworkCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource containing the BYOIP CIDR block.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource containing the BYOIP CIDR block.")]
         public string ByoipRangeId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Byoip Range details.")]

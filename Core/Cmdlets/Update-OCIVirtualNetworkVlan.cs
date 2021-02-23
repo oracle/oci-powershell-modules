@@ -18,7 +18,7 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.Vlan), typeof(Oci.CoreService.Responses.UpdateVlanResponse) })]
     public class UpdateOCIVirtualNetworkVlan : OCIVirtualNetworkCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.")]
         public string VlanId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for updating a subnet.")]

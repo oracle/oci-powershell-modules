@@ -18,7 +18,7 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.NatGateway), typeof(Oci.CoreService.Responses.UpdateNatGatewayResponse) })]
     public class UpdateOCIVirtualNetworkNatGateway : OCIVirtualNetworkCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The NAT gateway's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The NAT gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
         public string NatGatewayId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for updating a NAT gateway.")]

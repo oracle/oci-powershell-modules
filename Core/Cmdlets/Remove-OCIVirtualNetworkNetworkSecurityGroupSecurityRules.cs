@@ -18,7 +18,7 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.CoreService.Responses.RemoveNetworkSecurityGroupSecurityRulesResponse) })]
     public class RemoveOCIVirtualNetworkNetworkSecurityGroupSecurityRules : OCIVirtualNetworkCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security group.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.")]
         public string NetworkSecurityGroupId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request with one or more security rules associated with the network security group that will be removed.")]

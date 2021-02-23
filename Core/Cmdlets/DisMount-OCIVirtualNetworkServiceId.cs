@@ -18,7 +18,7 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.ServiceGateway), typeof(Oci.CoreService.Responses.DetachServiceIdResponse) })]
     public class DisMountOCIVirtualNetworkServiceId : OCIVirtualNetworkCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The service gateway's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The service gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
         public string ServiceGatewayId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"ServiceId of Service to be detached from a service gateway.")]
