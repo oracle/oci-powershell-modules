@@ -14,15 +14,15 @@ using Oci.DataintegrationService.Models;
 
 namespace Oci.DataintegrationService.Cmdlets
 {
-    [Cmdlet("New", "OCIDataintegrationTask")]
-    [OutputType(new System.Type[] { typeof(Oci.DataintegrationService.Models.Task), typeof(Oci.DataintegrationService.Responses.CreateTaskResponse) })]
-    public class NewOCIDataintegrationTask : OCIDataIntegrationCmdlet
+    [Cmdlet("New", "OCIDataintegrationPipeline")]
+    [OutputType(new System.Type[] { typeof(Oci.DataintegrationService.Models.Pipeline), typeof(Oci.DataintegrationService.Responses.CreatePipelineResponse) })]
+    public class NewOCIDataintegrationPipeline : OCIDataIntegrationCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The workspace ID.")]
         public string WorkspaceId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details needed to create a new task. This parameter also accepts subtypes <Oci.DataintegrationService.Models.CreateTaskFromIntegrationTask>, <Oci.DataintegrationService.Models.CreateTaskFromDataLoaderTask>, <Oci.DataintegrationService.Models.CreateTaskFromPipelineTask> of type <Oci.DataintegrationService.Models.CreateTaskDetails>.")]
-        public CreateTaskDetails CreateTaskDetails { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details needed to create a new pipeline.")]
+        public CreatePipelineDetails CreatePipelineDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.")]
         public string OpcRetryToken { get; set; }
@@ -33,20 +33,20 @@ namespace Oci.DataintegrationService.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            CreateTaskRequest request;
+            CreatePipelineRequest request;
 
             try
             {
-                request = new CreateTaskRequest
+                request = new CreatePipelineRequest
                 {
                     WorkspaceId = WorkspaceId,
-                    CreateTaskDetails = CreateTaskDetails,
+                    CreatePipelineDetails = CreatePipelineDetails,
                     OpcRetryToken = OpcRetryToken,
                     OpcRequestId = OpcRequestId
                 };
 
-                response = client.CreateTask(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.Task);
+                response = client.CreatePipeline(request).GetAwaiter().GetResult();
+                WriteOutput(response, response.Pipeline);
                 FinishProcessing(response);
             }
             catch (Exception ex)
@@ -61,6 +61,6 @@ namespace Oci.DataintegrationService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private CreateTaskResponse response;
+        private CreatePipelineResponse response;
     }
 }

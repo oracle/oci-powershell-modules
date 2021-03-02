@@ -50,6 +50,9 @@ namespace Oci.DataintegrationService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used to filter by the name of the object.")]
+        public System.Collections.Generic.List<string> NameList { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -71,7 +74,8 @@ namespace Oci.DataintegrationService.Cmdlets
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     Name = Name,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    NameList = NameList
                 };
                 IEnumerable<ListSchemasResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
