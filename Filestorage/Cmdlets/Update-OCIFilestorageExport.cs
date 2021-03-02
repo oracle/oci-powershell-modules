@@ -18,7 +18,7 @@ namespace Oci.FilestorageService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.FilestorageService.Models.Export), typeof(Oci.FilestorageService.Responses.UpdateExportResponse) })]
     public class UpdateOCIFilestorageExport : OCIFileStorageCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the export.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the export.")]
         public string ExportId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for updating an export.")]

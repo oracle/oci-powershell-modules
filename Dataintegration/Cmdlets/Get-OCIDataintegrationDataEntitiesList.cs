@@ -53,6 +53,12 @@ namespace Oci.DataintegrationService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used to filter by the name of the object.")]
+        public System.Collections.Generic.List<string> NameList { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This parameter can be used to specify whether entity search type is pattern search or not.")]
+        public System.Nullable<bool> IsPattern { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -75,7 +81,9 @@ namespace Oci.DataintegrationService.Cmdlets
                     Fields = Fields,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    NameList = NameList,
+                    IsPattern = IsPattern
                 };
                 IEnumerable<ListDataEntitiesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

@@ -14,39 +14,39 @@ using Oci.DataintegrationService.Models;
 
 namespace Oci.DataintegrationService.Cmdlets
 {
-    [Cmdlet("New", "OCIDataintegrationTask")]
-    [OutputType(new System.Type[] { typeof(Oci.DataintegrationService.Models.Task), typeof(Oci.DataintegrationService.Responses.CreateTaskResponse) })]
-    public class NewOCIDataintegrationTask : OCIDataIntegrationCmdlet
+    [Cmdlet("New", "OCIDataintegrationPipelineValidation")]
+    [OutputType(new System.Type[] { typeof(Oci.DataintegrationService.Models.PipelineValidation), typeof(Oci.DataintegrationService.Responses.CreatePipelineValidationResponse) })]
+    public class NewOCIDataintegrationPipelineValidation : OCIDataIntegrationCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The workspace ID.")]
         public string WorkspaceId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details needed to create a new task. This parameter also accepts subtypes <Oci.DataintegrationService.Models.CreateTaskFromIntegrationTask>, <Oci.DataintegrationService.Models.CreateTaskFromDataLoaderTask>, <Oci.DataintegrationService.Models.CreateTaskFromPipelineTask> of type <Oci.DataintegrationService.Models.CreateTaskDetails>.")]
-        public CreateTaskDetails CreateTaskDetails { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.")]
-        public string OpcRetryToken { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information needed to create the data flow validation for the pipeline object.")]
+        public CreatePipelineValidationDetails CreatePipelineValidationDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.")]
+        public string OpcRetryToken { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            CreateTaskRequest request;
+            CreatePipelineValidationRequest request;
 
             try
             {
-                request = new CreateTaskRequest
+                request = new CreatePipelineValidationRequest
                 {
                     WorkspaceId = WorkspaceId,
-                    CreateTaskDetails = CreateTaskDetails,
-                    OpcRetryToken = OpcRetryToken,
-                    OpcRequestId = OpcRequestId
+                    CreatePipelineValidationDetails = CreatePipelineValidationDetails,
+                    OpcRequestId = OpcRequestId,
+                    OpcRetryToken = OpcRetryToken
                 };
 
-                response = client.CreateTask(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.Task);
+                response = client.CreatePipelineValidation(request).GetAwaiter().GetResult();
+                WriteOutput(response, response.PipelineValidation);
                 FinishProcessing(response);
             }
             catch (Exception ex)
@@ -61,6 +61,6 @@ namespace Oci.DataintegrationService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private CreateTaskResponse response;
+        private CreatePipelineValidationResponse response;
     }
 }

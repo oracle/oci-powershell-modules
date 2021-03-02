@@ -16,15 +16,12 @@ using Oci.DataintegrationService.Models;
 
 namespace Oci.DataintegrationService.Cmdlets
 {
-    [Cmdlet("Get", "OCIDataintegrationTaskRunsList")]
-    [OutputType(new System.Type[] { typeof(Oci.DataintegrationService.Models.TaskRunSummaryCollection), typeof(Oci.DataintegrationService.Responses.ListTaskRunsResponse) })]
-    public class GetOCIDataintegrationTaskRunsList : OCIDataIntegrationCmdlet
+    [Cmdlet("Get", "OCIDataintegrationPipelinesList")]
+    [OutputType(new System.Type[] { typeof(Oci.DataintegrationService.Models.PipelineSummaryCollection), typeof(Oci.DataintegrationService.Responses.ListPipelinesResponse) })]
+    public class GetOCIDataintegrationPipelinesList : OCIDataIntegrationCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The workspace ID.")]
         public string WorkspaceId { get; set; }
-
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The application key.")]
-        public string ApplicationKey { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
@@ -41,17 +38,17 @@ namespace Oci.DataintegrationService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used to filter by the identifier of the object.")]
         public System.Collections.Generic.List<string> Identifier { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).")]
-        public string Page { get; set; }
-
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Sets the maximum number of results per page, or items to return in a paginated `List` call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).")]
+        public string Page { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).")]
-        public System.Nullable<Oci.DataintegrationService.Requests.ListTaskRunsRequest.SortOrderEnum> SortOrder { get; set; }
+        public System.Nullable<Oci.DataintegrationService.Requests.ListPipelinesRequest.SortOrderEnum> SortOrder { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).")]
-        public System.Nullable<Oci.DataintegrationService.Requests.ListTaskRunsRequest.SortByEnum> SortBy { get; set; }
+        public System.Nullable<Oci.DataintegrationService.Requests.ListPipelinesRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
@@ -59,29 +56,28 @@ namespace Oci.DataintegrationService.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            ListTaskRunsRequest request;
+            ListPipelinesRequest request;
 
             try
             {
-                request = new ListTaskRunsRequest
+                request = new ListPipelinesRequest
                 {
                     WorkspaceId = WorkspaceId,
-                    ApplicationKey = ApplicationKey,
                     OpcRequestId = OpcRequestId,
                     AggregatorKey = AggregatorKey,
                     Fields = Fields,
                     Name = Name,
                     Identifier = Identifier,
-                    Page = Page,
                     Limit = Limit,
+                    Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy
                 };
-                IEnumerable<ListTaskRunsResponse> responses = GetRequestDelegate().Invoke(request);
+                IEnumerable<ListPipelinesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
                 {
                     response = item;
-                    WriteOutput(response, response.TaskRunSummaryCollection, true);
+                    WriteOutput(response, response.PipelineSummaryCollection, true);
                 }
                 if(!ParameterSetName.Equals(AllPageSet) && !ParameterSetName.Equals(LimitSet) && response.OpcNextPage != null)
                 {
@@ -103,16 +99,16 @@ namespace Oci.DataintegrationService.Cmdlets
 
         private RequestDelegate GetRequestDelegate()
         {
-            IEnumerable<ListTaskRunsResponse> DefaultRequest(ListTaskRunsRequest request) => Enumerable.Repeat(client.ListTaskRuns(request).GetAwaiter().GetResult(), 1);
+            IEnumerable<ListPipelinesResponse> DefaultRequest(ListPipelinesRequest request) => Enumerable.Repeat(client.ListPipelines(request).GetAwaiter().GetResult(), 1);
             if (ParameterSetName.Equals(AllPageSet))
             {
-                return req => client.Paginators.ListTaskRunsResponseEnumerator(req);
+                return req => client.Paginators.ListPipelinesResponseEnumerator(req);
             }
             return DefaultRequest;
         }
 
-        private ListTaskRunsResponse response;
-        private delegate IEnumerable<ListTaskRunsResponse> RequestDelegate(ListTaskRunsRequest request);
+        private ListPipelinesResponse response;
+        private delegate IEnumerable<ListPipelinesResponse> RequestDelegate(ListPipelinesRequest request);
         private const string AllPageSet = "AllPages";
         private const string LimitSet = "Limit";
     }

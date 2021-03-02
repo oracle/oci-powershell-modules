@@ -26,6 +26,9 @@ namespace Oci.DataintegrationService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"DIS workspace id")]
+        public string WorkspaceId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The work request status.")]
         public System.Nullable<Oci.DataintegrationService.Requests.ListWorkRequestsRequest.WorkRequestStatusEnum> WorkRequestStatus { get; set; }
 
@@ -55,6 +58,7 @@ namespace Oci.DataintegrationService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     OpcRequestId = OpcRequestId,
+                    WorkspaceId = WorkspaceId,
                     WorkRequestStatus = WorkRequestStatus,
                     Page = Page,
                     Limit = Limit,

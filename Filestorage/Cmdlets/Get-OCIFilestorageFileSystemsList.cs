@@ -20,7 +20,7 @@ namespace Oci.FilestorageService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.FilestorageService.Models.FileSystemSummary), typeof(Oci.FilestorageService.Responses.ListFileSystemsResponse) })]
     public class GetOCIFilestorageFileSystemsList : OCIFileStorageCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the availability domain.
@@ -48,8 +48,14 @@ Example: `My resource`")]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter results by the specified lifecycle state. Must be a valid state for the resource type.")]
         public System.Nullable<Oci.FilestorageService.Requests.ListFileSystemsRequest.LifecycleStateEnum> LifecycleState { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter results by OCID. Must be an OCID of the correct type for the resouce type.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter results by [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.")]
         public string Id { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).")]
+        public string SourceSnapshotId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).")]
+        public string ParentFileSystemId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. You can provide either value, but not both. By default, when you sort by time created, results are shown in descending order. When you sort by display name, results are shown in ascending order.")]
         public System.Nullable<Oci.FilestorageService.Requests.ListFileSystemsRequest.SortByEnum> SortBy { get; set; }
@@ -79,6 +85,8 @@ Example: `My resource`")]
                     DisplayName = DisplayName,
                     LifecycleState = LifecycleState,
                     Id = Id,
+                    SourceSnapshotId = SourceSnapshotId,
+                    ParentFileSystemId = ParentFileSystemId,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     OpcRequestId = OpcRequestId

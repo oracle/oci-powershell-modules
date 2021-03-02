@@ -14,18 +14,18 @@ using Oci.DataintegrationService.Models;
 
 namespace Oci.DataintegrationService.Cmdlets
 {
-    [Cmdlet("Update", "OCIDataintegrationTask")]
-    [OutputType(new System.Type[] { typeof(Oci.DataintegrationService.Models.Task), typeof(Oci.DataintegrationService.Responses.UpdateTaskResponse) })]
-    public class UpdateOCIDataintegrationTask : OCIDataIntegrationCmdlet
+    [Cmdlet("Update", "OCIDataintegrationPipeline")]
+    [OutputType(new System.Type[] { typeof(Oci.DataintegrationService.Models.Pipeline), typeof(Oci.DataintegrationService.Responses.UpdatePipelineResponse) })]
+    public class UpdateOCIDataintegrationPipeline : OCIDataIntegrationCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The workspace ID.")]
         public string WorkspaceId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The task key.")]
-        public string TaskKey { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The pipeline key.")]
+        public string PipelineKey { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details needed to update a task. This parameter also accepts subtypes <Oci.DataintegrationService.Models.UpdateTaskFromPipelineTask>, <Oci.DataintegrationService.Models.UpdateTaskFromDataLoaderTask>, <Oci.DataintegrationService.Models.UpdateTaskFromIntegrationTask> of type <Oci.DataintegrationService.Models.UpdateTaskDetails>.")]
-        public UpdateTaskDetails UpdateTaskDetails { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details needed to updated a pipeline.")]
+        public UpdatePipelineDetails UpdatePipelineDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
@@ -36,21 +36,21 @@ namespace Oci.DataintegrationService.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            UpdateTaskRequest request;
+            UpdatePipelineRequest request;
 
             try
             {
-                request = new UpdateTaskRequest
+                request = new UpdatePipelineRequest
                 {
                     WorkspaceId = WorkspaceId,
-                    TaskKey = TaskKey,
-                    UpdateTaskDetails = UpdateTaskDetails,
+                    PipelineKey = PipelineKey,
+                    UpdatePipelineDetails = UpdatePipelineDetails,
                     OpcRequestId = OpcRequestId,
                     IfMatch = IfMatch
                 };
 
-                response = client.UpdateTask(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.Task);
+                response = client.UpdatePipeline(request).GetAwaiter().GetResult();
+                WriteOutput(response, response.Pipeline);
                 FinishProcessing(response);
             }
             catch (Exception ex)
@@ -65,6 +65,6 @@ namespace Oci.DataintegrationService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private UpdateTaskResponse response;
+        private UpdatePipelineResponse response;
     }
 }

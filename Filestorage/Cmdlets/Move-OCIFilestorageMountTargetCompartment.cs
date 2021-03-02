@@ -18,7 +18,7 @@ namespace Oci.FilestorageService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.FilestorageService.Responses.ChangeMountTargetCompartmentResponse) })]
     public class MoveOCIFilestorageMountTargetCompartment : OCIFileStorageCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the mount target.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the mount target.")]
         public string MountTargetId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for changing the compartment.")]

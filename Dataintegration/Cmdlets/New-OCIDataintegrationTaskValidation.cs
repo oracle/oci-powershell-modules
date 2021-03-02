@@ -21,7 +21,7 @@ namespace Oci.DataintegrationService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The workspace ID.")]
         public string WorkspaceId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information needed to create a task validation. This parameter also accepts subtypes <Oci.DataintegrationService.Models.CreateTaskValidationFromDataLoaderTask>, <Oci.DataintegrationService.Models.CreateTaskValidationFromIntegrationTask> of type <Oci.DataintegrationService.Models.CreateTaskValidationDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information needed to create a task validation. This parameter also accepts subtypes <Oci.DataintegrationService.Models.CreateTaskValidationFromDataLoaderTask>, <Oci.DataintegrationService.Models.CreateTaskValidationFromPipelineTask>, <Oci.DataintegrationService.Models.CreateTaskValidationFromIntegrationTask> of type <Oci.DataintegrationService.Models.CreateTaskValidationDetails>.")]
         public CreateTaskValidationDetails CreateTaskValidationDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

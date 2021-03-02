@@ -20,7 +20,7 @@ namespace Oci.FilestorageService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.FilestorageService.Models.SnapshotSummary), typeof(Oci.FilestorageService.Responses.ListSnapshotsResponse) })]
     public class GetOCIFilestorageSnapshotsList : OCIFileStorageCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the file system.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system.")]
         public string FileSystemId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. 1 is the minimum, 100 is the maximum.
@@ -38,7 +38,7 @@ For important details about how pagination works, see [List Pagination](https://
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter results by the specified lifecycle state. Must be a valid state for the resource type.")]
         public System.Nullable<Oci.FilestorageService.Requests.ListSnapshotsRequest.LifecycleStateEnum> LifecycleState { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter results by OCID. Must be an OCID of the correct type for the resouce type.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter results by [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.")]
         public string Id { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'asc' or 'desc', where 'asc' is ascending and 'desc' is descending. The default order is 'desc' except for numeric values.")]
