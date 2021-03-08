@@ -3,11 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 10.1.0 - 2021-03-09
+### Added
+- Support for the Application Performance Monitoring service.
+- Support for the Golden Gate service.
+- Support for SMS subscriptions in the Notifications service.
+- Support for friendly-formatted messages in the Service Connector Hub service.
+- Support for attaching and detaching instances to instance pools in the Autoscaling service.
+
 ## 10.0.0 - 2021-03-02
 ### Added
 - Support for pipelines, pipeline tasks, and favorites in the Data Integration service.
 - Support for publishing tasks to OCI Data Flow in the Data Integration service.
 - Support for clones in the File Storage service.
+- Support for bundled modules.
  
 ### Breaking changes
 - Changed `Oci.DataintegrationService.Models.UniqueKey` model in the Dataintegration service to not inherit from `Key`.
