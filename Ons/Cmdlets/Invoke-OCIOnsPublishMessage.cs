@@ -27,7 +27,9 @@ namespace Oci.OnsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Type of message body in the request.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"**Deprecated.** Support for JSON is deprecated. You can send a JSON payload even when transmitting the payload as a raw string. Configure your receiving system to read the raw payload as JSON format.
+
+Type of message body in the request. For `messageType` of JSON, a default key-value pair is required. Example: `{""default"": ""Alarm breached"", ""Email"": ""Alarm breached: <url>""}.`")]
         public System.Nullable<Oci.OnsService.Requests.PublishMessageRequest.MessageTypeEnum> MessageType { get; set; }
 
         protected override void ProcessRecord()
