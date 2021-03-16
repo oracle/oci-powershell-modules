@@ -18,7 +18,7 @@ namespace Oci.ResourcesearchService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ResourcesearchService.Models.ResourceSummaryCollection), typeof(Oci.ResourcesearchService.Responses.SearchResourcesResponse) })]
     public class InvokeOCIResourcesearchSearchResources : OCIResourceSearchCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request parameters that describe query criteria. This parameter also accepts subtypes <Oci.ResourcesearchService.Models.StructuredSearchDetails>, <Oci.ResourcesearchService.Models.FreeTextSearchDetails> of type <Oci.ResourcesearchService.Models.SearchDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request parameters that describe query criteria. For more information, see SearchDetails. This parameter also accepts subtypes <Oci.ResourcesearchService.Models.StructuredSearchDetails>, <Oci.ResourcesearchService.Models.FreeTextSearchDetails> of type <Oci.ResourcesearchService.Models.SearchDetails>.")]
         public SearchDetails SearchDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return. The value must be between 1 and 1000.")]
