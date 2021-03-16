@@ -18,7 +18,7 @@ namespace Oci.ContainerengineService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ContainerengineService.Models.ClusterOptions), typeof(Oci.ContainerengineService.Responses.GetClusterOptionsResponse) })]
     public class GetOCIContainerengineClusterOptions : OCIContainerEngineCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The id of the option set to retrieve. Only ""all"" is supported.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The id of the option set to retrieve. Use ""all"" get all options, or use a cluster ID to get options specific to the provided cluster.")]
         public string ClusterOptionId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment.")]
