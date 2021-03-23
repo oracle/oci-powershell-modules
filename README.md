@@ -22,6 +22,12 @@ Install the modules from PowerShell Gallery using `Install-Module` as explained 
 Install-Module OCI.PSModules.Audit
 ```
 
+To install all OCI modules:
+```
+Install-Module OCI.PSModules
+```
+Note: Uninstalling `OCI.PSModules` will not uninstall other OCI modules. To uninstall a specific OCI module installed by this module, `OCI.PSModules` will have to be uninstalled first.
+
 #### From Github:
 PowerShell modules are published to [GitHub](https://github.com/oracle/oci-powershell-modules/releases).
 

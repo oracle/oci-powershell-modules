@@ -25,8 +25,8 @@ namespace Oci.DatabaseService.Cmdlets
         public string ExadataInfrastructureId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The activation details for the Exadata infrastructure.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The activation details for the Exadata infrastructure.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The activation details for the Exadata infrastructure and the additional storage servers requested.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The activation details for the Exadata infrastructure and the additional storage servers requested.", ParameterSetName = Default)]
         public ActivateExadataInfrastructureDetails ActivateExadataInfrastructureDetails { get; set; }
 
         

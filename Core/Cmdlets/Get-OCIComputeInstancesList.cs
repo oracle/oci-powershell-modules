@@ -20,13 +20,16 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.Instance), typeof(Oci.CoreService.Responses.ListInstancesResponse) })]
     public class GetOCIComputeInstancesList : OCIComputeCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the availability domain.
 
 Example: `Uocm:PHX-AD-1`")]
         public string AvailabilityDomain { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compute capacity reservation.")]
+        public string CapacityReservationId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given display name exactly.")]
         public string DisplayName { get; set; }
@@ -64,6 +67,7 @@ Example: `50`", ParameterSetName = LimitSet)]
                 {
                     CompartmentId = CompartmentId,
                     AvailabilityDomain = AvailabilityDomain,
+                    CapacityReservationId = CapacityReservationId,
                     DisplayName = DisplayName,
                     Limit = Limit,
                     Page = Page,

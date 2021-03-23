@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 11.0.0 - 2021-03-23
+### Added
+- Support for the Network Load Balancing service.
+- Support for maintenance runs on autonomous databases in the Database service.
+- Support for announcement preferences in the Announcements service.
+- Support for domain claiming in the Organizations service.
+- Support for saved reports in the Usage service.
+- Support for the HeatWave in-memory analytics accelerator in the MySQL Database service.
+- Support for community applications in the Marketplace service.
+- Support for capacity reservations in the Compute service.
+ 
+### Breaking Changes
+- `VnicId` is now a required property for `Oci.CoreService.Models.Ipv6` in the `Core` service.
+- `VnicId` is now a required property for `Oci.CoreService.Models.CreateIpv6Details` in the `Core` service.
+- `CompartmentId` was removed as a property from `Oci.TenantmanagercontrolplaneService.Requests.ListWorkRequestLogsRequest` in the `Tenantmanagercontrolplane` service.
+
 ## 10.2.0 - 2021-03-16
 ### Added
 - Support for routing policies and HTTP2 listener protocols in the Load Balancing service.

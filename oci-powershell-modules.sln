@@ -139,6 +139,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Apmcontrolpla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Apmtraces", "Apmtraces\OCI.PSModules.Apmtraces.csproj", "{99A2B73F-65AD-4692-8CB7-8F3BCC3D787B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Networkloadbalancer", "Networkloadbalancer\OCI.PSModules.Networkloadbalancer.csproj", "{17428248-4455-4F67-B845-056D0E2EB199}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -980,5 +982,17 @@ Global
         {99A2B73F-65AD-4692-8CB7-8F3BCC3D787B}.Release|x64.Build.0 = Release|Any CPU
         {99A2B73F-65AD-4692-8CB7-8F3BCC3D787B}.Release|x86.ActiveCfg = Release|Any CPU
         {99A2B73F-65AD-4692-8CB7-8F3BCC3D787B}.Release|x86.Build.0 = Release|Any CPU
+        {17428248-4455-4F67-B845-056D0E2EB199}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {17428248-4455-4F67-B845-056D0E2EB199}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {17428248-4455-4F67-B845-056D0E2EB199}.Debug|x64.ActiveCfg = Debug|Any CPU
+        {17428248-4455-4F67-B845-056D0E2EB199}.Debug|x64.Build.0 = Debug|Any CPU
+        {17428248-4455-4F67-B845-056D0E2EB199}.Debug|x86.ActiveCfg = Debug|Any CPU
+        {17428248-4455-4F67-B845-056D0E2EB199}.Debug|x86.Build.0 = Debug|Any CPU
+        {17428248-4455-4F67-B845-056D0E2EB199}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {17428248-4455-4F67-B845-056D0E2EB199}.Release|Any CPU.Build.0 = Release|Any CPU
+        {17428248-4455-4F67-B845-056D0E2EB199}.Release|x64.ActiveCfg = Release|Any CPU
+        {17428248-4455-4F67-B845-056D0E2EB199}.Release|x64.Build.0 = Release|Any CPU
+        {17428248-4455-4F67-B845-056D0E2EB199}.Release|x86.ActiveCfg = Release|Any CPU
+        {17428248-4455-4F67-B845-056D0E2EB199}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
