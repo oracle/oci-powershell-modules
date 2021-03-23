@@ -56,6 +56,12 @@ namespace Oci.MarketplaceService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates whether to show only featured listings. If this is set to `false` or is omitted, then all listings will be returned.")]
         public System.Nullable<bool> IsFeatured { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of the listing")]
+        public System.Collections.Generic.List<Oci.MarketplaceService.Models.ListingType> ListingTypes { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"OS of the listing.")]
+        public System.Collections.Generic.List<string> OperatingSystems { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier for the compartment.")]
         public string CompartmentId { get; set; }
 
@@ -83,6 +89,8 @@ namespace Oci.MarketplaceService.Cmdlets
                     Category = Category,
                     Pricing = Pricing,
                     IsFeatured = IsFeatured,
+                    ListingTypes = ListingTypes,
+                    OperatingSystems = OperatingSystems,
                     CompartmentId = CompartmentId
                 };
                 IEnumerable<ListListingsResponse> responses = GetRequestDelegate().Invoke(request);

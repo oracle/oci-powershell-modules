@@ -18,7 +18,7 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.ComputeGlobalImageCapabilitySchemaVersion), typeof(Oci.CoreService.Responses.GetComputeGlobalImageCapabilitySchemaVersionResponse) })]
     public class GetOCIComputeGlobalImageCapabilitySchemaVersion : OCIComputeCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compute global image capability schema")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema")]
         public string ComputeGlobalImageCapabilitySchemaId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the compute global image capability schema version")]

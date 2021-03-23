@@ -23,9 +23,6 @@ namespace Oci.TenantmanagercontrolplaneService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the asynchronous request.")]
         public string WorkRequestId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
-        public string CompartmentId { get; set; }
-
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
@@ -35,7 +32,7 @@ namespace Oci.TenantmanagercontrolplaneService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'asc' or 'desc'.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, whether 'asc' or 'desc'.")]
         public System.Nullable<Oci.TenantmanagercontrolplaneService.Models.SortOrder> SortOrder { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
@@ -51,7 +48,6 @@ namespace Oci.TenantmanagercontrolplaneService.Cmdlets
                 request = new ListWorkRequestErrorsRequest
                 {
                     WorkRequestId = WorkRequestId,
-                    CompartmentId = CompartmentId,
                     OpcRequestId = OpcRequestId,
                     Page = Page,
                     Limit = Limit,
