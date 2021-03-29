@@ -47,6 +47,12 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.")]
         public System.Nullable<Oci.LoganalyticsService.Requests.ListScheduledTasksRequest.SortByEnum> SortBy { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only scheduled tasks whose stream action savedSearchId matches the given ManagementSavedSearch id [OCID] exactly.")]
+        public string SavedSearchId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose display name contains the substring.")]
+        public string DisplayNameContains { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -67,7 +73,9 @@ namespace Oci.LoganalyticsService.Cmdlets
                     Page = Page,
                     DisplayName = DisplayName,
                     SortOrder = SortOrder,
-                    SortBy = SortBy
+                    SortBy = SortBy,
+                    SavedSearchId = SavedSearchId,
+                    DisplayNameContains = DisplayNameContains
                 };
                 IEnumerable<ListScheduledTasksResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
