@@ -44,6 +44,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Use this for filtering uploads w.r.t warnings. Only one value is allowed. If no value is specified then ALL is taken as default, which means that all the uploads with and without warnings will be returned.")]
+        public System.Nullable<Oci.LoganalyticsService.Requests.ListUploadsRequest.WarningsFilterEnum> WarningsFilter { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -63,7 +66,8 @@ namespace Oci.LoganalyticsService.Cmdlets
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    WarningsFilter = WarningsFilter
                 };
                 IEnumerable<ListUploadsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

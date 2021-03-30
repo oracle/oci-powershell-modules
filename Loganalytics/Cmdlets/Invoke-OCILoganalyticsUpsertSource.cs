@@ -24,10 +24,10 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new LoganSourceDetails.")]
         public UpsertLogAnalyticsSourceDetails UpsertLogAnalyticsSourceDetails { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"create like sourceId")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier of the source to use as the reference for a create like operation.")]
         public System.Nullable<int> CreateLikeSourceId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"is incremental")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A flag indicating whether or not the update of a source is incremental or not.  If incremental, the name of the source must be specified.")]
         public System.Nullable<bool> IsIncremental { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"is ignore warning")]

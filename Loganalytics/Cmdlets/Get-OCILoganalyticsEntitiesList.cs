@@ -56,6 +56,12 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only log analytics entities whose sourceId matches the sourceId given.")]
         public string SourceId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only those log analytics entities with the specified auto-creation source.")]
+        public System.Collections.Generic.List<Oci.LoganalyticsService.Models.CreationSourceType> CreationSourceType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only log analytics entities whose auto-creation source details contains the specified string.")]
+        public string CreationSourceDetails { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -95,6 +101,8 @@ namespace Oci.LoganalyticsService.Cmdlets
                     Hostname = Hostname,
                     HostnameContains = HostnameContains,
                     SourceId = SourceId,
+                    CreationSourceType = CreationSourceType,
+                    CreationSourceDetails = CreationSourceDetails,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,
