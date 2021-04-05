@@ -20,7 +20,7 @@ namespace Oci.AutoscalingService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.AutoscalingService.Models.AutoScalingConfigurationSummary), typeof(Oci.AutoscalingService.Responses.ListAutoScalingConfigurationsResponse) })]
     public class GetOCIAutoscalingConfigurationsList : OCIAutoScalingCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the resource. Use tenancyId to search in the root compartment.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given display name exactly.")]

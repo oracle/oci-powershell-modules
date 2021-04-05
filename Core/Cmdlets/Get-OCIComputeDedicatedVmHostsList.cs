@@ -56,6 +56,12 @@ Example: `50`", ParameterSetName = LimitSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order is case sensitive.")]
         public System.Nullable<Oci.CoreService.Requests.ListDedicatedVmHostsRequest.SortOrderEnum> SortOrder { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The remaining memory of the dedicated VM host, in GBs.")]
+        public System.Nullable<float> RemainingMemoryInGBsGreaterThanOrEqualTo { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The available OCPUs of the dedicated VM host.")]
+        public System.Nullable<float> RemainingOcpusGreaterThanOrEqualTo { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -77,7 +83,9 @@ Example: `50`", ParameterSetName = LimitSet)]
                     Page = Page,
                     OpcRequestId = OpcRequestId,
                     SortBy = SortBy,
-                    SortOrder = SortOrder
+                    SortOrder = SortOrder,
+                    RemainingMemoryInGBsGreaterThanOrEqualTo = RemainingMemoryInGBsGreaterThanOrEqualTo,
+                    RemainingOcpusGreaterThanOrEqualTo = RemainingOcpusGreaterThanOrEqualTo
                 };
                 IEnumerable<ListDedicatedVmHostsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
