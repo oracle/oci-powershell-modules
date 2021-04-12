@@ -20,13 +20,25 @@ namespace Oci.OpsiService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OpsiService.Models.DatabaseInsightsCollection), typeof(Oci.OpsiService.Responses.ListDatabaseInsightsResponse) })]
     public class GetOCIOpsiDatabaseInsightsList : OCIOperationsInsightsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Enterprise Manager bridge identifier")]
+        public string EnterpriseManagerBridgeId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.")]
+        public System.Collections.Generic.List<string> Id { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Resource Status")]
+        public System.Collections.Generic.List<Oci.OpsiService.Models.ResourceStatus> Status { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Lifecycle states")]
+        public System.Collections.Generic.List<Oci.OpsiService.Models.LifecycleState> LifecycleState { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.")]
         public System.Collections.Generic.List<Oci.OpsiService.Requests.ListDatabaseInsightsRequest.DatabaseTypeEnum> DatabaseType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.")]
         public System.Collections.Generic.List<string> DatabaseId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies the fields to return in a database summary response. By default all fields are returned if omitted.")]
@@ -60,6 +72,10 @@ namespace Oci.OpsiService.Cmdlets
                 request = new ListDatabaseInsightsRequest
                 {
                     CompartmentId = CompartmentId,
+                    EnterpriseManagerBridgeId = EnterpriseManagerBridgeId,
+                    Id = Id,
+                    Status = Status,
+                    LifecycleState = LifecycleState,
                     DatabaseType = DatabaseType,
                     DatabaseId = DatabaseId,
                     Fields = Fields,

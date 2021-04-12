@@ -18,7 +18,7 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.CoreService.Responses.ChangeLocalPeeringGatewayCompartmentResponse) })]
     public class MoveOCIVirtualNetworkLocalPeeringGatewayCompartment : OCIVirtualNetworkCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the local peering gateway.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the local peering gateway.")]
         public string LocalPeeringGatewayId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to change the compartment of a given local peering gateway.")]

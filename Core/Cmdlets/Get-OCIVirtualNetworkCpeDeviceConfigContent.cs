@@ -22,7 +22,7 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(System.IO.Stream), typeof(void), typeof(Oci.CoreService.Responses.GetCpeDeviceConfigContentResponse) })]
     public class GetOCIVirtualNetworkCpeDeviceConfigContent : OCIVirtualNetworkCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the CPE.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the CPE.")]
         public string CpeId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

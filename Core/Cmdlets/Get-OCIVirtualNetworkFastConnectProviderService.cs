@@ -18,7 +18,7 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.FastConnectProviderService), typeof(Oci.CoreService.Responses.GetFastConnectProviderServiceResponse) })]
     public class GetOCIVirtualNetworkFastConnectProviderService : OCIVirtualNetworkCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the provider service.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the provider service.")]
         public string ProviderServiceId { get; set; }
 
         protected override void ProcessRecord()

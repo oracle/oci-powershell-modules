@@ -21,8 +21,14 @@ namespace Oci.PSModules.Common.Cmdlets
         [Parameter(Mandatory = true, HelpMessage = "The Region key representing the region. eg) phx ", ParameterSetName = REGION_CODE)]
         public string RegionCode { get; set; }
 
+        [Parameter(Mandatory = false, HelpMessage = "Enabling the Instance Metadata Service allows region lookups through the OCI Instance's metadata.")]
+        public SwitchParameter EnableInstanceMetadataService { get; set; }
+
         protected override void ProcessRecord()
         {
+            if(EnableInstanceMetadataService) {
+                Region.EnableInstanceMetadataService();
+            }
             string regionInfo = RegionId ?? RegionCode;
             WriteObject(Region.FromRegionCodeOrId(regionInfo));
         }

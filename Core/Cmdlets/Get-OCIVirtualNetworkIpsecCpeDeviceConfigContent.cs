@@ -22,7 +22,7 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(System.IO.Stream), typeof(void), typeof(Oci.CoreService.Responses.GetIpsecCpeDeviceConfigContentResponse) })]
     public class GetOCIVirtualNetworkIpsecCpeDeviceConfigContent : OCIVirtualNetworkCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the IPSec connection.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IPSec connection.")]
         public string IpscId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

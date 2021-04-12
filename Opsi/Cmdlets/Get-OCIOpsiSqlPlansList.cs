@@ -23,14 +23,17 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.")]
-        public string DatabaseId { get; set; }
-
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique SQL_ID for a SQL Statement. Example: `6rgjh9bjmy2s7`")]
         public string SqlIdentifier { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique plan hash for a SQL Plan of a particular SQL Statement. Example: `9820154385`")]
         public System.Collections.Generic.List<long> PlanHash { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.")]
+        public string DatabaseId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.")]
+        public string Id { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The value of the `opc-next-page` response header from the previous ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
@@ -51,9 +54,10 @@ namespace Oci.OpsiService.Cmdlets
                 request = new ListSqlPlansRequest
                 {
                     CompartmentId = CompartmentId,
-                    DatabaseId = DatabaseId,
                     SqlIdentifier = SqlIdentifier,
                     PlanHash = PlanHash,
+                    DatabaseId = DatabaseId,
+                    Id = Id,
                     Page = Page,
                     OpcRequestId = OpcRequestId
                 };

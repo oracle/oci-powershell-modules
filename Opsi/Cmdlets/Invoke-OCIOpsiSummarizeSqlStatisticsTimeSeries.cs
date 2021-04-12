@@ -24,8 +24,11 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique SQL_ID for a SQL Statement. Example: `6rgjh9bjmy2s7`")]
         public string SqlIdentifier { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.")]
         public System.Collections.Generic.List<string> DatabaseId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.")]
+        public System.Collections.Generic.List<string> Id { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specify time period in ISO 8601 format with respect to current time. Default is last 30 days represented by P30D. If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored. Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).")]
         public string AnalysisTimeInterval { get; set; }
@@ -54,6 +57,7 @@ namespace Oci.OpsiService.Cmdlets
                     CompartmentId = CompartmentId,
                     SqlIdentifier = SqlIdentifier,
                     DatabaseId = DatabaseId,
+                    Id = Id,
                     AnalysisTimeInterval = AnalysisTimeInterval,
                     TimeIntervalStart = TimeIntervalStart,
                     TimeIntervalEnd = TimeIntervalEnd,
