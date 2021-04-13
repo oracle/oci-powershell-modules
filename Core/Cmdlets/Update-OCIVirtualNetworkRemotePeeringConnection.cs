@@ -18,7 +18,7 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.RemotePeeringConnection), typeof(Oci.CoreService.Responses.UpdateRemotePeeringConnectionResponse) })]
     public class UpdateOCIVirtualNetworkRemotePeeringConnection : OCIVirtualNetworkCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the remote peering connection (RPC).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the remote peering connection (RPC).")]
         public string RemotePeeringConnectionId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to the update the peering connection to remote region")]

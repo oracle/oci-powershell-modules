@@ -18,10 +18,10 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.CoreService.Responses.BulkDeleteVirtualCircuitPublicPrefixesResponse) })]
     public class InvokeOCIVirtualNetworkBulkDeleteVirtualCircuitPublicPrefixes : OCIVirtualNetworkCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the virtual circuit.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the virtual circuit.")]
         public string VirtualCircuitId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request with publix prefixes to be deleted from the virtual circuit")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request with public prefixes to be deleted from the virtual circuit.")]
         public BulkDeleteVirtualCircuitPublicPrefixesDetails BulkDeleteVirtualCircuitPublicPrefixesDetails { get; set; }
 
         protected override void ProcessRecord()

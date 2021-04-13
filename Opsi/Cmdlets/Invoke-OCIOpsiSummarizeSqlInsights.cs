@@ -21,11 +21,14 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.")]
         public System.Collections.Generic.List<Oci.OpsiService.Requests.SummarizeSqlInsightsRequest.DatabaseTypeEnum> DatabaseType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.")]
         public System.Collections.Generic.List<string> DatabaseId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.")]
+        public System.Collections.Generic.List<string> Id { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter sqls by percentage of db time.")]
         public System.Double DatabaseTimePctGreaterThan { get; set; }
@@ -57,6 +60,7 @@ namespace Oci.OpsiService.Cmdlets
                     CompartmentId = CompartmentId,
                     DatabaseType = DatabaseType,
                     DatabaseId = DatabaseId,
+                    Id = Id,
                     DatabaseTimePctGreaterThan = DatabaseTimePctGreaterThan,
                     AnalysisTimeInterval = AnalysisTimeInterval,
                     TimeIntervalStart = TimeIntervalStart,

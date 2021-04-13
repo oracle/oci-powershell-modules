@@ -26,8 +26,11 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"One or more unique SQL_IDs for a SQL Statement. Example: `6rgjh9bjmy2s7`")]
         public System.Collections.Generic.List<string> SqlIdentifier { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the assosicated DBaaS entity.")]
         public System.Collections.Generic.List<string> DatabaseId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.")]
+        public System.Collections.Generic.List<string> Id { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The value of the `opc-next-page` response header from the previous ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
@@ -50,6 +53,7 @@ namespace Oci.OpsiService.Cmdlets
                     CompartmentId = CompartmentId,
                     SqlIdentifier = SqlIdentifier,
                     DatabaseId = DatabaseId,
+                    Id = Id,
                     Page = Page,
                     OpcRequestId = OpcRequestId
                 };

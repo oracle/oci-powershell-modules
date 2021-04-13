@@ -18,14 +18,17 @@ namespace Oci.OpsiService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OpsiService.Models.IngestSqlBucketResponseDetails), typeof(Oci.OpsiService.Responses.IngestSqlBucketResponse) })]
     public class InvokeOCIOpsiIngestSqlBucket : OCIOperationsInsightsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
-        public string CompartmentId { get; set; }
-
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.")]
-        public string DatabaseId { get; set; }
-
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Collection of SQL bucket objects for a particular database.")]
         public IngestSqlBucketDetails IngestSqlBucketDetails { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
+        public string CompartmentId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.")]
+        public string DatabaseId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.")]
+        public string Id { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
@@ -47,9 +50,10 @@ namespace Oci.OpsiService.Cmdlets
             {
                 request = new IngestSqlBucketRequest
                 {
+                    IngestSqlBucketDetails = IngestSqlBucketDetails,
                     CompartmentId = CompartmentId,
                     DatabaseId = DatabaseId,
-                    IngestSqlBucketDetails = IngestSqlBucketDetails,
+                    Id = Id,
                     OpcRequestId = OpcRequestId,
                     IfMatch = IfMatch,
                     OpcRetryToken = OpcRetryToken

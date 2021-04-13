@@ -3,6 +3,44 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 13.0.0 - 2021-04-13
+### Added
+- Support for the Database Migration service.
+- Support for the Networking Topology service.
+- Support for getting the id of peered VCNs on local peering gateways in the Networking service.
+- Support for burstable instances in the Compute service.
+- Support for preemptible instances in the Compute service.
+- Support for fractional resource usage and availability in the Limits service.
+- Support for streaming analytics in the Service Connector Hub service.
+- Support for flexible routing inside DRGs to enable packet flow between any two attachments in the Networking service.
+- Support for routing policy to customize dynamic import/export of routes in the Networking service.
+- Support for IPv6, including on FastConnect and IPsec resources, in the Networking service.
+- Support for request validation policies in the API Gateway service.
+- Support for RESP-compliant (e.g. REDIS) response caches, and for configuring response caching per-route in the API Gateway service.
+- Support for flexible billing in the VMWare Solution service.
+- Support for new DNS format for the Web Application Acceleration and Security service.
+- Support for configuring APM tracing on applications and functions in the Functions service.
+- Support for Enterprise Manager external databases and Management Agent Service managed external databases and hosts in the Operations Insights service.
+- Support for getting cluster cache metrics for RAC CDB managed databases in the Database Management service.
+ 
+### Breaking Changes
+- Required property `PeerId` was added to the `Oci.CoreService.Models.LocalPeeringGateway` model in the Core service.
+- The `IsInternetAccessAllowed` property was removed from the `Oci.CoreService.Models.CreateIpv6Details` model in the Core service.
+- The `Ipv6CidrBlock` property was removed from the `Oci.CoreService.Models.CreateVcnDetails` model in the Core service.
+- The `Ipv6PublicCidrBlock` property was removed from the `Oci.CoreService.Models.Subnet` model in the Core service.
+- The `Ipv6PublicCidrBlock` property was replaced by `Ipv6CidrBlocks` in the `Oci.CoreService.Models.Vcn` model in the Core service.
+- The properties `PublicIpAddress` and `IsInternetAccessAllowed` were removed from the `Oci.CoreService.Models.Ipv6` model in the Core service.
+- `VcnId` was made optional in the `Oci.CoreService.Models.CreateDrgAttachmentDetails` model in the Core service.
+- Required property `CurrentSku` was added to the `Oci.OcvpService.Models.CreateEsxiHostDetails` model in the Ocvp service.
+- Required property `InitialSku` was added to the `Oci.OcvpService.Models.CreateSddcDetails` model in the Ocvp service.
+- Required properties `BillingContractEndDate`, `NextSku` & `CurrentSku` were added to the `Oci.OcvpService.Models.EsxiHost` model in the Ocvp service.
+- Required properties `BillingContractEndDate`, `NextSku` & `CurrentSku` were added to the `Oci.OcvpService.Models.EsxiHostSummary` model in the Ocvp service.
+- Required property `InitialSku` was added to the `Oci.OcvpService.Models.Sddc` model in the Ocvp service.
+- Required property `Id` was added to the `Oci.OpsiService.Models.DatabaseDetails` model in the Opsi service.
+- The `CompartmentId` property was made optional in the `Oci.OpsiService.Requests.ListDatabaseInsightsRequest` request in the Opsi service.
+- The properties `CompartmentId` and `DatabaseId` were made optional in the `Oci.OpsiService.Requests.IngestSqlTextRequest` request in the Opsi service.
+- The properties `CompartmentId` and `DatabaseId` were made optional in the `Oci.OpsiService.Requests.IngestSqlPlanLinesRequest` request in the Opsi service.
+
 ## 12.1.0 - 2021-04-06
 ### Added
 - Support for scheduling the suspension and resumption of compute instance pools based on predefined schedules in the Autoscaling service.

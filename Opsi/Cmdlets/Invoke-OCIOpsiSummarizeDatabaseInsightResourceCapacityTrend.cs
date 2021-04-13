@@ -21,7 +21,7 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by resource metric. Supported values are CPU and STORAGE.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by resource metric. Supported values are CPU , STORAGE, MEMORY and IO.")]
         public string ResourceMetric { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specify time period in ISO 8601 format with respect to current time. Default is last 30 days represented by P30D. If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored. Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).")]
@@ -33,11 +33,14 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Analysis end time in UTC in ISO 8601 format(exclusive). Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd are used together. If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.")]
         public System.Nullable<System.DateTime> TimeIntervalEnd { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.")]
         public System.Collections.Generic.List<Oci.OpsiService.Requests.SummarizeDatabaseInsightResourceCapacityTrendRequest.DatabaseTypeEnum> DatabaseType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.")]
         public System.Collections.Generic.List<string> DatabaseId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.")]
+        public System.Collections.Generic.List<string> Id { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by utilization level by the following buckets:   - HIGH_UTILIZATION: DBs with utilization greater or equal than 75.   - LOW_UTILIZATION: DBs with utilization lower than 25.   - MEDIUM_HIGH_UTILIZATION: DBs with utilization greater or equal than 50 but lower than 75.   - MEDIUM_LOW_UTILIZATION: DBs with utilization greater or equal than 25 but lower than 50.")]
         public System.Nullable<Oci.OpsiService.Requests.SummarizeDatabaseInsightResourceCapacityTrendRequest.UtilizationLevelEnum> UtilizationLevel { get; set; }
@@ -50,6 +53,12 @@ namespace Oci.OpsiService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Sorts using end timestamp , capacity or baseCapacity")]
         public System.Nullable<Oci.OpsiService.Requests.SummarizeDatabaseInsightResourceCapacityTrendRequest.SortByEnum> SortBy { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Tablespace name for a database")]
+        public string TablespaceName { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more hostname.")]
+        public System.Collections.Generic.List<string> HostName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
@@ -70,10 +79,13 @@ namespace Oci.OpsiService.Cmdlets
                     TimeIntervalEnd = TimeIntervalEnd,
                     DatabaseType = DatabaseType,
                     DatabaseId = DatabaseId,
+                    Id = Id,
                     UtilizationLevel = UtilizationLevel,
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
+                    TablespaceName = TablespaceName,
+                    HostName = HostName,
                     OpcRequestId = OpcRequestId
                 };
 
