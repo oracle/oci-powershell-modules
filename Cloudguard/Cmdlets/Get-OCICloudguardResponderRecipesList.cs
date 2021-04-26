@@ -23,7 +23,7 @@ namespace Oci.CloudguardService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Default is false. When set to true, the list of all Oracle Managed Resources Metadata supported by Cloud Guard is returned.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Default is false. When set to true, the list of all Oracle Managed Resources Metadata supported by Cloud Guard are returned.")]
         public System.Nullable<bool> ResourceMetadataOnly { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given.")]
