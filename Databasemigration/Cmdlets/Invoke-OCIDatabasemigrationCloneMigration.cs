@@ -18,7 +18,7 @@ namespace Oci.DatabasemigrationService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabasemigrationService.Models.Migration), typeof(Oci.DatabasemigrationService.Responses.CloneMigrationResponse) })]
     public class InvokeOCIDatabasemigrationCloneMigration : OCIDatabaseMigrationCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the job")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the migration")]
         public string MigrationId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Clone Migration properties.")]

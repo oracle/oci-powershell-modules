@@ -18,7 +18,7 @@ namespace Oci.DatabasemigrationService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.DatabasemigrationService.Responses.ChangeConnectionCompartmentResponse) })]
     public class MoveOCIDatabasemigrationConnectionCompartment : OCIDatabaseMigrationCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the job")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the database connection")]
         public string ConnectionId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details to change the compartment.")]

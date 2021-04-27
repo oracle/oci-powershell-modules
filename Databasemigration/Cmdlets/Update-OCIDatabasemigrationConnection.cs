@@ -18,7 +18,7 @@ namespace Oci.DatabasemigrationService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.DatabasemigrationService.Responses.UpdateConnectionResponse) })]
     public class UpdateOCIDatabasemigrationConnection : OCIDatabaseMigrationCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the job")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the database connection")]
         public string ConnectionId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Database Connection properties.")]

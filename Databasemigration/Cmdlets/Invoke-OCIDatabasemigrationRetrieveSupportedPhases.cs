@@ -18,7 +18,7 @@ namespace Oci.DatabasemigrationService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabasemigrationService.Models.MigrationPhaseCollection), typeof(Oci.DatabasemigrationService.Responses.RetrieveSupportedPhasesResponse) })]
     public class InvokeOCIDatabasemigrationRetrieveSupportedPhases : OCIDatabaseMigrationCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the job")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the migration")]
         public string MigrationId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
