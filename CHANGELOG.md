@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 13.5.0 - 2021-05-18
+### Added
+- Support for spark-submit compatible options in the Data Flow service.
+- Support for Object Storage as a configuration source in the Resource Manager service.
+
 ## 13.4.0 - 2021-05-11
 ### Added
 - Support for creating notebook sessions with larger block volumes in the Data Science service.
