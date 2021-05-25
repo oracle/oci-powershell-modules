@@ -23,22 +23,22 @@ namespace Oci.LimitsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the parent compartment (remember that the tenancy is simply the root compartment).")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The target service name")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The target service name.")]
         public string ServiceName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter entries by scope type.")]
         public System.Nullable<Oci.LimitsService.Requests.ListLimitValuesRequest.ScopeTypeEnum> ScopeType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter entries by availability domain. This implies that only AD-specific values will be returned.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter entries by availability domain. This implies that only AD-specific values are returned.")]
         public string AvailabilityDomain { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional field, can be used to see a specific resource limit value.")]
         public string Name { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. We will be implicitly sorting by availabilityDomain, as a second level field, if available.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. The sorting is by availabilityDomain, as a second level field, if available.")]
         public System.Nullable<Oci.LimitsService.Requests.ListLimitValuesRequest.SortByEnum> SortBy { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'asc' or 'desc'. By default it will be ascending.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'asc' or 'desc'. By default, it is ascending.")]
         public System.Nullable<Oci.LimitsService.Requests.ListLimitValuesRequest.SortOrderEnum> SortOrder { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return in a paginated ""List"" call.", ParameterSetName = LimitSet)]

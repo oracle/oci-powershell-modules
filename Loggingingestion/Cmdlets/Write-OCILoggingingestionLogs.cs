@@ -24,7 +24,7 @@ namespace Oci.LoggingingestionService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The logs to emit.")]
         public PutLogsDetails PutLogsDetails { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Effective timestamp, for when the agent started processing the log segment being sent. An RFC3339-formatted date-time string.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Effective timestamp, for when the agent started processing the log segment being sent. An RFC3339-formatted date-time string with milliseconds precision.")]
         public System.Nullable<System.DateTime> TimestampOpcAgentProcessing { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Version of the agent sending the request.")]
