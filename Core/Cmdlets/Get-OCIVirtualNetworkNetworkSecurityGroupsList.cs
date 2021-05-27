@@ -20,8 +20,11 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.NetworkSecurityGroup), typeof(Oci.CoreService.Responses.ListNetworkSecurityGroupsResponse) })]
     public class GetOCIVirtualNetworkNetworkSecurityGroupsList : OCIVirtualNetworkCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.")]
+        public string VlanId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.")]
         public string VcnId { get; set; }
@@ -61,6 +64,7 @@ Example: `50`", ParameterSetName = LimitSet)]
                 request = new ListNetworkSecurityGroupsRequest
                 {
                     CompartmentId = CompartmentId,
+                    VlanId = VlanId,
                     VcnId = VcnId,
                     Limit = Limit,
                     Page = Page,
