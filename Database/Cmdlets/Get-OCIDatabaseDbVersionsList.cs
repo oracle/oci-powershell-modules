@@ -41,6 +41,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If provided, filters the results to the set of database versions which are supported for Upgrade.")]
         public System.Nullable<bool> IsUpgradeSupported { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If true, filters the results to the set of Oracle Database versions that are supported for OCI database software images.")]
+        public System.Nullable<bool> IsDatabaseSoftwareImageSupported { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -59,7 +62,8 @@ namespace Oci.DatabaseService.Cmdlets
                     DbSystemShape = DbSystemShape,
                     DbSystemId = DbSystemId,
                     StorageManagement = StorageManagement,
-                    IsUpgradeSupported = IsUpgradeSupported
+                    IsUpgradeSupported = IsUpgradeSupported,
+                    IsDatabaseSoftwareImageSupported = IsDatabaseSoftwareImageSupported
                 };
                 IEnumerable<ListDbVersionsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
