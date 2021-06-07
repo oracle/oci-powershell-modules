@@ -42,6 +42,12 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.")]
         public System.Collections.Generic.List<string> Id { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more hostname.")]
+        public System.Collections.Generic.List<string> HostName { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Flag to indicate if database instance level metrics should be returned. The flag is ignored when a host name filter is not applied. When a hostname filter is applied this flag will determine whether to return metrics for the instances located on the specified host or for the whole database which contains an instance on this host.")]
+        public System.Nullable<bool> IsDatabaseInstanceLevelMetrics { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The value of the `opc-next-page` response header from the previous ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
 
@@ -68,6 +74,8 @@ namespace Oci.OpsiService.Cmdlets
                     DatabaseType = DatabaseType,
                     DatabaseId = DatabaseId,
                     Id = Id,
+                    HostName = HostName,
+                    IsDatabaseInstanceLevelMetrics = IsDatabaseInstanceLevelMetrics,
                     Page = Page,
                     Percentile = Percentile,
                     OpcRequestId = OpcRequestId

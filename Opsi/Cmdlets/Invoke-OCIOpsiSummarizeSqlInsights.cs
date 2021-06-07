@@ -30,6 +30,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.")]
         public System.Collections.Generic.List<string> Id { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more hostname.")]
+        public System.Collections.Generic.List<string> HostName { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter sqls by percentage of db time.")]
         public System.Double DatabaseTimePctGreaterThan { get; set; }
 
@@ -61,6 +64,7 @@ namespace Oci.OpsiService.Cmdlets
                     DatabaseType = DatabaseType,
                     DatabaseId = DatabaseId,
                     Id = Id,
+                    HostName = HostName,
                     DatabaseTimePctGreaterThan = DatabaseTimePctGreaterThan,
                     AnalysisTimeInterval = AnalysisTimeInterval,
                     TimeIntervalStart = TimeIntervalStart,
