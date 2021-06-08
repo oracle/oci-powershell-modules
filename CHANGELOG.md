@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 14.2.0 - 2021-06-08
+### Added
+- Support for Java Management service.
+- Support for resource principals for the Enterprise Manager bridge resource in Operations Insights service.
+- Support for encryptionInTransitType in BootVolumeAttachment and IScsiVolumeAttachment in Core service.
+- Support for updating iscsiLoginState for VolumeAttachment in Core service.
+- Support for a new type of Source called Import for use with the Export tool in Application Migration service.
+
 ## 14.1.0 - 2021-06-01
 ### Added
 - Support for configuration of autonomous database KMS keys in the Database service.

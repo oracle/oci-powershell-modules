@@ -51,6 +51,12 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Sorts using end timestamp, usage or capacity")]
         public System.Nullable<Oci.OpsiService.Requests.SummarizeDatabaseInsightResourceUsageTrendRequest.SortByEnum> SortBy { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more hostname.")]
+        public System.Collections.Generic.List<string> HostName { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Flag to indicate if database instance level metrics should be returned. The flag is ignored when a host name filter is not applied. When a hostname filter is applied this flag will determine whether to return metrics for the instances located on the specified host or for the whole database which contains an instance on this host.")]
+        public System.Nullable<bool> IsDatabaseInstanceLevelMetrics { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -74,6 +80,8 @@ namespace Oci.OpsiService.Cmdlets
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
+                    HostName = HostName,
+                    IsDatabaseInstanceLevelMetrics = IsDatabaseInstanceLevelMetrics,
                     OpcRequestId = OpcRequestId
                 };
 
