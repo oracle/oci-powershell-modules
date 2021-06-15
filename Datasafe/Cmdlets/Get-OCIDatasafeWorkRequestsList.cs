@@ -23,6 +23,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the specified compartment OCID.")]
         public string CompartmentId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only work requests that match the specific operation type.")]
+        public string OperationType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only work requests that match the specified resource OCID.")]
         public string ResourceId { get; set; }
 
@@ -48,6 +51,7 @@ namespace Oci.DatasafeService.Cmdlets
                 request = new ListWorkRequestsRequest
                 {
                     CompartmentId = CompartmentId,
+                    OperationType = OperationType,
                     ResourceId = ResourceId,
                     OpcRequestId = OpcRequestId,
                     Page = Page,

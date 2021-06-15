@@ -47,6 +47,9 @@ namespace Oci.DataflowService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The displayName prefix.")]
         public string DisplayNameStartsWith { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Spark version utilized to run the application.")]
+        public string SparkVersion { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -67,7 +70,8 @@ namespace Oci.DataflowService.Cmdlets
                     SortOrder = SortOrder,
                     DisplayName = DisplayName,
                     OwnerPrincipalId = OwnerPrincipalId,
-                    DisplayNameStartsWith = DisplayNameStartsWith
+                    DisplayNameStartsWith = DisplayNameStartsWith,
+                    SparkVersion = SparkVersion
                 };
                 IEnumerable<ListApplicationsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
