@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 15.0.0 - 2021-06-15
+### Added
+- Support for elastic storage on Exadata Infrastructure resources for Cloud at Customer in the Database service.
+- Support for registration and management of target databases in the Data Safe service.
+- Support for config on metadata in the Management Dashboard service.
+- Support for a new work request operation type for node pool reconciliation events in the Container Engine for Kubernetes service.
+- Support for migrating clusters with a public Kubernetes API endpoint which are not integrated with a customer's VCN to a VCN-native cluster in the Container Engine for Kubernetes service.
+- Support for getting the spark version of applications, and filtering applications by spark version, in the Data Flow service.
+
+### Breaking Changes
+- The properties `FreeformTags` and `DefinedTags` were removed from the `Oci.ManagementdashboardService.Models.ManagementDashboardExportDetails` model in the Management Dashboard service.
+
 ## 14.2.0 - 2021-06-08
 ### Added
 - Support for Java Management service.
