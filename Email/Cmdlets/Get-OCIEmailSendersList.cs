@@ -29,6 +29,9 @@ namespace Oci.EmailService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The current state of a sender.")]
         public System.Nullable<Oci.EmailService.Models.Sender.LifecycleStateEnum> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to only return resources that match the given domain exactly.")]
+        public string Domain { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The email address of the approved sender.")]
         public string EmailAddress { get; set; }
 
@@ -42,7 +45,7 @@ namespace Oci.EmailService.Cmdlets
         public System.Nullable<Oci.EmailService.Requests.ListSendersRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending or descending order.")]
-        public System.Nullable<Oci.EmailService.Requests.ListSendersRequest.SortOrderEnum> SortOrder { get; set; }
+        public System.Nullable<Oci.EmailService.Models.SortOrder> SortOrder { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
@@ -59,6 +62,7 @@ namespace Oci.EmailService.Cmdlets
                     CompartmentId = CompartmentId,
                     OpcRequestId = OpcRequestId,
                     LifecycleState = LifecycleState,
+                    Domain = Domain,
                     EmailAddress = EmailAddress,
                     Page = Page,
                     Limit = Limit,

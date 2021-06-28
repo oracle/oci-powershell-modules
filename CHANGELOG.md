@@ -3,6 +3,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 16.0.0 - 2021-06-29
+### Added
+- Support for the DevOps service.
+- Support for configuring network security groups for node pools in the Container Engine for Kubernetes service.
+- Support for optionally specifying CPU core count and data storage size when creating autonomous databases in the Database service.
+- Support for metastore and initial data asset import/export in the Data Catalog service.
+- Support for associating domain names to emails and managing email domain names / DKIM in the Email Delivery service.
+- Support for email domain names on senders and suppressions in the Email Delivery service.
+ 
+### Breaking Changes
+- `DISPLAYNAME` enum was removed from the `SortBy` property in `Oci.DatacatalogService.Requests.ListJobExecutionsRequest` in the Data Catalog service.
+- The property `CpuCoreCount` was made optional in `Oci.DatabaseService.Models.CreateAutonomousDatabaseBase` in the Database service.
+- `SortOrder` type was changed from `Oci.EmailService.Requests.ListSendersRequest.SortOrderEnum` to `Oci.EmailService.Models.SortOrder` in the `Get-OCIEmailSendersList` cmdlet in the Email service.
+- `SortOrder` type was changed from `Oci.EmailService.Requests.ListSendersRequest.SortOrderEnum` to `Oci.EmailService.Models.SortOrder` in the `Get-OCIEmailSuppressionsList` cmdlet in the Email service.
+
 ## 15.1.0 - 2021-06-22
 ### Added
 - Support for virtual machine and bare metal pluggable databases in the Database service
