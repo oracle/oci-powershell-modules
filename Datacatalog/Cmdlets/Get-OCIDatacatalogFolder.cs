@@ -35,6 +35,11 @@ namespace Oci.DatacatalogService.Cmdlets
         public string FolderKey { get; set; }
 
         
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates whether the list of objects and their relationships to this object will be provided in the response.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates whether the list of objects and their relationships to this object will be provided in the response.", ParameterSetName = Default)]
+        public System.Nullable<bool> IsIncludeObjectRelationships { get; set; }
+
+        
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies the fields to return in a folder response.", ParameterSetName = LifecycleStateParamSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies the fields to return in a folder response.", ParameterSetName = Default)]
         public System.Collections.Generic.List<Oci.DatacatalogService.Requests.GetFolderRequest.FieldsEnum> Fields { get; set; }
@@ -65,6 +70,7 @@ namespace Oci.DatacatalogService.Cmdlets
                     CatalogId = CatalogId,
                     DataAssetKey = DataAssetKey,
                     FolderKey = FolderKey,
+                    IsIncludeObjectRelationships = IsIncludeObjectRelationships,
                     Fields = Fields,
                     OpcRequestId = OpcRequestId
                 };

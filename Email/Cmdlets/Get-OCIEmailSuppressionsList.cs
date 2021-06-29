@@ -49,7 +49,7 @@ namespace Oci.EmailService.Cmdlets
         public System.Nullable<Oci.EmailService.Requests.ListSuppressionsRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending or descending order.")]
-        public System.Nullable<Oci.EmailService.Requests.ListSuppressionsRequest.SortOrderEnum> SortOrder { get; set; }
+        public System.Nullable<Oci.EmailService.Models.SortOrder> SortOrder { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
