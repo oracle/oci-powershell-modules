@@ -23,6 +23,9 @@ namespace Oci.OceService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the tenancy in which to list resources.")]
+        public string TenancyId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A user-friendly name. Does not have to be unique, and it's changeable.
 
 Example: `My new resource`")]
@@ -59,6 +62,7 @@ Example: `My new resource`")]
                 request = new ListOceInstancesRequest
                 {
                     CompartmentId = CompartmentId,
+                    TenancyId = TenancyId,
                     DisplayName = DisplayName,
                     Limit = Limit,
                     Page = Page,
