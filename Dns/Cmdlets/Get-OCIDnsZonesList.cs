@@ -62,6 +62,9 @@ namespace Oci.DnsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the view the resource is associated with.")]
         public string ViewId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Search for zones that are associated with a TSIG key.")]
+        public string TsigKeyId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -87,7 +90,8 @@ namespace Oci.DnsService.Cmdlets
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     Scope = Scope,
-                    ViewId = ViewId
+                    ViewId = ViewId,
+                    TsigKeyId = TsigKeyId
                 };
                 IEnumerable<ListZonesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

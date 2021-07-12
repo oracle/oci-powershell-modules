@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 17.0.0 - 2021-07-13
+### Added
+- Support for the AI Anomaly Detection service.
+- Support for retrieving a DNS zone as a zone file in the DNS service.
+- Support for querying manual adjustments in the Usage service.
+- Support for searching Marketplace listings in the Marketplace service.
+- Support for new cluster type 'ODH' in the Big Data service.
+- Support for availability domain as an optional parameter when creating VLANs in the Networking service.
+- Support for search domain type on DHCP options, to support multi-level domain search in the Networking service.
+ 
+### Breaking Changes
+- The property `TSIG` was removed from `Oci.DnsService.Models.ExternalMaster` model in the DNS service.
+- The models `Oci.UsageapiService.Models.SavedScheduleReport`, `Oci.UsageapiService.Models.ScheduleReport`, `Oci.UsageapiService.Models.ScheduleReportSummary`, `Oci.UsageapiService.Models.UpdateCustomTableDetail` and `Oci.UsageapiService.Models.UpdateScheduleReportDetails` were removed from the Usage Service.
+
 ## 16.1.0 - 2021-07-06
 ### Added
 - Support for order activation in the Organizations service.
