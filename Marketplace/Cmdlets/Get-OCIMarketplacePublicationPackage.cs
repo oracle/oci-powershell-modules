@@ -18,7 +18,7 @@ namespace Oci.MarketplaceService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.MarketplaceService.Models.PublicationPackage), typeof(Oci.MarketplaceService.Responses.GetPublicationPackageResponse) })]
     public class GetOCIMarketplacePublicationPackage : OCIMarketplaceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier for the listing.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier for the publication.")]
         public string PublicationId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The version of the package. Package versions are unique within a listing.")]

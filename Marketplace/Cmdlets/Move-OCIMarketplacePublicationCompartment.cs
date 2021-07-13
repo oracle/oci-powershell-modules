@@ -18,10 +18,10 @@ namespace Oci.MarketplaceService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.MarketplaceService.Responses.ChangePublicationCompartmentResponse) })]
     public class MoveOCIMarketplacePublicationCompartment : OCIMarketplaceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier for the listing.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier for the publication.")]
         public string PublicationId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to change the compartment of a given Publication.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details of the request to change the compartment of a given publication.")]
         public ChangePublicationCompartmentDetails ChangePublicationCompartmentDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected).")]

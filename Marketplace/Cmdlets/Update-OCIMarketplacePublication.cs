@@ -18,10 +18,10 @@ namespace Oci.MarketplaceService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.MarketplaceService.Models.Publication), typeof(Oci.MarketplaceService.Responses.UpdatePublicationResponse) })]
     public class UpdateOCIMarketplacePublication : OCIMarketplaceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier for the listing.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier for the publication.")]
         public string PublicationId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details of the Publication which needs to be updated")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details for updating the publication.")]
         public UpdatePublicationDetails UpdatePublicationDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

@@ -18,7 +18,7 @@ namespace Oci.UsageapiService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.UsageapiService.Models.Query), typeof(Oci.UsageapiService.Responses.CreateQueryResponse) })]
     public class NewOCIUsageapiQuery : OCIUsageapiCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"New query details. It is up to 10 saved query.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"New query details. Up to ten saved queries.")]
         public CreateQueryDetails CreateQueryDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
