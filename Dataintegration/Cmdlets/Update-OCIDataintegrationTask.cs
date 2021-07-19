@@ -24,7 +24,7 @@ namespace Oci.DataintegrationService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The task key.")]
         public string TaskKey { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details needed to update a task. This parameter also accepts subtypes <Oci.DataintegrationService.Models.UpdateTaskFromPipelineTask>, <Oci.DataintegrationService.Models.UpdateTaskFromDataLoaderTask>, <Oci.DataintegrationService.Models.UpdateTaskFromIntegrationTask> of type <Oci.DataintegrationService.Models.UpdateTaskDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details needed to update a task. This parameter also accepts subtypes <Oci.DataintegrationService.Models.UpdateTaskFromRestTask>, <Oci.DataintegrationService.Models.UpdateTaskFromPipelineTask>, <Oci.DataintegrationService.Models.UpdateTaskFromOCIDataflowTask>, <Oci.DataintegrationService.Models.UpdateTaskFromSQLTask>, <Oci.DataintegrationService.Models.UpdateTaskFromDataLoaderTask>, <Oci.DataintegrationService.Models.UpdateTaskFromIntegrationTask> of type <Oci.DataintegrationService.Models.UpdateTaskDetails>.")]
         public UpdateTaskDetails UpdateTaskDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

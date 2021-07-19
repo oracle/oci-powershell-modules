@@ -20,8 +20,8 @@ namespace Oci.DatabaseService.Cmdlets
     public class InvokeOCIDatabaseRemoteClonePluggableDatabase : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to clone a pluggable database remotely.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to clone a pluggable database remotely.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to clone a pluggable database (PDB) to a different database (CDB) from the source PDB.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to clone a pluggable database (PDB) to a different database (CDB) from the source PDB.", ParameterSetName = Default)]
         public RemoteClonePluggableDatabaseDetails RemoteClonePluggableDatabaseDetails { get; set; }
 
         

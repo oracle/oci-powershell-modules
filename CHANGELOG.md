@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 18.0.0 - 2021-07-20
+### Added
+- Support for schedules, schedule tasks, REST tasks, operators, S3, and Fusion Apps in the Data Integration service.
+- Support for getting available updates and update histories for VM clusters in the Database service.
+- Support for downloading network validation reports for Exadata network resources in the Database service.
+- Support for patch and upgrade of Grid Infrastructure (GI), and update of DomU OS software for VM clusters in the Database service.
+- Support for updating data guard associations in the Database service.
+- Limit Expect 100-continue to be enabled for only for Object Storage anf Log Analytics service.
+ 
+### Breaking Changes
+- The property `BucketName` was replaced by `BucketSchema` in the `Oci.DataintegrationService.Models.OracleAdwcWriteAttributes` and `Oci.DataintegrationService.Models.OracleAtpWriteAttributes` models in the Data Integration service.
+- The type for property `Type` was changed from `BaseType` to `System.Object` for the `Oci.DataintegrationService.Models.Parameter` model in the Data Integration service.
+- The type for property `Type` was changed from `string` to `System.Object` for the `Oci.DataintegrationService.Models.ShapeField` and `Oci.DataintegrationService.Models.NativeShapeField` models in the Data Integration service.
+
 ## 17.0.0 - 2021-07-13
 ### Added
 - Support for the AI Anomaly Detection service.

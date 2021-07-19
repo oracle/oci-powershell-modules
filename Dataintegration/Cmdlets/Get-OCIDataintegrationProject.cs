@@ -27,6 +27,9 @@ namespace Oci.DataintegrationService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This parameter allows users to specify which view of the object to return. CHILD_COUNT_STATISTICS - This option is used to get statistics on immediate children of the object by their type.")]
+        public System.Collections.Generic.List<Oci.DataintegrationService.Requests.GetProjectRequest.ProjectionEnum> Projection { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -38,7 +41,8 @@ namespace Oci.DataintegrationService.Cmdlets
                 {
                     WorkspaceId = WorkspaceId,
                     ProjectKey = ProjectKey,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    Projection = Projection
                 };
 
                 response = client.GetProject(request).GetAwaiter().GetResult();
