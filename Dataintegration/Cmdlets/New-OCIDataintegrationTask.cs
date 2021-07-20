@@ -21,7 +21,7 @@ namespace Oci.DataintegrationService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The workspace ID.")]
         public string WorkspaceId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details needed to create a new task. This parameter also accepts subtypes <Oci.DataintegrationService.Models.CreateTaskFromIntegrationTask>, <Oci.DataintegrationService.Models.CreateTaskFromDataLoaderTask>, <Oci.DataintegrationService.Models.CreateTaskFromPipelineTask> of type <Oci.DataintegrationService.Models.CreateTaskDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details needed to create a new task. This parameter also accepts subtypes <Oci.DataintegrationService.Models.CreateTaskFromIntegrationTask>, <Oci.DataintegrationService.Models.CreateTaskFromDataLoaderTask>, <Oci.DataintegrationService.Models.CreateTaskFromPipelineTask>, <Oci.DataintegrationService.Models.CreateTaskFromOCIDataflowTask>, <Oci.DataintegrationService.Models.CreateTaskFromSQLTask>, <Oci.DataintegrationService.Models.CreateTaskFromRestTask> of type <Oci.DataintegrationService.Models.CreateTaskDetails>.")]
         public CreateTaskDetails CreateTaskDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.")]

@@ -27,6 +27,9 @@ namespace Oci.DataintegrationService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used to expand references of the object. If value is true, then all referenced objects are expanded. If value is false, then shallow objects are returned in place of references. Default is false. <br><br><B>Example:</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>")]
+        public string ExpandReferences { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -38,7 +41,8 @@ namespace Oci.DataintegrationService.Cmdlets
                 {
                     WorkspaceId = WorkspaceId,
                     PipelineKey = PipelineKey,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    ExpandReferences = ExpandReferences
                 };
 
                 response = client.GetPipeline(request).GetAwaiter().GetResult();

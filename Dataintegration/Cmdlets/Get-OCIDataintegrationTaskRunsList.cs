@@ -29,6 +29,9 @@ namespace Oci.DataintegrationService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used to filter by the key of the object.")]
+        public System.Collections.Generic.List<string> Key { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used to filter by the project or the folder object.")]
         public string AggregatorKey { get; set; }
 
@@ -53,6 +56,9 @@ namespace Oci.DataintegrationService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).")]
         public System.Nullable<Oci.DataintegrationService.Requests.ListTaskRunsRequest.SortByEnum> SortBy { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This filter parameter can be used to filter by model specific queryable fields of the object <br><br><B>Examples:-</B><br> <ul> <li><B>?filter=status eq Failed</B> returns all objects that have a status field with value Failed</li> </ul>")]
+        public System.Collections.Generic.List<string> Filter { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -68,6 +74,7 @@ namespace Oci.DataintegrationService.Cmdlets
                     WorkspaceId = WorkspaceId,
                     ApplicationKey = ApplicationKey,
                     OpcRequestId = OpcRequestId,
+                    Key = Key,
                     AggregatorKey = AggregatorKey,
                     Fields = Fields,
                     Name = Name,
@@ -75,7 +82,8 @@ namespace Oci.DataintegrationService.Cmdlets
                     Page = Page,
                     Limit = Limit,
                     SortOrder = SortOrder,
-                    SortBy = SortBy
+                    SortBy = SortBy,
+                    Filter = Filter
                 };
                 IEnumerable<ListTaskRunsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
