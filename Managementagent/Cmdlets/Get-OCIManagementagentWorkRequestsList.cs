@@ -20,7 +20,7 @@ namespace Oci.ManagementagentService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ManagementagentService.Models.WorkRequestSummary), typeof(Oci.ManagementagentService.Responses.ListWorkRequestsResponse) })]
     public class GetOCIManagementagentWorkRequestsList : OCIManagementAgentCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment from which the Management Agents to be listed.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment to which a request will be scoped.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ManagementAgentID of the agent from which the Management Agents to be filtered.")]

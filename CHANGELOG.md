@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 19.0.0 - 2021-08-17
+### Added
+Support for getting management agent hosts which are eligible to create Operations Insights host resources on, in the Operations Insights service
+Support for getting summarized agent counts and summarized plugin counts in the Management Agent Cloud service
+
+### Breaking
+The type for parameters `PluginName` and `Version` have changed from `string` to `System.Collections.Generic.List<string>` in the `Get-OCIManagementagentsList` cmdlet in the Management Agent service.
+The type for parameter `PlatformType` has changed from `System.Nullable<Oci.ManagementagentService.Models.PlatformTypes>` to `System.Collections.Generic.List<Oci.ManagementagentService.Models.PlatformTypes>` in the `Get-OCIManagementagentsList` cmdlet in the  Management Agent service.
+
 ## 18.2.0 - 2021-08-03
 ### Added
 - Support for manually copying volume group backups across regions in the Block Volume service.

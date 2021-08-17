@@ -20,7 +20,7 @@ namespace Oci.ManagementagentService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ManagementagentService.Models.ManagementAgentPluginSummary), typeof(Oci.ManagementagentService.Responses.ListManagementAgentPluginsResponse) })]
     public class GetOCIManagementagentPluginsList : OCIManagementAgentCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment from which the Management Agents to be listed.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment to which a request will be scoped.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter to return only Management Agent Plugins having the particular display name.")]
@@ -44,6 +44,9 @@ namespace Oci.ManagementagentService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter to return only Management Agents in the particular lifecycle state.")]
         public System.Nullable<Oci.ManagementagentService.Models.LifecycleStates> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter to return only results having the particular platform type.")]
+        public System.Collections.Generic.List<Oci.ManagementagentService.Models.PlatformTypes> PlatformType { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -63,7 +66,8 @@ namespace Oci.ManagementagentService.Cmdlets
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,
-                    LifecycleState = LifecycleState
+                    LifecycleState = LifecycleState,
+                    PlatformType = PlatformType
                 };
                 IEnumerable<ListManagementAgentPluginsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
