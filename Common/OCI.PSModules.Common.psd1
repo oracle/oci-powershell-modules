@@ -12,7 +12,7 @@
 RootModule = 'assemblies/OCI.PSModules.Common.dll'
 
 # Version number of this module.
-ModuleVersion = '18.3.0'
+ModuleVersion = '19.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
