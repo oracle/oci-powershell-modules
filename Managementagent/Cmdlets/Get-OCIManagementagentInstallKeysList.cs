@@ -20,7 +20,7 @@ namespace Oci.ManagementagentService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ManagementagentService.Models.ManagementAgentInstallKeySummary), typeof(Oci.ManagementagentService.Responses.ListManagementAgentInstallKeysResponse) })]
     public class GetOCIManagementagentInstallKeysList : OCIManagementAgentCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment from which the Management Agents to be listed.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment to which a request will be scoped.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"if set to true then it fetches install key for all compartments where user has access to else only on the compartment specified.")]

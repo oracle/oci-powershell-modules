@@ -20,14 +20,14 @@ namespace Oci.ManagementagentService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ManagementagentService.Models.ManagementAgentSummary), typeof(Oci.ManagementagentService.Responses.ListManagementAgentsResponse) })]
     public class GetOCIManagementagentsList : OCIManagementAgentCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment from which the Management Agents to be listed.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment to which a request will be scoped.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter to return only Management Agents having the particular Plugin installed.")]
-        public string PluginName { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter to return only Management Agents having the particular Plugin installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed.")]
+        public System.Collections.Generic.List<string> PluginName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter to return only Management Agents having the particular agent version.")]
-        public string Version { get; set; }
+        public System.Collections.Generic.List<string> Version { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter to return only Management Agents having the particular display name.")]
         public string DisplayName { get; set; }
@@ -35,8 +35,17 @@ namespace Oci.ManagementagentService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter to return only Management Agents in the particular lifecycle state.")]
         public System.Nullable<Oci.ManagementagentService.Models.LifecycleStates> LifecycleState { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter to return only Management Agents having the particular platform type.")]
-        public System.Nullable<Oci.ManagementagentService.Models.PlatformTypes> PlatformType { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter to return only Management Agents in the particular availability status.")]
+        public System.Nullable<Oci.ManagementagentService.Models.AvailabilityStatus> AvailabilityStatus { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter to return only Management Agents having the particular agent host id.")]
+        public string HostId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter to return only results having the particular platform type.")]
+        public System.Collections.Generic.List<Oci.ManagementagentService.Models.PlatformTypes> PlatformType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.")]
+        public System.Nullable<bool> IsCustomerDeployed { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -70,7 +79,10 @@ namespace Oci.ManagementagentService.Cmdlets
                     Version = Version,
                     DisplayName = DisplayName,
                     LifecycleState = LifecycleState,
+                    AvailabilityStatus = AvailabilityStatus,
+                    HostId = HostId,
                     PlatformType = PlatformType,
+                    IsCustomerDeployed = IsCustomerDeployed,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,
