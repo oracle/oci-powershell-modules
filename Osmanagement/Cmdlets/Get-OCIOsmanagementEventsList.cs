@@ -16,26 +16,18 @@ using Oci.OsmanagementService.Models;
 
 namespace Oci.OsmanagementService.Cmdlets
 {
-    [Cmdlet("Get", "OCIOsmanagementScheduledJobsList")]
-    [OutputType(new System.Type[] { typeof(Oci.OsmanagementService.Models.ScheduledJobSummary), typeof(Oci.OsmanagementService.Responses.ListScheduledJobsResponse) })]
-    public class GetOCIOsmanagementScheduledJobsList : OCIOsManagementCmdlet
+    [Cmdlet("Get", "OCIOsmanagementEventsList")]
+    [OutputType(new System.Type[] { typeof(Oci.OsmanagementService.Models.EventCollection), typeof(Oci.OsmanagementService.Responses.ListEventsResponse) })]
+    public class GetOCIOsmanagementEventsList : OCIEventCmdlet
     {
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Instance Oracle Cloud identifier (ocid)")]
+        public string ManagedInstanceId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A user-friendly name. Does not have to be unique, and it's changeable.
-
-Example: `My new resource`")]
-        public string DisplayName { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the managed instance for which to list resources.")]
-        public string ManagedInstanceId { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the managed instace group for which to list resources.")]
-        public string ManagedInstanceGroupId { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The operation type for which to list resources")]
-        public System.Nullable<Oci.OsmanagementService.Models.OperationTypes> OperationType { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique event identifier (OCID)")]
+        public string EventId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -44,22 +36,22 @@ Example: `My new resource`")]
         public string Page { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'asc' or 'desc'.")]
-        public System.Nullable<Oci.OsmanagementService.Requests.ListScheduledJobsRequest.SortOrderEnum> SortOrder { get; set; }
+        public System.Nullable<Oci.OsmanagementService.Requests.ListEventsRequest.SortOrderEnum> SortOrder { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.")]
-        public System.Nullable<Oci.OsmanagementService.Requests.ListScheduledJobsRequest.SortByEnum> SortBy { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The current lifecycle state for the object.")]
-        public System.Nullable<Oci.OsmanagementService.Models.LifecycleStates> LifecycleState { get; set; }
+        public System.Nullable<Oci.OsmanagementService.Requests.ListEventsRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OS family for which to list resources.")]
-        public System.Nullable<Oci.OsmanagementService.Models.OsFamilies> OsFamily { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only event of given type.")]
+        public System.Nullable<Oci.OsmanagementService.Models.EventType> EventType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If true, will only filter out restricted Autonomous Linux Scheduled Job")]
-        public System.Nullable<bool> IsRestricted { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"filter event occurrence. Selecting only those last occurred before given date in ISO 8601 format Example: 2017-07-14T02:40:00.000Z")]
+        public System.Nullable<System.DateTime> LatestTimestampLessThan { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"filter event occurrence. Selecting only those last occurred on or after given date in ISO 8601 format Example: 2017-07-14T02:40:00.000Z")]
+        public System.Nullable<System.DateTime> LatestTimestampGreaterThanOrEqualTo { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
@@ -67,31 +59,29 @@ Example: `My new resource`")]
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            ListScheduledJobsRequest request;
+            ListEventsRequest request;
 
             try
             {
-                request = new ListScheduledJobsRequest
+                request = new ListEventsRequest
                 {
-                    CompartmentId = CompartmentId,
-                    DisplayName = DisplayName,
                     ManagedInstanceId = ManagedInstanceId,
-                    ManagedInstanceGroupId = ManagedInstanceGroupId,
-                    OperationType = OperationType,
+                    CompartmentId = CompartmentId,
+                    EventId = EventId,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
-                    LifecycleState = LifecycleState,
                     OpcRequestId = OpcRequestId,
-                    OsFamily = OsFamily,
-                    IsRestricted = IsRestricted
+                    EventType = EventType,
+                    LatestTimestampLessThan = LatestTimestampLessThan,
+                    LatestTimestampGreaterThanOrEqualTo = LatestTimestampGreaterThanOrEqualTo
                 };
-                IEnumerable<ListScheduledJobsResponse> responses = GetRequestDelegate().Invoke(request);
+                IEnumerable<ListEventsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
                 {
                     response = item;
-                    WriteOutput(response, response.Items, true);
+                    WriteOutput(response, response.EventCollection, true);
                 }
                 if(!ParameterSetName.Equals(AllPageSet) && !ParameterSetName.Equals(LimitSet) && response.OpcNextPage != null)
                 {
@@ -113,16 +103,16 @@ Example: `My new resource`")]
 
         private RequestDelegate GetRequestDelegate()
         {
-            IEnumerable<ListScheduledJobsResponse> DefaultRequest(ListScheduledJobsRequest request) => Enumerable.Repeat(client.ListScheduledJobs(request).GetAwaiter().GetResult(), 1);
+            IEnumerable<ListEventsResponse> DefaultRequest(ListEventsRequest request) => Enumerable.Repeat(client.ListEvents(request).GetAwaiter().GetResult(), 1);
             if (ParameterSetName.Equals(AllPageSet))
             {
-                return req => client.Paginators.ListScheduledJobsResponseEnumerator(req);
+                return req => client.Paginators.ListEventsResponseEnumerator(req);
             }
             return DefaultRequest;
         }
 
-        private ListScheduledJobsResponse response;
-        private delegate IEnumerable<ListScheduledJobsResponse> RequestDelegate(ListScheduledJobsRequest request);
+        private ListEventsResponse response;
+        private delegate IEnumerable<ListEventsResponse> RequestDelegate(ListEventsRequest request);
         private const string AllPageSet = "AllPages";
         private const string LimitSet = "Limit";
     }

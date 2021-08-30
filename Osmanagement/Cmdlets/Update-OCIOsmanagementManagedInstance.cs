@@ -14,39 +14,39 @@ using Oci.OsmanagementService.Models;
 
 namespace Oci.OsmanagementService.Cmdlets
 {
-    [Cmdlet("Invoke", "OCIOsmanagementInstallAllPackageUpdatesOnManagedInstance")]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OsmanagementService.Responses.InstallAllPackageUpdatesOnManagedInstanceResponse) })]
-    public class InvokeOCIOsmanagementInstallAllPackageUpdatesOnManagedInstance : OCIOsManagementCmdlet
+    [Cmdlet("Update", "OCIOsmanagementManagedInstance")]
+    [OutputType(new System.Type[] { typeof(Oci.OsmanagementService.Models.ManagedInstance), typeof(Oci.OsmanagementService.Responses.UpdateManagedInstanceResponse) })]
+    public class UpdateOCIOsmanagementManagedInstance : OCIOsManagementCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID for the managed instance")]
         public string ManagedInstanceId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of updates to be applied")]
-        public System.Nullable<Oci.OsmanagementService.Models.PackageUpdateTypes> UpdateType { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details about a Managed Instance to update")]
+        public UpdateManagedInstanceDetails UpdateManagedInstanceDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
-        public string OpcRetryToken { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
+        public string IfMatch { get; set; }
 
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            InstallAllPackageUpdatesOnManagedInstanceRequest request;
+            UpdateManagedInstanceRequest request;
 
             try
             {
-                request = new InstallAllPackageUpdatesOnManagedInstanceRequest
+                request = new UpdateManagedInstanceRequest
                 {
                     ManagedInstanceId = ManagedInstanceId,
-                    UpdateType = UpdateType,
+                    UpdateManagedInstanceDetails = UpdateManagedInstanceDetails,
                     OpcRequestId = OpcRequestId,
-                    OpcRetryToken = OpcRetryToken
+                    IfMatch = IfMatch
                 };
 
-                response = client.InstallAllPackageUpdatesOnManagedInstance(request).GetAwaiter().GetResult();
-                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
+                response = client.UpdateManagedInstance(request).GetAwaiter().GetResult();
+                WriteOutput(response, response.ManagedInstance);
                 FinishProcessing(response);
             }
             catch (Exception ex)
@@ -61,6 +61,6 @@ namespace Oci.OsmanagementService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private InstallAllPackageUpdatesOnManagedInstanceResponse response;
+        private UpdateManagedInstanceResponse response;
     }
 }

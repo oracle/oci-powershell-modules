@@ -21,6 +21,9 @@ namespace Oci.OsmanagementService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID for the managed instance")]
         public string ManagedInstanceId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of updates to be applied")]
+        public System.Nullable<Oci.OsmanagementService.Models.PackageUpdateTypes> UpdateType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
@@ -37,6 +40,7 @@ namespace Oci.OsmanagementService.Cmdlets
                 request = new InstallAllWindowsUpdatesOnManagedInstanceRequest
                 {
                     ManagedInstanceId = ManagedInstanceId,
+                    UpdateType = UpdateType,
                     OpcRequestId = OpcRequestId,
                     OpcRetryToken = OpcRetryToken
                 };

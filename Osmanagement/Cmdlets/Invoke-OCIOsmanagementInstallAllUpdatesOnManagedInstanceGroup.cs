@@ -14,12 +14,12 @@ using Oci.OsmanagementService.Models;
 
 namespace Oci.OsmanagementService.Cmdlets
 {
-    [Cmdlet("Invoke", "OCIOsmanagementInstallAllPackageUpdatesOnManagedInstance")]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OsmanagementService.Responses.InstallAllPackageUpdatesOnManagedInstanceResponse) })]
-    public class InvokeOCIOsmanagementInstallAllPackageUpdatesOnManagedInstance : OCIOsManagementCmdlet
+    [Cmdlet("Invoke", "OCIOsmanagementInstallAllUpdatesOnManagedInstanceGroup")]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OsmanagementService.Responses.InstallAllUpdatesOnManagedInstanceGroupResponse) })]
+    public class InvokeOCIOsmanagementInstallAllUpdatesOnManagedInstanceGroup : OCIOsManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID for the managed instance")]
-        public string ManagedInstanceId { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID for the managed instance group")]
+        public string ManagedInstanceGroupId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of updates to be applied")]
         public System.Nullable<Oci.OsmanagementService.Models.PackageUpdateTypes> UpdateType { get; set; }
@@ -33,19 +33,19 @@ namespace Oci.OsmanagementService.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            InstallAllPackageUpdatesOnManagedInstanceRequest request;
+            InstallAllUpdatesOnManagedInstanceGroupRequest request;
 
             try
             {
-                request = new InstallAllPackageUpdatesOnManagedInstanceRequest
+                request = new InstallAllUpdatesOnManagedInstanceGroupRequest
                 {
-                    ManagedInstanceId = ManagedInstanceId,
+                    ManagedInstanceGroupId = ManagedInstanceGroupId,
                     UpdateType = UpdateType,
                     OpcRequestId = OpcRequestId,
                     OpcRetryToken = OpcRetryToken
                 };
 
-                response = client.InstallAllPackageUpdatesOnManagedInstance(request).GetAwaiter().GetResult();
+                response = client.InstallAllUpdatesOnManagedInstanceGroup(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
             }
@@ -61,6 +61,6 @@ namespace Oci.OsmanagementService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private InstallAllPackageUpdatesOnManagedInstanceResponse response;
+        private InstallAllUpdatesOnManagedInstanceGroupResponse response;
     }
 }
