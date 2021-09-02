@@ -45,6 +45,12 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The filter used to filter the databases in the fleet by a specific Oracle Database subtype.")]
         public string FilterByDatabaseSubType { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The filter used to filter the databases in the fleet by a specific Oracle Database deployment type.")]
+        public string FilterByDatabaseDeploymentType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The filter used to filter the databases in the fleet by a specific Oracle Database version.")]
+        public string FilterByDatabaseVersion { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -62,7 +68,9 @@ namespace Oci.DatabasemanagementService.Cmdlets
                     CompareType = CompareType,
                     FilterByMetricNames = FilterByMetricNames,
                     FilterByDatabaseType = FilterByDatabaseType,
-                    FilterByDatabaseSubType = FilterByDatabaseSubType
+                    FilterByDatabaseSubType = FilterByDatabaseSubType,
+                    FilterByDatabaseDeploymentType = FilterByDatabaseDeploymentType,
+                    FilterByDatabaseVersion = FilterByDatabaseVersion
                 };
 
                 response = client.GetDatabaseFleetHealthMetrics(request).GetAwaiter().GetResult();

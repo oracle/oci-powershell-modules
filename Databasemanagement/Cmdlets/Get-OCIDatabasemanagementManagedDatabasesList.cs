@@ -32,6 +32,12 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire name.")]
         public string Name { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return Managed Databases with the specified management option.")]
+        public System.Nullable<Oci.DatabasemanagementService.Models.ManagementOption> ManagementOption { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return Managed Databases of the specified deployment type.")]
+        public System.Nullable<Oci.DatabasemanagementService.Models.DeploymentType> DeploymentType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The page token representing the page, from where the next set of paginated results are retrieved. This is usually retrieved from a previous list call.")]
         public string Page { get; set; }
 
@@ -41,7 +47,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort information by. Only one sortOrder can be used. The default sort order for 'TIMECREATED' is descending and the default sort order for 'NAME' is ascending. The 'NAME' sort order is case-sensitive.")]
         public System.Nullable<Oci.DatabasemanagementService.Requests.ListManagedDatabasesRequest.SortByEnum> SortBy { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The option to sort information in ascending ('ASC') or descending ('DESC') order. Ascending order is the the default order.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The option to sort information in ascending ('ASC') or descending ('DESC') order. Ascending order is the default order.")]
         public System.Nullable<Oci.DatabasemanagementService.Models.SortOrders> SortOrder { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
@@ -60,6 +66,8 @@ namespace Oci.DatabasemanagementService.Cmdlets
                     OpcRequestId = OpcRequestId,
                     Id = Id,
                     Name = Name,
+                    ManagementOption = ManagementOption,
+                    DeploymentType = DeploymentType,
                     Page = Page,
                     Limit = Limit,
                     SortBy = SortBy,

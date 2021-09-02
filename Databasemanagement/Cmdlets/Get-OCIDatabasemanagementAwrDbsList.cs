@@ -39,7 +39,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The option to sort the AWR summary data.")]
         public System.Nullable<Oci.DatabasemanagementService.Requests.ListAwrDbsRequest.SortByEnum> SortBy { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The option to sort information in ascending ('ASC') or descending ('DESC') order. Descending order is the the default order.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The option to sort information in ascending ('ASC') or descending ('DESC') order. Descending order is the default order.")]
         public System.Nullable<Oci.DatabasemanagementService.Models.SortOrders> SortOrder { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

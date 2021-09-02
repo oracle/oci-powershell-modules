@@ -27,6 +27,9 @@ namespace Oci.ResourcemanagerService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match` parameter to the value of the etag from a previous `GET` or `POST` response for that resource.  The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
         public string IfMatch { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates whether a forced cancellation is requested for the job while it was running. A forced cancellation can result in an incorrect state file. For example, the state file might not reflect the exact state of the provisioned resources.")]
+        public System.Nullable<bool> IsForced { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "Ignore confirmation and force the Cmdlet to complete action.")]
         public SwitchParameter Force { get; set; }
 
@@ -47,7 +50,8 @@ namespace Oci.ResourcemanagerService.Cmdlets
                 {
                     JobId = JobId,
                     OpcRequestId = OpcRequestId,
-                    IfMatch = IfMatch
+                    IfMatch = IfMatch,
+                    IsForced = IsForced
                 };
 
                 response = client.CancelJob(request).GetAwaiter().GetResult();

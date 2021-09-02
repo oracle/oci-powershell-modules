@@ -18,7 +18,7 @@ namespace Oci.ManagementdashboardService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ManagementdashboardService.Models.ManagementDashboardExportDetails), typeof(Oci.ManagementdashboardService.Responses.ExportDashboardResponse) })]
     public class ExportOCIManagementdashboardDashboard : OCIDashxApisCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"List of dashboardIds in plain text. The syntaxt is '{""dashboardIds"":[""dashboardId1"", ""dashboardId2"", ...]}'. Escaping is needed when using in OCI CLI. For example, ""{""""dashboardIds"""":[""""ocid1.managementdashboard.oc1..dashboardId1""""]}"" .")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"List of dashboardIds in plain text. The syntax is '{""dashboardIds"":[""dashboardId1"", ""dashboardId2"", ...]}'. Escaping is needed when using in OCI CLI. For example, ""{""""dashboardIds"""":[""""ocid1.managementdashboard.oc1..dashboardId1""""]}"" .")]
         public string ExportDashboardId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
