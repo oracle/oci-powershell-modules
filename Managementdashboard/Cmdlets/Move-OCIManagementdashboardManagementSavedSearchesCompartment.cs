@@ -15,7 +15,7 @@ using Oci.ManagementdashboardService.Models;
 namespace Oci.ManagementdashboardService.Cmdlets
 {
     [Cmdlet("Move", "OCIManagementdashboardManagementSavedSearchesCompartment")]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.ManagementdashboardService.Responses.ChangeManagementSavedSearchesCompartmentResponse) })]
+    [OutputType(new System.Type[] { typeof(Oci.ManagementdashboardService.Models.ManagementSavedSearch), typeof(Oci.ManagementdashboardService.Responses.ChangeManagementSavedSearchesCompartmentResponse) })]
     public class MoveOCIManagementdashboardManagementSavedSearchesCompartment : OCIDashxApisCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique saved search identifier.")]
@@ -50,7 +50,7 @@ namespace Oci.ManagementdashboardService.Cmdlets
                 };
 
                 response = client.ChangeManagementSavedSearchesCompartment(request).GetAwaiter().GetResult();
-                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
+                WriteOutput(response, response.ManagementSavedSearch);
                 FinishProcessing(response);
             }
             catch (Exception ex)

@@ -15,7 +15,7 @@ using Oci.ManagementdashboardService.Models;
 namespace Oci.ManagementdashboardService.Cmdlets
 {
     [Cmdlet("Move", "OCIManagementdashboardsCompartment")]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.ManagementdashboardService.Responses.ChangeManagementDashboardsCompartmentResponse) })]
+    [OutputType(new System.Type[] { typeof(Oci.ManagementdashboardService.Models.ManagementDashboard), typeof(Oci.ManagementdashboardService.Responses.ChangeManagementDashboardsCompartmentResponse) })]
     public class MoveOCIManagementdashboardsCompartment : OCIDashxApisCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique dashboard identifier.")]
@@ -50,7 +50,7 @@ namespace Oci.ManagementdashboardService.Cmdlets
                 };
 
                 response = client.ChangeManagementDashboardsCompartment(request).GetAwaiter().GetResult();
-                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
+                WriteOutput(response, response.ManagementDashboard);
                 FinishProcessing(response);
             }
             catch (Exception ex)
