@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 20.1.0 - 2021-09-14
+### Added
+- Support for `ServiceHostKeyFingerprint` property for InstanceConsoleConnection in Core service
+- Support for Shielded Instances in Core service
+- Support for ML Jobs in the Data Science service
+
 ## 20.0.0 - 2021-09-07
 ### Added
 - Support for terraform advanced options (detailed log level, refresh, and parallelism) on jobs in the Resource Manager service
