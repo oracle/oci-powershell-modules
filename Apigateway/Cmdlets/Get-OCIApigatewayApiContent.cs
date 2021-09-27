@@ -31,6 +31,9 @@ namespace Oci.ApigatewayService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
         public string IfMatch { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Range HTTP request header indicates the part of a document that the server should return. [RFC 7233](https://tools.ietf.org/html/rfc7233#section-3.1). Note that only a single range of bytes is supported.")]
+        public Oci.Common.Model.Range Range { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = "Path to the output file.", ParameterSetName = WriteToFileSet)]
         public string OutputFile { get; set; }
 
@@ -48,7 +51,8 @@ namespace Oci.ApigatewayService.Cmdlets
                 {
                     ApiId = ApiId,
                     OpcRequestId = OpcRequestId,
-                    IfMatch = IfMatch
+                    IfMatch = IfMatch,
+                    Range = Range
                 };
 
                 response = client.GetApiContent(request).GetAwaiter().GetResult();

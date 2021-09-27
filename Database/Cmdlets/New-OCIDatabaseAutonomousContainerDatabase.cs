@@ -20,8 +20,8 @@ namespace Oci.DatabaseService.Cmdlets
     public class NewOCIDatabaseAutonomousContainerDatabase : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure or in Autonomous VM Cluster.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure or in Autonomous VM Cluster.", ParameterSetName = Default)]
         public CreateAutonomousContainerDatabaseDetails CreateAutonomousContainerDatabaseDetails { get; set; }
 
         

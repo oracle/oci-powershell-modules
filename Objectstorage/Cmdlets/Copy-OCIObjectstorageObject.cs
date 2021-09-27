@@ -48,6 +48,9 @@ namespace Oci.ObjectstorageService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The optional header that specifies the base64-encoded SHA256 hash of the encryption key used to decrypt the source object. This value is used to check the integrity of the encryption key. For more information, see [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).")]
         public string OpcSourceSseCustomerKeySha256 { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.")]
+        public string OpcSseKmsKeyId { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -66,7 +69,8 @@ namespace Oci.ObjectstorageService.Cmdlets
                     OpcSseCustomerKeySha256 = OpcSseCustomerKeySha256,
                     OpcSourceSseCustomerAlgorithm = OpcSourceSseCustomerAlgorithm,
                     OpcSourceSseCustomerKey = OpcSourceSseCustomerKey,
-                    OpcSourceSseCustomerKeySha256 = OpcSourceSseCustomerKeySha256
+                    OpcSourceSseCustomerKeySha256 = OpcSourceSseCustomerKeySha256,
+                    OpcSseKmsKeyId = OpcSseKmsKeyId
                 };
 
                 response = client.CopyObject(request).GetAwaiter().GetResult();
