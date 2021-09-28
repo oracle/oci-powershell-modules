@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 21.0.0 - 2021-09-28
+### Added
+- Support for autonomous databases and clones on shared infrastructure not requiring mTLS in the Database service
+- Support for server-side encryption using object-specific KMS keys in the Object Storage service
+- Support for Windows in the Java Management service
+- Support for using network security groups in the API Gateway service
+- Support for network security groups in the Functions service
+- Support for signed container images in the Functions service
+- Support for setting message format when creating and updating alarms in the Monitoring service
+- Support for user and security assessment features in the Data Safe service
+ 
+### Breaking Changes
+- The following cmdlets were removed from the Java Management service: `Invoke-OCIJmsRequestSummarizedApplicationUsage`, `Invoke-OCIJmsRequestSummarizedInstallationUsage`, `Invoke-OCIJmsRequestSummarizedJreUsage`, and `Invoke-OCIJmsRequestSummarizedManagedInstanceUsage`
+- The following models were removed from the Java Management service: `RequestSummarizedApplicationUsageDetails`, `RequestSummarizedInstallationUsageDetails`, `RequestSummarizedJreUsageDetails` and `RequestSummarizedManagedInstanceUsageDetails`
+- The following requests were removed from the Java Management service: `RequestSummarizedInstallationUsageRequest` and `RequestSummarizedManagedInstanceUsageRequest`
+
 ## 20.1.0 - 2021-09-14
 ### Added
 - Support for `ServiceHostKeyFingerprint` property for InstanceConsoleConnection in Core service

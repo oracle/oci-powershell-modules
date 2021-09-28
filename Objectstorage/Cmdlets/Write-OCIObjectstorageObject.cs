@@ -77,6 +77,9 @@ namespace Oci.ObjectstorageService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This value is used to check the integrity of the encryption key. For more information, see [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).")]
         public string OpcSseCustomerKeySha256 { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.")]
+        public string OpcSseKmsKeyId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.")]
         public System.Nullable<Oci.ObjectstorageService.Models.StorageTier> StorageTier { get; set; }
 
@@ -116,6 +119,7 @@ namespace Oci.ObjectstorageService.Cmdlets
                     OpcSseCustomerAlgorithm = OpcSseCustomerAlgorithm,
                     OpcSseCustomerKey = OpcSseCustomerKey,
                     OpcSseCustomerKeySha256 = OpcSseCustomerKeySha256,
+                    OpcSseKmsKeyId = OpcSseKmsKeyId,
                     StorageTier = StorageTier,
                     OpcMeta = OpcMeta
                 };
