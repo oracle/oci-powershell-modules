@@ -14,39 +14,31 @@ using Oci.DatabasemigrationService.Models;
 
 namespace Oci.DatabasemigrationService.Cmdlets
 {
-    [Cmdlet("Update", "OCIDatabasemigrationJob")]
-    [OutputType(new System.Type[] { typeof(Oci.DatabasemigrationService.Models.Job), typeof(Oci.DatabasemigrationService.Responses.UpdateJobResponse) })]
-    public class UpdateOCIDatabasemigrationJob : OCIDatabaseMigrationCmdlet
+    [Cmdlet("Get", "OCIDatabasemigrationAdvisorReport")]
+    [OutputType(new System.Type[] { typeof(Oci.DatabasemigrationService.Models.AdvisorReport), typeof(Oci.DatabasemigrationService.Responses.GetAdvisorReportResponse) })]
+    public class GetOCIDatabasemigrationAdvisorReport : OCIDatabaseMigrationCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the job")]
         public string JobId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Migration Job properties.")]
-        public UpdateJobDetails UpdateJobDetails { get; set; }
-
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
-        public string IfMatch { get; set; }
 
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            UpdateJobRequest request;
+            GetAdvisorReportRequest request;
 
             try
             {
-                request = new UpdateJobRequest
+                request = new GetAdvisorReportRequest
                 {
                     JobId = JobId,
-                    UpdateJobDetails = UpdateJobDetails,
-                    OpcRequestId = OpcRequestId,
-                    IfMatch = IfMatch
+                    OpcRequestId = OpcRequestId
                 };
 
-                response = client.UpdateJob(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.Job);
+                response = client.GetAdvisorReport(request).GetAwaiter().GetResult();
+                WriteOutput(response, response.AdvisorReport);
                 FinishProcessing(response);
             }
             catch (Exception ex)
@@ -61,6 +53,6 @@ namespace Oci.DatabasemigrationService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private UpdateJobResponse response;
+        private GetAdvisorReportResponse response;
     }
 }

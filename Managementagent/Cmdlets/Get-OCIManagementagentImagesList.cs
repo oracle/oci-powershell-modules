@@ -47,6 +47,9 @@ namespace Oci.ManagementagentService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter to return only Management Agents in the particular lifecycle state.")]
         public System.Nullable<Oci.ManagementagentService.Models.LifecycleStates> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.")]
+        public System.Nullable<Oci.ManagementagentService.Models.InstallTypes> InstallType { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -67,7 +70,8 @@ namespace Oci.ManagementagentService.Cmdlets
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     Name = Name,
-                    LifecycleState = LifecycleState
+                    LifecycleState = LifecycleState,
+                    InstallType = InstallType
                 };
                 IEnumerable<ListManagementAgentImagesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

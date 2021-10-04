@@ -16,12 +16,18 @@ using Oci.DatabasemigrationService.Models;
 
 namespace Oci.DatabasemigrationService.Cmdlets
 {
-    [Cmdlet("Get", "OCIDatabasemigrationWorkRequestLogsList")]
-    [OutputType(new System.Type[] { typeof(Oci.DatabasemigrationService.Models.WorkRequestLogEntryCollection), typeof(Oci.DatabasemigrationService.Responses.ListWorkRequestLogsResponse) })]
-    public class GetOCIDatabasemigrationWorkRequestLogsList : OCIDatabaseMigrationCmdlet
+    [Cmdlet("Get", "OCIDatabasemigrationMigrationObjectTypesList")]
+    [OutputType(new System.Type[] { typeof(Oci.DatabasemigrationService.Models.MigrationObjectTypeSummaryCollection), typeof(Oci.DatabasemigrationService.Responses.ListMigrationObjectTypesResponse) })]
+    public class GetOCIDatabasemigrationMigrationObjectTypesList : OCIDatabaseMigrationCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the asynchronous request.")]
-        public string WorkRequestId { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
+        public string OpcRequestId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for name is custom based on it's usage frequency. If no value is specified name is default.")]
+        public System.Nullable<Oci.DatabasemigrationService.Requests.ListMigrationObjectTypesRequest.SortByEnum> SortBy { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'asc' or 'desc'.")]
+        public System.Nullable<Oci.DatabasemigrationService.Models.SortOrders> SortOrder { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -29,39 +35,29 @@ namespace Oci.DatabasemigrationService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.")]
         public string Page { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.")]
-        public System.Nullable<Oci.DatabasemigrationService.Requests.ListWorkRequestLogsRequest.SortByEnum> SortBy { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'asc' or 'desc'.")]
-        public System.Nullable<Oci.DatabasemigrationService.Models.SortOrders> SortOrder { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
-        public string OpcRequestId { get; set; }
-
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            ListWorkRequestLogsRequest request;
+            ListMigrationObjectTypesRequest request;
 
             try
             {
-                request = new ListWorkRequestLogsRequest
+                request = new ListMigrationObjectTypesRequest
                 {
-                    WorkRequestId = WorkRequestId,
-                    Limit = Limit,
-                    Page = Page,
+                    OpcRequestId = OpcRequestId,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
-                    OpcRequestId = OpcRequestId
+                    Limit = Limit,
+                    Page = Page
                 };
-                IEnumerable<ListWorkRequestLogsResponse> responses = GetRequestDelegate().Invoke(request);
+                IEnumerable<ListMigrationObjectTypesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
                 {
                     response = item;
-                    WriteOutput(response, response.WorkRequestLogEntryCollection, true);
+                    WriteOutput(response, response.MigrationObjectTypeSummaryCollection, true);
                 }
                 if(!ParameterSetName.Equals(AllPageSet) && !ParameterSetName.Equals(LimitSet) && response.OpcNextPage != null)
                 {
@@ -83,16 +79,16 @@ namespace Oci.DatabasemigrationService.Cmdlets
 
         private RequestDelegate GetRequestDelegate()
         {
-            IEnumerable<ListWorkRequestLogsResponse> DefaultRequest(ListWorkRequestLogsRequest request) => Enumerable.Repeat(client.ListWorkRequestLogs(request).GetAwaiter().GetResult(), 1);
+            IEnumerable<ListMigrationObjectTypesResponse> DefaultRequest(ListMigrationObjectTypesRequest request) => Enumerable.Repeat(client.ListMigrationObjectTypes(request).GetAwaiter().GetResult(), 1);
             if (ParameterSetName.Equals(AllPageSet))
             {
-                return req => client.Paginators.ListWorkRequestLogsResponseEnumerator(req);
+                return req => client.Paginators.ListMigrationObjectTypesResponseEnumerator(req);
             }
             return DefaultRequest;
         }
 
-        private ListWorkRequestLogsResponse response;
-        private delegate IEnumerable<ListWorkRequestLogsResponse> RequestDelegate(ListWorkRequestLogsRequest request);
+        private ListMigrationObjectTypesResponse response;
+        private delegate IEnumerable<ListMigrationObjectTypesResponse> RequestDelegate(ListMigrationObjectTypesRequest request);
         private const string AllPageSet = "AllPages";
         private const string LimitSet = "Limit";
     }

@@ -47,6 +47,9 @@ namespace Oci.ManagementagentService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.")]
         public System.Nullable<bool> IsCustomerDeployed { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.")]
+        public System.Nullable<Oci.ManagementagentService.Models.InstallTypes> InstallType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -83,6 +86,7 @@ namespace Oci.ManagementagentService.Cmdlets
                     HostId = HostId,
                     PlatformType = PlatformType,
                     IsCustomerDeployed = IsCustomerDeployed,
+                    InstallType = InstallType,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,
