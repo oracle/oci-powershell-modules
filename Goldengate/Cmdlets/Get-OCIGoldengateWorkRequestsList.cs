@@ -23,6 +23,9 @@ namespace Oci.GoldengateService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the resource in which to list resources.")]
+        public string ResourceId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
@@ -45,6 +48,7 @@ namespace Oci.GoldengateService.Cmdlets
                 request = new ListWorkRequestsRequest
                 {
                     CompartmentId = CompartmentId,
+                    ResourceId = ResourceId,
                     OpcRequestId = OpcRequestId,
                     Page = Page,
                     Limit = Limit

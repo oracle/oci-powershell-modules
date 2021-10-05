@@ -26,8 +26,14 @@ namespace Oci.GoldengateService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the 'lifecycleState' given.")]
         public System.Nullable<Oci.GoldengateService.Models.LifecycleState> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the 'lifecycleSubState' given.")]
+        public System.Nullable<Oci.GoldengateService.Models.LifecycleSubState> LifecycleSubState { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the entire 'displayName' given.")]
         public string DisplayName { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the 'fqdn' given.")]
+        public string Fqdn { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -58,7 +64,9 @@ namespace Oci.GoldengateService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     LifecycleState = LifecycleState,
+                    LifecycleSubState = LifecycleSubState,
                     DisplayName = DisplayName,
+                    Fqdn = Fqdn,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,

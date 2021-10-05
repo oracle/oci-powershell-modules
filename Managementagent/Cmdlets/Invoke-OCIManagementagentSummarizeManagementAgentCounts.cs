@@ -27,6 +27,9 @@ namespace Oci.ManagementagentService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.")]
         public System.Nullable<bool> HasPlugins { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.")]
+        public System.Nullable<Oci.ManagementagentService.Models.InstallTypes> InstallType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.")]
         public string Page { get; set; }
 
@@ -45,6 +48,7 @@ namespace Oci.ManagementagentService.Cmdlets
                     CompartmentId = CompartmentId,
                     GroupBy = GroupBy,
                     HasPlugins = HasPlugins,
+                    InstallType = InstallType,
                     Page = Page,
                     OpcRequestId = OpcRequestId
                 };
