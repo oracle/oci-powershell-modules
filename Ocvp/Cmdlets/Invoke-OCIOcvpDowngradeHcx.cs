@@ -18,7 +18,7 @@ namespace Oci.OcvpService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OcvpService.Responses.DowngradeHcxResponse) })]
     public class InvokeOCIOcvpDowngradeHcx : OCISddcCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The HCX on-premise license keys to be reserved when downgrade from HCX Enterprise to HCX Advanced.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The HCX on-premise license keys to be reserved when downgrading from HCX Enterprise to HCX Advanced.")]
         public DowngradeHcxDetails DowngradeHcxDetails { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.")]

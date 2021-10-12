@@ -33,6 +33,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (`ASC`) or descending (`DESC`).")]
         public System.Nullable<Oci.LoganalyticsService.Requests.ListLogSetsRequest.SortOrderEnum> SortOrder { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If this filter is present, each of the logsets returned must contain the value of this filter.")]
+        public System.Collections.Generic.List<string> LogSetNameContains { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -46,7 +49,8 @@ namespace Oci.LoganalyticsService.Cmdlets
                     OpcRequestId = OpcRequestId,
                     Limit = Limit,
                     Page = Page,
-                    SortOrder = SortOrder
+                    SortOrder = SortOrder,
+                    LogSetNameContains = LogSetNameContains
                 };
 
                 response = client.ListLogSets(request).GetAwaiter().GetResult();
