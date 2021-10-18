@@ -74,6 +74,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The log set that gets associated with the uploaded logs.")]
         public string LogSet { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is ""100-Continue"" (case-insensitive).")]
+        public string Expect { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -105,7 +108,8 @@ namespace Oci.LoganalyticsService.Cmdlets
                     ContentMd5 = ContentMd5,
                     ContentType = ContentType,
                     OpcRetryToken = OpcRetryToken,
-                    LogSet = LogSet
+                    LogSet = LogSet,
+                    Expect = Expect
                 };
 
                 response = client.UploadLogFile(request).GetAwaiter().GetResult();

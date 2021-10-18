@@ -45,6 +45,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
         public string IfMatch { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is ""100-Continue"" (case-insensitive).")]
+        public string Expect { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -67,7 +70,8 @@ namespace Oci.LoganalyticsService.Cmdlets
                     CharEncoding = CharEncoding,
                     OpcRetryToken = OpcRetryToken,
                     OpcRequestId = OpcRequestId,
-                    IfMatch = IfMatch
+                    IfMatch = IfMatch,
+                    Expect = Expect
                 };
 
                 response = client.UpdateLookupData(request).GetAwaiter().GetResult();

@@ -44,6 +44,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given lifecycle state exactly.")]
         public System.Nullable<Oci.DatabaseService.Models.DbNodeSummary.LifecycleStateEnum> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exacc Db server.")]
+        public string DbServerId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -63,7 +66,8 @@ namespace Oci.DatabaseService.Cmdlets
                     Page = Page,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
-                    LifecycleState = LifecycleState
+                    LifecycleState = LifecycleState,
+                    DbServerId = DbServerId
                 };
                 IEnumerable<ListDbNodesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
