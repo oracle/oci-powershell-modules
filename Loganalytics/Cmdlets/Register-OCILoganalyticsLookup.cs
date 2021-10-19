@@ -48,6 +48,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is ""100-Continue"" (case-insensitive).")]
+        public string Expect { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -71,7 +74,8 @@ namespace Oci.LoganalyticsService.Cmdlets
                     CharEncoding = CharEncoding,
                     IsHidden = IsHidden,
                     OpcRetryToken = OpcRetryToken,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    Expect = Expect
                 };
 
                 response = client.RegisterLookup(request).GetAwaiter().GetResult();
