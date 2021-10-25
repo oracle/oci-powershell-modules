@@ -29,6 +29,15 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The value of the `opc-next-page` response header from the previous ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more Enterprise Manager entity types. Currently, the supported types are ""oracle_pdb"", ""oracle_database"", ""host"", ""oracle_dbmachine"", ""oracle_exa_cloud_service"", and ""oracle_oci_exadata_cloud_service"". If this parameter is not specified, targets of all supported entity types are returned by default.")]
+        public System.Collections.Generic.List<string> EnterpriseManagerEntityType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used in combination with enterpriseManagerParentEntityIdentifier to return the members of a particular Enterprise Manager parent entity. Both enterpriseManagerIdentifier and enterpriseManagerParentEntityIdentifier must be specified to identify a particular Enterprise Manager parent entity.")]
+        public string EnterpriseManagerIdentifier { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used in combination with enterpriseManagerIdentifier to return the members of a particular Enterprise Manager parent entity. Both enterpriseManagerIdentifier and enterpriseManagerParentEntityIdentifier must be specified to identify a particular  Enterprise Manager parent entity.")]
+        public string EnterpriseManagerParentEntityIdentifier { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -47,6 +56,9 @@ namespace Oci.OpsiService.Cmdlets
                     EnterpriseManagerBridgeId = EnterpriseManagerBridgeId,
                     Limit = Limit,
                     Page = Page,
+                    EnterpriseManagerEntityType = EnterpriseManagerEntityType,
+                    EnterpriseManagerIdentifier = EnterpriseManagerIdentifier,
+                    EnterpriseManagerParentEntityIdentifier = EnterpriseManagerParentEntityIdentifier,
                     OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListImportableEnterpriseManagerEntitiesResponse> responses = GetRequestDelegate().Invoke(request);

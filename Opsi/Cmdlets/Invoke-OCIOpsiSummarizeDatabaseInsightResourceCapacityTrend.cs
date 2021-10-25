@@ -42,6 +42,12 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
         public System.Collections.Generic.List<string> Id { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        public System.Collections.Generic.List<string> ExadataInsightId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more cdb name.")]
+        public System.Collections.Generic.List<string> CdbName { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by utilization level by the following buckets:   - HIGH_UTILIZATION: DBs with utilization greater or equal than 75.   - LOW_UTILIZATION: DBs with utilization lower than 25.   - MEDIUM_HIGH_UTILIZATION: DBs with utilization greater or equal than 50 but lower than 75.   - MEDIUM_LOW_UTILIZATION: DBs with utilization greater or equal than 25 but lower than 50.")]
         public System.Nullable<Oci.OpsiService.Requests.SummarizeDatabaseInsightResourceCapacityTrendRequest.UtilizationLevelEnum> UtilizationLevel { get; set; }
 
@@ -95,6 +101,8 @@ namespace Oci.OpsiService.Cmdlets
                     DatabaseType = DatabaseType,
                     DatabaseId = DatabaseId,
                     Id = Id,
+                    ExadataInsightId = ExadataInsightId,
+                    CdbName = CdbName,
                     UtilizationLevel = UtilizationLevel,
                     Page = Page,
                     SortOrder = SortOrder,

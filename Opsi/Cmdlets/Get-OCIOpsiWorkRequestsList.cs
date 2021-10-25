@@ -20,9 +20,6 @@ namespace Oci.OpsiService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OpsiService.Models.WorkRequestCollection), typeof(Oci.OpsiService.Responses.ListWorkRequestsResponse) })]
     public class GetOCIOpsiWorkRequestsList : OCIOperationsInsightsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
-        public string CompartmentId { get; set; }
-
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -31,6 +28,27 @@ namespace Oci.OpsiService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example: `50`", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
+        public string CompartmentId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the asynchronous work request.")]
+        public string Id { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources their lifecycleState matches the given OperationStatus.")]
+        public System.Nullable<Oci.OpsiService.Models.OperationStatus> Status { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the resource affected by the work request.")]
+        public string ResourceId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the related resource for the resource affected by the work request, e.g. the related Exadata Insight OCID of the Database Insight work request")]
+        public string RelatedResourceId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (`ASC`) or descending (`DESC`).")]
+        public System.Nullable<Oci.OpsiService.Models.SortOrder> SortOrder { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.")]
+        public System.Nullable<Oci.OpsiService.Requests.ListWorkRequestsRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
@@ -44,10 +62,16 @@ namespace Oci.OpsiService.Cmdlets
             {
                 request = new ListWorkRequestsRequest
                 {
-                    CompartmentId = CompartmentId,
                     OpcRequestId = OpcRequestId,
                     Page = Page,
-                    Limit = Limit
+                    Limit = Limit,
+                    CompartmentId = CompartmentId,
+                    Id = Id,
+                    Status = Status,
+                    ResourceId = ResourceId,
+                    RelatedResourceId = RelatedResourceId,
+                    SortOrder = SortOrder,
+                    SortBy = SortBy
                 };
                 IEnumerable<ListWorkRequestsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

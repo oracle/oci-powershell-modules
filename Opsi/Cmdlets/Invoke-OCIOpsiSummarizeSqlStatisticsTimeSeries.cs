@@ -30,6 +30,12 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.")]
         public System.Collections.Generic.List<string> Id { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        public System.Collections.Generic.List<string> ExadataInsightId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more cdb name.")]
+        public System.Collections.Generic.List<string> CdbName { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more hostname.")]
         public System.Collections.Generic.List<string> HostName { get; set; }
 
@@ -73,6 +79,8 @@ namespace Oci.OpsiService.Cmdlets
                     SqlIdentifier = SqlIdentifier,
                     DatabaseId = DatabaseId,
                     Id = Id,
+                    ExadataInsightId = ExadataInsightId,
+                    CdbName = CdbName,
                     HostName = HostName,
                     AnalysisTimeInterval = AnalysisTimeInterval,
                     TimeIntervalStart = TimeIntervalStart,

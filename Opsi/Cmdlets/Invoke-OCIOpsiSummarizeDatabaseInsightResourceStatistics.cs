@@ -42,6 +42,12 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
         public System.Collections.Generic.List<string> Id { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        public System.Collections.Generic.List<string> ExadataInsightId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more cdb name.")]
+        public System.Collections.Generic.List<string> CdbName { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Percentile values of daily usage to be used for computing the aggregate resource usage.")]
         public System.Nullable<int> Percentile { get; set; }
 
@@ -101,6 +107,8 @@ namespace Oci.OpsiService.Cmdlets
                     DatabaseType = DatabaseType,
                     DatabaseId = DatabaseId,
                     Id = Id,
+                    ExadataInsightId = ExadataInsightId,
+                    CdbName = CdbName,
                     Percentile = Percentile,
                     InsightBy = InsightBy,
                     ForecastDays = ForecastDays,

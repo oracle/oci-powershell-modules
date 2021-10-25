@@ -32,6 +32,12 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.")]
         public System.Collections.Generic.List<string> DatabaseId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        public System.Collections.Generic.List<string> ExadataInsightId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more cdb name.")]
+        public System.Collections.Generic.List<string> CdbName { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.")]
         public System.Collections.Generic.List<Oci.OpsiService.Requests.ListDatabaseConfigurationsRequest.DatabaseTypeEnum> DatabaseType { get; set; }
 
@@ -81,6 +87,8 @@ namespace Oci.OpsiService.Cmdlets
                     EnterpriseManagerBridgeId = EnterpriseManagerBridgeId,
                     Id = Id,
                     DatabaseId = DatabaseId,
+                    ExadataInsightId = ExadataInsightId,
+                    CdbName = CdbName,
                     DatabaseType = DatabaseType,
                     Limit = Limit,
                     Page = Page,

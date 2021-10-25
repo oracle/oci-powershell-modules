@@ -56,6 +56,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Database insight list sort options. If `fields` parameter is selected, the `sortBy` parameter must be one of the fields specified.")]
         public System.Nullable<Oci.OpsiService.Requests.ListDatabaseInsightsRequest.SortByEnum> SortBy { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.")]
+        public string ExadataInsightId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -83,6 +86,7 @@ namespace Oci.OpsiService.Cmdlets
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
+                    ExadataInsightId = ExadataInsightId,
                     OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListDatabaseInsightsResponse> responses = GetRequestDelegate().Invoke(request);

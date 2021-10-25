@@ -39,6 +39,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
         public System.Collections.Generic.List<string> Id { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        public System.Collections.Generic.List<string> ExadataInsightId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Choose the type of statistic metric data to be used for forecasting.")]
         public System.Nullable<Oci.OpsiService.Requests.SummarizeHostInsightResourceForecastTrendRequest.StatisticEnum> Statistic { get; set; }
 
@@ -88,6 +91,7 @@ namespace Oci.OpsiService.Cmdlets
                     TimeIntervalEnd = TimeIntervalEnd,
                     PlatformType = PlatformType,
                     Id = Id,
+                    ExadataInsightId = ExadataInsightId,
                     Statistic = Statistic,
                     ForecastDays = ForecastDays,
                     ForecastModel = ForecastModel,

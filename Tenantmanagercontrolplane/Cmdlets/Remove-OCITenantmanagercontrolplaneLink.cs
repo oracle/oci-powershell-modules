@@ -15,7 +15,7 @@ using Oci.TenantmanagercontrolplaneService.Models;
 namespace Oci.TenantmanagercontrolplaneService.Cmdlets
 {
     [Cmdlet("Remove", "OCITenantmanagercontrolplaneLink", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
-    [OutputType(new System.Type[] { typeof(void), typeof(Oci.TenantmanagercontrolplaneService.Responses.DeleteLinkResponse) })]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.TenantmanagercontrolplaneService.Responses.DeleteLinkResponse) })]
     public class RemoveOCITenantmanagercontrolplaneLink : OCILinkCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the link to terminate.")]
@@ -51,7 +51,7 @@ namespace Oci.TenantmanagercontrolplaneService.Cmdlets
                 };
 
                 response = client.DeleteLink(request).GetAwaiter().GetResult();
-                WriteOutput(response);
+                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
             }
             catch (Exception ex)

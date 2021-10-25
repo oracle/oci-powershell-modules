@@ -38,6 +38,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more platform types. Possible value is LINUX.")]
         public System.Collections.Generic.List<Oci.OpsiService.Requests.ListHostedEntitiesRequest.PlatformTypeEnum> PlatformType { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.")]
+        public string ExadataInsightId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example: `50`", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -71,6 +74,7 @@ namespace Oci.OpsiService.Cmdlets
                     TimeIntervalStart = TimeIntervalStart,
                     TimeIntervalEnd = TimeIntervalEnd,
                     PlatformType = PlatformType,
+                    ExadataInsightId = ExadataInsightId,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,
