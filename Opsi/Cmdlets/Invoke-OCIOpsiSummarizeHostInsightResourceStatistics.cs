@@ -39,6 +39,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
         public System.Collections.Generic.List<string> Id { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        public System.Collections.Generic.List<string> ExadataInsightId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Percentile values of daily usage to be used for computing the aggregate resource usage.")]
         public System.Nullable<int> Percentile { get; set; }
 
@@ -91,6 +94,7 @@ namespace Oci.OpsiService.Cmdlets
                     TimeIntervalEnd = TimeIntervalEnd,
                     PlatformType = PlatformType,
                     Id = Id,
+                    ExadataInsightId = ExadataInsightId,
                     Percentile = Percentile,
                     InsightBy = InsightBy,
                     ForecastDays = ForecastDays,

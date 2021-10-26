@@ -42,6 +42,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
         public System.Collections.Generic.List<string> Id { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        public System.Collections.Generic.List<string> ExadataInsightId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The value of the `opc-next-page` response header from the previous ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
 
@@ -89,6 +92,7 @@ namespace Oci.OpsiService.Cmdlets
                     DatabaseType = DatabaseType,
                     DatabaseId = DatabaseId,
                     Id = Id,
+                    ExadataInsightId = ExadataInsightId,
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,

@@ -18,7 +18,7 @@ namespace Oci.OpsiService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OpsiService.Responses.EnableHostInsightResponse) })]
     public class EnableOCIOpsiHostInsight : OCIOperationsInsightsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the host to be enabled in Operations Insights. This parameter also accepts subtype <Oci.OpsiService.Models.EnableMacsManagedExternalHostInsightDetails> of type <Oci.OpsiService.Models.EnableHostInsightDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the host to be enabled in Operations Insights. This parameter also accepts subtypes <Oci.OpsiService.Models.EnableMacsManagedExternalHostInsightDetails>, <Oci.OpsiService.Models.EnableEmManagedExternalHostInsightDetails> of type <Oci.OpsiService.Models.EnableHostInsightDetails>.")]
         public EnableHostInsightDetails EnableHostInsightDetails { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique host insight identifier")]

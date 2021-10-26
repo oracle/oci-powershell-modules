@@ -26,6 +26,9 @@ namespace Oci.DataintegrationService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used to filter by the name of the object.")]
         public string Name { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This parameter can be used to filter objects by the names that match partially or fully with the given value.")]
+        public string NameContains { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used to filter by the identifier of the published object.")]
         public System.Collections.Generic.List<string> Identifier { get; set; }
 
@@ -61,6 +64,7 @@ namespace Oci.DataintegrationService.Cmdlets
                 {
                     WorkspaceId = WorkspaceId,
                     Name = Name,
+                    NameContains = NameContains,
                     Identifier = Identifier,
                     Fields = Fields,
                     Limit = Limit,

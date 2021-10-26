@@ -59,6 +59,9 @@ namespace Oci.DataintegrationService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This filter parameter can be used to filter by model specific queryable fields of the object <br><br><B>Examples:-</B><br> <ul> <li><B>?filter=status eq Failed</B> returns all objects that have a status field with value Failed</li> </ul>")]
         public System.Collections.Generic.List<string> Filter { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This parameter can be used to filter objects by the names starting with the given value.")]
+        public string NameStartsWith { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -83,7 +86,8 @@ namespace Oci.DataintegrationService.Cmdlets
                     Limit = Limit,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
-                    Filter = Filter
+                    Filter = Filter,
+                    NameStartsWith = NameStartsWith
                 };
                 IEnumerable<ListTaskRunsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

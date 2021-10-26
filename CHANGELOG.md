@@ -3,6 +3,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 23.0.0 - 2021-10-26
+### Added
+- Support for the Source Code Management service
+- Support for the Build service
+- Support for the Certificates service
+- Support to create child tenancies in an organization and manage subscriptions in the Organizations service
+- Support for Certificates service integration in the Load Balancing service
+- Support for creating hosts in specific availability domains in the VMWare Solution service
+- Support for user-defined functions and libraries, as well as scheduling and orchestration, in the Data Integration service
+- Support for EM-managed Exadatas and EM-managed hosts in the Operations Insights service
+- Support for custom Second Level Domain via OCI_DEFAULT_REALM environment variable for unknown regions
+
+### Breaking Changes
+- The cases `COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT`, `COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT`, `COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT`, `LOAD_BALANCER_TRAFFIC_SHIFT`, `WAIT`, `COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT`, `RUN_VALIDATION_TEST_ON_COMPUTE_INSTANCE`, `RUN_DEPLOYMENT_PIPELINE`, and `COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT` were removed in the DeployStageExecutionProgress model's ReadJson method in the DevOps service from the OCI .NET SDK.
+
 ## 22.2.0 - 2021-10-19
 ### Added
 - Support for creating database systems from backups with database software images in the Database service

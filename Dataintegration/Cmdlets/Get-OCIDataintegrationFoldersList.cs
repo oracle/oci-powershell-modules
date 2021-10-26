@@ -35,6 +35,9 @@ namespace Oci.DataintegrationService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used to filter by the name of the object.")]
         public string Name { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This parameter can be used to filter objects by the names that match partially or fully with the given value.")]
+        public string NameContains { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used to filter by the identifier of the object.")]
         public System.Collections.Generic.List<string> Identifier { get; set; }
 
@@ -67,6 +70,7 @@ namespace Oci.DataintegrationService.Cmdlets
                     AggregatorKey = AggregatorKey,
                     Fields = Fields,
                     Name = Name,
+                    NameContains = NameContains,
                     Identifier = Identifier,
                     Page = Page,
                     Limit = Limit,
