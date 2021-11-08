@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 24.0.0 - 2021-11-09
+### Added
+ - Support for drill down metadata in the Management Dashboard service
+ - Support for operator access control on dedicated autonomous databases in the Operator Access Control service
+
+### Breaking Changes
+ - The output type of `New-OCIOperatoraccesscontrolOperatorControlAssignment` changed from `Oci.PSModules.Common.Cmdlets.WorkRequest` to `Oci.OperatoraccesscontrolService.Models.OperatorControlAssignment` in the Operatoraccesscontrol service.
+
+### Fixed
+ - Refreshing Instance Principals tokens after they expire
+
 ## 23.1.0 - 2021-11-02
 ### Added
 - Support for the Database Tools service

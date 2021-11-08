@@ -26,8 +26,17 @@ namespace Oci.OperatoraccesscontrolService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given ResourceName.")]
         public string ResourceName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only lists of resources that match the entire given service type.")]
+        public string ResourceType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.")]
         public System.Nullable<Oci.OperatoraccesscontrolService.Models.AccessRequestLifecycleStates> LifecycleState { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Query start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters are used together.")]
+        public System.Nullable<System.DateTime> TimeStart { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Query start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters are used together.")]
+        public System.Nullable<System.DateTime> TimeEnd { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -58,7 +67,10 @@ namespace Oci.OperatoraccesscontrolService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     ResourceName = ResourceName,
+                    ResourceType = ResourceType,
                     LifecycleState = LifecycleState,
+                    TimeStart = TimeStart,
+                    TimeEnd = TimeEnd,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,

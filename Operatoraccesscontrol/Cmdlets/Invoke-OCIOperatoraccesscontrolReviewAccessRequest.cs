@@ -14,15 +14,21 @@ using Oci.OperatoraccesscontrolService.Models;
 
 namespace Oci.OperatoraccesscontrolService.Cmdlets
 {
-    [Cmdlet("New", "OCIOperatoraccesscontrolOperatorControlAssignment")]
-    [OutputType(new System.Type[] { typeof(Oci.OperatoraccesscontrolService.Models.OperatorControlAssignment), typeof(Oci.OperatoraccesscontrolService.Responses.CreateOperatorControlAssignmentResponse) })]
-    public class NewOCIOperatoraccesscontrolOperatorControlAssignment : OCIOperatorControlAssignmentCmdlet
+    [Cmdlet("Invoke", "OCIOperatoraccesscontrolReviewAccessRequest")]
+    [OutputType(new System.Type[] { typeof(Oci.OperatoraccesscontrolService.Models.AccessRequest), typeof(Oci.OperatoraccesscontrolService.Responses.ReviewAccessRequestResponse) })]
+    public class InvokeOCIOperatoraccesscontrolReviewAccessRequest : OCIAccessRequestsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details of the Operator Control Assignment.")]
-        public CreateOperatorControlAssignmentDetails CreateOperatorControlAssignmentDetails { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique AccessRequest identifier")]
+        public string AccessRequestId { get; set; }
+
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details regarding the approval of an access request created by the operator.")]
+        public ReviewAccessRequestDetails ReviewAccessRequestDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
         public string OpcRetryToken { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
+        public string IfMatch { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
@@ -30,19 +36,21 @@ namespace Oci.OperatoraccesscontrolService.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            CreateOperatorControlAssignmentRequest request;
+            ReviewAccessRequestRequest request;
 
             try
             {
-                request = new CreateOperatorControlAssignmentRequest
+                request = new ReviewAccessRequestRequest
                 {
-                    CreateOperatorControlAssignmentDetails = CreateOperatorControlAssignmentDetails,
+                    AccessRequestId = AccessRequestId,
+                    ReviewAccessRequestDetails = ReviewAccessRequestDetails,
                     OpcRetryToken = OpcRetryToken,
+                    IfMatch = IfMatch,
                     OpcRequestId = OpcRequestId
                 };
 
-                response = client.CreateOperatorControlAssignment(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.OperatorControlAssignment);
+                response = client.ReviewAccessRequest(request).GetAwaiter().GetResult();
+                WriteOutput(response, response.AccessRequest);
                 FinishProcessing(response);
             }
             catch (Exception ex)
@@ -57,6 +65,6 @@ namespace Oci.OperatoraccesscontrolService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private CreateOperatorControlAssignmentResponse response;
+        private ReviewAccessRequestResponse response;
     }
 }
