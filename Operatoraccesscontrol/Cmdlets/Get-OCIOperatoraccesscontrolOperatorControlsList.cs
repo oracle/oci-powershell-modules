@@ -29,6 +29,9 @@ namespace Oci.OperatoraccesscontrolService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return OperatorControl that match the entire display name given.")]
         public string DisplayName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only lists of resources that match the entire given service type.")]
+        public string ResourceType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -59,6 +62,7 @@ namespace Oci.OperatoraccesscontrolService.Cmdlets
                     CompartmentId = CompartmentId,
                     LifecycleState = LifecycleState,
                     DisplayName = DisplayName,
+                    ResourceType = ResourceType,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,

@@ -26,6 +26,9 @@ namespace Oci.OperatoraccesscontrolService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given.")]
         public string Name { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only lists of resources that match the entire given service type.")]
+        public string ResourceType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose lifecycleState matches the given OperatorAction lifecycleState.")]
         public System.Nullable<Oci.OperatoraccesscontrolService.Models.OperatorActionLifecycleStates> LifecycleState { get; set; }
 
@@ -58,6 +61,7 @@ namespace Oci.OperatoraccesscontrolService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     Name = Name,
+                    ResourceType = ResourceType,
                     LifecycleState = LifecycleState,
                     Limit = Limit,
                     Page = Page,
