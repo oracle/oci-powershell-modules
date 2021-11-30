@@ -18,7 +18,7 @@ namespace Oci.DevopsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DevopsService.Models.Connection), typeof(Oci.DevopsService.Responses.UpdateConnectionResponse) })]
     public class UpdateOCIDevopsConnection : OCIDevopsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Connection identifier")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique connection identifier.")]
         public string ConnectionId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtypes <Oci.DevopsService.Models.UpdateGithubAccessTokenConnectionDetails>, <Oci.DevopsService.Models.UpdateGitlabAccessTokenConnectionDetails> of type <Oci.DevopsService.Models.UpdateConnectionDetails>.")]

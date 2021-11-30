@@ -62,6 +62,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned. The key for each tag is ""{tagName}.true"".  All inputs are case-insensitive. Currently, only existence (""true"" at the end) is supported. Absence (""false"" at the end) is not supported. Multiple values for different tag names are interpreted as ""AND"".")]
         public System.Collections.Generic.List<string> FreeformTagExists { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A flag to search all resources within a given compartment and all sub-compartments.")]
+        public System.Nullable<bool> CompartmentIdInSubtree { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -87,7 +90,8 @@ namespace Oci.OpsiService.Cmdlets
                     DefinedTagEquals = DefinedTagEquals,
                     FreeformTagEquals = FreeformTagEquals,
                     DefinedTagExists = DefinedTagExists,
-                    FreeformTagExists = FreeformTagExists
+                    FreeformTagExists = FreeformTagExists,
+                    CompartmentIdInSubtree = CompartmentIdInSubtree
                 };
                 IEnumerable<ListHostConfigurationsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

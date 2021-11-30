@@ -7,6 +7,8 @@
  */
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Management.Automation;
 using Oci.ApmcontrolplaneService.Requests;
 using Oci.ApmcontrolplaneService.Responses;
@@ -18,11 +20,20 @@ namespace Oci.ApmcontrolplaneService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ApmcontrolplaneService.Models.WorkRequest), typeof(Oci.ApmcontrolplaneService.Responses.ListApmDomainWorkRequestsResponse) })]
     public class GetOCIApmcontrolplaneApmDomainWorkRequestsList : OCIApmDomainCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the APM Domain")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the APM domain")]
         public string ApmDomainId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.")]
+        public string Page { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
+        public System.Nullable<int> Limit { get; set; }
+
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
+        public SwitchParameter All { get; set; }
 
         protected override void ProcessRecord()
         {
@@ -34,11 +45,20 @@ namespace Oci.ApmcontrolplaneService.Cmdlets
                 request = new ListApmDomainWorkRequestsRequest
                 {
                     ApmDomainId = ApmDomainId,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    Page = Page,
+                    Limit = Limit
                 };
-
-                response = client.ListApmDomainWorkRequests(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.Items, true);
+                IEnumerable<ListApmDomainWorkRequestsResponse> responses = GetRequestDelegate().Invoke(request);
+                foreach (var item in responses)
+                {
+                    response = item;
+                    WriteOutput(response, response.Items, true);
+                }
+                if(!ParameterSetName.Equals(AllPageSet) && !ParameterSetName.Equals(LimitSet) && response.OpcNextPage != null)
+                {
+                    WriteWarning("This operation supports pagination and not all resources were returned. Re-run using the -All option to auto paginate and list all resources.");
+                }
                 FinishProcessing(response);
             }
             catch (Exception ex)
@@ -53,6 +73,19 @@ namespace Oci.ApmcontrolplaneService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
+        private RequestDelegate GetRequestDelegate()
+        {
+            IEnumerable<ListApmDomainWorkRequestsResponse> DefaultRequest(ListApmDomainWorkRequestsRequest request) => Enumerable.Repeat(client.ListApmDomainWorkRequests(request).GetAwaiter().GetResult(), 1);
+            if (ParameterSetName.Equals(AllPageSet))
+            {
+                return req => client.Paginators.ListApmDomainWorkRequestsResponseEnumerator(req);
+            }
+            return DefaultRequest;
+        }
+
         private ListApmDomainWorkRequestsResponse response;
+        private delegate IEnumerable<ListApmDomainWorkRequestsResponse> RequestDelegate(ListApmDomainWorkRequestsRequest request);
+        private const string AllPageSet = "AllPages";
+        private const string LimitSet = "Limit";
     }
 }

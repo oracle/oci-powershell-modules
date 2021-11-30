@@ -18,7 +18,7 @@ namespace Oci.DevopsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DevopsService.Models.BuildPipeline), typeof(Oci.DevopsService.Responses.UpdateBuildPipelineResponse) })]
     public class UpdateOCIDevopsBuildPipeline : OCIDevopsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique BuildPipeline identifier")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique build pipeline identifier.")]
         public string BuildPipelineId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated.")]

@@ -20,16 +20,16 @@ namespace Oci.DevopsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DevopsService.Models.DiffCollection), typeof(Oci.DevopsService.Responses.ListCommitDiffsResponse) })]
     public class GetOCIDevopsCommitDiffsList : OCIDevopsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Repository identifier.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique repository identifier.")]
         public string RepositoryId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The commit or ref name to compare changes against")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The commit or reference name to compare changes against.")]
         public string BaseVersion { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The commit or ref name where changes are coming from")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The commit or reference name where changes are coming from.")]
         public string TargetVersion { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"boolean for whether to use merge base or most recent revision")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Boolean value to indicate whether to use merge base or most recent revision.")]
         public System.Nullable<bool> IsComparisonFromMergeBase { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]

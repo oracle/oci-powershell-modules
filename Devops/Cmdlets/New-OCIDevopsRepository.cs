@@ -18,7 +18,7 @@ namespace Oci.DevopsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DevopsService.Models.Repository), typeof(Oci.DevopsService.Responses.CreateRepositoryResponse) })]
     public class NewOCIDevopsRepository : OCIDevopsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new Repository.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new repository.")]
         public CreateRepositoryDetails CreateRepositoryDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated earlier due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]

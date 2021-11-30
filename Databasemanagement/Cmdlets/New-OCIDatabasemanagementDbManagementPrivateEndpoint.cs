@@ -18,7 +18,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabasemanagementService.Models.DbManagementPrivateEndpoint), typeof(Oci.DatabasemanagementService.Responses.CreateDbManagementPrivateEndpointResponse) })]
     public class NewOCIDatabasemanagementDbManagementPrivateEndpoint : OCIDbManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details to create a new private endpoint.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details used to create a new Database Management private endpoint.")]
         public CreateDbManagementPrivateEndpointDetails CreateDbManagementPrivateEndpointDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]

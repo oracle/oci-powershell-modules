@@ -57,7 +57,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The optional query parameter to filter the database parameters that had a modified value in the last snapshot.")]
         public System.Nullable<Oci.DatabasemanagementService.Requests.SummarizeAwrDbParametersRequest.ValueModifiedEnum> ValueModified { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The page token representing the page, from where the next set of paginated results are retrieved. This is usually retrieved from a previous list call.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The page token representing the page from where the next set of paginated results are retrieved. This is usually retrieved from a previous list call.")]
         public string Page { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of records returned in large paginated response.")]

@@ -18,7 +18,7 @@ namespace Oci.DevopsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DevopsService.Models.BuildPipelineStage), typeof(Oci.DevopsService.Responses.CreateBuildPipelineStageResponse) })]
     public class NewOCIDevopsBuildPipelineStage : OCIDevopsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new Stage. This parameter also accepts subtypes <Oci.DevopsService.Models.CreateDeliverArtifactStageDetails>, <Oci.DevopsService.Models.CreateTriggerDeploymentStageDetails>, <Oci.DevopsService.Models.CreateWaitStageDetails>, <Oci.DevopsService.Models.CreateBuildStageDetails> of type <Oci.DevopsService.Models.CreateBuildPipelineStageDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new stage. This parameter also accepts subtypes <Oci.DevopsService.Models.CreateDeliverArtifactStageDetails>, <Oci.DevopsService.Models.CreateTriggerDeploymentStageDetails>, <Oci.DevopsService.Models.CreateWaitStageDetails>, <Oci.DevopsService.Models.CreateBuildStageDetails> of type <Oci.DevopsService.Models.CreateBuildPipelineStageDetails>.")]
         public CreateBuildPipelineStageDetails CreateBuildPipelineStageDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated earlier due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]

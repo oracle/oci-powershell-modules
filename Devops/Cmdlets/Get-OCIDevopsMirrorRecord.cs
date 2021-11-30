@@ -18,10 +18,10 @@ namespace Oci.DevopsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DevopsService.Models.RepositoryMirrorRecord), typeof(Oci.DevopsService.Responses.GetMirrorRecordResponse) })]
     public class GetOCIDevopsMirrorRecord : OCIDevopsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Repository identifier.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique repository identifier.")]
         public string RepositoryId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field of mirror record type. Only one mirror record type may be provided. current - The current mirror record. lastSuccessful - The last successful mirror record")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field of mirror record type. Only one mirror record type can be provided: current - The current mirror record. lastSuccessful - The last successful mirror record.")]
         public System.Nullable<Oci.DevopsService.Requests.GetMirrorRecordRequest.MirrorRecordTypeEnum> MirrorRecordType { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.")]
