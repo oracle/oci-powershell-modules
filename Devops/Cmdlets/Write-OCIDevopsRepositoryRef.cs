@@ -18,13 +18,13 @@ namespace Oci.DevopsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DevopsService.Models.RepositoryRef), typeof(Oci.DevopsService.Responses.PutRepositoryRefResponse) })]
     public class WriteOCIDevopsRepositoryRef : OCIDevopsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Repository identifier.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique repository identifier.")]
         public string RepositoryId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given Ref name.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given reference name.")]
         public string RefName { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to create a Ref with the type specified in the query. This parameter also accepts subtypes <Oci.DevopsService.Models.PutRepositoryTagDetails>, <Oci.DevopsService.Models.PutRepositoryBranchDetails> of type <Oci.DevopsService.Models.PutRepositoryRefDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to create a reference with the type specified in the query. This parameter also accepts subtypes <Oci.DevopsService.Models.PutRepositoryTagDetails>, <Oci.DevopsService.Models.PutRepositoryBranchDetails> of type <Oci.DevopsService.Models.PutRepositoryRefDetails>.")]
         public PutRepositoryRefDetails PutRepositoryRefDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

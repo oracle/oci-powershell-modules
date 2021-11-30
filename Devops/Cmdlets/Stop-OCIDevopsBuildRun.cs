@@ -18,7 +18,7 @@ namespace Oci.DevopsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DevopsService.Models.BuildRun), typeof(Oci.DevopsService.Responses.CancelBuildRunResponse) })]
     public class StopOCIDevopsBuildRun : OCIDevopsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details the input parameters required to cancel a build run.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Parameter details required to cancel a build run.")]
         public CancelBuildRunDetails CancelBuildRunDetails { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique build run identifier.")]

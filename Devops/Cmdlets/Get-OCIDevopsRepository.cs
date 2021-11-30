@@ -20,8 +20,8 @@ namespace Oci.DevopsService.Cmdlets
     public class GetOCIDevopsRepository : OCIDevopsCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Repository identifier.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Repository identifier.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique repository identifier.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique repository identifier.", ParameterSetName = Default)]
         public string RepositoryId { get; set; }
 
         
@@ -30,8 +30,8 @@ namespace Oci.DevopsService.Cmdlets
         public string OpcRequestId { get; set; }
 
         
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fields param can contain multiple flags useful in deciding the API functionality", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fields param can contain multiple flags useful in deciding the API functionality", ParameterSetName = Default)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fields parameter can contain multiple flags useful in deciding the API functionality.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fields parameter can contain multiple flags useful in deciding the API functionality.", ParameterSetName = Default)]
         public System.Collections.Generic.List<Oci.DevopsService.Requests.GetRepositoryRequest.FieldsEnum> Fields { get; set; }
 
         [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = LifecycleStateParamSet)]

@@ -20,13 +20,13 @@ namespace Oci.DevopsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DevopsService.Models.RepositoryPathCollection), typeof(Oci.DevopsService.Responses.ListPathsResponse) })]
     public class GetOCIDevopsPathsList : OCIDevopsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Repository identifier.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique repository identifier.")]
         public string RepositoryId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of branch/tag or commit hash it points to. If names conflict order of preference is commit > branch > tag. You can disambiguate with ""heads/foobar"" and ""tags/foobar"". Repository's default branch will be used if left blank.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of branch/tag or commit hash it points to. If names conflict, order of preference is commit > branch > tag. You can disambiguate with ""heads/foobar"" and ""tags/foobar"". If left blank repository's default branch will be used.")]
         public string Ref { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Flag to determine if files should be retrived recursively. false by default")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Flag to determine if files must be retrived recursively. Flag is False by default.")]
         public System.Nullable<bool> PathsInSubtree { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository.")]

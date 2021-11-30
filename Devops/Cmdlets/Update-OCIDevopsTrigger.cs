@@ -18,7 +18,7 @@ namespace Oci.DevopsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DevopsService.Models.Trigger), typeof(Oci.DevopsService.Responses.UpdateTriggerResponse) })]
     public class UpdateOCIDevopsTrigger : OCIDevopsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Trigger identifier")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique trigger identifier.")]
         public string TriggerId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtypes <Oci.DevopsService.Models.UpdateDevopsCodeRepositoryTriggerDetails>, <Oci.DevopsService.Models.UpdateGithubTriggerDetails>, <Oci.DevopsService.Models.UpdateGitlabTriggerDetails> of type <Oci.DevopsService.Models.UpdateTriggerDetails>.")]

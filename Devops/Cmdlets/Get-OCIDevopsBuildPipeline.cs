@@ -20,8 +20,8 @@ namespace Oci.DevopsService.Cmdlets
     public class GetOCIDevopsBuildPipeline : OCIDevopsCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique BuildPipeline identifier", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique BuildPipeline identifier", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique build pipeline identifier.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique build pipeline identifier.", ParameterSetName = Default)]
         public string BuildPipelineId { get; set; }
 
         

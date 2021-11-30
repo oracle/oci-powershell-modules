@@ -18,7 +18,7 @@ namespace Oci.ApmcontrolplaneService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ApmcontrolplaneService.Models.DataKeySummary), typeof(Oci.ApmcontrolplaneService.Responses.ListDataKeysResponse) })]
     public class GetOCIApmcontrolplaneDataKeysList : OCIApmDomainCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the APM Domain")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the APM domain")]
         public string ApmDomainId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Data key type.")]
