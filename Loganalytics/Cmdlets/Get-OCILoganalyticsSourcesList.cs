@@ -53,6 +53,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.")]
         public string Name { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A comma-separated list of categories used for filtering")]
+        public string Categories { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A flag specifying whether or not to return all source information, or a subset of the information about each source.  A value of true will return only the source unique identifier and the source name.  A value of false will return all source information (such as author, updated date, system flag, etc.)")]
         public System.Nullable<bool> IsSimplified { get; set; }
 
@@ -82,6 +85,7 @@ namespace Oci.LoganalyticsService.Cmdlets
                     Limit = Limit,
                     Page = Page,
                     Name = Name,
+                    Categories = Categories,
                     IsSimplified = IsSimplified,
                     OpcRequestId = OpcRequestId
                 };
