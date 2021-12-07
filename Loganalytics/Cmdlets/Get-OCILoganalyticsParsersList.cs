@@ -38,6 +38,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The parser type used for filtering.  Only items with, or associated with, parsers of the specified type will be returned.")]
         public System.Nullable<Oci.LoganalyticsService.Requests.ListParsersRequest.ParserTypeEnum> ParserType { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A comma-separated list of categories used for filtering")]
+        public string Categories { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The system value used for filtering.  Only items with the specified system value will be returned.  Valid values are built in, custom (for user defined items), or all (for all items, regardless of system value).")]
         public System.Nullable<Oci.LoganalyticsService.Requests.ListParsersRequest.IsSystemEnum> IsSystem { get; set; }
 
@@ -74,6 +77,7 @@ namespace Oci.LoganalyticsService.Cmdlets
                     ParserName = ParserName,
                     ParserDisplayText = ParserDisplayText,
                     ParserType = ParserType,
+                    Categories = Categories,
                     IsSystem = IsSystem,
                     Limit = Limit,
                     Page = Page,

@@ -38,6 +38,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The lookup status used for filtering when fetching a list of lookups.")]
         public System.Nullable<Oci.LoganalyticsService.Requests.ListLookupsRequest.StatusEnum> Status { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A comma-separated list of categories used for filtering")]
+        public string Categories { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A flag indicating whether or not to return OMC annotated or hidden lookups.")]
         public System.Nullable<bool> IsHideSpecial { get; set; }
 
@@ -71,6 +74,7 @@ namespace Oci.LoganalyticsService.Cmdlets
                     IsSystem = IsSystem,
                     SortBy = SortBy,
                     Status = Status,
+                    Categories = Categories,
                     IsHideSpecial = IsHideSpecial,
                     Limit = Limit,
                     Page = Page,

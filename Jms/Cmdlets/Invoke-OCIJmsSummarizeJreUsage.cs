@@ -63,6 +63,9 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The operating system type.")]
         public System.Collections.Generic.List<Oci.JmsService.Models.OsFamily> OsFamily { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The security status of the Java Runtime.")]
+        public System.Nullable<Oci.JmsService.Models.JreSecurityStatus> JreSecurityStatus { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -86,7 +89,8 @@ namespace Oci.JmsService.Cmdlets
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,
-                    OsFamily = OsFamily
+                    OsFamily = OsFamily,
+                    JreSecurityStatus = JreSecurityStatus
                 };
 
                 response = client.SummarizeJreUsage(request).GetAwaiter().GetResult();
