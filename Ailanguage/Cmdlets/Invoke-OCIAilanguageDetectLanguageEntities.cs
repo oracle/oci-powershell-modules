@@ -18,7 +18,7 @@ namespace Oci.AilanguageService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.AilanguageService.Models.DetectLanguageEntitiesResult), typeof(Oci.AilanguageService.Responses.DetectLanguageEntitiesResponse) })]
     public class InvokeOCIAilanguageDetectLanguageEntities : OCIAIServiceLanguageCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details to make a Entity detect call. Example: `{""text"": ""If an emerging growth company, indicate by check mark if the registrant has elected not            to use the extended transition period for complying""}`")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details to make a Entity detect call.")]
         public DetectLanguageEntitiesDetails DetectLanguageEntitiesDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

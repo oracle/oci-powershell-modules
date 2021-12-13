@@ -18,7 +18,7 @@ namespace Oci.AilanguageService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.AilanguageService.Models.DetectLanguageTextClassificationResult), typeof(Oci.AilanguageService.Responses.DetectLanguageTextClassificationResponse) })]
     public class InvokeOCIAilanguageDetectLanguageTextClassification : OCIAIServiceLanguageCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details to make text classification detect call. Example: `{""text"": ""If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying""}`")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details to make text classification detect call.")]
         public DetectLanguageTextClassificationDetails DetectLanguageTextClassificationDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
