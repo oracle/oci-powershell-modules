@@ -18,7 +18,7 @@ namespace Oci.AilanguageService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.AilanguageService.Models.DetectDominantLanguageResult), typeof(Oci.AilanguageService.Responses.DetectDominantLanguageResponse) })]
     public class InvokeOCIAilanguageDetectDominantLanguage : OCIAIServiceLanguageCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details to make a language detection detect call. Example: `{""text"": ""If an emerging growth company, indicate by check mark if the registrant has elected not             to use the extended transition period for complying""}`")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details to make a language detection detect call.")]
         public DetectDominantLanguageDetails DetectDominantLanguageDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

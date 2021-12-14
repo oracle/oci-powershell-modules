@@ -58,6 +58,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given service-level agreement type exactly.")]
         public string ServiceLevelAgreementType { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        public string CloudAutonomousVmClusterId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -81,7 +84,8 @@ namespace Oci.DatabaseService.Cmdlets
                     LifecycleState = LifecycleState,
                     AvailabilityDomain = AvailabilityDomain,
                     DisplayName = DisplayName,
-                    ServiceLevelAgreementType = ServiceLevelAgreementType
+                    ServiceLevelAgreementType = ServiceLevelAgreementType,
+                    CloudAutonomousVmClusterId = CloudAutonomousVmClusterId
                 };
                 IEnumerable<ListAutonomousContainerDatabasesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
