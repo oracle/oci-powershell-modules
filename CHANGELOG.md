@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 25.0.0 - 2022-01-11
+### Added
+- Support for calling Oracle Cloud Infrastructure services in the `af-johannesburg-1` and `eu-stockholm-1` regions
+- Support for multiple protocols on the same listener in the Network Load Balancing service
+- IPv6 support in the Network Load Balancing service
+- Support for creating Enterprise Manager-based Solaris and SunOS host targets in the Operations Insights service
+- Support for choosing Data Guard type (Active Data Guard or regular) on databases in the Database service
+- Support for Optional `HttpCompletionOption` parameter that can be provided for Head requests in all service clients for API requests
+ 
+### Breaking Changes
+- The data type of property `Action` was changed from `System.Nullable<Oci.CoreService.Requests.InstanceActionRequest.ActionEnum>` to `string` in `Invoke-OCIComputeInstanceAction` in Compute service
+- The data type of property `Action` was changed from `System.Nullable<Oci.DatabaseService.Requests.DbNodeActionRequest.ActionEnum>` to `string` in `Invoke-OCIDatabaseDbNodeAction` in Database service
+- The data type of property `Protocol` was changed from `System.Nullable<Oci.IdentityService.Requests.ListIdentityProvidersRequest.ProtocolEnum>` to `string` in `Get-OCIIdentityProvidersList` in Identity service
+- The data type of property `Fields` was changed from `System.Nullable<Oci.ObjectstorageService.Requests.ListObjectsRequest.FieldsEnum>` to `string` in `Get-OCIObjectstorageObjectsList` in Object Storage service
+- The data type of property `Fields` was changed from `System.Nullable<Oci.ObjectstorageService.Requests.ListObjectVersionsRequest.FieldsEnum>` to `string` in `Get-OCIObjectstorageObjectVersionsList` in Object Storage service
+
 ## 24.4.0 - 2021-12-14
 ### Added
 - Support for node replacement in the VMWare Solution service
