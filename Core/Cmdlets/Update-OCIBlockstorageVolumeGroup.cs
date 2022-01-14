@@ -27,6 +27,9 @@ namespace Oci.CoreService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
         public string IfMatch { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies whether to disable or preserve the individual volume replication when removing a volume from the replication enabled volume group. When set to `true`, the individual volume replica is preserved. The default value is `true`.")]
+        public System.Nullable<bool> PreserveVolumeReplica { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -38,7 +41,8 @@ namespace Oci.CoreService.Cmdlets
                 {
                     VolumeGroupId = VolumeGroupId,
                     UpdateVolumeGroupDetails = UpdateVolumeGroupDetails,
-                    IfMatch = IfMatch
+                    IfMatch = IfMatch,
+                    PreserveVolumeReplica = PreserveVolumeReplica
                 };
 
                 response = client.UpdateVolumeGroup(request).GetAwaiter().GetResult();
