@@ -20,8 +20,8 @@ namespace Oci.DatalabelingservicedataplaneService.Cmdlets
     public class GetOCIDatalabelingservicedataplaneDataset : OCIDataLabelingCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Dataset OCID", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Dataset OCID", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique dataset OCID.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique dataset OCID.", ParameterSetName = Default)]
         public string DatasetId { get; set; }
 
         

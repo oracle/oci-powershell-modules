@@ -22,7 +22,7 @@ namespace Oci.DatalabelingservicedataplaneService.Cmdlets
     [OutputType(new System.Type[] { typeof(System.IO.Stream), typeof(void), typeof(Oci.DatalabelingservicedataplaneService.Responses.GetRecordPreviewContentResponse) })]
     public class GetOCIDatalabelingservicedataplaneRecordPreviewContent : OCIDataLabelingCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the record annotated")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the record annotated.")]
         public string RecordId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

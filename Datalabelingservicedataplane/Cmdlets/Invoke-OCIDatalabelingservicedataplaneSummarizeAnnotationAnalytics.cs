@@ -21,13 +21,13 @@ namespace Oci.DatalabelingservicedataplaneService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter results by the OCID of the dataset.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter the results by the OCID of the dataset.")]
         public string DatasetId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources their lifecycleState matches the given lifecycleState.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose lifecycleState matches the given lifecycleState.")]
         public System.Nullable<Oci.DatalabelingservicedataplaneService.Models.Annotation.LifecycleStateEnum> LifecycleState { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This field is used to summarize annotations with specified label.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"It summarizes annotations with the specified label.")]
         public string Label { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.")]
@@ -39,10 +39,10 @@ namespace Oci.DatalabelingservicedataplaneService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'asc' or 'desc'.")]
         public System.Nullable<Oci.DatalabelingservicedataplaneService.Models.SortOrders> SortOrder { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order is descending. If no value is specified updatedBy is default.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. The default order is descending. If no value is specified, updatedBy is used by default.")]
         public System.Nullable<Oci.DatalabelingservicedataplaneService.Requests.SummarizeAnnotationAnalyticsRequest.SortByEnum> SortBy { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to group by. If no value is specified updatedBy is default.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to group by. If no value is specified, updatedBy is used by default.")]
         public System.Nullable<Oci.DatalabelingservicedataplaneService.Requests.SummarizeAnnotationAnalyticsRequest.AnnotationGroupByEnum> AnnotationGroupBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

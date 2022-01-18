@@ -20,8 +20,8 @@ namespace Oci.DatalabelingservicedataplaneService.Cmdlets
     public class GetOCIDatalabelingservicedataplaneAnnotation : OCIDataLabelingCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Annotation identifier", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Annotation identifier", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique annotation identifier.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique annotation identifier.", ParameterSetName = Default)]
         public string AnnotationId { get; set; }
 
         

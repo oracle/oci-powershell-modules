@@ -20,8 +20,8 @@ namespace Oci.DatalabelingservicedataplaneService.Cmdlets
     public class GetOCIDatalabelingservicedataplaneRecord : OCIDataLabelingCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the record annotated", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the record annotated", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the record annotated.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the record annotated.", ParameterSetName = Default)]
         public string RecordId { get; set; }
 
         
