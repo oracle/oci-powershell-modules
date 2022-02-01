@@ -23,7 +23,7 @@ namespace Oci.MarketplaceService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of the report.")]
         public string ReportType { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Date, expressed in `YYYYMMDD` format, where `Y` represents the year, `M` represents the month, and `D` represents the day.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Date, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The service only interprets the year, month, and day parts in the input value, and ignores the hour, minute, and second parts.")]
         public System.Nullable<System.DateTime> Date { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier for the compartment.")]

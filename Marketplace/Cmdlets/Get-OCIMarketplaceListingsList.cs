@@ -26,6 +26,9 @@ namespace Oci.MarketplaceService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier for the listing.")]
         public string ListingId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Image ID of the listing")]
+        public string ImageId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Limit results to just this publisher.")]
         public string PublisherId { get; set; }
 
@@ -79,6 +82,7 @@ namespace Oci.MarketplaceService.Cmdlets
                 {
                     Name = Name,
                     ListingId = ListingId,
+                    ImageId = ImageId,
                     PublisherId = PublisherId,
                     PackageType = PackageType,
                     OpcRequestId = OpcRequestId,
