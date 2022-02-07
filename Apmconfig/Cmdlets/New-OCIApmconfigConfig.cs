@@ -18,10 +18,10 @@ namespace Oci.ApmconfigService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ApmconfigService.Models.Config), typeof(Oci.ApmconfigService.Responses.CreateConfigResponse) })]
     public class NewOCIApmconfigConfig : OCIConfigCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain Id the request is intended for.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain ID the request is intended for.")]
         public string ApmDomainId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The configuration details describing the new item. This parameter also accepts subtypes <Oci.ApmconfigService.Models.CreateSpanFilterDetails>, <Oci.ApmconfigService.Models.CreateMetricGroupDetails>, <Oci.ApmconfigService.Models.CreateApdexRulesDetails> of type <Oci.ApmconfigService.Models.CreateConfigDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The configuration details of the new item. This parameter also accepts subtypes <Oci.ApmconfigService.Models.CreateSpanFilterDetails>, <Oci.ApmconfigService.Models.CreateMetricGroupDetails>, <Oci.ApmconfigService.Models.CreateApdexRulesDetails> of type <Oci.ApmconfigService.Models.CreateConfigDetails>.")]
         public CreateConfigDetails CreateConfigDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
@@ -30,7 +30,7 @@ namespace Oci.ApmconfigService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates that this request is a dry-run. If set to ""true"", nothing will be modified, only the validation will be performed.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates that the request is a dry run, if set to ""true"". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.")]
         public string OpcDryRun { get; set; }
 
         protected override void ProcessRecord()
