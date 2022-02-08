@@ -21,7 +21,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.")]
         public string ManagedDatabaseId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Detail inputs for starting a SQL tuning task")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The detailed inputs required to start a SQL tuning task.")]
         public StartSqlTuningTaskDetails StartSqlTuningTaskDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

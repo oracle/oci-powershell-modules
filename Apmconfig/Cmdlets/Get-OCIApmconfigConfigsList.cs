@@ -20,30 +20,28 @@ namespace Oci.ApmconfigService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ApmconfigService.Models.ConfigCollection), typeof(Oci.ApmconfigService.Responses.ListConfigsResponse) })]
     public class GetOCIApmconfigConfigsList : OCIConfigCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain Id the request is intended for.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain ID the request is intended for.")]
         public string ApmDomainId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to match only configuration items of the given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.")]
         public string ConfigType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that match the given display name.")]
         public string DisplayName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-
-Example: `50`")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of results per page, or items to return in a paginated ""List"" call. For information on how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example: `50`")]
         public string Page { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (`ASC`) or descending (`DESC`). The displayName sort order is case sensitive.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (`ASC`) or descending (`DESC`). The displayName sort order is case-sensitive.")]
         public System.Nullable<Oci.ApmconfigService.Models.SortOrders> SortOrder { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. You can provide one sort by (`sortBy`). Default order for displayName, timeCreated and timeUpdated is ascending. The displayName sort by is case sensitive.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. You can provide one ""sortBy"" value. The default order for displayName, timeCreated and timeUpdated is ascending. The displayName sort by is case-sensitive.")]
         public System.Nullable<Oci.ApmconfigService.Requests.ListConfigsRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]

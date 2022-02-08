@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 26.0.0 - 2022-02-08
+### Added
+- Support for managing tablespaces in the Database Management service
+- Support for upgrading and managing payment for subscriptions in the Account Management service
+- Support for listing fast launch job configurations in the Data Science service
+
+### Breaking Changes
+- The data type of the property BillToAddress was changed from `Address` to `BillToAddress` for the Invoice model of the Account Management service in the .Net SDK
+
 ## 25.3.0 - 2022-02-01
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the `ap-dcc-canberra-1` region

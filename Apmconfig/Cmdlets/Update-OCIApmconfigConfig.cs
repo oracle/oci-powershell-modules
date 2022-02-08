@@ -18,13 +18,13 @@ namespace Oci.ApmconfigService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ApmconfigService.Models.Config), typeof(Oci.ApmconfigService.Responses.UpdateConfigResponse) })]
     public class UpdateOCIApmconfigConfig : OCIConfigCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain Id the request is intended for.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain ID the request is intended for.")]
         public string ApmDomainId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the ConfiguredItem.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the configuration item.")]
         public string ConfigId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The data to be updated. This parameter also accepts subtypes <Oci.ApmconfigService.Models.UpdateMetricGroupDetails>, <Oci.ApmconfigService.Models.UpdateApdexRulesDetails>, <Oci.ApmconfigService.Models.UpdateSpanFilterDetails> of type <Oci.ApmconfigService.Models.UpdateConfigDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The configuration details to be updated. This parameter also accepts subtypes <Oci.ApmconfigService.Models.UpdateMetricGroupDetails>, <Oci.ApmconfigService.Models.UpdateApdexRulesDetails>, <Oci.ApmconfigService.Models.UpdateSpanFilterDetails> of type <Oci.ApmconfigService.Models.UpdateConfigDetails>.")]
         public UpdateConfigDetails UpdateConfigDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
@@ -33,7 +33,7 @@ namespace Oci.ApmconfigService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates that this request is a dry-run. If set to ""true"", nothing will be modified, only the validation will be performed.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates that the request is a dry run, if set to ""true"". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.")]
         public string OpcDryRun { get; set; }
 
         protected override void ProcessRecord()
