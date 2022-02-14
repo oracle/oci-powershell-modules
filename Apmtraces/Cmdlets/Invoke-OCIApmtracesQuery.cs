@@ -18,16 +18,16 @@ namespace Oci.ApmtracesService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ApmtracesService.Models.QueryResultResponse), typeof(Oci.ApmtracesService.Responses.QueryResponse) })]
     public class InvokeOCIApmtracesQuery : OCIQueryCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain Id the request is intended for.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain ID the request is intended for.")]
         public string ApmDomainId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Include spans that have a `spanStartTime` equal to or greater this value.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Include spans that have a `spanStartTime` equal to or greater than this value.")]
         public System.Nullable<System.DateTime> TimeSpanStartedGreaterThanOrEqualTo { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Include spans that have a `spanStartTime`less than this value.")]
         public System.Nullable<System.DateTime> TimeSpanStartedLessThan { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request body containing the query to be run against our repository.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request body containing the query to be run against the trace data and to filter and retrieve trace data results.")]
         public QueryDetails QueryDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, please provide the request ID.")]

@@ -23,6 +23,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the specified compartment OCID.")]
         public string CompartmentId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the target databases that are associated to the resource id passed in as a parameter value.")]
+        public string AssociatedResourceId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the target database that matches the specified OCID.")]
         public string TargetDatabaseId { get; set; }
 
@@ -72,6 +75,7 @@ namespace Oci.DatasafeService.Cmdlets
                 request = new ListTargetDatabasesRequest
                 {
                     CompartmentId = CompartmentId,
+                    AssociatedResourceId = AssociatedResourceId,
                     TargetDatabaseId = TargetDatabaseId,
                     DisplayName = DisplayName,
                     LifecycleState = LifecycleState,

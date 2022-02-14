@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 27.0.0 - 2022-02-15
+### Added
+- Support for the AI Vision service
+- Support for the Threat Intelligence service
+- Support for creation of NoSQL database tables with on-demand throughput capacity in the NoSQL Database Cloud service
+- Support for tagging features in the Oracle Container Engine for Kubernetes (OKE) service
+- Support for trace snapshots in the Application Performance Monitoring service
+- Support for auditing and alerts in the Data Safe service
+- Support for data discovery and data masking in the Data Safe service
+- Support for customized subscriptions and delivery of announcements by email and SMS in the Announcements service
+  
+### Breaking Changes
+- The deprecated API `QueryOld` from `QueryClient` and its request model `QueryOldRequest` were removed in the Application Performance Monitoring service in the .NET SDK
+
 ## 26.0.0 - 2022-02-08
 ### Added
 - Support for managing tablespaces in the Database Management service

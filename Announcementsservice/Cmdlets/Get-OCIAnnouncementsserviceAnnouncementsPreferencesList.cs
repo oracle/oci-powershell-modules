@@ -20,7 +20,7 @@ namespace Oci.AnnouncementsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.AnnouncementsService.Models.AnnouncementsPreferencesSummary), typeof(Oci.AnnouncementsService.Responses.ListAnnouncementsPreferencesResponse) })]
     public class GetOCIAnnouncementsserviceAnnouncementsPreferencesList : OCIAnnouncementsPreferencesCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment. Because announcements are specific to a tenancy, this is the OCID of the root compartment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return in a paginated ""List"" call.", ParameterSetName = LimitSet)]

@@ -20,7 +20,7 @@ namespace Oci.AnnouncementsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.AnnouncementsService.Models.AnnouncementsCollection), typeof(Oci.AnnouncementsService.Responses.ListAnnouncementsResponse) })]
     public class GetOCIAnnouncementsserviceAnnouncementsList : OCIAnnouncementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment. Because announcements are specific to a tenancy, this is the OCID of the root compartment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return in a paginated ""List"" call.", ParameterSetName = LimitSet)]
@@ -50,6 +50,18 @@ namespace Oci.AnnouncementsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The boundary for the latest `timeOneValue` date on announcements that you want to see.")]
         public System.Nullable<System.DateTime> TimeOneLatestTime { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only announcements that match a specific environment name.")]
+        public string EnvironmentName { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only announcements affecting a specific service.")]
+        public string Service { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only announcements affecting a specific platform.")]
+        public System.Nullable<Oci.AnnouncementsService.Requests.ListAnnouncementsRequest.PlatformTypeEnum> PlatformType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Exclude The type of announcement.")]
+        public System.Collections.Generic.List<string> ExcludeAnnouncementTypes { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the complete request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -75,6 +87,10 @@ namespace Oci.AnnouncementsService.Cmdlets
                     SortOrder = SortOrder,
                     TimeOneEarliestTime = TimeOneEarliestTime,
                     TimeOneLatestTime = TimeOneLatestTime,
+                    EnvironmentName = EnvironmentName,
+                    Service = Service,
+                    PlatformType = PlatformType,
+                    ExcludeAnnouncementTypes = ExcludeAnnouncementTypes,
                     OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListAnnouncementsResponse> responses = GetRequestDelegate().Invoke(request);

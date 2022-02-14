@@ -41,7 +41,7 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only user assessments that are set as baseline.")]
         public System.Nullable<bool> IsBaseline { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items that match the specified target.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items related to a specific target OCID.")]
         public string TargetId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items that match the specified assessment type.")]
@@ -55,7 +55,7 @@ namespace Oci.DatasafeService.Cmdlets
 **Example:** 2016-12-19T16:39:57.600Z")]
         public System.Nullable<System.DateTime> TimeCreatedGreaterThanOrEqualTo { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Search for items that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all items created before the specified created date, in ""YYYY-MM-ddThh:mmZ"" format with a Z offset, as defined by RFC 3339.
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in ""YYYY-MM-ddThh:mmZ"" format with a Z offset, as defined by RFC 3339.
 
 **Example:** 2016-12-19T16:39:57.600Z")]
         public System.Nullable<System.DateTime> TimeCreatedLessThan { get; set; }
