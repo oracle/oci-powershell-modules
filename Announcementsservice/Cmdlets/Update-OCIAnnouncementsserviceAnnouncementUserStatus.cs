@@ -15,7 +15,7 @@ using Oci.AnnouncementsService.Models;
 namespace Oci.AnnouncementsService.Cmdlets
 {
     [Cmdlet("Update", "OCIAnnouncementsserviceAnnouncementUserStatus")]
-    [OutputType(new System.Type[] { typeof(void), typeof(Oci.AnnouncementsService.Responses.UpdateAnnouncementUserStatusResponse) })]
+    [OutputType(new System.Type[] { typeof(Oci.AnnouncementsService.Models.AnnouncementUserStatusDetails), typeof(Oci.AnnouncementsService.Responses.UpdateAnnouncementUserStatusResponse) })]
     public class UpdateOCIAnnouncementsserviceAnnouncementUserStatus : OCIAnnouncementCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the announcement.")]
@@ -46,7 +46,7 @@ namespace Oci.AnnouncementsService.Cmdlets
                 };
 
                 response = client.UpdateAnnouncementUserStatus(request).GetAwaiter().GetResult();
-                WriteOutput(response);
+                WriteOutput(response, response.AnnouncementUserStatusDetails);
                 FinishProcessing(response);
             }
             catch (Exception ex)

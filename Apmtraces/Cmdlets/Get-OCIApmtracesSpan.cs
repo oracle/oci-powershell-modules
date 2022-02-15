@@ -18,13 +18,13 @@ namespace Oci.ApmtracesService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ApmtracesService.Models.Span), typeof(Oci.ApmtracesService.Responses.GetSpanResponse) })]
     public class GetOCIApmtracesSpan : OCITraceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain Id the request is intended for.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain ID the request is intended for.")]
         public string ApmDomainId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique APM span identifier(spanId).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Application Performance Monitoring span identifier (spanId).")]
         public string SpanKey { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique APM trace identifier(traceId).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Application Performance Monitoring trace identifier (traceId).")]
         public string TraceKey { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, please provide the request ID.")]

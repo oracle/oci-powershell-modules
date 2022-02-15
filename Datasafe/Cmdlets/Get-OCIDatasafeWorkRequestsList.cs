@@ -26,8 +26,17 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only work requests that match the specific operation type.")]
         public string OperationType { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field used for sorting. Only one sorting order (sortOrder) can be specified. The default order for STARTTIME and FINISHTIME is descending.")]
+        public System.Nullable<Oci.DatasafeService.Requests.ListWorkRequestsRequest.SortByEnum> SortBy { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (ASC) or descending (DESC).")]
+        public System.Nullable<Oci.DatasafeService.Requests.ListWorkRequestsRequest.SortOrderEnum> SortOrder { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only work requests that match the specified resource OCID.")]
         public string ResourceId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only work requests that are associated to the specified target database OCID.")]
+        public string TargetDatabaseId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
@@ -52,7 +61,10 @@ namespace Oci.DatasafeService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     OperationType = OperationType,
+                    SortBy = SortBy,
+                    SortOrder = SortOrder,
                     ResourceId = ResourceId,
+                    TargetDatabaseId = TargetDatabaseId,
                     OpcRequestId = OpcRequestId,
                     Page = Page,
                     Limit = Limit

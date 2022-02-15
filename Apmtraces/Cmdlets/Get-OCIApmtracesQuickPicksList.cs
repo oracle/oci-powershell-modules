@@ -20,7 +20,7 @@ namespace Oci.ApmtracesService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ApmtracesService.Models.QuickPickSummary), typeof(Oci.ApmtracesService.Responses.ListQuickPicksResponse) })]
     public class GetOCIApmtracesQuickPicksList : OCIQueryCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain Id the request is intended for.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain ID the request is intended for.")]
         public string ApmDomainId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, please provide the request ID.")]
