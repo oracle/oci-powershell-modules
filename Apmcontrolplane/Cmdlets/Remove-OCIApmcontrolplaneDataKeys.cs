@@ -18,7 +18,7 @@ namespace Oci.ApmcontrolplaneService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.ApmcontrolplaneService.Responses.RemoveDataKeysResponse) })]
     public class RemoveOCIApmcontrolplaneDataKeys : OCIApmDomainCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the APM domain")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the APM domain.")]
         public string ApmDomainId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"List of Data Keys to be removed.")]

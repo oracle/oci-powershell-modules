@@ -23,6 +23,9 @@ namespace Oci.CloudguardService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Detector type")]
+        public System.Nullable<Oci.CloudguardService.Models.DetectorEnum> DetectorId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.")]
         public System.Nullable<Oci.CloudguardService.Models.LifecycleState> LifecycleState { get; set; }
 
@@ -54,6 +57,7 @@ namespace Oci.CloudguardService.Cmdlets
                 request = new ListResourceTypesRequest
                 {
                     CompartmentId = CompartmentId,
+                    DetectorId = DetectorId,
                     LifecycleState = LifecycleState,
                     Limit = Limit,
                     Page = Page,
