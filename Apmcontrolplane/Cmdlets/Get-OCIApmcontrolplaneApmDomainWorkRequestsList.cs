@@ -20,7 +20,7 @@ namespace Oci.ApmcontrolplaneService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ApmcontrolplaneService.Models.WorkRequest), typeof(Oci.ApmcontrolplaneService.Responses.ListApmDomainWorkRequestsResponse) })]
     public class GetOCIApmcontrolplaneApmDomainWorkRequestsList : OCIApmDomainCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the APM domain")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the APM domain.")]
         public string ApmDomainId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
