@@ -30,7 +30,7 @@ namespace Oci.OceService.Cmdlets
         public string OpcRequestId { get; set; }
 
         [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = LifecycleStateParamSet)]
-        public Oci.OceService.Models.OceInstance.LifecycleStateEnum[] WaitForLifecycleState { get; set; }
+        public Oci.OceService.Models.LifecycleState[] WaitForLifecycleState { get; set; }
 
         [Parameter(Mandatory = false, HelpMessage = @"Check every WaitIntervalSeconds to see whether the resource has reached a desired state.", ParameterSetName = LifecycleStateParamSet)]
         public int WaitIntervalSeconds { get; set; } = WAIT_INTERVAL_SECONDS;

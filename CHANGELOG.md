@@ -3,6 +3,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 28.0.0 - 2022-03-08
+### Added
+- Support for the Sales Accelerator license option in the Content Management service
+- Support for VCN hostname cluster endpoints in the Container Engine for Kubernetes service
+- Support for optionally specifying an admin username and password when creating a database system during a restore operation in the MySQL Database service
+- Support for automatic tablespace creation on non-autonomous and autonomous database dedicated targets in the Database Migration service
+- Support for reporting excluded objects based on static exclusion rules and dynamic exclusion settings in the Database Migration service
+- Support for removing, listing, and adding database objects reported by the Cloud Premigration Advisor Tool (CPAT) in the Database Migration service
+- Support for migrating Oracle databases from the AWS RDS service to OCI as autonomous databases, using the AWS S3 service and DBLINK for data transfer, in the Database Migration service
+- Support for querying additional fields of a resource using return clauses in the Search service
+- Support for clusters and station clusters in the Roving Edge Infrastructure service
+- Support for creating database systems and database homes using customer-managed keys in the Database service
+ 
+### Breaking Changes
+- The type of property `LifecycleState` was changed from `Oci.OceService.Requests.ListOceInstancesRequest.LifecycleStateEnum` to `Oci.OceService.Models.LifecycleState` in the Get-OCIOceInstancesList cmdlet in Content Management service
+- The type of property `WaitForLifecycleState` was changed from `Oci.OceService.Models.OceInstance.LifecycleStateEnum` to `Oci.OceService.Models.LifecycleState` in the Get-OCIOceInstance cmdlet in Content Management service
+
 ## 27.2.0 - 2022-03-01
 ### Added
 - Support for DRG route distribution statements to be specified with a new match type 'MATCH_ALL' for matching criteria in the Networking service
