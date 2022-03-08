@@ -26,6 +26,9 @@ namespace Oci.RoverService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given.")]
         public string DisplayName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only Clusters of type matched with the given cluster type.")]
+        public System.Nullable<Oci.RoverService.Models.ClusterType> ClusterType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -58,6 +61,7 @@ namespace Oci.RoverService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     DisplayName = DisplayName,
+                    ClusterType = ClusterType,
                     Limit = Limit,
                     Page = Page,
                     LifecycleState = LifecycleState,

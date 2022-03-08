@@ -44,7 +44,7 @@ Example: `My new resource`")]
         public System.Nullable<Oci.OceService.Requests.ListOceInstancesRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter results on lifecycleState.")]
-        public System.Nullable<Oci.OceService.Requests.ListOceInstancesRequest.LifecycleStateEnum> LifecycleState { get; set; }
+        public System.Nullable<Oci.OceService.Models.LifecycleState> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
