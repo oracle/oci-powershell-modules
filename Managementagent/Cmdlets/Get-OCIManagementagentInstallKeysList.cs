@@ -23,7 +23,7 @@ namespace Oci.ManagementagentService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment to which a request will be scoped.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"if set to true then it fetches install key for all compartments where user has access to else only on the compartment specified.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.")]
         public System.Nullable<bool> CompartmentIdInSubtree { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Value of this is always ""ACCESSIBLE"" and any other value is not supported.")]

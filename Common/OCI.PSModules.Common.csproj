@@ -14,7 +14,7 @@
   <ItemGroup>
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.0" IncludeAssets = "compile" />
     <PackageReference Include="OCI.DotNetSdk.Common" Version="$(SDKVersion)" />
-    <PackageReference Include="Portable.BouncyCastle" Version="1.8.6.7"/>
+    <PackageReference Include="Portable.BouncyCastle" Version="1.9.0"/>
     <PackageReference Include="NLog" Version="4.7.2"/>
   </ItemGroup>
 
