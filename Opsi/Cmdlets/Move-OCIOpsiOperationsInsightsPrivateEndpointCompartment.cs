@@ -14,15 +14,15 @@ using Oci.OpsiService.Models;
 
 namespace Oci.OpsiService.Cmdlets
 {
-    [Cmdlet("Enable", "OCIOpsiDatabaseInsight")]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OpsiService.Responses.EnableDatabaseInsightResponse) })]
-    public class EnableOCIOpsiDatabaseInsight : OCIOperationsInsightsCmdlet
+    [Cmdlet("Move", "OCIOpsiOperationsInsightsPrivateEndpointCompartment")]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OpsiService.Responses.ChangeOperationsInsightsPrivateEndpointCompartmentResponse) })]
+    public class MoveOCIOpsiOperationsInsightsPrivateEndpointCompartment : OCIOperationsInsightsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the database to be enabled in Operations Insights. This parameter also accepts subtypes <Oci.OpsiService.Models.EnableEmManagedExternalDatabaseInsightDetails>, <Oci.OpsiService.Models.EnablePeComanagedDatabaseInsightDetails> of type <Oci.OpsiService.Models.EnableDatabaseInsightDetails>.")]
-        public EnableDatabaseInsightDetails EnableDatabaseInsightDetails { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Operation Insights private endpoint.")]
+        public string OperationsInsightsPrivateEndpointId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique database insight identifier")]
-        public string DatabaseInsightId { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details used to change the compartment of a private endpoint")]
+        public ChangeOperationsInsightsPrivateEndpointCompartmentDetails ChangeOperationsInsightsPrivateEndpointCompartmentDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match` parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
         public string IfMatch { get; set; }
@@ -38,20 +38,20 @@ namespace Oci.OpsiService.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            EnableDatabaseInsightRequest request;
+            ChangeOperationsInsightsPrivateEndpointCompartmentRequest request;
 
             try
             {
-                request = new EnableDatabaseInsightRequest
+                request = new ChangeOperationsInsightsPrivateEndpointCompartmentRequest
                 {
-                    EnableDatabaseInsightDetails = EnableDatabaseInsightDetails,
-                    DatabaseInsightId = DatabaseInsightId,
+                    OperationsInsightsPrivateEndpointId = OperationsInsightsPrivateEndpointId,
+                    ChangeOperationsInsightsPrivateEndpointCompartmentDetails = ChangeOperationsInsightsPrivateEndpointCompartmentDetails,
                     IfMatch = IfMatch,
                     OpcRequestId = OpcRequestId,
                     OpcRetryToken = OpcRetryToken
                 };
 
-                response = client.EnableDatabaseInsight(request).GetAwaiter().GetResult();
+                response = client.ChangeOperationsInsightsPrivateEndpointCompartment(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
             }
@@ -67,6 +67,6 @@ namespace Oci.OpsiService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private EnableDatabaseInsightResponse response;
+        private ChangeOperationsInsightsPrivateEndpointCompartmentResponse response;
     }
 }

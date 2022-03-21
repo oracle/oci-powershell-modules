@@ -14,15 +14,15 @@ using Oci.OpsiService.Models;
 
 namespace Oci.OpsiService.Cmdlets
 {
-    [Cmdlet("Enable", "OCIOpsiDatabaseInsight")]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OpsiService.Responses.EnableDatabaseInsightResponse) })]
-    public class EnableOCIOpsiDatabaseInsight : OCIOperationsInsightsCmdlet
+    [Cmdlet("Update", "OCIOpsiOperationsInsightsPrivateEndpoint")]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OpsiService.Responses.UpdateOperationsInsightsPrivateEndpointResponse) })]
+    public class UpdateOCIOpsiOperationsInsightsPrivateEndpoint : OCIOperationsInsightsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the database to be enabled in Operations Insights. This parameter also accepts subtypes <Oci.OpsiService.Models.EnableEmManagedExternalDatabaseInsightDetails>, <Oci.OpsiService.Models.EnablePeComanagedDatabaseInsightDetails> of type <Oci.OpsiService.Models.EnableDatabaseInsightDetails>.")]
-        public EnableDatabaseInsightDetails EnableDatabaseInsightDetails { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Operation Insights private endpoint.")]
+        public string OperationsInsightsPrivateEndpointId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique database insight identifier")]
-        public string DatabaseInsightId { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details used to update a private endpoint.")]
+        public UpdateOperationsInsightsPrivateEndpointDetails UpdateOperationsInsightsPrivateEndpointDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match` parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
         public string IfMatch { get; set; }
@@ -30,28 +30,22 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request that can be retried in case of a timeout or server error without risk of executing the same action again. Retry tokens expire after 24 hours.
-
-*Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting operations, such as a resource being deleted or purged from the system.")]
-        public string OpcRetryToken { get; set; }
-
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            EnableDatabaseInsightRequest request;
+            UpdateOperationsInsightsPrivateEndpointRequest request;
 
             try
             {
-                request = new EnableDatabaseInsightRequest
+                request = new UpdateOperationsInsightsPrivateEndpointRequest
                 {
-                    EnableDatabaseInsightDetails = EnableDatabaseInsightDetails,
-                    DatabaseInsightId = DatabaseInsightId,
+                    OperationsInsightsPrivateEndpointId = OperationsInsightsPrivateEndpointId,
+                    UpdateOperationsInsightsPrivateEndpointDetails = UpdateOperationsInsightsPrivateEndpointDetails,
                     IfMatch = IfMatch,
-                    OpcRequestId = OpcRequestId,
-                    OpcRetryToken = OpcRetryToken
+                    OpcRequestId = OpcRequestId
                 };
 
-                response = client.EnableDatabaseInsight(request).GetAwaiter().GetResult();
+                response = client.UpdateOperationsInsightsPrivateEndpoint(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
             }
@@ -67,6 +61,6 @@ namespace Oci.OpsiService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private EnableDatabaseInsightResponse response;
+        private UpdateOperationsInsightsPrivateEndpointResponse response;
     }
 }

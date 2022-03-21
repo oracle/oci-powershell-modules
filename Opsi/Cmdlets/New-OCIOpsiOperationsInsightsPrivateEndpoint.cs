@@ -14,12 +14,12 @@ using Oci.OpsiService.Models;
 
 namespace Oci.OpsiService.Cmdlets
 {
-    [Cmdlet("New", "OCIOpsiDatabaseInsight")]
-    [OutputType(new System.Type[] { typeof(Oci.OpsiService.Models.DatabaseInsight), typeof(Oci.OpsiService.Responses.CreateDatabaseInsightResponse) })]
-    public class NewOCIOpsiDatabaseInsight : OCIOperationsInsightsCmdlet
+    [Cmdlet("New", "OCIOpsiOperationsInsightsPrivateEndpoint")]
+    [OutputType(new System.Type[] { typeof(Oci.OpsiService.Models.OperationsInsightsPrivateEndpoint), typeof(Oci.OpsiService.Responses.CreateOperationsInsightsPrivateEndpointResponse) })]
+    public class NewOCIOpsiOperationsInsightsPrivateEndpoint : OCIOperationsInsightsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the database for which a Database Insight resource will be created in Operations Insights. This parameter also accepts subtypes <Oci.OpsiService.Models.CreateEmManagedExternalDatabaseInsightDetails>, <Oci.OpsiService.Models.CreatePeComanagedDatabaseInsightDetails> of type <Oci.OpsiService.Models.CreateDatabaseInsightDetails>.")]
-        public CreateDatabaseInsightDetails CreateDatabaseInsightDetails { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details to create a new private endpoint.")]
+        public CreateOperationsInsightsPrivateEndpointDetails CreateOperationsInsightsPrivateEndpointDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request that can be retried in case of a timeout or server error without risk of executing the same action again. Retry tokens expire after 24 hours.
 
@@ -32,19 +32,19 @@ namespace Oci.OpsiService.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            CreateDatabaseInsightRequest request;
+            CreateOperationsInsightsPrivateEndpointRequest request;
 
             try
             {
-                request = new CreateDatabaseInsightRequest
+                request = new CreateOperationsInsightsPrivateEndpointRequest
                 {
-                    CreateDatabaseInsightDetails = CreateDatabaseInsightDetails,
+                    CreateOperationsInsightsPrivateEndpointDetails = CreateOperationsInsightsPrivateEndpointDetails,
                     OpcRetryToken = OpcRetryToken,
                     OpcRequestId = OpcRequestId
                 };
 
-                response = client.CreateDatabaseInsight(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.DatabaseInsight);
+                response = client.CreateOperationsInsightsPrivateEndpoint(request).GetAwaiter().GetResult();
+                WriteOutput(response, response.OperationsInsightsPrivateEndpoint);
                 FinishProcessing(response);
             }
             catch (Exception ex)
@@ -59,6 +59,6 @@ namespace Oci.OpsiService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private CreateDatabaseInsightResponse response;
+        private CreateOperationsInsightsPrivateEndpointResponse response;
     }
 }
