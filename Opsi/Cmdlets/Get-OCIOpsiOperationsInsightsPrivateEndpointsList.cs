@@ -16,33 +16,27 @@ using Oci.OpsiService.Models;
 
 namespace Oci.OpsiService.Cmdlets
 {
-    [Cmdlet("Get", "OCIOpsiDatabaseInsightsList")]
-    [OutputType(new System.Type[] { typeof(Oci.OpsiService.Models.DatabaseInsightsCollection), typeof(Oci.OpsiService.Responses.ListDatabaseInsightsResponse) })]
-    public class GetOCIOpsiDatabaseInsightsList : OCIOperationsInsightsCmdlet
+    [Cmdlet("Get", "OCIOpsiOperationsInsightsPrivateEndpointsList")]
+    [OutputType(new System.Type[] { typeof(Oci.OpsiService.Models.OperationsInsightsPrivateEndpointCollection), typeof(Oci.OpsiService.Responses.ListOperationsInsightsPrivateEndpointsResponse) })]
+    public class GetOCIOpsiOperationsInsightsPrivateEndpointsList : OCIOperationsInsightsCmdlet
     {
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Enterprise Manager bridge identifier")]
-        public string EnterpriseManagerBridgeId { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name.")]
+        public string DisplayName { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
-        public System.Collections.Generic.List<string> Id { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Operations Insights PrivateEndpoint identifier")]
+        public string OpsiPrivateEndpointId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Resource Status")]
-        public System.Collections.Generic.List<Oci.OpsiService.Models.ResourceStatus> Status { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The option to filter OPSI private endpoints that can used for RAC. Should be used along with vcnId query parameter.")]
+        public System.Nullable<bool> IsUsedForRacDbs { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN.")]
+        public string VcnId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Lifecycle states")]
-        public System.Collections.Generic.List<Oci.OpsiService.Models.LifecycleState> LifecycleState { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.")]
-        public System.Collections.Generic.List<Oci.OpsiService.Requests.ListDatabaseInsightsRequest.DatabaseTypeEnum> DatabaseType { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.")]
-        public System.Collections.Generic.List<string> DatabaseId { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies the fields to return in a database summary response. By default all fields are returned if omitted.")]
-        public System.Collections.Generic.List<Oci.OpsiService.Requests.ListDatabaseInsightsRequest.FieldsEnum> Fields { get; set; }
+        public System.Collections.Generic.List<Oci.OpsiService.Models.OperationsInsightsPrivateEndpointLifecycleState> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example: `50`", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -53,17 +47,11 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (`ASC`) or descending (`DESC`).")]
         public System.Nullable<Oci.OpsiService.Models.SortOrder> SortOrder { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Database insight list sort options. If `fields` parameter is selected, the `sortBy` parameter must be one of the fields specified.")]
-        public System.Nullable<Oci.OpsiService.Requests.ListDatabaseInsightsRequest.SortByEnum> SortBy { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.")]
-        public string ExadataInsightId { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort private endpoints.")]
+        public System.Nullable<Oci.OpsiService.Requests.ListOperationsInsightsPrivateEndpointsRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A flag to search all resources within a given compartment and all sub-compartments.")]
         public System.Nullable<bool> CompartmentIdInSubtree { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Operations Insights PrivateEndpoint identifier")]
-        public string OpsiPrivateEndpointId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
@@ -74,34 +62,30 @@ namespace Oci.OpsiService.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            ListDatabaseInsightsRequest request;
+            ListOperationsInsightsPrivateEndpointsRequest request;
 
             try
             {
-                request = new ListDatabaseInsightsRequest
+                request = new ListOperationsInsightsPrivateEndpointsRequest
                 {
                     CompartmentId = CompartmentId,
-                    EnterpriseManagerBridgeId = EnterpriseManagerBridgeId,
-                    Id = Id,
-                    Status = Status,
+                    DisplayName = DisplayName,
+                    OpsiPrivateEndpointId = OpsiPrivateEndpointId,
+                    IsUsedForRacDbs = IsUsedForRacDbs,
+                    VcnId = VcnId,
                     LifecycleState = LifecycleState,
-                    DatabaseType = DatabaseType,
-                    DatabaseId = DatabaseId,
-                    Fields = Fields,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
-                    ExadataInsightId = ExadataInsightId,
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
-                    OpsiPrivateEndpointId = OpsiPrivateEndpointId,
                     OpcRequestId = OpcRequestId
                 };
-                IEnumerable<ListDatabaseInsightsResponse> responses = GetRequestDelegate().Invoke(request);
+                IEnumerable<ListOperationsInsightsPrivateEndpointsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
                 {
                     response = item;
-                    WriteOutput(response, response.DatabaseInsightsCollection, true);
+                    WriteOutput(response, response.OperationsInsightsPrivateEndpointCollection, true);
                 }
                 if(!ParameterSetName.Equals(AllPageSet) && !ParameterSetName.Equals(LimitSet) && response.OpcNextPage != null)
                 {
@@ -123,16 +107,16 @@ namespace Oci.OpsiService.Cmdlets
 
         private RequestDelegate GetRequestDelegate()
         {
-            IEnumerable<ListDatabaseInsightsResponse> DefaultRequest(ListDatabaseInsightsRequest request) => Enumerable.Repeat(client.ListDatabaseInsights(request).GetAwaiter().GetResult(), 1);
+            IEnumerable<ListOperationsInsightsPrivateEndpointsResponse> DefaultRequest(ListOperationsInsightsPrivateEndpointsRequest request) => Enumerable.Repeat(client.ListOperationsInsightsPrivateEndpoints(request).GetAwaiter().GetResult(), 1);
             if (ParameterSetName.Equals(AllPageSet))
             {
-                return req => client.Paginators.ListDatabaseInsightsResponseEnumerator(req);
+                return req => client.Paginators.ListOperationsInsightsPrivateEndpointsResponseEnumerator(req);
             }
             return DefaultRequest;
         }
 
-        private ListDatabaseInsightsResponse response;
-        private delegate IEnumerable<ListDatabaseInsightsResponse> RequestDelegate(ListDatabaseInsightsRequest request);
+        private ListOperationsInsightsPrivateEndpointsResponse response;
+        private delegate IEnumerable<ListOperationsInsightsPrivateEndpointsResponse> RequestDelegate(ListOperationsInsightsPrivateEndpointsRequest request);
         private const string AllPageSet = "AllPages";
         private const string LimitSet = "Limit";
     }
