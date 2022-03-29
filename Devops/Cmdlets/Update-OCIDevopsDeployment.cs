@@ -21,7 +21,7 @@ namespace Oci.DevopsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique deployment identifier.")]
         public string DeploymentId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtypes <Oci.DevopsService.Models.UpdateSingleDeployStageDeploymentDetails>, <Oci.DevopsService.Models.UpdateDeployPipelineRedeploymentDetails>, <Oci.DevopsService.Models.UpdateDeployPipelineDeploymentDetails> of type <Oci.DevopsService.Models.UpdateDeploymentDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtypes <Oci.DevopsService.Models.UpdateSingleDeployStageDeploymentDetails>, <Oci.DevopsService.Models.UpdateDeployPipelineRedeploymentDetails>, <Oci.DevopsService.Models.UpdateDeployPipelineDeploymentDetails>, <Oci.DevopsService.Models.UpdateSingleDeployStageRedeploymentDetails> of type <Oci.DevopsService.Models.UpdateDeploymentDetails>.")]
         public UpdateDeploymentDetails UpdateDeploymentDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

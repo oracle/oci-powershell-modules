@@ -26,6 +26,9 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of an asynchronous work request.")]
         public string Id { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the fleet.")]
+        public string FleetId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
@@ -49,6 +52,7 @@ namespace Oci.JmsService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     Id = Id,
+                    FleetId = FleetId,
                     OpcRequestId = OpcRequestId,
                     Page = Page,
                     Limit = Limit
