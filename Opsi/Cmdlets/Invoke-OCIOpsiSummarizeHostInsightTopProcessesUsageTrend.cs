@@ -7,8 +7,6 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Management.Automation;
 using Oci.OpsiService.Requests;
 using Oci.OpsiService.Responses;
@@ -16,15 +14,18 @@ using Oci.OpsiService.Models;
 
 namespace Oci.OpsiService.Cmdlets
 {
-    [Cmdlet("Get", "OCIOpsiHostedEntitiesList")]
-    [OutputType(new System.Type[] { typeof(Oci.OpsiService.Models.HostedEntityCollection), typeof(Oci.OpsiService.Responses.ListHostedEntitiesResponse) })]
-    public class GetOCIOpsiHostedEntitiesList : OCIOperationsInsightsCmdlet
+    [Cmdlet("Invoke", "OCIOpsiSummarizeHostInsightTopProcessesUsageTrend")]
+    [OutputType(new System.Type[] { typeof(Oci.OpsiService.Models.SummarizeHostInsightsTopProcessesUsageTrendCollection), typeof(Oci.OpsiService.Responses.SummarizeHostInsightTopProcessesUsageTrendResponse) })]
+    public class InvokeOCIOpsiSummarizeHostInsightTopProcessesUsageTrend : OCIOperationsInsightsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.")]
         public string Id { get; set; }
+
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Host top processes resource metric sort options. Supported values are CPU, MEMORY, VIIRTUAL_MEMORY.")]
+        public string ResourceMetric { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specify time period in ISO 8601 format with respect to current time. Default is last 30 days represented by P30D. If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored. Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).")]
         public string AnalysisTimeInterval { get; set; }
@@ -35,62 +36,37 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Analysis end time in UTC in ISO 8601 format(exclusive). Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd are used together. If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.")]
         public System.Nullable<System.DateTime> TimeIntervalEnd { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].")]
-        public System.Collections.Generic.List<Oci.OpsiService.Requests.ListHostedEntitiesRequest.PlatformTypeEnum> PlatformType { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.")]
-        public string ExadataInsightId { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example: `50`", ParameterSetName = LimitSet)]
-        public System.Nullable<int> Limit { get; set; }
-
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The value of the `opc-next-page` response header from the previous ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (`ASC`) or descending (`DESC`).")]
-        public System.Nullable<Oci.OpsiService.Models.SortOrder> SortOrder { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Hosted entity list sort options.")]
-        public System.Nullable<Oci.OpsiService.Requests.ListHostedEntitiesRequest.SortByEnum> SortBy { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example: `50`")]
+        public System.Nullable<int> Limit { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
-        public SwitchParameter All { get; set; }
-
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            ListHostedEntitiesRequest request;
+            SummarizeHostInsightTopProcessesUsageTrendRequest request;
 
             try
             {
-                request = new ListHostedEntitiesRequest
+                request = new SummarizeHostInsightTopProcessesUsageTrendRequest
                 {
                     CompartmentId = CompartmentId,
                     Id = Id,
+                    ResourceMetric = ResourceMetric,
                     AnalysisTimeInterval = AnalysisTimeInterval,
                     TimeIntervalStart = TimeIntervalStart,
                     TimeIntervalEnd = TimeIntervalEnd,
-                    PlatformType = PlatformType,
-                    ExadataInsightId = ExadataInsightId,
-                    Limit = Limit,
                     Page = Page,
-                    SortOrder = SortOrder,
-                    SortBy = SortBy,
+                    Limit = Limit,
                     OpcRequestId = OpcRequestId
                 };
-                IEnumerable<ListHostedEntitiesResponse> responses = GetRequestDelegate().Invoke(request);
-                foreach (var item in responses)
-                {
-                    response = item;
-                    WriteOutput(response, response.HostedEntityCollection, true);
-                }
-                if(!ParameterSetName.Equals(AllPageSet) && !ParameterSetName.Equals(LimitSet) && response.OpcNextPage != null)
-                {
-                    WriteWarning("This operation supports pagination and not all resources were returned. Re-run using the -All option to auto paginate and list all resources.");
-                }
+
+                response = client.SummarizeHostInsightTopProcessesUsageTrend(request).GetAwaiter().GetResult();
+                WriteOutput(response, response.SummarizeHostInsightsTopProcessesUsageTrendCollection);
                 FinishProcessing(response);
             }
             catch (Exception ex)
@@ -105,19 +81,6 @@ namespace Oci.OpsiService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private RequestDelegate GetRequestDelegate()
-        {
-            IEnumerable<ListHostedEntitiesResponse> DefaultRequest(ListHostedEntitiesRequest request) => Enumerable.Repeat(client.ListHostedEntities(request).GetAwaiter().GetResult(), 1);
-            if (ParameterSetName.Equals(AllPageSet))
-            {
-                return req => client.Paginators.ListHostedEntitiesResponseEnumerator(req);
-            }
-            return DefaultRequest;
-        }
-
-        private ListHostedEntitiesResponse response;
-        private delegate IEnumerable<ListHostedEntitiesResponse> RequestDelegate(ListHostedEntitiesRequest request);
-        private const string AllPageSet = "AllPages";
-        private const string LimitSet = "Limit";
+        private SummarizeHostInsightTopProcessesUsageTrendResponse response;
     }
 }

@@ -33,7 +33,7 @@ namespace Oci.DatasafeService.Cmdlets
         public string DisplayName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the target databases that matches the current state of the target database.")]
-        public System.Nullable<Oci.DatasafeService.Models.LifecycleState> LifecycleState { get; set; }
+        public System.Nullable<Oci.DatasafeService.Models.TargetDatabaseLifecycleState> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return target databases that match the database type of the target database.")]
         public System.Nullable<Oci.DatasafeService.Models.DatabaseType> DatabaseType { get; set; }

@@ -18,7 +18,7 @@ namespace Oci.IdentityService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.IdentityService.Models.AllowedDomainLicenseTypeSummary), typeof(Oci.IdentityService.Responses.ListAllowedDomainLicenseTypesResponse) })]
     public class GetOCIIdentityAllowedDomainLicenseTypesList : OCIIdentityCmdlet
     {
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The domain license type")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The license type of the identity domain.")]
         public string CurrentLicenseTypeName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
