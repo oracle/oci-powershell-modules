@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Core.dll'
 
 # Version number of this module.
-ModuleVersion = '30.0.0'
+ModuleVersion = '30.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '30.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '30.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Core.dll'
@@ -74,6 +74,7 @@ FunctionsToExport = '*'
 CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry', 
                'Add-OCIVirtualNetworkDrgRouteDistributionStatements', 
                'Add-OCIVirtualNetworkDrgRouteRules', 
+               'Add-OCIVirtualNetworkIpv6SubnetCidr', 
                'Add-OCIVirtualNetworkIpv6VcnCidr', 
                'Add-OCIVirtualNetworkNetworkSecurityGroupSecurityRules', 
                'Add-OCIVirtualNetworkPublicIpPoolCapacity', 
@@ -366,6 +367,8 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Remove-OCIVirtualNetworkInternetGateway', 
                'Remove-OCIVirtualNetworkIPSecConnection', 
                'Remove-OCIVirtualNetworkIpv6', 
+               'Remove-OCIVirtualNetworkIpv6SubnetCidr', 
+               'Remove-OCIVirtualNetworkIpv6VcnCidr', 
                'Remove-OCIVirtualNetworkLocalPeeringGateway', 
                'Remove-OCIVirtualNetworkNatGateway', 
                'Remove-OCIVirtualNetworkNetworkSecurityGroup', 

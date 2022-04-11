@@ -18,10 +18,10 @@ namespace Oci.AivisionService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.AivisionService.Responses.ChangeModelCompartmentResponse) })]
     public class MoveOCIAivisionModelCompartment : OCIAIServiceVisionCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique model identifier.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique model identifier.")]
         public string ModelId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The deatils of the move.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details of the move.")]
         public ChangeModelCompartmentDetails ChangeModelCompartmentDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

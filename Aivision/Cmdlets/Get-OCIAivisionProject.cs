@@ -20,8 +20,8 @@ namespace Oci.AivisionService.Cmdlets
     public class GetOCIAivisionProject : OCIAIServiceVisionCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique project identifier.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique project identifier.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique project identifier.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique project identifier.", ParameterSetName = Default)]
         public string ProjectId { get; set; }
 
         
