@@ -15,19 +15,19 @@ using Oci.Common.Waiters;
 
 namespace Oci.CoreService.Cmdlets
 {
-    [Cmdlet("Add", "OCIVirtualNetworkIpv6VcnCidr", DefaultParameterSetName = Default)]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.CoreService.Responses.AddIpv6VcnCidrResponse) })]
-    public class AddOCIVirtualNetworkIpv6VcnCidr : OCIVirtualNetworkCmdlet
+    [Cmdlet("Add", "OCIVirtualNetworkIpv6SubnetCidr", DefaultParameterSetName = Default)]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.CoreService.Responses.AddIpv6SubnetCidrResponse) })]
+    public class AddOCIVirtualNetworkIpv6SubnetCidr : OCIVirtualNetworkCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.", ParameterSetName = Default)]
-        public string VcnId { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet.", ParameterSetName = Default)]
+        public string SubnetId { get; set; }
 
         
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.", ParameterSetName = Default)]
-        public string OpcRequestId { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for adding an IPv6 CIDR to a subnet.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for adding an IPv6 CIDR to a subnet.", ParameterSetName = Default)]
+        public AddSubnetIpv6CidrDetails AddSubnetIpv6CidrDetails { get; set; }
 
         
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).", ParameterSetName = StatusParamSet)]
@@ -40,9 +40,9 @@ namespace Oci.CoreService.Cmdlets
         public string IfMatch { get; set; }
 
         
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for adding an IPv6 VCN CIDR.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for adding an IPv6 VCN CIDR.", ParameterSetName = Default)]
-        public AddVcnIpv6CidrDetails AddVcnIpv6CidrDetails { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.", ParameterSetName = Default)]
+        public string OpcRequestId { get; set; }
 
         [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = StatusParamSet)]
         public WorkrequestsService.Models.WorkRequest.StatusEnum[] WaitForStatus { get; set; }
@@ -56,17 +56,17 @@ namespace Oci.CoreService.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            AddIpv6VcnCidrRequest request;
+            AddIpv6SubnetCidrRequest request;
 
             try
             {
-                request = new AddIpv6VcnCidrRequest
+                request = new AddIpv6SubnetCidrRequest
                 {
-                    VcnId = VcnId,
-                    OpcRequestId = OpcRequestId,
+                    SubnetId = SubnetId,
+                    AddSubnetIpv6CidrDetails = AddSubnetIpv6CidrDetails,
                     OpcRetryToken = OpcRetryToken,
                     IfMatch = IfMatch,
-                    AddVcnIpv6CidrDetails = AddVcnIpv6CidrDetails
+                    OpcRequestId = OpcRequestId
                 };
 
                 HandleOutput(request);
@@ -84,7 +84,7 @@ namespace Oci.CoreService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private void HandleOutput(AddIpv6VcnCidrRequest request)
+        private void HandleOutput(AddIpv6SubnetCidrRequest request)
         {
             var waiterConfig = new WaiterConfiguration
             {
@@ -95,17 +95,17 @@ namespace Oci.CoreService.Cmdlets
             switch (ParameterSetName)
             { 
                 case StatusParamSet:
-                    response = client.Waiters.ForAddIpv6VcnCidr(request, waiterConfig, WaitForStatus).Execute();
+                    response = client.Waiters.ForAddIpv6SubnetCidr(request, waiterConfig, WaitForStatus).Execute();
                     break;
 
                 case Default:
-                    response = client.AddIpv6VcnCidr(request).GetAwaiter().GetResult();
+                    response = client.AddIpv6SubnetCidr(request).GetAwaiter().GetResult();
                     break;
             }
             WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
         }
 
-        private AddIpv6VcnCidrResponse response;
+        private AddIpv6SubnetCidrResponse response;
         private const string StatusParamSet = "StatusParamSet";
         private const string Default = "Default";
     }

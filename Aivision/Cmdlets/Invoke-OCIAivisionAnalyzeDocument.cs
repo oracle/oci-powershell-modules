@@ -18,7 +18,7 @@ namespace Oci.AivisionService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.AivisionService.Models.AnalyzeDocumentResult), typeof(Oci.AivisionService.Responses.AnalyzeDocumentResponse) })]
     public class InvokeOCIAivisionAnalyzeDocument : OCIAIServiceVisionCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details about how to analyze a document.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details of how to analyze a document.")]
         public AnalyzeDocumentDetails AnalyzeDocumentDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

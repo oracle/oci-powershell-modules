@@ -15,9 +15,9 @@ using Oci.Common.Waiters;
 
 namespace Oci.CoreService.Cmdlets
 {
-    [Cmdlet("Add", "OCIVirtualNetworkIpv6VcnCidr", DefaultParameterSetName = Default)]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.CoreService.Responses.AddIpv6VcnCidrResponse) })]
-    public class AddOCIVirtualNetworkIpv6VcnCidr : OCIVirtualNetworkCmdlet
+    [Cmdlet("Remove", "OCIVirtualNetworkIpv6VcnCidr", DefaultParameterSetName = Default)]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.CoreService.Responses.RemoveIpv6VcnCidrResponse) })]
+    public class RemoveOCIVirtualNetworkIpv6VcnCidr : OCIVirtualNetworkCmdlet
     {
         
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.", ParameterSetName = StatusParamSet)]
@@ -40,9 +40,9 @@ namespace Oci.CoreService.Cmdlets
         public string IfMatch { get; set; }
 
         
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for adding an IPv6 VCN CIDR.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for adding an IPv6 VCN CIDR.", ParameterSetName = Default)]
-        public AddVcnIpv6CidrDetails AddVcnIpv6CidrDetails { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for removing a VCN ipv6 CIDR.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for removing a VCN ipv6 CIDR.", ParameterSetName = Default)]
+        public RemoveVcnIpv6CidrDetails RemoveVcnIpv6CidrDetails { get; set; }
 
         [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = StatusParamSet)]
         public WorkrequestsService.Models.WorkRequest.StatusEnum[] WaitForStatus { get; set; }
@@ -56,17 +56,17 @@ namespace Oci.CoreService.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            AddIpv6VcnCidrRequest request;
+            RemoveIpv6VcnCidrRequest request;
 
             try
             {
-                request = new AddIpv6VcnCidrRequest
+                request = new RemoveIpv6VcnCidrRequest
                 {
                     VcnId = VcnId,
                     OpcRequestId = OpcRequestId,
                     OpcRetryToken = OpcRetryToken,
                     IfMatch = IfMatch,
-                    AddVcnIpv6CidrDetails = AddVcnIpv6CidrDetails
+                    RemoveVcnIpv6CidrDetails = RemoveVcnIpv6CidrDetails
                 };
 
                 HandleOutput(request);
@@ -84,7 +84,7 @@ namespace Oci.CoreService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private void HandleOutput(AddIpv6VcnCidrRequest request)
+        private void HandleOutput(RemoveIpv6VcnCidrRequest request)
         {
             var waiterConfig = new WaiterConfiguration
             {
@@ -95,17 +95,17 @@ namespace Oci.CoreService.Cmdlets
             switch (ParameterSetName)
             { 
                 case StatusParamSet:
-                    response = client.Waiters.ForAddIpv6VcnCidr(request, waiterConfig, WaitForStatus).Execute();
+                    response = client.Waiters.ForRemoveIpv6VcnCidr(request, waiterConfig, WaitForStatus).Execute();
                     break;
 
                 case Default:
-                    response = client.AddIpv6VcnCidr(request).GetAwaiter().GetResult();
+                    response = client.RemoveIpv6VcnCidr(request).GetAwaiter().GetResult();
                     break;
             }
             WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
         }
 
-        private AddIpv6VcnCidrResponse response;
+        private RemoveIpv6VcnCidrResponse response;
         private const string StatusParamSet = "StatusParamSet";
         private const string Default = "Default";
     }

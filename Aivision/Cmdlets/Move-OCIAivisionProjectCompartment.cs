@@ -18,7 +18,7 @@ namespace Oci.AivisionService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.AivisionService.Responses.ChangeProjectCompartmentResponse) })]
     public class MoveOCIAivisionProjectCompartment : OCIAIServiceVisionCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique project identifier.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique project identifier.")]
         public string ProjectId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The deatils of the move.")]
