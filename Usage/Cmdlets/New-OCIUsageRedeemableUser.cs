@@ -24,10 +24,10 @@ namespace Oci.UsageService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the tenancy.")]
         public string TenancyId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The subscriptionId for which rewards information is requested for.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The subscription ID for which rewards information is requested for.")]
         public string SubscriptionId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The user Id of the person whose email we cc")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The user ID of the person to send a copy of an email.")]
         public string UserId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

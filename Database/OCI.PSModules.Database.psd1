@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '30.1.0'
+ModuleVersion = '31.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '30.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '31.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -78,19 +78,25 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityExadataInfrastructure',
                'Disable-OCIDatabaseAutonomousDatabaseManagement', 
                'Disable-OCIDatabaseAutonomousDatabaseOperationsInsights', 
                'Disable-OCIDatabaseExternalContainerDatabaseDatabaseManagement', 
+               'Disable-OCIDatabaseExternalContainerDatabaseStackMonitoring', 
                'Disable-OCIDatabaseExternalNonContainerDatabaseDatabaseManagement', 
                'Disable-OCIDatabaseExternalNonContainerDatabaseOperationsInsights', 
+               'Disable-OCIDatabaseExternalNonContainerDatabaseStackMonitoring', 
                'Disable-OCIDatabaseExternalPluggableDatabaseDatabaseManagement', 
                'Disable-OCIDatabaseExternalPluggableDatabaseOperationsInsights', 
+               'Disable-OCIDatabaseExternalPluggableDatabaseStackMonitoring', 
                'Disable-OCIDatabaseManagement', 'Edit-OCIDatabaseManagement', 
                'Enable-OCIDatabaseAutonomousDatabaseManagement', 
                'Enable-OCIDatabaseAutonomousDatabaseOperationsInsights', 
                'Enable-OCIDatabaseExadataInfrastructure', 
                'Enable-OCIDatabaseExternalContainerDatabaseDatabaseManagement', 
+               'Enable-OCIDatabaseExternalContainerDatabaseStackMonitoring', 
                'Enable-OCIDatabaseExternalNonContainerDatabaseDatabaseManagement', 
                'Enable-OCIDatabaseExternalNonContainerDatabaseOperationsInsights', 
+               'Enable-OCIDatabaseExternalNonContainerDatabaseStackMonitoring', 
                'Enable-OCIDatabaseExternalPluggableDatabaseDatabaseManagement', 
                'Enable-OCIDatabaseExternalPluggableDatabaseOperationsInsights', 
+               'Enable-OCIDatabaseExternalPluggableDatabaseStackMonitoring', 
                'Enable-OCIDatabaseManagement', 'Get-OCIDatabase', 
                'Get-OCIDatabaseAutonomousContainerDatabase', 
                'Get-OCIDatabaseAutonomousContainerDatabaseDataguardAssociation', 
@@ -143,6 +149,8 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityExadataInfrastructure',
                'Get-OCIDatabaseDbSystemPatchHistoryEntriesList', 
                'Get-OCIDatabaseDbSystemPatchHistoryEntry', 
                'Get-OCIDatabaseDbSystemShapesList', 'Get-OCIDatabaseDbSystemsList', 
+               'Get-OCIDatabaseDbSystemUpgradeHistoryEntriesList', 
+               'Get-OCIDatabaseDbSystemUpgradeHistoryEntry', 
                'Get-OCIDatabaseDbVersionsList', 
                'Get-OCIDatabaseExadataInfrastructure', 
                'Get-OCIDatabaseExadataInfrastructureOcpus', 
@@ -211,6 +219,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityExadataInfrastructure',
                'Invoke-OCIDatabaseTerminateAutonomousExadataInfrastructure', 
                'Invoke-OCIDatabaseTerminateDbSystem', 
                'Invoke-OCIDatabaseUpgradeDatabase', 
+               'Invoke-OCIDatabaseUpgradeDbSystem', 
                'Move-OCIDatabaseAutonomousContainerDatabaseCompartment', 
                'Move-OCIDatabaseAutonomousDatabaseCompartment', 
                'Move-OCIDatabaseAutonomousExadataInfrastructureCompartment', 
