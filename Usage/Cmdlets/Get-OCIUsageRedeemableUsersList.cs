@@ -23,7 +23,7 @@ namespace Oci.UsageService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the tenancy.")]
         public string TenancyId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The subscriptionId for which rewards information is requested for.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The subscription ID for which rewards information is requested for.")]
         public string SubscriptionId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
@@ -35,10 +35,10 @@ namespace Oci.UsageService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return in the paginated response.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, can be ascending (ASC) or descending (DESC).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, which can be ascending (ASC) or descending (DESC).")]
         public System.Nullable<Oci.UsageService.Requests.ListRedeemableUsersRequest.SortOrderEnum> SortOrder { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by, supports one sort Order.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Supports one sort order.")]
         public System.Nullable<Oci.UsageService.Requests.ListRedeemableUsersRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
