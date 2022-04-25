@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Bds.dll'
 
 # Version number of this module.
-ModuleVersion = '31.0.0'
+ModuleVersion = '32.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '31.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '32.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Bds.dll'
@@ -77,9 +77,10 @@ CmdletsToExport = 'Add-OCIBdsAutoScalingConfiguration', 'Add-OCIBdsBlockStorage'
                'Get-OCIBdsApiKeysList', 'Get-OCIBdsAutoScalingConfiguration', 
                'Get-OCIBdsAutoScalingConfigurationsList', 'Get-OCIBdsInstance', 
                'Get-OCIBdsInstancesList', 'Get-OCIBdsMetastoreConfiguration', 
-               'Get-OCIBdsMetastoreConfigurationsList', 'Get-OCIBdsWorkRequest', 
+               'Get-OCIBdsMetastoreConfigurationsList', 'Get-OCIBdsPatchesList', 
+               'Get-OCIBdsPatchHistoriesList', 'Get-OCIBdsWorkRequest', 
                'Get-OCIBdsWorkRequestErrorsList', 'Get-OCIBdsWorkRequestLogsList', 
-               'Get-OCIBdsWorkRequestsList', 
+               'Get-OCIBdsWorkRequestsList', 'Invoke-OCIBdsInstallPatch', 
                'Invoke-OCIBdsTestBdsMetastoreConfiguration', 
                'Invoke-OCIBdsTestBdsObjectStorageConnection', 
                'Move-OCIBdsInstanceCompartment', 'Move-OCIBdsShape', 
@@ -87,8 +88,9 @@ CmdletsToExport = 'Add-OCIBdsAutoScalingConfiguration', 'Add-OCIBdsBlockStorage'
                'New-OCIBdsMetastoreConfiguration', 'Remove-OCIBdsApiKey', 
                'Remove-OCIBdsAutoScalingConfiguration', 'Remove-OCIBdsCloudSql', 
                'Remove-OCIBdsInstance', 'Remove-OCIBdsMetastoreConfiguration', 
-               'Restart-OCIBdsNode', 'Update-OCIBdsAutoScalingConfiguration', 
-               'Update-OCIBdsInstance', 'Update-OCIBdsMetastoreConfiguration'
+               'Remove-OCIBdsNode', 'Restart-OCIBdsNode', 
+               'Update-OCIBdsAutoScalingConfiguration', 'Update-OCIBdsInstance', 
+               'Update-OCIBdsMetastoreConfiguration'
 
 # Variables to export from this module
 VariablesToExport = '*'

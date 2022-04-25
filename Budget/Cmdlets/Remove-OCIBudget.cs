@@ -18,7 +18,7 @@ namespace Oci.BudgetService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.BudgetService.Responses.DeleteBudgetResponse) })]
     public class RemoveOCIBudget : OCIBudgetCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique Budget OCID")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique budget OCID.")]
         public string BudgetId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

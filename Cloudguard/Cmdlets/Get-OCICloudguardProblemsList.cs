@@ -71,6 +71,9 @@ namespace Oci.CloudguardService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the target in which to list resources.")]
         public string TargetId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Setting this to `SECURITY_ZONE` returns only security-zone related violations.")]
+        public System.Nullable<Oci.CloudguardService.Models.ProblemCategoryEnum> ProblemCategory { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.")]
         public System.Nullable<bool> CompartmentIdInSubtree { get; set; }
 
@@ -124,6 +127,7 @@ namespace Oci.CloudguardService.Cmdlets
                     DetectorRuleIdList = DetectorRuleIdList,
                     DetectorType = DetectorType,
                     TargetId = TargetId,
+                    ProblemCategory = ProblemCategory,
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
                     AccessLevel = AccessLevel,
                     ResourceId = ResourceId,

@@ -20,7 +20,7 @@ namespace Oci.BudgetService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.BudgetService.Models.AlertRuleSummary), typeof(Oci.BudgetService.Responses.ListAlertRulesResponse) })]
     public class GetOCIBudgetAlertRulesList : OCIBudgetCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique Budget OCID")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique budget OCID.")]
         public string BudgetId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
@@ -38,7 +38,7 @@ namespace Oci.BudgetService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The current state of the resource to filter by.")]
         public System.Nullable<Oci.BudgetService.Models.LifecycleState> LifecycleState { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A user-friendly name. Does not have to be unique, and it's changeable.
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A user-friendly name. This does not have to be unique, and it's changeable.
 
 Example: `My new resource`")]
         public string DisplayName { get; set; }
