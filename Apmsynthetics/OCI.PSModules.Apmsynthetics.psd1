@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Apmsynthetics.dll'
 
 # Version number of this module.
-ModuleVersion = '31.0.0'
+ModuleVersion = '32.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '31.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '32.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Apmsynthetics.dll'
@@ -71,12 +71,17 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Apmsynthetics.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIApmsyntheticsMonitor', 'Get-OCIApmsyntheticsMonitorResult', 
+CmdletsToExport = 'Get-OCIApmsyntheticsDedicatedVantagePoint', 
+               'Get-OCIApmsyntheticsDedicatedVantagePointsList', 
+               'Get-OCIApmsyntheticsMonitor', 'Get-OCIApmsyntheticsMonitorResult', 
                'Get-OCIApmsyntheticsMonitorsList', 
                'Get-OCIApmsyntheticsPublicVantagePointsList', 
                'Get-OCIApmsyntheticsScript', 'Get-OCIApmsyntheticsScriptsList', 
+               'New-OCIApmsyntheticsDedicatedVantagePoint', 
                'New-OCIApmsyntheticsMonitor', 'New-OCIApmsyntheticsScript', 
+               'Remove-OCIApmsyntheticsDedicatedVantagePoint', 
                'Remove-OCIApmsyntheticsMonitor', 'Remove-OCIApmsyntheticsScript', 
+               'Update-OCIApmsyntheticsDedicatedVantagePoint', 
                'Update-OCIApmsyntheticsMonitor', 'Update-OCIApmsyntheticsScript'
 
 # Variables to export from this module

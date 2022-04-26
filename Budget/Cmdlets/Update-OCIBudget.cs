@@ -18,7 +18,7 @@ namespace Oci.BudgetService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.BudgetService.Models.Budget), typeof(Oci.BudgetService.Responses.UpdateBudgetResponse) })]
     public class UpdateOCIBudget : OCIBudgetCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique Budget OCID")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique budget OCID.")]
         public string BudgetId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated.")]

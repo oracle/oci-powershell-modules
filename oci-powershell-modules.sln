@@ -207,6 +207,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Dataconnectiv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Stackmonitoring", "Stackmonitoring\OCI.PSModules.Stackmonitoring.csproj", "{C50E681E-D3B8-466D-A9D5-C12E5BC8CD75}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Servicemesh", "Servicemesh\OCI.PSModules.Servicemesh.csproj", "{0F926617-9B34-497F-8553-7413BD2BB222}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1456,5 +1458,17 @@ Global
         {C50E681E-D3B8-466D-A9D5-C12E5BC8CD75}.Release|x64.Build.0 = Release|Any CPU
         {C50E681E-D3B8-466D-A9D5-C12E5BC8CD75}.Release|x86.ActiveCfg = Release|Any CPU
         {C50E681E-D3B8-466D-A9D5-C12E5BC8CD75}.Release|x86.Build.0 = Release|Any CPU
+        {0F926617-9B34-497F-8553-7413BD2BB222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {0F926617-9B34-497F-8553-7413BD2BB222}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {0F926617-9B34-497F-8553-7413BD2BB222}.Debug|x64.ActiveCfg = Debug|Any CPU
+        {0F926617-9B34-497F-8553-7413BD2BB222}.Debug|x64.Build.0 = Debug|Any CPU
+        {0F926617-9B34-497F-8553-7413BD2BB222}.Debug|x86.ActiveCfg = Debug|Any CPU
+        {0F926617-9B34-497F-8553-7413BD2BB222}.Debug|x86.Build.0 = Debug|Any CPU
+        {0F926617-9B34-497F-8553-7413BD2BB222}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {0F926617-9B34-497F-8553-7413BD2BB222}.Release|Any CPU.Build.0 = Release|Any CPU
+        {0F926617-9B34-497F-8553-7413BD2BB222}.Release|x64.ActiveCfg = Release|Any CPU
+        {0F926617-9B34-497F-8553-7413BD2BB222}.Release|x64.Build.0 = Release|Any CPU
+        {0F926617-9B34-497F-8553-7413BD2BB222}.Release|x86.ActiveCfg = Release|Any CPU
+        {0F926617-9B34-497F-8553-7413BD2BB222}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

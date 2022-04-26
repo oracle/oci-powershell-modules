@@ -38,12 +38,12 @@ namespace Oci.BudgetService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The current state of the resource to filter by.")]
         public System.Nullable<Oci.BudgetService.Models.LifecycleState> LifecycleState { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A user-friendly name. Does not have to be unique, and it's changeable.
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A user-friendly name. This does not have to be unique, and it's changeable.
 
 Example: `My new resource`")]
         public string DisplayName { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of target to filter by.   * ALL - List all budgets   * COMPARTMENT - List all budgets with targetType == ""COMPARTMENT""   * TAG - List all budgets with targetType == ""TAG""")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of target to filter by:   * ALL - List all budgets   * COMPARTMENT - List all budgets with targetType == ""COMPARTMENT""   * TAG - List all budgets with targetType == ""TAG""")]
         public System.Nullable<Oci.BudgetService.Requests.ListBudgetsRequest.TargetTypeEnum> TargetType { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

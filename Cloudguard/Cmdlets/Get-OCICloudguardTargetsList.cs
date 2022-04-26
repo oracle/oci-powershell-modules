@@ -26,6 +26,9 @@ namespace Oci.CloudguardService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given.")]
         public string DisplayName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.")]
+        public System.Nullable<bool> IsNonSecurityZoneTargetsOnlyQuery { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.")]
         public System.Nullable<Oci.CloudguardService.Models.LifecycleState> LifecycleState { get; set; }
 
@@ -64,6 +67,7 @@ namespace Oci.CloudguardService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     DisplayName = DisplayName,
+                    IsNonSecurityZoneTargetsOnlyQuery = IsNonSecurityZoneTargetsOnlyQuery,
                     LifecycleState = LifecycleState,
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
                     AccessLevel = AccessLevel,

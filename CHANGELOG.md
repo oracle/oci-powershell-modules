@@ -3,6 +3,30 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 32.0.0 - 2022-04-26
+### Added
+- Support for the Service Mesh service
+- Support for security zones in the Cloud Guard service
+- Support for virtual test access points (VTAPs) in the Networking service
+- Support for monitoring as a source in the Service Connector Hub service
+- Support for creating budgets that target subscriptions and child tenancies in the Budgets service
+- Support for listing shapes and specifying a shape during creation of a node in the Roving Edge Infrastructure service
+- Support for bringing your own key in the Roving Edge Infrastructure service
+- Support for enabling inspection of HTTP request bodies in the Web Application Acceleration and Security
+- Support for cost management schedules in the Usage service
+- Support for TCPS on external containers as well as non-container and pluggable databases in the Database service
+- Support for autoscaling on Open Data Hub (ODH) clusters in the Big Data service
+- Support for creating Open Data Hub (ODH) 0.9 clusters in the Big Data service
+- Support for Open Data Hub (ODH) patch management in the Big Data service
+- Support for customizable Kerberos realm names in the Big Data service
+- Support for dedicated vantage points in the Application Performance Monitoring service
+- Support for reactivating child tenancies in the Organizations service
+- Support for punctuation and the SRT transcription format in the AI Speech service
+
+### Breaking Changes
+- The deprecated property `RiskScore` was removed from the `Oci.CloudguardService.Models.Sighting` model in the Cloud Guard service.
+- The `SubscriptionId` parameter is now required in the `Get-OCITenantmanagercontrolplaneSubscriptionMappingsList` cmdlet in the Tenant Manager Control Plane service
+
 ## 31.0.0 - 2022-04-19
 ### Added
 - Support for the Stack Monitoring service

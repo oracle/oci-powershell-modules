@@ -20,7 +20,7 @@ namespace Oci.TenantmanagercontrolplaneService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.TenantmanagercontrolplaneService.Models.SubscriptionMappingCollection), typeof(Oci.TenantmanagercontrolplaneService.Responses.ListSubscriptionMappingsResponse) })]
     public class GetOCITenantmanagercontrolplaneSubscriptionMappingsList : OCISubscriptionCmdlet
     {
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the subscription to which the tenancy is associated.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the subscription to which the tenancy is associated.")]
         public string SubscriptionId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"SubscriptionMappingId is a unique ID for subscription and tenancy mapping.")]

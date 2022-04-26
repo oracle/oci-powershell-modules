@@ -23,11 +23,14 @@ namespace Oci.ApmsyntheticsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM domain ID the request is intended for.")]
         public string ApmDomainId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the entire display name.")]
         public string DisplayName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only monitors using scriptId.")]
         public string ScriptId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the public or dedicated vantage point.")]
+        public string VantagePoint { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.")]
         public string MonitorType { get; set; }
@@ -67,6 +70,7 @@ Example: `50`")]
                     ApmDomainId = ApmDomainId,
                     DisplayName = DisplayName,
                     ScriptId = ScriptId,
+                    VantagePoint = VantagePoint,
                     MonitorType = MonitorType,
                     Status = Status,
                     Limit = Limit,

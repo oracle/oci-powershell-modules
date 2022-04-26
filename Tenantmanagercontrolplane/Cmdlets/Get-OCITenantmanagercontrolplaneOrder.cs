@@ -18,7 +18,7 @@ namespace Oci.TenantmanagercontrolplaneService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.TenantmanagercontrolplaneService.Models.Order), typeof(Oci.TenantmanagercontrolplaneService.Responses.GetOrderResponse) })]
     public class GetOCITenantmanagercontrolplaneOrder : OCIOrdersCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Activation Token containing an order id. JWT RFC 7519 formatted string.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Activation Token containing an order ID. A JWT RFC 7519 formatted string.")]
         public string ActivationToken { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
