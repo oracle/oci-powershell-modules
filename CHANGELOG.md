@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 33.0.0 - 2022-05-03
+### Added
+- Support for the Application Dependency Management service
+- Support for E4 dense VMs on launch and update instance operations in the Compute service
+- Support for reboot migration on DenseIO shapes in the Compute service
+- Support for an increased database name maximum length, from 14 to 30 characters, in the Database service
+- Support for provisioned concurrency in the Functions service
+  
+### Breaking Changes
+- The cmdlet `Remove-OCIObjectstorageMultipartUpload` was renamed to `Stop-OCIObjectstorageMultipartUpload` in the Object Storage service
+
 ## 32.0.0 - 2022-04-26
 ### Added
 - Support for the Service Mesh service

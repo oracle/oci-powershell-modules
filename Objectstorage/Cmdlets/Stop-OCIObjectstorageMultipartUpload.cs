@@ -14,9 +14,9 @@ using Oci.ObjectstorageService.Models;
 
 namespace Oci.ObjectstorageService.Cmdlets
 {
-    [Cmdlet("Remove", "OCIObjectstorageMultipartUpload", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
+    [Cmdlet("Stop", "OCIObjectstorageMultipartUpload", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.ObjectstorageService.Responses.AbortMultipartUploadResponse) })]
-    public class RemoveOCIObjectstorageMultipartUpload : OCIObjectStorageCmdlet
+    public class StopOCIObjectstorageMultipartUpload : OCIObjectStorageCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Object Storage namespace used for the request.")]
         public string NamespaceName { get; set; }
@@ -40,7 +40,7 @@ namespace Oci.ObjectstorageService.Cmdlets
         {
             base.ProcessRecord();
 
-            if (!ConfirmDelete("OCIObjectstorageMultipartUpload", "Remove"))
+            if (!ConfirmDelete("OCIObjectstorageMultipartUpload", "Stop"))
             {
                return;
             }
