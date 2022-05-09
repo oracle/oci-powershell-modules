@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Objectstorage.dll'
 
 # Version number of this module.
-ModuleVersion = '33.0.0'
+ModuleVersion = '34.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '33.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '34.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Objectstorage.dll'
@@ -102,14 +102,13 @@ CmdletsToExport = 'Copy-OCIObjectstorageObject', 'Get-OCIObjectstorageBucket',
                'New-OCIObjectstoragePreauthenticatedRequest', 
                'New-OCIObjectstorageReplicationPolicy', 
                'New-OCIObjectstorageRetentionRule', 
-               'Remove-OCIObjectstorageBucket', 
-               'Remove-OCIObjectstorageMultipartUpload', 
-               'Remove-OCIObjectstorageObject', 
+               'Remove-OCIObjectstorageBucket', 'Remove-OCIObjectstorageObject', 
                'Remove-OCIObjectstorageObjectLifecyclePolicy', 
                'Remove-OCIObjectstoragePreauthenticatedRequest', 
                'Remove-OCIObjectstorageReplicationPolicy', 
                'Remove-OCIObjectstorageRetentionRule', 
                'Rename-OCIObjectstorageObject', 'Restore-OCIObjectstorageObjects', 
+               'Stop-OCIObjectstorageMultipartUpload', 
                'Stop-OCIObjectstorageWorkRequest', 'Update-OCIObjectstorageBucket', 
                'Update-OCIObjectstorageNamespaceMetadata', 
                'Update-OCIObjectstorageRetentionRule', 
