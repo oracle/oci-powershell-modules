@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 34.0.0 - 2022-05-10
+### Added
+- Support for getting usage information for autonomous databases and Cloud at Customer autonomous databases in the Database service
+- Support for the "standby" lifecycle state on autonomous databases in the Database service
+- Support for BIP connections and dataflow operators in the Data Integration service
+  
+### Breaking Changes
+- The data type of property `DefaultConnection` was changed from `ConnectionSummaryFromBICC` to `ConnectionSummary` in the `Oci.DataintegrationService.Models.DataAssetSummaryFromFusionApp` model in the Data Integration service in the .NET SDK
+- The data type of property `DefaultConnection` was changed from `ConnectionFromBICCDetails` to `ConnectionDetails` in the `Oci.DataintegrationService.Models.DataAssetFromFusionApp` model in the Data Integration service in the .NET SDK
+- The data type of property `DefaultConnection` was changed from `CreateConnectionFromBICC` to `CreateConnectionDetails` in the `Oci.DataintegrationService.Models.CreateDataAssetFromFusionApp` model in the Data Integration service in the .NET SDK
+
 ## 33.0.0 - 2022-05-03
 ### Added
 - Support for the Application Dependency Management service
