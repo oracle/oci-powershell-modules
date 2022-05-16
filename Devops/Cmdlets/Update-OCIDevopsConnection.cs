@@ -21,7 +21,7 @@ namespace Oci.DevopsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique connection identifier.")]
         public string ConnectionId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtypes <Oci.DevopsService.Models.UpdateGithubAccessTokenConnectionDetails>, <Oci.DevopsService.Models.UpdateGitlabAccessTokenConnectionDetails> of type <Oci.DevopsService.Models.UpdateConnectionDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtypes <Oci.DevopsService.Models.UpdateGithubAccessTokenConnectionDetails>, <Oci.DevopsService.Models.UpdateGitlabAccessTokenConnectionDetails>, <Oci.DevopsService.Models.UpdateBitbucketCloudAppPasswordConnectionDetails> of type <Oci.DevopsService.Models.UpdateConnectionDetails>.")]
         public UpdateConnectionDetails UpdateConnectionDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

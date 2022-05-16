@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '34.0.0'
+ModuleVersion = '34.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '34.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '34.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -105,6 +105,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityExadataInfrastructure',
                'Get-OCIDatabaseAutonomousDatabase', 
                'Get-OCIDatabaseAutonomousDatabaseBackup', 
                'Get-OCIDatabaseAutonomousDatabaseBackupsList', 
+               'Get-OCIDatabaseAutonomousDatabaseCharacterSetsList', 
                'Get-OCIDatabaseAutonomousDatabaseClonesList', 
                'Get-OCIDatabaseAutonomousDatabaseDataguardAssociation', 
                'Get-OCIDatabaseAutonomousDatabaseDataguardAssociationsList', 
@@ -144,11 +145,13 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityExadataInfrastructure',
                'Get-OCIDatabaseDbHomesList', 'Get-OCIDatabaseDbNode', 
                'Get-OCIDatabaseDbNodesList', 'Get-OCIDatabaseDbServer', 
                'Get-OCIDatabaseDbServersList', 'Get-OCIDatabaseDbSystem', 
+               'Get-OCIDatabaseDbSystemComputePerformancesList', 
                'Get-OCIDatabaseDbSystemPatch', 
                'Get-OCIDatabaseDbSystemPatchesList', 
                'Get-OCIDatabaseDbSystemPatchHistoryEntriesList', 
                'Get-OCIDatabaseDbSystemPatchHistoryEntry', 
                'Get-OCIDatabaseDbSystemShapesList', 'Get-OCIDatabaseDbSystemsList', 
+               'Get-OCIDatabaseDbSystemStoragePerformancesList', 
                'Get-OCIDatabaseDbSystemUpgradeHistoryEntriesList', 
                'Get-OCIDatabaseDbSystemUpgradeHistoryEntry', 
                'Get-OCIDatabaseDbVersionsList', 

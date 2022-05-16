@@ -18,7 +18,7 @@ namespace Oci.DevopsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DevopsService.Models.TriggerCreateResult), typeof(Oci.DevopsService.Responses.CreateTriggerResponse) })]
     public class NewOCIDevopsTrigger : OCIDevopsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new trigger. This parameter also accepts subtypes <Oci.DevopsService.Models.CreateGithubTriggerDetails>, <Oci.DevopsService.Models.CreateDevopsCodeRepositoryTriggerDetails>, <Oci.DevopsService.Models.CreateGitlabTriggerDetails> of type <Oci.DevopsService.Models.CreateTriggerDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new trigger. This parameter also accepts subtypes <Oci.DevopsService.Models.CreateGithubTriggerDetails>, <Oci.DevopsService.Models.CreateDevopsCodeRepositoryTriggerDetails>, <Oci.DevopsService.Models.CreateBitbucketCloudTriggerDetails>, <Oci.DevopsService.Models.CreateGitlabTriggerDetails> of type <Oci.DevopsService.Models.CreateTriggerDetails>.")]
         public CreateTriggerDetails CreateTriggerDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated earlier due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
