@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 34.1.0 - 2022-05-017
+### Added
+- Support for information requests in the Operator Access Control service
+- Support for Helm charts and repositories on deployments in the DevOps service
+- Support for Application Dependency Management service scan results on builds in the DevOps service
+- Support for build resources to use Bitbucket Cloud repositories for source code in the DevOps service
+- Support for character set selection on autonomous dedicated databases in the Database service
+- Support for listing autonomous dedicated database supported character sets in the Database service
+- Support for AMD E4 flex shapes on virtual machine database systems in the Database service
+- Support for terraform and improvements for cross-region ADGs in the Database service
+  
+### Changed
+- Improved `Debug` error messages
+
 ## 34.0.0 - 2022-05-10
 ### Added
 - Support for getting usage information for autonomous databases and Cloud at Customer autonomous databases in the Database service
