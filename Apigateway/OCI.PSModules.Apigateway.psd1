@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Apigateway.dll'
 
 # Version number of this module.
-ModuleVersion = '34.1.0'
+ModuleVersion = '34.2.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '34.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '34.2.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Apigateway.dll'
@@ -78,22 +78,29 @@ CmdletsToExport = 'Get-OCIApigatewayApi', 'Get-OCIApigatewayApiContent',
                'Get-OCIApigatewayDeployment', 'Get-OCIApigatewayDeploymentsList', 
                'Get-OCIApigatewayGateway', 'Get-OCIApigatewayGatewaysList', 
                'Get-OCIApigatewaySdk', 'Get-OCIApigatewaySdkLanguageTypesList', 
-               'Get-OCIApigatewaySdksList', 'Get-OCIApigatewayWorkRequest', 
+               'Get-OCIApigatewaySdksList', 'Get-OCIApigatewaySubscriber', 
+               'Get-OCIApigatewaySubscribersList', 'Get-OCIApigatewayUsagePlan', 
+               'Get-OCIApigatewayUsagePlansList', 'Get-OCIApigatewayWorkRequest', 
                'Get-OCIApigatewayWorkRequestErrorsList', 
                'Get-OCIApigatewayWorkRequestLogsList', 
                'Get-OCIApigatewayWorkRequestsList', 
                'Move-OCIApigatewayApiCompartment', 
                'Move-OCIApigatewayCertificateCompartment', 
                'Move-OCIApigatewayDeploymentCompartment', 
-               'Move-OCIApigatewayGatewayCompartment', 'New-OCIApigatewayApi', 
+               'Move-OCIApigatewayGatewayCompartment', 
+               'Move-OCIApigatewaySubscriberCompartment', 
+               'Move-OCIApigatewayUsagePlanCompartment', 'New-OCIApigatewayApi', 
                'New-OCIApigatewayCertificate', 'New-OCIApigatewayDeployment', 
                'New-OCIApigatewayGateway', 'New-OCIApigatewaySdk', 
+               'New-OCIApigatewaySubscriber', 'New-OCIApigatewayUsagePlan', 
                'Remove-OCIApigatewayApi', 'Remove-OCIApigatewayCertificate', 
                'Remove-OCIApigatewayDeployment', 'Remove-OCIApigatewayGateway', 
-               'Remove-OCIApigatewaySdk', 'Stop-OCIApigatewayWorkRequest', 
+               'Remove-OCIApigatewaySdk', 'Remove-OCIApigatewaySubscriber', 
+               'Remove-OCIApigatewayUsagePlan', 'Stop-OCIApigatewayWorkRequest', 
                'Update-OCIApigatewayApi', 'Update-OCIApigatewayCertificate', 
                'Update-OCIApigatewayDeployment', 'Update-OCIApigatewayGateway', 
-               'Update-OCIApigatewaySdk'
+               'Update-OCIApigatewaySdk', 'Update-OCIApigatewaySubscriber', 
+               'Update-OCIApigatewayUsagePlan'
 
 # Variables to export from this module
 VariablesToExport = '*'

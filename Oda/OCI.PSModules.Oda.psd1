@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Oda.dll'
 
 # Version number of this module.
-ModuleVersion = '34.1.0'
+ModuleVersion = '34.2.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '34.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '34.2.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Oda.dll'
@@ -71,12 +71,41 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Oda.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIOdaInstance', 'Get-OCIOdaInstancesList', 
-               'Get-OCIOdaWorkRequest', 'Get-OCIOdaWorkRequestErrorsList', 
-               'Get-OCIOdaWorkRequestLogsList', 'Get-OCIOdaWorkRequestsList', 
-               'Move-OCIOdaInstanceCompartment', 'New-OCIOdaInstance', 
-               'Remove-OCIOdaInstance', 'Start-OCIOdaInstance', 
-               'Stop-OCIOdaInstance', 'Update-OCIOdaInstance'
+CmdletsToExport = 'Export-OCIOdaDigitalAssistant', 'Export-OCIOdaSkill', 
+               'Get-OCIOdaAuthenticationProvider', 
+               'Get-OCIOdaAuthenticationProvidersList', 'Get-OCIOdaChannel', 
+               'Get-OCIOdaChannelsList', 'Get-OCIOdaDigitalAssistant', 
+               'Get-OCIOdaDigitalAssistantParameter', 
+               'Get-OCIOdaDigitalAssistantParametersList', 
+               'Get-OCIOdaDigitalAssistantsList', 'Get-OCIOdaImportedPackage', 
+               'Get-OCIOdaImportedPackagesList', 'Get-OCIOdaInstance', 
+               'Get-OCIOdaInstanceAttachment', 'Get-OCIOdaInstanceAttachmentsList', 
+               'Get-OCIOdaInstancesList', 'Get-OCIOdaPackage', 
+               'Get-OCIOdaPackagesList', 'Get-OCIOdaSkill', 
+               'Get-OCIOdaSkillParameter', 'Get-OCIOdaSkillParametersList', 
+               'Get-OCIOdaSkillsList', 'Get-OCIOdaTranslator', 
+               'Get-OCIOdaTranslatorsList', 'Get-OCIOdaWorkRequest', 
+               'Get-OCIOdaWorkRequestErrorsList', 'Get-OCIOdaWorkRequestLogsList', 
+               'Get-OCIOdaWorkRequestsList', 'Import-OCIOdaBot', 
+               'Invoke-OCIOdaConfigureDigitalAssistantParameters', 
+               'Invoke-OCIOdaPublishDigitalAssistant', 'Invoke-OCIOdaPublishSkill', 
+               'Invoke-OCIOdaRotateChannelKeys', 'Move-OCIOdaInstanceCompartment', 
+               'New-OCIOdaAuthenticationProvider', 'New-OCIOdaChannel', 
+               'New-OCIOdaDigitalAssistant', 'New-OCIOdaImportedPackage', 
+               'New-OCIOdaInstance', 'New-OCIOdaInstanceAttachment', 
+               'New-OCIOdaSkill', 'New-OCIOdaSkillParameter', 'New-OCIOdaTranslator', 
+               'Remove-OCIOdaAuthenticationProvider', 'Remove-OCIOdaChannel', 
+               'Remove-OCIOdaDigitalAssistant', 'Remove-OCIOdaImportedPackage', 
+               'Remove-OCIOdaInstance', 'Remove-OCIOdaInstanceAttachment', 
+               'Remove-OCIOdaSkill', 'Remove-OCIOdaSkillParameter', 
+               'Remove-OCIOdaTranslator', 'Start-OCIOdaChannel', 
+               'Start-OCIOdaInstance', 'Stop-OCIOdaChannel', 'Stop-OCIOdaInstance', 
+               'Update-OCIOdaAuthenticationProvider', 'Update-OCIOdaChannel', 
+               'Update-OCIOdaDigitalAssistant', 
+               'Update-OCIOdaDigitalAssistantParameter', 
+               'Update-OCIOdaImportedPackage', 'Update-OCIOdaInstance', 
+               'Update-OCIOdaInstanceAttachment', 'Update-OCIOdaSkill', 
+               'Update-OCIOdaSkillParameter', 'Update-OCIOdaTranslator'
 
 # Variables to export from this module
 VariablesToExport = '*'
