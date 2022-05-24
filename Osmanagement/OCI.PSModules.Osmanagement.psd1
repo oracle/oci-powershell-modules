@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Osmanagement.dll'
 
 # Version number of this module.
-ModuleVersion = '34.1.0'
+ModuleVersion = '34.2.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '34.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '34.2.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Osmanagement.dll'
@@ -72,9 +72,11 @@ FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Add-OCIOsmanagementPackagesToSoftwareSource', 
+               'Disable-OCIOsmanagementModuleStreamOnManagedInstance', 
                'DisMount-OCIOsmanagementChildSoftwareSourceFromManagedInstance', 
                'DisMount-OCIOsmanagementManagedInstanceFromManagedInstanceGroup', 
                'DisMount-OCIOsmanagementParentSoftwareSourceFromManagedInstance', 
+               'Enable-OCIOsmanagementModuleStreamOnManagedInstance', 
                'Get-OCIOsmanagementAvailablePackagesForManagedInstanceList', 
                'Get-OCIOsmanagementAvailableSoftwareSourcesForManagedInstanceList', 
                'Get-OCIOsmanagementAvailableUpdatesForManagedInstanceList', 
@@ -87,6 +89,12 @@ CmdletsToExport = 'Add-OCIOsmanagementPackagesToSoftwareSource',
                'Get-OCIOsmanagementManagedInstanceGroup', 
                'Get-OCIOsmanagementManagedInstanceGroupsList', 
                'Get-OCIOsmanagementManagedInstancesList', 
+               'Get-OCIOsmanagementModuleStream', 
+               'Get-OCIOsmanagementModuleStreamProfile', 
+               'Get-OCIOsmanagementModuleStreamProfilesList', 
+               'Get-OCIOsmanagementModuleStreamProfilesOnManagedInstanceList', 
+               'Get-OCIOsmanagementModuleStreamsList', 
+               'Get-OCIOsmanagementModuleStreamsOnManagedInstanceList', 
                'Get-OCIOsmanagementPackagesInstalledOnManagedInstanceList', 
                'Get-OCIOsmanagementRelatedEventsList', 
                'Get-OCIOsmanagementScheduledJob', 
@@ -106,12 +114,15 @@ CmdletsToExport = 'Add-OCIOsmanagementPackagesToSoftwareSource',
                'Invoke-OCIOsmanagementInstallAllPackageUpdatesOnManagedInstance', 
                'Invoke-OCIOsmanagementInstallAllUpdatesOnManagedInstanceGroup', 
                'Invoke-OCIOsmanagementInstallAllWindowsUpdatesOnManagedInstance', 
+               'Invoke-OCIOsmanagementInstallModuleStreamProfileOnManagedInstance', 
                'Invoke-OCIOsmanagementInstallPackageOnManagedInstance', 
                'Invoke-OCIOsmanagementInstallPackageUpdateOnManagedInstance', 
                'Invoke-OCIOsmanagementInstallWindowsUpdateOnManagedInstance', 
+               'Invoke-OCIOsmanagementManageModuleStreamsOnManagedInstance', 
                'Invoke-OCIOsmanagementRunScheduledJobNow', 
                'Invoke-OCIOsmanagementSearchSoftwarePackages', 
                'Invoke-OCIOsmanagementSkipNextScheduledJobExecution', 
+               'Invoke-OCIOsmanagementSwitchModuleStreamOnManagedInstance', 
                'Mount-OCIOsmanagementChildSoftwareSourceToManagedInstance', 
                'Mount-OCIOsmanagementManagedInstanceToManagedInstanceGroup', 
                'Mount-OCIOsmanagementParentSoftwareSourceToManagedInstance', 
@@ -123,6 +134,7 @@ CmdletsToExport = 'Add-OCIOsmanagementPackagesToSoftwareSource',
                'New-OCIOsmanagementSoftwareSource', 
                'Remove-OCIOsmanagementEventContent', 
                'Remove-OCIOsmanagementManagedInstanceGroup', 
+               'Remove-OCIOsmanagementModuleStreamProfileFromManagedInstance', 
                'Remove-OCIOsmanagementPackageFromManagedInstance', 
                'Remove-OCIOsmanagementPackagesFromSoftwareSource', 
                'Remove-OCIOsmanagementScheduledJob', 
