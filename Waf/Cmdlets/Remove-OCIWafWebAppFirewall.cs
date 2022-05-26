@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.WafService.Requests;
 using Oci.WafService.Responses;
 using Oci.WafService.Models;
+using Oci.Common.Model;
 
 namespace Oci.WafService.Cmdlets
 {
@@ -53,6 +54,10 @@ namespace Oci.WafService.Cmdlets
                 response = client.DeleteWebAppFirewall(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

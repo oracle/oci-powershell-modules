@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.CoreService.Requests;
 using Oci.CoreService.Responses;
 using Oci.CoreService.Models;
+using Oci.Common.Model;
 
 namespace Oci.CoreService.Cmdlets
 {
@@ -18,7 +19,7 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.IPSecConnectionDeviceConfig), typeof(Oci.CoreService.Responses.GetIPSecConnectionDeviceConfigResponse) })]
     public class GetOCIVirtualNetworkIPSecConnectionDeviceConfig : OCIVirtualNetworkCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IPSec connection.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.")]
         public string IpscId { get; set; }
 
         protected override void ProcessRecord()
@@ -36,6 +37,10 @@ namespace Oci.CoreService.Cmdlets
                 response = client.GetIPSecConnectionDeviceConfig(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.IPSecConnectionDeviceConfig);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

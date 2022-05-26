@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.OsmanagementService.Requests;
 using Oci.OsmanagementService.Responses;
 using Oci.OsmanagementService.Models;
+using Oci.Common.Model;
 
 namespace Oci.OsmanagementService.Cmdlets
 {
@@ -60,6 +61,10 @@ namespace Oci.OsmanagementService.Cmdlets
                 response = client.InstallModuleStreamProfileOnManagedInstance(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

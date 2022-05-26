@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.NetworkloadbalancerService.Requests;
 using Oci.NetworkloadbalancerService.Responses;
 using Oci.NetworkloadbalancerService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.NetworkloadbalancerService.Cmdlets
@@ -63,6 +64,10 @@ Example: `example-etag`", ParameterSetName = Default)]
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

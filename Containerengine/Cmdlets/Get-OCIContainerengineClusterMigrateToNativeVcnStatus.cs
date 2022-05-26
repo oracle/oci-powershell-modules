@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ContainerengineService.Requests;
 using Oci.ContainerengineService.Responses;
 using Oci.ContainerengineService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ContainerengineService.Cmdlets
 {
@@ -40,6 +41,10 @@ namespace Oci.ContainerengineService.Cmdlets
                 response = client.GetClusterMigrateToNativeVcnStatus(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.ClusterMigrateToNativeVcnStatus);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

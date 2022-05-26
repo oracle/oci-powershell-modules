@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.IdentitydataplaneService.Requests;
 using Oci.IdentitydataplaneService.Responses;
 using Oci.IdentitydataplaneService.Models;
+using Oci.Common.Model;
 
 namespace Oci.IdentitydataplaneService.Cmdlets
 {
@@ -36,6 +37,10 @@ namespace Oci.IdentitydataplaneService.Cmdlets
                 response = client.GenerateScopedAccessToken(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.SecurityToken);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

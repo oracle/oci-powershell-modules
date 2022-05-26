@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.DatalabelingservicedataplaneService.Requests;
 using Oci.DatalabelingservicedataplaneService.Responses;
 using Oci.DatalabelingservicedataplaneService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DatalabelingservicedataplaneService.Cmdlets
 {
@@ -44,6 +45,10 @@ namespace Oci.DatalabelingservicedataplaneService.Cmdlets
                 response = client.CreateRecord(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.Record);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

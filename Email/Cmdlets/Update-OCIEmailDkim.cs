@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.EmailService.Requests;
 using Oci.EmailService.Responses;
 using Oci.EmailService.Models;
+using Oci.Common.Model;
 
 namespace Oci.EmailService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.EmailService.Cmdlets
                 response = client.UpdateDkim(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

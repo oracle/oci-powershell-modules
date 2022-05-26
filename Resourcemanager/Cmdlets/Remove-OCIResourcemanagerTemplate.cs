@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ResourcemanagerService.Requests;
 using Oci.ResourcemanagerService.Responses;
 using Oci.ResourcemanagerService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ResourcemanagerService.Cmdlets
 {
@@ -53,6 +54,10 @@ namespace Oci.ResourcemanagerService.Cmdlets
                 response = client.DeleteTemplate(request).GetAwaiter().GetResult();
                 WriteOutput(response);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.OptimizerService.Requests;
 using Oci.OptimizerService.Responses;
 using Oci.OptimizerService.Models;
+using Oci.Common.Model;
 
 namespace Oci.OptimizerService.Cmdlets
 {
@@ -62,6 +63,10 @@ Can only be set to true when performing ListCompartments on the tenancy (root co
                 response = client.FilterResourceActions(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.ResourceActionCollection);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

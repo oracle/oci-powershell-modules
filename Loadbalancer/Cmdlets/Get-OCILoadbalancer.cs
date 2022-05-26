@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.LoadbalancerService.Requests;
 using Oci.LoadbalancerService.Responses;
 using Oci.LoadbalancerService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.LoadbalancerService.Cmdlets
@@ -53,6 +54,10 @@ namespace Oci.LoadbalancerService.Cmdlets
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

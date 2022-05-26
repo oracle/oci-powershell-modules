@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.GenericartifactscontentService.Requests;
 using Oci.GenericartifactscontentService.Responses;
 using Oci.GenericartifactscontentService.Models;
+using Oci.Common.Model;
 
 namespace Oci.GenericartifactscontentService.Cmdlets
 {
@@ -73,6 +74,10 @@ Example: `bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx` If you contact Oracle about a re
                 response = client.PutGenericArtifactContentByPath(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.GenericArtifact);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

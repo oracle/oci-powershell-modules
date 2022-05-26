@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.TenantmanagercontrolplaneService.Requests;
 using Oci.TenantmanagercontrolplaneService.Responses;
 using Oci.TenantmanagercontrolplaneService.Models;
+using Oci.Common.Model;
 
 namespace Oci.TenantmanagercontrolplaneService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.TenantmanagercontrolplaneService.Cmdlets
                 response = client.ActivateOrder(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

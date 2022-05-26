@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.BlockchainService.Requests;
 using Oci.BlockchainService.Responses;
 using Oci.BlockchainService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.BlockchainService.Cmdlets
@@ -53,6 +54,10 @@ namespace Oci.BlockchainService.Cmdlets
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

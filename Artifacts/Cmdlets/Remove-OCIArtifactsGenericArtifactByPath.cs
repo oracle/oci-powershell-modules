@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ArtifactsService.Requests;
 using Oci.ArtifactsService.Responses;
 using Oci.ArtifactsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ArtifactsService.Cmdlets
 {
@@ -67,6 +68,10 @@ Example: `1.1.2` or `1.2-beta-2`")]
                 response = client.DeleteGenericArtifactByPath(request).GetAwaiter().GetResult();
                 WriteOutput(response);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.DatalabelingService.Requests;
 using Oci.DatalabelingService.Responses;
 using Oci.DatalabelingService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.DatalabelingService.Cmdlets
@@ -53,6 +54,10 @@ namespace Oci.DatalabelingService.Cmdlets
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

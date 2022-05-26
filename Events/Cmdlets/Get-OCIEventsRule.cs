@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.EventsService.Requests;
 using Oci.EventsService.Responses;
 using Oci.EventsService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.EventsService.Cmdlets
@@ -53,6 +54,10 @@ namespace Oci.EventsService.Cmdlets
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

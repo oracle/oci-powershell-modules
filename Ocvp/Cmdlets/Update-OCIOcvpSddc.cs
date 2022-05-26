@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.OcvpService.Requests;
 using Oci.OcvpService.Responses;
 using Oci.OcvpService.Models;
+using Oci.Common.Model;
 
 namespace Oci.OcvpService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.OcvpService.Cmdlets
                 response = client.UpdateSddc(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.Sddc);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

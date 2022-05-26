@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.GoldengateService.Requests;
 using Oci.GoldengateService.Responses;
 using Oci.GoldengateService.Models;
+using Oci.Common.Model;
 
 namespace Oci.GoldengateService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.GoldengateService.Cmdlets
                 response = client.UpdateDeploymentBackup(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.DeploymentBackup);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

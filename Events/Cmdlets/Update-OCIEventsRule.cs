@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.EventsService.Requests;
 using Oci.EventsService.Responses;
 using Oci.EventsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.EventsService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.EventsService.Cmdlets
                 response = client.UpdateRule(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.Rule);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

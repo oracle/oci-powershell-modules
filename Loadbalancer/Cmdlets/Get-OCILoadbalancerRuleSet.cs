@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.LoadbalancerService.Requests;
 using Oci.LoadbalancerService.Responses;
 using Oci.LoadbalancerService.Models;
+using Oci.Common.Model;
 
 namespace Oci.LoadbalancerService.Cmdlets
 {
@@ -46,6 +47,10 @@ Example: `example_rule_set`")]
                 response = client.GetRuleSet(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.RuleSet);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

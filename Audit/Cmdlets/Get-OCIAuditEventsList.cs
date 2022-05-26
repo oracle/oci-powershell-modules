@@ -13,6 +13,7 @@ using System.Management.Automation;
 using Oci.AuditService.Requests;
 using Oci.AuditService.Responses;
 using Oci.AuditService.Models;
+using Oci.Common.Model;
 
 namespace Oci.AuditService.Cmdlets
 {
@@ -68,6 +69,10 @@ For example, a start value of `2017-01-01T00:00:00Z` and an end value of `2017-0
                     WriteWarning("This operation supports pagination and not all resources were returned. Re-run using the -All option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

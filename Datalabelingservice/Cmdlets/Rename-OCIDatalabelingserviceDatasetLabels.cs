@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.DatalabelingService.Requests;
 using Oci.DatalabelingService.Responses;
 using Oci.DatalabelingService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DatalabelingService.Cmdlets
 {
@@ -52,6 +53,10 @@ namespace Oci.DatalabelingService.Cmdlets
                 response = client.RenameDatasetLabels(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

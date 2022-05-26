@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.SecretsService.Requests;
 using Oci.SecretsService.Responses;
 using Oci.SecretsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.SecretsService.Cmdlets
 {
@@ -52,6 +53,10 @@ namespace Oci.SecretsService.Cmdlets
                 response = client.GetSecretBundle(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.SecretBundle);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

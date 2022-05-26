@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ThreatintelligenceService.Requests;
 using Oci.ThreatintelligenceService.Responses;
 using Oci.ThreatintelligenceService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ThreatintelligenceService.Cmdlets
 {
@@ -44,6 +45,10 @@ namespace Oci.ThreatintelligenceService.Cmdlets
                 response = client.ListIndicatorCounts(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.IndicatorCountCollection);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

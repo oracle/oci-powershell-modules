@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ServicecatalogService.Requests;
 using Oci.ServicecatalogService.Responses;
 using Oci.ServicecatalogService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.ServicecatalogService.Cmdlets
@@ -53,6 +54,10 @@ namespace Oci.ServicecatalogService.Cmdlets
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

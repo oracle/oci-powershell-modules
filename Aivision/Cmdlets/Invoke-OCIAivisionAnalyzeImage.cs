@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.AivisionService.Requests;
 using Oci.AivisionService.Responses;
 using Oci.AivisionService.Models;
+using Oci.Common.Model;
 
 namespace Oci.AivisionService.Cmdlets
 {
@@ -40,6 +41,10 @@ namespace Oci.AivisionService.Cmdlets
                 response = client.AnalyzeImage(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.AnalyzeImageResult);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

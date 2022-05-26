@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.OdaService.Requests;
 using Oci.OdaService.Responses;
 using Oci.OdaService.Models;
+using Oci.Common.Model;
 
 namespace Oci.OdaService.Cmdlets
 {
@@ -44,6 +45,10 @@ namespace Oci.OdaService.Cmdlets
                 response = client.GetImportedPackage(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.ImportedPackage);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

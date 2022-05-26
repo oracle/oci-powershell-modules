@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ApigatewayService.Requests;
 using Oci.ApigatewayService.Responses;
 using Oci.ApigatewayService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ApigatewayService.Cmdlets
 {
@@ -44,6 +45,10 @@ namespace Oci.ApigatewayService.Cmdlets
                 response = client.GetApiDeploymentSpecification(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.ApiSpecification);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

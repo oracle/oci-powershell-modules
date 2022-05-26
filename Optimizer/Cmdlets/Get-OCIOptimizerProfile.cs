@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.OptimizerService.Requests;
 using Oci.OptimizerService.Responses;
 using Oci.OptimizerService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.OptimizerService.Cmdlets
@@ -53,6 +54,10 @@ namespace Oci.OptimizerService.Cmdlets
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.IntegrationService.Requests;
 using Oci.IntegrationService.Responses;
 using Oci.IntegrationService.Models;
+using Oci.Common.Model;
 
 namespace Oci.IntegrationService.Cmdlets
 {
@@ -44,6 +45,10 @@ namespace Oci.IntegrationService.Cmdlets
                 response = client.CreateIntegrationInstance(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

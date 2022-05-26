@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ServicemanagerproxyService.Requests;
 using Oci.ServicemanagerproxyService.Responses;
 using Oci.ServicemanagerproxyService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ServicemanagerproxyService.Cmdlets
 {
@@ -46,6 +47,10 @@ namespace Oci.ServicemanagerproxyService.Cmdlets
                 response = client.GetServiceEnvironment(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.ServiceEnvironment);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

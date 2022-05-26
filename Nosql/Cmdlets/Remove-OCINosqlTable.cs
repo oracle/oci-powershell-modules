@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.NosqlService.Requests;
 using Oci.NosqlService.Responses;
 using Oci.NosqlService.Models;
+using Oci.Common.Model;
 
 namespace Oci.NosqlService.Cmdlets
 {
@@ -61,6 +62,10 @@ namespace Oci.NosqlService.Cmdlets
                 response = client.DeleteTable(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

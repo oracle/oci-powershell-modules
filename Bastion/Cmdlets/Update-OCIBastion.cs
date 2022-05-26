@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.BastionService.Requests;
 using Oci.BastionService.Responses;
 using Oci.BastionService.Models;
+using Oci.Common.Model;
 
 namespace Oci.BastionService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.BastionService.Cmdlets
                 response = client.UpdateBastion(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

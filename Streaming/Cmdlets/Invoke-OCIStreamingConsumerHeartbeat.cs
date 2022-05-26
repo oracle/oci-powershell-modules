@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.StreamingService.Requests;
 using Oci.StreamingService.Responses;
 using Oci.StreamingService.Models;
+using Oci.Common.Model;
 
 namespace Oci.StreamingService.Cmdlets
 {
@@ -44,6 +45,10 @@ namespace Oci.StreamingService.Cmdlets
                 response = client.ConsumerHeartbeat(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.Cursor);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

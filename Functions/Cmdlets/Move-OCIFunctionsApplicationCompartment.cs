@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.FunctionsService.Requests;
 using Oci.FunctionsService.Responses;
 using Oci.FunctionsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.FunctionsService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.FunctionsService.Cmdlets
                 response = client.ChangeApplicationCompartment(request).GetAwaiter().GetResult();
                 WriteOutput(response);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

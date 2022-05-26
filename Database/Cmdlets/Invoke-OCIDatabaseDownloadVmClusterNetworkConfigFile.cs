@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.DatabaseService.Requests;
 using Oci.DatabaseService.Responses;
 using Oci.DatabaseService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DatabaseService.Cmdlets
 {
@@ -59,6 +60,10 @@ namespace Oci.DatabaseService.Cmdlets
                 HandleOutput();
                 
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

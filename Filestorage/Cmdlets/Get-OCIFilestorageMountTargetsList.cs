@@ -13,6 +13,7 @@ using System.Management.Automation;
 using Oci.FilestorageService.Requests;
 using Oci.FilestorageService.Responses;
 using Oci.FilestorageService.Models;
+using Oci.Common.Model;
 
 namespace Oci.FilestorageService.Cmdlets
 {
@@ -98,6 +99,10 @@ Example: `My resource`")]
                     WriteWarning("This operation supports pagination and not all resources were returned. Re-run using the -All option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

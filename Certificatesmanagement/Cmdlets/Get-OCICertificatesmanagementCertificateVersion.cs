@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.CertificatesmanagementService.Requests;
 using Oci.CertificatesmanagementService.Responses;
 using Oci.CertificatesmanagementService.Models;
+using Oci.Common.Model;
 
 namespace Oci.CertificatesmanagementService.Cmdlets
 {
@@ -44,6 +45,10 @@ namespace Oci.CertificatesmanagementService.Cmdlets
                 response = client.GetCertificateVersion(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.CertificateVersion);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

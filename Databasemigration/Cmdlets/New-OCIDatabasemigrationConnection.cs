@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.DatabasemigrationService.Requests;
 using Oci.DatabasemigrationService.Responses;
 using Oci.DatabasemigrationService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DatabasemigrationService.Cmdlets
 {
@@ -44,6 +45,10 @@ namespace Oci.DatabasemigrationService.Cmdlets
                 response = client.CreateConnection(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.Connection);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

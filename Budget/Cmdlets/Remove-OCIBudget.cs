@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.BudgetService.Requests;
 using Oci.BudgetService.Responses;
 using Oci.BudgetService.Models;
+using Oci.Common.Model;
 
 namespace Oci.BudgetService.Cmdlets
 {
@@ -53,6 +54,10 @@ namespace Oci.BudgetService.Cmdlets
                 response = client.DeleteBudget(request).GetAwaiter().GetResult();
                 WriteOutput(response);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

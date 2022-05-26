@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.OdaService.Requests;
 using Oci.OdaService.Responses;
 using Oci.OdaService.Models;
+using Oci.Common.Model;
 
 namespace Oci.OdaService.Cmdlets
 {
@@ -50,6 +51,10 @@ Retry tokens expire after 24 hours, but they can become invalid before then if t
                 response = client.ImportBot(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.IntegrationService.Requests;
 using Oci.IntegrationService.Responses;
 using Oci.IntegrationService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.IntegrationService.Cmdlets
@@ -53,6 +54,10 @@ namespace Oci.IntegrationService.Cmdlets
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

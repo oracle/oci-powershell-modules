@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.DnsService.Requests;
 using Oci.DnsService.Responses;
 using Oci.DnsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DnsService.Cmdlets
 {
@@ -79,6 +80,10 @@ This parameter is deprecated and should be omitted.")]
                 response = client.DeleteRRSet(request).GetAwaiter().GetResult();
                 WriteOutput(response);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.SchService.Requests;
 using Oci.SchService.Responses;
 using Oci.SchService.Models;
+using Oci.Common.Model;
 
 namespace Oci.SchService.Cmdlets
 {
@@ -44,6 +45,10 @@ namespace Oci.SchService.Cmdlets
                 response = client.CreateServiceConnector(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.MysqlService.Requests;
 using Oci.MysqlService.Responses;
 using Oci.MysqlService.Models;
+using Oci.Common.Model;
 
 namespace Oci.MysqlService.Cmdlets
 {
@@ -44,6 +45,10 @@ namespace Oci.MysqlService.Cmdlets
                 response = client.GenerateHeatWaveClusterMemoryEstimate(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.HeatWaveClusterMemoryEstimate);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

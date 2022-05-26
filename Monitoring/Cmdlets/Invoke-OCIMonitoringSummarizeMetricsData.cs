@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.MonitoringService.Requests;
 using Oci.MonitoringService.Responses;
 using Oci.MonitoringService.Models;
+using Oci.Common.Model;
 
 namespace Oci.MonitoringService.Cmdlets
 {
@@ -50,6 +51,10 @@ Example: `ocid1.compartment.oc1..exampleuniqueID`")]
                 response = client.SummarizeMetricsData(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.Items);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.AnalyticsService.Requests;
 using Oci.AnalyticsService.Responses;
 using Oci.AnalyticsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.AnalyticsService.Cmdlets
 {
@@ -52,6 +53,10 @@ namespace Oci.AnalyticsService.Cmdlets
                 response = client.ChangeAnalyticsInstanceCompartment(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

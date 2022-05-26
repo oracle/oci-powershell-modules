@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.HealthchecksService.Requests;
 using Oci.HealthchecksService.Responses;
 using Oci.HealthchecksService.Models;
+using Oci.Common.Model;
 
 namespace Oci.HealthchecksService.Cmdlets
 {
@@ -44,6 +45,10 @@ namespace Oci.HealthchecksService.Cmdlets
                 response = client.GetHttpMonitor(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.HttpMonitor);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

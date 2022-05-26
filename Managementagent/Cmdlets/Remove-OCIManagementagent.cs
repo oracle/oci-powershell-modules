@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ManagementagentService.Requests;
 using Oci.ManagementagentService.Responses;
 using Oci.ManagementagentService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ManagementagentService.Cmdlets
 {
@@ -53,6 +54,10 @@ namespace Oci.ManagementagentService.Cmdlets
                 response = client.DeleteManagementAgent(request).GetAwaiter().GetResult();
                 WriteOutput(response);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

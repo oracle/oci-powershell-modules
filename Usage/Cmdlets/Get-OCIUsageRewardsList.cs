@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.UsageService.Requests;
 using Oci.UsageService.Responses;
 using Oci.UsageService.Models;
+using Oci.Common.Model;
 
 namespace Oci.UsageService.Cmdlets
 {
@@ -44,6 +45,10 @@ namespace Oci.UsageService.Cmdlets
                 response = client.ListRewards(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.RewardCollection);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.DataflowService.Requests;
 using Oci.DataflowService.Responses;
 using Oci.DataflowService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DataflowService.Cmdlets
 {
@@ -52,6 +53,10 @@ namespace Oci.DataflowService.Cmdlets
                 response = client.ChangeRunCompartment(request).GetAwaiter().GetResult();
                 WriteOutput(response);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

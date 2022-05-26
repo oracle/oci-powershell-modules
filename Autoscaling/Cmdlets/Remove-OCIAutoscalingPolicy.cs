@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.AutoscalingService.Requests;
 using Oci.AutoscalingService.Responses;
 using Oci.AutoscalingService.Models;
+using Oci.Common.Model;
 
 namespace Oci.AutoscalingService.Cmdlets
 {
@@ -57,6 +58,10 @@ namespace Oci.AutoscalingService.Cmdlets
                 response = client.DeleteAutoScalingPolicy(request).GetAwaiter().GetResult();
                 WriteOutput(response);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

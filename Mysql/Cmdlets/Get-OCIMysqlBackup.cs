@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.MysqlService.Requests;
 using Oci.MysqlService.Responses;
 using Oci.MysqlService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.MysqlService.Cmdlets
@@ -59,6 +60,10 @@ namespace Oci.MysqlService.Cmdlets
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

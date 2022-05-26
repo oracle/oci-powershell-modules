@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.OceService.Requests;
 using Oci.OceService.Responses;
 using Oci.OceService.Models;
+using Oci.Common.Model;
 
 namespace Oci.OceService.Cmdlets
 {
@@ -44,6 +45,10 @@ namespace Oci.OceService.Cmdlets
                 response = client.CreateOceInstance(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

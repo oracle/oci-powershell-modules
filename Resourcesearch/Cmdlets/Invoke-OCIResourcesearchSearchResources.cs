@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ResourcesearchService.Requests;
 using Oci.ResourcesearchService.Responses;
 using Oci.ResourcesearchService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ResourcesearchService.Cmdlets
 {
@@ -52,6 +53,10 @@ namespace Oci.ResourcesearchService.Cmdlets
                 response = client.SearchResources(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.ResourceSummaryCollection);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

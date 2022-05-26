@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.MarketplaceService.Requests;
 using Oci.MarketplaceService.Responses;
 using Oci.MarketplaceService.Models;
+using Oci.Common.Model;
 
 namespace Oci.MarketplaceService.Cmdlets
 {
@@ -40,6 +41,10 @@ namespace Oci.MarketplaceService.Cmdlets
                 response = client.GetAcceptedAgreement(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.AcceptedAgreement);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {
