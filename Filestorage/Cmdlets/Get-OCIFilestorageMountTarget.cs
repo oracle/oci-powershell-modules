@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.FilestorageService.Requests;
 using Oci.FilestorageService.Responses;
 using Oci.FilestorageService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.FilestorageService.Cmdlets
@@ -53,6 +54,10 @@ namespace Oci.FilestorageService.Cmdlets
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

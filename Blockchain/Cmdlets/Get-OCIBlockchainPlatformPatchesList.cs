@@ -13,6 +13,7 @@ using System.Management.Automation;
 using Oci.BlockchainService.Requests;
 using Oci.BlockchainService.Responses;
 using Oci.BlockchainService.Models;
+using Oci.Common.Model;
 
 namespace Oci.BlockchainService.Cmdlets
 {
@@ -60,6 +61,10 @@ namespace Oci.BlockchainService.Cmdlets
                     WriteWarning("This operation supports pagination and not all resources were returned. Re-run using the -All option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

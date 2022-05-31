@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.OnsService.Requests;
 using Oci.OnsService.Responses;
 using Oci.OnsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.OnsService.Cmdlets
 {
@@ -50,6 +51,10 @@ Type of message body in the request. For `messageType` of JSON, a default key-va
                 response = client.PublishMessage(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.PublishResult);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

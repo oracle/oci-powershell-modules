@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.LoganalyticsService.Requests;
 using Oci.LoganalyticsService.Responses;
 using Oci.LoganalyticsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.LoganalyticsService.Cmdlets
 {
@@ -64,6 +65,10 @@ namespace Oci.LoganalyticsService.Cmdlets
                 response = client.BatchGetBasicInfo(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.LogAnalyticsLabelCollection);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

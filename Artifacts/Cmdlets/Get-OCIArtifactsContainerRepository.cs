@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ArtifactsService.Requests;
 using Oci.ArtifactsService.Responses;
 using Oci.ArtifactsService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.ArtifactsService.Cmdlets
@@ -57,6 +58,10 @@ Example: `ocid1.containerrepo.oc1..exampleuniqueID`", ParameterSetName = Default
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

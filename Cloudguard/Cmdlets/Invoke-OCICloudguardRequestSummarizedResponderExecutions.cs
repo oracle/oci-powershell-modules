@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.CloudguardService.Requests;
 using Oci.CloudguardService.Responses;
 using Oci.CloudguardService.Models;
+using Oci.Common.Model;
 
 namespace Oci.CloudguardService.Cmdlets
 {
@@ -68,6 +69,10 @@ namespace Oci.CloudguardService.Cmdlets
                 response = client.RequestSummarizedResponderExecutions(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.ResponderExecutionAggregationCollection);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

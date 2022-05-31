@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.VaultService.Requests;
 using Oci.VaultService.Responses;
 using Oci.VaultService.Models;
+using Oci.Common.Model;
 
 namespace Oci.VaultService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.VaultService.Cmdlets
                 response = client.ScheduleSecretDeletion(request).GetAwaiter().GetResult();
                 WriteOutput(response);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

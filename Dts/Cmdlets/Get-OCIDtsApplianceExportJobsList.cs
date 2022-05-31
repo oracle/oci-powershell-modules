@@ -13,6 +13,7 @@ using System.Management.Automation;
 using Oci.DtsService.Requests;
 using Oci.DtsService.Responses;
 using Oci.DtsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DtsService.Cmdlets
 {
@@ -70,6 +71,10 @@ Example: `50`", ParameterSetName = LimitSet)]
                     WriteWarning("This operation supports pagination and not all resources were returned. Re-run using the -All option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

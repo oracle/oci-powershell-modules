@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.LoggingService.Requests;
 using Oci.LoggingService.Responses;
 using Oci.LoggingService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.LoggingService.Cmdlets
@@ -59,6 +60,10 @@ namespace Oci.LoggingService.Cmdlets
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

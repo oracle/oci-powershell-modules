@@ -13,6 +13,7 @@ using System.Management.Automation;
 using Oci.ServicemanagerproxyService.Requests;
 using Oci.ServicemanagerproxyService.Responses;
 using Oci.ServicemanagerproxyService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ServicemanagerproxyService.Cmdlets
 {
@@ -82,6 +83,10 @@ namespace Oci.ServicemanagerproxyService.Cmdlets
                     WriteWarning("This operation supports pagination and not all resources were returned. Re-run using the -All option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

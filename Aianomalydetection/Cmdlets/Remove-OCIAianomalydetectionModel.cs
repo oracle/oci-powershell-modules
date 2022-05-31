@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.AianomalydetectionService.Requests;
 using Oci.AianomalydetectionService.Responses;
 using Oci.AianomalydetectionService.Models;
+using Oci.Common.Model;
 
 namespace Oci.AianomalydetectionService.Cmdlets
 {
@@ -53,6 +54,10 @@ namespace Oci.AianomalydetectionService.Cmdlets
                 response = client.DeleteModel(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

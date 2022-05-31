@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.DatabaseService.Requests;
 using Oci.DatabaseService.Responses;
 using Oci.DatabaseService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.DatabaseService.Cmdlets
@@ -79,6 +80,10 @@ For Exadata Cloud Service instances, support for this API will end on May 15th, 
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

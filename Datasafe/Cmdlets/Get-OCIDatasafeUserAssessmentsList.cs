@@ -13,6 +13,7 @@ using System.Management.Automation;
 using Oci.DatasafeService.Requests;
 using Oci.DatasafeService.Responses;
 using Oci.DatasafeService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DatasafeService.Cmdlets
 {
@@ -120,6 +121,10 @@ namespace Oci.DatasafeService.Cmdlets
                     WriteWarning("This operation supports pagination and not all resources were returned. Re-run using the -All option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

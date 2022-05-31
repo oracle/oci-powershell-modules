@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.DataintegrationService.Requests;
 using Oci.DataintegrationService.Responses;
 using Oci.DataintegrationService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DataintegrationService.Cmdlets
 {
@@ -52,6 +53,10 @@ namespace Oci.DataintegrationService.Cmdlets
                 response = client.UpdateApplication(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.Application);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

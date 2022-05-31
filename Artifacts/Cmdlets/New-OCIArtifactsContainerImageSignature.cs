@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ArtifactsService.Requests;
 using Oci.ArtifactsService.Responses;
 using Oci.ArtifactsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ArtifactsService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.ArtifactsService.Cmdlets
                 response = client.CreateContainerImageSignature(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.ContainerImageSignature);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.LoggingsearchService.Requests;
 using Oci.LoggingsearchService.Responses;
 using Oci.LoggingsearchService.Models;
+using Oci.Common.Model;
 
 namespace Oci.LoggingsearchService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.LoggingsearchService.Cmdlets
                 response = client.SearchLogs(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.SearchResponse);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

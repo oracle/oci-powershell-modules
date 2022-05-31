@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.IdentityService.Requests;
 using Oci.IdentityService.Responses;
 using Oci.IdentityService.Models;
+using Oci.Common.Model;
 
 namespace Oci.IdentityService.Cmdlets
 {
@@ -44,6 +45,10 @@ namespace Oci.IdentityService.Cmdlets
                 response = client.CreateSmtpCredential(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.SmtpCredential);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

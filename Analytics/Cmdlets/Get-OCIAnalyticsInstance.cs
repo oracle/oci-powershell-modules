@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.AnalyticsService.Requests;
 using Oci.AnalyticsService.Responses;
 using Oci.AnalyticsService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.AnalyticsService.Cmdlets
@@ -53,6 +54,10 @@ namespace Oci.AnalyticsService.Cmdlets
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

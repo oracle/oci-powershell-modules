@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.MonitoringService.Requests;
 using Oci.MonitoringService.Responses;
 using Oci.MonitoringService.Models;
+using Oci.Common.Model;
 
 namespace Oci.MonitoringService.Cmdlets
 {
@@ -52,6 +53,10 @@ namespace Oci.MonitoringService.Cmdlets
                 response = client.ChangeAlarmCompartment(request).GetAwaiter().GetResult();
                 WriteOutput(response);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

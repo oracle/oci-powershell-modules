@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 34.3.0 - 2022-05-31
+### Added
+- Support for in-depth monitoring, diagnostics capabilities, and advanced management functionality for on-premise Oracle databases in the Database Management service
+- Support for using Oracle Cloud Agent to perform iSCSI login and logout for non-multipath-enabled iSCSI attachments in the Container Engine for Kubernetes service
+- Support for Fault Domain placement in the Container Engine for Kubernetes service
+- Support for worker node images in the Container Engine for Kubernetes service
+- Support for flexible shapes using the driverShapeConfig and executorShapeConfig properties in the Data Flow service
+
+### Changed
+- Service error messages have become more verbose to help diagnose issues
+
 ## 34.2.0 - 2022-05-24
 ### Added
 - Support for the License Manager service

@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.DnsService.Requests;
 using Oci.DnsService.Responses;
 using Oci.DnsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DnsService.Cmdlets
 {
@@ -44,6 +45,10 @@ namespace Oci.DnsService.Cmdlets
                 response = client.CreateTsigKey(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.TsigKey);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

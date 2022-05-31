@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.DatabasetoolsService.Requests;
 using Oci.DatabasetoolsService.Responses;
 using Oci.DatabasetoolsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DatabasetoolsService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.DatabasetoolsService.Cmdlets
                 response = client.UpdateDatabaseToolsConnection(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

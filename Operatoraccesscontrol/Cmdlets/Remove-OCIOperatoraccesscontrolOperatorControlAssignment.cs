@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.OperatoraccesscontrolService.Requests;
 using Oci.OperatoraccesscontrolService.Responses;
 using Oci.OperatoraccesscontrolService.Models;
+using Oci.Common.Model;
 
 namespace Oci.OperatoraccesscontrolService.Cmdlets
 {
@@ -57,6 +58,10 @@ namespace Oci.OperatoraccesscontrolService.Cmdlets
                 response = client.DeleteOperatorControlAssignment(request).GetAwaiter().GetResult();
                 WriteOutput(response);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.CoreService.Requests;
 using Oci.CoreService.Responses;
 using Oci.CoreService.Models;
+using Oci.Common.Model;
 
 namespace Oci.CoreService.Cmdlets
 {
@@ -18,7 +19,7 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.CrossConnectMappingDetailsCollection), typeof(Oci.CoreService.Responses.ListCrossConnectMappingsResponse) })]
     public class GetOCIVirtualNetworkCrossConnectMappingsList : OCIVirtualNetworkCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the virtual circuit.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.")]
         public string VirtualCircuitId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
@@ -40,6 +41,10 @@ namespace Oci.CoreService.Cmdlets
                 response = client.ListCrossConnectMappings(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.CrossConnectMappingDetailsCollection);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

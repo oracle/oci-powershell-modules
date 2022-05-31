@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.FilestorageService.Requests;
 using Oci.FilestorageService.Responses;
 using Oci.FilestorageService.Models;
+using Oci.Common.Model;
 
 namespace Oci.FilestorageService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.FilestorageService.Cmdlets
                 response = client.UpdateFileSystem(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.FileSystem);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

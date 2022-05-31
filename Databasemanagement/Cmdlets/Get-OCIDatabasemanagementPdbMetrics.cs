@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.DatabasemanagementService.Requests;
 using Oci.DatabasemanagementService.Responses;
 using Oci.DatabasemanagementService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DatabasemanagementService.Cmdlets
 {
@@ -60,6 +61,10 @@ namespace Oci.DatabasemanagementService.Cmdlets
                 response = client.GetPdbMetrics(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.PdbMetrics);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

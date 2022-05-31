@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.OcvpService.Requests;
 using Oci.OcvpService.Responses;
 using Oci.OcvpService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.OcvpService.Cmdlets
@@ -53,6 +54,10 @@ namespace Oci.OcvpService.Cmdlets
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

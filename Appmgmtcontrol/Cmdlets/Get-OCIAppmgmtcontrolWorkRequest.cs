@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.AppmgmtcontrolService.Requests;
 using Oci.AppmgmtcontrolService.Responses;
 using Oci.AppmgmtcontrolService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.AppmgmtcontrolService.Cmdlets
@@ -53,6 +54,10 @@ namespace Oci.AppmgmtcontrolService.Cmdlets
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

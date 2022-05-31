@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.LoggingService.Requests;
 using Oci.LoggingService.Responses;
 using Oci.LoggingService.Models;
+using Oci.Common.Model;
 
 namespace Oci.LoggingService.Cmdlets
 {
@@ -53,6 +54,10 @@ namespace Oci.LoggingService.Cmdlets
                 response = client.DeleteWorkRequest(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.DatacatalogService.Requests;
 using Oci.DatacatalogService.Responses;
 using Oci.DatacatalogService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DatacatalogService.Cmdlets
 {
@@ -76,6 +77,10 @@ namespace Oci.DatacatalogService.Cmdlets
                 response = client.SearchCriteria(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.SearchResultCollection);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

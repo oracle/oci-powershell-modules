@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.WaasService.Requests;
 using Oci.WaasService.Responses;
 using Oci.WaasService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.WaasService.Cmdlets
@@ -53,6 +54,10 @@ namespace Oci.WaasService.Cmdlets
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

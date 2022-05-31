@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.AilanguageService.Requests;
 using Oci.AilanguageService.Responses;
 using Oci.AilanguageService.Models;
+using Oci.Common.Model;
 
 namespace Oci.AilanguageService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.AilanguageService.Cmdlets
                 response = client.DetectLanguageEntities(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.DetectLanguageEntitiesResult);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

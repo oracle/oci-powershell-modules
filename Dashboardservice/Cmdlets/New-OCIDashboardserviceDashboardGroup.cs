@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.DashboardService.Requests;
 using Oci.DashboardService.Responses;
 using Oci.DashboardService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DashboardService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.DashboardService.Cmdlets
                 response = client.CreateDashboardGroup(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.DashboardGroup);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

@@ -13,6 +13,7 @@ using System.Management.Automation;
 using Oci.DatabaseService.Requests;
 using Oci.DatabaseService.Responses;
 using Oci.DatabaseService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DatabaseService.Cmdlets
 {
@@ -68,6 +69,10 @@ namespace Oci.DatabaseService.Cmdlets
                     WriteWarning("This operation supports pagination and not all resources were returned. Re-run using the -All option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

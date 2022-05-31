@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.MonitoringService.Requests;
 using Oci.MonitoringService.Responses;
 using Oci.MonitoringService.Models;
+using Oci.Common.Model;
 
 namespace Oci.MonitoringService.Cmdlets
 {
@@ -70,6 +71,10 @@ Example: `2019-01-02T01:00:00.789Z`")]
                 response = client.GetAlarmHistory(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.AlarmHistoryCollection);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

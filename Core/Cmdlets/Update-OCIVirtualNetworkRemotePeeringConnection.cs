@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.CoreService.Requests;
 using Oci.CoreService.Responses;
 using Oci.CoreService.Models;
+using Oci.Common.Model;
 
 namespace Oci.CoreService.Cmdlets
 {
@@ -18,7 +19,7 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.RemotePeeringConnection), typeof(Oci.CoreService.Responses.UpdateRemotePeeringConnectionResponse) })]
     public class UpdateOCIVirtualNetworkRemotePeeringConnection : OCIVirtualNetworkCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the remote peering connection (RPC).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peering connection (RPC).")]
         public string RemotePeeringConnectionId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to the update the peering connection to remote region")]
@@ -44,6 +45,10 @@ namespace Oci.CoreService.Cmdlets
                 response = client.UpdateRemotePeeringConnection(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.RemotePeeringConnection);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

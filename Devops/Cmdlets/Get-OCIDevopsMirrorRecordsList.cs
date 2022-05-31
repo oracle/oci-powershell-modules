@@ -13,6 +13,7 @@ using System.Management.Automation;
 using Oci.DevopsService.Requests;
 using Oci.DevopsService.Responses;
 using Oci.DevopsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DevopsService.Cmdlets
 {
@@ -64,6 +65,10 @@ namespace Oci.DevopsService.Cmdlets
                     WriteWarning("This operation supports pagination and not all resources were returned. Re-run using the -All option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

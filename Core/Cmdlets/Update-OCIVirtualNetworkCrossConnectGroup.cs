@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.CoreService.Requests;
 using Oci.CoreService.Responses;
 using Oci.CoreService.Models;
+using Oci.Common.Model;
 
 namespace Oci.CoreService.Cmdlets
 {
@@ -18,7 +19,7 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.CrossConnectGroup), typeof(Oci.CoreService.Responses.UpdateCrossConnectGroupResponse) })]
     public class UpdateOCIVirtualNetworkCrossConnectGroup : OCIVirtualNetworkCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cross-connect group.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group.")]
         public string CrossConnectGroupId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Update CrossConnectGroup fields")]
@@ -44,6 +45,10 @@ namespace Oci.CoreService.Cmdlets
                 response = client.UpdateCrossConnectGroup(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.CrossConnectGroup);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

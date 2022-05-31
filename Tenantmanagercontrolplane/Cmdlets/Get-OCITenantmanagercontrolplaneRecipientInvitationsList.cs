@@ -13,6 +13,7 @@ using System.Management.Automation;
 using Oci.TenantmanagercontrolplaneService.Requests;
 using Oci.TenantmanagercontrolplaneService.Responses;
 using Oci.TenantmanagercontrolplaneService.Models;
+using Oci.Common.Model;
 
 namespace Oci.TenantmanagercontrolplaneService.Cmdlets
 {
@@ -68,6 +69,10 @@ namespace Oci.TenantmanagercontrolplaneService.Cmdlets
                     WriteWarning("This operation supports pagination and not all resources were returned. Re-run using the -All option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

@@ -13,6 +13,7 @@ using System.Management.Automation;
 using Oci.AppmgmtcontrolService.Requests;
 using Oci.AppmgmtcontrolService.Responses;
 using Oci.AppmgmtcontrolService.Models;
+using Oci.Common.Model;
 
 namespace Oci.AppmgmtcontrolService.Cmdlets
 {
@@ -64,6 +65,10 @@ namespace Oci.AppmgmtcontrolService.Cmdlets
                     WriteWarning("This operation supports pagination and not all resources were returned. Re-run using the -All option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

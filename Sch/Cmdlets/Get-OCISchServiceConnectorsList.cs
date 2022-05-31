@@ -13,6 +13,7 @@ using System.Management.Automation;
 using Oci.SchService.Requests;
 using Oci.SchService.Responses;
 using Oci.SchService.Models;
+using Oci.Common.Model;
 
 namespace Oci.SchService.Cmdlets
 {
@@ -80,6 +81,10 @@ Example: `example_service_connector`")]
                     WriteWarning("This operation supports pagination and not all resources were returned. Re-run using the -All option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

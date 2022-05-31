@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.OptimizerService.Requests;
 using Oci.OptimizerService.Responses;
 using Oci.OptimizerService.Models;
+using Oci.Common.Model;
 
 namespace Oci.OptimizerService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.OptimizerService.Cmdlets
                 response = client.UpdateEnrollmentStatus(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.EnrollmentStatus);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

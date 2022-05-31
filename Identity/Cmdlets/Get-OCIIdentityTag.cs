@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.IdentityService.Requests;
 using Oci.IdentityService.Responses;
 using Oci.IdentityService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.IdentityService.Cmdlets
@@ -53,6 +54,10 @@ namespace Oci.IdentityService.Cmdlets
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

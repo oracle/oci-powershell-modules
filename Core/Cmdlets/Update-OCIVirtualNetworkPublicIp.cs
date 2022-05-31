@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.CoreService.Requests;
 using Oci.CoreService.Responses;
 using Oci.CoreService.Models;
+using Oci.Common.Model;
 
 namespace Oci.CoreService.Cmdlets
 {
@@ -18,7 +19,7 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.PublicIp), typeof(Oci.CoreService.Responses.UpdatePublicIpResponse) })]
     public class UpdateOCIVirtualNetworkPublicIp : OCIVirtualNetworkCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the public IP.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP.")]
         public string PublicIpId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Public IP details.")]
@@ -44,6 +45,10 @@ namespace Oci.CoreService.Cmdlets
                 response = client.UpdatePublicIp(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.PublicIp);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

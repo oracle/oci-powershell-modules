@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.KeymanagementService.Requests;
 using Oci.KeymanagementService.Responses;
 using Oci.KeymanagementService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.KeymanagementService.Cmdlets
@@ -59,6 +60,10 @@ namespace Oci.KeymanagementService.Cmdlets
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

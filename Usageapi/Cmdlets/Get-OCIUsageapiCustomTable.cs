@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.UsageapiService.Requests;
 using Oci.UsageapiService.Responses;
 using Oci.UsageapiService.Models;
+using Oci.Common.Model;
 
 namespace Oci.UsageapiService.Cmdlets
 {
@@ -40,6 +41,10 @@ namespace Oci.UsageapiService.Cmdlets
                 response = client.GetCustomTable(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.CustomTable);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

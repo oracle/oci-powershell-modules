@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ApmconfigService.Requests;
 using Oci.ApmconfigService.Responses;
 using Oci.ApmconfigService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ApmconfigService.Cmdlets
 {
@@ -57,6 +58,10 @@ namespace Oci.ApmconfigService.Cmdlets
                 response = client.DeleteConfig(request).GetAwaiter().GetResult();
                 WriteOutput(response);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

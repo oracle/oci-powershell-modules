@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.LimitsService.Requests;
 using Oci.LimitsService.Responses;
 using Oci.LimitsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.LimitsService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.LimitsService.Cmdlets
                 response = client.UpdateQuota(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.Quota);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.OsubusageService.Requests;
 using Oci.OsubusageService.Responses;
 using Oci.OsubusageService.Models;
+using Oci.Common.Model;
 
 namespace Oci.OsubusageService.Cmdlets
 {
@@ -52,6 +53,10 @@ namespace Oci.OsubusageService.Cmdlets
                 response = client.GetComputedUsage(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.ComputedUsage);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

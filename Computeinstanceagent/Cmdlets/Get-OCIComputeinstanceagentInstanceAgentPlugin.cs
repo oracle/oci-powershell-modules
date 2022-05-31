@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ComputeinstanceagentService.Requests;
 using Oci.ComputeinstanceagentService.Responses;
 using Oci.ComputeinstanceagentService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ComputeinstanceagentService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.ComputeinstanceagentService.Cmdlets
                 response = client.GetInstanceAgentPlugin(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.InstanceAgentPlugin);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

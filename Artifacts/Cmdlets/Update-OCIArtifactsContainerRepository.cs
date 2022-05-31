@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ArtifactsService.Requests;
 using Oci.ArtifactsService.Responses;
 using Oci.ArtifactsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ArtifactsService.Cmdlets
 {
@@ -50,6 +51,10 @@ Example: `ocid1.containerrepo.oc1..exampleuniqueID`")]
                 response = client.UpdateContainerRepository(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.ContainerRepository);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

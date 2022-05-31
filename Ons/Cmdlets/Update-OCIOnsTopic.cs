@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.OnsService.Requests;
 using Oci.OnsService.Responses;
 using Oci.OnsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.OnsService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.OnsService.Cmdlets
                 response = client.UpdateTopic(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.NotificationTopic);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.VisualbuilderService.Requests;
 using Oci.VisualbuilderService.Responses;
 using Oci.VisualbuilderService.Models;
+using Oci.Common.Model;
 
 namespace Oci.VisualbuilderService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.VisualbuilderService.Cmdlets
                 response = client.UpdateVbInstance(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

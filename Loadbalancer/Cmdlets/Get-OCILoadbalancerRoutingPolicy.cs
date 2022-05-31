@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.LoadbalancerService.Requests;
 using Oci.LoadbalancerService.Responses;
 using Oci.LoadbalancerService.Models;
+using Oci.Common.Model;
 
 namespace Oci.LoadbalancerService.Cmdlets
 {
@@ -46,6 +47,10 @@ Example: `example_routing_policy`")]
                 response = client.GetRoutingPolicy(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.RoutingPolicy);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

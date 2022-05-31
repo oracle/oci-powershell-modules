@@ -13,6 +13,7 @@ using System.Management.Automation;
 using Oci.LimitsService.Requests;
 using Oci.LimitsService.Responses;
 using Oci.LimitsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.LimitsService.Cmdlets
 {
@@ -84,6 +85,10 @@ namespace Oci.LimitsService.Cmdlets
                     WriteWarning("This operation supports pagination and not all resources were returned. Re-run using the -All option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

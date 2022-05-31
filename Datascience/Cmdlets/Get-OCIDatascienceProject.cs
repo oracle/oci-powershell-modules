@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.DatascienceService.Requests;
 using Oci.DatascienceService.Responses;
 using Oci.DatascienceService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.DatascienceService.Cmdlets
@@ -53,6 +54,10 @@ namespace Oci.DatascienceService.Cmdlets
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

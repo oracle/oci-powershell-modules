@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.WaasService.Requests;
 using Oci.WaasService.Responses;
 using Oci.WaasService.Models;
+using Oci.Common.Model;
 
 namespace Oci.WaasService.Cmdlets
 {
@@ -52,6 +53,10 @@ namespace Oci.WaasService.Cmdlets
                 response = client.ChangeWaasPolicyCompartment(request).GetAwaiter().GetResult();
                 WriteOutput(response);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

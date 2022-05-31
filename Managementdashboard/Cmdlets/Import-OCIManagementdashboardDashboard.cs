@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ManagementdashboardService.Requests;
 using Oci.ManagementdashboardService.Responses;
 using Oci.ManagementdashboardService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ManagementdashboardService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.ManagementdashboardService.Cmdlets
                 response = client.ImportDashboard(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

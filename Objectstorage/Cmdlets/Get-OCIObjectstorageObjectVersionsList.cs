@@ -13,6 +13,7 @@ using System.Management.Automation;
 using Oci.ObjectstorageService.Requests;
 using Oci.ObjectstorageService.Responses;
 using Oci.ObjectstorageService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ObjectstorageService.Cmdlets
 {
@@ -88,6 +89,10 @@ namespace Oci.ObjectstorageService.Cmdlets
                     WriteWarning("This operation supports pagination and not all resources were returned. Re-run using the -All option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

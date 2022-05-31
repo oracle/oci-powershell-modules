@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.CoreService.Requests;
 using Oci.CoreService.Responses;
 using Oci.CoreService.Models;
+using Oci.Common.Model;
 
 namespace Oci.CoreService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.CoreService.Cmdlets
                 response = client.AddPublicIpPoolCapacity(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.PublicIpPool);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

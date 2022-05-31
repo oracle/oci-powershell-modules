@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.AnnouncementsService.Requests;
 using Oci.AnnouncementsService.Responses;
 using Oci.AnnouncementsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.AnnouncementsService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.AnnouncementsService.Cmdlets
                 response = client.ChangeAnnouncementSubscriptionCompartment(request).GetAwaiter().GetResult();
                 WriteOutput(response);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ApplicationmigrationService.Requests;
 using Oci.ApplicationmigrationService.Responses;
 using Oci.ApplicationmigrationService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ApplicationmigrationService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.ApplicationmigrationService.Cmdlets
                 response = client.UpdateSource(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

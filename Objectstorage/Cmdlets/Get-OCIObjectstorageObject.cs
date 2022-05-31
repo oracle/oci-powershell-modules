@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ObjectstorageService.Requests;
 using Oci.ObjectstorageService.Responses;
 using Oci.ObjectstorageService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ObjectstorageService.Cmdlets
 {
@@ -111,6 +112,10 @@ namespace Oci.ObjectstorageService.Cmdlets
                 HandleOutput();
                 
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.DevopsService.Requests;
 using Oci.DevopsService.Responses;
 using Oci.DevopsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DevopsService.Cmdlets
 {
@@ -53,6 +54,10 @@ namespace Oci.DevopsService.Cmdlets
                 response = client.DeleteDeployArtifact(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

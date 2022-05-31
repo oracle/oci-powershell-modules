@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.WafService.Requests;
 using Oci.WafService.Responses;
 using Oci.WafService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.WafService.Cmdlets
@@ -53,6 +54,10 @@ namespace Oci.WafService.Cmdlets
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

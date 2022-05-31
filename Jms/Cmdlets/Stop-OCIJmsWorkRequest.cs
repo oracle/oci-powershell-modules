@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.JmsService.Requests;
 using Oci.JmsService.Responses;
 using Oci.JmsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.JmsService.Cmdlets
 {
@@ -53,6 +54,10 @@ namespace Oci.JmsService.Cmdlets
                 response = client.CancelWorkRequest(request).GetAwaiter().GetResult();
                 WriteOutput(response);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

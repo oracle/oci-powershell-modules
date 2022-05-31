@@ -13,6 +13,7 @@ using System.Management.Automation;
 using Oci.OpsiService.Requests;
 using Oci.OpsiService.Responses;
 using Oci.OpsiService.Models;
+using Oci.Common.Model;
 
 namespace Oci.OpsiService.Cmdlets
 {
@@ -80,6 +81,10 @@ namespace Oci.OpsiService.Cmdlets
                     WriteWarning("This operation supports pagination and not all resources were returned. Re-run using the -All option to auto paginate and list all resources.");
                 }
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

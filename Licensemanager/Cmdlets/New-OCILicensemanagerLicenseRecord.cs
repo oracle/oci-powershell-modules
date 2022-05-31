@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.LicensemanagerService.Requests;
 using Oci.LicensemanagerService.Responses;
 using Oci.LicensemanagerService.Models;
+using Oci.Common.Model;
 
 namespace Oci.LicensemanagerService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.LicensemanagerService.Cmdlets
                 response = client.CreateLicenseRecord(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.LicenseRecord);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.LoggingingestionService.Requests;
 using Oci.LoggingingestionService.Responses;
 using Oci.LoggingingestionService.Models;
+using Oci.Common.Model;
 
 namespace Oci.LoggingingestionService.Cmdlets
 {
@@ -52,6 +53,10 @@ namespace Oci.LoggingingestionService.Cmdlets
                 response = client.PutLogs(request).GetAwaiter().GetResult();
                 WriteOutput(response);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

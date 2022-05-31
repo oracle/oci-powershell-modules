@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.CimsService.Requests;
 using Oci.CimsService.Responses;
 using Oci.CimsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.CimsService.Cmdlets
 {
@@ -56,6 +57,10 @@ namespace Oci.CimsService.Cmdlets
                 response = client.GetIncident(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.Incident);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

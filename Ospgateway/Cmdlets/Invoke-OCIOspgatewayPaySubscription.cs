@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.OspgatewayService.Requests;
 using Oci.OspgatewayService.Responses;
 using Oci.OspgatewayService.Models;
+using Oci.Common.Model;
 
 namespace Oci.OspgatewayService.Cmdlets
 {
@@ -60,6 +61,10 @@ namespace Oci.OspgatewayService.Cmdlets
                 response = client.PaySubscription(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.PaySubscriptionReceipt);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

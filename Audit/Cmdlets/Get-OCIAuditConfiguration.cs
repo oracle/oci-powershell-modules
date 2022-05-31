@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.AuditService.Requests;
 using Oci.AuditService.Responses;
 using Oci.AuditService.Models;
+using Oci.Common.Model;
 
 namespace Oci.AuditService.Cmdlets
 {
@@ -36,6 +37,10 @@ namespace Oci.AuditService.Cmdlets
                 response = client.GetConfiguration(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.Configuration);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

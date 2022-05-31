@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ApmsyntheticsService.Requests;
 using Oci.ApmsyntheticsService.Responses;
 using Oci.ApmsyntheticsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ApmsyntheticsService.Cmdlets
 {
@@ -60,6 +61,10 @@ namespace Oci.ApmsyntheticsService.Cmdlets
                 response = client.GetMonitorResult(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.MonitorResult);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

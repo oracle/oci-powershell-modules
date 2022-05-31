@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ApmcontrolplaneService.Requests;
 using Oci.ApmcontrolplaneService.Responses;
 using Oci.ApmcontrolplaneService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ApmcontrolplaneService.Cmdlets
 {
@@ -44,6 +45,10 @@ namespace Oci.ApmcontrolplaneService.Cmdlets
                 response = client.ListDataKeys(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.Items, true);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

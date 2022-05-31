@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.LoadbalancerService.Requests;
 using Oci.LoadbalancerService.Responses;
 using Oci.LoadbalancerService.Models;
+using Oci.Common.Model;
 
 namespace Oci.LoadbalancerService.Cmdlets
 {
@@ -44,6 +45,10 @@ namespace Oci.LoadbalancerService.Cmdlets
                 response = client.CreateRuleSet(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

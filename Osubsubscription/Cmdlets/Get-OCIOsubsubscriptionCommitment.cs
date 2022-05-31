@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.OsubsubscriptionService.Requests;
 using Oci.OsubsubscriptionService.Responses;
 using Oci.OsubsubscriptionService.Models;
+using Oci.Common.Model;
 
 namespace Oci.OsubsubscriptionService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.OsubsubscriptionService.Cmdlets
                 response = client.GetCommitment(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.CommitmentDetail);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

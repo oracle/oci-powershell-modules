@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.RoverService.Requests;
 using Oci.RoverService.Responses;
 using Oci.RoverService.Models;
+using Oci.Common.Model;
 
 namespace Oci.RoverService.Cmdlets
 {
@@ -48,6 +49,10 @@ namespace Oci.RoverService.Cmdlets
                 response = client.UpdateRoverCluster(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.RoverCluster);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.VisualbuilderService.Requests;
 using Oci.VisualbuilderService.Responses;
 using Oci.VisualbuilderService.Models;
+using Oci.Common.Model;
 
 namespace Oci.VisualbuilderService.Cmdlets
 {
@@ -52,6 +53,10 @@ namespace Oci.VisualbuilderService.Cmdlets
                 response = client.RequestSummarizedApplications(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.ApplicationSummaryCollection);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

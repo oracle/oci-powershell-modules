@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.DtsService.Requests;
 using Oci.DtsService.Responses;
 using Oci.DtsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DtsService.Cmdlets
 {
@@ -32,6 +33,10 @@ namespace Oci.DtsService.Cmdlets
                 response = client.ListShippingVendors(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.ShippingVendors);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

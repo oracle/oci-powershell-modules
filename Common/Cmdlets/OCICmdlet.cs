@@ -5,6 +5,7 @@
 using System;
 using System.IO;
 using System.Management.Automation;
+using Oci.Common.Model;
 using Oci.Common.Auth;
 using Oci.PSModules.Common.Cmdlets.ClientManagement;
 using Oci.PSModules.Common.Cmdlets.CmdletHistory;
@@ -299,6 +300,21 @@ namespace Oci.PSModules.Common.Cmdlets
                 }
             }
             FinishProcessing(ex);
+            //ThrowTerminatingError will be the last statement as this throws pipeline stopped
+            //exception which is unhandled by any OCICmdlet and control flow goes to the caller of the cmdlet
+            ThrowTerminatingError(er);
+        }
+
+        /// <summary>
+        /// This method updates the OCI Cmdlet history and throws a terminating error with a OciPSException.
+        /// </summary>
+        /// <returns>void</returns>
+        protected virtual void TerminatingErrorDuringExecution(OciException ex)
+        {
+            OciPSException e = new OciPSException(ex);
+            ErrorRecord er = new ErrorRecord(e, e.ServiceCode, ErrorCategory.NotSpecified, null);
+            er.ErrorDetails = new ErrorDetails(e.ToString());
+            FinishProcessing(e);
             //ThrowTerminatingError will be the last statement as this throws pipeline stopped
             //exception which is unhandled by any OCICmdlet and control flow goes to the caller of the cmdlet
             ThrowTerminatingError(er);

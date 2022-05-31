@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.DataconnectivityService.Requests;
 using Oci.DataconnectivityService.Responses;
 using Oci.DataconnectivityService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DataconnectivityService.Cmdlets
 {
@@ -61,6 +62,10 @@ namespace Oci.DataconnectivityService.Cmdlets
                 response = client.DeleteEndpoint(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

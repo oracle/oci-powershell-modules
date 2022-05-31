@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.DevopsService.Requests;
 using Oci.DevopsService.Responses;
 using Oci.DevopsService.Models;
+using Oci.Common.Model;
 
 namespace Oci.DevopsService.Cmdlets
 {
@@ -52,6 +53,10 @@ namespace Oci.DevopsService.Cmdlets
                 response = client.CancelBuildRun(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.BuildRun);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

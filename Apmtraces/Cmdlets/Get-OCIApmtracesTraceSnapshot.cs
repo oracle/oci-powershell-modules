@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ApmtracesService.Requests;
 using Oci.ApmtracesService.Responses;
 using Oci.ApmtracesService.Models;
+using Oci.Common.Model;
 
 namespace Oci.ApmtracesService.Cmdlets
 {
@@ -56,6 +57,10 @@ namespace Oci.ApmtracesService.Cmdlets
                 response = client.GetTraceSnapshot(request).GetAwaiter().GetResult();
                 WriteOutput(response, response.TraceSnapshot);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {

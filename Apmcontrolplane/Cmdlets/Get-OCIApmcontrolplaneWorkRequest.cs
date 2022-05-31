@@ -11,6 +11,7 @@ using System.Management.Automation;
 using Oci.ApmcontrolplaneService.Requests;
 using Oci.ApmcontrolplaneService.Responses;
 using Oci.ApmcontrolplaneService.Models;
+using Oci.Common.Model;
 using Oci.Common.Waiters;
 
 namespace Oci.ApmcontrolplaneService.Cmdlets
@@ -53,6 +54,10 @@ namespace Oci.ApmcontrolplaneService.Cmdlets
 
                 HandleOutput(request);
                 FinishProcessing(response);
+            }
+            catch (OciException ex)
+            {
+                TerminatingErrorDuringExecution(ex);
             }
             catch (Exception ex)
             {
