@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Opsi.dll'
 
 # Version number of this module.
-ModuleVersion = '34.3.0'
+ModuleVersion = '34.4.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '34.3.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '34.4.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Opsi.dll'
@@ -79,6 +79,7 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Get-OCIOpsiAwrSnapshotsList', 
                'Get-OCIOpsiDatabaseConfigurationsList', 
                'Get-OCIOpsiDatabaseInsight', 'Get-OCIOpsiDatabaseInsightsList', 
+               'Get-OCIOpsiDataObject', 'Get-OCIOpsiDataObjectsList', 
                'Get-OCIOpsiEnterpriseManagerBridge', 
                'Get-OCIOpsiEnterpriseManagerBridgesList', 
                'Get-OCIOpsiExadataConfigurationsList', 'Get-OCIOpsiExadataInsight', 
@@ -104,6 +105,7 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Invoke-OCIOpsiIngestHostMetrics', 'Invoke-OCIOpsiIngestSqlBucket', 
                'Invoke-OCIOpsiIngestSqlPlanLines', 'Invoke-OCIOpsiIngestSqlStats', 
                'Invoke-OCIOpsiIngestSqlText', 
+               'Invoke-OCIOpsiQueryOpsiDataObjectData', 
                'Invoke-OCIOpsiRotateOperationsInsightsWarehouseWallet', 
                'Invoke-OCIOpsiSummarizeAwrSourcesSummaries', 
                'Invoke-OCIOpsiSummarizeDatabaseInsightResourceCapacityTrend', 
