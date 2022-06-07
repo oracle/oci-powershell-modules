@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Resourcemanager.dll'
 
 # Version number of this module.
-ModuleVersion = '34.3.0'
+ModuleVersion = '34.4.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '34.3.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '34.4.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Resourcemanager.dll'
@@ -79,7 +79,11 @@ CmdletsToExport = 'Get-OCIResourcemanagerConfigurationSourceProvider',
                'Get-OCIResourcemanagerJobLogsContent', 
                'Get-OCIResourcemanagerJobsList', 
                'Get-OCIResourcemanagerJobTfConfig', 
+               'Get-OCIResourcemanagerJobTfPlan', 
                'Get-OCIResourcemanagerJobTfState', 
+               'Get-OCIResourcemanagerPrivateEndpoint', 
+               'Get-OCIResourcemanagerPrivateEndpointsList', 
+               'Get-OCIResourcemanagerReachableIp', 
                'Get-OCIResourcemanagerResourceDiscoveryServicesList', 
                'Get-OCIResourcemanagerStack', 
                'Get-OCIResourcemanagerStackResourceDriftDetailsList', 
@@ -98,16 +102,21 @@ CmdletsToExport = 'Get-OCIResourcemanagerConfigurationSourceProvider',
                'Get-OCIResourcemanagerWorkRequestsList', 
                'Invoke-OCIResourcemanagerDetectStackDrift', 
                'Move-OCIResourcemanagerConfigurationSourceProviderCompartment', 
+               'Move-OCIResourcemanagerPrivateEndpointCompartment', 
                'Move-OCIResourcemanagerStackCompartment', 
                'Move-OCIResourcemanagerTemplateCompartment', 
                'New-OCIResourcemanagerConfigurationSourceProvider', 
-               'New-OCIResourcemanagerJob', 'New-OCIResourcemanagerStack', 
-               'New-OCIResourcemanagerTemplate', 
+               'New-OCIResourcemanagerJob', 
+               'New-OCIResourcemanagerPrivateEndpoint', 
+               'New-OCIResourcemanagerStack', 'New-OCIResourcemanagerTemplate', 
                'Remove-OCIResourcemanagerConfigurationSourceProvider', 
+               'Remove-OCIResourcemanagerPrivateEndpoint', 
                'Remove-OCIResourcemanagerStack', 
                'Remove-OCIResourcemanagerTemplate', 'Stop-OCIResourcemanagerJob', 
                'Update-OCIResourcemanagerConfigurationSourceProvider', 
-               'Update-OCIResourcemanagerJob', 'Update-OCIResourcemanagerStack', 
+               'Update-OCIResourcemanagerJob', 
+               'Update-OCIResourcemanagerPrivateEndpoint', 
+               'Update-OCIResourcemanagerStack', 
                'Update-OCIResourcemanagerTemplate'
 
 # Variables to export from this module
