@@ -25,6 +25,9 @@ namespace Oci.IdentityService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request object for updating a namespace.")]
         public UpdateTagNamespaceDetails UpdateTagNamespaceDetails { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Whether to override locks (if any exist).")]
+        public System.Nullable<bool> IsLockOverride { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -35,7 +38,8 @@ namespace Oci.IdentityService.Cmdlets
                 request = new UpdateTagNamespaceRequest
                 {
                     TagNamespaceId = TagNamespaceId,
-                    UpdateTagNamespaceDetails = UpdateTagNamespaceDetails
+                    UpdateTagNamespaceDetails = UpdateTagNamespaceDetails,
+                    IsLockOverride = IsLockOverride
                 };
 
                 response = client.UpdateTagNamespace(request).GetAwaiter().GetResult();

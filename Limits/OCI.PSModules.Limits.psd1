@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Limits.dll'
 
 # Version number of this module.
-ModuleVersion = '34.4.0'
+ModuleVersion = '35.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '34.4.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '35.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Limits.dll'
@@ -71,10 +71,11 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Limits.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCILimitsLimitDefinitionsList', 'Get-OCILimitsLimitValuesList', 
-               'Get-OCILimitsQuota', 'Get-OCILimitsQuotasList', 
-               'Get-OCILimitsResourceAvailability', 'Get-OCILimitsServicesList', 
-               'New-OCILimitsQuota', 'Remove-OCILimitsQuota', 
+CmdletsToExport = 'Add-OCILimitsQuotaLock', 'Get-OCILimitsLimitDefinitionsList', 
+               'Get-OCILimitsLimitValuesList', 'Get-OCILimitsQuota', 
+               'Get-OCILimitsQuotasList', 'Get-OCILimitsResourceAvailability', 
+               'Get-OCILimitsServicesList', 'New-OCILimitsQuota', 
+               'Remove-OCILimitsQuota', 'Remove-OCILimitsQuotaLock', 
                'Update-OCILimitsQuota'
 
 # Variables to export from this module

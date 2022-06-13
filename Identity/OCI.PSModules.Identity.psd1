@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Identity.dll'
 
 # Version number of this module.
-ModuleVersion = '34.4.0'
+ModuleVersion = '35.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '34.4.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '35.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Identity.dll'
@@ -71,7 +71,8 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Identity.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Add-OCIIdentityUserToGroup', 'Enable-OCIIdentityDomain', 
+CmdletsToExport = 'Add-OCIIdentityTagDefaultLock', 'Add-OCIIdentityTagNamespaceLock', 
+               'Add-OCIIdentityUserToGroup', 'Enable-OCIIdentityDomain', 
                'Enable-OCIIdentityMfaTotpDevice', 
                'Enable-OCIIdentityReplicationToRegion', 
                'Get-OCIIdentityAllowedDomainLicenseTypesList', 
@@ -150,9 +151,11 @@ CmdletsToExport = 'Add-OCIIdentityUserToGroup', 'Enable-OCIIdentityDomain',
                'Remove-OCIIdentityPolicy', 'Remove-OCIIdentityProvider', 
                'Remove-OCIIdentitySmtpCredential', 
                'Remove-OCIIdentitySwiftPassword', 'Remove-OCIIdentityTag', 
-               'Remove-OCIIdentityTagDefault', 'Remove-OCIIdentityTagNamespace', 
-               'Remove-OCIIdentityUser', 'Remove-OCIIdentityUserFromGroup', 
-               'Reset-OCIIdentityIdpScimClient', 'Restore-OCIIdentityCompartment', 
+               'Remove-OCIIdentityTagDefault', 'Remove-OCIIdentityTagDefaultLock', 
+               'Remove-OCIIdentityTagNamespace', 
+               'Remove-OCIIdentityTagNamespaceLock', 'Remove-OCIIdentityUser', 
+               'Remove-OCIIdentityUserFromGroup', 'Reset-OCIIdentityIdpScimClient', 
+               'Restore-OCIIdentityCompartment', 
                'Update-OCIIdentityAuthenticationPolicy', 
                'Update-OCIIdentityAuthToken', 'Update-OCIIdentityCompartment', 
                'Update-OCIIdentityCustomerSecretKey', 'Update-OCIIdentityDomain', 

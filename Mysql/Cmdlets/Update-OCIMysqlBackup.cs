@@ -16,7 +16,7 @@ using Oci.Common.Model;
 namespace Oci.MysqlService.Cmdlets
 {
     [Cmdlet("Update", "OCIMysqlBackup")]
-    [OutputType(new System.Type[] { typeof(void), typeof(Oci.MysqlService.Responses.UpdateBackupResponse) })]
+    [OutputType(new System.Type[] { typeof(Oci.MysqlService.Models.Backup), typeof(Oci.MysqlService.Responses.UpdateBackupResponse) })]
     public class UpdateOCIMysqlBackup : OCIDbBackupsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the Backup")]
@@ -47,7 +47,7 @@ namespace Oci.MysqlService.Cmdlets
                 };
 
                 response = client.UpdateBackup(request).GetAwaiter().GetResult();
-                WriteOutput(response);
+                WriteOutput(response, response.Backup);
                 FinishProcessing(response);
             }
             catch (OciException ex)

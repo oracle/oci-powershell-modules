@@ -41,6 +41,12 @@ namespace Oci.PSModules.Common.Cmdlets
             }
         }
 
+        public OciPSException(string ErrorMessage, string Link, OciException ex) : base(ex.StatusCode,
+                $"Error encountered: StatusCode:{ex.StatusCode}, Message:{ex.Message}, ServiceCode:{ex.ServiceCode}, OpcRequestId:{ex.OpcRequestId}\n{ErrorMessage}",
+                ex.ServiceCode, ex.OpcRequestId, ex.ApiDetails) {
+            TroubleShootingLink = Link;
+        }
+
         public override string ToString()
         {
             if (String.IsNullOrEmpty(ApiDetails.ApiReferenceLink))

@@ -45,6 +45,21 @@ namespace Oci.ApmconfigService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. You can provide one ""sortBy"" value. The default order for displayName, timeCreated and timeUpdated is ascending. The displayName sort by is case-sensitive.")]
         public System.Nullable<Oci.ApmconfigService.Requests.ListConfigsRequest.SortByEnum> SortBy { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return OPTIONS resources that match the given group.")]
+        public string OptionsGroup { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format ""{namespace}.{tagName}.{value}"".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as ""OR"". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as ""AND"".")]
+        public System.Collections.Generic.List<string> DefinedTagEquals { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned. The key for each tag is ""{tagName}.{value}"".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as ""OR"".  Values for different tag names are interpreted as ""AND"".")]
+        public System.Collections.Generic.List<string> FreeformTagEquals { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned. Each item in the list has the format ""{namespace}.{tagName}.true"" (for checking existence of a defined tag) or ""{namespace}.true"".  All inputs are case-insensitive. Currently, only existence (""true"" at the end) is supported. Absence (""false"" at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as ""OR"". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as ""AND"".")]
+        public System.Collections.Generic.List<string> DefinedTagExists { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned. The key for each tag is ""{tagName}.true"".  All inputs are case-insensitive. Currently, only existence (""true"" at the end) is supported. Absence (""false"" at the end) is not supported. Multiple values for different tag names are interpreted as ""AND"".")]
+        public System.Collections.Generic.List<string> FreeformTagExists { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -64,7 +79,12 @@ namespace Oci.ApmconfigService.Cmdlets
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,
-                    SortBy = SortBy
+                    SortBy = SortBy,
+                    OptionsGroup = OptionsGroup,
+                    DefinedTagEquals = DefinedTagEquals,
+                    FreeformTagEquals = FreeformTagEquals,
+                    DefinedTagExists = DefinedTagExists,
+                    FreeformTagExists = FreeformTagExists
                 };
                 IEnumerable<ListConfigsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
