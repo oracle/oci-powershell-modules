@@ -379,6 +379,10 @@ namespace Oci.PSModules.Common.Cmdlets
                         return new ConfigFileAuthenticationDetailsProvider(profile);
                 }
             }
+            catch (OciException ex)
+            {
+                throw new OciPSException(IP_ERROR_MESSAGE,IP_TROUBLESHOOTING_LINK,ex);
+            }
             catch (Exception ex)
             {
                 throw new Exception($"Error instantiating {auth} authentication provider. {ex.Message}");
@@ -393,6 +397,9 @@ namespace Oci.PSModules.Common.Cmdlets
         private static readonly string FORCE_PARAM = "Force";
         private static readonly string PS_APPNAME = "Oracle-PowerShell";
         private const string WRITTEN_TO_FILE = "Output written to ";
+        private static string IP_TROUBLESHOOTING_LINK = "https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm";
+        private static string IP_ERROR_MESSAGE = $"Received non successful response while trying to get the region of the instance."
+            + $"\nInstance principals authentication can only be used on OCI compute instances. Please confirm this code is running on an OCI compute instance. See {IP_TROUBLESHOOTING_LINK} for more info.";
         #endregion
     }
 }

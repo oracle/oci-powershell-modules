@@ -25,7 +25,7 @@ namespace Oci.ApmconfigService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the configuration item.")]
         public string ConfigId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The configuration details to be updated. This parameter also accepts subtypes <Oci.ApmconfigService.Models.UpdateMetricGroupDetails>, <Oci.ApmconfigService.Models.UpdateApdexRulesDetails>, <Oci.ApmconfigService.Models.UpdateSpanFilterDetails> of type <Oci.ApmconfigService.Models.UpdateConfigDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The configuration details to be updated. This parameter also accepts subtypes <Oci.ApmconfigService.Models.UpdateMetricGroupDetails>, <Oci.ApmconfigService.Models.UpdateApdexRulesDetails>, <Oci.ApmconfigService.Models.UpdateSpanFilterDetails>, <Oci.ApmconfigService.Models.UpdateOptionsDetails> of type <Oci.ApmconfigService.Models.UpdateConfigDetails>.")]
         public UpdateConfigDetails UpdateConfigDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

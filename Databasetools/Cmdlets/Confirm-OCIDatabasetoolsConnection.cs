@@ -19,10 +19,10 @@ namespace Oci.DatabasetoolsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabasetoolsService.Models.ValidateDatabaseToolsConnectionResult), typeof(Oci.DatabasetoolsService.Responses.ValidateDatabaseToolsConnectionResponse) })]
     public class ConfirmOCIDatabasetoolsConnection : OCIDatabaseToolsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a DatabaseToolsConnection.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools connection.")]
         public string DatabaseToolsConnectionId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to validate a DatabaseToolsConnection. This parameter also accepts subtype <Oci.DatabasetoolsService.Models.ValidateDatabaseToolsConnectionOracleDatabaseDetails> of type <Oci.DatabasetoolsService.Models.ValidateDatabaseToolsConnectionDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to validate a DatabaseToolsConnection. This parameter also accepts subtypes <Oci.DatabasetoolsService.Models.ValidateDatabaseToolsConnectionOracleDatabaseDetails>, <Oci.DatabasetoolsService.Models.ValidateDatabaseToolsConnectionMySqlDetails> of type <Oci.DatabasetoolsService.Models.ValidateDatabaseToolsConnectionDetails>.")]
         public ValidateDatabaseToolsConnectionDetails ValidateDatabaseToolsConnectionDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
