@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Databasemanagement.dll'
 
 # Version number of this module.
-ModuleVersion = '35.0.0'
+ModuleVersion = '35.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '35.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '35.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasemanagement.dll'
@@ -73,8 +73,11 @@ FunctionsToExport = '*'
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles', 
                'Add-OCIDatabasemanagementManagedDatabaseToManagedDatabaseGroup', 
+               'Add-OCIDatabasemanagementmTasks', 
+               'Get-OCIDatabasemanagementAlertLogsList', 
                'Get-OCIDatabasemanagementAsmPropertiesList', 
                'Get-OCIDatabasemanagementAssociatedDatabasesList', 
+               'Get-OCIDatabasemanagementAttentionLogsList', 
                'Get-OCIDatabasemanagementAwrDbReport', 
                'Get-OCIDatabasemanagementAwrDbsList', 
                'Get-OCIDatabasemanagementAwrDbSnapshotsList', 
@@ -108,6 +111,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Get-OCIDatabasemanagementSqlTuningAdvisorTaskRecommendationsList', 
                'Get-OCIDatabasemanagementSqlTuningAdvisorTasksList', 
                'Get-OCIDatabasemanagementSqlTuningAdvisorTaskSummaryReport', 
+               'Get-OCIDatabasemanagementSqlTuningSetsList', 
                'Get-OCIDatabasemanagementSystemPrivilegesList', 
                'Get-OCIDatabasemanagementTablespace', 
                'Get-OCIDatabasemanagementTablespacesList', 
@@ -121,6 +125,9 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Invoke-OCIDatabasemanagementDropSqlTuningTask', 
                'Invoke-OCIDatabasemanagementDropTablespace', 
                'Invoke-OCIDatabasemanagementResizeDataFile', 
+               'Invoke-OCIDatabasemanagementRunHistoricAddm', 
+               'Invoke-OCIDatabasemanagementSummarizeAlertLogCounts', 
+               'Invoke-OCIDatabasemanagementSummarizeAttentionLogCounts', 
                'Invoke-OCIDatabasemanagementSummarizeAwrDbCpuUsages', 
                'Invoke-OCIDatabasemanagementSummarizeAwrDbMetrics', 
                'Invoke-OCIDatabasemanagementSummarizeAwrDbParameterChanges', 
@@ -135,6 +142,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Move-OCIDatabasemanagementDbManagementPrivateEndpointCompartment', 
                'Move-OCIDatabasemanagementJobCompartment', 
                'Move-OCIDatabasemanagementManagedDatabaseGroupCompartment', 
+               'New-OCIDatabasemanagementAwrSnapshot', 
                'New-OCIDatabasemanagementDbManagementPrivateEndpoint', 
                'New-OCIDatabasemanagementJob', 
                'New-OCIDatabasemanagementManagedDatabaseGroup', 
