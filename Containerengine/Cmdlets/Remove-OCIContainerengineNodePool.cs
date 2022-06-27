@@ -28,6 +28,12 @@ namespace Oci.ContainerengineService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M")]
+        public string OverrideEvictionGraceDuration { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If the underlying compute instance should be deleted if you cannot evict all the pods in grace period")]
+        public System.Nullable<bool> IsForceDeletionAfterOverrideGraceDuration { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "Ignore confirmation and force the Cmdlet to complete action.")]
         public SwitchParameter Force { get; set; }
 
@@ -48,7 +54,9 @@ namespace Oci.ContainerengineService.Cmdlets
                 {
                     NodePoolId = NodePoolId,
                     IfMatch = IfMatch,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    OverrideEvictionGraceDuration = OverrideEvictionGraceDuration,
+                    IsForceDeletionAfterOverrideGraceDuration = IsForceDeletionAfterOverrideGraceDuration
                 };
 
                 response = client.DeleteNodePool(request).GetAwaiter().GetResult();
