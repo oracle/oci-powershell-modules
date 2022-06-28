@@ -12,18 +12,32 @@ using Oci.ContainerengineService.Requests;
 using Oci.ContainerengineService.Responses;
 using Oci.ContainerengineService.Models;
 using Oci.Common.Model;
+using Oci.Common.Waiters;
 
 namespace Oci.ContainerengineService.Cmdlets
 {
-    [Cmdlet("Get", "OCIContainerengineNodePool")]
+    [Cmdlet("Get", "OCIContainerengineNodePool", DefaultParameterSetName = Default)]
     [OutputType(new System.Type[] { typeof(Oci.ContainerengineService.Models.NodePool), typeof(Oci.ContainerengineService.Responses.GetNodePoolResponse) })]
     public class GetOCIContainerengineNodePool : OCIContainerEngineCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the node pool.")]
+        
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the node pool.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the node pool.", ParameterSetName = Default)]
         public string NodePoolId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.", ParameterSetName = Default)]
         public string OpcRequestId { get; set; }
+
+        [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = LifecycleStateParamSet)]
+        public Oci.ContainerengineService.Models.NodePoolLifecycleState[] WaitForLifecycleState { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = @"Check every WaitIntervalSeconds to see whether the resource has reached a desired state.", ParameterSetName = LifecycleStateParamSet)]
+        public int WaitIntervalSeconds { get; set; } = WAIT_INTERVAL_SECONDS;
+
+        [Parameter(Mandatory = false, HelpMessage = @"Maximum number of attempts to be made until the resource reaches a desired state.", ParameterSetName = LifecycleStateParamSet)]
+        public int MaxWaitAttempts { get; set; } = MAX_WAITER_ATTEMPTS;
 
         protected override void ProcessRecord()
         {
@@ -38,8 +52,7 @@ namespace Oci.ContainerengineService.Cmdlets
                     OpcRequestId = OpcRequestId
                 };
 
-                response = client.GetNodePool(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.NodePool);
+                HandleOutput(request);
                 FinishProcessing(response);
             }
             catch (OciException ex)
@@ -58,6 +71,29 @@ namespace Oci.ContainerengineService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
+        private void HandleOutput(GetNodePoolRequest request)
+        {
+            var waiterConfig = new WaiterConfiguration
+            {
+                MaxAttempts = MaxWaitAttempts,
+                GetNextDelayInSeconds = (_) => WaitIntervalSeconds
+            };
+
+            switch (ParameterSetName)
+            { 
+                case LifecycleStateParamSet:
+                    response = client.Waiters.ForNodePool(request, waiterConfig, WaitForLifecycleState).Execute();
+                    break;
+
+                case Default:
+                    response = client.GetNodePool(request).GetAwaiter().GetResult();
+                    break;
+            }
+            WriteOutput(response, response.NodePool);
+        }
+
         private GetNodePoolResponse response;
+        private const string LifecycleStateParamSet = "LifecycleStateParamSet";
+        private const string Default = "Default";
     }
 }

@@ -22,6 +22,12 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.")]
+        public System.Nullable<bool> IsShared { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies whether this request pertains to database character sets or national character sets.")]
+        public System.Nullable<Oci.DatabaseService.Requests.ListAutonomousDatabaseCharacterSetsRequest.CharacterSetTypeEnum> CharacterSetType { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -31,7 +37,9 @@ namespace Oci.DatabaseService.Cmdlets
             {
                 request = new ListAutonomousDatabaseCharacterSetsRequest
                 {
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    IsShared = IsShared,
+                    CharacterSetType = CharacterSetType
                 };
 
                 response = client.ListAutonomousDatabaseCharacterSets(request).GetAwaiter().GetResult();
