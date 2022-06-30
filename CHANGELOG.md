@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 35.3.0 - 2022-07-05
+### Added
+- Support for backup policies returned as part of the database system list operation in the MySQL Database service
+ 
+### Changed
+- The OCI PowerShell Modules will now return `UKNOWN_ENUM_VALUE` (null) instead of failing on unknown enums values to support forward enum compatibility
+
 ## 35.2.0 - 2022-06-27
 ### Added
 - Support for the Network Monitoring service
