@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 36.0.0 - 2022-07-12
+### Added
+- Support for DBCS databases in the Operations Insights service
+- Support for point-in-time recovery for non-highly-available database systems in the MySQL Database service
+- Support for triggering reboot migration on instances with pending maintenance in the Compute service
+- Support for native pod networking in the Container Engine for Kubernetes service
+- Support for creating Data Guard associations with new database systems in the Database service
+  
+### Breaking Changes
+- The data type of the property `HostType` was changed from a List of `string` to a List of `Oci.OpsiService.Requests.ListHostInsightsRequest.HostTypeEnum` in the `Get-OCIOpsiHostInsightsList` cmdlet in the Operations Insights service
+- The parameter `PreserveDataVolumes` was removed from the `Invoke-OCIComputeTerminateInstance` cmdlet in the Compute service
+
 ## 35.3.0 - 2022-07-05
 ### Added
 - Support for backup policies returned as part of the database system list operation in the MySQL Database service

@@ -34,7 +34,7 @@ namespace Oci.OpsiService.Cmdlets
         public System.Collections.Generic.List<Oci.OpsiService.Models.LifecycleState> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more host types. Possible value is EXTERNAL-HOST.")]
-        public System.Collections.Generic.List<string> HostType { get; set; }
+        public System.Collections.Generic.List<Oci.OpsiService.Requests.ListHostInsightsRequest.HostTypeEnum> HostType { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].")]
         public System.Collections.Generic.List<Oci.OpsiService.Requests.ListHostInsightsRequest.PlatformTypeEnum> PlatformType { get; set; }
