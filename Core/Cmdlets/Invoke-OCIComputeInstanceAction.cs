@@ -31,7 +31,7 @@ namespace Oci.CoreService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
         public string IfMatch { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Instance Power Action details. This parameter also accepts subtypes <Oci.CoreService.Models.ResetActionDetails>, <Oci.CoreService.Models.SoftResetActionDetails> of type <Oci.CoreService.Models.InstancePowerActionDetails>.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Instance Power Action details. This parameter also accepts subtypes <Oci.CoreService.Models.ResetActionDetails>, <Oci.CoreService.Models.RebootMigrateActionDetails>, <Oci.CoreService.Models.SoftResetActionDetails> of type <Oci.CoreService.Models.InstancePowerActionDetails>.")]
         public InstancePowerActionDetails InstancePowerActionDetails { get; set; }
 
         protected override void ProcessRecord()
