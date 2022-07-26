@@ -13,7 +13,7 @@ using Oci.FusionappsService;
 
 namespace Oci.FusionappsService.Cmdlets
 {
-    public abstract class OCIScheduledActivityCmdlet : Oci.PSModules.Common.Cmdlets.OCICmdlet
+    public abstract class OCIFusionApplicationsCmdlet : Oci.PSModules.Common.Cmdlets.OCICmdlet
     { 
 
         protected override void BeginProcessing()
@@ -39,7 +39,7 @@ namespace Oci.FusionappsService.Cmdlets
                 client?.Dispose();
                 int timeout = GetPreferredTimeout();
                 WriteDebug($"Cmdlet Timeout : {timeout} milliseconds.");
-                client = new ScheduledActivityClient(AuthProvider, new Oci.Common.ClientConfiguration
+                client = new FusionApplicationsClient(AuthProvider, new Oci.Common.ClientConfiguration
                 {
                     RetryConfiguration = retryConfig,
                     TimeoutMillis = timeout,
@@ -80,7 +80,7 @@ namespace Oci.FusionappsService.Cmdlets
             base.TerminatingErrorDuringExecution(ex);
         }
 
-        protected ScheduledActivityClient client;
+        protected FusionApplicationsClient client;
         private RetryConfiguration retryConfig;
     }
 }

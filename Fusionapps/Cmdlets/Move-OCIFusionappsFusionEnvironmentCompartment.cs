@@ -17,7 +17,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Move", "OCIFusionappsFusionEnvironmentCompartment")]
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.FusionappsService.Responses.ChangeFusionEnvironmentCompartmentResponse) })]
-    public class MoveOCIFusionappsFusionEnvironmentCompartment : OCIFusionEnvironmentCmdlet
+    public class MoveOCIFusionappsFusionEnvironmentCompartment : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique FusionEnvironment identifier")]
         public string FusionEnvironmentId { get; set; }

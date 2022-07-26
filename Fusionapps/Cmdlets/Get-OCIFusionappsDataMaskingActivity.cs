@@ -18,7 +18,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Get", "OCIFusionappsDataMaskingActivity", DefaultParameterSetName = Default)]
     [OutputType(new System.Type[] { typeof(Oci.FusionappsService.Models.DataMaskingActivity), typeof(Oci.FusionappsService.Responses.GetDataMaskingActivityResponse) })]
-    public class GetOCIFusionappsDataMaskingActivity : OCIDataMaskingActivityCmdlet
+    public class GetOCIFusionappsDataMaskingActivity : OCIFusionApplicationsCmdlet
     {
         
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique FusionEnvironment identifier", ParameterSetName = LifecycleStateParamSet)]

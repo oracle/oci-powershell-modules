@@ -17,7 +17,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Remove", "OCIFusionappsFusionEnvironmentAdminUser", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.FusionappsService.Responses.DeleteFusionEnvironmentAdminUserResponse) })]
-    public class RemoveOCIFusionappsFusionEnvironmentAdminUser : OCIFusionEnvironmentCmdlet
+    public class RemoveOCIFusionappsFusionEnvironmentAdminUser : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The admin user name for the fusion environment.")]
         public string AdminUsername { get; set; }

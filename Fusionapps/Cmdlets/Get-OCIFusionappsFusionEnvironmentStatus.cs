@@ -17,7 +17,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Get", "OCIFusionappsFusionEnvironmentStatus")]
     [OutputType(new System.Type[] { typeof(Oci.FusionappsService.Models.FusionEnvironmentStatus), typeof(Oci.FusionappsService.Responses.GetFusionEnvironmentStatusResponse) })]
-    public class GetOCIFusionappsFusionEnvironmentStatus : OCIFusionEnvironmentCmdlet
+    public class GetOCIFusionappsFusionEnvironmentStatus : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique FusionEnvironment identifier")]
         public string FusionEnvironmentId { get; set; }

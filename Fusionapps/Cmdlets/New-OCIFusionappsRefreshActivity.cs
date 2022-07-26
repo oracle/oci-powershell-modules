@@ -17,7 +17,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("New", "OCIFusionappsRefreshActivity")]
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.FusionappsService.Responses.CreateRefreshActivityResponse) })]
-    public class NewOCIFusionappsRefreshActivity : OCIRefreshActivityCmdlet
+    public class NewOCIFusionappsRefreshActivity : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique FusionEnvironment identifier")]
         public string FusionEnvironmentId { get; set; }

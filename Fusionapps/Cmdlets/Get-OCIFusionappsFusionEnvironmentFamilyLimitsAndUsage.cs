@@ -17,7 +17,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Get", "OCIFusionappsFusionEnvironmentFamilyLimitsAndUsage")]
     [OutputType(new System.Type[] { typeof(Oci.FusionappsService.Models.FusionEnvironmentFamilyLimitsAndUsage), typeof(Oci.FusionappsService.Responses.GetFusionEnvironmentFamilyLimitsAndUsageResponse) })]
-    public class GetOCIFusionappsFusionEnvironmentFamilyLimitsAndUsage : OCIFusionEnvironmentFamilyCmdlet
+    public class GetOCIFusionappsFusionEnvironmentFamilyLimitsAndUsage : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier (OCID) of the FusionEnvironmentFamily.")]
         public string FusionEnvironmentFamilyId { get; set; }

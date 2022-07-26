@@ -17,7 +17,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Update", "OCIFusionappsFusionEnvironment")]
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.FusionappsService.Responses.UpdateFusionEnvironmentResponse) })]
-    public class UpdateOCIFusionappsFusionEnvironment : OCIFusionEnvironmentCmdlet
+    public class UpdateOCIFusionappsFusionEnvironment : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique FusionEnvironment identifier")]
         public string FusionEnvironmentId { get; set; }

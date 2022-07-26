@@ -18,7 +18,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Get", "OCIFusionappsFusionEnvironment", DefaultParameterSetName = Default)]
     [OutputType(new System.Type[] { typeof(Oci.FusionappsService.Models.FusionEnvironment), typeof(Oci.FusionappsService.Responses.GetFusionEnvironmentResponse) })]
-    public class GetOCIFusionappsFusionEnvironment : OCIFusionEnvironmentCmdlet
+    public class GetOCIFusionappsFusionEnvironment : OCIFusionApplicationsCmdlet
     {
         
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique FusionEnvironment identifier", ParameterSetName = LifecycleStateParamSet)]

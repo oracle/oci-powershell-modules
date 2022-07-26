@@ -66,6 +66,12 @@ namespace Oci.ManagementagentService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.")]
+        public System.Nullable<bool> CompartmentIdInSubtree { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"When the value is ""ACCESSIBLE"", insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.")]
+        public string AccessLevel { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -92,7 +98,9 @@ namespace Oci.ManagementagentService.Cmdlets
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    CompartmentIdInSubtree = CompartmentIdInSubtree,
+                    AccessLevel = AccessLevel
                 };
                 IEnumerable<ListManagementAgentsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

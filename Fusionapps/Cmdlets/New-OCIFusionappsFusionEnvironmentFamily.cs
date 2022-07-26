@@ -17,13 +17,10 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("New", "OCIFusionappsFusionEnvironmentFamily")]
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.FusionappsService.Responses.CreateFusionEnvironmentFamilyResponse) })]
-    public class NewOCIFusionappsFusionEnvironmentFamily : OCIFusionEnvironmentFamilyCmdlet
+    public class NewOCIFusionappsFusionEnvironmentFamily : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new FusionEnvironmentFamily.")]
         public CreateFusionEnvironmentFamilyDetails CreateFusionEnvironmentFamilyDetails { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For Oracle internal use only.")]
-        public string OpcProvisionOption { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
         public string OpcRetryToken { get; set; }
@@ -41,7 +38,6 @@ namespace Oci.FusionappsService.Cmdlets
                 request = new CreateFusionEnvironmentFamilyRequest
                 {
                     CreateFusionEnvironmentFamilyDetails = CreateFusionEnvironmentFamilyDetails,
-                    OpcProvisionOption = OpcProvisionOption,
                     OpcRetryToken = OpcRetryToken,
                     OpcRequestId = OpcRequestId
                 };

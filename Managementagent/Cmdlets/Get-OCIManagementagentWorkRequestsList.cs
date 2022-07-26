@@ -39,6 +39,9 @@ namespace Oci.ManagementagentService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OperationStatus of the workRequest")]
         public System.Nullable<Oci.ManagementagentService.Models.OperationStatus> Status { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OperationType of the workRequest")]
+        public System.Nullable<Oci.ManagementagentService.Models.OperationTypes> Type { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter for items with timeCreated greater or equal to provided value. given `timeCreatedGreaterThanOrEqualTo` to the current time, in ""YYYY-MM-ddThh:mmZ"" format with a Z offset, as defined by RFC 3339.")]
         public System.Nullable<System.DateTime> TimeCreatedGreaterThanOrEqualTo { get; set; }
 
@@ -66,6 +69,7 @@ namespace Oci.ManagementagentService.Cmdlets
                     Page = Page,
                     Limit = Limit,
                     Status = Status,
+                    Type = Type,
                     TimeCreatedGreaterThanOrEqualTo = TimeCreatedGreaterThanOrEqualTo,
                     SortOrder = SortOrder,
                     SortBy = SortBy

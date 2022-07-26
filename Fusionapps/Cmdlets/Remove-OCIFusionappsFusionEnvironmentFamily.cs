@@ -17,7 +17,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Remove", "OCIFusionappsFusionEnvironmentFamily", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.FusionappsService.Responses.DeleteFusionEnvironmentFamilyResponse) })]
-    public class RemoveOCIFusionappsFusionEnvironmentFamily : OCIFusionEnvironmentFamilyCmdlet
+    public class RemoveOCIFusionappsFusionEnvironmentFamily : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier (OCID) of the FusionEnvironmentFamily.")]
         public string FusionEnvironmentFamilyId { get; set; }

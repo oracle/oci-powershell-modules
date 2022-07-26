@@ -18,7 +18,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Get", "OCIFusionappsScheduledActivity", DefaultParameterSetName = Default)]
     [OutputType(new System.Type[] { typeof(Oci.FusionappsService.Models.ScheduledActivity), typeof(Oci.FusionappsService.Responses.GetScheduledActivityResponse) })]
-    public class GetOCIFusionappsScheduledActivity : OCIScheduledActivityCmdlet
+    public class GetOCIFusionappsScheduledActivity : OCIFusionApplicationsCmdlet
     {
         
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique FusionEnvironment identifier", ParameterSetName = LifecycleStateParamSet)]

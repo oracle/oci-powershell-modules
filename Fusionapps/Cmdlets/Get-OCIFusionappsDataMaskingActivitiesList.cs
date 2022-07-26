@@ -19,7 +19,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Get", "OCIFusionappsDataMaskingActivitiesList")]
     [OutputType(new System.Type[] { typeof(Oci.FusionappsService.Models.DataMaskingActivityCollection), typeof(Oci.FusionappsService.Responses.ListDataMaskingActivitiesResponse) })]
-    public class GetOCIFusionappsDataMaskingActivitiesList : OCIDataMaskingActivityCmdlet
+    public class GetOCIFusionappsDataMaskingActivitiesList : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique FusionEnvironment identifier")]
         public string FusionEnvironmentId { get; set; }

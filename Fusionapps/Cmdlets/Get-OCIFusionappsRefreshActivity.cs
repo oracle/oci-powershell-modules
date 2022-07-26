@@ -18,7 +18,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Get", "OCIFusionappsRefreshActivity", DefaultParameterSetName = Default)]
     [OutputType(new System.Type[] { typeof(Oci.FusionappsService.Models.RefreshActivity), typeof(Oci.FusionappsService.Responses.GetRefreshActivityResponse) })]
-    public class GetOCIFusionappsRefreshActivity : OCIRefreshActivityCmdlet
+    public class GetOCIFusionappsRefreshActivity : OCIFusionApplicationsCmdlet
     {
         
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique FusionEnvironment identifier", ParameterSetName = LifecycleStateParamSet)]
