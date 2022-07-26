@@ -53,6 +53,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given availability domain exactly.")]
         public string AvailabilityDomain { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sub-type of the maintenance run.")]
+        public System.Nullable<Oci.DatabaseService.Models.MaintenanceRunSummary.MaintenanceSubtypeEnum> MaintenanceSubtype { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -74,7 +77,8 @@ namespace Oci.DatabaseService.Cmdlets
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     LifecycleState = LifecycleState,
-                    AvailabilityDomain = AvailabilityDomain
+                    AvailabilityDomain = AvailabilityDomain,
+                    MaintenanceSubtype = MaintenanceSubtype
                 };
                 IEnumerable<ListMaintenanceRunsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

@@ -17,7 +17,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("New", "OCIFusionappsFusionEnvironment")]
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.FusionappsService.Responses.CreateFusionEnvironmentResponse) })]
-    public class NewOCIFusionappsFusionEnvironment : OCIFusionEnvironmentCmdlet
+    public class NewOCIFusionappsFusionEnvironment : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new FusionEnvironment.")]
         public CreateFusionEnvironmentDetails CreateFusionEnvironmentDetails { get; set; }

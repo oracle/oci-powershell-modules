@@ -17,7 +17,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("New", "OCIFusionappsDataMaskingActivity")]
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.FusionappsService.Responses.CreateDataMaskingActivityResponse) })]
-    public class NewOCIFusionappsDataMaskingActivity : OCIDataMaskingActivityCmdlet
+    public class NewOCIFusionappsDataMaskingActivity : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique FusionEnvironment identifier")]
         public string FusionEnvironmentId { get; set; }

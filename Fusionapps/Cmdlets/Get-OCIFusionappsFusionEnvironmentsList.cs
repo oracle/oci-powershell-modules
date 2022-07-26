@@ -19,7 +19,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Get", "OCIFusionappsFusionEnvironmentsList")]
     [OutputType(new System.Type[] { typeof(Oci.FusionappsService.Models.FusionEnvironmentCollection), typeof(Oci.FusionappsService.Responses.ListFusionEnvironmentsResponse) })]
-    public class GetOCIFusionappsFusionEnvironmentsList : OCIFusionEnvironmentCmdlet
+    public class GetOCIFusionappsFusionEnvironmentsList : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }

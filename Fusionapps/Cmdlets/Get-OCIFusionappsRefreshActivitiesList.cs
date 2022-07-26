@@ -19,7 +19,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Get", "OCIFusionappsRefreshActivitiesList")]
     [OutputType(new System.Type[] { typeof(Oci.FusionappsService.Models.RefreshActivityCollection), typeof(Oci.FusionappsService.Responses.ListRefreshActivitiesResponse) })]
-    public class GetOCIFusionappsRefreshActivitiesList : OCIRefreshActivityCmdlet
+    public class GetOCIFusionappsRefreshActivitiesList : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique FusionEnvironment identifier")]
         public string FusionEnvironmentId { get; set; }

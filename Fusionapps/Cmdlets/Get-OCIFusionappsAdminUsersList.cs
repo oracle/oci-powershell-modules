@@ -17,7 +17,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Get", "OCIFusionappsAdminUsersList")]
     [OutputType(new System.Type[] { typeof(Oci.FusionappsService.Models.AdminUserCollection), typeof(Oci.FusionappsService.Responses.ListAdminUsersResponse) })]
-    public class GetOCIFusionappsAdminUsersList : OCIFusionEnvironmentCmdlet
+    public class GetOCIFusionappsAdminUsersList : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique FusionEnvironment identifier")]
         public string FusionEnvironmentId { get; set; }

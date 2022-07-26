@@ -19,7 +19,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Get", "OCIFusionappsScheduledActivitiesList")]
     [OutputType(new System.Type[] { typeof(Oci.FusionappsService.Models.ScheduledActivityCollection), typeof(Oci.FusionappsService.Responses.ListScheduledActivitiesResponse) })]
-    public class GetOCIFusionappsScheduledActivitiesList : OCIScheduledActivityCmdlet
+    public class GetOCIFusionappsScheduledActivitiesList : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique FusionEnvironment identifier")]
         public string FusionEnvironmentId { get; set; }

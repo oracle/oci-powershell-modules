@@ -18,7 +18,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Get", "OCIFusionappsWorkRequest", DefaultParameterSetName = Default)]
     [OutputType(new System.Type[] { typeof(Oci.FusionappsService.Models.WorkRequest), typeof(Oci.FusionappsService.Responses.GetWorkRequestResponse) })]
-    public class GetOCIFusionappsWorkRequest : OCIFusionEnvironmentCmdlet
+    public class GetOCIFusionappsWorkRequest : OCIFusionApplicationsCmdlet
     {
         
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the asynchronous request.", ParameterSetName = StatusParamSet)]

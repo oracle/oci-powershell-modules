@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Opsi.dll'
 
 # Version number of this module.
-ModuleVersion = '36.1.0'
+ModuleVersion = '37.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '36.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '37.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Opsi.dll'
@@ -75,7 +75,10 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Disable-OCIOpsiDatabaseInsight', 'Disable-OCIOpsiExadataInsight', 
                'Disable-OCIOpsiHostInsight', 'Enable-OCIOpsiDatabaseInsight', 
                'Enable-OCIOpsiExadataInsight', 'Enable-OCIOpsiHostInsight', 
-               'Get-OCIOpsiAwrHub', 'Get-OCIOpsiAwrHubsList', 'Get-OCIOpsiAwrReport', 
+               'Get-OCIOpsiAwrDatabaseReport', 'Get-OCIOpsiAwrDatabasesList', 
+               'Get-OCIOpsiAwrDatabaseSnapshotsList', 
+               'Get-OCIOpsiAwrDatabaseSqlReport', 'Get-OCIOpsiAwrHub', 
+               'Get-OCIOpsiAwrHubsList', 'Get-OCIOpsiAwrReport', 
                'Get-OCIOpsiAwrSnapshotsList', 
                'Get-OCIOpsiDatabaseConfigurationsList', 
                'Get-OCIOpsiDatabaseInsight', 'Get-OCIOpsiDatabaseInsightsList', 
@@ -107,6 +110,15 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Invoke-OCIOpsiIngestSqlText', 
                'Invoke-OCIOpsiQueryOpsiDataObjectData', 
                'Invoke-OCIOpsiRotateOperationsInsightsWarehouseWallet', 
+               'Invoke-OCIOpsiSummarizeAwrDatabaseCpuUsages', 
+               'Invoke-OCIOpsiSummarizeAwrDatabaseMetrics', 
+               'Invoke-OCIOpsiSummarizeAwrDatabaseParameterChanges', 
+               'Invoke-OCIOpsiSummarizeAwrDatabaseParameters', 
+               'Invoke-OCIOpsiSummarizeAwrDatabaseSnapshotRanges', 
+               'Invoke-OCIOpsiSummarizeAwrDatabaseSysstats', 
+               'Invoke-OCIOpsiSummarizeAwrDatabaseTopWaitEvents', 
+               'Invoke-OCIOpsiSummarizeAwrDatabaseWaitEventBuckets', 
+               'Invoke-OCIOpsiSummarizeAwrDatabaseWaitEvents', 
                'Invoke-OCIOpsiSummarizeAwrSourcesSummaries', 
                'Invoke-OCIOpsiSummarizeDatabaseInsightResourceCapacityTrend', 
                'Invoke-OCIOpsiSummarizeDatabaseInsightResourceForecastTrend', 

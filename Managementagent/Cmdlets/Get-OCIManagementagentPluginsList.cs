@@ -48,6 +48,9 @@ namespace Oci.ManagementagentService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter to return only results having the particular platform type.")]
         public System.Collections.Generic.List<Oci.ManagementagentService.Models.PlatformTypes> PlatformType { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ManagementAgentID of the agent from which the Management Agents to be filtered.")]
+        public string AgentId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -68,7 +71,8 @@ namespace Oci.ManagementagentService.Cmdlets
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,
                     LifecycleState = LifecycleState,
-                    PlatformType = PlatformType
+                    PlatformType = PlatformType,
+                    AgentId = AgentId
                 };
                 IEnumerable<ListManagementAgentPluginsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

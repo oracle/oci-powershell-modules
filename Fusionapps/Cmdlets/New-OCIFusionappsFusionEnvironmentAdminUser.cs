@@ -17,7 +17,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("New", "OCIFusionappsFusionEnvironmentAdminUser")]
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.FusionappsService.Responses.CreateFusionEnvironmentAdminUserResponse) })]
-    public class NewOCIFusionappsFusionEnvironmentAdminUser : OCIFusionEnvironmentCmdlet
+    public class NewOCIFusionappsFusionEnvironmentAdminUser : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The admin user to be created.")]
         public CreateFusionEnvironmentAdminUserDetails CreateFusionEnvironmentAdminUserDetails { get; set; }

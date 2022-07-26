@@ -17,7 +17,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Reset", "OCIFusionappsFusionEnvironmentPassword")]
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.FusionappsService.Responses.ResetFusionEnvironmentPasswordResponse) })]
-    public class ResetOCIFusionappsFusionEnvironmentPassword : OCIFusionEnvironmentCmdlet
+    public class ResetOCIFusionappsFusionEnvironmentPassword : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated.")]
         public ResetFusionEnvironmentPasswordDetails ResetFusionEnvironmentPasswordDetails { get; set; }

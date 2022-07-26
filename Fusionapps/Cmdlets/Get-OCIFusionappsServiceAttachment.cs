@@ -18,7 +18,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Get", "OCIFusionappsServiceAttachment", DefaultParameterSetName = Default)]
     [OutputType(new System.Type[] { typeof(Oci.FusionappsService.Models.ServiceAttachment), typeof(Oci.FusionappsService.Responses.GetServiceAttachmentResponse) })]
-    public class GetOCIFusionappsServiceAttachment : OCIServiceAttachmentCmdlet
+    public class GetOCIFusionappsServiceAttachment : OCIFusionApplicationsCmdlet
     {
         
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique FusionEnvironment identifier", ParameterSetName = LifecycleStateParamSet)]

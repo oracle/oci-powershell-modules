@@ -19,7 +19,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Get", "OCIFusionappsWorkRequestErrorsList")]
     [OutputType(new System.Type[] { typeof(Oci.FusionappsService.Models.WorkRequestErrorCollection), typeof(Oci.FusionappsService.Responses.ListWorkRequestErrorsResponse) })]
-    public class GetOCIFusionappsWorkRequestErrorsList : OCIFusionEnvironmentCmdlet
+    public class GetOCIFusionappsWorkRequestErrorsList : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the asynchronous request.")]
         public string WorkRequestId { get; set; }

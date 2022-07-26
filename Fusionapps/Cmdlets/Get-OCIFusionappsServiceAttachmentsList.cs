@@ -19,7 +19,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Get", "OCIFusionappsServiceAttachmentsList")]
     [OutputType(new System.Type[] { typeof(Oci.FusionappsService.Models.ServiceAttachmentCollection), typeof(Oci.FusionappsService.Responses.ListServiceAttachmentsResponse) })]
-    public class GetOCIFusionappsServiceAttachmentsList : OCIServiceAttachmentCmdlet
+    public class GetOCIFusionappsServiceAttachmentsList : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique FusionEnvironment identifier")]
         public string FusionEnvironmentId { get; set; }

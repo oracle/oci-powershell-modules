@@ -19,7 +19,7 @@ namespace Oci.FusionappsService.Cmdlets
 {
     [Cmdlet("Get", "OCIFusionappsTimeAvailableForRefreshesList")]
     [OutputType(new System.Type[] { typeof(Oci.FusionappsService.Models.TimeAvailableForRefreshCollection), typeof(Oci.FusionappsService.Responses.ListTimeAvailableForRefreshesResponse) })]
-    public class GetOCIFusionappsTimeAvailableForRefreshesList : OCIRefreshActivityCmdlet
+    public class GetOCIFusionappsTimeAvailableForRefreshesList : OCIFusionApplicationsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique FusionEnvironment identifier")]
         public string FusionEnvironmentId { get; set; }
