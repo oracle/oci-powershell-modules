@@ -22,7 +22,7 @@ namespace Oci.DevopsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique trigger identifier.")]
         public string TriggerId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtypes <Oci.DevopsService.Models.UpdateDevopsCodeRepositoryTriggerDetails>, <Oci.DevopsService.Models.UpdateGithubTriggerDetails>, <Oci.DevopsService.Models.UpdateGitlabTriggerDetails>, <Oci.DevopsService.Models.UpdateBitbucketCloudTriggerDetails> of type <Oci.DevopsService.Models.UpdateTriggerDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtypes <Oci.DevopsService.Models.UpdateBitbucketServerTriggerDetails>, <Oci.DevopsService.Models.UpdateGitlabServerTriggerDetails>, <Oci.DevopsService.Models.UpdateDevopsCodeRepositoryTriggerDetails>, <Oci.DevopsService.Models.UpdateGithubTriggerDetails>, <Oci.DevopsService.Models.UpdateGitlabTriggerDetails>, <Oci.DevopsService.Models.UpdateBitbucketCloudTriggerDetails> of type <Oci.DevopsService.Models.UpdateTriggerDetails>.")]
         public UpdateTriggerDetails UpdateTriggerDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
