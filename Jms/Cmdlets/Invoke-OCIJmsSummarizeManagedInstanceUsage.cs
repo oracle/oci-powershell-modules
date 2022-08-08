@@ -70,6 +70,9 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The operating system type.")]
         public System.Collections.Generic.List<Oci.JmsService.Models.OsFamily> OsFamily { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter the list with hostname contains the given value.")]
+        public string HostnameContains { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -95,7 +98,8 @@ namespace Oci.JmsService.Cmdlets
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,
-                    OsFamily = OsFamily
+                    OsFamily = OsFamily,
+                    HostnameContains = HostnameContains
                 };
 
                 response = client.SummarizeManagedInstanceUsage(request).GetAwaiter().GetResult();

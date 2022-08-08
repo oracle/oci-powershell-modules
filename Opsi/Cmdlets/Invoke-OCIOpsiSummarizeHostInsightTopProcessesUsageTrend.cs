@@ -46,6 +46,12 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST")]
+        public System.Collections.Generic.List<string> HostType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host (Compute Id)")]
+        public string HostId { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -63,7 +69,9 @@ namespace Oci.OpsiService.Cmdlets
                     TimeIntervalEnd = TimeIntervalEnd,
                     Page = Page,
                     Limit = Limit,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    HostType = HostType,
+                    HostId = HostId
                 };
 
                 response = client.SummarizeHostInsightTopProcessesUsageTrend(request).GetAwaiter().GetResult();

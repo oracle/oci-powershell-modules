@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Apmsynthetics.dll'
 
 # Version number of this module.
-ModuleVersion = '37.1.0'
+ModuleVersion = '38.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '37.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '38.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Apmsynthetics.dll'
@@ -77,6 +77,7 @@ CmdletsToExport = 'Get-OCIApmsyntheticsDedicatedVantagePoint',
                'Get-OCIApmsyntheticsMonitorsList', 
                'Get-OCIApmsyntheticsPublicVantagePointsList', 
                'Get-OCIApmsyntheticsScript', 'Get-OCIApmsyntheticsScriptsList', 
+               'Invoke-OCIApmsyntheticsAggregateNetworkData', 
                'New-OCIApmsyntheticsDedicatedVantagePoint', 
                'New-OCIApmsyntheticsMonitor', 'New-OCIApmsyntheticsScript', 
                'Remove-OCIApmsyntheticsDedicatedVantagePoint', 

@@ -19,7 +19,7 @@ namespace Oci.OpsiService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OpsiService.Models.HostInsight), typeof(Oci.OpsiService.Responses.CreateHostInsightResponse) })]
     public class NewOCIOpsiHostInsight : OCIOperationsInsightsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the host for which a Host Insight resource will be created in Operations Insights. This parameter also accepts subtypes <Oci.OpsiService.Models.CreateMacsManagedExternalHostInsightDetails>, <Oci.OpsiService.Models.CreateEmManagedExternalHostInsightDetails> of type <Oci.OpsiService.Models.CreateHostInsightDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the host for which a Host Insight resource will be created in Operations Insights. This parameter also accepts subtypes <Oci.OpsiService.Models.CreateMacsManagedCloudHostInsightDetails>, <Oci.OpsiService.Models.CreateMacsManagedExternalHostInsightDetails>, <Oci.OpsiService.Models.CreateEmManagedExternalHostInsightDetails> of type <Oci.OpsiService.Models.CreateHostInsightDetails>.")]
         public CreateHostInsightDetails CreateHostInsightDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request that can be retried in case of a timeout or server error without risk of executing the same action again. Retry tokens expire after 24 hours.

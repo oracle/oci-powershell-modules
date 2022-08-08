@@ -63,6 +63,15 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The security status of the Java Runtime.")]
         public System.Nullable<Oci.JmsService.Models.JreSecurityStatus> JreSecurityStatus { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter the list with path contains the given value.")]
+        public string PathContains { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).")]
+        public System.Nullable<System.DateTime> TimeStart { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).")]
+        public System.Nullable<System.DateTime> TimeEnd { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -88,7 +97,10 @@ namespace Oci.JmsService.Cmdlets
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,
                     OsFamily = OsFamily,
-                    JreSecurityStatus = JreSecurityStatus
+                    JreSecurityStatus = JreSecurityStatus,
+                    PathContains = PathContains,
+                    TimeStart = TimeStart,
+                    TimeEnd = TimeEnd
                 };
                 IEnumerable<ListInstallationSitesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
