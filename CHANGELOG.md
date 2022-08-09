@@ -3,6 +3,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 38.0.0 - 2022-08-09
+### Added
+- Support for single-host software-defined data centers in the VMWare Solution service
+- Support for Java download and installation in the Java Management service
+- Support for lifecycle management for Windows in the Java Management service
+- Support for installation scripts in the Java Management service
+- Support for unlimited-installation keys in the Java Management service
+- Support for configuring automatic usage tracking in the Java Management service
+- Support for STANDARDX and ENTERPRISEX instance types in Integration service
+- Support for additional languages and multimedia formats in transcription jobs in the AI Speech service
+- Support for maintenance run history for Exadata Cloud at Customer in the Database service
+- Support for Optimizer statistics monitoring and management on various database administration operations in the Database Management service
+- Support for OCI Compute instances in the Operations Insights service
+- Support for moving resources in the Console Dashboard service
+- Support for round-robin alerting in the Application Performance Monitoring service
+- Support for aggregated network data of synthetic monitors in the Application Performance Monitoring service
+- Support for etags on operations in the Load Balancing service
+  
+### Breaking Changes
+- The enum `Oci.OpsiService.Models.UsageUnit` was replaced by `Oci.OpsiService.Models.UsageUnitEnum` in the Operations Insights service
+- The `HostType` parameter has changed type from a list of `HostTypeEnum` to a list of `string` in the `Get-OCIOpsiHostInsightsList` cmdlet in the Operations Insights service
+
 ## 37.1.0 - 2022-08-02
 ### Added
 - Support for OpenSearch in the Search service

@@ -22,7 +22,7 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique host insight identifier")]
         public string HostInsightId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The configuration to be updated. This parameter also accepts subtypes <Oci.OpsiService.Models.UpdateEmManagedExternalHostInsightDetails>, <Oci.OpsiService.Models.UpdateMacsManagedExternalHostInsightDetails> of type <Oci.OpsiService.Models.UpdateHostInsightDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The configuration to be updated. This parameter also accepts subtypes <Oci.OpsiService.Models.UpdateEmManagedExternalHostInsightDetails>, <Oci.OpsiService.Models.UpdateMacsManagedExternalHostInsightDetails>, <Oci.OpsiService.Models.UpdateMacsManagedCloudHostInsightDetails> of type <Oci.OpsiService.Models.UpdateHostInsightDetails>.")]
         public UpdateHostInsightDetails UpdateHostInsightDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match` parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

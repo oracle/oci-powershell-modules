@@ -33,6 +33,18 @@ Example: `example_rule_set`")]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).")]
+        public string OpcRetryToken { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the ETag for the load balancer. This value can be obtained from a GET or POST response for any resource of that load balancer.
+
+For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+The resource is updated or deleted only if the ETag you provide matches the resource's current ETag value.
+
+Example: `example-etag`")]
+        public string IfMatch { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -45,7 +57,9 @@ Example: `example_rule_set`")]
                     LoadBalancerId = LoadBalancerId,
                     RuleSetName = RuleSetName,
                     UpdateRuleSetDetails = UpdateRuleSetDetails,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    OpcRetryToken = OpcRetryToken,
+                    IfMatch = IfMatch
                 };
 
                 response = client.UpdateRuleSet(request).GetAwaiter().GetResult();

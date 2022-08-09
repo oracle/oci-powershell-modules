@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Databasemanagement.dll'
 
 # Version number of this module.
-ModuleVersion = '37.1.0'
+ModuleVersion = '38.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '37.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '38.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasemanagement.dll'
@@ -102,6 +102,12 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Get-OCIDatabasemanagementManagedDatabaseGroupsList', 
                'Get-OCIDatabasemanagementManagedDatabasesList', 
                'Get-OCIDatabasemanagementObjectPrivilegesList', 
+               'Get-OCIDatabasemanagementOptimizerStatisticsAdvisorExecution', 
+               'Get-OCIDatabasemanagementOptimizerStatisticsAdvisorExecutionScript', 
+               'Get-OCIDatabasemanagementOptimizerStatisticsAdvisorExecutionsList', 
+               'Get-OCIDatabasemanagementOptimizerStatisticsCollectionAggregationsList', 
+               'Get-OCIDatabasemanagementOptimizerStatisticsCollectionOperation', 
+               'Get-OCIDatabasemanagementOptimizerStatisticsCollectionOperationsList', 
                'Get-OCIDatabasemanagementPdbMetrics', 
                'Get-OCIDatabasemanagementProxiedForUsersList', 
                'Get-OCIDatabasemanagementProxyUsersList', 
@@ -115,6 +121,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Get-OCIDatabasemanagementSystemPrivilegesList', 
                'Get-OCIDatabasemanagementTablespace', 
                'Get-OCIDatabasemanagementTablespacesList', 
+               'Get-OCIDatabasemanagementTableStatisticsList', 
                'Get-OCIDatabasemanagementUser', 
                'Get-OCIDatabasemanagementUsersList', 
                'Get-OCIDatabasemanagementWorkRequest', 
@@ -124,6 +131,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Invoke-OCIDatabasemanagementCloneSqlTuningTask', 
                'Invoke-OCIDatabasemanagementDropSqlTuningTask', 
                'Invoke-OCIDatabasemanagementDropTablespace', 
+               'Invoke-OCIDatabasemanagementImplementOptimizerStatisticsAdvisorRecommendations', 
                'Invoke-OCIDatabasemanagementResizeDataFile', 
                'Invoke-OCIDatabasemanagementRunHistoricAddm', 
                'Invoke-OCIDatabasemanagementSummarizeAlertLogCounts', 

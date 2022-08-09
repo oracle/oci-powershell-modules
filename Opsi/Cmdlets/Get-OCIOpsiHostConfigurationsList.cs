@@ -66,6 +66,12 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A flag to search all resources within a given compartment and all sub-compartments.")]
         public System.Nullable<bool> CompartmentIdInSubtree { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST")]
+        public System.Collections.Generic.List<string> HostType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host (Compute Id)")]
+        public string HostId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -92,7 +98,9 @@ namespace Oci.OpsiService.Cmdlets
                     FreeformTagEquals = FreeformTagEquals,
                     DefinedTagExists = DefinedTagExists,
                     FreeformTagExists = FreeformTagExists,
-                    CompartmentIdInSubtree = CompartmentIdInSubtree
+                    CompartmentIdInSubtree = CompartmentIdInSubtree,
+                    HostType = HostType,
+                    HostId = HostId
                 };
                 IEnumerable<ListHostConfigurationsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
