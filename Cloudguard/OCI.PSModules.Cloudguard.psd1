@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Cloudguard.dll'
 
 # Version number of this module.
-ModuleVersion = '38.0.0'
+ModuleVersion = '38.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '38.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '38.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Cloudguard.dll'
@@ -75,7 +75,9 @@ CmdletsToExport = 'Add-OCICloudguardCompartment',
                'Get-OCICloudguardConditionMetadataType', 
                'Get-OCICloudguardConditionMetadataTypesList', 
                'Get-OCICloudguardConfiguration', 'Get-OCICloudguardDataMaskRule', 
-               'Get-OCICloudguardDataMaskRulesList', 'Get-OCICloudguardDetector', 
+               'Get-OCICloudguardDataMaskRulesList', 'Get-OCICloudguardDataSource', 
+               'Get-OCICloudguardDataSourceEventsList', 
+               'Get-OCICloudguardDataSourcesList', 'Get-OCICloudguardDetector', 
                'Get-OCICloudguardDetectorRecipe', 
                'Get-OCICloudguardDetectorRecipeDetectorRule', 
                'Get-OCICloudguardDetectorRecipeDetectorRulesList', 
@@ -88,6 +90,7 @@ CmdletsToExport = 'Add-OCICloudguardCompartment',
                'Get-OCICloudguardManagedListTypesList', 
                'Get-OCICloudguardPoliciesList', 'Get-OCICloudguardProblem', 
                'Get-OCICloudguardProblemEndpointsList', 
+               'Get-OCICloudguardProblemEntitiesList', 
                'Get-OCICloudguardProblemHistoriesList', 
                'Get-OCICloudguardProblemsList', 
                'Get-OCICloudguardRecommendationsList', 
@@ -123,6 +126,10 @@ CmdletsToExport = 'Add-OCICloudguardCompartment',
                'Get-OCICloudguardTargetResponderRecipeResponderRulesList', 
                'Get-OCICloudguardTargetResponderRecipesList', 
                'Get-OCICloudguardTargetsList', 'Get-OCICloudguardTechniquesList', 
+               'Get-OCICloudguardWorkRequest', 
+               'Get-OCICloudguardWorkRequestErrorsList', 
+               'Get-OCICloudguardWorkRequestLogsList', 
+               'Get-OCICloudguardWorkRequestsList', 
                'Invoke-OCICloudguardExecuteResponderExecution', 
                'Invoke-OCICloudguardRequestRiskScores', 
                'Invoke-OCICloudguardRequestSecurityScores', 
@@ -140,28 +147,36 @@ CmdletsToExport = 'Add-OCICloudguardCompartment',
                'Invoke-OCICloudguardSkipBulkResponderExecution', 
                'Invoke-OCICloudguardSkipResponderExecution', 
                'Invoke-OCICloudguardTriggerResponder', 
+               'Move-OCICloudguardDataSourceCompartment', 
                'Move-OCICloudguardDetectorRecipeCompartment', 
                'Move-OCICloudguardManagedListCompartment', 
                'Move-OCICloudguardResponderRecipeCompartment', 
                'Move-OCICloudguardSecurityRecipeCompartment', 
                'Move-OCICloudguardSecurityZoneCompartment', 
-               'New-OCICloudguardDataMaskRule', 'New-OCICloudguardDetectorRecipe', 
+               'New-OCICloudguardDataMaskRule', 'New-OCICloudguardDataSource', 
+               'New-OCICloudguardDetectorRecipe', 
+               'New-OCICloudguardDetectorRecipeDetectorRule', 
                'New-OCICloudguardManagedList', 'New-OCICloudguardResponderRecipe', 
                'New-OCICloudguardSecurityRecipe', 'New-OCICloudguardSecurityZone', 
                'New-OCICloudguardTarget', 'New-OCICloudguardTargetDetectorRecipe', 
                'New-OCICloudguardTargetResponderRecipe', 
                'Remove-OCICloudguardCompartment', 
                'Remove-OCICloudguardDataMaskRule', 
+               'Remove-OCICloudguardDataSource', 
                'Remove-OCICloudguardDetectorRecipe', 
+               'Remove-OCICloudguardDetectorRecipeDetectorRule', 
+               'Remove-OCICloudguardDetectorRecipeDetectorRuleDataSource', 
                'Remove-OCICloudguardManagedList', 
                'Remove-OCICloudguardResponderRecipe', 
                'Remove-OCICloudguardSecurityRecipe', 
                'Remove-OCICloudguardSecurityZone', 'Remove-OCICloudguardTarget', 
                'Remove-OCICloudguardTargetDetectorRecipe', 
                'Remove-OCICloudguardTargetResponderRecipe', 
+               'Stop-OCICloudguardWorkRequest', 
                'Update-OCICloudguardBulkProblemStatus', 
                'Update-OCICloudguardConfiguration', 
                'Update-OCICloudguardDataMaskRule', 
+               'Update-OCICloudguardDataSource', 
                'Update-OCICloudguardDetectorRecipe', 
                'Update-OCICloudguardDetectorRecipeDetectorRule', 
                'Update-OCICloudguardManagedList', 
