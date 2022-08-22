@@ -17,7 +17,7 @@ namespace Oci.EmwarehouseService.Cmdlets
 {
     [Cmdlet("Update", "OCIEmwarehouse")]
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.EmwarehouseService.Responses.UpdateEmWarehouseResponse) })]
-    public class UpdateOCIEmwarehouse : OCIEmDataLakeCmdlet
+    public class UpdateOCIEmwarehouse : OCIEmWarehouseCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique EmWarehouse identifier")]
         public string EmWarehouseId { get; set; }

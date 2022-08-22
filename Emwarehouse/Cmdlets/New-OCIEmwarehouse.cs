@@ -17,7 +17,7 @@ namespace Oci.EmwarehouseService.Cmdlets
 {
     [Cmdlet("New", "OCIEmwarehouse")]
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.EmwarehouseService.Responses.CreateEmWarehouseResponse) })]
-    public class NewOCIEmwarehouse : OCIEmDataLakeCmdlet
+    public class NewOCIEmwarehouse : OCIEmWarehouseCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new EmWarehouse.")]
         public CreateEmWarehouseDetails CreateEmWarehouseDetails { get; set; }

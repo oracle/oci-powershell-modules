@@ -18,7 +18,7 @@ namespace Oci.EmwarehouseService.Cmdlets
 {
     [Cmdlet("Get", "OCIEmwarehouseWorkRequest", DefaultParameterSetName = Default)]
     [OutputType(new System.Type[] { typeof(Oci.EmwarehouseService.Models.WorkRequest), typeof(Oci.EmwarehouseService.Responses.GetWorkRequestResponse) })]
-    public class GetOCIEmwarehouseWorkRequest : OCIEmDataLakeCmdlet
+    public class GetOCIEmwarehouseWorkRequest : OCIEmWarehouseCmdlet
     {
         
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the asynchronous request.", ParameterSetName = StatusParamSet)]

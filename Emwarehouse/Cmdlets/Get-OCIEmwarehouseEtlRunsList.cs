@@ -19,7 +19,7 @@ namespace Oci.EmwarehouseService.Cmdlets
 {
     [Cmdlet("Get", "OCIEmwarehouseEtlRunsList")]
     [OutputType(new System.Type[] { typeof(Oci.EmwarehouseService.Models.EtlRunCollection), typeof(Oci.EmwarehouseService.Responses.ListEtlRunsResponse) })]
-    public class GetOCIEmwarehouseEtlRunsList : OCIEmDataLakeCmdlet
+    public class GetOCIEmwarehouseEtlRunsList : OCIEmWarehouseCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique EmWarehouse identifier")]
         public string EmWarehouseId { get; set; }

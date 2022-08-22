@@ -19,7 +19,7 @@ namespace Oci.EmwarehouseService.Cmdlets
 {
     [Cmdlet("Get", "OCIEmwarehousesList")]
     [OutputType(new System.Type[] { typeof(Oci.EmwarehouseService.Models.EmWarehouseCollection), typeof(Oci.EmwarehouseService.Responses.ListEmWarehousesResponse) })]
-    public class GetOCIEmwarehousesList : OCIEmDataLakeCmdlet
+    public class GetOCIEmwarehousesList : OCIEmWarehouseCmdlet
     {
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }

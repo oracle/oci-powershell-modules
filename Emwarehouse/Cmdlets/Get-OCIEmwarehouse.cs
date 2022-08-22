@@ -18,7 +18,7 @@ namespace Oci.EmwarehouseService.Cmdlets
 {
     [Cmdlet("Get", "OCIEmwarehouse", DefaultParameterSetName = Default)]
     [OutputType(new System.Type[] { typeof(Oci.EmwarehouseService.Models.EmWarehouse), typeof(Oci.EmwarehouseService.Responses.GetEmWarehouseResponse) })]
-    public class GetOCIEmwarehouse : OCIEmDataLakeCmdlet
+    public class GetOCIEmwarehouse : OCIEmWarehouseCmdlet
     {
         
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique EmWarehouse identifier", ParameterSetName = LifecycleStateParamSet)]

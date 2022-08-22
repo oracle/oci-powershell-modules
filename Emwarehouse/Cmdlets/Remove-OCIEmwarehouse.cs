@@ -17,7 +17,7 @@ namespace Oci.EmwarehouseService.Cmdlets
 {
     [Cmdlet("Remove", "OCIEmwarehouse", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.EmwarehouseService.Responses.DeleteEmWarehouseResponse) })]
-    public class RemoveOCIEmwarehouse : OCIEmDataLakeCmdlet
+    public class RemoveOCIEmwarehouse : OCIEmWarehouseCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique EmWarehouse identifier")]
         public string EmWarehouseId { get; set; }
