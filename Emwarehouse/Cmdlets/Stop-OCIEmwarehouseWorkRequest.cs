@@ -17,7 +17,7 @@ namespace Oci.EmwarehouseService.Cmdlets
 {
     [Cmdlet("Stop", "OCIEmwarehouseWorkRequest", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.EmwarehouseService.Responses.CancelWorkRequestResponse) })]
-    public class StopOCIEmwarehouseWorkRequest : OCIEmDataLakeCmdlet
+    public class StopOCIEmwarehouseWorkRequest : OCIEmWarehouseCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the asynchronous request.")]
         public string WorkRequestId { get; set; }

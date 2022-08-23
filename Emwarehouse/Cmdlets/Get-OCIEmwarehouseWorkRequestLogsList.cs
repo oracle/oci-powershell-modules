@@ -19,7 +19,7 @@ namespace Oci.EmwarehouseService.Cmdlets
 {
     [Cmdlet("Get", "OCIEmwarehouseWorkRequestLogsList")]
     [OutputType(new System.Type[] { typeof(Oci.EmwarehouseService.Models.WorkRequestLogEntryCollection), typeof(Oci.EmwarehouseService.Responses.ListWorkRequestLogsResponse) })]
-    public class GetOCIEmwarehouseWorkRequestLogsList : OCIEmDataLakeCmdlet
+    public class GetOCIEmwarehouseWorkRequestLogsList : OCIEmWarehouseCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the asynchronous request.")]
         public string WorkRequestId { get; set; }

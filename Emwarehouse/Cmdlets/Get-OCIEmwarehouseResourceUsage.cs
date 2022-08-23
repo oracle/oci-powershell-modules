@@ -17,7 +17,7 @@ namespace Oci.EmwarehouseService.Cmdlets
 {
     [Cmdlet("Get", "OCIEmwarehouseResourceUsage")]
     [OutputType(new System.Type[] { typeof(Oci.EmwarehouseService.Models.ResourceUsage), typeof(Oci.EmwarehouseService.Responses.GetEmWarehouseResourceUsageResponse) })]
-    public class GetOCIEmwarehouseResourceUsage : OCIEmDataLakeCmdlet
+    public class GetOCIEmwarehouseResourceUsage : OCIEmWarehouseCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique EmWarehouse identifier")]
         public string EmWarehouseId { get; set; }

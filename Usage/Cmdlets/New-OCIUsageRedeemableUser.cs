@@ -19,7 +19,7 @@ namespace Oci.UsageService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.UsageService.Models.RedeemableUserCollection), typeof(Oci.UsageService.Responses.CreateRedeemableUserResponse) })]
     public class NewOCIUsageRedeemableUser : OCIRewardsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"CreateRedeemableUserDetails inforamtion.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"CreateRedeemableUserDetails information.")]
         public CreateRedeemableUserDetails CreateRedeemableUserDetails { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the tenancy.")]

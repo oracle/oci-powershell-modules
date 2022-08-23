@@ -13,7 +13,7 @@ using Oci.EmwarehouseService;
 
 namespace Oci.EmwarehouseService.Cmdlets
 {
-    public abstract class OCIEmDataLakeCmdlet : Oci.PSModules.Common.Cmdlets.OCICmdlet
+    public abstract class OCIEmWarehouseCmdlet : Oci.PSModules.Common.Cmdlets.OCICmdlet
     { 
 
         protected override void BeginProcessing()
@@ -39,7 +39,7 @@ namespace Oci.EmwarehouseService.Cmdlets
                 client?.Dispose();
                 int timeout = GetPreferredTimeout();
                 WriteDebug($"Cmdlet Timeout : {timeout} milliseconds.");
-                client = new EmDataLakeClient(AuthProvider, new Oci.Common.ClientConfiguration
+                client = new EmWarehouseClient(AuthProvider, new Oci.Common.ClientConfiguration
                 {
                     RetryConfiguration = retryConfig,
                     TimeoutMillis = timeout,
@@ -80,7 +80,7 @@ namespace Oci.EmwarehouseService.Cmdlets
             base.TerminatingErrorDuringExecution(ex);
         }
 
-        protected EmDataLakeClient client;
+        protected EmWarehouseClient client;
         private RetryConfiguration retryConfig;
     }
 }

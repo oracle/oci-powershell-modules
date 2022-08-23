@@ -17,7 +17,7 @@ namespace Oci.EmwarehouseService.Cmdlets
 {
     [Cmdlet("Move", "OCIEmwarehouseCompartment")]
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.EmwarehouseService.Responses.ChangeEmWarehouseCompartmentResponse) })]
-    public class MoveOCIEmwarehouseCompartment : OCIEmDataLakeCmdlet
+    public class MoveOCIEmwarehouseCompartment : OCIEmWarehouseCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique EmWarehouse identifier")]
         public string EmWarehouseId { get; set; }
