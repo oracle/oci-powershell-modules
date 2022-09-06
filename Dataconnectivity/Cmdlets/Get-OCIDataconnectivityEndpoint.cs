@@ -21,13 +21,13 @@ namespace Oci.DataconnectivityService.Cmdlets
     public class GetOCIDataconnectivityEndpoint : OCIDataConnectivityManagementCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"DCMS Endpoint id", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"DCMS Endpoint id", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"DCMS endpoint ID.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"DCMS endpoint ID.", ParameterSetName = Default)]
         public string EndpointId { get; set; }
 
         
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"DCMS registry id", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"DCMS registry id", ParameterSetName = Default)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"DCMS registry ID", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"DCMS registry ID", ParameterSetName = Default)]
         public string RegistryId { get; set; }
 
         

@@ -19,7 +19,7 @@ namespace Oci.DataconnectivityService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DataconnectivityService.Models.DataAsset), typeof(Oci.DataconnectivityService.Responses.GetDataAssetResponse) })]
     public class GetOCIDataconnectivityDataAsset : OCIDataConnectivityManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The registry Ocid.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The registry OCID.")]
         public string RegistryId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The data asset key.")]

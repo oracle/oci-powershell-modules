@@ -24,7 +24,7 @@ namespace Oci.DataconnectivityService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment containing the resources you want to list.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"DCMS registry id")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"DCMS registry ID")]
         public string RegistryId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used to filter by the name of the object.")]
@@ -37,12 +37,12 @@ namespace Oci.DataconnectivityService.Cmdlets
         public string Page { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Lifecycle state of the resource.")]
-        public System.Nullable<Oci.DataconnectivityService.Models.Registry.LifecycleStateEnum> LifecycleState { get; set; }
+        public System.Nullable<Oci.DataconnectivityService.Requests.ListEndpointsRequest.LifecycleStateEnum> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).")]
         public System.Nullable<Oci.DataconnectivityService.Requests.ListEndpointsRequest.SortOrderEnum> SortOrder { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This parameter allows users to specify a sort field.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This parameter allows users to specify a sort field. Default sort order is the descending order of `timeCreated` (most recently created objects at the top). Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).")]
         public System.Nullable<Oci.DataconnectivityService.Requests.ListEndpointsRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

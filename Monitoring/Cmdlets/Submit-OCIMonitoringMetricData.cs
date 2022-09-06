@@ -25,6 +25,9 @@ namespace Oci.MonitoringService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Customer part of the request identifier token. If you need to contact Oracle about a particular request, please provide the complete request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The optional Content-Encoding header that defines the content encodings that were applied to the payload.")]
+        public string ContentEncoding { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -35,7 +38,8 @@ namespace Oci.MonitoringService.Cmdlets
                 request = new PostMetricDataRequest
                 {
                     PostMetricDataDetails = PostMetricDataDetails,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    ContentEncoding = ContentEncoding
                 };
 
                 response = client.PostMetricData(request).GetAwaiter().GetResult();

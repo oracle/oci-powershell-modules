@@ -19,10 +19,10 @@ namespace Oci.DataconnectivityService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DataconnectivityService.Models.Type), typeof(Oci.DataconnectivityService.Responses.GetTypeResponse) })]
     public class GetOCIDataconnectivityType : OCIDataConnectivityManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The registry Ocid.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The registry OCID.")]
         public string RegistryId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"key of the a specefic Type.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Key of the a specific type.")]
         public string TypeKey { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

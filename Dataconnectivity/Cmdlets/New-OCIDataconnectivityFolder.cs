@@ -19,16 +19,16 @@ namespace Oci.DataconnectivityService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DataconnectivityService.Models.Folder), typeof(Oci.DataconnectivityService.Responses.CreateFolderResponse) })]
     public class NewOCIDataconnectivityFolder : OCIDataConnectivityManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The registry Ocid.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The registry OCID.")]
         public string RegistryId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information needed to create a folder.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information required to create a folder.")]
         public CreateFolderDetails CreateFolderDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.")]
         public string OpcRetryToken { get; set; }
 
         protected override void ProcessRecord()

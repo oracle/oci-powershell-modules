@@ -21,7 +21,7 @@ namespace Oci.DataconnectivityService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DataconnectivityService.Models.ConnectionSummaryCollection), typeof(Oci.DataconnectivityService.Responses.ListConnectionsResponse) })]
     public class GetOCIDataconnectivityConnectionsList : OCIDataConnectivityManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The registry Ocid.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The registry OCID.")]
         public string RegistryId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used to filter by the data asset key of the object.")]
@@ -42,7 +42,7 @@ namespace Oci.DataconnectivityService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Type of the object to filter the results with.")]
         public string Type { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order are by relevance score in descending order).")]
         public System.Nullable<Oci.DataconnectivityService.Requests.ListConnectionsRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).")]

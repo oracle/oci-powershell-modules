@@ -19,16 +19,16 @@ namespace Oci.DataconnectivityService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DataconnectivityService.Models.DataAsset), typeof(Oci.DataconnectivityService.Responses.CreateDataAssetResponse) })]
     public class NewOCIDataconnectivityDataAsset : OCIDataConnectivityManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The registry Ocid.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The registry OCID.")]
         public string RegistryId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information needed to create a data asset.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information required to create a data asset.")]
         public CreateDataAssetDetails CreateDataAssetDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.")]
         public string OpcRetryToken { get; set; }
 
         protected override void ProcessRecord()

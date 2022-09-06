@@ -27,10 +27,10 @@ namespace Oci.DataconnectivityService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"DCMS registry or endpoint id")]
-        public string ResourceId { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"DCMS registry ID")]
+        public string RegistryId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Work Request status.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Work request status.")]
         public System.Nullable<Oci.DataconnectivityService.Requests.ListWorkRequestsRequest.WorkRequestStatusEnum> WorkRequestStatus { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).")]
@@ -53,7 +53,7 @@ namespace Oci.DataconnectivityService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     OpcRequestId = OpcRequestId,
-                    ResourceId = ResourceId,
+                    RegistryId = RegistryId,
                     WorkRequestStatus = WorkRequestStatus,
                     Page = Page,
                     Limit = Limit

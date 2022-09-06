@@ -19,7 +19,7 @@ namespace Oci.DataconnectivityService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DataconnectivityService.Models.Folder), typeof(Oci.DataconnectivityService.Responses.GetFolderResponse) })]
     public class GetOCIDataconnectivityFolder : OCIDataConnectivityManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The registry Ocid.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The registry OCID.")]
         public string RegistryId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The folder ID.")]

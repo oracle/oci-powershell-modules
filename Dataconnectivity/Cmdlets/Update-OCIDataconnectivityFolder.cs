@@ -19,13 +19,13 @@ namespace Oci.DataconnectivityService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DataconnectivityService.Models.Folder), typeof(Oci.DataconnectivityService.Responses.UpdateFolderResponse) })]
     public class UpdateOCIDataconnectivityFolder : OCIDataConnectivityManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The registry Ocid.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The registry OCID.")]
         public string RegistryId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The folder ID.")]
         public string FolderKey { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information needed to update a folder.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information required to update a folder.")]
         public UpdateFolderDetails UpdateFolderDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

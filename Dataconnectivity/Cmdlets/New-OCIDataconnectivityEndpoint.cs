@@ -19,14 +19,14 @@ namespace Oci.DataconnectivityService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.DataconnectivityService.Responses.CreateEndpointResponse) })]
     public class NewOCIDataconnectivityEndpoint : OCIDataConnectivityManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new Data Connectivity Management Endpoint.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details of the new Data Connectivity Management endpoint.")]
         public CreateEndpointDetails CreateEndpointDetails { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"DCMS registry id")]
-        public string RegistryId { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.")]
         public string OpcRetryToken { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"DCMS registry ID")]
+        public string RegistryId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
@@ -41,8 +41,8 @@ namespace Oci.DataconnectivityService.Cmdlets
                 request = new CreateEndpointRequest
                 {
                     CreateEndpointDetails = CreateEndpointDetails,
-                    RegistryId = RegistryId,
                     OpcRetryToken = OpcRetryToken,
+                    RegistryId = RegistryId,
                     OpcRequestId = OpcRequestId
                 };
 

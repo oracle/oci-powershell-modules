@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Databasemanagement.dll'
 
 # Version number of this module.
-ModuleVersion = '39.1.0'
+ModuleVersion = '40.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '39.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '40.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasemanagement.dll'
@@ -109,6 +109,8 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Get-OCIDatabasemanagementOptimizerStatisticsCollectionOperation', 
                'Get-OCIDatabasemanagementOptimizerStatisticsCollectionOperationsList', 
                'Get-OCIDatabasemanagementPdbMetrics', 
+               'Get-OCIDatabasemanagementPreferredCredential', 
+               'Get-OCIDatabasemanagementPreferredCredentialsList', 
                'Get-OCIDatabasemanagementProxiedForUsersList', 
                'Get-OCIDatabasemanagementProxyUsersList', 
                'Get-OCIDatabasemanagementRolesList', 
@@ -146,6 +148,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Invoke-OCIDatabasemanagementSummarizeAwrDbWaitEventBuckets', 
                'Invoke-OCIDatabasemanagementSummarizeAwrDbWaitEvents', 
                'Invoke-OCIDatabasemanagementSummarizeJobExecutionsStatuses', 
+               'Invoke-OCIDatabasemanagementTestPreferredCredential', 
                'Move-OCIDatabasemanagementDatabaseParameters', 
                'Move-OCIDatabasemanagementDbManagementPrivateEndpointCompartment', 
                'Move-OCIDatabasemanagementJobCompartment', 
@@ -160,11 +163,13 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Remove-OCIDatabasemanagementJob', 
                'Remove-OCIDatabasemanagementManagedDatabaseFromManagedDatabaseGroup', 
                'Remove-OCIDatabasemanagementManagedDatabaseGroup', 
+               'Remove-OCIDatabasemanagementPreferredCredential', 
                'Reset-OCIDatabasemanagementDatabaseParameters', 
                'Start-OCIDatabasemanagementSqlTuningTask', 
                'Update-OCIDatabasemanagementDbManagementPrivateEndpoint', 
                'Update-OCIDatabasemanagementJob', 
                'Update-OCIDatabasemanagementManagedDatabaseGroup', 
+               'Update-OCIDatabasemanagementPreferredCredential', 
                'Update-OCIDatabasemanagementTablespace'
 
 # Variables to export from this module

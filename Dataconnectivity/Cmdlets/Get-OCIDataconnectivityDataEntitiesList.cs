@@ -21,7 +21,7 @@ namespace Oci.DataconnectivityService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DataconnectivityService.Models.DataEntitySummaryCollection), typeof(Oci.DataconnectivityService.Responses.ListDataEntitiesResponse) })]
     public class GetOCIDataconnectivityDataEntitiesList : OCIDataConnectivityManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The registry Ocid.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The registry OCID.")]
         public string RegistryId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The connection key.")]
@@ -45,7 +45,7 @@ namespace Oci.DataconnectivityService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies the fields to get for an object.")]
         public System.Collections.Generic.List<string> Fields { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order are by relevance score in descending order).")]
         public System.Nullable<Oci.DataconnectivityService.Requests.ListDataEntitiesRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).")]
@@ -60,11 +60,14 @@ namespace Oci.DataconnectivityService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used to filter by the name of the object.")]
         public System.Collections.Generic.List<string> NameList { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This parameter can be used to specify whether entity search type is pattern search or not.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This parameter can be used to specify whether entity search type is a pattern search.")]
         public System.Nullable<bool> IsPattern { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Endpoint Id used for getDataAssetFullDetails.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Endpoint ID used for getDataAssetFullDetails.")]
         public string EndpointId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Artifact type which needs to be listed while listing Artifacts.")]
+        public System.Collections.Generic.List<string> IncludeTypes { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
@@ -92,7 +95,8 @@ namespace Oci.DataconnectivityService.Cmdlets
                     ApiMode = ApiMode,
                     NameList = NameList,
                     IsPattern = IsPattern,
-                    EndpointId = EndpointId
+                    EndpointId = EndpointId,
+                    IncludeTypes = IncludeTypes
                 };
                 IEnumerable<ListDataEntitiesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

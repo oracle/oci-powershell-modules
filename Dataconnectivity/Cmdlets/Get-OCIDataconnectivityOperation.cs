@@ -19,7 +19,7 @@ namespace Oci.DataconnectivityService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DataconnectivityService.Models.Operation), typeof(Oci.DataconnectivityService.Responses.GetOperationResponse) })]
     public class GetOCIDataconnectivityOperation : OCIDataConnectivityManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The registry Ocid.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The registry OCID.")]
         public string RegistryId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The connection key.")]
@@ -28,13 +28,13 @@ namespace Oci.DataconnectivityService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The schema resource name used for retrieving schemas.")]
         public string SchemaResourceName { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The opeartion resource name used for retrieving the details of operation.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The operation resource name used for retrieving the details of operation.")]
         public string OperationResourceName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Endpoint Id used for getDataAssetFullDetails.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Endpoint ID used for getDataAssetFullDetails.")]
         public string EndpointId { get; set; }
 
         protected override void ProcessRecord()

@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Dataconnectivity.dll'
 
 # Version number of this module.
-ModuleVersion = '39.1.0'
+ModuleVersion = '40.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '39.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '40.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Dataconnectivity.dll'
@@ -74,14 +74,13 @@ FunctionsToExport = '*'
 CmdletsToExport = 'Confirm-OCIDataconnectivityDataAssetNetworkReachablity', 
                'Get-OCIDataconnectivityConnection', 
                'Get-OCIDataconnectivityConnectionsList', 
-               'Get-OCIDataconnectivityConnectionValidation', 
-               'Get-OCIDataconnectivityConnectionValidationsList', 
                'Get-OCIDataconnectivityDataAsset', 
                'Get-OCIDataconnectivityDataAssetsList', 
                'Get-OCIDataconnectivityDataEntitiesList', 
                'Get-OCIDataconnectivityDataEntity', 
                'Get-OCIDataconnectivityEndpoint', 
                'Get-OCIDataconnectivityEndpointsList', 
+               'Get-OCIDataconnectivityEngineConfigurations', 
                'Get-OCIDataconnectivityExecuteOperationJob', 
                'Get-OCIDataconnectivityFolder', 
                'Get-OCIDataconnectivityFoldersList', 
@@ -98,6 +97,7 @@ CmdletsToExport = 'Confirm-OCIDataconnectivityDataAssetNetworkReachablity',
                'Get-OCIDataconnectivityWorkRequestErrorsList', 
                'Get-OCIDataconnectivityWorkRequestLogsList', 
                'Get-OCIDataconnectivityWorkRequestsList', 
+               'Invoke-OCIDataconnectivityDeriveEntities', 
                'Move-OCIDataconnectivityEndpointCompartment', 
                'Move-OCIDataconnectivityRegistryCompartment', 
                'New-OCIDataconnectivityAttachDataAsset', 
@@ -118,7 +118,6 @@ CmdletsToExport = 'Confirm-OCIDataconnectivityDataAssetNetworkReachablity',
                'New-OCIDataconnectivityRegistry', 
                'New-OCIDataconnectivityTestNetworkConnectivity', 
                'Remove-OCIDataconnectivityConnection', 
-               'Remove-OCIDataconnectivityConnectionValidation', 
                'Remove-OCIDataconnectivityDataAsset', 
                'Remove-OCIDataconnectivityEndpoint', 
                'Remove-OCIDataconnectivityFolder', 
