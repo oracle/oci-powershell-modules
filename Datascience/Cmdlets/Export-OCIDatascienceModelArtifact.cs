@@ -15,21 +15,15 @@ using Oci.Common.Model;
 
 namespace Oci.DatascienceService.Cmdlets
 {
-    [Cmdlet("New", "OCIDatascienceModelArtifact")]
-    [OutputType(new System.Type[] { typeof(void), typeof(Oci.DatascienceService.Responses.CreateModelArtifactResponse) })]
-    public class NewOCIDatascienceModelArtifact : OCIDataScienceCmdlet
+    [Cmdlet("Export", "OCIDatascienceModelArtifact")]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.DatascienceService.Responses.ExportModelArtifactResponse) })]
+    public class ExportOCIDatascienceModelArtifact : OCIDataScienceCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.")]
         public string ModelId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The content length of the body.")]
-        public System.Nullable<long> ContentLength { get; set; }
-
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The model artifact to upload.", ParameterSetName = FromStreamSet)]
-        public System.IO.Stream ModelArtifact { get; set; }
-
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Use this parameter to provide the file location from where the input stream to be read. The model artifact to upload.", ParameterSetName = FromFileSet)]
-        public String ModelArtifactFromFile { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Model artifact source details for exporting.")]
+        public ExportModelArtifactDetails ExportModelArtifactDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.")]
         public string OpcRequestId { get; set; }
@@ -37,38 +31,27 @@ namespace Oci.DatascienceService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
         public string OpcRetryToken { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file name when downloading. Example: `{""Content-Disposition"": ""attachment""            ""filename""=""model.tar.gz""            ""Content-Length"": ""2347""            ""Content-Type"": ""application/gzip""}`")]
-        public string ContentDisposition { get; set; }
-
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource is updated or deleted only if the `etag` you provide matches the resource's current `etag` value.")]
         public string IfMatch { get; set; }
 
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            CreateModelArtifactRequest request;
-
-            if (ParameterSetName.Equals(FromFileSet))
-            {
-                ModelArtifact = System.IO.File.OpenRead(GetAbsoluteFilePath(ModelArtifactFromFile));
-            }
-            
+            ExportModelArtifactRequest request;
 
             try
             {
-                request = new CreateModelArtifactRequest
+                request = new ExportModelArtifactRequest
                 {
                     ModelId = ModelId,
-                    ContentLength = ContentLength,
-                    ModelArtifact = ModelArtifact,
+                    ExportModelArtifactDetails = ExportModelArtifactDetails,
                     OpcRequestId = OpcRequestId,
                     OpcRetryToken = OpcRetryToken,
-                    ContentDisposition = ContentDisposition,
                     IfMatch = IfMatch
                 };
 
-                response = client.CreateModelArtifact(request).GetAwaiter().GetResult();
-                WriteOutput(response);
+                response = client.ExportModelArtifact(request).GetAwaiter().GetResult();
+                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
             }
             catch (OciException ex)
@@ -87,8 +70,6 @@ namespace Oci.DatascienceService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private CreateModelArtifactResponse response;
-        private const string FromFileSet = "FromFile";
-        private const string FromStreamSet = "FromStream";
+        private ExportModelArtifactResponse response;
     }
 }
