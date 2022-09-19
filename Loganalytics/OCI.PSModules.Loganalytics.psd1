@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Loganalytics.dll'
 
 # Version number of this module.
-ModuleVersion = '40.1.0'
+ModuleVersion = '41.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '40.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '41.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Loganalytics.dll'
@@ -79,9 +79,11 @@ CmdletsToExport = 'Add-OCILoganalyticsEntityAssociation',
                'Confirm-OCILoganalyticsSourceMapping', 
                'Disable-OCILoganalyticsArchiving', 
                'Disable-OCILoganalyticsAutoAssociation', 
+               'Disable-OCILoganalyticsIngestTimeRule', 
                'Disable-OCILoganalyticsSourceEventTypes', 
                'Enable-OCILoganalyticsArchiving', 
                'Enable-OCILoganalyticsAutoAssociation', 
+               'Enable-OCILoganalyticsIngestTimeRule', 
                'Enable-OCILoganalyticsSourceEventTypes', 
                'Export-OCILoganalyticsCustomContent', 
                'Export-OCILoganalyticsQueryResult', 
@@ -103,6 +105,8 @@ CmdletsToExport = 'Add-OCILoganalyticsEntityAssociation',
                'Get-OCILoganalyticsEntityType', 
                'Get-OCILoganalyticsEntityTypesList', 'Get-OCILoganalyticsField', 
                'Get-OCILoganalyticsFieldsList', 'Get-OCILoganalyticsFieldsSummary', 
+               'Get-OCILoganalyticsIngestTimeRule', 
+               'Get-OCILoganalyticsIngestTimeRulesList', 
                'Get-OCILoganalyticsLabel', 
                'Get-OCILoganalyticsLabelPrioritiesList', 
                'Get-OCILoganalyticsLabelsList', 
@@ -127,7 +131,7 @@ CmdletsToExport = 'Add-OCILoganalyticsEntityAssociation',
                'Get-OCILoganalyticsQueryWorkRequestsList', 
                'Get-OCILoganalyticsRecalledDataList', 
                'Get-OCILoganalyticsResourceCategoriesList', 
-               'Get-OCILoganalyticsScheduledTask', 
+               'Get-OCILoganalyticsRulesList', 'Get-OCILoganalyticsScheduledTask', 
                'Get-OCILoganalyticsScheduledTasksList', 
                'Get-OCILoganalyticsSource', 
                'Get-OCILoganalyticsSourceAssociationsList', 
@@ -186,11 +190,13 @@ CmdletsToExport = 'Add-OCILoganalyticsEntityAssociation',
                'Invoke-OCILoganalyticsVerify', 
                'Move-OCILoganalyticsEmBridgeCompartment', 
                'Move-OCILoganalyticsEntityCompartment', 
+               'Move-OCILoganalyticsIngestTimeRuleCompartment', 
                'Move-OCILoganalyticsLogGroupCompartment', 
                'Move-OCILoganalyticsObjectCollectionRuleCompartment', 
                'Move-OCILoganalyticsScheduledTaskCompartment', 
                'New-OCILoganalyticsEmBridge', 'New-OCILoganalyticsEntity', 
-               'New-OCILoganalyticsEntityType', 'New-OCILoganalyticsLogGroup', 
+               'New-OCILoganalyticsEntityType', 
+               'New-OCILoganalyticsIngestTimeRule', 'New-OCILoganalyticsLogGroup', 
                'New-OCILoganalyticsObjectCollectionRule', 
                'New-OCILoganalyticsScheduledTask', 
                'Register-OCILoganalyticsLookup', 
@@ -198,6 +204,7 @@ CmdletsToExport = 'Add-OCILoganalyticsEntityAssociation',
                'Remove-OCILoganalyticsEmBridge', 'Remove-OCILoganalyticsEntity', 
                'Remove-OCILoganalyticsEntityAssociations', 
                'Remove-OCILoganalyticsEntityType', 'Remove-OCILoganalyticsField', 
+               'Remove-OCILoganalyticsIngestTimeRule', 
                'Remove-OCILoganalyticsLabel', 'Remove-OCILoganalyticsLogGroup', 
                'Remove-OCILoganalyticsLookup', 
                'Remove-OCILoganalyticsObjectCollectionRule', 
@@ -211,6 +218,7 @@ CmdletsToExport = 'Add-OCILoganalyticsEntityAssociation',
                'Stop-OCILoganalyticsQueryWorkRequest', 
                'Update-OCILoganalyticsEmBridge', 'Update-OCILoganalyticsEntity', 
                'Update-OCILoganalyticsEntityType', 
+               'Update-OCILoganalyticsIngestTimeRule', 
                'Update-OCILoganalyticsLogGroup', 'Update-OCILoganalyticsLookup', 
                'Update-OCILoganalyticsLookupData', 
                'Update-OCILoganalyticsObjectCollectionRule', 

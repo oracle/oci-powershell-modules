@@ -60,6 +60,9 @@ namespace Oci.DataintegrationService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This parameter can be used to specify whether entity search type is pattern search or not.")]
         public System.Nullable<bool> IsPattern { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Artifact type which needs to be listed while listing Artifacts.")]
+        public System.Collections.Generic.List<string> IncludeTypes { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -84,7 +87,8 @@ namespace Oci.DataintegrationService.Cmdlets
                     SortOrder = SortOrder,
                     OpcRequestId = OpcRequestId,
                     NameList = NameList,
-                    IsPattern = IsPattern
+                    IsPattern = IsPattern,
+                    IncludeTypes = IncludeTypes
                 };
                 IEnumerable<ListDataEntitiesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

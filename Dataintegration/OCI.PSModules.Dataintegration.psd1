@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Dataintegration.dll'
 
 # Version number of this module.
-ModuleVersion = '40.1.0'
+ModuleVersion = '41.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '40.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '41.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Dataintegration.dll'
@@ -90,6 +90,7 @@ CmdletsToExport = 'Get-OCIDataintegrationApplication',
                'Get-OCIDataintegrationDependentObjectsList', 
                'Get-OCIDataintegrationDisApplication', 
                'Get-OCIDataintegrationDisApplicationsList', 
+               'Get-OCIDataintegrationDisApplicationTaskRunLineagesList', 
                'Get-OCIDataintegrationExternalPublication', 
                'Get-OCIDataintegrationExternalPublicationsList', 
                'Get-OCIDataintegrationExternalPublicationValidation', 
@@ -110,10 +111,15 @@ CmdletsToExport = 'Get-OCIDataintegrationApplication',
                'Get-OCIDataintegrationPublishedObjectsList', 
                'Get-OCIDataintegrationReference', 
                'Get-OCIDataintegrationReferencesList', 
+               'Get-OCIDataintegrationRuntimeOperator', 
+               'Get-OCIDataintegrationRuntimeOperatorsList', 
+               'Get-OCIDataintegrationRuntimePipeline', 
+               'Get-OCIDataintegrationRuntimePipelinesList', 
                'Get-OCIDataintegrationSchedule', 
                'Get-OCIDataintegrationSchedulesList', 
                'Get-OCIDataintegrationSchema', 'Get-OCIDataintegrationSchemasList', 
                'Get-OCIDataintegrationTask', 'Get-OCIDataintegrationTaskRun', 
+               'Get-OCIDataintegrationTaskRunLineagesList', 
                'Get-OCIDataintegrationTaskRunLogsList', 
                'Get-OCIDataintegrationTaskRunsList', 
                'Get-OCIDataintegrationTaskSchedule', 
