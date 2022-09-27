@@ -28,6 +28,12 @@ namespace Oci.StackmonitoringService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The value of the `opc-next-page` response header from the previous ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called ""fields"" of an array type, provide the values as enums, and use collectionFormat.")]
+        public System.Collections.Generic.List<string> Fields { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called ""excludeFields"" of an array type, provide the values as enums, and use collectionFormat.")]
+        public System.Collections.Generic.List<string> ExcludeFields { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -49,6 +55,8 @@ namespace Oci.StackmonitoringService.Cmdlets
                     SearchMonitoredResourcesDetails = SearchMonitoredResourcesDetails,
                     Limit = Limit,
                     Page = Page,
+                    Fields = Fields,
+                    ExcludeFields = ExcludeFields,
                     OpcRequestId = OpcRequestId,
                     OpcRetryToken = OpcRetryToken,
                     IfMatch = IfMatch
