@@ -25,6 +25,9 @@ namespace Oci.NosqlService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A NoSQL SQL statement.")]
         public string Statement { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Include a query execution plan in the result.")]
+        public System.Nullable<bool> IsGetQueryPlan { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
@@ -39,6 +42,7 @@ namespace Oci.NosqlService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     Statement = Statement,
+                    IsGetQueryPlan = IsGetQueryPlan,
                     OpcRequestId = OpcRequestId
                 };
 

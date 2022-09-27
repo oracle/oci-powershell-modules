@@ -28,6 +28,9 @@ namespace Oci.StackmonitoringService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to delete the associated children or not for given resource.")]
+        public System.Nullable<bool> IsDeleteMembers { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "Ignore confirmation and force the Cmdlet to complete action.")]
         public SwitchParameter Force { get; set; }
 
@@ -48,7 +51,8 @@ namespace Oci.StackmonitoringService.Cmdlets
                 {
                     MonitoredResourceId = MonitoredResourceId,
                     IfMatch = IfMatch,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    IsDeleteMembers = IsDeleteMembers
                 };
 
                 response = client.DeleteMonitoredResource(request).GetAwaiter().GetResult();

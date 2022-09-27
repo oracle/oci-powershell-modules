@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Filestorage.dll'
 
 # Version number of this module.
-ModuleVersion = '41.0.0'
+ModuleVersion = '41.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '41.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '41.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Filestorage.dll'
@@ -75,17 +75,27 @@ CmdletsToExport = 'Get-OCIFilestorageExport', 'Get-OCIFilestorageExportSet',
                'Get-OCIFilestorageExportSetsList', 'Get-OCIFilestorageExportsList', 
                'Get-OCIFilestorageFileSystem', 'Get-OCIFilestorageFileSystemsList', 
                'Get-OCIFilestorageMountTarget', 
-               'Get-OCIFilestorageMountTargetsList', 'Get-OCIFilestorageSnapshot', 
-               'Get-OCIFilestorageSnapshotsList', 
+               'Get-OCIFilestorageMountTargetsList', 
+               'Get-OCIFilestorageReplication', 
+               'Get-OCIFilestorageReplicationsList', 
+               'Get-OCIFilestorageReplicationTarget', 
+               'Get-OCIFilestorageReplicationTargetsList', 
+               'Get-OCIFilestorageSnapshot', 'Get-OCIFilestorageSnapshotsList', 
+               'Invoke-OCIFilestorageEstimateReplication', 
                'Move-OCIFilestorageFileSystemCompartment', 
                'Move-OCIFilestorageMountTargetCompartment', 
+               'Move-OCIFilestorageReplicationCompartment', 
                'New-OCIFilestorageExport', 'New-OCIFilestorageFileSystem', 
-               'New-OCIFilestorageMountTarget', 'New-OCIFilestorageSnapshot', 
-               'Remove-OCIFilestorageExport', 'Remove-OCIFilestorageFileSystem', 
-               'Remove-OCIFilestorageMountTarget', 'Remove-OCIFilestorageSnapshot', 
-               'Update-OCIFilestorageExport', 'Update-OCIFilestorageExportSet', 
-               'Update-OCIFilestorageFileSystem', 
-               'Update-OCIFilestorageMountTarget', 'Update-OCIFilestorageSnapshot'
+               'New-OCIFilestorageMountTarget', 'New-OCIFilestorageReplication', 
+               'New-OCIFilestorageSnapshot', 'Remove-OCIFilestorageExport', 
+               'Remove-OCIFilestorageFileSystem', 
+               'Remove-OCIFilestorageMountTarget', 
+               'Remove-OCIFilestorageReplication', 
+               'Remove-OCIFilestorageReplicationTarget', 
+               'Remove-OCIFilestorageSnapshot', 'Update-OCIFilestorageExport', 
+               'Update-OCIFilestorageExportSet', 'Update-OCIFilestorageFileSystem', 
+               'Update-OCIFilestorageMountTarget', 
+               'Update-OCIFilestorageReplication', 'Update-OCIFilestorageSnapshot'
 
 # Variables to export from this module
 VariablesToExport = '*'
