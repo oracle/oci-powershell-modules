@@ -15,9 +15,9 @@ using Oci.Common.Model;
 
 namespace Oci.OpsiService.Cmdlets
 {
-    [Cmdlet("Invoke", "OCIOpsiSummarizeHostInsightTopProcessesUsageTrend")]
-    [OutputType(new System.Type[] { typeof(Oci.OpsiService.Models.SummarizeHostInsightsTopProcessesUsageTrendCollection), typeof(Oci.OpsiService.Responses.SummarizeHostInsightTopProcessesUsageTrendResponse) })]
-    public class InvokeOCIOpsiSummarizeHostInsightTopProcessesUsageTrend : OCIOperationsInsightsCmdlet
+    [Cmdlet("Invoke", "OCIOpsiSummarizeHostInsightTopProcessesUsage")]
+    [OutputType(new System.Type[] { typeof(Oci.OpsiService.Models.SummarizeHostInsightsTopProcessesUsageCollection), typeof(Oci.OpsiService.Responses.SummarizeHostInsightTopProcessesUsageResponse) })]
+    public class InvokeOCIOpsiSummarizeHostInsightTopProcessesUsage : OCIOperationsInsightsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
@@ -28,8 +28,8 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Host top processes resource metric sort options. Supported values are CPU, MEMORY, VIIRTUAL_MEMORY.")]
         public string ResourceMetric { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specify time period in ISO 8601 format with respect to current time. Default is last 30 days represented by P30D. If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored. Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).")]
-        public string AnalysisTimeInterval { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Timestamp at which to gather the top processes. This will be top processes over the hour or over the day pending the time range passed into the query.")]
+        public System.Nullable<System.DateTime> Timestamp { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Analysis start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ). The minimum allowed value is 2 years prior to the current day. timeIntervalStart and timeIntervalEnd parameters are used together. If analysisTimeInterval is specified, this parameter is ignored.")]
         public System.Nullable<System.DateTime> TimeIntervalStart { get; set; }
@@ -46,40 +46,40 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specify time period in ISO 8601 format with respect to current time. Default is last 30 days represented by P30D. If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored. Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).")]
+        public string AnalysisTimeInterval { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST")]
         public System.Collections.Generic.List<string> HostType { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host (Compute Id)")]
         public string HostId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for a process.")]
-        public string ProcessHash { get; set; }
-
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            SummarizeHostInsightTopProcessesUsageTrendRequest request;
+            SummarizeHostInsightTopProcessesUsageRequest request;
 
             try
             {
-                request = new SummarizeHostInsightTopProcessesUsageTrendRequest
+                request = new SummarizeHostInsightTopProcessesUsageRequest
                 {
                     CompartmentId = CompartmentId,
                     Id = Id,
                     ResourceMetric = ResourceMetric,
-                    AnalysisTimeInterval = AnalysisTimeInterval,
+                    Timestamp = Timestamp,
                     TimeIntervalStart = TimeIntervalStart,
                     TimeIntervalEnd = TimeIntervalEnd,
                     Page = Page,
                     Limit = Limit,
                     OpcRequestId = OpcRequestId,
+                    AnalysisTimeInterval = AnalysisTimeInterval,
                     HostType = HostType,
-                    HostId = HostId,
-                    ProcessHash = ProcessHash
+                    HostId = HostId
                 };
 
-                response = client.SummarizeHostInsightTopProcessesUsageTrend(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.SummarizeHostInsightsTopProcessesUsageTrendCollection);
+                response = client.SummarizeHostInsightTopProcessesUsage(request).GetAwaiter().GetResult();
+                WriteOutput(response, response.SummarizeHostInsightsTopProcessesUsageCollection);
                 FinishProcessing(response);
             }
             catch (OciException ex)
@@ -98,6 +98,6 @@ namespace Oci.OpsiService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private SummarizeHostInsightTopProcessesUsageTrendResponse response;
+        private SummarizeHostInsightTopProcessesUsageResponse response;
     }
 }
