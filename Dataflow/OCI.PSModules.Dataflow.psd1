@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Dataflow.dll'
 
 # Version number of this module.
-ModuleVersion = '42.0.0'
+ModuleVersion = '43.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '42.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '43.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Dataflow.dll'
@@ -75,7 +75,8 @@ CmdletsToExport = 'Get-OCIDataflowApplication', 'Get-OCIDataflowApplicationsList
                'Get-OCIDataflowPrivateEndpoint', 
                'Get-OCIDataflowPrivateEndpointsList', 'Get-OCIDataflowRun', 
                'Get-OCIDataflowRunLog', 'Get-OCIDataflowRunLogsList', 
-               'Get-OCIDataflowRunsList', 'Get-OCIDataflowWorkRequest', 
+               'Get-OCIDataflowRunsList', 'Get-OCIDataflowStatement', 
+               'Get-OCIDataflowStatementsList', 'Get-OCIDataflowWorkRequest', 
                'Get-OCIDataflowWorkRequestErrorsList', 
                'Get-OCIDataflowWorkRequestLogsList', 
                'Get-OCIDataflowWorkRequestsList', 
@@ -83,9 +84,9 @@ CmdletsToExport = 'Get-OCIDataflowApplication', 'Get-OCIDataflowApplicationsList
                'Move-OCIDataflowPrivateEndpointCompartment', 
                'Move-OCIDataflowRunCompartment', 'New-OCIDataflowApplication', 
                'New-OCIDataflowPrivateEndpoint', 'New-OCIDataflowRun', 
-               'Remove-OCIDataflowApplication', 
+               'New-OCIDataflowStatement', 'Remove-OCIDataflowApplication', 
                'Remove-OCIDataflowPrivateEndpoint', 'Remove-OCIDataflowRun', 
-               'Update-OCIDataflowApplication', 
+               'Remove-OCIDataflowStatement', 'Update-OCIDataflowApplication', 
                'Update-OCIDataflowPrivateEndpoint', 'Update-OCIDataflowRun'
 
 # Variables to export from this module

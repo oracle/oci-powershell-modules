@@ -239,6 +239,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Cloudmigratio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Cloudbridge", "Cloudbridge\OCI.PSModules.Cloudbridge.csproj", "{33A6818B-F8D9-42A0-A6C6-427858284A81}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Disasterrecovery", "Disasterrecovery\OCI.PSModules.Disasterrecovery.csproj", "{683145DA-0B93-4681-B13B-9687841410CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1680,5 +1682,17 @@ Global
         {33A6818B-F8D9-42A0-A6C6-427858284A81}.Release|x64.Build.0 = Release|Any CPU
         {33A6818B-F8D9-42A0-A6C6-427858284A81}.Release|x86.ActiveCfg = Release|Any CPU
         {33A6818B-F8D9-42A0-A6C6-427858284A81}.Release|x86.Build.0 = Release|Any CPU
+        {683145DA-0B93-4681-B13B-9687841410CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {683145DA-0B93-4681-B13B-9687841410CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {683145DA-0B93-4681-B13B-9687841410CC}.Debug|x64.ActiveCfg = Debug|Any CPU
+        {683145DA-0B93-4681-B13B-9687841410CC}.Debug|x64.Build.0 = Debug|Any CPU
+        {683145DA-0B93-4681-B13B-9687841410CC}.Debug|x86.ActiveCfg = Debug|Any CPU
+        {683145DA-0B93-4681-B13B-9687841410CC}.Debug|x86.Build.0 = Debug|Any CPU
+        {683145DA-0B93-4681-B13B-9687841410CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {683145DA-0B93-4681-B13B-9687841410CC}.Release|Any CPU.Build.0 = Release|Any CPU
+        {683145DA-0B93-4681-B13B-9687841410CC}.Release|x64.ActiveCfg = Release|Any CPU
+        {683145DA-0B93-4681-B13B-9687841410CC}.Release|x64.Build.0 = Release|Any CPU
+        {683145DA-0B93-4681-B13B-9687841410CC}.Release|x86.ActiveCfg = Release|Any CPU
+        {683145DA-0B93-4681-B13B-9687841410CC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

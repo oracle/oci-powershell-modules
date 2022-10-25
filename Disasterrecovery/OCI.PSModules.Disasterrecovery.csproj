@@ -1,0 +1,23 @@
+<!-- Generated using OracleSDKGenerator, API Version: 20220125 -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>OCI.PSModules.Disasterrecovery</AssemblyName>
+    <PackageId>OCI.PSModules.Disasterrecovery</PackageId>
+    <Authors>Oracle Cloud Infrastructure</Authors>
+    <Company>Oracle</Company>
+    <LangVersion>8.0</LangVersion>
+    <PackageTags>Oracle;OCI;Cloud;oci-sdk;OracleCloudInfrastructure;Disasterrecovery</PackageTags>
+    <Description>Disasterrecovery Service</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OCI.DotNetSdk.Disasterrecovery" Version="$(SDKVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\OCI.PSModules.Common.csproj" />
+  </ItemGroup>
+
+</Project>

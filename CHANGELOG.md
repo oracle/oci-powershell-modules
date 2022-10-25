@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 43.0.0 - 2022-10-24
+### Added
+- Support for the Disaster Recovery service
+- Support for running code interactively with session applications using statements in the Data Flow service
+- Support for language custom models and language translation in the AI Language service
+ 
+### Breaking Changes
+- The type of property `Documents` was changed from a List of `TextClassificationDocument` to a List of `TextDocument` in the `Oci.AilanguageService.Models.BatchDetectLanguageTextClassificationDetails` model in the AI Language service in the .NET SDK
+- The type of property `Documents` was changed from a List of `SentimentsDocument` to a List of `TextDocument` in the `Oci.AilanguageService.Models.BatchDetectLanguageSentimentsDetails` model in the AI Language service in the .NET SDK
+- The type of property `Documents` was changed from a List of `KeyPhraseDocument` to a List of `TextDocument` in the `Oci.AilanguageService.Models.BatchDetectLanguageKeyPhrasesDetails` model in the AI Language service in the .NET SDK
+- The type of property `Documents` was changed from a List of `EntityDocument` to a List of `TextDocument` in the `Oci.AilanguageService.Models.BatchDetectLanguageEntitiesDetails` model in the AI Language service in the .NET SDK
+
 ## 42.0.0 - 2022-10-04
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the eu-dcc-milan-1 region
