@@ -21,8 +21,17 @@ namespace Oci.GoldengateService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.GoldengateService.Models.DeploymentCollection), typeof(Oci.GoldengateService.Responses.ListDeploymentsResponse) })]
     public class GetOCIGoldengateDeploymentsList : OCIGoldenGateCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The connection type which the deployment must support.")]
+        public System.Nullable<Oci.GoldengateService.Models.ConnectionType> SupportedConnectionType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the connection which for the deployment must be assigned.")]
+        public string AssignedConnectionId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.")]
+        public string AssignableConnectionId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the 'lifecycleState' given.")]
         public System.Nullable<Oci.GoldengateService.Models.LifecycleState> LifecycleState { get; set; }
@@ -64,6 +73,9 @@ namespace Oci.GoldengateService.Cmdlets
                 request = new ListDeploymentsRequest
                 {
                     CompartmentId = CompartmentId,
+                    SupportedConnectionType = SupportedConnectionType,
+                    AssignedConnectionId = AssignedConnectionId,
+                    AssignableConnectionId = AssignableConnectionId,
                     LifecycleState = LifecycleState,
                     LifecycleSubState = LifecycleSubState,
                     DisplayName = DisplayName,

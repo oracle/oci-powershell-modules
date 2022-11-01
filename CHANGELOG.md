@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 44.0.0 - 2022-11-01
+### Added
+- Support for cloning from a backup from the last available timestamp in the Database service
+- Support for third-party scanning using Qualys in the Vulnerability Scanning service
+- Support for customer-provided encryption keys in the Logging Analytics service
+- Support for connections for database resources in the GoldenGate service
+  
+### Breaking Changes
+- The enum `VendorEnum` was removed from the `Oci.VulnerabilityscanningService.Models.HostScanAgentConfiguration` model in the Vulnerability Scanning service in the .NET SDK
+
 ## 43.0.0 - 2022-10-24
 ### Added
 - Support for the Disaster Recovery service

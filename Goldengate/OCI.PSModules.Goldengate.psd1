@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Goldengate.dll'
 
 # Version number of this module.
-ModuleVersion = '43.0.0'
+ModuleVersion = '44.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '43.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '44.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Goldengate.dll'
@@ -71,11 +71,16 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Goldengate.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIGoldengateDatabaseRegistration', 
+CmdletsToExport = 'Get-OCIGoldengateConnection', 
+               'Get-OCIGoldengateConnectionAssignment', 
+               'Get-OCIGoldengateConnectionAssignmentsList', 
+               'Get-OCIGoldengateConnectionsList', 
+               'Get-OCIGoldengateDatabaseRegistration', 
                'Get-OCIGoldengateDatabaseRegistrationsList', 
                'Get-OCIGoldengateDeployment', 'Get-OCIGoldengateDeploymentBackup', 
                'Get-OCIGoldengateDeploymentBackupsList', 
                'Get-OCIGoldengateDeploymentsList', 
+               'Get-OCIGoldengateDeploymentTypesList', 
                'Get-OCIGoldengateDeploymentUpgrade', 
                'Get-OCIGoldengateDeploymentUpgradesList', 
                'Get-OCIGoldengateMessagesList', 'Get-OCIGoldengateTrailFilesList', 
@@ -85,17 +90,23 @@ CmdletsToExport = 'Get-OCIGoldengateDatabaseRegistration',
                'Get-OCIGoldengateWorkRequestLogsList', 
                'Get-OCIGoldengateWorkRequestsList', 
                'Invoke-OCIGoldengateUpgradeDeployment', 
+               'Move-OCIGoldengateConnectionCompartment', 
                'Move-OCIGoldengateDatabaseRegistrationCompartment', 
                'Move-OCIGoldengateDeploymentBackupCompartment', 
                'Move-OCIGoldengateDeploymentCompartment', 
+               'New-OCIGoldengateConnection', 
+               'New-OCIGoldengateConnectionAssignment', 
                'New-OCIGoldengateDatabaseRegistration', 
                'New-OCIGoldengateDeployment', 'New-OCIGoldengateDeploymentBackup', 
+               'Remove-OCIGoldengateConnection', 
+               'Remove-OCIGoldengateConnectionAssignment', 
                'Remove-OCIGoldengateDatabaseRegistration', 
                'Remove-OCIGoldengateDeployment', 
                'Remove-OCIGoldengateDeploymentBackup', 
                'Restore-OCIGoldengateDeployment', 'Start-OCIGoldengateDeployment', 
                'Stop-OCIGoldengateDeployment', 
                'Stop-OCIGoldengateDeploymentBackup', 
+               'Update-OCIGoldengateConnection', 
                'Update-OCIGoldengateDatabaseRegistration', 
                'Update-OCIGoldengateDeployment', 
                'Update-OCIGoldengateDeploymentBackup'

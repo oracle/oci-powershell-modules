@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Loganalytics.dll'
 
 # Version number of this module.
-ModuleVersion = '43.0.0'
+ModuleVersion = '44.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '43.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '44.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Loganalytics.dll'
@@ -97,6 +97,7 @@ CmdletsToExport = 'Add-OCILoganalyticsEntityAssociation',
                'Get-OCILoganalyticsConfigWorkRequestsList', 
                'Get-OCILoganalyticsEmBridge', 'Get-OCILoganalyticsEmBridgesList', 
                'Get-OCILoganalyticsEmBridgeSummary', 
+               'Get-OCILoganalyticsEncryptionKeyInfoList', 
                'Get-OCILoganalyticsEntitiesList', 
                'Get-OCILoganalyticsEntitiesSummary', 'Get-OCILoganalyticsEntity', 
                'Get-OCILoganalyticsEntityAssociationsList', 
@@ -158,6 +159,7 @@ CmdletsToExport = 'Add-OCILoganalyticsEntityAssociation',
                'Get-OCILoganalyticsWorkRequestsList', 
                'Import-OCILoganalyticsCustomContent', 
                'Invoke-OCILoganalyticsAppendLookupData', 
+               'Invoke-OCILoganalyticsAssignEncryptionKey', 
                'Invoke-OCILoganalyticsBatchGetBasicInfo', 
                'Invoke-OCILoganalyticsClean', 
                'Invoke-OCILoganalyticsCompareContent', 
