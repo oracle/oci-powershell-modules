@@ -94,6 +94,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A flag to search all resources within a given compartment and all sub-compartments.")]
         public System.Nullable<bool> CompartmentIdInSubtree { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of Exadata Insight VM cluster name.")]
+        public System.Collections.Generic.List<string> VmclusterName { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -127,7 +130,8 @@ namespace Oci.OpsiService.Cmdlets
                     FreeformTagEquals = FreeformTagEquals,
                     DefinedTagExists = DefinedTagExists,
                     FreeformTagExists = FreeformTagExists,
-                    CompartmentIdInSubtree = CompartmentIdInSubtree
+                    CompartmentIdInSubtree = CompartmentIdInSubtree,
+                    VmclusterName = VmclusterName
                 };
 
                 response = client.SummarizeDatabaseInsightResourceStatistics(request).GetAwaiter().GetResult();

@@ -22,6 +22,9 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.")]
         public string FleetId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Fleet-unique identifier of the related Java Runtime.")]
+        public string JreId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The vendor of the Java Runtime.")]
         public string JreVendor { get; set; }
 
@@ -77,6 +80,7 @@ namespace Oci.JmsService.Cmdlets
                 request = new SummarizeJreUsageRequest
                 {
                     FleetId = FleetId,
+                    JreId = JreId,
                     JreVendor = JreVendor,
                     JreDistribution = JreDistribution,
                     JreVersion = JreVersion,

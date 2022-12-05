@@ -75,6 +75,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A flag to search all resources within a given compartment and all sub-compartments.")]
         public System.Nullable<bool> CompartmentIdInSubtree { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of Exadata Insight VM cluster name.")]
+        public System.Collections.Generic.List<string> VmclusterName { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -104,7 +107,8 @@ namespace Oci.OpsiService.Cmdlets
                     FreeformTagEquals = FreeformTagEquals,
                     DefinedTagExists = DefinedTagExists,
                     FreeformTagExists = FreeformTagExists,
-                    CompartmentIdInSubtree = CompartmentIdInSubtree
+                    CompartmentIdInSubtree = CompartmentIdInSubtree,
+                    VmclusterName = VmclusterName
                 };
                 IEnumerable<ListDatabaseConfigurationsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

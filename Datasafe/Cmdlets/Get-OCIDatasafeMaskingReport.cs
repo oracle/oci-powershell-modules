@@ -12,18 +12,32 @@ using Oci.DatasafeService.Requests;
 using Oci.DatasafeService.Responses;
 using Oci.DatasafeService.Models;
 using Oci.Common.Model;
+using Oci.Common.Waiters;
 
 namespace Oci.DatasafeService.Cmdlets
 {
-    [Cmdlet("Get", "OCIDatasafeMaskingReport")]
+    [Cmdlet("Get", "OCIDatasafeMaskingReport", DefaultParameterSetName = Default)]
     [OutputType(new System.Type[] { typeof(Oci.DatasafeService.Models.MaskingReport), typeof(Oci.DatasafeService.Responses.GetMaskingReportResponse) })]
     public class GetOCIDatasafeMaskingReport : OCIDataSafeCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the masking report.")]
+        
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the masking report.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the masking report.", ParameterSetName = Default)]
         public string MaskingReportId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.", ParameterSetName = Default)]
         public string OpcRequestId { get; set; }
+
+        [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = LifecycleStateParamSet)]
+        public Oci.DatasafeService.Models.MaskingLifecycleState[] WaitForLifecycleState { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = @"Check every WaitIntervalSeconds to see whether the resource has reached a desired state.", ParameterSetName = LifecycleStateParamSet)]
+        public int WaitIntervalSeconds { get; set; } = WAIT_INTERVAL_SECONDS;
+
+        [Parameter(Mandatory = false, HelpMessage = @"Maximum number of attempts to be made until the resource reaches a desired state.", ParameterSetName = LifecycleStateParamSet)]
+        public int MaxWaitAttempts { get; set; } = MAX_WAITER_ATTEMPTS;
 
         protected override void ProcessRecord()
         {
@@ -38,8 +52,7 @@ namespace Oci.DatasafeService.Cmdlets
                     OpcRequestId = OpcRequestId
                 };
 
-                response = client.GetMaskingReport(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.MaskingReport);
+                HandleOutput(request);
                 FinishProcessing(response);
             }
             catch (OciException ex)
@@ -58,6 +71,29 @@ namespace Oci.DatasafeService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
+        private void HandleOutput(GetMaskingReportRequest request)
+        {
+            var waiterConfig = new WaiterConfiguration
+            {
+                MaxAttempts = MaxWaitAttempts,
+                GetNextDelayInSeconds = (_) => WaitIntervalSeconds
+            };
+
+            switch (ParameterSetName)
+            { 
+                case LifecycleStateParamSet:
+                    response = client.Waiters.ForMaskingReport(request, waiterConfig, WaitForLifecycleState).Execute();
+                    break;
+
+                case Default:
+                    response = client.GetMaskingReport(request).GetAwaiter().GetResult();
+                    break;
+            }
+            WriteOutput(response, response.MaskingReport);
+        }
+
         private GetMaskingReportResponse response;
+        private const string LifecycleStateParamSet = "LifecycleStateParamSet";
+        private const string Default = "Default";
     }
 }

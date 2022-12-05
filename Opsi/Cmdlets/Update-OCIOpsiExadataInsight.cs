@@ -22,7 +22,7 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Exadata insight identifier")]
         public string ExadataInsightId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The configuration to be updated. This parameter also accepts subtype <Oci.OpsiService.Models.UpdateEmManagedExternalExadataInsightDetails> of type <Oci.OpsiService.Models.UpdateExadataInsightDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The configuration to be updated. This parameter also accepts subtypes <Oci.OpsiService.Models.UpdatePeComanagedExadataInsightDetails>, <Oci.OpsiService.Models.UpdateEmManagedExternalExadataInsightDetails> of type <Oci.OpsiService.Models.UpdateExadataInsightDetails>.")]
         public UpdateExadataInsightDetails UpdateExadataInsightDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match` parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

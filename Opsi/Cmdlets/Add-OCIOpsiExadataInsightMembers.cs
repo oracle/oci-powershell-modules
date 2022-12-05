@@ -19,7 +19,7 @@ namespace Oci.OpsiService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OpsiService.Responses.AddExadataInsightMembersResponse) })]
     public class AddOCIOpsiExadataInsightMembers : OCIOperationsInsightsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the members (e.g. databases and hosts) of an Exadata system to be added in Operations Insights. This parameter also accepts subtype <Oci.OpsiService.Models.AddEmManagedExternalExadataInsightMembersDetails> of type <Oci.OpsiService.Models.AddExadataInsightMembersDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the members (e.g. databases and hosts) of an Exadata system to be added in Operations Insights. This parameter also accepts subtypes <Oci.OpsiService.Models.AddPeComanagedExadataInsightMembersDetails>, <Oci.OpsiService.Models.AddEmManagedExternalExadataInsightMembersDetails> of type <Oci.OpsiService.Models.AddExadataInsightMembersDetails>.")]
         public AddExadataInsightMembersDetails AddExadataInsightMembersDetails { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Exadata insight identifier")]

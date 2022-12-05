@@ -19,7 +19,7 @@ namespace Oci.OpsiService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OpsiService.Models.ExadataInsight), typeof(Oci.OpsiService.Responses.CreateExadataInsightResponse) })]
     public class NewOCIOpsiExadataInsight : OCIOperationsInsightsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the Exadata system for which an Exadata insight resource will be created in Operations Insights. This parameter also accepts subtype <Oci.OpsiService.Models.CreateEmManagedExternalExadataInsightDetails> of type <Oci.OpsiService.Models.CreateExadataInsightDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the Exadata system for which an Exadata insight resource will be created in Operations Insights. This parameter also accepts subtypes <Oci.OpsiService.Models.CreateEmManagedExternalExadataInsightDetails>, <Oci.OpsiService.Models.CreatePeComanagedExadataInsightDetails> of type <Oci.OpsiService.Models.CreateExadataInsightDetails>.")]
         public CreateExadataInsightDetails CreateExadataInsightDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request that can be retried in case of a timeout or server error without risk of executing the same action again. Retry tokens expire after 24 hours.

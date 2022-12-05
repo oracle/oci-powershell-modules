@@ -72,6 +72,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host (Compute Id)")]
         public string HostId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of Exadata Insight VM cluster name.")]
+        public System.Collections.Generic.List<string> VmclusterName { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -100,7 +103,8 @@ namespace Oci.OpsiService.Cmdlets
                     FreeformTagExists = FreeformTagExists,
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
                     HostType = HostType,
-                    HostId = HostId
+                    HostId = HostId,
+                    VmclusterName = VmclusterName
                 };
                 IEnumerable<ListHostConfigurationsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

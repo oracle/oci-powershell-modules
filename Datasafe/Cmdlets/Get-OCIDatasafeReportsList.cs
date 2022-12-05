@@ -54,6 +54,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only resources that match the specified lifecycle state.")]
         public System.Nullable<Oci.DatasafeService.Models.ReportLifecycleState> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only resources that match the specified type.")]
+        public System.Nullable<Oci.DatasafeService.Models.ReportType> Type { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -76,7 +79,8 @@ namespace Oci.DatasafeService.Cmdlets
                     SortBy = SortBy,
                     ReportDefinitionId = ReportDefinitionId,
                     OpcRequestId = OpcRequestId,
-                    LifecycleState = LifecycleState
+                    LifecycleState = LifecycleState,
+                    Type = Type
                 };
                 IEnumerable<ListReportsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
