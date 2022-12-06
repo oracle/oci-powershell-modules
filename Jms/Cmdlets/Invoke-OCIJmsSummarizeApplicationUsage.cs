@@ -76,6 +76,9 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter the list with displayName contains the given value.")]
         public string DisplayNameContains { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The library key.")]
+        public string LibraryKey { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -103,7 +106,8 @@ namespace Oci.JmsService.Cmdlets
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,
                     OsFamily = OsFamily,
-                    DisplayNameContains = DisplayNameContains
+                    DisplayNameContains = DisplayNameContains,
+                    LibraryKey = LibraryKey
                 };
 
                 response = client.SummarizeApplicationUsage(request).GetAwaiter().GetResult();

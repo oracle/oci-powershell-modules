@@ -19,7 +19,7 @@ namespace Oci.OpsiService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OpsiService.Responses.EnableExadataInsightResponse) })]
     public class EnableOCIOpsiExadataInsight : OCIOperationsInsightsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the Exadata system to be enabled in Operations Insights. This parameter also accepts subtype <Oci.OpsiService.Models.EnableEmManagedExternalExadataInsightDetails> of type <Oci.OpsiService.Models.EnableExadataInsightDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the Exadata system to be enabled in Operations Insights. This parameter also accepts subtypes <Oci.OpsiService.Models.EnablePeComanagedExadataInsightDetails>, <Oci.OpsiService.Models.EnableEmManagedExternalExadataInsightDetails> of type <Oci.OpsiService.Models.EnableExadataInsightDetails>.")]
         public EnableExadataInsightDetails EnableExadataInsightDetails { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Exadata insight identifier")]

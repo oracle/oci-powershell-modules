@@ -76,6 +76,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host (Compute Id)")]
         public string HostId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of Exadata Insight VM cluster name.")]
+        public System.Collections.Generic.List<string> VmclusterName { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -103,7 +106,8 @@ namespace Oci.OpsiService.Cmdlets
                     FreeformTagExists = FreeformTagExists,
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
                     HostType = HostType,
-                    HostId = HostId
+                    HostId = HostId,
+                    VmclusterName = VmclusterName
                 };
 
                 response = client.SummarizeHostInsightResourceUsageTrend(request).GetAwaiter().GetResult();

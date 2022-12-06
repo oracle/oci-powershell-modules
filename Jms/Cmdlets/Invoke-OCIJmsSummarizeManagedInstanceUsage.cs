@@ -73,6 +73,9 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter the list with hostname contains the given value.")]
         public string HostnameContains { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The library key.")]
+        public string LibraryKey { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -99,7 +102,8 @@ namespace Oci.JmsService.Cmdlets
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,
                     OsFamily = OsFamily,
-                    HostnameContains = HostnameContains
+                    HostnameContains = HostnameContains,
+                    LibraryKey = LibraryKey
                 };
 
                 response = client.SummarizeManagedInstanceUsage(request).GetAwaiter().GetResult();
