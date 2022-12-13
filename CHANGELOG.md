@@ -3,6 +3,33 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 47.0.0 - 2022-12-13
+### Added
+- Support for the Queue service
+- Support for Intel X9 shapes when launching VM database systems in the Database service
+- Support for enabling, disabling, and editing Database Management service connections on pluggable databases in the Database service
+- Support for availability configurations and maintenance window schedules on synthetic monitors in the Application Performance Monitoring service
+- Support for scheduling cascading deletes on a project in the DevOps service
+- Support for cancelling a scheduled cascading delete on a project in the DevOps service
+- Support for issue and action fields on job phases of validation and migration processes in the Database Migration service
+- Support for cluster profiles in the Big Data service
+- Support for egress-only services in the Service Mesh service
+- Support for optional listeners and service discovery metadata on virtual deployments in the Service Mesh service
+- Support for canceling work requests in the accepted state in the Service Mesh service
+- Support for filtering work requests on associated resource id and operation status in the Service Mesh service
+- Support for sorting while listing work requests, listing work request logs, and listing work request errors in the Service Mesh service
+- Support for Oracle Managed Access integration in the Fusion Apps as a Service service
+- Support for refresh scheduling in the Fusion Apps as a Service service
+- Support for additional connections types on database resources in the GoldenGate service
+ 
+### Breaking Changes
+- The `LifecycleState` parameter has changed type from `string` to `Oci.ServicemeshService.Models.AccessPolicy.LifecycleStateEnum` in the `Get-OCIServicemeshAccessPoliciesList`, `Get-OCIServicemeshIngressGatewayRouteTablesList` `Get-OCIServicemeshIngressGatewaysList`, `Get-OCIServicemeshMeshesList`, `Get-OCIServicemeshVirtualDeploymentsList`, `Get-OCIServicemeshVirtualServiceRouteTablesList`, and `Get-OCIServicemeshVirtualServicesList` cmdlets in the Service Mesh service
+- The type for property `RouteRules` was changed from a List of `Oci.ServicemeshService.Models.VirtualServiceTrafficRouteRule` to a List of `Oci.ServicemeshService.Models.VirtualServiceTrafficRouteRuleDetails` in the `Oci.ServicemeshService.Models.UpdateVirtualServiceRouteTableDetails` and `Oci.ServicemeshService.Models.CreateVirtualServiceRouteTableDetails` models in the Service Mesh service
+- The type for property `Mtls` was changed from `Oci.ServicemeshService.Models.CreateMutualTransportLayerSecurityDetails` to `Oci.ServicemeshService.Models.VirtualServiceMutualTransportLayerSecurityDetails` in the `Oci.ServicemeshService.Models.UpdateVirtualServiceDetails` and `Oci.ServicemeshService.Models.CreateVirtualServiceDetails` models in the Service Mesh service
+- The type for property `RouteRules` was changed from a List of `Oci.ServicemeshService.Models.IngressGatewayTrafficRouteRule` to a List of `Oci.ServicemeshService.Models.IngressGatewayTrafficRouteRuleDetails` in the `Oci.ServicemeshService.Models.UpdateIngressGatewayRouteTableDetails` and `Oci.ServicemeshService.Models.CreateIngressGatewayRouteTableDetails` models in the Service Mesh service
+- The type for property `Mtls` was changed from `Oci.ServicemeshService.Models.CreateIngressGatewayMutualTransportLayerSecurityDetails` to `Oci.ServicemeshService.Models.IngressGatewayMutualTransportLayerSecurityDetails` in the `Oci.ServicemeshService.Models.UpdateIngressGatewayDetails` and `Oci.ServicemeshService.Models.CreateIngressGatewayDetails` models in the Service Mesh service
+- The type for property `Rules` was changed from a List of `Oci.ServicemeshService.Models.AccessPolicyRule` to a List of `Oci.ServicemeshService.Models.AccessPolicyRuleDetails` in the `Oci.ServicemeshService.Models.UpdateAccessPolicyDetails` and `Oci.ServicemeshService.Models.CreateAccessPolicyDetails` models in the Service Mesh service
+
 ## 46.0.0 - 2022-12-06
 ### Added
 - Support for the Container Instances service

@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Devops.dll'
 
 # Version number of this module.
-ModuleVersion = '46.0.0'
+ModuleVersion = '47.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '46.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '47.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Devops.dll'
@@ -98,6 +98,7 @@ CmdletsToExport = 'Get-OCIDevopsAuthorsList', 'Get-OCIDevopsBuildPipeline',
                'Get-OCIDevopsWorkRequestLogsList', 'Get-OCIDevopsWorkRequestsList', 
                'Invoke-OCIDevopsApproveDeployment', 
                'Invoke-OCIDevopsMirrorRepository', 
+               'Invoke-OCIDevopsScheduleCascadingProjectDeletion', 
                'Move-OCIDevopsProjectCompartment', 'New-OCIDevopsBuildPipeline', 
                'New-OCIDevopsBuildPipelineStage', 'New-OCIDevopsBuildRun', 
                'New-OCIDevopsConnection', 'New-OCIDevopsDeployArtifact', 
@@ -112,6 +113,7 @@ CmdletsToExport = 'Get-OCIDevopsAuthorsList', 'Get-OCIDevopsBuildPipeline',
                'Remove-OCIDevopsProject', 'Remove-OCIDevopsRef', 
                'Remove-OCIDevopsRepository', 'Remove-OCIDevopsTrigger', 
                'Stop-OCIDevopsBuildRun', 'Stop-OCIDevopsDeployment', 
+               'Stop-OCIDevopsScheduledCascadingProjectDeletion', 
                'Update-OCIDevopsBuildPipeline', 
                'Update-OCIDevopsBuildPipelineStage', 'Update-OCIDevopsBuildRun', 
                'Update-OCIDevopsConnection', 'Update-OCIDevopsDeployArtifact', 

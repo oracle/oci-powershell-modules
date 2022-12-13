@@ -47,6 +47,12 @@ namespace Oci.ApmsyntheticsService.Cmdlets
 Example: `50`")]
         public string Page { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the monitors whose maintenance window is currently active.")]
+        public System.Nullable<bool> IsMaintenanceWindowActive { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the monitors whose maintenance window is set.")]
+        public System.Nullable<bool> IsMaintenanceWindowSet { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (`ASC`) or descending (`DESC`). Default sort order is ascending.")]
         public System.Nullable<Oci.ApmsyntheticsService.Models.SortOrders> SortOrder { get; set; }
 
@@ -76,6 +82,8 @@ Example: `50`")]
                     Status = Status,
                     Limit = Limit,
                     Page = Page,
+                    IsMaintenanceWindowActive = IsMaintenanceWindowActive,
+                    IsMaintenanceWindowSet = IsMaintenanceWindowSet,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId

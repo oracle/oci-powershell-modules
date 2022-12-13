@@ -245,6 +245,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Containerinst
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Aidocument", "Aidocument\OCI.PSModules.Aidocument.csproj", "{9D72DF25-0636-4D81-B117-CA1BB51B58DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Queue", "Queue\OCI.PSModules.Queue.csproj", "{B7C7BAA3-1DE3-4CAB-AF38-ED9CA5AFB47F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1722,5 +1724,17 @@ Global
         {9D72DF25-0636-4D81-B117-CA1BB51B58DB}.Release|x64.Build.0 = Release|Any CPU
         {9D72DF25-0636-4D81-B117-CA1BB51B58DB}.Release|x86.ActiveCfg = Release|Any CPU
         {9D72DF25-0636-4D81-B117-CA1BB51B58DB}.Release|x86.Build.0 = Release|Any CPU
+        {B7C7BAA3-1DE3-4CAB-AF38-ED9CA5AFB47F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {B7C7BAA3-1DE3-4CAB-AF38-ED9CA5AFB47F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {B7C7BAA3-1DE3-4CAB-AF38-ED9CA5AFB47F}.Debug|x64.ActiveCfg = Debug|Any CPU
+        {B7C7BAA3-1DE3-4CAB-AF38-ED9CA5AFB47F}.Debug|x64.Build.0 = Debug|Any CPU
+        {B7C7BAA3-1DE3-4CAB-AF38-ED9CA5AFB47F}.Debug|x86.ActiveCfg = Debug|Any CPU
+        {B7C7BAA3-1DE3-4CAB-AF38-ED9CA5AFB47F}.Debug|x86.Build.0 = Debug|Any CPU
+        {B7C7BAA3-1DE3-4CAB-AF38-ED9CA5AFB47F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {B7C7BAA3-1DE3-4CAB-AF38-ED9CA5AFB47F}.Release|Any CPU.Build.0 = Release|Any CPU
+        {B7C7BAA3-1DE3-4CAB-AF38-ED9CA5AFB47F}.Release|x64.ActiveCfg = Release|Any CPU
+        {B7C7BAA3-1DE3-4CAB-AF38-ED9CA5AFB47F}.Release|x64.Build.0 = Release|Any CPU
+        {B7C7BAA3-1DE3-4CAB-AF38-ED9CA5AFB47F}.Release|x86.ActiveCfg = Release|Any CPU
+        {B7C7BAA3-1DE3-4CAB-AF38-ED9CA5AFB47F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

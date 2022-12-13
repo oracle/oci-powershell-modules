@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '46.0.0'
+ModuleVersion = '47.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '46.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '47.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -87,7 +87,10 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Disable-OCIDatabaseExternalPluggableDatabaseDatabaseManagement', 
                'Disable-OCIDatabaseExternalPluggableDatabaseOperationsInsights', 
                'Disable-OCIDatabaseExternalPluggableDatabaseStackMonitoring', 
-               'Disable-OCIDatabaseManagement', 'Edit-OCIDatabaseManagement', 
+               'Disable-OCIDatabaseManagement', 
+               'Disable-OCIDatabasePluggableDatabaseManagement', 
+               'Edit-OCIDatabaseManagement', 
+               'Edit-OCIDatabasePluggableDatabaseManagement', 
                'Enable-OCIDatabaseAutonomousDatabaseManagement', 
                'Enable-OCIDatabaseAutonomousDatabaseOperationsInsights', 
                'Enable-OCIDatabaseExadataInfrastructure', 
@@ -99,7 +102,8 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Enable-OCIDatabaseExternalPluggableDatabaseDatabaseManagement', 
                'Enable-OCIDatabaseExternalPluggableDatabaseOperationsInsights', 
                'Enable-OCIDatabaseExternalPluggableDatabaseStackMonitoring', 
-               'Enable-OCIDatabaseManagement', 'Get-OCIDatabase', 
+               'Enable-OCIDatabaseManagement', 
+               'Enable-OCIDatabasePluggableDatabaseManagement', 'Get-OCIDatabase', 
                'Get-OCIDatabaseAutonomousContainerDatabase', 
                'Get-OCIDatabaseAutonomousContainerDatabaseDataguardAssociation', 
                'Get-OCIDatabaseAutonomousContainerDatabaseDataguardAssociationsList', 

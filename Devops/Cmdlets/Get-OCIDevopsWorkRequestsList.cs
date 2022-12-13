@@ -48,6 +48,9 @@ namespace Oci.DevopsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order can be provided. Default sort order is descending and is based on the timeAccepted field.")]
         public System.Nullable<Oci.DevopsService.Requests.ListWorkRequestsRequest.SortByEnum> SortBy { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources where their Operation Types matches the parameter operation types")]
+        public System.Collections.Generic.List<string> OperationTypeMultiValueQuery { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -68,7 +71,8 @@ namespace Oci.DevopsService.Cmdlets
                     Page = Page,
                     Limit = Limit,
                     SortOrder = SortOrder,
-                    SortBy = SortBy
+                    SortBy = SortBy,
+                    OperationTypeMultiValueQuery = OperationTypeMultiValueQuery
                 };
                 IEnumerable<ListWorkRequestsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
