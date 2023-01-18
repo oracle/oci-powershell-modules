@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Datascience.dll'
 
 # Version number of this module.
-ModuleVersion = '47.0.0'
+ModuleVersion = '47.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '47.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '47.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Datascience.dll'
@@ -84,6 +84,8 @@ CmdletsToExport = 'Enable-OCIDatascienceModel',
                'Get-OCIDatascienceModelDeploymentShapesList', 
                'Get-OCIDatascienceModelDeploymentsList', 
                'Get-OCIDatascienceModelProvenance', 'Get-OCIDatascienceModelsList', 
+               'Get-OCIDatascienceModelVersionSet', 
+               'Get-OCIDatascienceModelVersionSetsList', 
                'Get-OCIDatascienceNotebookSession', 
                'Get-OCIDatascienceNotebookSessionShapesList', 
                'Get-OCIDatascienceNotebookSessionsList', 
@@ -102,22 +104,26 @@ CmdletsToExport = 'Enable-OCIDatascienceModel',
                'Move-OCIDatascienceJobRunCompartment', 
                'Move-OCIDatascienceModelCompartment', 
                'Move-OCIDatascienceModelDeploymentCompartment', 
+               'Move-OCIDatascienceModelVersionSetCompartment', 
                'Move-OCIDatascienceNotebookSessionCompartment', 
                'Move-OCIDatascienceProjectCompartment', 'New-OCIDatascienceJob', 
                'New-OCIDatascienceJobArtifact', 'New-OCIDatascienceJobRun', 
                'New-OCIDatascienceModel', 'New-OCIDatascienceModelArtifact', 
                'New-OCIDatascienceModelDeployment', 
                'New-OCIDatascienceModelProvenance', 
+               'New-OCIDatascienceModelVersionSet', 
                'New-OCIDatascienceNotebookSession', 'New-OCIDatascienceProject', 
                'Remove-OCIDatascienceJob', 'Remove-OCIDatascienceJobRun', 
                'Remove-OCIDatascienceModel', 
                'Remove-OCIDatascienceModelDeployment', 
+               'Remove-OCIDatascienceModelVersionSet', 
                'Remove-OCIDatascienceNotebookSession', 
                'Remove-OCIDatascienceProject', 'Stop-OCIDatascienceJobRun', 
                'Stop-OCIDatascienceWorkRequest', 'Update-OCIDatascienceJob', 
                'Update-OCIDatascienceJobRun', 'Update-OCIDatascienceModel', 
                'Update-OCIDatascienceModelDeployment', 
                'Update-OCIDatascienceModelProvenance', 
+               'Update-OCIDatascienceModelVersionSet', 
                'Update-OCIDatascienceNotebookSession', 
                'Update-OCIDatascienceProject'
 
