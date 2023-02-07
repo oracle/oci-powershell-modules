@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Opsi.dll'
 
 # Version number of this module.
-ModuleVersion = '47.3.0'
+ModuleVersion = '48.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '47.3.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '48.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Opsi.dll'
@@ -79,7 +79,8 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Get-OCIOpsiAwrDatabaseSnapshotsList', 
                'Get-OCIOpsiAwrDatabaseSqlReport', 'Get-OCIOpsiAwrHub', 
                'Get-OCIOpsiAwrHubsList', 'Get-OCIOpsiAwrReport', 
-               'Get-OCIOpsiAwrSnapshotsList', 
+               'Get-OCIOpsiAwrSnapshotsList', 'Get-OCIOpsiConfiguration', 
+               'Get-OCIOpsiConfigurationsList', 
                'Get-OCIOpsiDatabaseConfigurationsList', 
                'Get-OCIOpsiDatabaseInsight', 'Get-OCIOpsiDatabaseInsightsList', 
                'Get-OCIOpsiDataObject', 'Get-OCIOpsiDataObjectsList', 
@@ -121,6 +122,7 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Invoke-OCIOpsiSummarizeAwrDatabaseWaitEventBuckets', 
                'Invoke-OCIOpsiSummarizeAwrDatabaseWaitEvents', 
                'Invoke-OCIOpsiSummarizeAwrSourcesSummaries', 
+               'Invoke-OCIOpsiSummarizeConfigurationItems', 
                'Invoke-OCIOpsiSummarizeDatabaseInsightResourceCapacityTrend', 
                'Invoke-OCIOpsiSummarizeDatabaseInsightResourceForecastTrend', 
                'Invoke-OCIOpsiSummarizeDatabaseInsightResourceStatistics', 
@@ -152,24 +154,28 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Invoke-OCIOpsiSummarizeSqlStatistics', 
                'Invoke-OCIOpsiSummarizeSqlStatisticsTimeSeries', 
                'Invoke-OCIOpsiSummarizeSqlStatisticsTimeSeriesByPlan', 
+               'Move-OCIOpsiConfigurationCompartment', 
                'Move-OCIOpsiDatabaseInsightCompartment', 
                'Move-OCIOpsiEnterpriseManagerBridgeCompartment', 
                'Move-OCIOpsiExadataInsightCompartment', 
                'Move-OCIOpsiHostInsightCompartment', 
                'Move-OCIOpsiOperationsInsightsPrivateEndpointCompartment', 
                'Move-OCIOpsiPeComanagedDatabaseInsight', 'New-OCIOpsiAwrHub', 
-               'New-OCIOpsiDatabaseInsight', 'New-OCIOpsiEnterpriseManagerBridge', 
-               'New-OCIOpsiExadataInsight', 'New-OCIOpsiHostInsight', 
+               'New-OCIOpsiConfiguration', 'New-OCIOpsiDatabaseInsight', 
+               'New-OCIOpsiEnterpriseManagerBridge', 'New-OCIOpsiExadataInsight', 
+               'New-OCIOpsiHostInsight', 
                'New-OCIOpsiOperationsInsightsPrivateEndpoint', 
                'New-OCIOpsiOperationsInsightsWarehouse', 
                'New-OCIOpsiOperationsInsightsWarehouseUser', 
-               'Remove-OCIOpsiAwrHub', 'Remove-OCIOpsiDatabaseInsight', 
+               'Remove-OCIOpsiAwrHub', 'Remove-OCIOpsiConfiguration', 
+               'Remove-OCIOpsiDatabaseInsight', 
                'Remove-OCIOpsiEnterpriseManagerBridge', 
                'Remove-OCIOpsiExadataInsight', 'Remove-OCIOpsiHostInsight', 
                'Remove-OCIOpsiOperationsInsightsPrivateEndpoint', 
                'Remove-OCIOpsiOperationsInsightsWarehouse', 
                'Remove-OCIOpsiOperationsInsightsWarehouseUser', 
-               'Update-OCIOpsiAwrHub', 'Update-OCIOpsiDatabaseInsight', 
+               'Update-OCIOpsiAwrHub', 'Update-OCIOpsiConfiguration', 
+               'Update-OCIOpsiDatabaseInsight', 
                'Update-OCIOpsiEnterpriseManagerBridge', 
                'Update-OCIOpsiExadataInsight', 'Update-OCIOpsiHostInsight', 
                'Update-OCIOpsiOperationsInsightsPrivateEndpoint', 
