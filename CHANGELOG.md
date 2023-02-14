@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 48.1.0 - 2023-02-14
+### Added
+- Support for the Visual Builder Studio service
+- Support for the Autonomous Recovery service
+- Support for retries by default on operations of the Compute service
+- Support for selecting specific database servers when creating autonomous VM clusters in the Database service
+- Support for creating autonomous VMs during the creation of autonomous VM clusters in the Database service
+
 ## 48.0.0 - 2023-02-07
 ### Added
 - Support for changing Data Guard role of a database instance within the Database service
