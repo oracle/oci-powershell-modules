@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 49.0.0 - 2023-02-21
+### Added
+- Support for async jobs in the AI Anomaly Detection service
+- Support for specifying algorithm hints and windows sizes during model training in the AI Anomaly Detection service
+- Support for specifying a sensitivity value during model detection in the AI Anomaly Detection service
+- Support for discovery and monitoring of external Oracle database infrastructure components in the Database Management service
+ 
+### Breaking Changes
+- The type for property `SystemTags` was changed from a dictionary of string to another dictionary to a dictionary of a string to object for `ProjectSummary`, `Project`, `ModelSummary`, `Model`, `DataAssetSummary`, `DataAsset`, `AiPrivateEndpointSummary`, `AiPrivateEndpoint` models in the AI Anomaly Detection service
+
 ## 48.1.0 - 2023-02-14
 ### Added
 - Support for the Visual Builder Studio service
