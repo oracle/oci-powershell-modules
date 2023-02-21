@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Aianomalydetection.dll'
 
 # Version number of this module.
-ModuleVersion = '48.1.0'
+ModuleVersion = '49.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '48.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '49.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Aianomalydetection.dll'
@@ -75,6 +75,8 @@ CmdletsToExport = 'Get-OCIAianomalydetectionAiPrivateEndpoint',
                'Get-OCIAianomalydetectionAiPrivateEndpointsList', 
                'Get-OCIAianomalydetectionDataAsset', 
                'Get-OCIAianomalydetectionDataAssetsList', 
+               'Get-OCIAianomalydetectionDetectAnomalyJob', 
+               'Get-OCIAianomalydetectionDetectAnomalyJobsList', 
                'Get-OCIAianomalydetectionModel', 
                'Get-OCIAianomalydetectionModelsList', 
                'Get-OCIAianomalydetectionProject', 
@@ -86,19 +88,23 @@ CmdletsToExport = 'Get-OCIAianomalydetectionAiPrivateEndpoint',
                'Invoke-OCIAianomalydetectionDetectAnomalies', 
                'Move-OCIAianomalydetectionAiPrivateEndpointCompartment', 
                'Move-OCIAianomalydetectionDataAssetCompartment', 
+               'Move-OCIAianomalydetectionDetectAnomalyJobCompartment', 
                'Move-OCIAianomalydetectionModelCompartment', 
                'Move-OCIAianomalydetectionProjectCompartment', 
                'New-OCIAianomalydetectionAiPrivateEndpoint', 
                'New-OCIAianomalydetectionDataAsset', 
+               'New-OCIAianomalydetectionDetectAnomalyJob', 
                'New-OCIAianomalydetectionModel', 
                'New-OCIAianomalydetectionProject', 
                'Remove-OCIAianomalydetectionAiPrivateEndpoint', 
                'Remove-OCIAianomalydetectionDataAsset', 
+               'Remove-OCIAianomalydetectionDetectAnomalyJob', 
                'Remove-OCIAianomalydetectionModel', 
                'Remove-OCIAianomalydetectionProject', 
                'Stop-OCIAianomalydetectionWorkRequest', 
                'Update-OCIAianomalydetectionAiPrivateEndpoint', 
                'Update-OCIAianomalydetectionDataAsset', 
+               'Update-OCIAianomalydetectionDetectAnomalyJob', 
                'Update-OCIAianomalydetectionModel', 
                'Update-OCIAianomalydetectionProject'
 
