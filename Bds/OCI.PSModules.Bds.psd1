@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Bds.dll'
 
 # Version number of this module.
-ModuleVersion = '49.0.0'
+ModuleVersion = '49.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '49.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '49.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Bds.dll'
@@ -80,7 +80,8 @@ CmdletsToExport = 'Add-OCIBdsAutoScalingConfiguration', 'Add-OCIBdsBlockStorage'
                'Get-OCIBdsMetastoreConfigurationsList', 'Get-OCIBdsPatchesList', 
                'Get-OCIBdsPatchHistoriesList', 'Get-OCIBdsWorkRequest', 
                'Get-OCIBdsWorkRequestErrorsList', 'Get-OCIBdsWorkRequestLogsList', 
-               'Get-OCIBdsWorkRequestsList', 'Invoke-OCIBdsInstallPatch', 
+               'Get-OCIBdsWorkRequestsList', 'Invoke-OCIBdsExecuteBootstrapScript', 
+               'Invoke-OCIBdsInstallPatch', 
                'Invoke-OCIBdsTestBdsMetastoreConfiguration', 
                'Invoke-OCIBdsTestBdsObjectStorageConnection', 
                'Move-OCIBdsInstanceCompartment', 'Move-OCIBdsShape', 
