@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Opsi.dll'
 
 # Version number of this module.
-ModuleVersion = '49.1.0'
+ModuleVersion = '50.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '49.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '50.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Opsi.dll'
@@ -72,10 +72,13 @@ FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers', 
+               'Disable-OCIOpsiAutonomousDatabaseInsightAdvancedFeatures', 
                'Disable-OCIOpsiDatabaseInsight', 'Disable-OCIOpsiExadataInsight', 
-               'Disable-OCIOpsiHostInsight', 'Enable-OCIOpsiDatabaseInsight', 
-               'Enable-OCIOpsiExadataInsight', 'Enable-OCIOpsiHostInsight', 
-               'Get-OCIOpsiAwrDatabaseReport', 'Get-OCIOpsiAwrDatabasesList', 
+               'Disable-OCIOpsiHostInsight', 
+               'Enable-OCIOpsiAutonomousDatabaseInsightAdvancedFeatures', 
+               'Enable-OCIOpsiDatabaseInsight', 'Enable-OCIOpsiExadataInsight', 
+               'Enable-OCIOpsiHostInsight', 'Get-OCIOpsiAwrDatabaseReport', 
+               'Get-OCIOpsiAwrDatabasesList', 
                'Get-OCIOpsiAwrDatabaseSnapshotsList', 
                'Get-OCIOpsiAwrDatabaseSqlReport', 'Get-OCIOpsiAwrHub', 
                'Get-OCIOpsiAwrHubsList', 'Get-OCIOpsiAwrReport', 
@@ -154,6 +157,7 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Invoke-OCIOpsiSummarizeSqlStatistics', 
                'Invoke-OCIOpsiSummarizeSqlStatisticsTimeSeries', 
                'Invoke-OCIOpsiSummarizeSqlStatisticsTimeSeriesByPlan', 
+               'Move-OCIOpsiAutonomousDatabaseInsightAdvancedFeatures', 
                'Move-OCIOpsiConfigurationCompartment', 
                'Move-OCIOpsiDatabaseInsightCompartment', 
                'Move-OCIOpsiEnterpriseManagerBridgeCompartment', 
