@@ -97,6 +97,12 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of Exadata Insight VM cluster name.")]
         public System.Collections.Generic.List<string> VmclusterName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Percent value in which a resource metric is considered highly utilized.")]
+        public System.Nullable<int> HighUtilizationThreshold { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Percent value in which a resource metric is considered low utilized.")]
+        public System.Nullable<int> LowUtilizationThreshold { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -131,7 +137,9 @@ namespace Oci.OpsiService.Cmdlets
                     DefinedTagExists = DefinedTagExists,
                     FreeformTagExists = FreeformTagExists,
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
-                    VmclusterName = VmclusterName
+                    VmclusterName = VmclusterName,
+                    HighUtilizationThreshold = HighUtilizationThreshold,
+                    LowUtilizationThreshold = LowUtilizationThreshold
                 };
 
                 response = client.SummarizeDatabaseInsightResourceStatistics(request).GetAwaiter().GetResult();

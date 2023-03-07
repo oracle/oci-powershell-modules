@@ -51,6 +51,9 @@ namespace Oci.ManagementagentService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.")]
         public System.Nullable<Oci.ManagementagentService.Models.InstallTypes> InstallType { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter to return only results having the particular gatewayId.")]
+        public System.Collections.Generic.List<string> GatewayId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -94,6 +97,7 @@ namespace Oci.ManagementagentService.Cmdlets
                     PlatformType = PlatformType,
                     IsCustomerDeployed = IsCustomerDeployed,
                     InstallType = InstallType,
+                    GatewayId = GatewayId,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,
