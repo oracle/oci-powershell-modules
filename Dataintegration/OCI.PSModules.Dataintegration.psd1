@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Dataintegration.dll'
 
 # Version number of this module.
-ModuleVersion = '50.0.0'
+ModuleVersion = '51.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '50.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '51.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Dataintegration.dll'
@@ -72,11 +72,14 @@ FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Get-OCIDataintegrationApplication', 
+               'Get-OCIDataintegrationApplicationDetailedDescription', 
                'Get-OCIDataintegrationApplicationsList', 
                'Get-OCIDataintegrationConnection', 
                'Get-OCIDataintegrationConnectionsList', 
                'Get-OCIDataintegrationConnectionValidation', 
                'Get-OCIDataintegrationConnectionValidationsList', 
+               'Get-OCIDataintegrationCopyObjectRequest', 
+               'Get-OCIDataintegrationCopyObjectRequestsList', 
                'Get-OCIDataintegrationCountStatistic', 
                'Get-OCIDataintegrationDataAsset', 
                'Get-OCIDataintegrationDataAssetsList', 
@@ -89,6 +92,7 @@ CmdletsToExport = 'Get-OCIDataintegrationApplication',
                'Get-OCIDataintegrationDependentObject', 
                'Get-OCIDataintegrationDependentObjectsList', 
                'Get-OCIDataintegrationDisApplication', 
+               'Get-OCIDataintegrationDisApplicationDetailedDescription', 
                'Get-OCIDataintegrationDisApplicationsList', 
                'Get-OCIDataintegrationDisApplicationTaskRunLineagesList', 
                'Get-OCIDataintegrationExternalPublication', 
@@ -127,6 +131,8 @@ CmdletsToExport = 'Get-OCIDataintegrationApplication',
                'Get-OCIDataintegrationTasksList', 
                'Get-OCIDataintegrationTaskValidation', 
                'Get-OCIDataintegrationTaskValidationsList', 
+               'Get-OCIDataintegrationTemplate', 
+               'Get-OCIDataintegrationTemplatesList', 
                'Get-OCIDataintegrationUserDefinedFunction', 
                'Get-OCIDataintegrationUserDefinedFunctionsList', 
                'Get-OCIDataintegrationUserDefinedFunctionValidation', 
@@ -140,11 +146,14 @@ CmdletsToExport = 'Get-OCIDataintegrationApplication',
                'Move-OCIDataintegrationCompartment', 
                'Move-OCIDataintegrationDisApplicationCompartment', 
                'New-OCIDataintegrationApplication', 
+               'New-OCIDataintegrationApplicationDetailedDescription', 
                'New-OCIDataintegrationConnection', 
                'New-OCIDataintegrationConnectionValidation', 
+               'New-OCIDataintegrationCopyObjectRequest', 
                'New-OCIDataintegrationDataAsset', 'New-OCIDataintegrationDataFlow', 
                'New-OCIDataintegrationDataFlowValidation', 
                'New-OCIDataintegrationDisApplication', 
+               'New-OCIDataintegrationDisApplicationDetailedDescription', 
                'New-OCIDataintegrationEntityShape', 
                'New-OCIDataintegrationExternalPublication', 
                'New-OCIDataintegrationExternalPublicationValidation', 
@@ -160,12 +169,15 @@ CmdletsToExport = 'Get-OCIDataintegrationApplication',
                'New-OCIDataintegrationUserDefinedFunctionValidation', 
                'New-OCIDataintegrationWorkspace', 
                'Remove-OCIDataintegrationApplication', 
+               'Remove-OCIDataintegrationApplicationDetailedDescription', 
                'Remove-OCIDataintegrationConnection', 
                'Remove-OCIDataintegrationConnectionValidation', 
+               'Remove-OCIDataintegrationCopyObjectRequest', 
                'Remove-OCIDataintegrationDataAsset', 
                'Remove-OCIDataintegrationDataFlow', 
                'Remove-OCIDataintegrationDataFlowValidation', 
                'Remove-OCIDataintegrationDisApplication', 
+               'Remove-OCIDataintegrationDisApplicationDetailedDescription', 
                'Remove-OCIDataintegrationExternalPublication', 
                'Remove-OCIDataintegrationExternalPublicationValidation', 
                'Remove-OCIDataintegrationFolder', 
@@ -184,10 +196,13 @@ CmdletsToExport = 'Get-OCIDataintegrationApplication',
                'Start-OCIDataintegrationWorkspace', 
                'Stop-OCIDataintegrationWorkspace', 
                'Update-OCIDataintegrationApplication', 
+               'Update-OCIDataintegrationApplicationDetailedDescription', 
                'Update-OCIDataintegrationConnection', 
+               'Update-OCIDataintegrationCopyObjectRequest', 
                'Update-OCIDataintegrationDataAsset', 
                'Update-OCIDataintegrationDataFlow', 
                'Update-OCIDataintegrationDisApplication', 
+               'Update-OCIDataintegrationDisApplicationDetailedDescription', 
                'Update-OCIDataintegrationExternalPublication', 
                'Update-OCIDataintegrationFolder', 
                'Update-OCIDataintegrationFunctionLibrary', 

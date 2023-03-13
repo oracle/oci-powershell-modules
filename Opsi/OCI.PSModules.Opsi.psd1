@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Opsi.dll'
 
 # Version number of this module.
-ModuleVersion = '50.0.0'
+ModuleVersion = '51.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '50.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '51.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Opsi.dll'
@@ -142,12 +142,14 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Invoke-OCIOpsiSummarizeExadataInsightResourceUsageAggregated', 
                'Invoke-OCIOpsiSummarizeExadataInsightResourceUtilizationInsight', 
                'Invoke-OCIOpsiSummarizeExadataMembers', 
+               'Invoke-OCIOpsiSummarizeHostInsightNetworkUsageTrend', 
                'Invoke-OCIOpsiSummarizeHostInsightResourceCapacityTrend', 
                'Invoke-OCIOpsiSummarizeHostInsightResourceForecastTrend', 
                'Invoke-OCIOpsiSummarizeHostInsightResourceStatistics', 
                'Invoke-OCIOpsiSummarizeHostInsightResourceUsage', 
                'Invoke-OCIOpsiSummarizeHostInsightResourceUsageTrend', 
                'Invoke-OCIOpsiSummarizeHostInsightResourceUtilizationInsight', 
+               'Invoke-OCIOpsiSummarizeHostInsightStorageUsageTrend', 
                'Invoke-OCIOpsiSummarizeHostInsightTopProcessesUsage', 
                'Invoke-OCIOpsiSummarizeHostInsightTopProcessesUsageTrend', 
                'Invoke-OCIOpsiSummarizeOperationsInsightsWarehouseResourceUsage', 

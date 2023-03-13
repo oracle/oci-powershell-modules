@@ -47,6 +47,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given. The match is not case sensitive.")]
         public string DisplayName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only backups that matches with the given type of Backup.")]
+        public string Type { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
@@ -70,6 +73,7 @@ namespace Oci.DatabaseService.Cmdlets
                     SortOrder = SortOrder,
                     LifecycleState = LifecycleState,
                     DisplayName = DisplayName,
+                    Type = Type,
                     OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListAutonomousDatabaseBackupsResponse> responses = GetRequestDelegate().Invoke(request);

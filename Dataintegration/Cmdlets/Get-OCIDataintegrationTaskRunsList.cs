@@ -63,6 +63,9 @@ namespace Oci.DataintegrationService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This parameter can be used to filter objects by the names starting with the given value.")]
         public string NameStartsWith { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This parameter can be used to filter objects by the names that match partially or fully with the given value.")]
+        public string NameContains { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -88,7 +91,8 @@ namespace Oci.DataintegrationService.Cmdlets
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     Filter = Filter,
-                    NameStartsWith = NameStartsWith
+                    NameStartsWith = NameStartsWith,
+                    NameContains = NameContains
                 };
                 IEnumerable<ListTaskRunsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
