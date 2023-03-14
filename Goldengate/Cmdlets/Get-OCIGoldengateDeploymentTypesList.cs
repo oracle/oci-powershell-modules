@@ -24,6 +24,12 @@ namespace Oci.GoldengateService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.")]
+        public System.Nullable<Oci.GoldengateService.Models.DeploymentType> DeploymentType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Allows to query by a specific GoldenGate version.")]
+        public string OggVersion { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the entire 'displayName' given.")]
         public string DisplayName { get; set; }
 
@@ -55,6 +61,8 @@ namespace Oci.GoldengateService.Cmdlets
                 request = new ListDeploymentTypesRequest
                 {
                     CompartmentId = CompartmentId,
+                    DeploymentType = DeploymentType,
+                    OggVersion = OggVersion,
                     DisplayName = DisplayName,
                     OpcRequestId = OpcRequestId,
                     Limit = Limit,

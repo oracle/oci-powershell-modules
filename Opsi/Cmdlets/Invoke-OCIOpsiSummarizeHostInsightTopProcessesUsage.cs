@@ -55,6 +55,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host (Compute Id)")]
         public string HostId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Choose the type of statistic metric data to be used for forecasting.")]
+        public System.Nullable<Oci.OpsiService.Requests.SummarizeHostInsightTopProcessesUsageRequest.StatisticEnum> Statistic { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -75,7 +78,8 @@ namespace Oci.OpsiService.Cmdlets
                     OpcRequestId = OpcRequestId,
                     AnalysisTimeInterval = AnalysisTimeInterval,
                     HostType = HostType,
-                    HostId = HostId
+                    HostId = HostId,
+                    Statistic = Statistic
                 };
 
                 response = client.SummarizeHostInsightTopProcessesUsage(request).GetAwaiter().GetResult();

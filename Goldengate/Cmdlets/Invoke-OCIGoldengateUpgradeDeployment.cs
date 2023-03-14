@@ -22,7 +22,7 @@ namespace Oci.GoldengateService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique Deployment identifier.")]
         public string DeploymentId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A placeholder for any additional metadata to describe the deployment upgrade. This parameter also accepts subtype <Oci.GoldengateService.Models.UpgradeDeploymentCurrentReleaseDetails> of type <Oci.GoldengateService.Models.UpgradeDeploymentDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A placeholder for any additional metadata to describe the deployment upgrade. This parameter also accepts subtypes <Oci.GoldengateService.Models.UpgradeDeploymentSpecificReleaseDetails>, <Oci.GoldengateService.Models.UpgradeDeploymentCurrentReleaseDetails> of type <Oci.GoldengateService.Models.UpgradeDeploymentDetails>.")]
         public UpgradeDeploymentDetails UpgradeDeploymentDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.")]

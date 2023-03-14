@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Goldengate.dll'
 
 # Version number of this module.
-ModuleVersion = '50.0.0'
+ModuleVersion = '51.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '50.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '51.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Goldengate.dll'
@@ -84,6 +84,7 @@ CmdletsToExport = 'Export-OCIGoldengateDeploymentWallet',
                'Get-OCIGoldengateDeploymentTypesList', 
                'Get-OCIGoldengateDeploymentUpgrade', 
                'Get-OCIGoldengateDeploymentUpgradesList', 
+               'Get-OCIGoldengateDeploymentVersionsList', 
                'Get-OCIGoldengateDeploymentWalletsOperationsList', 
                'Get-OCIGoldengateMessagesList', 'Get-OCIGoldengateTrailFilesList', 
                'Get-OCIGoldengateTrailSequencesList', 
@@ -94,7 +95,10 @@ CmdletsToExport = 'Export-OCIGoldengateDeploymentWallet',
                'Import-OCIGoldengateDeploymentWallet', 
                'Invoke-OCIGoldengateCollectDeploymentDiagnostic', 
                'Invoke-OCIGoldengateDeploymentWalletExists', 
+               'Invoke-OCIGoldengateRollbackDeploymentUpgrade', 
+               'Invoke-OCIGoldengateSnoozeDeploymentUpgrade', 
                'Invoke-OCIGoldengateUpgradeDeployment', 
+               'Invoke-OCIGoldengateUpgradeDeploymentUpgrade', 
                'Move-OCIGoldengateConnectionCompartment', 
                'Move-OCIGoldengateDatabaseRegistrationCompartment', 
                'Move-OCIGoldengateDeploymentBackupCompartment', 
@@ -111,6 +115,7 @@ CmdletsToExport = 'Export-OCIGoldengateDeploymentWallet',
                'Restore-OCIGoldengateDeployment', 'Start-OCIGoldengateDeployment', 
                'Stop-OCIGoldengateDeployment', 
                'Stop-OCIGoldengateDeploymentBackup', 
+               'Stop-OCIGoldengateSnoozeDeploymentUpgrade', 
                'Update-OCIGoldengateConnection', 
                'Update-OCIGoldengateDatabaseRegistration', 
                'Update-OCIGoldengateDeployment', 

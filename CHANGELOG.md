@@ -3,6 +3,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 51.0.0 - 2023-03-14
+### Added
+- Support for the Identity Domains service
+- Support for long-term backups for autonomous databases on Exadata Cloud at Customer in the Database service
+- Support for database OS patching in the Database service
+- Support for managing enhanced clusters, cluster add-ons, and serverless virtual node pools in the Container Engine for Kubernetes service
+- Support for templates and copy object requests in the Data Integration service
+- Support for maintenance features in the GoldenGate service
+- Support for `AMD_MILAN_BM_GPU` configuration type on instances in the Compute service
+- Support for host storage metrics and network metrics as part of host capacity planning in the Operations Insights service
+ 
+### Breaking Changes
+- Support for the Data Connectivity Management service was removed
+- The `TemplateSummary` response model in the Data Integration service now contains `UnknownEnumValue` enum with value `null` for `LifecycleState` if the service returns a `LifecycleState` enum value that not present in the SDK version being used
+
 ## 50.0.0 - 2023-03-07
 ### Added
 - Support for creating and updating autonomous database long-term backup schedules in the Database service
