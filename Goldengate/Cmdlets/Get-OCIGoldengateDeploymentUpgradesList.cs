@@ -21,7 +21,7 @@ namespace Oci.GoldengateService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.GoldengateService.Models.DeploymentUpgradeCollection), typeof(Oci.GoldengateService.Responses.ListDeploymentUpgradesResponse) })]
     public class GetOCIGoldengateDeploymentUpgradesList : OCIGoldenGateCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the work request. Work requests should be scoped to the same compartment as the resource the work request affects. If the work request concerns multiple resources, and those resources are not in the same compartment, it is up to the service team to pick the primary resource whose compartment should be used.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.")]
