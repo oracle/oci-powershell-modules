@@ -21,7 +21,7 @@ namespace Oci.GoldengateService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.GoldengateService.Models.DeploymentCollection), typeof(Oci.GoldengateService.Responses.ListDeploymentsResponse) })]
     public class GetOCIGoldengateDeploymentsList : OCIGoldenGateCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the work request. Work requests should be scoped to the same compartment as the resource the work request affects. If the work request concerns multiple resources, and those resources are not in the same compartment, it is up to the service team to pick the primary resource whose compartment should be used.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The connection type which the deployment must support.")]
@@ -30,7 +30,7 @@ namespace Oci.GoldengateService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the connection which for the deployment must be assigned.")]
         public string AssignedConnectionId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Return the deployments to which the specified connectionId may be assigned.")]
         public string AssignableConnectionId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the 'lifecycleState' given.")]

@@ -22,7 +22,7 @@ namespace Oci.DevopsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique repository identifier.")]
         public string RepositoryId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The commit or reference name where changes are coming from.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The commit or reference name that represents the newer changes against the base version.")]
         public string TargetVersion { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The commit or reference name to compare changes against. If base version is not provided, the difference goes against an empty tree.")]
