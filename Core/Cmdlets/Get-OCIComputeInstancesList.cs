@@ -32,6 +32,9 @@ Example: `Uocm:PHX-AD-1`")]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compute capacity reservation.")]
         public string CapacityReservationId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A compute cluster is a remote direct memory access (RDMA) network group. For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).")]
+        public string ComputeClusterId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given display name exactly.")]
         public string DisplayName { get; set; }
 
@@ -69,6 +72,7 @@ Example: `50`", ParameterSetName = LimitSet)]
                     CompartmentId = CompartmentId,
                     AvailabilityDomain = AvailabilityDomain,
                     CapacityReservationId = CapacityReservationId,
+                    ComputeClusterId = ComputeClusterId,
                     DisplayName = DisplayName,
                     Limit = Limit,
                     Page = Page,
