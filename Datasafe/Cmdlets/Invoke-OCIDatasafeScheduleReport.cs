@@ -22,7 +22,7 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique report definition identifier")]
         public string ReportDefinitionId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for report schedule. It contains details such as schedule, PDF/XLS and number of rows.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details for the audit report schedule. It contains details such as schedule, PDF/XLS and number of rows.")]
         public ScheduleReportDetails ScheduleReportDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

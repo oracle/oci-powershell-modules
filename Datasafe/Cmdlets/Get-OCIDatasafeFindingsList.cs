@@ -30,6 +30,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only findings of a particular risk level.")]
         public System.Nullable<Oci.DatasafeService.Requests.ListFindingsRequest.SeverityEnum> Severity { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only findings containing the specified reference.")]
+        public System.Nullable<Oci.DatasafeService.Models.SecurityAssessmentReferences> References { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of items to return per page in a paginated ""List"" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -60,6 +63,7 @@ namespace Oci.DatasafeService.Cmdlets
                     SecurityAssessmentId = SecurityAssessmentId,
                     OpcRequestId = OpcRequestId,
                     Severity = Severity,
+                    References = References,
                     Limit = Limit,
                     Page = Page,
                     CompartmentIdInSubtree = CompartmentIdInSubtree,

@@ -3,6 +3,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 54.0.0 - 2023-04-11
+### Added
+- Support for rotation of certificates on autonomous VM clusters on Exadata Cloud at Customer in the Database service
+- Support for ACD and OKV wallet naming for autonomous databases and dedicated autonomous databases on Exadata Cloud at Customer in the Database service
+- Support for Exadata cloud service application virtual IPs (VIPs) in the Database service
+- Support for additional manageability features for large sensitive data models and masking policies in the Data Safe service
+- Support for getting user profile details and assignments for databases and fleets in the Data Safe service
+- Support for enabling ADDM spotlight for databases in the Operations Insights service
+ 
+### Breaking Changes
+- The property `AdditionalDatabaseStatus` was removed from the models `Oci.DatabaseService.Models.AutonomousDatabase`, `Oci.DatabaseService.Models.AutonomousDatabaseSummary`, `Oci.DatabaseService.Models.AutonomousDataWarehouse`and `Oci.DatabaseService.Models.AutonomousDataWarehouseSummary` in the Database service in the .NET SDK
+ 
+### Fixed
+- An issue with certificate rotation and concurrent request with the InstancePrincipalsAuthenticationDetailsProvider was fixed.
+
 ## 53.0.0 - 2023-04-04
 ### Added
 - Support for pre-emptible worker nodes in the Container Engine for Kubernetes service

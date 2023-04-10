@@ -19,7 +19,7 @@ namespace Oci.DatasafeService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.DatasafeService.Responses.PatchTargetAlertPolicyAssociationResponse) })]
     public class InvokeOCIDatasafePatchTargetAlertPolicyAssociation : OCIDataSafeCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details used to patch target-alert policy associations.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details used to patch the target-alert policy associations.")]
         public PatchTargetAlertPolicyAssociationDetails PatchTargetAlertPolicyAssociationDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
