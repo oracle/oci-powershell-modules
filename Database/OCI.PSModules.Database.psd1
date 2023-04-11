@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '53.0.0'
+ModuleVersion = '54.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '53.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '54.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -104,6 +104,8 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Enable-OCIDatabaseExternalPluggableDatabaseStackMonitoring', 
                'Enable-OCIDatabaseManagement', 
                'Enable-OCIDatabasePluggableDatabaseManagement', 'Get-OCIDatabase', 
+               'Get-OCIDatabaseApplicationVip', 
+               'Get-OCIDatabaseApplicationVipsList', 
                'Get-OCIDatabaseAutonomousContainerDatabase', 
                'Get-OCIDatabaseAutonomousContainerDatabaseDataguardAssociation', 
                'Get-OCIDatabaseAutonomousContainerDatabaseDataguardAssociationsList', 
@@ -224,6 +226,8 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Invoke-OCIDatabaseResizeVmClusterNetwork', 
                'Invoke-OCIDatabaseRotateAutonomousContainerDatabaseEncryptionKey', 
                'Invoke-OCIDatabaseRotateAutonomousDatabaseEncryptionKey', 
+               'Invoke-OCIDatabaseRotateAutonomousVmClusterOrdsCerts', 
+               'Invoke-OCIDatabaseRotateAutonomousVmClusterSslCerts', 
                'Invoke-OCIDatabaseRotateCloudAutonomousVmClusterOrdsCerts', 
                'Invoke-OCIDatabaseRotateCloudAutonomousVmClusterSslCerts', 
                'Invoke-OCIDatabaseRotateOrdsCerts', 
@@ -257,6 +261,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Move-OCIDatabaseKeyStoreCompartment', 
                'Move-OCIDatabaseSoftwareImageCompartment', 
                'Move-OCIDatabaseVmClusterCompartment', 'New-OCIDatabase', 
+               'New-OCIDatabaseApplicationVip', 
                'New-OCIDatabaseAutonomousContainerDatabase', 
                'New-OCIDatabaseAutonomousDatabase', 
                'New-OCIDatabaseAutonomousDatabaseBackup', 
@@ -278,7 +283,8 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'New-OCIDatabaseSoftwareImage', 'New-OCIDatabaseVmCluster', 
                'New-OCIDatabaseVmClusterNetwork', 
                'Register-OCIDatabaseAutonomousDatabaseDataSafe', 
-               'Remove-OCIDatabase', 'Remove-OCIDatabaseAutonomousDatabase', 
+               'Remove-OCIDatabase', 'Remove-OCIDatabaseApplicationVip', 
+               'Remove-OCIDatabaseAutonomousDatabase', 
                'Remove-OCIDatabaseAutonomousDatabaseBackup', 
                'Remove-OCIDatabaseAutonomousVmCluster', 'Remove-OCIDatabaseBackup', 
                'Remove-OCIDatabaseBackupDestination', 

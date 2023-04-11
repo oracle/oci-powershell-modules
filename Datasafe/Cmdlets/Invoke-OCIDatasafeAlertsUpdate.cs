@@ -19,7 +19,7 @@ namespace Oci.DatasafeService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.DatasafeService.Responses.AlertsUpdateResponse) })]
     public class InvokeOCIDatasafeAlertsUpdate : OCIDataSafeCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details to update alerts within a given compartment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details to update the alerts in the specified compartment.")]
         public AlertsUpdateDetails AlertsUpdateDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]

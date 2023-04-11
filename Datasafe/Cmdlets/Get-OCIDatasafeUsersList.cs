@@ -36,6 +36,15 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items that match the specified user category.")]
         public string UserCategory { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items that match the specified user role.")]
+        public string UserRole { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items that match the specified user profile.")]
+        public string UserProfile { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items that match the specified user type. The possible values can be   - ADMIN_PRIVILEGED   - APPLICATION   - PRIVILEGED   - SCHEMA   - NON_PRIVILEGED as specified by '#/definitions/userTypes'.")]
+        public string UserType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items that match the specified user key.")]
         public string UserKey { get; set; }
 
@@ -104,6 +113,9 @@ namespace Oci.DatasafeService.Cmdlets
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
                     AccessLevel = AccessLevel,
                     UserCategory = UserCategory,
+                    UserRole = UserRole,
+                    UserProfile = UserProfile,
+                    UserType = UserType,
                     UserKey = UserKey,
                     AccountStatus = AccountStatus,
                     AuthenticationType = AuthenticationType,

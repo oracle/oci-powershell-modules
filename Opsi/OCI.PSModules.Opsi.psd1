@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Opsi.dll'
 
 # Version number of this module.
-ModuleVersion = '53.0.0'
+ModuleVersion = '54.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '53.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '54.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Opsi.dll'
@@ -77,7 +77,13 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Disable-OCIOpsiHostInsight', 
                'Enable-OCIOpsiAutonomousDatabaseInsightAdvancedFeatures', 
                'Enable-OCIOpsiDatabaseInsight', 'Enable-OCIOpsiExadataInsight', 
-               'Enable-OCIOpsiHostInsight', 'Get-OCIOpsiAwrDatabaseReport', 
+               'Enable-OCIOpsiHostInsight', 
+               'Get-OCIOpsiAddmDbFindingCategoriesList', 
+               'Get-OCIOpsiAddmDbFindingsTimeSeriesList', 
+               'Get-OCIOpsiAddmDbParameterCategoriesList', 
+               'Get-OCIOpsiAddmDbRecommendationCategoriesList', 
+               'Get-OCIOpsiAddmDbRecommendationsTimeSeriesList', 
+               'Get-OCIOpsiAddmDbsList', 'Get-OCIOpsiAwrDatabaseReport', 
                'Get-OCIOpsiAwrDatabasesList', 
                'Get-OCIOpsiAwrDatabaseSnapshotsList', 
                'Get-OCIOpsiAwrDatabaseSqlReport', 'Get-OCIOpsiAwrHub', 
@@ -108,6 +114,7 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Get-OCIOpsiWorkRequestErrorsList', 
                'Get-OCIOpsiWorkRequestLogsList', 'Get-OCIOpsiWorkRequestsList', 
                'Invoke-OCIOpsiDownloadOperationsInsightsWarehouseWallet', 
+               'Invoke-OCIOpsiIngestAddmReports', 
                'Invoke-OCIOpsiIngestDatabaseConfiguration', 
                'Invoke-OCIOpsiIngestHostConfiguration', 
                'Invoke-OCIOpsiIngestHostMetrics', 'Invoke-OCIOpsiIngestSqlBucket', 
@@ -115,6 +122,12 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Invoke-OCIOpsiIngestSqlText', 
                'Invoke-OCIOpsiQueryOpsiDataObjectData', 
                'Invoke-OCIOpsiRotateOperationsInsightsWarehouseWallet', 
+               'Invoke-OCIOpsiSummarizeAddmDbFindings', 
+               'Invoke-OCIOpsiSummarizeAddmDbParameterChanges', 
+               'Invoke-OCIOpsiSummarizeAddmDbParameters', 
+               'Invoke-OCIOpsiSummarizeAddmDbRecommendations', 
+               'Invoke-OCIOpsiSummarizeAddmDbSchemaObjects', 
+               'Invoke-OCIOpsiSummarizeAddmDbSqlStatements', 
                'Invoke-OCIOpsiSummarizeAwrDatabaseCpuUsages', 
                'Invoke-OCIOpsiSummarizeAwrDatabaseMetrics', 
                'Invoke-OCIOpsiSummarizeAwrDatabaseParameterChanges', 
