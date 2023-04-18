@@ -3,6 +3,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 55.0.0 - 2023-04-18
+### Added
+- Support for private endpoints in the Digital Assistant service
+- Support for canceling backups in the Database service
+- Support for improved labeling of key/value pairs in the Data Labeling service
+  
+### Breaking Changes
+- The property `OpcRetryToken` was removed from the models `ConfigureDigitalAssistantParametersRequest`, `RotateChannelKeysRequest`, `StartChannelRequest`, `StopChannelRequest` in the Data Labeling service in the .NET SDK
+- The property `LifetimeLogicalClock` was removed from the models `Record`, `Dataset` and `Annotation` in the Data Labeling service in the .NET SDK
+- The property `DigitalAssistantId` was renamed to `Id` in the `ListDigitalAssistantsRequest` model in the Data Labeling service in the .NET SDK
+- The property `IsLatestSkillOnly` was renamed to `IsLatestVersionOnly` in the `ListPackagesRequest` model in the Data Labeling service in the .NET SDK
+- The property `SkillId` was renamed to `Id` in the `ListSkillsRequest` model in the Data Labeling service in the .NET SDK
+- The properties `AuthorizationEndpointUrl` and `SubjectClaim` were made optional in the `AuthenticationProvider` model in the Data Labeling service in the .NET SDK
+- The parameter `OpcRetryToken` was removed in the `Start-OCIOdaChannel`, `Stop-OCIOdaChannel`, `Invoke-OCIOdaConfigureDigitalAssistantParameters`, `Invoke-OCIOdaRotateChannelKeys` cmdlets
+- The parameter `SkillId` was renamed to `Id` in `Get-OCIOdaSkillsList` cmdlet
+- The parameter `IsLatestSkillOnly` was renamed to `IsLatestVersionOnly` in the `Get-OCIOdaPackagesList` cmdlet
+- The parameter `DigitalAssistantId` was renamed to `Id` in the `Get-OCIOdaDigitalAssistantsList` cmdlet
+
 ## 54.0.0 - 2023-04-11
 ### Added
 - Support for rotation of certificates on autonomous VM clusters on Exadata Cloud at Customer in the Database service

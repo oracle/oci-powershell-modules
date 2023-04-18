@@ -27,6 +27,9 @@ namespace Oci.OdaService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Resource type identifier. Used to limit query results to the items which are applicable to the given type.")]
         public string ResourceType { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"List the packages that belong to this compartment.")]
+        public string CompartmentId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"List only the information for the package with this name. Package names are unique to a publisher and may not change.
 
 Example: `My Package`")]
@@ -38,7 +41,7 @@ Example: `My new resource`")]
         public string DisplayName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Should we return only the latest version of a package (instead of all versions)?")]
-        public System.Nullable<bool> IsLatestSkillOnly { get; set; }
+        public System.Nullable<bool> IsLatestVersionOnly { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return per page.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -75,9 +78,10 @@ The default sort order for `TIMECREATED` is descending, and the default sort ord
                 {
                     OdaInstanceId = OdaInstanceId,
                     ResourceType = ResourceType,
+                    CompartmentId = CompartmentId,
                     Name = Name,
                     DisplayName = DisplayName,
-                    IsLatestSkillOnly = IsLatestSkillOnly,
+                    IsLatestVersionOnly = IsLatestVersionOnly,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,

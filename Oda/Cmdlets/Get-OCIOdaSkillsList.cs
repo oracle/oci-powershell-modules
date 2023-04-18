@@ -25,7 +25,7 @@ namespace Oci.OdaService.Cmdlets
         public string OdaInstanceId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Skill identifier.")]
-        public string SkillId { get; set; }
+        public string Id { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"List only Bot resources with this category.")]
         public string Category { get; set; }
@@ -88,7 +88,7 @@ The default sort order for `timeCreated` and `timeUpdated` is descending. For al
                 request = new ListSkillsRequest
                 {
                     OdaInstanceId = OdaInstanceId,
-                    SkillId = SkillId,
+                    Id = Id,
                     Category = Category,
                     Name = Name,
                     Version = Version,

@@ -31,6 +31,11 @@ namespace Oci.OdaService.Cmdlets
         public string AuthenticationProviderId { get; set; }
 
         
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The If-None-Match HTTP request header makes the request conditional. For GET methods, the service will return the requested resource, with a 200 status, only if it doesn't have an ETag matching the given ones. When the condition fails for GET methods, then the service will return HTTP status code 304 (Not Modified).", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The If-None-Match HTTP request header makes the request conditional. For GET methods, the service will return the requested resource, with a 200 status, only if it doesn't have an ETag matching the given ones. When the condition fails for GET methods, then the service will return HTTP status code 304 (Not Modified).", ParameterSetName = Default)]
+        public string IfNoneMatch { get; set; }
+
+        
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing. This value is included in the opc-request-id response header.", ParameterSetName = LifecycleStateParamSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing. This value is included in the opc-request-id response header.", ParameterSetName = Default)]
         public string OpcRequestId { get; set; }
@@ -55,6 +60,7 @@ namespace Oci.OdaService.Cmdlets
                 {
                     OdaInstanceId = OdaInstanceId,
                     AuthenticationProviderId = AuthenticationProviderId,
+                    IfNoneMatch = IfNoneMatch,
                     OpcRequestId = OpcRequestId
                 };
 
