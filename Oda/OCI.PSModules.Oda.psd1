@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Oda.dll'
 
 # Version number of this module.
-ModuleVersion = '54.0.0'
+ModuleVersion = '55.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '54.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '55.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Oda.dll'
@@ -81,7 +81,12 @@ CmdletsToExport = 'Export-OCIOdaDigitalAssistant', 'Export-OCIOdaSkill',
                'Get-OCIOdaImportedPackagesList', 'Get-OCIOdaInstance', 
                'Get-OCIOdaInstanceAttachment', 'Get-OCIOdaInstanceAttachmentsList', 
                'Get-OCIOdaInstancesList', 'Get-OCIOdaPackage', 
-               'Get-OCIOdaPackagesList', 'Get-OCIOdaSkill', 
+               'Get-OCIOdaPackagesList', 'Get-OCIOdaPrivateEndpoint', 
+               'Get-OCIOdaPrivateEndpointAttachment', 
+               'Get-OCIOdaPrivateEndpointAttachmentsList', 
+               'Get-OCIOdaPrivateEndpointScanProxiesList', 
+               'Get-OCIOdaPrivateEndpointScanProxy', 
+               'Get-OCIOdaPrivateEndpointsList', 'Get-OCIOdaSkill', 
                'Get-OCIOdaSkillParameter', 'Get-OCIOdaSkillParametersList', 
                'Get-OCIOdaSkillsList', 'Get-OCIOdaTranslator', 
                'Get-OCIOdaTranslatorsList', 'Get-OCIOdaWorkRequest', 
@@ -90,22 +95,28 @@ CmdletsToExport = 'Export-OCIOdaDigitalAssistant', 'Export-OCIOdaSkill',
                'Invoke-OCIOdaConfigureDigitalAssistantParameters', 
                'Invoke-OCIOdaPublishDigitalAssistant', 'Invoke-OCIOdaPublishSkill', 
                'Invoke-OCIOdaRotateChannelKeys', 'Move-OCIOdaInstanceCompartment', 
+               'Move-OCIOdaPrivateEndpointCompartment', 
                'New-OCIOdaAuthenticationProvider', 'New-OCIOdaChannel', 
                'New-OCIOdaDigitalAssistant', 'New-OCIOdaImportedPackage', 
                'New-OCIOdaInstance', 'New-OCIOdaInstanceAttachment', 
-               'New-OCIOdaSkill', 'New-OCIOdaSkillParameter', 'New-OCIOdaTranslator', 
+               'New-OCIOdaPrivateEndpoint', 'New-OCIOdaPrivateEndpointAttachment', 
+               'New-OCIOdaPrivateEndpointScanProxy', 'New-OCIOdaSkill', 
+               'New-OCIOdaSkillParameter', 'New-OCIOdaTranslator', 
                'Remove-OCIOdaAuthenticationProvider', 'Remove-OCIOdaChannel', 
                'Remove-OCIOdaDigitalAssistant', 'Remove-OCIOdaImportedPackage', 
                'Remove-OCIOdaInstance', 'Remove-OCIOdaInstanceAttachment', 
-               'Remove-OCIOdaSkill', 'Remove-OCIOdaSkillParameter', 
-               'Remove-OCIOdaTranslator', 'Start-OCIOdaChannel', 
-               'Start-OCIOdaInstance', 'Stop-OCIOdaChannel', 'Stop-OCIOdaInstance', 
-               'Update-OCIOdaAuthenticationProvider', 'Update-OCIOdaChannel', 
-               'Update-OCIOdaDigitalAssistant', 
+               'Remove-OCIOdaPrivateEndpoint', 
+               'Remove-OCIOdaPrivateEndpointAttachment', 
+               'Remove-OCIOdaPrivateEndpointScanProxy', 'Remove-OCIOdaSkill', 
+               'Remove-OCIOdaSkillParameter', 'Remove-OCIOdaTranslator', 
+               'Start-OCIOdaChannel', 'Start-OCIOdaInstance', 'Stop-OCIOdaChannel', 
+               'Stop-OCIOdaInstance', 'Update-OCIOdaAuthenticationProvider', 
+               'Update-OCIOdaChannel', 'Update-OCIOdaDigitalAssistant', 
                'Update-OCIOdaDigitalAssistantParameter', 
                'Update-OCIOdaImportedPackage', 'Update-OCIOdaInstance', 
-               'Update-OCIOdaInstanceAttachment', 'Update-OCIOdaSkill', 
-               'Update-OCIOdaSkillParameter', 'Update-OCIOdaTranslator'
+               'Update-OCIOdaInstanceAttachment', 'Update-OCIOdaPrivateEndpoint', 
+               'Update-OCIOdaSkill', 'Update-OCIOdaSkillParameter', 
+               'Update-OCIOdaTranslator'
 
 # Variables to export from this module
 VariablesToExport = '*'

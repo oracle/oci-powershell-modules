@@ -25,7 +25,7 @@ namespace Oci.OdaService.Cmdlets
         public string OdaInstanceId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Digital Assistant identifier.")]
-        public string DigitalAssistantId { get; set; }
+        public string Id { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"List only Bot resources with this category.")]
         public string Category { get; set; }
@@ -88,7 +88,7 @@ The default sort order for `timeCreated` and `timeUpdated` is descending. For al
                 request = new ListDigitalAssistantsRequest
                 {
                     OdaInstanceId = OdaInstanceId,
-                    DigitalAssistantId = DigitalAssistantId,
+                    Id = Id,
                     Category = Category,
                     Name = Name,
                     Version = Version,

@@ -22,6 +22,9 @@ namespace Oci.OdaService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Digital Assistant instance identifier.")]
         public string OdaInstanceId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Retain the ODA instance being deleted for the given number of days before hard-delete/purge.")]
+        public System.Nullable<int> RetentionTime { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control in a PUT or DELETE call for a Digital Assistant instance, set the `if-match` query parameter to the value of the `ETAG` header from a previous GET or POST response for that instance. The service updates or deletes the instance only if the etag that you provide matches the instance's current etag value.")]
         public string IfMatch { get; set; }
 
@@ -47,6 +50,7 @@ namespace Oci.OdaService.Cmdlets
                 request = new DeleteOdaInstanceRequest
                 {
                     OdaInstanceId = OdaInstanceId,
+                    RetentionTime = RetentionTime,
                     IfMatch = IfMatch,
                     OpcRequestId = OpcRequestId
                 };

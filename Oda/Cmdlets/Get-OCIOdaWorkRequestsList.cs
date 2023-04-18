@@ -30,6 +30,9 @@ namespace Oci.OdaService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"List only the information for this Digital Assistant instance.")]
         public string OdaInstanceId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"List only the information for this resource.")]
+        public string ResourceId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The page at which to start retrieving results.
 
 You get this value from the `opc-next-page` header in a previous list request. To retireve the first page, omit this query parameter.
@@ -63,6 +66,7 @@ The default sort order for the time fields is descending. The default order for 
                     CompartmentId = CompartmentId,
                     OpcRequestId = OpcRequestId,
                     OdaInstanceId = OdaInstanceId,
+                    ResourceId = ResourceId,
                     Page = Page,
                     Limit = Limit,
                     SortBy = SortBy,
