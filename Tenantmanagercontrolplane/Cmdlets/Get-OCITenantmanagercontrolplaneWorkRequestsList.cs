@@ -21,7 +21,7 @@ namespace Oci.TenantmanagercontrolplaneService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.TenantmanagercontrolplaneService.Models.WorkRequestCollection), typeof(Oci.TenantmanagercontrolplaneService.Responses.ListWorkRequestsResponse) })]
     public class GetOCITenantmanagercontrolplaneWorkRequestsList : OCIWorkRequestCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the compartment. Always a tenancy OCID.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

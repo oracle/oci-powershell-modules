@@ -21,7 +21,7 @@ namespace Oci.TenantmanagercontrolplaneService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.TenantmanagercontrolplaneService.Models.SubscriptionCollection), typeof(Oci.TenantmanagercontrolplaneService.Responses.ListSubscriptionsResponse) })]
     public class GetOCITenantmanagercontrolplaneSubscriptionsList : OCISubscriptionCmdlet
     {
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the compartment. Always a tenancy OCID.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the subscription to which the tenancy is associated.")]
