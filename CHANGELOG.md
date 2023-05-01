@@ -3,6 +3,31 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 56.0.0 - 2023-05-02
+### Added
+- Support for calling Oracle Cloud Infrastructure services in the `eu-jovanovac-1` region
+- Support for bring-your-own-license TLS and ORDS certificates in the Database service
+- Support for tags in the Stack Monitoring service
+- Support for GPU shapes for model deployments in the Data Science service
+- Support for returning networking details of instances in the Visual Builder service
+- Support for high-memory VMs in the Compute service
+- Support for integrating with the Integration Cloud service in the Process Automation service
+- Support for managing on-demand node upgrades in node pools in the Container Engine for Kubernetes service
+ 
+### Breaking Changes
+- The model `Oci.ContainerengineService.Models.UpdateVirtualNodeDetails` was removed from the Container Engine for Kubernetes service in the .NET SDK
+
+## 55.1.0 - 2023-04-25
+### Added
+- Support for enabling mTLS authentication with Listener and for providing custom value for TLS port and Non-TLS Port during AVM Cluster Creation in Database service
+- Support for usedDataStorageSizeInGbs property for autonomous database in the Database service
+- Support for csiNumber organization in Tenant Manager Control Plane service
+- Support for creating and updating an infrastructure with LACP support in Database service
+- Support for changePrivateEndpointOutboundConnection operation in Integration Cloud service
+- Support for Enable Process in Integration Cloud service
+- Support for Disaster Recovery, DR enablement, switchover, and failover feature in Fusion Apps service
+- Support for discovery and monitoring of External Exadata infrastructure in Database Management Service
+
 ## 55.1.0 - 2023-04-25
 ### Added
 - Support for enabling mTLS authentication with Listener and for providing custom value for TLS port and Non-TLS Port during AVM Cluster Creation in Database service
