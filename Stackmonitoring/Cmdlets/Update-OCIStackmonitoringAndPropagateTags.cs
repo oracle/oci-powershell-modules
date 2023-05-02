@@ -15,47 +15,42 @@ using Oci.Common.Model;
 
 namespace Oci.StackmonitoringService.Cmdlets
 {
-    [Cmdlet("Remove", "OCIStackmonitoringMonitoredResource", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.StackmonitoringService.Responses.DeleteMonitoredResourceResponse) })]
-    public class RemoveOCIStackmonitoringMonitoredResource : OCIStackMonitoringCmdlet
+    [Cmdlet("Update", "OCIStackmonitoringAndPropagateTags")]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.StackmonitoringService.Responses.UpdateAndPropagateTagsResponse) })]
+    public class UpdateOCIStackmonitoringAndPropagateTags : OCIStackMonitoringCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored resource.")]
         public string MonitoredResourceId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
-        public string IfMatch { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The tags to be updated.")]
+        public UpdateAndPropagateTagsDetails UpdateAndPropagateTagsDetails { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
+        public string OpcRetryToken { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If this query parameter is specified and set to true, all the member resources will be deleted before deleting the specified resource.")]
-        public System.Nullable<bool> IsDeleteMembers { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "Ignore confirmation and force the Cmdlet to complete action.")]
-        public SwitchParameter Force { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
+        public string IfMatch { get; set; }
 
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-
-            if (!ConfirmDelete("OCIStackmonitoringMonitoredResource", "Remove"))
-            {
-               return;
-            }
-
-            DeleteMonitoredResourceRequest request;
+            UpdateAndPropagateTagsRequest request;
 
             try
             {
-                request = new DeleteMonitoredResourceRequest
+                request = new UpdateAndPropagateTagsRequest
                 {
                     MonitoredResourceId = MonitoredResourceId,
-                    IfMatch = IfMatch,
+                    UpdateAndPropagateTagsDetails = UpdateAndPropagateTagsDetails,
+                    OpcRetryToken = OpcRetryToken,
                     OpcRequestId = OpcRequestId,
-                    IsDeleteMembers = IsDeleteMembers
+                    IfMatch = IfMatch
                 };
 
-                response = client.DeleteMonitoredResource(request).GetAwaiter().GetResult();
+                response = client.UpdateAndPropagateTags(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
             }
@@ -75,6 +70,6 @@ namespace Oci.StackmonitoringService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private DeleteMonitoredResourceResponse response;
+        private UpdateAndPropagateTagsResponse response;
     }
 }

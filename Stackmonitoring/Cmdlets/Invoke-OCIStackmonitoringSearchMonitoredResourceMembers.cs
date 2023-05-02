@@ -22,7 +22,7 @@ namespace Oci.StackmonitoringService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored resource.")]
         public string MonitoredResourceId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Search criteria for the listing the member monitored resources.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Search criteria for listing member monitored resources.")]
         public SearchMonitoredResourceMembersDetails SearchMonitoredResourceMembersDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If this query parameter is specified, the result is sorted by this query parameter value.")]

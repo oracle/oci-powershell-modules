@@ -19,7 +19,7 @@ namespace Oci.StackmonitoringService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.StackmonitoringService.Models.MonitoredResourceAssociationsCollection), typeof(Oci.StackmonitoringService.Responses.SearchMonitoredResourceAssociationsResponse) })]
     public class InvokeOCIStackmonitoringSearchMonitoredResourceAssociations : OCIStackMonitoringCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Search Criteria for the listing the monitored resource associations.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Search criteria for listing monitored resource associations.")]
         public SearchMonitoredResourceAssociationsDetails SearchMonitoredResourceAssociationsDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).")]

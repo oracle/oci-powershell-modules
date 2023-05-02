@@ -26,6 +26,11 @@ namespace Oci.DatabaseService.Cmdlets
         public string CloudAutonomousVmClusterId { get; set; }
 
         
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to rotate the Oracle REST Data Services (ORDS) certificates on Cloud Autonomous Exadata VM cluster.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to rotate the Oracle REST Data Services (ORDS) certificates on Cloud Autonomous Exadata VM cluster.", ParameterSetName = Default)]
+        public RotateCloudAutonomousVmClusterOrdsCertsDetails RotateCloudAutonomousVmClusterOrdsCertsDetails { get; set; }
+
+        
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).", ParameterSetName = StatusParamSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).", ParameterSetName = Default)]
         public string OpcRetryToken { get; set; }
@@ -59,6 +64,7 @@ namespace Oci.DatabaseService.Cmdlets
                 request = new RotateCloudAutonomousVmClusterOrdsCertsRequest
                 {
                     CloudAutonomousVmClusterId = CloudAutonomousVmClusterId,
+                    RotateCloudAutonomousVmClusterOrdsCertsDetails = RotateCloudAutonomousVmClusterOrdsCertsDetails,
                     OpcRetryToken = OpcRetryToken,
                     OpcRequestId = OpcRequestId,
                     IfMatch = IfMatch
