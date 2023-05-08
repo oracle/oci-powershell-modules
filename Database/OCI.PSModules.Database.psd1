@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '56.0.0'
+ModuleVersion = '56.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '56.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '56.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -188,7 +188,8 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Get-OCIDatabaseMaintenanceRun', 
                'Get-OCIDatabaseMaintenanceRunHistory', 
                'Get-OCIDatabaseMaintenanceRunHistoryList', 
-               'Get-OCIDatabaseMaintenanceRunsList', 
+               'Get-OCIDatabaseMaintenanceRunsList', 'Get-OCIDatabaseOneoffPatch', 
+               'Get-OCIDatabaseOneoffPatchesList', 
                'Get-OCIDatabasePdbConversionHistoryEntriesList', 
                'Get-OCIDatabasePdbConversionHistoryEntry', 
                'Get-OCIDatabasePluggableDatabase', 
@@ -211,6 +212,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Invoke-OCIDatabaseConfigureAutonomousDatabaseVaultKey', 
                'Invoke-OCIDatabaseConvertToPdb', 'Invoke-OCIDatabaseDbNodeAction', 
                'Invoke-OCIDatabaseDownloadExadataInfrastructureConfigFile', 
+               'Invoke-OCIDatabaseDownloadOneoffPatch', 
                'Invoke-OCIDatabaseDownloadValidationReport', 
                'Invoke-OCIDatabaseDownloadVmClusterNetworkConfigFile', 
                'Invoke-OCIDatabaseFailoverAutonomousContainerDatabaseDataguardAssociation', 
@@ -259,6 +261,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Move-OCIDatabaseExternalNonContainerDatabaseCompartment', 
                'Move-OCIDatabaseExternalPluggableDatabaseCompartment', 
                'Move-OCIDatabaseKeyStoreCompartment', 
+               'Move-OCIDatabaseOneoffPatchCompartment', 
                'Move-OCIDatabaseSoftwareImageCompartment', 
                'Move-OCIDatabaseVmClusterCompartment', 'New-OCIDatabase', 
                'New-OCIDatabaseApplicationVip', 
@@ -278,7 +281,8 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'New-OCIDatabaseExternalDatabaseConnector', 
                'New-OCIDatabaseExternalNonContainerDatabase', 
                'New-OCIDatabaseExternalPluggableDatabase', 
-               'New-OCIDatabaseKeyStore', 'New-OCIDatabasePluggableDatabase', 
+               'New-OCIDatabaseKeyStore', 'New-OCIDatabaseOneoffPatch', 
+               'New-OCIDatabasePluggableDatabase', 
                'New-OCIDatabaseRecommendedVmClusterNetwork', 
                'New-OCIDatabaseSoftwareImage', 'New-OCIDatabaseVmCluster', 
                'New-OCIDatabaseVmClusterNetwork', 
@@ -297,7 +301,8 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Remove-OCIDatabaseExternalDatabaseConnector', 
                'Remove-OCIDatabaseExternalNonContainerDatabase', 
                'Remove-OCIDatabaseExternalPluggableDatabase', 
-               'Remove-OCIDatabaseKeyStore', 'Remove-OCIDatabasePluggableDatabase', 
+               'Remove-OCIDatabaseKeyStore', 'Remove-OCIDatabaseOneoffPatch', 
+               'Remove-OCIDatabasePluggableDatabase', 
                'Remove-OCIDatabaseSoftwareImage', 
                'Remove-OCIDatabaseVirtualMachineFromCloudVmCluster', 
                'Remove-OCIDatabaseVirtualMachineFromVmCluster', 
@@ -333,6 +338,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Update-OCIDatabaseExternalNonContainerDatabase', 
                'Update-OCIDatabaseExternalPluggableDatabase', 
                'Update-OCIDatabaseKeyStore', 'Update-OCIDatabaseMaintenanceRun', 
+               'Update-OCIDatabaseOneoffPatch', 
                'Update-OCIDatabasePluggableDatabase', 
                'Update-OCIDatabaseSoftwareImage', 'Update-OCIDatabaseVmCluster', 
                'Update-OCIDatabaseVmClusterNetwork'
