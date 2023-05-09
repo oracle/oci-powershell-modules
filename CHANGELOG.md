@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 56.1.0 - 2023-05-09
+### Added
+- Support for the Access Governance service
+- Support for creating, updating, listing and downloading one-off patches in the Database service
+- Support for changing disaster recovery configurations of remote autonomous databases in the Database service
+- Support for scheduling automatic backups in the Database service
+- Support for provisioning Software-Defined Data Centers (SDDCs) using standard bare metal shapes, with Block Storage as the datastore, in the VMWare Solution service
+- Support for parity with the configuration options of the Compute service in the Compute Autoscaling service
+
 ## 56.0.0 - 2023-05-02
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the `eu-jovanovac-1` region
@@ -16,17 +25,6 @@ The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
  
 ### Breaking Changes
 - The model `Oci.ContainerengineService.Models.UpdateVirtualNodeDetails` was removed from the Container Engine for Kubernetes service in the .NET SDK
-
-## 55.1.0 - 2023-04-25
-### Added
-- Support for enabling mTLS authentication with Listener and for providing custom value for TLS port and Non-TLS Port during AVM Cluster Creation in Database service
-- Support for usedDataStorageSizeInGbs property for autonomous database in the Database service
-- Support for csiNumber organization in Tenant Manager Control Plane service
-- Support for creating and updating an infrastructure with LACP support in Database service
-- Support for changePrivateEndpointOutboundConnection operation in Integration Cloud service
-- Support for Enable Process in Integration Cloud service
-- Support for Disaster Recovery, DR enablement, switchover, and failover feature in Fusion Apps service
-- Support for discovery and monitoring of External Exadata infrastructure in Database Management Service
 
 ## 55.1.0 - 2023-04-25
 ### Added

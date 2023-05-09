@@ -33,6 +33,9 @@ namespace Oci.OcvpService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match or support the given ESXi host shape.")]
+        public string HostShapeName { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -48,7 +51,8 @@ namespace Oci.OcvpService.Cmdlets
                     CompartmentId = CompartmentId,
                     Limit = Limit,
                     Page = Page,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    HostShapeName = HostShapeName
                 };
                 IEnumerable<ListSupportedSkusResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
