@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 57.0.0 - 2023-05-16
+### Added
+- Support for self-service integration in the Fusion Apps as a Service service
+ 
+### Breaking Changes
+- The models `Oci.FusionappsService.Models.AttachExistingInstanceDetails`, `Oci.FusionappsService.Models.CreateNewInstanceDetails`, `Oci.FusionappsService.Models.CreateOicServiceInstanceDetails`, `Oci.FusionappsService.Models.CreateServiceInstanceDetails`, `Oci.FusionappsService.Models.FawAdminInfoDetails` and `Oci.FusionappsService.Models.CreateOaxServiceInstanceDetails` were removed from the Fusion Apps as a Service service in the .NET SDK
+- The enum `ActionEnum` was removed from the `Oci.FusionappsService.Models.CreateServiceAttachmentDetails` model in the Fusion Apps as a Service service in the .NET SDK
+- The property `Action` was removed from the `Oci.FusionappsService.Models.ServiceAttachment` model in the Fusion Apps as a Service service in the .NET SDK
+
 ## 56.1.0 - 2023-05-09
 ### Added
 - Support for the Access Governance service
