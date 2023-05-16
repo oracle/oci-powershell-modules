@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Fusionapps.dll'
 
 # Version number of this module.
-ModuleVersion = '56.1.0'
+ModuleVersion = '57.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '56.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '57.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Fusionapps.dll'
@@ -92,6 +92,7 @@ CmdletsToExport = 'Get-OCIFusionappsAdminUsersList',
                'Get-OCIFusionappsWorkRequestErrorsList', 
                'Get-OCIFusionappsWorkRequestLogsList', 
                'Get-OCIFusionappsWorkRequestsList', 
+               'Invoke-OCIFusionappsVerifyServiceAttachment', 
                'Move-OCIFusionappsFusionEnvironmentCompartment', 
                'Move-OCIFusionappsFusionEnvironmentFamilyCompartment', 
                'New-OCIFusionappsDataMaskingActivity', 
@@ -99,10 +100,12 @@ CmdletsToExport = 'Get-OCIFusionappsAdminUsersList',
                'New-OCIFusionappsFusionEnvironmentAdminUser', 
                'New-OCIFusionappsFusionEnvironmentFamily', 
                'New-OCIFusionappsRefreshActivity', 
+               'New-OCIFusionappsServiceAttachment', 
                'Remove-OCIFusionappsFusionEnvironment', 
                'Remove-OCIFusionappsFusionEnvironmentAdminUser', 
                'Remove-OCIFusionappsFusionEnvironmentFamily', 
                'Remove-OCIFusionappsRefreshActivity', 
+               'Remove-OCIFusionappsServiceAttachment', 
                'Reset-OCIFusionappsFusionEnvironmentPassword', 
                'Update-OCIFusionappsFusionEnvironment', 
                'Update-OCIFusionappsFusionEnvironmentFamily', 
