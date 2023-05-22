@@ -19,7 +19,7 @@ namespace Oci.LoggingService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.LoggingService.Models.LogSavedSearch), typeof(Oci.LoggingService.Responses.UpdateLogSavedSearchResponse) })]
     public class UpdateOCILoggingLogSavedSearch : OCILoggingManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the logSavedSearch")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the logSavedSearch.")]
         public string LogSavedSearchId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Updates to the saved search.")]

@@ -3,6 +3,27 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 58.0.0 - 2023-05-23
+### Added
+- Support for CRI-O parsing in the Logging service
+- Support for retrieving the resource availability domain when getting Exadata infrastructure or VM clusters in the Database service
+- Support for specifying database servers when creating dedicated autonomous databases in the Database service
+- Support for secondary egress zones in the DNS service
+  
+### Breaking Changes
+- The cmdlets `Get-OCILoggingLogIncludedSearch and `Get-OCILoggingLogIncludedSearchesList` were removed in the Logging service
+- The models `LogIncludedSearch`, `LogIncludedSearchSummaryCollection`, `ListLogIncludedSearchesRequest` and `ListLogIncludedSearchesResponse` were removed in the Logging service in the .NET SDK
+- The property `Keys` was made required in the `UnifiedAgentCsvParser` and `UnifiedAgentTsvParser` models in the Logging service in the .NET SDK
+- The property `Patterns` was made required in the `UnifiedAgentGrokParser` and `UnifiedAgentMultilineGrokParser` models in the Logging service in the .NET SDK
+- The properties `Sources` and `Destination` were made required in the `UnifiedAgentLoggingConfiguration` model in the Logging service in the .NET SDK
+- The property `Format` was made required in the `UnifiedAgentMultilineParser` model in the Logging service in the .NET SDK
+- The property `Expression` was made required in the `UnifiedAgentRegexParser` model in the Logging service in the .NET SDK
+- The property `Paths` was made required in the `UnifiedAgentTailLogSource` model in the Logging service in the .NET SDK
+- The property `Channels` was made required in the `UnifiedAgentWindowsEventSource` model in the Logging service in the .NET SDK
+- The operations `GetLogIncludedSearch` and `ListLogIncludedSearches` were removed from the `LoggingManagementClient` in the Logging service in the .NET SDK
+- The operations `ListLogIncludedSearchesResponseEnumerator` and `ListLogIncludedSearchesRecordEnumerator` were removed from the `LoggingManagementPaginators` in the Logging service in the .NET SDK
+- A new required property `ExternalDownstreams` was added in the `Zone` model in the DNS service in the .NET SDK
+
 ## 57.0.0 - 2023-05-16
 ### Added
 - Support for self-service integration in the Fusion Apps as a Service service

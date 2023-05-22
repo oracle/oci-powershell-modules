@@ -19,7 +19,7 @@ namespace Oci.LoggingService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.LoggingService.Responses.ChangeLogSavedSearchCompartmentResponse) })]
     public class MoveOCILoggingLogSavedSearchCompartment : OCILoggingManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the logSavedSearch")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the logSavedSearch.")]
         public string LogSavedSearchId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Contains details indicating which compartment the resource should move to.")]
