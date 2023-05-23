@@ -19,7 +19,7 @@ namespace Oci.LoggingService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.LoggingService.Responses.DeleteLogSavedSearchResponse) })]
     public class RemoveOCILoggingLogSavedSearch : OCILoggingManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the logSavedSearch")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the logSavedSearch.")]
         public string LogSavedSearchId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

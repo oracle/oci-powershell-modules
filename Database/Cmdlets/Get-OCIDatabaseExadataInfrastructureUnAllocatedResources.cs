@@ -15,12 +15,12 @@ using Oci.Common.Model;
 
 namespace Oci.DatabaseService.Cmdlets
 {
-    [Cmdlet("Get", "OCIDatabaseCloudExadataInfrastructureUnallocatedResources")]
-    [OutputType(new System.Type[] { typeof(Oci.DatabaseService.Models.CloudExadataInfrastructureUnallocatedResources), typeof(Oci.DatabaseService.Responses.GetCloudExadataInfrastructureUnallocatedResourcesResponse) })]
-    public class GetOCIDatabaseCloudExadataInfrastructureUnallocatedResources : OCIDatabaseCmdlet
+    [Cmdlet("Get", "OCIDatabaseExadataInfrastructureUnAllocatedResources")]
+    [OutputType(new System.Type[] { typeof(Oci.DatabaseService.Models.ExadataInfrastructureUnAllocatedResources), typeof(Oci.DatabaseService.Responses.GetExadataInfrastructureUnAllocatedResourcesResponse) })]
+    public class GetOCIDatabaseExadataInfrastructureUnAllocatedResources : OCIDatabaseCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
-        public string CloudExadataInfrastructureId { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        public string ExadataInfrastructureId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
@@ -31,19 +31,19 @@ namespace Oci.DatabaseService.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            GetCloudExadataInfrastructureUnallocatedResourcesRequest request;
+            GetExadataInfrastructureUnAllocatedResourcesRequest request;
 
             try
             {
-                request = new GetCloudExadataInfrastructureUnallocatedResourcesRequest
+                request = new GetExadataInfrastructureUnAllocatedResourcesRequest
                 {
-                    CloudExadataInfrastructureId = CloudExadataInfrastructureId,
+                    ExadataInfrastructureId = ExadataInfrastructureId,
                     OpcRequestId = OpcRequestId,
                     DbServers = DbServers
                 };
 
-                response = client.GetCloudExadataInfrastructureUnallocatedResources(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.CloudExadataInfrastructureUnallocatedResources);
+                response = client.GetExadataInfrastructureUnAllocatedResources(request).GetAwaiter().GetResult();
+                WriteOutput(response, response.ExadataInfrastructureUnAllocatedResources);
                 FinishProcessing(response);
             }
             catch (OciException ex)
@@ -62,6 +62,6 @@ namespace Oci.DatabaseService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private GetCloudExadataInfrastructureUnallocatedResourcesResponse response;
+        private GetExadataInfrastructureUnAllocatedResourcesResponse response;
     }
 }

@@ -19,7 +19,7 @@ namespace Oci.LoggingService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.LoggingService.Models.LogSavedSearch), typeof(Oci.LoggingService.Responses.CreateLogSavedSearchResponse) })]
     public class NewOCILoggingLogSavedSearch : OCILoggingManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specification of the Saved Search to create")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specification of the saved search to create.")]
         public CreateLogSavedSearchDetails CreateLogSavedSearchDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error, without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).")]
