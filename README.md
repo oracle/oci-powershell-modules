@@ -10,8 +10,7 @@ The project is open source and maintained by Oracle Corp.
 
 - PowerShell Core 6.0 and higher
 
-### Install
-
+## Installation
 #### From PowerShell Gallery:
 The modules are published to [PowerShell Gallery](https://www.powershellgallery.com/).
 
@@ -125,15 +124,13 @@ To raise questions on Stack Overflow, use the [oracle-cloud-infrastructure](http
 [Developer Tools](https://community.oracle.com/community/groundbreakers/oracle-cloud/cloud-infrastructure/content) section of the Oracle Cloud forums.
 [My Oracle Support](https://support.oracle.com/portal/).
 
-### Contributing
+## Contributing
 
-```oci-powershell-modules``` is an open source project. See [CONTRIBUTING](https://github.com/oracle/oci-powershell-modules/blob/master/CONTRIBUTING.md) for details.
+This project welcomes contributions from the community. Before submitting a pull request, please [review our contribution guide](./CONTRIBUTING.md)
 
-Oracle gratefully acknowledges the contributions to ```oci-powershell-modules``` that have been made by the community.
+## License
 
-### License
-
-Copyright (c) 2020, Oracle and/or its affiliates. All rights reserved. This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0; third-party content is separately licensed as described in the code.
+Copyright (c) 2020, 2023, Oracle and/or its affiliates. All rights reserved. This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0; third-party content is separately licensed as described in the code.
 
 See [LICENSE](https://github.com/oracle/oci-powershell-modules/blob/master/License.txt) for more details.
 
