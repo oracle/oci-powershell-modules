@@ -58,6 +58,9 @@ Example: `My resource`")]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).")]
         public string ParentFileSystemId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.")]
+        public string FilesystemSnapshotPolicyId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. You can provide either value, but not both. By default, when you sort by time created, results are shown in descending order. When you sort by display name, results are shown in ascending order.")]
         public System.Nullable<Oci.FilestorageService.Requests.ListFileSystemsRequest.SortByEnum> SortBy { get; set; }
 
@@ -88,6 +91,7 @@ Example: `My resource`")]
                     Id = Id,
                     SourceSnapshotId = SourceSnapshotId,
                     ParentFileSystemId = ParentFileSystemId,
+                    FilesystemSnapshotPolicyId = FilesystemSnapshotPolicyId,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     OpcRequestId = OpcRequestId
