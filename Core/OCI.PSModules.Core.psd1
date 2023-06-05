@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Core.dll'
 
 # Version number of this module.
-ModuleVersion = '59.0.0'
+ModuleVersion = '59.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '59.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '59.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Core.dll'
@@ -316,10 +316,10 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'New-OCIBlockstorageVolumeGroup', 
                'New-OCIBlockstorageVolumeGroupBackup', 
                'New-OCIComputeAppCatalogSubscription', 
-               'New-OCIComputeCapacityReservation', 'New-OCIComputeCluster', 
-               'New-OCIComputeDedicatedVmHost', 'New-OCIComputeImage', 
-               'New-OCIComputeImageCapabilitySchema', 'New-OCIComputeInstance', 
-               'New-OCIComputeInstanceConsoleConnection', 
+               'New-OCIComputeCapacityReport', 'New-OCIComputeCapacityReservation', 
+               'New-OCIComputeCluster', 'New-OCIComputeDedicatedVmHost', 
+               'New-OCIComputeImage', 'New-OCIComputeImageCapabilitySchema', 
+               'New-OCIComputeInstance', 'New-OCIComputeInstanceConsoleConnection', 
                'New-OCIComputeManagementClusterNetwork', 
                'New-OCIComputeManagementInstanceConfiguration', 
                'New-OCIComputeManagementInstancePool', 
