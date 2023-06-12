@@ -1,0 +1,23 @@
+<!-- Generated using OracleSDKGenerator, API Version: 20230515 -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>OCI.PSModules.Ocicontrolcenter</AssemblyName>
+    <PackageId>OCI.PSModules.Ocicontrolcenter</PackageId>
+    <Authors>Oracle Cloud Infrastructure</Authors>
+    <Company>Oracle</Company>
+    <LangVersion>8.0</LangVersion>
+    <PackageTags>Oracle;OCI;Cloud;oci-sdk;OracleCloudInfrastructure;Ocicontrolcenter</PackageTags>
+    <Description>Ocicontrolcenter Service</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OCI.DotNetSdk.Ocicontrolcenter" Version="$(SDKVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\OCI.PSModules.Common.csproj" />
+  </ItemGroup>
+
+</Project>

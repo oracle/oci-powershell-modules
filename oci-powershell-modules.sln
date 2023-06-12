@@ -253,6 +253,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Identitydomai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Accessgovernancecp", "Accessgovernancecp\OCI.PSModules.Accessgovernancecp.csproj", "{B7BBE9D9-C0E0-467F-A3DA-8FC63B0BB920}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Ocicontrolcenter", "Ocicontrolcenter\OCI.PSModules.Ocicontrolcenter.csproj", "{E599610E-DD91-48E6-A067-A1DD1E5271FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1778,5 +1780,17 @@ Global
         {B7BBE9D9-C0E0-467F-A3DA-8FC63B0BB920}.Release|x64.Build.0 = Release|Any CPU
         {B7BBE9D9-C0E0-467F-A3DA-8FC63B0BB920}.Release|x86.ActiveCfg = Release|Any CPU
         {B7BBE9D9-C0E0-467F-A3DA-8FC63B0BB920}.Release|x86.Build.0 = Release|Any CPU
+        {E599610E-DD91-48E6-A067-A1DD1E5271FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {E599610E-DD91-48E6-A067-A1DD1E5271FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {E599610E-DD91-48E6-A067-A1DD1E5271FA}.Debug|x64.ActiveCfg = Debug|Any CPU
+        {E599610E-DD91-48E6-A067-A1DD1E5271FA}.Debug|x64.Build.0 = Debug|Any CPU
+        {E599610E-DD91-48E6-A067-A1DD1E5271FA}.Debug|x86.ActiveCfg = Debug|Any CPU
+        {E599610E-DD91-48E6-A067-A1DD1E5271FA}.Debug|x86.Build.0 = Debug|Any CPU
+        {E599610E-DD91-48E6-A067-A1DD1E5271FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {E599610E-DD91-48E6-A067-A1DD1E5271FA}.Release|Any CPU.Build.0 = Release|Any CPU
+        {E599610E-DD91-48E6-A067-A1DD1E5271FA}.Release|x64.ActiveCfg = Release|Any CPU
+        {E599610E-DD91-48E6-A067-A1DD1E5271FA}.Release|x64.Build.0 = Release|Any CPU
+        {E599610E-DD91-48E6-A067-A1DD1E5271FA}.Release|x86.ActiveCfg = Release|Any CPU
+        {E599610E-DD91-48E6-A067-A1DD1E5271FA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

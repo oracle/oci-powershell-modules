@@ -7,6 +7,7 @@ using System.IO;
 using System.Management.Automation;
 using Oci.Common.Model;
 using Oci.Common.Auth;
+using Oci.Common.Alloy;
 using Oci.PSModules.Common.Cmdlets.ClientManagement;
 using Oci.PSModules.Common.Cmdlets.CmdletHistory;
 
@@ -60,6 +61,7 @@ namespace Oci.PSModules.Common.Cmdlets
             {
                 SetLoggingPreferences();
                 this.AuthProvider = GetAuthenticationDetailsProvider();
+                AlloyConfiguration.ReInitialize();
             }
             catch (Exception ex)
             {
