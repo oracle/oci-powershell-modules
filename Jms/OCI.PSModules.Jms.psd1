@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Jms.dll'
 
 # Version number of this module.
-ModuleVersion = '59.1.0'
+ModuleVersion = '60.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '59.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '60.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Jms.dll'
@@ -71,20 +71,29 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Jms.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Add-OCIJmsFleetInstallationSites', 'Get-OCIJmsBlocklistsList', 
-               'Get-OCIJmsCryptoAnalysisResult', 
+CmdletsToExport = 'Add-OCIJmsFleetInstallationSites', 'Get-OCIJmsAnnouncementsList', 
+               'Get-OCIJmsBlocklistsList', 'Get-OCIJmsCryptoAnalysisResult', 
                'Get-OCIJmsCryptoAnalysisResultsList', 'Get-OCIJmsFleet', 
                'Get-OCIJmsFleetAdvancedFeatureConfiguration', 
-               'Get-OCIJmsFleetAgentConfiguration', 'Get-OCIJmsFleetsList', 
-               'Get-OCIJmsInstallationSitesList', 'Get-OCIJmsJavaFamiliesList', 
-               'Get-OCIJmsJavaFamily', 'Get-OCIJmsJavaRelease', 
-               'Get-OCIJmsJavaReleasesList', 'Get-OCIJmsJreUsageList', 
+               'Get-OCIJmsFleetAgentConfiguration', 'Get-OCIJmsFleetDiagnosesList', 
+               'Get-OCIJmsFleetsList', 'Get-OCIJmsInstallationSitesList', 
+               'Get-OCIJmsJavaFamiliesList', 'Get-OCIJmsJavaFamily', 
+               'Get-OCIJmsJavaMigrationAnalysisResult', 
+               'Get-OCIJmsJavaMigrationAnalysisResultsList', 
+               'Get-OCIJmsJavaRelease', 'Get-OCIJmsJavaReleasesList', 
+               'Get-OCIJmsJreUsageList', 
+               'Get-OCIJmsPerformanceTuningAnalysisResult', 
+               'Get-OCIJmsPerformanceTuningAnalysisResultsList', 
                'Get-OCIJmsWorkItemsList', 'Get-OCIJmsWorkRequest', 
                'Get-OCIJmsWorkRequestErrorsList', 'Get-OCIJmsWorkRequestLogsList', 
                'Get-OCIJmsWorkRequestsList', 'Invoke-OCIJmsRequestCryptoAnalyses', 
+               'Invoke-OCIJmsRequestJavaMigrationAnalyses', 
                'Invoke-OCIJmsRequestJfrRecordings', 
+               'Invoke-OCIJmsRequestPerformanceTuningAnalyses', 
                'Invoke-OCIJmsScanJavaServerUsage', 'Invoke-OCIJmsScanLibraryUsage', 
+               'Invoke-OCIJmsSummarizeApplicationInstallationUsage', 
                'Invoke-OCIJmsSummarizeApplicationUsage', 
+               'Invoke-OCIJmsSummarizeDeployedApplicationInstallationUsage', 
                'Invoke-OCIJmsSummarizeDeployedApplicationUsage', 
                'Invoke-OCIJmsSummarizeInstallationUsage', 
                'Invoke-OCIJmsSummarizeJavaServerInstanceUsage', 
@@ -96,8 +105,10 @@ CmdletsToExport = 'Add-OCIJmsFleetInstallationSites', 'Get-OCIJmsBlocklistsList'
                'Move-OCIJmsFleetCompartment', 'New-OCIJmsAgentDeployScript', 
                'New-OCIJmsBlocklist', 'New-OCIJmsFleet', 'Remove-OCIJmsBlocklist', 
                'Remove-OCIJmsCryptoAnalysisResult', 'Remove-OCIJmsFleet', 
-               'Remove-OCIJmsFleetInstallationSites', 'Stop-OCIJmsWorkRequest', 
-               'Update-OCIJmsFleet', 
+               'Remove-OCIJmsFleetInstallationSites', 
+               'Remove-OCIJmsJavaMigrationAnalysisResult', 
+               'Remove-OCIJmsPerformanceTuningAnalysisResult', 
+               'Stop-OCIJmsWorkRequest', 'Update-OCIJmsFleet', 
                'Update-OCIJmsFleetAdvancedFeatureConfiguration', 
                'Update-OCIJmsFleetAgentConfiguration'
 

@@ -49,7 +49,7 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order, either 'asc' or 'desc'.")]
         public System.Nullable<Oci.JmsService.Models.SortOrder> SortOrder { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort Java servers.  Only one sort order may be provided. If no value is specified _timeLastSeen_ is default.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort a Java Server. Only one sort order can be provided. If no value is specified _timeLastSeen_ is default.")]
         public System.Nullable<Oci.JmsService.Models.JavaServerSortBy> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

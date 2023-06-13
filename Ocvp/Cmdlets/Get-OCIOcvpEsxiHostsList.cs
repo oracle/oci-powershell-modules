@@ -50,6 +50,15 @@ namespace Oci.OcvpService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The lifecycle state of the resource.")]
         public System.Nullable<Oci.OcvpService.Models.LifecycleStates> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.")]
+        public System.Nullable<bool> IsBillingDonorsOnly { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If this flag/param is set to True, we return only active hosts.")]
+        public System.Nullable<bool> IsSwapBillingOnly { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.")]
+        public string CompartmentId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -70,7 +79,10 @@ namespace Oci.OcvpService.Cmdlets
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,
-                    LifecycleState = LifecycleState
+                    LifecycleState = LifecycleState,
+                    IsBillingDonorsOnly = IsBillingDonorsOnly,
+                    IsSwapBillingOnly = IsSwapBillingOnly,
+                    CompartmentId = CompartmentId
                 };
                 IEnumerable<ListEsxiHostsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

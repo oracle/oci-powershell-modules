@@ -39,7 +39,7 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order, either 'asc' or 'desc'.")]
         public System.Nullable<Oci.JmsService.Models.SortOrder> SortOrder { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort blocklist records. Only one sort order may be provided. Default order for _operation_ is **ascending**. If no value is specified _operation_ is default.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field used to sort blocklist records. Only one sort order may be provided. Default order for _operation_ is **ascending**. If no value is specified, _operation_ is default.")]
         public System.Nullable<Oci.JmsService.Models.BlocklistSortBy> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
