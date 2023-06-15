@@ -30,6 +30,9 @@ namespace Oci.DataflowService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the application.")]
         public string ApplicationId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the pool.")]
+        public string PoolId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the user who created the resource.")]
         public string OwnerPrincipalId { get; set; }
 
@@ -72,6 +75,7 @@ namespace Oci.DataflowService.Cmdlets
                     CompartmentId = CompartmentId,
                     OpcRequestId = OpcRequestId,
                     ApplicationId = ApplicationId,
+                    PoolId = PoolId,
                     OwnerPrincipalId = OwnerPrincipalId,
                     DisplayNameStartsWith = DisplayNameStartsWith,
                     LifecycleState = LifecycleState,

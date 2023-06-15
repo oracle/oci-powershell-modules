@@ -12,24 +12,40 @@ using Oci.DatabaseService.Requests;
 using Oci.DatabaseService.Responses;
 using Oci.DatabaseService.Models;
 using Oci.Common.Model;
+using Oci.Common.Waiters;
 
 namespace Oci.DatabaseService.Cmdlets
 {
-    [Cmdlet("Remove", "OCIDatabaseConsoleConnection", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
-    [OutputType(new System.Type[] { typeof(void), typeof(Oci.DatabaseService.Responses.DeleteConsoleConnectionResponse) })]
+    [Cmdlet("Remove", "OCIDatabaseConsoleConnection", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High, DefaultParameterSetName = Default)]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.DatabaseService.Responses.DeleteConsoleConnectionResponse) })]
     public class RemoveOCIDatabaseConsoleConnection : OCIDatabaseCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database node [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database node [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database node [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).", ParameterSetName = Default)]
         public string DbNodeId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the console connection.")]
+        
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the console connection.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the console connection.", ParameterSetName = Default)]
         public string ConsoleConnectionId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.", ParameterSetName = Default)]
         public string IfMatch { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "Ignore confirmation and force the Cmdlet to complete action.")]
         public SwitchParameter Force { get; set; }
+
+        [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = StatusParamSet)]
+        public WorkrequestsService.Models.WorkRequest.StatusEnum[] WaitForStatus { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = @"Check every WaitIntervalSeconds to see whether the resource has reached a desired state.", ParameterSetName = StatusParamSet)]
+        public int WaitIntervalSeconds { get; set; } = WAIT_INTERVAL_SECONDS;
+
+        [Parameter(Mandatory = false, HelpMessage = @"Maximum number of attempts to be made until the resource reaches a desired state.", ParameterSetName = StatusParamSet)]
+        public int MaxWaitAttempts { get; set; } = MAX_WAITER_ATTEMPTS;
 
         protected override void ProcessRecord()
         {
@@ -51,8 +67,7 @@ namespace Oci.DatabaseService.Cmdlets
                     IfMatch = IfMatch
                 };
 
-                response = client.DeleteConsoleConnection(request).GetAwaiter().GetResult();
-                WriteOutput(response);
+                HandleOutput(request);
                 FinishProcessing(response);
             }
             catch (OciException ex)
@@ -71,6 +86,29 @@ namespace Oci.DatabaseService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
+        private void HandleOutput(DeleteConsoleConnectionRequest request)
+        {
+            var waiterConfig = new WaiterConfiguration
+            {
+                MaxAttempts = MaxWaitAttempts,
+                GetNextDelayInSeconds = (_) => WaitIntervalSeconds
+            };
+
+            switch (ParameterSetName)
+            { 
+                case StatusParamSet:
+                    response = client.Waiters.ForDeleteConsoleConnection(request, waiterConfig, WaitForStatus).Execute();
+                    break;
+
+                case Default:
+                    response = client.DeleteConsoleConnection(request).GetAwaiter().GetResult();
+                    break;
+            }
+            WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
+        }
+
         private DeleteConsoleConnectionResponse response;
+        private const string StatusParamSet = "StatusParamSet";
+        private const string Default = "Default";
     }
 }
