@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '60.0.0'
+ModuleVersion = '60.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '60.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '60.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -330,8 +330,10 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Update-OCIDatabaseCloudExadataInfrastructure', 
                'Update-OCIDatabaseCloudVmCluster', 
                'Update-OCIDatabaseCloudVmClusterIormConfig', 
+               'Update-OCIDatabaseConsoleConnection', 
                'Update-OCIDatabaseDataGuardAssociation', 
-               'Update-OCIDatabaseDbHome', 'Update-OCIDatabaseDbSystem', 
+               'Update-OCIDatabaseDbHome', 'Update-OCIDatabaseDbNode', 
+               'Update-OCIDatabaseDbSystem', 
                'Update-OCIDatabaseExadataInfrastructure', 
                'Update-OCIDatabaseExadataIormConfig', 
                'Update-OCIDatabaseExternalContainerDatabase', 

@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Rover.dll'
 
 # Version number of this module.
-ModuleVersion = '60.0.0'
+ModuleVersion = '60.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '60.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '60.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Rover.dll'
@@ -72,18 +72,35 @@ FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Get-OCIRoverCluster', 'Get-OCIRoverClusterCertificate', 
+               'Get-OCIRoverClusterRoverBundleRequestsList', 
                'Get-OCIRoverClustersList', 'Get-OCIRoverEntitlement', 
                'Get-OCIRoverEntitlementsList', 'Get-OCIRoverNode', 
                'Get-OCIRoverNodeCertificate', 'Get-OCIRoverNodeEncryptionKey', 
-               'Get-OCIRoverNodeGetRpt', 'Get-OCIRoverNodesList', 
-               'Get-OCIRoverShapesList', 'Invoke-OCIRoverRoverNodeActionSetKey', 
+               'Get-OCIRoverNodeGetRpt', 'Get-OCIRoverNodeRoverBundleRequestsList', 
+               'Get-OCIRoverNodesList', 'Get-OCIRoverShapesList', 
+               'Get-OCIRoverWorkRequest', 'Get-OCIRoverWorkRequestErrorsList', 
+               'Get-OCIRoverWorkRequestLogsList', 'Get-OCIRoverWorkRequestsList', 
+               'Invoke-OCIRoverRequestAdditionalNodes', 
+               'Invoke-OCIRoverRequestBundleRoverCluster', 
+               'Invoke-OCIRoverRequestBundleRoverNode', 
+               'Invoke-OCIRoverRetrieveAvailableBundleVersionsRoverCluster', 
+               'Invoke-OCIRoverRetrieveAvailableBundleVersionsRoverNode', 
+               'Invoke-OCIRoverRetrieveBundleStatusRoverCluster', 
+               'Invoke-OCIRoverRetrieveBundleStatusRoverNode', 
+               'Invoke-OCIRoverRoverNodeActionRetrieveCaBundle', 
+               'Invoke-OCIRoverRoverNodeActionSetKey', 
+               'Invoke-OCIRoverRoverNodeGenerateCertificate', 
+               'Invoke-OCIRoverRoverNodeRenewCertificate', 
+               'Invoke-OCIRoverRoverNodeReplaceCertificateAuthority', 
+               'Invoke-OCIRoverRoverNodeRetrieveLeafCertificate', 
                'Move-OCIRoverClusterCompartment', 
                'Move-OCIRoverEntitlementCompartment', 
                'Move-OCIRoverNodeCompartment', 'New-OCIRoverCluster', 
                'New-OCIRoverEntitlement', 'New-OCIRoverNode', 
                'Remove-OCIRoverCluster', 'Remove-OCIRoverEntitlement', 
-               'Remove-OCIRoverNode', 'Update-OCIRoverCluster', 
-               'Update-OCIRoverEntitlement', 'Update-OCIRoverNode'
+               'Remove-OCIRoverNode', 'Stop-OCIRoverWorkRequest', 
+               'Update-OCIRoverCluster', 'Update-OCIRoverEntitlement', 
+               'Update-OCIRoverNode'
 
 # Variables to export from this module
 VariablesToExport = '*'

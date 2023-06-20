@@ -12,21 +12,37 @@ using Oci.DatabaseService.Requests;
 using Oci.DatabaseService.Responses;
 using Oci.DatabaseService.Models;
 using Oci.Common.Model;
+using Oci.Common.Waiters;
 
 namespace Oci.DatabaseService.Cmdlets
 {
-    [Cmdlet("New", "OCIDatabaseConsoleConnection")]
+    [Cmdlet("New", "OCIDatabaseConsoleConnection", DefaultParameterSetName = Default)]
     [OutputType(new System.Type[] { typeof(Oci.DatabaseService.Models.ConsoleConnection), typeof(Oci.DatabaseService.Responses.CreateConsoleConnectionResponse) })]
     public class NewOCIDatabaseConsoleConnection : OCIDatabaseCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request object for creating an CreateConsoleConnection")]
+        
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request object for creating an CreateConsoleConnection", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request object for creating an CreateConsoleConnection", ParameterSetName = Default)]
         public CreateConsoleConnectionDetails CreateConsoleConnectionDetails { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database node [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database node [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database node [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).", ParameterSetName = Default)]
         public string DbNodeId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).")]
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).", ParameterSetName = Default)]
         public string OpcRetryToken { get; set; }
+
+        [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = StatusParamSet)]
+        public WorkrequestsService.Models.WorkRequest.StatusEnum[] WaitForStatus { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = @"Check every WaitIntervalSeconds to see whether the resource has reached a desired state.", ParameterSetName = StatusParamSet)]
+        public int WaitIntervalSeconds { get; set; } = WAIT_INTERVAL_SECONDS;
+
+        [Parameter(Mandatory = false, HelpMessage = @"Maximum number of attempts to be made until the resource reaches a desired state.", ParameterSetName = StatusParamSet)]
+        public int MaxWaitAttempts { get; set; } = MAX_WAITER_ATTEMPTS;
 
         protected override void ProcessRecord()
         {
@@ -42,8 +58,7 @@ namespace Oci.DatabaseService.Cmdlets
                     OpcRetryToken = OpcRetryToken
                 };
 
-                response = client.CreateConsoleConnection(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.ConsoleConnection);
+                HandleOutput(request);
                 FinishProcessing(response);
             }
             catch (OciException ex)
@@ -62,6 +77,29 @@ namespace Oci.DatabaseService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
+        private void HandleOutput(CreateConsoleConnectionRequest request)
+        {
+            var waiterConfig = new WaiterConfiguration
+            {
+                MaxAttempts = MaxWaitAttempts,
+                GetNextDelayInSeconds = (_) => WaitIntervalSeconds
+            };
+
+            switch (ParameterSetName)
+            { 
+                case StatusParamSet:
+                    response = client.Waiters.ForCreateConsoleConnection(request, waiterConfig, WaitForStatus).Execute();
+                    break;
+
+                case Default:
+                    response = client.CreateConsoleConnection(request).GetAwaiter().GetResult();
+                    break;
+            }
+            WriteOutput(response, response.ConsoleConnection);
+        }
+
         private CreateConsoleConnectionResponse response;
+        private const string StatusParamSet = "StatusParamSet";
+        private const string Default = "Default";
     }
 }
