@@ -12,20 +12,36 @@ using Oci.ArtifactsService.Requests;
 using Oci.ArtifactsService.Responses;
 using Oci.ArtifactsService.Models;
 using Oci.Common.Model;
+using Oci.Common.Waiters;
 
 namespace Oci.ArtifactsService.Cmdlets
 {
-    [Cmdlet("Get", "OCIArtifactsContainerImageSignature")]
+    [Cmdlet("Get", "OCIArtifactsContainerImageSignature", DefaultParameterSetName = Default)]
     [OutputType(new System.Type[] { typeof(Oci.ArtifactsService.Models.ContainerImageSignature), typeof(Oci.ArtifactsService.Responses.GetContainerImageSignatureResponse) })]
     public class GetOCIArtifactsContainerImageSignature : OCIArtifactsCmdlet
     {
+        
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.
 
-Example: `ocid1.containersignature.oc1..exampleuniqueID`")]
+Example: `ocid1.containersignature.oc1..exampleuniqueID`", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.
+
+Example: `ocid1.containersignature.oc1..exampleuniqueID`", ParameterSetName = Default)]
         public string ImageSignatureId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.", ParameterSetName = Default)]
         public string OpcRequestId { get; set; }
+
+        [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = LifecycleStateParamSet)]
+        public Oci.ArtifactsService.Models.ContainerImageSignature.LifecycleStateEnum[] WaitForLifecycleState { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = @"Check every WaitIntervalSeconds to see whether the resource has reached a desired state.", ParameterSetName = LifecycleStateParamSet)]
+        public int WaitIntervalSeconds { get; set; } = WAIT_INTERVAL_SECONDS;
+
+        [Parameter(Mandatory = false, HelpMessage = @"Maximum number of attempts to be made until the resource reaches a desired state.", ParameterSetName = LifecycleStateParamSet)]
+        public int MaxWaitAttempts { get; set; } = MAX_WAITER_ATTEMPTS;
 
         protected override void ProcessRecord()
         {
@@ -40,8 +56,7 @@ Example: `ocid1.containersignature.oc1..exampleuniqueID`")]
                     OpcRequestId = OpcRequestId
                 };
 
-                response = client.GetContainerImageSignature(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.ContainerImageSignature);
+                HandleOutput(request);
                 FinishProcessing(response);
             }
             catch (OciException ex)
@@ -60,6 +75,29 @@ Example: `ocid1.containersignature.oc1..exampleuniqueID`")]
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
+        private void HandleOutput(GetContainerImageSignatureRequest request)
+        {
+            var waiterConfig = new WaiterConfiguration
+            {
+                MaxAttempts = MaxWaitAttempts,
+                GetNextDelayInSeconds = (_) => WaitIntervalSeconds
+            };
+
+            switch (ParameterSetName)
+            { 
+                case LifecycleStateParamSet:
+                    response = client.Waiters.ForContainerImageSignature(request, waiterConfig, WaitForLifecycleState).Execute();
+                    break;
+
+                case Default:
+                    response = client.GetContainerImageSignature(request).GetAwaiter().GetResult();
+                    break;
+            }
+            WriteOutput(response, response.ContainerImageSignature);
+        }
+
         private GetContainerImageSignatureResponse response;
+        private const string LifecycleStateParamSet = "LifecycleStateParamSet";
+        private const string Default = "Default";
     }
 }

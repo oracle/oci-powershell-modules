@@ -19,7 +19,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabasemanagementService.Models.ExternalExadataStorageConnector), typeof(Oci.DatabasemanagementService.Responses.CreateExternalExadataStorageConnectorResponse) })]
     public class NewOCIDatabasemanagementExternalExadataStorageConnector : OCIDbManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to add connections to the storage servers.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to add connections to the Exadata storage servers.")]
         public CreateExternalExadataStorageConnectorDetails CreateExternalExadataStorageConnectorDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
