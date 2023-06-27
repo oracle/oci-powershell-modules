@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Databasemanagement.dll'
 
 # Version number of this module.
-ModuleVersion = '60.1.0'
+ModuleVersion = '60.2.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '60.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '60.2.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasemanagement.dll'
@@ -74,10 +74,20 @@ FunctionsToExport = '*'
 CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles', 
                'Add-OCIDatabasemanagementManagedDatabaseToManagedDatabaseGroup', 
                'Add-OCIDatabasemanagementmTasks', 
+               'Disable-OCIDatabasemanagementAutomaticInitialPlanCapture', 
+               'Disable-OCIDatabasemanagementAutomaticSpmEvolveAdvisorTask', 
                'Disable-OCIDatabasemanagementExternalDbSystemDatabaseManagement', 
+               'Disable-OCIDatabasemanagementExternalDbSystemStackMonitoring', 
                'Disable-OCIDatabasemanagementExternalExadataInfrastructureManagement', 
+               'Disable-OCIDatabasemanagementHighFrequencyAutomaticSpmEvolveAdvisorTask', 
+               'Disable-OCIDatabasemanagementSqlPlanBaselinesUsage', 
+               'Enable-OCIDatabasemanagementAutomaticInitialPlanCapture', 
+               'Enable-OCIDatabasemanagementAutomaticSpmEvolveAdvisorTask', 
                'Enable-OCIDatabasemanagementExternalDbSystemDatabaseManagement', 
+               'Enable-OCIDatabasemanagementExternalDbSystemStackMonitoring', 
                'Enable-OCIDatabasemanagementExternalExadataInfrastructureManagement', 
+               'Enable-OCIDatabasemanagementHighFrequencyAutomaticSpmEvolveAdvisorTask', 
+               'Enable-OCIDatabasemanagementSqlPlanBaselinesUsage', 
                'Get-OCIDatabasemanagementAlertLogsList', 
                'Get-OCIDatabasemanagementAsmPropertiesList', 
                'Get-OCIDatabasemanagementAssociatedDatabasesList', 
@@ -88,6 +98,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Get-OCIDatabasemanagementAwrDbSqlReport', 
                'Get-OCIDatabasemanagementClusterCacheMetric', 
                'Get-OCIDatabasemanagementConsumerGroupPrivilegesList', 
+               'Get-OCIDatabasemanagementCursorCacheStatementsList', 
                'Get-OCIDatabasemanagementDataAccessContainersList', 
                'Get-OCIDatabasemanagementDatabaseFleetHealthMetrics', 
                'Get-OCIDatabasemanagementDatabaseHomeMetrics', 
@@ -152,6 +163,10 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Get-OCIDatabasemanagementProxyUsersList', 
                'Get-OCIDatabasemanagementRolesList', 
                'Get-OCIDatabasemanagementSqlExecutionPlan', 
+               'Get-OCIDatabasemanagementSqlPlanBaseline', 
+               'Get-OCIDatabasemanagementSqlPlanBaselineConfiguration', 
+               'Get-OCIDatabasemanagementSqlPlanBaselineJobsList', 
+               'Get-OCIDatabasemanagementSqlPlanBaselinesList', 
                'Get-OCIDatabasemanagementSqlTuningAdvisorTaskFindingsList', 
                'Get-OCIDatabasemanagementSqlTuningAdvisorTaskRecommendationsList', 
                'Get-OCIDatabasemanagementSqlTuningAdvisorTasksList', 
@@ -171,10 +186,15 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Invoke-OCIDatabasemanagementCheckExternalDbSystemConnectorConnectionStatus', 
                'Invoke-OCIDatabasemanagementCheckExternalExadataStorageConnector', 
                'Invoke-OCIDatabasemanagementCloneSqlTuningTask', 
+               'Invoke-OCIDatabasemanagementConfigureAutomaticCaptureFilters', 
+               'Invoke-OCIDatabasemanagementConfigureAutomaticSpmEvolveAdvisorTask', 
                'Invoke-OCIDatabasemanagementDiscoverExternalExadataInfrastructure', 
+               'Invoke-OCIDatabasemanagementDropSqlPlanBaselines', 
                'Invoke-OCIDatabasemanagementDropSqlTuningTask', 
                'Invoke-OCIDatabasemanagementDropTablespace', 
                'Invoke-OCIDatabasemanagementImplementOptimizerStatisticsAdvisorRecommendations', 
+               'Invoke-OCIDatabasemanagementLoadSqlPlanBaselinesFromAwr', 
+               'Invoke-OCIDatabasemanagementLoadSqlPlanBaselinesFromCursorCache', 
                'Invoke-OCIDatabasemanagementPatchExternalDbSystemDiscovery', 
                'Invoke-OCIDatabasemanagementResizeDataFile', 
                'Invoke-OCIDatabasemanagementRunHistoricAddm', 
@@ -196,6 +216,8 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Invoke-OCIDatabasemanagementSummarizeExternalListenerMetrics', 
                'Invoke-OCIDatabasemanagementSummarizeJobExecutionsStatuses', 
                'Invoke-OCIDatabasemanagementSummarizeManagedDatabaseAvailabilityMetrics', 
+               'Invoke-OCIDatabasemanagementSummarizeSqlPlanBaselines', 
+               'Invoke-OCIDatabasemanagementSummarizeSqlPlanBaselinesByLastExecution', 
                'Invoke-OCIDatabasemanagementTestPreferredCredential', 
                'Move-OCIDatabasemanagementDatabaseParameters', 
                'Move-OCIDatabasemanagementDbManagementPrivateEndpointCompartment', 
@@ -203,6 +225,9 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Move-OCIDatabasemanagementExternalExadataInfrastructureCompartment', 
                'Move-OCIDatabasemanagementJobCompartment', 
                'Move-OCIDatabasemanagementManagedDatabaseGroupCompartment', 
+               'Move-OCIDatabasemanagementPlanRetention', 
+               'Move-OCIDatabasemanagementSpaceBudget', 
+               'Move-OCIDatabasemanagementSqlPlanBaselinesAttributes', 
                'New-OCIDatabasemanagementAwrSnapshot', 
                'New-OCIDatabasemanagementDbManagementPrivateEndpoint', 
                'New-OCIDatabasemanagementExternalDbSystem', 

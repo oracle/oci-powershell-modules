@@ -19,7 +19,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabasemanagementService.Models.ExternalExadataInfrastructureDiscovery), typeof(Oci.DatabasemanagementService.Responses.DiscoverExternalExadataInfrastructureResponse) })]
     public class InvokeOCIDatabasemanagementDiscoverExternalExadataInfrastructure : OCIDbManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to discover and monitor the Exadata system infrastructure.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to discover and monitor the Exadata infrastructure.")]
         public DiscoverExternalExadataInfrastructureDetails DiscoverExternalExadataInfrastructureDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
