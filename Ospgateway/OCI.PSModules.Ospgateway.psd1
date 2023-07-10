@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Ospgateway.dll'
 
 # Version number of this module.
-ModuleVersion = '60.2.0'
+ModuleVersion = '61.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '60.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '61.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Ospgateway.dll'
@@ -71,13 +71,15 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Ospgateway.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIOspgatewayInvoice', 'Get-OCIOspgatewayInvoiceLinesList', 
+CmdletsToExport = 'Get-OCIOspgatewayAddress', 'Get-OCIOspgatewayAddressRule', 
+               'Get-OCIOspgatewayInvoice', 'Get-OCIOspgatewayInvoiceLinesList', 
                'Get-OCIOspgatewayInvoicesList', 'Get-OCIOspgatewaySubscription', 
                'Get-OCIOspgatewaySubscriptionsList', 
                'Invoke-OCIOspgatewayAuthorizeSubscriptionPayment', 
                'Invoke-OCIOspgatewayDownloadPdfContent', 
                'Invoke-OCIOspgatewayPayInvoice', 
                'Invoke-OCIOspgatewayPaySubscription', 
+               'Invoke-OCIOspgatewayVerifyAddress', 
                'Update-OCIOspgatewaySubscription'
 
 # Variables to export from this module

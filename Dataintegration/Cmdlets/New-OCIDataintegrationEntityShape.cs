@@ -28,7 +28,7 @@ namespace Oci.DataintegrationService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The schema resource name used for retrieving schemas.")]
         public string SchemaResourceName { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details needed to create the data entity shape. This parameter also accepts subtypes <Oci.DataintegrationService.Models.CreateEntityShapeFromSQL>, <Oci.DataintegrationService.Models.CreateEntityShapeFromFile> of type <Oci.DataintegrationService.Models.CreateEntityShapeDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details needed to create the data entity shape. This parameter also accepts subtypes <Oci.DataintegrationService.Models.CreateEntityShapeFromObject>, <Oci.DataintegrationService.Models.CreateEntityShapeFromSQL>, <Oci.DataintegrationService.Models.CreateEntityShapeFromFile> of type <Oci.DataintegrationService.Models.CreateEntityShapeDetails>.")]
         public CreateEntityShapeDetails CreateEntityShapeDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

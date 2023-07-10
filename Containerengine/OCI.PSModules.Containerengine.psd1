@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Containerengine.dll'
 
 # Version number of this module.
-ModuleVersion = '60.2.0'
+ModuleVersion = '61.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '60.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '61.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Containerengine.dll'
@@ -85,6 +85,8 @@ CmdletsToExport = 'Disable-OCIContainerengineAddon', 'Get-OCIContainerengineAddo
                'Get-OCIContainerengineVirtualNodePool', 
                'Get-OCIContainerengineVirtualNodePoolsList', 
                'Get-OCIContainerengineVirtualNodesList', 
+               'Get-OCIContainerengineWorkloadMapping', 
+               'Get-OCIContainerengineWorkloadMappingsList', 
                'Get-OCIContainerengineWorkRequest', 
                'Get-OCIContainerengineWorkRequestErrorsList', 
                'Get-OCIContainerengineWorkRequestLogsList', 
@@ -94,15 +96,18 @@ CmdletsToExport = 'Disable-OCIContainerengineAddon', 'Get-OCIContainerengineAddo
                'New-OCIContainerengineCluster', 'New-OCIContainerengineKubeconfig', 
                'New-OCIContainerengineNodePool', 
                'New-OCIContainerengineVirtualNodePool', 
+               'New-OCIContainerengineWorkloadMapping', 
                'Remove-OCIContainerengineCluster', 'Remove-OCIContainerengineNode', 
                'Remove-OCIContainerengineNodePool', 
                'Remove-OCIContainerengineVirtualNodePool', 
+               'Remove-OCIContainerengineWorkloadMapping', 
                'Remove-OCIContainerengineWorkRequest', 
                'Update-OCIContainerengineAddon', 
                'Update-OCIContainerengineCluster', 
                'Update-OCIContainerengineClusterEndpointConfig', 
                'Update-OCIContainerengineNodePool', 
-               'Update-OCIContainerengineVirtualNodePool'
+               'Update-OCIContainerengineVirtualNodePool', 
+               'Update-OCIContainerengineWorkloadMapping'
 
 # Variables to export from this module
 VariablesToExport = '*'

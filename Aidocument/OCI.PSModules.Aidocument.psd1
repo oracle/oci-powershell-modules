@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Aidocument.dll'
 
 # Version number of this module.
-ModuleVersion = '60.2.0'
+ModuleVersion = '61.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '60.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '61.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Aidocument.dll'
@@ -77,6 +77,8 @@ CmdletsToExport = 'Get-OCIAidocumentModel', 'Get-OCIAidocumentModelsList',
                'Get-OCIAidocumentWorkRequestErrorsList', 
                'Get-OCIAidocumentWorkRequestLogsList', 
                'Get-OCIAidocumentWorkRequestsList', 
+               'Invoke-OCIAidocumentAnalyzeDocument', 
+               'Invoke-OCIAidocumentPatchModel', 
                'Move-OCIAidocumentModelCompartment', 
                'Move-OCIAidocumentProjectCompartment', 'New-OCIAidocumentModel', 
                'New-OCIAidocumentProcessorJob', 'New-OCIAidocumentProject', 
