@@ -45,6 +45,9 @@ namespace Oci.BdsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of a BDS patch history entity.")]
+        public System.Nullable<Oci.BdsService.Models.PatchHistorySummary.PatchTypeEnum> PatchType { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -64,7 +67,8 @@ namespace Oci.BdsService.Cmdlets
                     PatchVersion = PatchVersion,
                     SortOrder = SortOrder,
                     Page = Page,
-                    Limit = Limit
+                    Limit = Limit,
+                    PatchType = PatchType
                 };
                 IEnumerable<ListPatchHistoriesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
