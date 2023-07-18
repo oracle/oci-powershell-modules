@@ -26,8 +26,8 @@ namespace Oci.CoreService.Cmdlets
         public string InstanceConfigurationId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Instance configuration Instance Details. This parameter also accepts subtype <Oci.CoreService.Models.ComputeInstanceDetails> of type <Oci.CoreService.Models.InstanceConfigurationInstanceDetails>.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Instance configuration Instance Details. This parameter also accepts subtype <Oci.CoreService.Models.ComputeInstanceDetails> of type <Oci.CoreService.Models.InstanceConfigurationInstanceDetails>.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Instance configuration Instance Details. This parameter also accepts subtypes <Oci.CoreService.Models.ComputeInstanceOptions>, <Oci.CoreService.Models.ComputeInstanceDetails> of type <Oci.CoreService.Models.InstanceConfigurationInstanceDetails>.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Instance configuration Instance Details. This parameter also accepts subtypes <Oci.CoreService.Models.ComputeInstanceOptions>, <Oci.CoreService.Models.ComputeInstanceDetails> of type <Oci.CoreService.Models.InstanceConfigurationInstanceDetails>.", ParameterSetName = Default)]
         public InstanceConfigurationInstanceDetails InstanceConfiguration { get; set; }
 
         

@@ -19,9 +19,13 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.ComputeCluster), typeof(Oci.CoreService.Responses.CreateComputeClusterResponse) })]
     public class NewOCIComputeCluster : OCIComputeCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for creating a [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm), which is a remote direct memory access (RDMA) network group. When first created, the compute cluster is empty. After the compute cluster is created, you can use the compute cluster's OCID with the LaunchInstance operation to create instances in the compute cluster. Compute clusters allow you to manage instances in the cluster individually.
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The data for creating a [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute cluster is an empty remote direct memory access (RDMA) network group.
 
-For details about creating a cluster network that uses intance pools to manage groups of identical instances, see CreateClusterNetworkDetails.")]
+After the compute cluster is created, you can use the compute cluster's OCID with the LaunchInstance operation to create instances in the compute cluster. The instances must be created in the same compartment and availability domain as the cluster.
+
+Use compute clusters when you want to manage instances in the cluster individually, or when you want to use different types of instances in the RDMA network group.
+
+For details about creating a cluster network that uses instance pools to manage groups of identical instances, see CreateClusterNetworkDetails.")]
         public CreateComputeClusterDetails CreateComputeClusterDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).")]

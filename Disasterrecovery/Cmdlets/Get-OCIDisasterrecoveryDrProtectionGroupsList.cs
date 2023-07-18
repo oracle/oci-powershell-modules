@@ -62,6 +62,9 @@ Example: `displayName`")]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The DR Protection Group Role.")]
+        public System.Nullable<Oci.DisasterrecoveryService.Models.DrProtectionGroupRole> Role { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -82,7 +85,8 @@ Example: `displayName`")]
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    Role = Role
                 };
                 IEnumerable<ListDrProtectionGroupsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

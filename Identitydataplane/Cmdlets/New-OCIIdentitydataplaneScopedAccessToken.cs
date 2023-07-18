@@ -19,7 +19,7 @@ namespace Oci.IdentitydataplaneService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.IdentitydataplaneService.Models.SecurityToken), typeof(Oci.IdentitydataplaneService.Responses.GenerateScopedAccessTokenResponse) })]
     public class NewOCIIdentitydataplaneScopedAccessToken : OCIDataplaneCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Scoped Access token request")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Scoped access token request")]
         public GenerateScopedAccessTokenDetails GenerateScopedAccessTokenDetails { get; set; }
 
         protected override void ProcessRecord()
