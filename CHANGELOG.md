@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 63.0.0 - 2023-07-25
+### Added
+- Support for composing multiple document service custom key value models into one single model in Document Understanding Service
+- Support for custom hostname in the Compute service
+- Support for cloud subscription in the Organizations service
+- Support for automatic backup download in the GoldenGate service
+- Support for creating single use (non-recurring) budgets in the Budgets service
+  
+### Breaking Changes
+- The properties `ClassicSubscriptionId`, `IsClassicSubscription`, `RegionAssignment`, `LifecycleState`, `StartDate` and `EndDate` were removed from the models `AssignedSubscription`, `AssignedSubscriptionSummary`, `Subscription` and `SubscriptionSummary` in the Organizations service in the .NET SDK
+- The property `PaymentModel` has been removed from `Subscription` and `SubscriptionSummary` models in the Organizations service in the .NET SDK
+- The properties `SubscriptionTier`, `IsGovernmentSubscription`, `Promotion`, `PurchaseEntitlementId`, `Skus`, `CsiNumber`, `CloudAmountCurrency`, `CustomerCountryCode, and `ProgramType` have been removed from `AssignedSubscription` and `Subscription` models in the Organizations service in the .NET SDK
+- The property `OrderIds` has been removed from `AssignedSubscription` model in the Organizations service in the .NET SDK
+- The EnumMembers `UPDATING`, `DELETING` and `DELETED` were removed from the enum `SubscriptionLifecycleState` in the Organizations service in the .NET SDK
+- The waiters `ForAssignedSubscription` and `ForSubscription` were removed from the `SubscriptionWaiters` in the Organizations service in the .NET SDK
+
 ## 62.0.0 - 2023-07-18
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the mx-monterrey-1 region

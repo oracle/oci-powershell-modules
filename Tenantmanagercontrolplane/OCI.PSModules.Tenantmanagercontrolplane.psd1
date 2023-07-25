@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Tenantmanagercontrolplane.dll'
 
 # Version number of this module.
-ModuleVersion = '62.0.0'
+ModuleVersion = '63.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '62.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '63.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Tenantmanagercontrolplane.dll'
@@ -74,6 +74,7 @@ FunctionsToExport = '*'
 CmdletsToExport = 'Add-OCITenantmanagercontrolplaneGovernance', 
                'Enable-OCITenantmanagercontrolplaneOrder', 
                'Get-OCITenantmanagercontrolplaneAssignedSubscription', 
+               'Get-OCITenantmanagercontrolplaneAssignedSubscriptionLineItemsList', 
                'Get-OCITenantmanagercontrolplaneAssignedSubscriptionsList', 
                'Get-OCITenantmanagercontrolplaneAvailableRegionsList', 
                'Get-OCITenantmanagercontrolplaneDomain', 
@@ -92,6 +93,7 @@ CmdletsToExport = 'Add-OCITenantmanagercontrolplaneGovernance',
                'Get-OCITenantmanagercontrolplaneSenderInvitation', 
                'Get-OCITenantmanagercontrolplaneSenderInvitationsList', 
                'Get-OCITenantmanagercontrolplaneSubscription', 
+               'Get-OCITenantmanagercontrolplaneSubscriptionLineItemsList', 
                'Get-OCITenantmanagercontrolplaneSubscriptionMapping', 
                'Get-OCITenantmanagercontrolplaneSubscriptionMappingsList', 
                'Get-OCITenantmanagercontrolplaneSubscriptionsList', 
