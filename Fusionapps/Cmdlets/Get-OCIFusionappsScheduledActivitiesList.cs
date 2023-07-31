@@ -39,6 +39,12 @@ namespace Oci.FusionappsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter that returns all resources that match the specified status")]
         public System.Nullable<Oci.FusionappsService.Models.ScheduledActivity.LifecycleStateEnum> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter that returns all resources that match the specified scheduledActivityAssociationId.")]
+        public string ScheduledActivityAssociationId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter that returns all resources that match the specified scheduledActivityPhase.")]
+        public System.Nullable<Oci.FusionappsService.Models.ScheduledActivity.ScheduledActivityPhaseEnum> ScheduledActivityPhase { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -72,6 +78,8 @@ namespace Oci.FusionappsService.Cmdlets
                     TimeExpectedFinishLessThanOrEqualTo = TimeExpectedFinishLessThanOrEqualTo,
                     RunCycle = RunCycle,
                     LifecycleState = LifecycleState,
+                    ScheduledActivityAssociationId = ScheduledActivityAssociationId,
+                    ScheduledActivityPhase = ScheduledActivityPhase,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,

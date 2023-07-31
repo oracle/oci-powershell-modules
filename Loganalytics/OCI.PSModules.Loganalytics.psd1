@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Loganalytics.dll'
 
 # Version number of this module.
-ModuleVersion = '63.0.0'
+ModuleVersion = '64.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '63.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '64.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Loganalytics.dll'
@@ -74,7 +74,9 @@ FunctionsToExport = '*'
 CmdletsToExport = 'Add-OCILoganalyticsEntityAssociation', 
                'Add-OCILoganalyticsSourceEventTypes', 
                'Confirm-OCILoganalyticsAssociationParameters', 
-               'Confirm-OCILoganalyticsFile', 'Confirm-OCILoganalyticsSource', 
+               'Confirm-OCILoganalyticsEndpoint', 'Confirm-OCILoganalyticsFile', 
+               'Confirm-OCILoganalyticsLabelCondition', 
+               'Confirm-OCILoganalyticsSource', 
                'Confirm-OCILoganalyticsSourceExtendedFieldDetails', 
                'Confirm-OCILoganalyticsSourceMapping', 
                'Disable-OCILoganalyticsArchiving', 
@@ -95,6 +97,7 @@ CmdletsToExport = 'Add-OCILoganalyticsEntityAssociation',
                'Get-OCILoganalyticsColumnNames', 
                'Get-OCILoganalyticsConfigWorkRequest', 
                'Get-OCILoganalyticsConfigWorkRequestsList', 
+               'Get-OCILoganalyticsEffectivePropertiesList', 
                'Get-OCILoganalyticsEmBridge', 'Get-OCILoganalyticsEmBridgesList', 
                'Get-OCILoganalyticsEmBridgeSummary', 
                'Get-OCILoganalyticsEncryptionKeyInfoList', 
@@ -122,17 +125,23 @@ CmdletsToExport = 'Add-OCILoganalyticsEntityAssociation',
                'Get-OCILoganalyticsNamespace', 'Get-OCILoganalyticsNamespacesList', 
                'Get-OCILoganalyticsObjectCollectionRule', 
                'Get-OCILoganalyticsObjectCollectionRulesList', 
+               'Get-OCILoganalyticsOverlappingRecallsList', 
                'Get-OCILoganalyticsParser', 
                'Get-OCILoganalyticsParserFunctionsList', 
                'Get-OCILoganalyticsParserMetaPluginsList', 
                'Get-OCILoganalyticsParsersList', 
                'Get-OCILoganalyticsParserSummary', 
-               'Get-OCILoganalyticsPreferences', 'Get-OCILoganalyticsQueryResult', 
+               'Get-OCILoganalyticsPreferences', 
+               'Get-OCILoganalyticsPropertiesMetadataList', 
+               'Get-OCILoganalyticsQueryResult', 
                'Get-OCILoganalyticsQueryWorkRequest', 
                'Get-OCILoganalyticsQueryWorkRequestsList', 
+               'Get-OCILoganalyticsRecallCount', 
                'Get-OCILoganalyticsRecalledDataList', 
+               'Get-OCILoganalyticsRecalledDataSize', 
                'Get-OCILoganalyticsResourceCategoriesList', 
-               'Get-OCILoganalyticsRulesList', 'Get-OCILoganalyticsScheduledTask', 
+               'Get-OCILoganalyticsRulesList', 'Get-OCILoganalyticsRulesSummary', 
+               'Get-OCILoganalyticsScheduledTask', 
                'Get-OCILoganalyticsScheduledTasksList', 
                'Get-OCILoganalyticsSource', 
                'Get-OCILoganalyticsSourceAssociationsList', 
