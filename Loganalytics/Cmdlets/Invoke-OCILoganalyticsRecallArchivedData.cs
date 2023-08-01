@@ -16,7 +16,7 @@ using Oci.Common.Model;
 namespace Oci.LoganalyticsService.Cmdlets
 {
     [Cmdlet("Invoke", "OCILoganalyticsRecallArchivedData")]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.LoganalyticsService.Responses.RecallArchivedDataResponse) })]
+    [OutputType(new System.Type[] { typeof(Oci.LoganalyticsService.Models.RecalledDataInfo), typeof(Oci.LoganalyticsService.Responses.RecallArchivedDataResponse) })]
     public class InvokeOCILoganalyticsRecallArchivedData : OCILogAnalyticsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics namespace used for the request.")]
@@ -51,7 +51,7 @@ namespace Oci.LoganalyticsService.Cmdlets
                 };
 
                 response = client.RecallArchivedData(request).GetAwaiter().GetResult();
-                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
+                WriteOutput(response, response.RecalledDataInfo);
                 FinishProcessing(response);
             }
             catch (OciException ex)

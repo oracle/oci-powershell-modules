@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Containerengine.dll'
 
 # Version number of this module.
-ModuleVersion = '63.0.0'
+ModuleVersion = '64.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '63.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '64.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Containerengine.dll'
@@ -71,12 +71,14 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Containerengine.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Disable-OCIContainerengineAddon', 'Get-OCIContainerengineAddon', 
+CmdletsToExport = 'Complete-OCIContainerengineCredentialRotation', 
+               'Disable-OCIContainerengineAddon', 'Get-OCIContainerengineAddon', 
                'Get-OCIContainerengineAddonOptionsList', 
                'Get-OCIContainerengineAddonsList', 'Get-OCIContainerengineCluster', 
                'Get-OCIContainerengineClusterMigrateToNativeVcnStatus', 
                'Get-OCIContainerengineClusterOptions', 
                'Get-OCIContainerengineClustersList', 
+               'Get-OCIContainerengineCredentialRotationStatus', 
                'Get-OCIContainerengineNodePool', 
                'Get-OCIContainerengineNodePoolOptions', 
                'Get-OCIContainerengineNodePoolsList', 
@@ -102,6 +104,7 @@ CmdletsToExport = 'Disable-OCIContainerengineAddon', 'Get-OCIContainerengineAddo
                'Remove-OCIContainerengineVirtualNodePool', 
                'Remove-OCIContainerengineWorkloadMapping', 
                'Remove-OCIContainerengineWorkRequest', 
+               'Start-OCIContainerengineCredentialRotation', 
                'Update-OCIContainerengineAddon', 
                'Update-OCIContainerengineCluster', 
                'Update-OCIContainerengineClusterEndpointConfig', 

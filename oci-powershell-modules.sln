@@ -257,6 +257,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Ocicontrolcen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Osmanagementhub", "Osmanagementhub\OCI.PSModules.Osmanagementhub.csproj", "{FA2730AF-CD67-4C58-90A5-E3A6527A7D23}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Fleetsoftwareupdate", "Fleetsoftwareupdate\OCI.PSModules.Fleetsoftwareupdate.csproj", "{0D153B76-B859-4EFC-A47D-65C57CC846D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1806,5 +1808,17 @@ Global
         {FA2730AF-CD67-4C58-90A5-E3A6527A7D23}.Release|x64.Build.0 = Release|Any CPU
         {FA2730AF-CD67-4C58-90A5-E3A6527A7D23}.Release|x86.ActiveCfg = Release|Any CPU
         {FA2730AF-CD67-4C58-90A5-E3A6527A7D23}.Release|x86.Build.0 = Release|Any CPU
+        {0D153B76-B859-4EFC-A47D-65C57CC846D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {0D153B76-B859-4EFC-A47D-65C57CC846D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {0D153B76-B859-4EFC-A47D-65C57CC846D0}.Debug|x64.ActiveCfg = Debug|Any CPU
+        {0D153B76-B859-4EFC-A47D-65C57CC846D0}.Debug|x64.Build.0 = Debug|Any CPU
+        {0D153B76-B859-4EFC-A47D-65C57CC846D0}.Debug|x86.ActiveCfg = Debug|Any CPU
+        {0D153B76-B859-4EFC-A47D-65C57CC846D0}.Debug|x86.Build.0 = Debug|Any CPU
+        {0D153B76-B859-4EFC-A47D-65C57CC846D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {0D153B76-B859-4EFC-A47D-65C57CC846D0}.Release|Any CPU.Build.0 = Release|Any CPU
+        {0D153B76-B859-4EFC-A47D-65C57CC846D0}.Release|x64.ActiveCfg = Release|Any CPU
+        {0D153B76-B859-4EFC-A47D-65C57CC846D0}.Release|x64.Build.0 = Release|Any CPU
+        {0D153B76-B859-4EFC-A47D-65C57CC846D0}.Release|x86.ActiveCfg = Release|Any CPU
+        {0D153B76-B859-4EFC-A47D-65C57CC846D0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

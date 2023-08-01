@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Opsi.dll'
 
 # Version number of this module.
-ModuleVersion = '63.0.0'
+ModuleVersion = '64.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '63.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '64.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Opsi.dll'
@@ -103,6 +103,7 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Get-OCIOpsiImportableAgentEntitiesList', 
                'Get-OCIOpsiImportableComputeEntitiesList', 
                'Get-OCIOpsiImportableEnterpriseManagerEntitiesList', 
+               'Get-OCIOpsiNewsReport', 'Get-OCIOpsiNewsReportsList', 
                'Get-OCIOpsiOperationsInsightsPrivateEndpoint', 
                'Get-OCIOpsiOperationsInsightsPrivateEndpointsList', 
                'Get-OCIOpsiOperationsInsightsWarehouse', 
@@ -178,11 +179,12 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Move-OCIOpsiEnterpriseManagerBridgeCompartment', 
                'Move-OCIOpsiExadataInsightCompartment', 
                'Move-OCIOpsiHostInsightCompartment', 
+               'Move-OCIOpsiNewsReportCompartment', 
                'Move-OCIOpsiOperationsInsightsPrivateEndpointCompartment', 
                'Move-OCIOpsiPeComanagedDatabaseInsight', 'New-OCIOpsiAwrHub', 
                'New-OCIOpsiConfiguration', 'New-OCIOpsiDatabaseInsight', 
                'New-OCIOpsiEnterpriseManagerBridge', 'New-OCIOpsiExadataInsight', 
-               'New-OCIOpsiHostInsight', 
+               'New-OCIOpsiHostInsight', 'New-OCIOpsiNewsReport', 
                'New-OCIOpsiOperationsInsightsPrivateEndpoint', 
                'New-OCIOpsiOperationsInsightsWarehouse', 
                'New-OCIOpsiOperationsInsightsWarehouseUser', 
@@ -190,6 +192,7 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Remove-OCIOpsiDatabaseInsight', 
                'Remove-OCIOpsiEnterpriseManagerBridge', 
                'Remove-OCIOpsiExadataInsight', 'Remove-OCIOpsiHostInsight', 
+               'Remove-OCIOpsiNewsReport', 
                'Remove-OCIOpsiOperationsInsightsPrivateEndpoint', 
                'Remove-OCIOpsiOperationsInsightsWarehouse', 
                'Remove-OCIOpsiOperationsInsightsWarehouseUser', 
@@ -197,6 +200,7 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Update-OCIOpsiDatabaseInsight', 
                'Update-OCIOpsiEnterpriseManagerBridge', 
                'Update-OCIOpsiExadataInsight', 'Update-OCIOpsiHostInsight', 
+               'Update-OCIOpsiNewsReport', 
                'Update-OCIOpsiOperationsInsightsPrivateEndpoint', 
                'Update-OCIOpsiOperationsInsightsWarehouse', 
                'Update-OCIOpsiOperationsInsightsWarehouseUser'

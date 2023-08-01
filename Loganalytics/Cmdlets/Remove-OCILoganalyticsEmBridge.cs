@@ -31,6 +31,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If true, delete entities created by this bridge")]
+        public System.Nullable<bool> IsDeleteEntities { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "Ignore confirmation and force the Cmdlet to complete action.")]
         public SwitchParameter Force { get; set; }
 
@@ -52,7 +55,8 @@ namespace Oci.LoganalyticsService.Cmdlets
                     NamespaceName = NamespaceName,
                     LogAnalyticsEmBridgeId = LogAnalyticsEmBridgeId,
                     IfMatch = IfMatch,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    IsDeleteEntities = IsDeleteEntities
                 };
 
                 response = client.DeleteLogAnalyticsEmBridge(request).GetAwaiter().GetResult();
