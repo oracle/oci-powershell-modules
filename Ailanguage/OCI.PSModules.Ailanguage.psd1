@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Ailanguage.dll'
 
 # Version number of this module.
-ModuleVersion = '64.0.0'
+ModuleVersion = '65.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '64.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '65.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Ailanguage.dll'
@@ -73,8 +73,9 @@ FunctionsToExport = '*'
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Get-OCIAilanguageEndpoint', 'Get-OCIAilanguageEndpointsList', 
                'Get-OCIAilanguageEvaluationResultsList', 'Get-OCIAilanguageModel', 
-               'Get-OCIAilanguageModelsList', 'Get-OCIAilanguageProject', 
-               'Get-OCIAilanguageProjectsList', 'Get-OCIAilanguageWorkRequest', 
+               'Get-OCIAilanguageModelsList', 'Get-OCIAilanguageModelType', 
+               'Get-OCIAilanguageProject', 'Get-OCIAilanguageProjectsList', 
+               'Get-OCIAilanguageWorkRequest', 
                'Get-OCIAilanguageWorkRequestErrorsList', 
                'Get-OCIAilanguageWorkRequestLogsList', 
                'Get-OCIAilanguageWorkRequestsList', 
