@@ -41,8 +41,8 @@ namespace Oci.CoreService.Cmdlets
         public string IfMatch { get; set; }
 
         
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for removing a VCN ipv6 CIDR.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for removing a VCN ipv6 CIDR.", ParameterSetName = Default)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for removing a VCN IPv6 prefix.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for removing a VCN IPv6 prefix.", ParameterSetName = Default)]
         public RemoveVcnIpv6CidrDetails RemoveVcnIpv6CidrDetails { get; set; }
 
         [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = StatusParamSet)]

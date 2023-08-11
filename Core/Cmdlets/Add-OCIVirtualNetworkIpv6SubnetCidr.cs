@@ -26,8 +26,8 @@ namespace Oci.CoreService.Cmdlets
         public string SubnetId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for adding an IPv6 CIDR to a subnet.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for adding an IPv6 CIDR to a subnet.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for adding an IPv6 prefix to a subnet.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for adding an IPv6 prefix to a subnet.", ParameterSetName = Default)]
         public AddSubnetIpv6CidrDetails AddSubnetIpv6CidrDetails { get; set; }
 
         
