@@ -26,8 +26,8 @@ namespace Oci.CoreService.Cmdlets
         public string SubnetId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for removing an IPv6 SUBNET CIDR.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for removing an IPv6 SUBNET CIDR.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for removing an IPv6 SUBNET prefix.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for removing an IPv6 SUBNET prefix.", ParameterSetName = Default)]
         public RemoveSubnetIpv6CidrDetails RemoveSubnetIpv6CidrDetails { get; set; }
 
         
