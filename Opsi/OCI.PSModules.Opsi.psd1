@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Opsi.dll'
 
 # Version number of this module.
-ModuleVersion = '65.1.0'
+ModuleVersion = '65.2.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '65.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '65.2.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Opsi.dll'
@@ -111,8 +111,8 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Get-OCIOpsiOperationsInsightsWarehouseUser', 
                'Get-OCIOpsiOperationsInsightsWarehouseUsersList', 
                'Get-OCIOpsiSqlPlansList', 'Get-OCIOpsiSqlSearchesList', 
-               'Get-OCIOpsiSqlTextsList', 'Get-OCIOpsiWorkRequest', 
-               'Get-OCIOpsiWorkRequestErrorsList', 
+               'Get-OCIOpsiSqlTextsList', 'Get-OCIOpsiWarehouseDataObjectsList', 
+               'Get-OCIOpsiWorkRequest', 'Get-OCIOpsiWorkRequestErrorsList', 
                'Get-OCIOpsiWorkRequestLogsList', 'Get-OCIOpsiWorkRequestsList', 
                'Invoke-OCIOpsiDownloadOperationsInsightsWarehouseWallet', 
                'Invoke-OCIOpsiIngestAddmReports', 
@@ -122,6 +122,7 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Invoke-OCIOpsiIngestSqlPlanLines', 'Invoke-OCIOpsiIngestSqlStats', 
                'Invoke-OCIOpsiIngestSqlText', 
                'Invoke-OCIOpsiQueryOpsiDataObjectData', 
+               'Invoke-OCIOpsiQueryWarehouseDataObjectData', 
                'Invoke-OCIOpsiRotateOperationsInsightsWarehouseWallet', 
                'Invoke-OCIOpsiSummarizeAddmDbFindings', 
                'Invoke-OCIOpsiSummarizeAddmDbParameterChanges', 

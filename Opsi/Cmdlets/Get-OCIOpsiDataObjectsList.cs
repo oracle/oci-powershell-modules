@@ -42,6 +42,12 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"OPSI data object list sort options.")]
         public System.Nullable<Oci.OpsiService.Requests.ListOpsiDataObjectsRequest.SortByEnum> SortBy { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only data objects that belongs to the group of the given group name. By default, no filtering will be applied on group name.")]
+        public string GroupName { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only data objects that match the entire data object name. By default, no filtering will be applied on data object name.")]
+        public string Name { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -64,6 +70,8 @@ namespace Oci.OpsiService.Cmdlets
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
+                    GroupName = GroupName,
+                    Name = Name,
                     OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListOpsiDataObjectsResponse> responses = GetRequestDelegate().Invoke(request);
