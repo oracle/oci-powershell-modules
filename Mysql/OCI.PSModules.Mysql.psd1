@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Mysql.dll'
 
 # Version number of this module.
-ModuleVersion = '65.2.0'
+ModuleVersion = '66.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '65.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '66.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Mysql.dll'
@@ -71,9 +71,7 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Mysql.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Add-OCIMysqlAnalyticsCluster', 'Add-OCIMysqlHeatWaveCluster', 
-               'Get-OCIMysqlAnalyticsCluster', 
-               'Get-OCIMysqlAnalyticsClusterMemoryEstimate', 'Get-OCIMysqlBackup', 
+CmdletsToExport = 'Add-OCIMysqlHeatWaveCluster', 'Get-OCIMysqlBackup', 
                'Get-OCIMysqlBackupsList', 'Get-OCIMysqlChannel', 
                'Get-OCIMysqlChannelsList', 'Get-OCIMysqlConfiguration', 
                'Get-OCIMysqlConfigurationsList', 'Get-OCIMysqlDbSystem', 
@@ -84,19 +82,16 @@ CmdletsToExport = 'Add-OCIMysqlAnalyticsCluster', 'Add-OCIMysqlHeatWaveCluster',
                'Get-OCIMysqlWorkRequestErrorsList', 
                'Get-OCIMysqlWorkRequestLogsList', 'Get-OCIMysqlWorkRequestsList', 
                'Invoke-OCIMysqlResumeChannel', 'Move-OCIMysqlBackupCompartment', 
-               'New-OCIMysqlAnalyticsClusterMemoryEstimate', 'New-OCIMysqlBackup', 
-               'New-OCIMysqlChannel', 'New-OCIMysqlConfiguration', 
-               'New-OCIMysqlDbSystem', 'New-OCIMysqlHeatWaveClusterMemoryEstimate', 
-               'New-OCIMysqlReplica', 'Remove-OCIMysqlAnalyticsCluster', 
+               'New-OCIMysqlBackup', 'New-OCIMysqlChannel', 
+               'New-OCIMysqlConfiguration', 'New-OCIMysqlDbSystem', 
+               'New-OCIMysqlHeatWaveClusterMemoryEstimate', 'New-OCIMysqlReplica', 
                'Remove-OCIMysqlBackup', 'Remove-OCIMysqlChannel', 
                'Remove-OCIMysqlConfiguration', 'Remove-OCIMysqlDbSystem', 
                'Remove-OCIMysqlHeatWaveCluster', 'Remove-OCIMysqlReplica', 
-               'Reset-OCIMysqlChannel', 'Restart-OCIMysqlAnalyticsCluster', 
-               'Restart-OCIMysqlDbSystem', 'Restart-OCIMysqlHeatWaveCluster', 
-               'Start-OCIMysqlAnalyticsCluster', 'Start-OCIMysqlDbSystem', 
-               'Start-OCIMysqlHeatWaveCluster', 'Stop-OCIMysqlAnalyticsCluster', 
-               'Stop-OCIMysqlDbSystem', 'Stop-OCIMysqlHeatWaveCluster', 
-               'Update-OCIMysqlAnalyticsCluster', 'Update-OCIMysqlBackup', 
+               'Reset-OCIMysqlChannel', 'Restart-OCIMysqlDbSystem', 
+               'Restart-OCIMysqlHeatWaveCluster', 'Start-OCIMysqlDbSystem', 
+               'Start-OCIMysqlHeatWaveCluster', 'Stop-OCIMysqlDbSystem', 
+               'Stop-OCIMysqlHeatWaveCluster', 'Update-OCIMysqlBackup', 
                'Update-OCIMysqlChannel', 'Update-OCIMysqlConfiguration', 
                'Update-OCIMysqlDbSystem', 'Update-OCIMysqlHeatWaveCluster', 
                'Update-OCIMysqlReplica'

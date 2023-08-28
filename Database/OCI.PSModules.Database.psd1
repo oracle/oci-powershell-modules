@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '65.2.0'
+ModuleVersion = '66.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '65.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '66.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -109,6 +109,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Get-OCIDatabaseAutonomousContainerDatabase', 
                'Get-OCIDatabaseAutonomousContainerDatabaseDataguardAssociation', 
                'Get-OCIDatabaseAutonomousContainerDatabaseDataguardAssociationsList', 
+               'Get-OCIDatabaseAutonomousContainerDatabaseResourceUsage', 
                'Get-OCIDatabaseAutonomousContainerDatabasesList', 
                'Get-OCIDatabaseAutonomousContainerDatabaseVersionsList', 
                'Get-OCIDatabaseAutonomousDatabase', 
@@ -136,6 +137,8 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Get-OCIDatabaseBackupDestinationList', 
                'Get-OCIDatabaseBackupsList', 
                'Get-OCIDatabaseCloudAutonomousVmCluster', 
+               'Get-OCIDatabaseCloudAutonomousVmClusterAcdResourceUsageList', 
+               'Get-OCIDatabaseCloudAutonomousVmClusterResourceUsage', 
                'Get-OCIDatabaseCloudAutonomousVmClustersList', 
                'Get-OCIDatabaseCloudExadataInfrastructure', 
                'Get-OCIDatabaseCloudExadataInfrastructuresList', 
