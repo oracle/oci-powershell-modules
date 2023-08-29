@@ -27,9 +27,6 @@ namespace Oci.MysqlService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Customer-defined unique identifier for the request. If you need to contact Oracle about a specific request, please provide the request ID that you supplied in this header with the request.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"DEPRECATED -- please use HeatWave API instead. If true, return only DB Systems with an Analytics Cluster attached, if false return only DB Systems with no Analytics Cluster attached. If not present, return all DB Systems.")]
-        public System.Nullable<bool> IsAnalyticsClusterAttached { get; set; }
-
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.")]
         public System.Nullable<bool> IsHeatWaveClusterAttached { get; set; }
 
@@ -74,7 +71,6 @@ namespace Oci.MysqlService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     OpcRequestId = OpcRequestId,
-                    IsAnalyticsClusterAttached = IsAnalyticsClusterAttached,
                     IsHeatWaveClusterAttached = IsHeatWaveClusterAttached,
                     DbSystemId = DbSystemId,
                     DisplayName = DisplayName,
