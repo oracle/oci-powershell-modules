@@ -19,13 +19,13 @@ namespace Oci.QueueService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.QueueService.Models.PutMessages), typeof(Oci.QueueService.Responses.PutMessagesResponse) })]
     public class WriteOCIQueueMessages : OCIQueueCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Queue identifier")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique queue identifier.")]
         public string QueueId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the messages to publish.")]
         public PutMessagesDetails PutMessagesDetails { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
         protected override void ProcessRecord()

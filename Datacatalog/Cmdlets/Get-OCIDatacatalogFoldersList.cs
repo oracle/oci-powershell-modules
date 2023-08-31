@@ -72,7 +72,10 @@ namespace Oci.DatacatalogService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies the fields to return in a folder summary response.")]
         public System.Collections.Generic.List<Oci.DatacatalogService.Requests.ListFoldersRequest.FieldsEnum> Fields { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The key of the object type.")]
+        public string TypeKey { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. DISPLAYORBUSINESSNAME considers businessName of a given object if set, else its displayName is used. Default sort order for TIMECREATED is descending and default sort order for DISPLAYNAME and DISPLAYORBUSINESSNAME is ascending. If no order is specified, TIMECREATED is the default.")]
         public System.Nullable<Oci.DatacatalogService.Requests.ListFoldersRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'asc' or 'desc'.")]
@@ -116,6 +119,7 @@ namespace Oci.DatacatalogService.Cmdlets
                     HarvestStatus = HarvestStatus,
                     LastJobKey = LastJobKey,
                     Fields = Fields,
+                    TypeKey = TypeKey,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     Limit = Limit,

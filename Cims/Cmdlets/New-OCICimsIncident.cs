@@ -22,14 +22,26 @@ namespace Oci.CimsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Incident information")]
         public CreateIncident CreateIncidentDetails { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.")]
-        public string Ocid { get; set; }
-
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.")]
+        public string Ocid { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The region of the tenancy.")]
         public string Homeregion { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Token type that determine which cloud provider the request come from.")]
+        public string Bearertokentype { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Token that provided by multi cloud provider, which help to validate the email.")]
+        public string Bearertoken { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"IdToken that provided by multi cloud provider, which help to validate the email.")]
+        public string Idtoken { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of identity domain.")]
+        public string Domainid { get; set; }
 
         protected override void ProcessRecord()
         {
@@ -41,9 +53,13 @@ namespace Oci.CimsService.Cmdlets
                 request = new CreateIncidentRequest
                 {
                     CreateIncidentDetails = CreateIncidentDetails,
-                    Ocid = Ocid,
                     OpcRequestId = OpcRequestId,
-                    Homeregion = Homeregion
+                    Ocid = Ocid,
+                    Homeregion = Homeregion,
+                    Bearertokentype = Bearertokentype,
+                    Bearertoken = Bearertoken,
+                    Idtoken = Idtoken,
+                    Domainid = Domainid
                 };
 
                 response = client.CreateIncident(request).GetAwaiter().GetResult();

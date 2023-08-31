@@ -19,7 +19,7 @@ namespace Oci.QueueService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.QueueService.Models.UpdatedMessage), typeof(Oci.QueueService.Responses.UpdateMessageResponse) })]
     public class UpdateOCIQueueMessage : OCIQueueCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Queue identifier")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique queue identifier.")]
         public string QueueId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The receipt of the message retrieved from a GetMessages call.")]
@@ -28,7 +28,7 @@ namespace Oci.QueueService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the message to update.")]
         public UpdateMessageDetails UpdateMessageDetails { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
         protected override void ProcessRecord()

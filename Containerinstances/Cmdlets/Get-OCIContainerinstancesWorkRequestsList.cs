@@ -36,6 +36,20 @@ namespace Oci.ContainerinstancesService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the availability domain.
+
+Example: `Uocm:PHX-AD-1`")]
+        public string AvailabilityDomain { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources their lifecycleState matches the given OperationStatus.")]
+        public System.Nullable<Oci.ContainerinstancesService.Models.OperationStatus> Status { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.")]
+        public System.Nullable<Oci.ContainerinstancesService.Requests.ListWorkRequestsRequest.SortByEnum> SortBy { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'ASC' or 'DESC'.")]
+        public System.Nullable<Oci.ContainerinstancesService.Models.SortOrder> SortOrder { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -52,7 +66,11 @@ namespace Oci.ContainerinstancesService.Cmdlets
                     WorkRequestId = WorkRequestId,
                     OpcRequestId = OpcRequestId,
                     Page = Page,
-                    Limit = Limit
+                    Limit = Limit,
+                    AvailabilityDomain = AvailabilityDomain,
+                    Status = Status,
+                    SortBy = SortBy,
+                    SortOrder = SortOrder
                 };
                 IEnumerable<ListWorkRequestsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

@@ -54,7 +54,10 @@ namespace Oci.DatacatalogService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique data asset key.")]
         public string DataAssetKey { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Interval on which the job will be run. Value is specified as a cron-supported time specification ""nickname"". The following subset of those is supported: @monthly, @weekly, @daily, @hourly.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique glossary key.")]
+        public string GlossaryKey { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Interval on which the job will be run. Value is specified as a cron-supported time specification ""nickname"". The following subset of those is supported: @monthly, @weekly, @daily, @hourly. For metastore sync, an additional option @default is supported, which will schedule jobs at a more granular frequency.")]
         public string ScheduleCronExpression { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Date that the schedule should be operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.")]
@@ -116,6 +119,7 @@ namespace Oci.DatacatalogService.Cmdlets
                     JobType = JobType,
                     JobDefinitionKey = JobDefinitionKey,
                     DataAssetKey = DataAssetKey,
+                    GlossaryKey = GlossaryKey,
                     ScheduleCronExpression = ScheduleCronExpression,
                     TimeScheduleBegin = TimeScheduleBegin,
                     TimeScheduleEnd = TimeScheduleEnd,
