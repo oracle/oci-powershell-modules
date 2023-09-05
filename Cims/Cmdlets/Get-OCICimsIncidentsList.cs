@@ -21,14 +21,11 @@ namespace Oci.CimsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CimsService.Models.IncidentSummary), typeof(Oci.CimsService.Responses.ListIncidentsResponse) })]
     public class GetOCICimsIncidentsList : OCIIncidentCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Customer Support Identifier associated with the support account.")]
-        public string Csi { get; set; }
-
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the tenancy.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.")]
-        public string Ocid { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Customer Support Identifier (CSI) associated with the support account.")]
+        public string Csi { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -48,11 +45,26 @@ namespace Oci.CimsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.")]
+        public string Ocid { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The region of the tenancy.")]
         public string Homeregion { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The kind of support request.")]
         public string ProblemType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Token type that determine which cloud provider the request come from.")]
+        public string Bearertokentype { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Token that provided by multi cloud provider, which help to validate the email.")]
+        public string Bearertoken { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"IdToken that provided by multi cloud provider, which help to validate the email.")]
+        public string Idtoken { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of identity domain.")]
+        public string Domainid { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
@@ -66,17 +78,21 @@ namespace Oci.CimsService.Cmdlets
             {
                 request = new ListIncidentsRequest
                 {
-                    Csi = Csi,
                     CompartmentId = CompartmentId,
-                    Ocid = Ocid,
+                    Csi = Csi,
                     Limit = Limit,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     LifecycleState = LifecycleState,
                     Page = Page,
                     OpcRequestId = OpcRequestId,
+                    Ocid = Ocid,
                     Homeregion = Homeregion,
-                    ProblemType = ProblemType
+                    ProblemType = ProblemType,
+                    Bearertokentype = Bearertokentype,
+                    Bearertoken = Bearertoken,
+                    Idtoken = Idtoken,
+                    Domainid = Domainid
                 };
                 IEnumerable<ListIncidentsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

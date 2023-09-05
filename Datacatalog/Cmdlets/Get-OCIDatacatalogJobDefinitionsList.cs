@@ -45,6 +45,9 @@ namespace Oci.DatacatalogService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique data asset key.")]
         public string DataAssetKey { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique glossary key.")]
+        public string GlossaryKey { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique connection key.")]
         public string ConnectionKey { get; set; }
 
@@ -101,6 +104,7 @@ namespace Oci.DatacatalogService.Cmdlets
                     JobType = JobType,
                     IsIncremental = IsIncremental,
                     DataAssetKey = DataAssetKey,
+                    GlossaryKey = GlossaryKey,
                     ConnectionKey = ConnectionKey,
                     TimeCreated = TimeCreated,
                     TimeUpdated = TimeUpdated,

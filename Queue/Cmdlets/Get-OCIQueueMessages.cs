@@ -19,20 +19,27 @@ namespace Oci.QueueService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.QueueService.Models.GetMessages), typeof(Oci.QueueService.Responses.GetMessagesResponse) })]
     public class GetOCIQueueMessages : OCIQueueCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Queue identifier")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique queue identifier.")]
         public string QueueId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If the visibilityInSeconds parameter is set, messages will be hidden for visibilityInSeconds seconds and won't be consumable by other consumers during that time. If it isn't set it defaults to the value set at the queue level. The minimum is 0 and the maximum is 43,200 (12 hours). Using a visibilityInSeconds of 0, effectively acts as a peek functionality. Messages retrieved that way, aren't meant to be deleted because they will most likely be delivered to another consumer as their visibility won't change, but will still increase the delivery count by one.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If the `visibilityInSeconds` parameter is set, messages will be hidden for `visibilityInSeconds` seconds and won't be consumable by other consumers during that time. If it isn't set it defaults to the value set at the queue level.
+
+Using a `visibilityInSeconds` value of 0 effectively acts as a peek functionality. Messages retrieved that way aren't meant to be deleted because they will most likely be delivered to another consumer as their visibility won't change, but will still increase the delivery count by one.")]
         public System.Nullable<int> VisibilityInSeconds { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If the timeoutInSeconds parameter isn't set or set to a value greater than zero, the request is using the long-polling mode and will only return when a message is available for consumption (it does not wait for limit messages but still only returns at-most limit messages) or after timeoutInSeconds seconds (in which case it will return an empty response) whichever comes first. If the parameter is set to zero, the request is using the short-polling mode and immediately returns whether messages have been retrieved or not. In same rare-cases a long-polling request could be interrupted (returned with empty response) before the end of the timeout. The minimum is 0 (long polling disabled), the maximum is 30 seconds and default is 30 seconds.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If the `timeoutInSeconds parameter` isn't set or it is set to a value greater than 0, the request is using the long-polling mode and will only return when a message is available for consumption (it does not wait for limit messages but still only returns at-most limit messages) or after `timeoutInSeconds` seconds (in which case it will return an empty response), whichever comes first.
+
+If the parameter is set to 0, the request is using the short-polling mode and immediately returns whether messages have been retrieved or not. In same rare-cases a long-polling request could be interrupted (returned with empty response) before the end of the timeout.")]
         public System.Nullable<int> TimeoutInSeconds { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The limit parameter controls how many messages is returned at-most. The default is 1, the minimum is 1 and the maximum is 32.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The limit parameter controls how many messages is returned at-most.")]
         public System.Nullable<int> Limit { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional parameter to filter the channels.")]
+        public string ChannelFilter { get; set; }
 
         protected override void ProcessRecord()
         {
@@ -47,7 +54,8 @@ namespace Oci.QueueService.Cmdlets
                     VisibilityInSeconds = VisibilityInSeconds,
                     TimeoutInSeconds = TimeoutInSeconds,
                     Limit = Limit,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    ChannelFilter = ChannelFilter
                 };
 
                 response = client.GetMessages(request).GetAwaiter().GetResult();

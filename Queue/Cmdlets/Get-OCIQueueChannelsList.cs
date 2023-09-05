@@ -15,9 +15,9 @@ using Oci.Common.Model;
 
 namespace Oci.QueueService.Cmdlets
 {
-    [Cmdlet("Get", "OCIQueueStats")]
-    [OutputType(new System.Type[] { typeof(Oci.QueueService.Models.QueueStats), typeof(Oci.QueueService.Responses.GetStatsResponse) })]
-    public class GetOCIQueueStats : OCIQueueCmdlet
+    [Cmdlet("Get", "OCIQueueChannelsList")]
+    [OutputType(new System.Type[] { typeof(Oci.QueueService.Models.ChannelCollection), typeof(Oci.QueueService.Responses.ListChannelsResponse) })]
+    public class GetOCIQueueChannelsList : OCIQueueCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique queue identifier.")]
         public string QueueId { get; set; }
@@ -25,25 +25,33 @@ namespace Oci.QueueService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Id to specify channel.")]
-        public string ChannelId { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).")]
+        public System.Nullable<int> Limit { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The value of the opc-next-page response header from the previous ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).")]
+        public string Page { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional parameter to filter the channels.")]
+        public string ChannelFilter { get; set; }
 
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            GetStatsRequest request;
+            ListChannelsRequest request;
 
             try
             {
-                request = new GetStatsRequest
+                request = new ListChannelsRequest
                 {
                     QueueId = QueueId,
                     OpcRequestId = OpcRequestId,
-                    ChannelId = ChannelId
+                    Limit = Limit,
+                    Page = Page,
+                    ChannelFilter = ChannelFilter
                 };
 
-                response = client.GetStats(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.QueueStats);
+                response = client.ListChannels(request).GetAwaiter().GetResult();
+                WriteOutput(response, response.ChannelCollection);
                 FinishProcessing(response);
             }
             catch (OciException ex)
@@ -62,6 +70,6 @@ namespace Oci.QueueService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private GetStatsResponse response;
+        private ListChannelsResponse response;
     }
 }

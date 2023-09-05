@@ -15,10 +15,16 @@ using Oci.Common.Model;
 
 namespace Oci.CimsService.Cmdlets
 {
-    [Cmdlet("Get", "OCICimsStatus")]
-    [OutputType(new System.Type[] { typeof(Oci.CimsService.Models.Status), typeof(Oci.CimsService.Responses.GetStatusResponse) })]
-    public class GetOCICimsStatus : OCIIncidentCmdlet
+    [Cmdlet("Get", "OCICimsCsiNumber")]
+    [OutputType(new System.Type[] { typeof(string), typeof(Oci.CimsService.Responses.GetCsiNumberResponse) })]
+    public class GetOCICimsCsiNumber : OCIIncidentCmdlet
     {
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Tenancy Ocid in oracle cloud Infrastructure")]
+        public string TenantId { get; set; }
+
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Home region of the customer which is part of oracle cloud infrastructure regions. This property corresponds to Region parameter in the API.")]
+        public string CimsRegion { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -28,22 +34,40 @@ namespace Oci.CimsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The region of the tenancy.")]
         public string Homeregion { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Token type that determine which cloud provider the request come from.")]
+        public string Bearertokentype { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Token that provided by multi cloud provider, which help to validate the email.")]
+        public string Bearertoken { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"IdToken that provided by multi cloud provider, which help to validate the email.")]
+        public string Idtoken { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of identity domain.")]
+        public string Domainid { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            GetStatusRequest request;
+            GetCsiNumberRequest request;
 
             try
             {
-                request = new GetStatusRequest
+                request = new GetCsiNumberRequest
                 {
+                    TenantId = TenantId,
+                    Region = CimsRegion,
                     OpcRequestId = OpcRequestId,
                     Ocid = Ocid,
-                    Homeregion = Homeregion
+                    Homeregion = Homeregion,
+                    Bearertokentype = Bearertokentype,
+                    Bearertoken = Bearertoken,
+                    Idtoken = Idtoken,
+                    Domainid = Domainid
                 };
 
-                response = client.GetStatus(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.Status);
+                response = client.GetCsiNumber(request).GetAwaiter().GetResult();
+                WriteOutput(response, response.Value);
                 FinishProcessing(response);
             }
             catch (OciException ex)
@@ -62,6 +86,6 @@ namespace Oci.CimsService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private GetStatusResponse response;
+        private GetCsiNumberResponse response;
     }
 }

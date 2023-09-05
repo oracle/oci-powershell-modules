@@ -27,12 +27,6 @@ namespace Oci.CimsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the tenancy.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Customer Support Identifier associated with the support account.")]
-        public string Csi { get; set; }
-
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.")]
-        public string Ocid { get; set; }
-
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -48,11 +42,20 @@ namespace Oci.CimsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The order to sort the results in.")]
         public System.Nullable<Oci.CimsService.Models.SortOrder> SortOrder { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The user-friendly name of the incident type.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The user-friendly name of the support ticket type.")]
         public string Name { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Customer Support Identifier (CSI) associated with the support account.")]
+        public string Csi { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.")]
+        public string Ocid { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The region of the tenancy.")]
         public string Homeregion { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of identity domain.")]
+        public string Domainid { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
@@ -68,15 +71,16 @@ namespace Oci.CimsService.Cmdlets
                 {
                     ProblemType = ProblemType,
                     CompartmentId = CompartmentId,
-                    Csi = Csi,
-                    Ocid = Ocid,
                     OpcRequestId = OpcRequestId,
                     Limit = Limit,
                     Page = Page,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     Name = Name,
-                    Homeregion = Homeregion
+                    Csi = Csi,
+                    Ocid = Ocid,
+                    Homeregion = Homeregion,
+                    Domainid = Domainid
                 };
                 IEnumerable<ListIncidentResourceTypesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
