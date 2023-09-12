@@ -21,8 +21,8 @@ namespace Oci.AivisionService.Cmdlets
     public class GetOCIAivisionImageJob : OCIAIServiceVisionCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Image job id.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Image job id.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The image job ID.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The image job ID.", ParameterSetName = Default)]
         public string ImageJobId { get; set; }
 
         

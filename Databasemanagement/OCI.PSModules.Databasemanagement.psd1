@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Databasemanagement.dll'
 
 # Version number of this module.
-ModuleVersion = '67.0.0'
+ModuleVersion = '67.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '67.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '67.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasemanagement.dll'
@@ -74,6 +74,7 @@ FunctionsToExport = '*'
 CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles', 
                'Add-OCIDatabasemanagementManagedDatabaseToManagedDatabaseGroup', 
                'Add-OCIDatabasemanagementmTasks', 
+               'Confirm-OCIDatabasemanagementBasicFilter', 
                'Disable-OCIDatabasemanagementAutomaticInitialPlanCapture', 
                'Disable-OCIDatabasemanagementAutomaticSpmEvolveAdvisorTask', 
                'Disable-OCIDatabasemanagementExternalDbSystemDatabaseManagement', 
@@ -81,6 +82,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Disable-OCIDatabasemanagementExternalExadataInfrastructureManagement', 
                'Disable-OCIDatabasemanagementHighFrequencyAutomaticSpmEvolveAdvisorTask', 
                'Disable-OCIDatabasemanagementSqlPlanBaselinesUsage', 
+               'Edit-OCIDatabasemanagementSnapshotSettings', 
                'Enable-OCIDatabasemanagementAutomaticInitialPlanCapture', 
                'Enable-OCIDatabasemanagementAutomaticSpmEvolveAdvisorTask', 
                'Enable-OCIDatabasemanagementExternalDbSystemDatabaseManagement', 
@@ -190,14 +192,19 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Invoke-OCIDatabasemanagementConfigureAutomaticSpmEvolveAdvisorTask', 
                'Invoke-OCIDatabasemanagementDiscoverExternalExadataInfrastructure', 
                'Invoke-OCIDatabasemanagementDropSqlPlanBaselines', 
+               'Invoke-OCIDatabasemanagementDropSqlsInSqlTuningSet', 
+               'Invoke-OCIDatabasemanagementDropSqlTuningSet', 
                'Invoke-OCIDatabasemanagementDropSqlTuningTask', 
                'Invoke-OCIDatabasemanagementDropTablespace', 
+               'Invoke-OCIDatabasemanagementFetchSqlTuningSet', 
                'Invoke-OCIDatabasemanagementImplementOptimizerStatisticsAdvisorRecommendations', 
                'Invoke-OCIDatabasemanagementLoadSqlPlanBaselinesFromAwr', 
                'Invoke-OCIDatabasemanagementLoadSqlPlanBaselinesFromCursorCache', 
+               'Invoke-OCIDatabasemanagementLoadSqlTuningSet', 
                'Invoke-OCIDatabasemanagementPatchExternalDbSystemDiscovery', 
                'Invoke-OCIDatabasemanagementResizeDataFile', 
                'Invoke-OCIDatabasemanagementRunHistoricAddm', 
+               'Invoke-OCIDatabasemanagementSaveSqlTuningSetAs', 
                'Invoke-OCIDatabasemanagementSummarizeAlertLogCounts', 
                'Invoke-OCIDatabasemanagementSummarizeAttentionLogCounts', 
                'Invoke-OCIDatabasemanagementSummarizeAwrDbCpuUsages', 
@@ -237,6 +244,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'New-OCIDatabasemanagementExternalExadataStorageConnector', 
                'New-OCIDatabasemanagementJob', 
                'New-OCIDatabasemanagementManagedDatabaseGroup', 
+               'New-OCIDatabasemanagementSqlTuningSet', 
                'New-OCIDatabasemanagementTablespace', 
                'Remove-OCIDatabasemanagementDataFile', 
                'Remove-OCIDatabasemanagementDbManagementPrivateEndpoint', 

@@ -21,8 +21,8 @@ namespace Oci.AivisionService.Cmdlets
     public class GetOCIAivisionDocumentJob : OCIAIServiceVisionCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Document job id.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Document job id.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The document job ID.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The document job ID.", ParameterSetName = Default)]
         public string DocumentJobId { get; set; }
 
         

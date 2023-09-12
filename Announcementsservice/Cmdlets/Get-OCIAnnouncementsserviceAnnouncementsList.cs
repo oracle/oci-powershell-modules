@@ -63,6 +63,12 @@ namespace Oci.AnnouncementsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Exclude The type of announcement.")]
         public System.Collections.Generic.List<string> ExcludeAnnouncementTypes { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to display only the latest announcement in a chain.")]
+        public System.Nullable<bool> ShouldShowOnlyLatestInChain { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only announcements belonging to the specified announcement chain ID.")]
+        public string ChainId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the complete request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -92,6 +98,8 @@ namespace Oci.AnnouncementsService.Cmdlets
                     Service = Service,
                     PlatformType = PlatformType,
                     ExcludeAnnouncementTypes = ExcludeAnnouncementTypes,
+                    ShouldShowOnlyLatestInChain = ShouldShowOnlyLatestInChain,
+                    ChainId = ChainId,
                     OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListAnnouncementsResponse> responses = GetRequestDelegate().Invoke(request);

@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Stackmonitoring.dll'
 
 # Version number of this module.
-ModuleVersion = '67.0.0'
+ModuleVersion = '67.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '67.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '67.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Stackmonitoring.dll'
@@ -72,6 +72,7 @@ FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Disable-OCIStackmonitoringExternalDatabase', 
+               'Get-OCIStackmonitoringConfig', 'Get-OCIStackmonitoringConfigsList', 
                'Get-OCIStackmonitoringDiscoveryJob', 
                'Get-OCIStackmonitoringDiscoveryJobLogsList', 
                'Get-OCIStackmonitoringDiscoveryJobsList', 
@@ -86,12 +87,16 @@ CmdletsToExport = 'Disable-OCIStackmonitoringExternalDatabase',
                'Invoke-OCIStackmonitoringSearchMonitoredResourceAssociations', 
                'Invoke-OCIStackmonitoringSearchMonitoredResourceMembers', 
                'Invoke-OCIStackmonitoringSearchMonitoredResources', 
+               'Move-OCIStackmonitoringConfigCompartment', 
                'Move-OCIStackmonitoringMonitoredResourceCompartment', 
+               'New-OCIStackmonitoringConfig', 
                'New-OCIStackmonitoringDiscoveryJob', 
                'New-OCIStackmonitoringMonitoredResource', 
+               'Remove-OCIStackmonitoringConfig', 
                'Remove-OCIStackmonitoringDiscoveryJob', 
                'Remove-OCIStackmonitoringMonitoredResource', 
                'Update-OCIStackmonitoringAndPropagateTags', 
+               'Update-OCIStackmonitoringConfig', 
                'Update-OCIStackmonitoringMonitoredResource'
 
 # Variables to export from this module
