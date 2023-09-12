@@ -19,7 +19,7 @@ namespace Oci.AivisionService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.AivisionService.Responses.CancelImageJobResponse) })]
     public class StopOCIAivisionImageJob : OCIAIServiceVisionCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Image job id.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The image job ID.")]
         public string ImageJobId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

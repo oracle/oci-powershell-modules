@@ -26,8 +26,8 @@ namespace Oci.DatabaseService.Cmdlets
         public string AutonomousDatabaseId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the cross-region disaster recovery (DR) details of the standby Shared Autonomous Database.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the cross-region disaster recovery (DR) details of the standby Shared Autonomous Database.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless database.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless database.", ParameterSetName = Default)]
         public ChangeDisasterRecoveryConfigurationDetails ChangeDisasterRecoveryConfigurationDetails { get; set; }
 
         
