@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Keymanagement.dll'
 
 # Version number of this module.
-ModuleVersion = '67.1.0'
+ModuleVersion = '67.2.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '67.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '67.2.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Keymanagement.dll'
@@ -73,8 +73,11 @@ FunctionsToExport = '*'
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Backup-OCIKeymanagementKey', 'Backup-OCIKeymanagementVault', 
                'Disable-OCIKeymanagementKey', 'Enable-OCIKeymanagementKey', 
-               'Export-OCIKeymanagementKey', 'Get-OCIKeymanagementKey', 
-               'Get-OCIKeymanagementKeysList', 'Get-OCIKeymanagementKeyVersion', 
+               'Export-OCIKeymanagementKey', 
+               'Get-OCIKeymanagementEkmsPrivateEndpoint', 
+               'Get-OCIKeymanagementEkmsPrivateEndpointsList', 
+               'Get-OCIKeymanagementKey', 'Get-OCIKeymanagementKeysList', 
+               'Get-OCIKeymanagementKeyVersion', 
                'Get-OCIKeymanagementKeyVersionsList', 
                'Get-OCIKeymanagementReplicationStatus', 
                'Get-OCIKeymanagementVault', 
@@ -89,9 +92,11 @@ CmdletsToExport = 'Backup-OCIKeymanagementKey', 'Backup-OCIKeymanagementVault',
                'Invoke-OCIKeymanagementSign', 'Invoke-OCIKeymanagementVerify', 
                'Move-OCIKeymanagementKeyCompartment', 
                'Move-OCIKeymanagementVaultCompartment', 
-               'New-OCIKeymanagementDataEncryptionKey', 'New-OCIKeymanagementKey', 
-               'New-OCIKeymanagementKeyVersion', 'New-OCIKeymanagementVault', 
-               'New-OCIKeymanagementVaultReplica', 
+               'New-OCIKeymanagementDataEncryptionKey', 
+               'New-OCIKeymanagementEkmsPrivateEndpoint', 
+               'New-OCIKeymanagementKey', 'New-OCIKeymanagementKeyVersion', 
+               'New-OCIKeymanagementVault', 'New-OCIKeymanagementVaultReplica', 
+               'Remove-OCIKeymanagementEkmsPrivateEndpoint', 
                'Remove-OCIKeymanagementVaultReplica', 
                'Restore-OCIKeymanagementKeyFromFile', 
                'Restore-OCIKeymanagementKeyFromObjectStore', 
@@ -99,8 +104,9 @@ CmdletsToExport = 'Backup-OCIKeymanagementKey', 'Backup-OCIKeymanagementVault',
                'Restore-OCIKeymanagementVaultFromObjectStore', 
                'Stop-OCIKeymanagementKeyDeletion', 
                'Stop-OCIKeymanagementKeyVersionDeletion', 
-               'Stop-OCIKeymanagementVaultDeletion', 'Update-OCIKeymanagementKey', 
-               'Update-OCIKeymanagementVault'
+               'Stop-OCIKeymanagementVaultDeletion', 
+               'Update-OCIKeymanagementEkmsPrivateEndpoint', 
+               'Update-OCIKeymanagementKey', 'Update-OCIKeymanagementVault'
 
 # Variables to export from this module
 VariablesToExport = '*'
