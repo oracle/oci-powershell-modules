@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 67.3.0 - 2023-10-03
+### Added
+- Support for elastic resource pools in the Database service
+- Support for private endpoints in the Data Science service
+- Support for File System Service (FSS) as transfer medium for data export and import in the Database Migration service
+- Support for new optional parameters on replica create, update and list operations in the MySQL Heatwave service
+
 ## 67.2.0 - 2023-09-26
 ### Added
 - Support for listing compute performances and storage performances in Database service

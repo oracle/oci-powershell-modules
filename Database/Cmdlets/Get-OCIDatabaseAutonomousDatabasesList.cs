@@ -68,6 +68,12 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that have Data Guard enabled.")]
         public System.Nullable<bool> IsDataGuardEnabled { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.")]
+        public System.Nullable<bool> IsResourcePoolLeader { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.")]
+        public string ResourcePoolLeaderId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -94,7 +100,9 @@ namespace Oci.DatabaseService.Cmdlets
                     DisplayName = DisplayName,
                     OpcRequestId = OpcRequestId,
                     IsRefreshableClone = IsRefreshableClone,
-                    IsDataGuardEnabled = IsDataGuardEnabled
+                    IsDataGuardEnabled = IsDataGuardEnabled,
+                    IsResourcePoolLeader = IsResourcePoolLeader,
+                    ResourcePoolLeaderId = ResourcePoolLeaderId
                 };
                 IEnumerable<ListAutonomousDatabasesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
