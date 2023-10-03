@@ -17,12 +17,12 @@ using Oci.Common.Model;
 
 namespace Oci.DatascienceService.Cmdlets
 {
-    [Cmdlet("Get", "OCIDatascienceWorkRequestLogsList")]
-    [OutputType(new System.Type[] { typeof(Oci.DatascienceService.Models.WorkRequestLogEntry), typeof(Oci.DatascienceService.Responses.ListWorkRequestLogsResponse) })]
-    public class GetOCIDatascienceWorkRequestLogsList : OCIDataScienceCmdlet
+    [Cmdlet("Get", "OCIDatasciencePrivateEndpointsList")]
+    [OutputType(new System.Type[] { typeof(Oci.DatascienceService.Models.DataSciencePrivateEndpointSummary), typeof(Oci.DatascienceService.Responses.ListDataSciencePrivateEndpointsResponse) })]
+    public class GetOCIDatasciencePrivateEndpointsList : OCIDataScienceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.")]
-        public string WorkRequestId { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"<b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
+        public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.")]
         public string OpcRequestId { get; set; }
@@ -37,24 +37,48 @@ Example: `500`", ParameterSetName = LimitSet)]
 See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The lifecycle state of the private endpoint.")]
+        public System.Nullable<Oci.DatascienceService.Models.DataSciencePrivateEndpointLifecycleState> LifecycleState { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field used to sort the results. Multiple fields aren't supported.")]
+        public System.Nullable<Oci.DatascienceService.Requests.ListDataSciencePrivateEndpointsRequest.SortByEnum> SortBy { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).")]
+        public System.Nullable<Oci.DatascienceService.Requests.ListDataSciencePrivateEndpointsRequest.SortOrderEnum> SortOrder { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"<b>Filter</b> results by its user-friendly name.")]
+        public string DisplayName { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"<b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.")]
+        public string CreatedBy { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Resource types in the Data Science service such as notebooks.")]
+        public System.Nullable<Oci.DatascienceService.Models.DataScienceResourceType> DataScienceResourceType { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            ListWorkRequestLogsRequest request;
+            ListDataSciencePrivateEndpointsRequest request;
 
             try
             {
-                request = new ListWorkRequestLogsRequest
+                request = new ListDataSciencePrivateEndpointsRequest
                 {
-                    WorkRequestId = WorkRequestId,
+                    CompartmentId = CompartmentId,
                     OpcRequestId = OpcRequestId,
                     Limit = Limit,
-                    Page = Page
+                    Page = Page,
+                    LifecycleState = LifecycleState,
+                    SortBy = SortBy,
+                    SortOrder = SortOrder,
+                    DisplayName = DisplayName,
+                    CreatedBy = CreatedBy,
+                    DataScienceResourceType = DataScienceResourceType
                 };
-                IEnumerable<ListWorkRequestLogsResponse> responses = GetRequestDelegate().Invoke(request);
+                IEnumerable<ListDataSciencePrivateEndpointsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
                 {
                     response = item;
@@ -84,16 +108,16 @@ See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concept
 
         private RequestDelegate GetRequestDelegate()
         {
-            IEnumerable<ListWorkRequestLogsResponse> DefaultRequest(ListWorkRequestLogsRequest request) => Enumerable.Repeat(client.ListWorkRequestLogs(request).GetAwaiter().GetResult(), 1);
+            IEnumerable<ListDataSciencePrivateEndpointsResponse> DefaultRequest(ListDataSciencePrivateEndpointsRequest request) => Enumerable.Repeat(client.ListDataSciencePrivateEndpoints(request).GetAwaiter().GetResult(), 1);
             if (ParameterSetName.Equals(AllPageSet))
             {
-                return req => client.Paginators.ListWorkRequestLogsResponseEnumerator(req);
+                return req => client.Paginators.ListDataSciencePrivateEndpointsResponseEnumerator(req);
             }
             return DefaultRequest;
         }
 
-        private ListWorkRequestLogsResponse response;
-        private delegate IEnumerable<ListWorkRequestLogsResponse> RequestDelegate(ListWorkRequestLogsRequest request);
+        private ListDataSciencePrivateEndpointsResponse response;
+        private delegate IEnumerable<ListDataSciencePrivateEndpointsResponse> RequestDelegate(ListDataSciencePrivateEndpointsRequest request);
         private const string AllPageSet = "AllPages";
         private const string LimitSet = "Limit";
     }

@@ -45,6 +45,12 @@ namespace Oci.MysqlService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The read replica [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string ReplicaId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The requested Configuration instance.")]
+        public string ConfigurationId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter instances if they are using the latest revision of the Configuration they are associated with.")]
+        public System.Nullable<bool> IsUpToDate { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. You can sort by one field only. By default, the Time field is sorted in descending order and the Display Name field in ascending order.")]
         public System.Nullable<Oci.MysqlService.Requests.ListReplicasRequest.SortByEnum> SortBy { get; set; }
 
@@ -71,6 +77,8 @@ namespace Oci.MysqlService.Cmdlets
                     DbSystemId = DbSystemId,
                     LifecycleState = LifecycleState,
                     ReplicaId = ReplicaId,
+                    ConfigurationId = ConfigurationId,
+                    IsUpToDate = IsUpToDate,
                     SortBy = SortBy,
                     SortOrder = SortOrder
                 };
