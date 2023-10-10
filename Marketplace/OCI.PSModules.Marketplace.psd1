@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Marketplace.dll'
 
 # Version number of this module.
-ModuleVersion = '67.3.0'
+ModuleVersion = '67.4.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '67.3.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '67.4.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Marketplace.dll'
@@ -71,7 +71,8 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Marketplace.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIMarketplaceAcceptedAgreement', 
+CmdletsToExport = 'Export-OCIMarketplaceListing', 
+               'Get-OCIMarketplaceAcceptedAgreement', 
                'Get-OCIMarketplaceAcceptedAgreementsList', 
                'Get-OCIMarketplaceAgreement', 'Get-OCIMarketplaceAgreementsList', 
                'Get-OCIMarketplaceCategoriesList', 
@@ -84,6 +85,10 @@ CmdletsToExport = 'Get-OCIMarketplaceAcceptedAgreement',
                'Get-OCIMarketplacePublishersList', 'Get-OCIMarketplaceReportsList', 
                'Get-OCIMarketplaceReportTypesList', 'Get-OCIMarketplaceTaxesList', 
                'Get-OCIMarketplaceThirdPartyPaidListingEligibility', 
+               'Get-OCIMarketplaceWorkRequest', 
+               'Get-OCIMarketplaceWorkRequestErrorsList', 
+               'Get-OCIMarketplaceWorkRequestLogsList', 
+               'Get-OCIMarketplaceWorkRequestsList', 
                'Invoke-OCIMarketplaceSearchListings', 
                'Move-OCIMarketplacePublicationCompartment', 
                'New-OCIMarketplaceAcceptedAgreement', 

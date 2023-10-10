@@ -49,6 +49,9 @@ Example: `50`", ParameterSetName = LimitSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given capture filter lifecycle state. The state value is case-insensitive.")]
         public System.Nullable<Oci.CoreService.Models.CaptureFilter.LifecycleStateEnum> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to only return resources that match the given capture `filterType`. The `filterType` value is the string representation of enum - `VTAP`, `FLOWLOG`.")]
+        public System.Nullable<Oci.CoreService.Models.CaptureFilter.FilterTypeEnum> FilterType { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -68,7 +71,8 @@ Example: `50`", ParameterSetName = LimitSet)]
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     DisplayName = DisplayName,
-                    LifecycleState = LifecycleState
+                    LifecycleState = LifecycleState,
+                    FilterType = FilterType
                 };
                 IEnumerable<ListCaptureFiltersResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
