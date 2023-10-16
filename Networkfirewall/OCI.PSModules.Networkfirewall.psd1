@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Networkfirewall.dll'
 
 # Version number of this module.
-ModuleVersion = '67.4.0'
+ModuleVersion = '68.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '67.4.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '68.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Networkfirewall.dll'
@@ -71,18 +71,81 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Networkfirewall.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCINetworkfirewall', 'Get-OCINetworkfirewallPoliciesList', 
-               'Get-OCINetworkfirewallPolicy', 'Get-OCINetworkfirewallsList', 
+CmdletsToExport = 'Get-OCINetworkfirewall', 'Get-OCINetworkfirewallAddressList', 
+               'Get-OCINetworkfirewallAddressListsList', 
+               'Get-OCINetworkfirewallApplication', 
+               'Get-OCINetworkfirewallApplicationGroup', 
+               'Get-OCINetworkfirewallApplicationGroupsList', 
+               'Get-OCINetworkfirewallApplicationsList', 
+               'Get-OCINetworkfirewallDecryptionProfile', 
+               'Get-OCINetworkfirewallDecryptionProfilesList', 
+               'Get-OCINetworkfirewallDecryptionRule', 
+               'Get-OCINetworkfirewallDecryptionRulesList', 
+               'Get-OCINetworkfirewallMappedSecret', 
+               'Get-OCINetworkfirewallMappedSecretsList', 
+               'Get-OCINetworkfirewallPoliciesList', 
+               'Get-OCINetworkfirewallPolicy', 
+               'Get-OCINetworkfirewallSecurityRule', 
+               'Get-OCINetworkfirewallSecurityRulesList', 
+               'Get-OCINetworkfirewallService', 
+               'Get-OCINetworkfirewallServiceList', 
+               'Get-OCINetworkfirewallServiceListsList', 
+               'Get-OCINetworkfirewallServicesList', 'Get-OCINetworkfirewallsList', 
+               'Get-OCINetworkfirewallUrlList', 
+               'Get-OCINetworkfirewallUrlListsList', 
                'Get-OCINetworkfirewallWorkRequest', 
                'Get-OCINetworkfirewallWorkRequestErrorsList', 
                'Get-OCINetworkfirewallWorkRequestLogsList', 
                'Get-OCINetworkfirewallWorkRequestsList', 
+               'Invoke-OCINetworkfirewallApplyNetworkFirewallPolicy', 
+               'Invoke-OCINetworkfirewallBulkUploadAddressLists', 
+               'Invoke-OCINetworkfirewallBulkUploadApplicationGroups', 
+               'Invoke-OCINetworkfirewallBulkUploadApplications', 
+               'Invoke-OCINetworkfirewallBulkUploadDecryptionProfiles', 
+               'Invoke-OCINetworkfirewallBulkUploadDecryptionRules', 
+               'Invoke-OCINetworkfirewallBulkUploadMappedSecrets', 
+               'Invoke-OCINetworkfirewallBulkUploadSecurityRules', 
+               'Invoke-OCINetworkfirewallBulkUploadServiceLists', 
+               'Invoke-OCINetworkfirewallBulkUploadServices', 
+               'Invoke-OCINetworkfirewallBulkUploadUrlLists', 
+               'Invoke-OCINetworkfirewallCloneNetworkFirewallPolicy', 
+               'Invoke-OCINetworkfirewallMigrateNetworkFirewallPolicy', 
                'Move-OCINetworkfirewallCompartment', 
                'Move-OCINetworkfirewallPolicyCompartment', 
-               'New-OCINetworkfirewall', 'New-OCINetworkfirewallPolicy', 
-               'Remove-OCINetworkfirewall', 'Remove-OCINetworkfirewallPolicy', 
+               'New-OCINetworkfirewall', 'New-OCINetworkfirewallAddressList', 
+               'New-OCINetworkfirewallApplication', 
+               'New-OCINetworkfirewallApplicationGroup', 
+               'New-OCINetworkfirewallDecryptionProfile', 
+               'New-OCINetworkfirewallDecryptionRule', 
+               'New-OCINetworkfirewallMappedSecret', 
+               'New-OCINetworkfirewallPolicy', 
+               'New-OCINetworkfirewallSecurityRule', 
+               'New-OCINetworkfirewallService', 
+               'New-OCINetworkfirewallServiceList', 
+               'New-OCINetworkfirewallUrlList', 'Remove-OCINetworkfirewall', 
+               'Remove-OCINetworkfirewallAddressList', 
+               'Remove-OCINetworkfirewallApplication', 
+               'Remove-OCINetworkfirewallApplicationGroup', 
+               'Remove-OCINetworkfirewallDecryptionProfile', 
+               'Remove-OCINetworkfirewallDecryptionRule', 
+               'Remove-OCINetworkfirewallMappedSecret', 
+               'Remove-OCINetworkfirewallPolicy', 
+               'Remove-OCINetworkfirewallSecurityRule', 
+               'Remove-OCINetworkfirewallService', 
+               'Remove-OCINetworkfirewallServiceList', 
+               'Remove-OCINetworkfirewallUrlList', 
                'Stop-OCINetworkfirewallWorkRequest', 'Update-OCINetworkfirewall', 
-               'Update-OCINetworkfirewallPolicy'
+               'Update-OCINetworkfirewallAddressList', 
+               'Update-OCINetworkfirewallApplication', 
+               'Update-OCINetworkfirewallApplicationGroup', 
+               'Update-OCINetworkfirewallDecryptionProfile', 
+               'Update-OCINetworkfirewallDecryptionRule', 
+               'Update-OCINetworkfirewallMappedSecret', 
+               'Update-OCINetworkfirewallPolicy', 
+               'Update-OCINetworkfirewallSecurityRule', 
+               'Update-OCINetworkfirewallService', 
+               'Update-OCINetworkfirewallServiceList', 
+               'Update-OCINetworkfirewallUrlList'
 
 # Variables to export from this module
 VariablesToExport = '*'

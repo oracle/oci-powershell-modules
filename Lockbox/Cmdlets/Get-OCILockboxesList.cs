@@ -39,6 +39,9 @@ namespace Oci.LockboxService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the lockbox partner.")]
         public System.Nullable<Oci.LockboxService.Models.LockboxPartner> LockboxPartner { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the partner.")]
+        public string PartnerId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -72,6 +75,7 @@ namespace Oci.LockboxService.Cmdlets
                     Id = Id,
                     ResourceId = ResourceId,
                     LockboxPartner = LockboxPartner,
+                    PartnerId = PartnerId,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,

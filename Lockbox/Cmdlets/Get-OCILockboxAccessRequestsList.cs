@@ -39,6 +39,9 @@ namespace Oci.LockboxService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the lockbox partner.")]
         public System.Nullable<Oci.LockboxService.Models.LockboxPartner> LockboxPartner { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the partner.")]
+        public string PartnerId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier (OCID) of the requestor in which to list resources.")]
         public string RequestorId { get; set; }
 
@@ -53,6 +56,12 @@ namespace Oci.LockboxService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.")]
         public System.Nullable<Oci.LockboxService.Requests.ListAccessRequestsRequest.SortByEnum> SortBy { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Date and time on or after which Access Requests were created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)")]
+        public System.Nullable<System.DateTime> TimeCreatedAfter { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Date and time on or before which Access requests were created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)")]
+        public System.Nullable<System.DateTime> TimeCreatedBefore { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
@@ -72,11 +81,14 @@ namespace Oci.LockboxService.Cmdlets
                     DisplayName = DisplayName,
                     LifecycleState = LifecycleState,
                     LockboxPartner = LockboxPartner,
+                    PartnerId = PartnerId,
                     RequestorId = RequestorId,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,
-                    SortBy = SortBy
+                    SortBy = SortBy,
+                    TimeCreatedAfter = TimeCreatedAfter,
+                    TimeCreatedBefore = TimeCreatedBefore
                 };
                 IEnumerable<ListAccessRequestsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
