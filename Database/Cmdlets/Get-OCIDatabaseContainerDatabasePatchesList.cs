@@ -33,6 +33,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The pagination token to continue listing from.")]
         public string Page { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Autonomous patch type, either ""QUARTERLY"" or ""TIMEZONE"".")]
+        public System.Nullable<Oci.DatabaseService.Requests.ListContainerDatabasePatchesRequest.AutonomousPatchTypeEnum> AutonomousPatchType { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -48,7 +51,8 @@ namespace Oci.DatabaseService.Cmdlets
                     AutonomousContainerDatabaseId = AutonomousContainerDatabaseId,
                     CompartmentId = CompartmentId,
                     Limit = Limit,
-                    Page = Page
+                    Page = Page,
+                    AutonomousPatchType = AutonomousPatchType
                 };
                 IEnumerable<ListContainerDatabasePatchesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

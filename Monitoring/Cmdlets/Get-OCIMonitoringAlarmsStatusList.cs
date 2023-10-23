@@ -55,6 +55,26 @@ Example: `severity`")]
 Example: `ASC`")]
         public System.Nullable<Oci.MonitoringService.Requests.ListAlarmsStatusRequest.SortOrderEnum> SortOrder { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a resource that is monitored by the metric that you are searching for.
+
+Example: `ocid1.instance.oc1.phx.exampleuniqueID`")]
+        public string ResourceId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given service name exactly. Use this filter to list all alarms containing metric streams that match the *exact* service-name dimension.
+
+Example: `logging-analytics`")]
+        public string ServiceName { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity monitored by the metric that you are searching for.
+
+Example: `ocid1.instance.oc1.phx.exampleuniqueID`")]
+        public string EntityId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to ""FIRING"" to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams' status.
+
+Example: `FIRING`")]
+        public System.Nullable<Oci.MonitoringService.Requests.ListAlarmsStatusRequest.StatusEnum> Status { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -74,7 +94,11 @@ Example: `ASC`")]
                     Limit = Limit,
                     DisplayName = DisplayName,
                     SortBy = SortBy,
-                    SortOrder = SortOrder
+                    SortOrder = SortOrder,
+                    ResourceId = ResourceId,
+                    ServiceName = ServiceName,
+                    EntityId = EntityId,
+                    Status = Status
                 };
                 IEnumerable<ListAlarmsStatusResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

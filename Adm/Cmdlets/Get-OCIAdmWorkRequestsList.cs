@@ -21,7 +21,7 @@ namespace Oci.AdmService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.AdmService.Models.WorkRequestSummaryCollection), typeof(Oci.AdmService.Responses.ListWorkRequestsResponse) })]
     public class GetOCIAdmWorkRequestsList : OCIApplicationDependencyManagementCmdlet
     {
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that belong to the specified compartment identifier.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The identifier of the asynchronous work request.")]
