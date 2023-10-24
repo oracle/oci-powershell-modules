@@ -22,7 +22,7 @@ namespace Oci.DatabasetoolsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools connection.")]
         public string DatabaseToolsConnectionId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtypes <Oci.DatabasetoolsService.Models.UpdateDatabaseToolsConnectionMySqlDetails>, <Oci.DatabasetoolsService.Models.UpdateDatabaseToolsConnectionOracleDatabaseDetails> of type <Oci.DatabasetoolsService.Models.UpdateDatabaseToolsConnectionDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtypes <Oci.DatabasetoolsService.Models.UpdateDatabaseToolsConnectionGenericJdbcDetails>, <Oci.DatabasetoolsService.Models.UpdateDatabaseToolsConnectionPostgresqlDetails>, <Oci.DatabasetoolsService.Models.UpdateDatabaseToolsConnectionMySqlDetails>, <Oci.DatabasetoolsService.Models.UpdateDatabaseToolsConnectionOracleDatabaseDetails> of type <Oci.DatabasetoolsService.Models.UpdateDatabaseToolsConnectionDetails>.")]
         public UpdateDatabaseToolsConnectionDetails UpdateDatabaseToolsConnectionDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
@@ -30,6 +30,9 @@ namespace Oci.DatabasetoolsService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Whether to override locks (if any exist).")]
+        public System.Nullable<bool> IsLockOverride { get; set; }
 
         protected override void ProcessRecord()
         {
@@ -43,7 +46,8 @@ namespace Oci.DatabasetoolsService.Cmdlets
                     DatabaseToolsConnectionId = DatabaseToolsConnectionId,
                     UpdateDatabaseToolsConnectionDetails = UpdateDatabaseToolsConnectionDetails,
                     IfMatch = IfMatch,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    IsLockOverride = IsLockOverride
                 };
 
                 response = client.UpdateDatabaseToolsConnection(request).GetAwaiter().GetResult();

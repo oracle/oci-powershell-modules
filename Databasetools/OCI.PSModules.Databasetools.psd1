@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Databasetools.dll'
 
 # Version number of this module.
-ModuleVersion = '68.0.0'
+ModuleVersion = '69.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '68.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '69.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasetools.dll'
@@ -71,7 +71,9 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasetools.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Confirm-OCIDatabasetoolsConnection', 
+CmdletsToExport = 'Add-OCIDatabasetoolsConnectionLock', 
+               'Add-OCIDatabasetoolsPrivateEndpointLock', 
+               'Confirm-OCIDatabasetoolsConnection', 
                'Get-OCIDatabasetoolsConnection', 
                'Get-OCIDatabasetoolsConnectionsList', 
                'Get-OCIDatabasetoolsEndpointService', 
@@ -87,7 +89,9 @@ CmdletsToExport = 'Confirm-OCIDatabasetoolsConnection',
                'New-OCIDatabasetoolsConnection', 
                'New-OCIDatabasetoolsPrivateEndpoint', 
                'Remove-OCIDatabasetoolsConnection', 
+               'Remove-OCIDatabasetoolsConnectionLock', 
                'Remove-OCIDatabasetoolsPrivateEndpoint', 
+               'Remove-OCIDatabasetoolsPrivateEndpointLock', 
                'Update-OCIDatabasetoolsConnection', 
                'Update-OCIDatabasetoolsPrivateEndpoint'
 

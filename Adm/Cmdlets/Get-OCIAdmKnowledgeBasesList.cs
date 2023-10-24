@@ -21,7 +21,7 @@ namespace Oci.AdmService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.AdmService.Models.KnowledgeBaseCollection), typeof(Oci.AdmService.Responses.ListKnowledgeBasesResponse) })]
     public class GetOCIAdmKnowledgeBasesList : OCIApplicationDependencyManagementCmdlet
     {
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the specified identifier.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.")]
         public string Id { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field used to sort Knowledge Bases. Only one sort order is allowed. Default order for _displayName_ is **ascending alphabetical order**. Default order for _lifecyleState_ is the following sequence: **CREATING, ACTIVE, UPDATING, FAILED, DELETING, and DELETED**.Default order for _timeCreated_ is **descending**. Default order for _timeUpdated_ is **descending**.")]
@@ -42,7 +42,7 @@ namespace Oci.AdmService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token representing the position at which to start retrieving results. This must come from the `opc-next-page` header field of a previous response.")]
         public string Page { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that belong to the specified compartment identifier.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

@@ -33,6 +33,12 @@ namespace Oci.DatabasetoolsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources their type matches the specified type.")]
         public System.Collections.Generic.List<Oci.DatabasetoolsService.Models.ConnectionType> Type { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources with one of the specified runtimeSupport values.")]
+        public System.Collections.Generic.List<Oci.DatabasetoolsService.Models.RuntimeSupport> RuntimeSupport { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources associated to the related resource identifier OCID passed in the query string.")]
+        public string RelatedResourceIdentifier { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -64,6 +70,8 @@ namespace Oci.DatabasetoolsService.Cmdlets
                     LifecycleState = LifecycleState,
                     DisplayName = DisplayName,
                     Type = Type,
+                    RuntimeSupport = RuntimeSupport,
+                    RelatedResourceIdentifier = RelatedResourceIdentifier,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,

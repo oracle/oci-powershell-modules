@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Adm.dll'
 
 # Version number of this module.
-ModuleVersion = '68.0.0'
+ModuleVersion = '69.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '68.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '69.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Adm.dll'
@@ -71,17 +71,28 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Adm.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIAdmApplicationDependencyVulnerabilitiesList', 
+CmdletsToExport = 'Enable-OCIAdmRemediationRecipe', 
+               'Get-OCIAdmApplicationDependencyRecommendationsList', 
+               'Get-OCIAdmApplicationDependencyVulnerabilitiesList', 
                'Get-OCIAdmKnowledgeBase', 'Get-OCIAdmKnowledgeBasesList', 
+               'Get-OCIAdmRemediationRecipe', 'Get-OCIAdmRemediationRecipesList', 
+               'Get-OCIAdmRemediationRun', 'Get-OCIAdmRemediationRunsList', 
+               'Get-OCIAdmStage', 'Get-OCIAdmStagesList', 
                'Get-OCIAdmVulnerabilityAudit', 'Get-OCIAdmVulnerabilityAuditsList', 
                'Get-OCIAdmWorkRequest', 'Get-OCIAdmWorkRequestErrorsList', 
                'Get-OCIAdmWorkRequestLogsList', 'Get-OCIAdmWorkRequestsList', 
+               'Invoke-OCIAdmDeactivateRemediationRecipe', 
                'Move-OCIAdmKnowledgeBaseCompartment', 
+               'Move-OCIAdmRemediationRecipeCompartment', 
+               'Move-OCIAdmRemediationRunCompartment', 
                'Move-OCIAdmVulnerabilityAuditCompartment', 
-               'New-OCIAdmKnowledgeBase', 'New-OCIAdmVulnerabilityAudit', 
-               'Remove-OCIAdmKnowledgeBase', 'Remove-OCIAdmVulnerabilityAudit', 
-               'Stop-OCIAdmWorkRequest', 'Update-OCIAdmKnowledgeBase', 
-               'Update-OCIAdmVulnerabilityAudit'
+               'New-OCIAdmKnowledgeBase', 'New-OCIAdmRemediationRecipe', 
+               'New-OCIAdmRemediationRun', 'New-OCIAdmVulnerabilityAudit', 
+               'Remove-OCIAdmKnowledgeBase', 'Remove-OCIAdmRemediationRecipe', 
+               'Remove-OCIAdmRemediationRun', 'Remove-OCIAdmVulnerabilityAudit', 
+               'Stop-OCIAdmRemediationRun', 'Stop-OCIAdmWorkRequest', 
+               'Update-OCIAdmKnowledgeBase', 'Update-OCIAdmRemediationRecipe', 
+               'Update-OCIAdmRemediationRun', 'Update-OCIAdmVulnerabilityAudit'
 
 # Variables to export from this module
 VariablesToExport = '*'
