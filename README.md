@@ -1,17 +1,17 @@
-## Oracle Cloud Infrastructure Modules for PowerShell
+# Oracle Cloud Infrastructure Modules for PowerShell
 
-### About
+## About
 
 [Oracle Cloud Infrastructure(OCI) Modules for PowerShell](https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/powershell.htm) is a set of cmdlet modules that can be used with PowerShell Core to manage Oracle Cloud Infrastructure resources. You can invoke these cmdlets from the PowerShell command-line and with the associated PowerShell scripting language.
 
 The project is open source and maintained by Oracle Corp.
 
-### Supported PowerShell Versions
+## Supported PowerShell Versions
 
 - PowerShell Core 6.0 and higher
 
 ## Installation
-#### From PowerShell Gallery:
+### From PowerShell Gallery:
 The modules are published to [PowerShell Gallery](https://www.powershellgallery.com/).
 
 Install the modules from PowerShell Gallery using `Install-Module` as explained [here](https://docs.microsoft.com/en-us/powershell/module/powershellget/install-module).
@@ -27,7 +27,7 @@ Install-Module OCI.PSModules
 ```
 Note: Uninstalling `OCI.PSModules` will not uninstall other OCI modules. To uninstall a specific OCI module installed by this module, `OCI.PSModules` will have to be uninstalled first.
 
-#### From Github:
+### From Github:
 PowerShell modules are published to [GitHub](https://github.com/oracle/oci-powershell-modules/releases).
 
 * Download `oci-psmodules-artifacts-<version>.zip` file attached to the latest release in the Assets section.
@@ -46,7 +46,7 @@ PowerShell modules are published to [GitHub](https://github.com/oracle/oci-power
     Install-Module -Name OCI.PSModules.Core -Verbose -Repository LocalRepo
     ```
 
-### Configuring
+## Configuring
 
 Before using the cmdlets, set up a config file with the required credentials. Refer [setup](https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/powershellgettingstarted.htm#powershellsdkgettingstarted_topic_setup) for instructions.
 
@@ -57,13 +57,13 @@ Import-Module OCI.PSModules.Common
 Set-OCIClientConfig
 ```
 
-### Examples
+## Examples
 
 Some examples can be found [here](/Examples).
 
-### Building and Testing
+## Building and Testing
 
-#### Build
+### Build
 
 Modules can be built at the solution level or at the individual project level under the solution folder.
 At the root level, to build all the modules, run the dotnet cli command:
@@ -74,7 +74,7 @@ dotnet build
 
 Alternatively, individual projects(modules) can be built by using dotnet cli commands inside project directory.
 
-#### Test
+### Test
 
 1. The repository has some Pester unit test scripts [unit tests](/Tests).
 These test scripts can be run in PowerShell.
@@ -117,7 +117,7 @@ Import the published module into current PowerShell session from inside the proj
 Import-Module OCI.PSModules.<<ServiceName>>.psd1
 ```
 
-### Help
+## Help
 
 The [Issues](https://github.com/oracle/oci-powershell-modules/issues) page of this GitHub repository.
 To raise questions on Stack Overflow, use the [oracle-cloud-infrastructure](https://stackoverflow.com/questions/tagged/oracle-cloud-infrastructure) and [oci-powershell-modules](https://stackoverflow.com/questions/tagged/oci-powershell-modules) tags in your post.
@@ -127,6 +127,10 @@ To raise questions on Stack Overflow, use the [oracle-cloud-infrastructure](http
 ## Contributing
 
 This project welcomes contributions from the community. Before submitting a pull request, please [review our contribution guide](./CONTRIBUTING.md)
+
+## Security
+
+Please consult the [security guide](./SECURITY.md) for our responsible security vulnerability disclosure process
 
 ## License
 
