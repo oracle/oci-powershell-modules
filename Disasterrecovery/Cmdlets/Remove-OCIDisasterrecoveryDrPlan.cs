@@ -19,9 +19,9 @@ namespace Oci.DisasterrecoveryService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.DisasterrecoveryService.Responses.DeleteDrPlanResponse) })]
     public class RemoveOCIDisasterrecoveryDrPlan : OCIDisasterRecoveryCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the DR Plan.
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the DR plan.
 
-Example: `ocid1.drplan.oc1.iad.exampleocid`")]
+Example: `ocid1.drplan.oc1..uniqueID`")]
         public string DrPlanId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

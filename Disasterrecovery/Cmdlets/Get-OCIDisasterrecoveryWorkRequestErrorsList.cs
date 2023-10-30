@@ -23,7 +23,7 @@ namespace Oci.DisasterrecoveryService.Cmdlets
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID (OCID) of the asynchronous request.
 
-Example: `ocid1.workrequest.oc1.phx.exampleocid`")]
+Example: `ocid1.workrequest.oc1..uniqueID`")]
         public string WorkRequestId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

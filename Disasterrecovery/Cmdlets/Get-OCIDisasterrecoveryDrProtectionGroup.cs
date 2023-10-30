@@ -21,12 +21,12 @@ namespace Oci.DisasterrecoveryService.Cmdlets
     public class GetOCIDisasterrecoveryDrProtectionGroup : OCIDisasterRecoveryCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the DR Protection Group.
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the DR protection group.
 
-Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the DR Protection Group.
+Example: `ocid1.drprotectiongroup.oc1..uniqueID`", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the DR protection group.
 
-Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`", ParameterSetName = Default)]
+Example: `ocid1.drprotectiongroup.oc1..uniqueID`", ParameterSetName = Default)]
         public string DrProtectionGroupId { get; set; }
 
         

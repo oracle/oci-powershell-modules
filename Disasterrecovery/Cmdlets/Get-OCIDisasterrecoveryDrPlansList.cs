@@ -21,25 +21,25 @@ namespace Oci.DisasterrecoveryService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DisasterrecoveryService.Models.DrPlanCollection), typeof(Oci.DisasterrecoveryService.Responses.ListDrPlansResponse) })]
     public class GetOCIDisasterrecoveryDrPlansList : OCIDisasterRecoveryCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the DR Protection Group. Mandatory query param.
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the DR protection group. Mandatory query param.
 
-Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`")]
+Example: `ocid1.drprotectiongroup.oc1..uniqueID`")]
         public string DrProtectionGroupId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only DR Plans that match the given lifecycleState.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only DR plans that match the given lifecycle state.")]
         public System.Nullable<Oci.DisasterrecoveryService.Models.DrPlanLifecycleState> LifecycleState { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the DR Plan.
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the DR plan.
 
-Example: `ocid1.drplan.oc1.iad.exampleocid`")]
+Example: `ocid1.drplan.oc1..uniqueID`")]
         public string DrPlanId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The DR Plan type.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The DR plan type.")]
         public System.Nullable<Oci.DisasterrecoveryService.Models.DrPlanType> DrPlanType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given.
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given display name.
 
-Example: `MY UNIQUE DISPLAY NAME`")]
+Example: `MyResourceDisplayName`")]
         public string DisplayName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. 1 is the minimum, 1000 is the maximum.
@@ -59,7 +59,7 @@ For important details about how pagination works, see [List Pagination](https://
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
 
-Example: `displayName`")]
+Example: `MyResourceDisplayName`")]
         public System.Nullable<Oci.DisasterrecoveryService.Requests.ListDrPlansRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

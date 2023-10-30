@@ -23,10 +23,10 @@ namespace Oci.DisasterrecoveryService.Cmdlets
         
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID (OCID) of the asynchronous request.
 
-Example: `ocid1.workrequest.oc1.phx.exampleocid`", ParameterSetName = StatusParamSet)]
+Example: `ocid1.workrequest.oc1..uniqueID`", ParameterSetName = StatusParamSet)]
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID (OCID) of the asynchronous request.
 
-Example: `ocid1.workrequest.oc1.phx.exampleocid`", ParameterSetName = Default)]
+Example: `ocid1.workrequest.oc1..uniqueID`", ParameterSetName = Default)]
         public string WorkRequestId { get; set; }
 
         

@@ -23,18 +23,20 @@ namespace Oci.DisasterrecoveryService.Cmdlets
     {
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID (OCID) of the compartment in which to list resources.
 
-Example: `ocid1.compartment.oc1..exampleocid1`")]
+Example: `ocid1.compartment.oc1..uniqueID`")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID (OCID) of the asynchronous work request.
 
-Example: `ocid1.workrequest.oc1.phx.exampleocid1`")]
+Example: `ocid1.workrequest.oc1..uniqueID`")]
         public string WorkRequestId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose lifecycleState matches the given OperationStatus.")]
         public System.Nullable<Oci.DisasterrecoveryService.Models.OperationStatus> Status { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID (OCID) of the resource affected by the work request. Example: `ocid1.drplanexecution.oc1.iad.exampleocid`")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID (OCID) of the resource affected by the work request.
+
+Example: `ocid1.drplanexecution.oc1..uniqueID`")]
         public string ResourceId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

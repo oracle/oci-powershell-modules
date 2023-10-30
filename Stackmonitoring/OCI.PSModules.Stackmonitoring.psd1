@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Stackmonitoring.dll'
 
 # Version number of this module.
-ModuleVersion = '69.0.0'
+ModuleVersion = '70.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '69.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '70.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Stackmonitoring.dll'
@@ -72,32 +72,62 @@ FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Disable-OCIStackmonitoringExternalDatabase', 
+               'Disable-OCIStackmonitoringMetricExtension', 
+               'Enable-OCIStackmonitoringMetricExtension', 
+               'Export-OCIStackmonitoringMetricExtension', 
+               'Get-OCIStackmonitoringBaselineableMetric', 
+               'Get-OCIStackmonitoringBaselineableMetricsList', 
                'Get-OCIStackmonitoringConfig', 'Get-OCIStackmonitoringConfigsList', 
                'Get-OCIStackmonitoringDiscoveryJob', 
                'Get-OCIStackmonitoringDiscoveryJobLogsList', 
                'Get-OCIStackmonitoringDiscoveryJobsList', 
+               'Get-OCIStackmonitoringMetricExtension', 
+               'Get-OCIStackmonitoringMetricExtensionsList', 
                'Get-OCIStackmonitoringMonitoredResource', 
+               'Get-OCIStackmonitoringMonitoredResourcesList', 
+               'Get-OCIStackmonitoringMonitoredResourceTask', 
+               'Get-OCIStackmonitoringMonitoredResourceTasksList', 
+               'Get-OCIStackmonitoringMonitoredResourceType', 
+               'Get-OCIStackmonitoringMonitoredResourceTypesList', 
                'Get-OCIStackmonitoringWorkRequest', 
                'Get-OCIStackmonitoringWorkRequestErrorsList', 
                'Get-OCIStackmonitoringWorkRequestLogsList', 
                'Get-OCIStackmonitoringWorkRequestsList', 
                'Invoke-OCIStackmonitoringAssociateMonitoredResources', 
                'Invoke-OCIStackmonitoringDisassociateMonitoredResources', 
+               'Invoke-OCIStackmonitoringEvaluateBaselineableMetric', 
+               'Invoke-OCIStackmonitoringManageLicense', 
+               'Invoke-OCIStackmonitoringPublishMetricExtension', 
+               'Invoke-OCIStackmonitoringRequestMonitoredResourcesSummarizedCount', 
                'Invoke-OCIStackmonitoringSearchAssociatedResources', 
                'Invoke-OCIStackmonitoringSearchMonitoredResourceAssociations', 
                'Invoke-OCIStackmonitoringSearchMonitoredResourceMembers', 
                'Invoke-OCIStackmonitoringSearchMonitoredResources', 
+               'Invoke-OCIStackmonitoringTestMetricExtension', 
                'Move-OCIStackmonitoringConfigCompartment', 
+               'Move-OCIStackmonitoringMetricExtensionCompartment', 
                'Move-OCIStackmonitoringMonitoredResourceCompartment', 
+               'Move-OCIStackmonitoringMonitoredResourceTaskCompartment', 
+               'New-OCIStackmonitoringBaselineableMetric', 
                'New-OCIStackmonitoringConfig', 
                'New-OCIStackmonitoringDiscoveryJob', 
+               'New-OCIStackmonitoringMetricExtension', 
                'New-OCIStackmonitoringMonitoredResource', 
+               'New-OCIStackmonitoringMonitoredResourceTask', 
+               'New-OCIStackmonitoringMonitoredResourceType', 
+               'Remove-OCIStackmonitoringBaselineableMetric', 
                'Remove-OCIStackmonitoringConfig', 
                'Remove-OCIStackmonitoringDiscoveryJob', 
+               'Remove-OCIStackmonitoringMetricExtension', 
                'Remove-OCIStackmonitoringMonitoredResource', 
+               'Remove-OCIStackmonitoringMonitoredResourceType', 
                'Update-OCIStackmonitoringAndPropagateTags', 
+               'Update-OCIStackmonitoringBaselineableMetric', 
                'Update-OCIStackmonitoringConfig', 
-               'Update-OCIStackmonitoringMonitoredResource'
+               'Update-OCIStackmonitoringMetricExtension', 
+               'Update-OCIStackmonitoringMonitoredResource', 
+               'Update-OCIStackmonitoringMonitoredResourceTask', 
+               'Update-OCIStackmonitoringMonitoredResourceType'
 
 # Variables to export from this module
 VariablesToExport = '*'
