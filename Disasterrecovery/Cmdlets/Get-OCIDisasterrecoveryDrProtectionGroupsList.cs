@@ -23,20 +23,20 @@ namespace Oci.DisasterrecoveryService.Cmdlets
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID (OCID) of the compartment in which to list resources.
 
-Example: `ocid1.compartment.oc1..exampleocid1`")]
+Example: `ocid1.compartment.oc1..uniqueID`")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only DR Protection Groups that match the given lifecycleState.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only DR protection groups that match the given lifecycle state.")]
         public System.Nullable<Oci.DisasterrecoveryService.Models.DrProtectionGroupLifecycleState> LifecycleState { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the DR Protection Group. Optional query param.
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the DR protection group. Optional query param.
 
-Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`")]
+Example: `ocid1.drprotectiongroup.oc1..uniqueID`")]
         public string DrProtectionGroupId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given.
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given display name.
 
-Example: `MY UNIQUE DISPLAY NAME`")]
+Example: `MyResourceDisplayName`")]
         public string DisplayName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. 1 is the minimum, 1000 is the maximum.
@@ -56,14 +56,17 @@ For important details about how pagination works, see [List Pagination](https://
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
 
-Example: `displayName`")]
+Example: `MyResourceDisplayName`")]
         public System.Nullable<Oci.DisasterrecoveryService.Requests.ListDrProtectionGroupsRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The DR Protection Group Role.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The DR protection group Role.")]
         public System.Nullable<Oci.DisasterrecoveryService.Models.DrProtectionGroupRole> Role { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only DR protection groups that match the given lifecycle sub-state.")]
+        public System.Nullable<Oci.DisasterrecoveryService.Models.DrProtectionGroupLifecycleSubState> LifecycleSubState { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
@@ -86,7 +89,8 @@ Example: `displayName`")]
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,
-                    Role = Role
+                    Role = Role,
+                    LifecycleSubState = LifecycleSubState
                 };
                 IEnumerable<ListDrProtectionGroupsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

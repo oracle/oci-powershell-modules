@@ -19,7 +19,7 @@ namespace Oci.StackmonitoringService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.StackmonitoringService.Models.Config), typeof(Oci.StackmonitoringService.Responses.CreateConfigResponse) })]
     public class NewOCIStackmonitoringConfig : OCIStackMonitoringCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new configuration. This parameter also accepts subtype <Oci.StackmonitoringService.Models.CreateAutoPromoteConfigDetails> of type <Oci.StackmonitoringService.Models.CreateConfigDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new configuration. This parameter also accepts subtypes <Oci.StackmonitoringService.Models.CreateLicenseAutoAssignConfigDetails>, <Oci.StackmonitoringService.Models.CreateAutoPromoteConfigDetails>, <Oci.StackmonitoringService.Models.CreateLicenseEnterpriseExtensibilityConfigDetails> of type <Oci.StackmonitoringService.Models.CreateConfigDetails>.")]
         public CreateConfigDetails CreateConfigDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]

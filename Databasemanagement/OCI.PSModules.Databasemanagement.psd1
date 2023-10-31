@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Databasemanagement.dll'
 
 # Version number of this module.
-ModuleVersion = '69.0.0'
+ModuleVersion = '70.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '69.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '70.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasemanagement.dll'
@@ -150,6 +150,11 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Get-OCIDatabasemanagementManagedDatabaseGroup', 
                'Get-OCIDatabasemanagementManagedDatabaseGroupsList', 
                'Get-OCIDatabasemanagementManagedDatabasesList', 
+               'Get-OCIDatabasemanagementManagedMySqlDatabase', 
+               'Get-OCIDatabasemanagementManagedMySqlDatabaseConfigurationDataList', 
+               'Get-OCIDatabasemanagementManagedMySqlDatabasesList', 
+               'Get-OCIDatabasemanagementManagedMySqlDatabaseSqlDataList', 
+               'Get-OCIDatabasemanagementMySqlFleetMetric', 
                'Get-OCIDatabasemanagementObjectPrivilegesList', 
                'Get-OCIDatabasemanagementOpenAlertHistory', 
                'Get-OCIDatabasemanagementOptimizerStatisticsAdvisorExecution', 
@@ -223,6 +228,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Invoke-OCIDatabasemanagementSummarizeExternalListenerMetrics', 
                'Invoke-OCIDatabasemanagementSummarizeJobExecutionsStatuses', 
                'Invoke-OCIDatabasemanagementSummarizeManagedDatabaseAvailabilityMetrics', 
+               'Invoke-OCIDatabasemanagementSummarizeManagedMySqlDatabaseAvailabilityMetrics', 
                'Invoke-OCIDatabasemanagementSummarizeSqlPlanBaselines', 
                'Invoke-OCIDatabasemanagementSummarizeSqlPlanBaselinesByLastExecution', 
                'Invoke-OCIDatabasemanagementTestPreferredCredential', 

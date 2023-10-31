@@ -7,6 +7,7 @@ namespace Oci.PSModules.Common.Cmdlets
     public enum AuthenticationType
     {
         ApiKey,
-        InstancePrincipal
+        InstancePrincipal,
+        SessionToken
     }
 }

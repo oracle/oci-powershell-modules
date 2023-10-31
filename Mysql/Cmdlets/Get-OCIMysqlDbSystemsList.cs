@@ -45,6 +45,9 @@ namespace Oci.MysqlService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter instances if they are using the latest revision of the Configuration they are associated with.")]
         public System.Nullable<bool> IsUpToDate { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter DB Systems by their Database Management configuration.")]
+        public System.Collections.Generic.List<Oci.MysqlService.Requests.ListDbSystemsRequest.DatabaseManagementEnum> DatabaseManagement { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Time fields are default ordered as descending. Display name is default ordered as ascending.")]
         public System.Nullable<Oci.MysqlService.Requests.ListDbSystemsRequest.SortByEnum> SortBy { get; set; }
 
@@ -77,6 +80,7 @@ namespace Oci.MysqlService.Cmdlets
                     LifecycleState = LifecycleState,
                     ConfigurationId = ConfigurationId,
                     IsUpToDate = IsUpToDate,
+                    DatabaseManagement = DatabaseManagement,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     Limit = Limit,

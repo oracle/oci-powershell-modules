@@ -26,8 +26,8 @@ namespace Oci.DatasafeService.Cmdlets
         public string SecurityAssessmentId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the baseline security assessment.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the baseline security assessment.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the security assessment baseline.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the security assessment baseline.", ParameterSetName = Default)]
         public string ComparisonSecurityAssessmentId { get; set; }
 
         

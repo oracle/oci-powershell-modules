@@ -19,7 +19,7 @@ namespace Oci.DisasterrecoveryService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DisasterrecoveryService.Models.DrPlan), typeof(Oci.DisasterrecoveryService.Responses.CreateDrPlanResponse) })]
     public class NewOCIDisasterrecoveryDrPlan : OCIDisasterRecoveryCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for creating the new DR Plan.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for creating the new DR plan.")]
         public CreateDrPlanDetails CreateDrPlanDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]

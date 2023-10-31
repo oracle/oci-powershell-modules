@@ -7,7 +7,7 @@ using System.IO;
 using System.Management.Automation;
 using Oci.Common.Model;
 using Oci.Common.Auth;
-using Oci.Common.Alloy;
+using Oci.Common.DeveloperToolConfigurations;
 using Oci.PSModules.Common.Cmdlets.ClientManagement;
 using Oci.PSModules.Common.Cmdlets.CmdletHistory;
 
@@ -61,7 +61,7 @@ namespace Oci.PSModules.Common.Cmdlets
             {
                 SetLoggingPreferences();
                 this.AuthProvider = GetAuthenticationDetailsProvider();
-                AlloyConfiguration.ReInitialize();
+                DeveloperToolConfiguration.ReInitialize();
             }
             catch (Exception ex)
             {
@@ -366,6 +366,19 @@ namespace Oci.PSModules.Common.Cmdlets
                     case AuthenticationType.InstancePrincipal:
                         WriteDebug($"Authentication Type: {AuthenticationType.InstancePrincipal}");
                         return new InstancePrincipalsAuthenticationDetailsProvider();
+
+                    case AuthenticationType.SessionToken:
+                        WriteDebug($"Authentication Type: {AuthenticationType.SessionToken}");
+                        if (profile != null)
+                        {
+                            WriteDebug("Choosing Profile:" + profile);
+                        }
+                        if (config != null)
+                        {
+                            WriteDebug("Choosing Config:" + config);
+                            return new SessionTokenAuthenticationDetailsProvider(config, profile);
+                        }
+                        return new SessionTokenAuthenticationDetailsProvider(profile);
 
                     default:
                         WriteDebug($"Authentication Type: {AuthenticationType.ApiKey}");

@@ -21,12 +21,12 @@ namespace Oci.DisasterrecoveryService.Cmdlets
     public class GetOCIDisasterrecoveryDrPlanExecution : OCIDisasterRecoveryCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the DR Plan Execution.
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the DR plan execution.
 
-Example: `ocid1.drplanexecution.oc1.iad.exampleocid`", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the DR Plan Execution.
+Example: `ocid1.drplanexecution.oc1..uniqueID`", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the DR plan execution.
 
-Example: `ocid1.drplanexecution.oc1.iad.exampleocid`", ParameterSetName = Default)]
+Example: `ocid1.drplanexecution.oc1..uniqueID`", ParameterSetName = Default)]
         public string DrPlanExecutionId { get; set; }
 
         
