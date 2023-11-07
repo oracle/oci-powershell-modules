@@ -265,6 +265,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Marketplacepu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Redis", "Redis\OCI.PSModules.Redis.csproj", "{660D2D7E-51E7-4D54-9F6F-0F588BA5D0AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Jmsjavadownloads", "Jmsjavadownloads\OCI.PSModules.Jmsjavadownloads.csproj", "{B5883908-C819-4A11-81C8-4A8B137E66BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1862,5 +1864,17 @@ Global
         {660D2D7E-51E7-4D54-9F6F-0F588BA5D0AA}.Release|x64.Build.0 = Release|Any CPU
         {660D2D7E-51E7-4D54-9F6F-0F588BA5D0AA}.Release|x86.ActiveCfg = Release|Any CPU
         {660D2D7E-51E7-4D54-9F6F-0F588BA5D0AA}.Release|x86.Build.0 = Release|Any CPU
+        {B5883908-C819-4A11-81C8-4A8B137E66BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {B5883908-C819-4A11-81C8-4A8B137E66BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {B5883908-C819-4A11-81C8-4A8B137E66BE}.Debug|x64.ActiveCfg = Debug|Any CPU
+        {B5883908-C819-4A11-81C8-4A8B137E66BE}.Debug|x64.Build.0 = Debug|Any CPU
+        {B5883908-C819-4A11-81C8-4A8B137E66BE}.Debug|x86.ActiveCfg = Debug|Any CPU
+        {B5883908-C819-4A11-81C8-4A8B137E66BE}.Debug|x86.Build.0 = Debug|Any CPU
+        {B5883908-C819-4A11-81C8-4A8B137E66BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {B5883908-C819-4A11-81C8-4A8B137E66BE}.Release|Any CPU.Build.0 = Release|Any CPU
+        {B5883908-C819-4A11-81C8-4A8B137E66BE}.Release|x64.ActiveCfg = Release|Any CPU
+        {B5883908-C819-4A11-81C8-4A8B137E66BE}.Release|x64.Build.0 = Release|Any CPU
+        {B5883908-C819-4A11-81C8-4A8B137E66BE}.Release|x86.ActiveCfg = Release|Any CPU
+        {B5883908-C819-4A11-81C8-4A8B137E66BE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

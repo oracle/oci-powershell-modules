@@ -27,6 +27,9 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The display name for the Java family.")]
         public string DisplayName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter the Java Release Family versions by support status.")]
+        public System.Nullable<bool> IsSupportedVersion { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -56,6 +59,7 @@ namespace Oci.JmsService.Cmdlets
                 {
                     FamilyVersion = FamilyVersion,
                     DisplayName = DisplayName,
+                    IsSupportedVersion = IsSupportedVersion,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,

@@ -39,6 +39,9 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Fleet-unique identifier of the managed instance.")]
+        public string ManagedInstanceId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -56,7 +59,8 @@ namespace Oci.JmsService.Cmdlets
                     FleetId = FleetId,
                     OpcRequestId = OpcRequestId,
                     Page = Page,
-                    Limit = Limit
+                    Limit = Limit,
+                    ManagedInstanceId = ManagedInstanceId
                 };
                 IEnumerable<ListWorkRequestsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
