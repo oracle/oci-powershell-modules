@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Core.dll'
 
 # Version number of this module.
-ModuleVersion = '70.1.0'
+ModuleVersion = '71.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '70.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '71.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Core.dll'
@@ -124,8 +124,14 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Get-OCIComputeCapacityReservation', 
                'Get-OCIComputeCapacityReservationInstanceShapesList', 
                'Get-OCIComputeCapacityReservationInstancesList', 
-               'Get-OCIComputeCapacityReservationsList', 'Get-OCIComputeCluster', 
-               'Get-OCIComputeClustersList', 'Get-OCIComputeConsoleHistoriesList', 
+               'Get-OCIComputeCapacityReservationsList', 
+               'Get-OCIComputeCapacityTopologiesList', 
+               'Get-OCIComputeCapacityTopology', 
+               'Get-OCIComputeCapacityTopologyComputeBareMetalHostsList', 
+               'Get-OCIComputeCapacityTopologyComputeHpcIslandsList', 
+               'Get-OCIComputeCapacityTopologyComputeNetworkBlocksList', 
+               'Get-OCIComputeCluster', 'Get-OCIComputeClustersList', 
+               'Get-OCIComputeConsoleHistoriesList', 
                'Get-OCIComputeConsoleHistory', 
                'Get-OCIComputeConsoleHistoryContent', 
                'Get-OCIComputeDedicatedVmHost', 
@@ -278,6 +284,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Move-OCIBlockstorageVolumeGroupBackupCompartment', 
                'Move-OCIBlockstorageVolumeGroupCompartment', 
                'Move-OCIComputeCapacityReservationCompartment', 
+               'Move-OCIComputeCapacityTopologyCompartment', 
                'Move-OCIComputeClusterCompartment', 
                'Move-OCIComputeDedicatedVmHostCompartment', 
                'Move-OCIComputeImageCapabilitySchemaCompartment', 
@@ -318,9 +325,10 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'New-OCIBlockstorageVolumeGroupBackup', 
                'New-OCIComputeAppCatalogSubscription', 
                'New-OCIComputeCapacityReport', 'New-OCIComputeCapacityReservation', 
-               'New-OCIComputeCluster', 'New-OCIComputeDedicatedVmHost', 
-               'New-OCIComputeImage', 'New-OCIComputeImageCapabilitySchema', 
-               'New-OCIComputeInstance', 'New-OCIComputeInstanceConsoleConnection', 
+               'New-OCIComputeCapacityTopology', 'New-OCIComputeCluster', 
+               'New-OCIComputeDedicatedVmHost', 'New-OCIComputeImage', 
+               'New-OCIComputeImageCapabilitySchema', 'New-OCIComputeInstance', 
+               'New-OCIComputeInstanceConsoleConnection', 
                'New-OCIComputeManagementClusterNetwork', 
                'New-OCIComputeManagementInstanceConfiguration', 
                'New-OCIComputeManagementInstancePool', 
@@ -358,7 +366,8 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Remove-OCIBlockstorageVolumeGroupBackup', 
                'Remove-OCIBlockstorageVolumeKmsKey', 
                'Remove-OCIComputeAppCatalogSubscription', 
-               'Remove-OCIComputeCapacityReservation', 'Remove-OCIComputeCluster', 
+               'Remove-OCIComputeCapacityReservation', 
+               'Remove-OCIComputeCapacityTopology', 'Remove-OCIComputeCluster', 
                'Remove-OCIComputeConsoleHistory', 
                'Remove-OCIComputeDedicatedVmHost', 'Remove-OCIComputeImage', 
                'Remove-OCIComputeImageCapabilitySchema', 
@@ -413,7 +422,8 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Update-OCIBlockstorageVolumeGroup', 
                'Update-OCIBlockstorageVolumeGroupBackup', 
                'Update-OCIBlockstorageVolumeKmsKey', 
-               'Update-OCIComputeCapacityReservation', 'Update-OCIComputeCluster', 
+               'Update-OCIComputeCapacityReservation', 
+               'Update-OCIComputeCapacityTopology', 'Update-OCIComputeCluster', 
                'Update-OCIComputeConsoleHistory', 
                'Update-OCIComputeDedicatedVmHost', 'Update-OCIComputeImage', 
                'Update-OCIComputeImageCapabilitySchema', 
