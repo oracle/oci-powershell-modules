@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Bds.dll'
 
 # Version number of this module.
-ModuleVersion = '70.1.0'
+ModuleVersion = '71.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '70.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '71.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Bds.dll'
@@ -74,6 +74,7 @@ FunctionsToExport = '*'
 CmdletsToExport = 'Add-OCIBdsAutoScalingConfiguration', 'Add-OCIBdsBlockStorage', 
                'Add-OCIBdsCloudSql', 'Add-OCIBdsKafka', 'Add-OCIBdsMasterNodes', 
                'Add-OCIBdsUtilityNodes', 'Add-OCIBdsWorkerNodes', 
+               'Disable-OCIBdsCertificate', 'Enable-OCIBdsCertificate', 
                'Enable-OCIBdsMetastoreConfiguration', 'Get-OCIBdsApiKey', 
                'Get-OCIBdsApiKeysList', 'Get-OCIBdsAutoScalingConfiguration', 
                'Get-OCIBdsAutoScalingConfigurationsList', 'Get-OCIBdsInstance', 
@@ -82,8 +83,10 @@ CmdletsToExport = 'Add-OCIBdsAutoScalingConfiguration', 'Add-OCIBdsBlockStorage'
                'Get-OCIBdsOsPatchesList', 'Get-OCIBdsPatchesList', 
                'Get-OCIBdsPatchHistoriesList', 'Get-OCIBdsWorkRequest', 
                'Get-OCIBdsWorkRequestErrorsList', 'Get-OCIBdsWorkRequestLogsList', 
-               'Get-OCIBdsWorkRequestsList', 'Invoke-OCIBdsExecuteBootstrapScript', 
+               'Get-OCIBdsWorkRequestsList', 'Invoke-OCIBdsCertificateServiceInfo', 
+               'Invoke-OCIBdsExecuteBootstrapScript', 
                'Invoke-OCIBdsInstallOsPatch', 'Invoke-OCIBdsInstallPatch', 
+               'Invoke-OCIBdsRenewCertificate', 
                'Invoke-OCIBdsTestBdsMetastoreConfiguration', 
                'Invoke-OCIBdsTestBdsObjectStorageConnection', 
                'Move-OCIBdsInstanceCompartment', 'Move-OCIBdsShape', 
