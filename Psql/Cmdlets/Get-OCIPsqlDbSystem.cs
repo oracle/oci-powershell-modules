@@ -21,8 +21,8 @@ namespace Oci.PsqlService.Cmdlets
     public class GetOCIPsqlDbSystem : OCIPostgresqlCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique DbSystem identifier", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique DbSystem identifier", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique identifier for the database system.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique identifier for the database system.", ParameterSetName = Default)]
         public string DbSystemId { get; set; }
 
         
@@ -31,8 +31,8 @@ namespace Oci.PsqlService.Cmdlets
         public string OpcRequestId { get; set; }
 
         
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to exclude DB config  when this query param is set to OverrideDbConfig", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to exclude DB config  when this query param is set to OverrideDbConfig", ParameterSetName = Default)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.", ParameterSetName = Default)]
         public System.Collections.Generic.List<Oci.PsqlService.Requests.GetDbSystemRequest.ExcludedFieldsEnum> ExcludedFields { get; set; }
 
         [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = LifecycleStateParamSet)]

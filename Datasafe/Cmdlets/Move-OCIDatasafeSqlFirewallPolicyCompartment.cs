@@ -19,7 +19,7 @@ namespace Oci.DatasafeService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.DatasafeService.Responses.ChangeSqlFirewallPolicyCompartmentResponse) })]
     public class MoveOCIDatasafeSqlFirewallPolicyCompartment : OCIDataSafeCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the SQL firewall policy resource.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the SQL Firewall policy resource.")]
         public string SqlFirewallPolicyId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the compartment move.")]

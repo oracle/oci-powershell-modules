@@ -76,6 +76,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the specified lifecycle state.")]
         public System.Nullable<Oci.DatasafeService.Models.DiscoveryLifecycleState> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the common sensitive type resources. Common sensitive types belong to library sensitive types which are frequently used to perform sensitive data discovery.")]
+        public System.Nullable<bool> IsCommon { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -104,7 +107,8 @@ namespace Oci.DatasafeService.Cmdlets
                     OpcRequestId = OpcRequestId,
                     Limit = Limit,
                     Page = Page,
-                    LifecycleState = LifecycleState
+                    LifecycleState = LifecycleState,
+                    IsCommon = IsCommon
                 };
                 IEnumerable<ListSensitiveTypesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

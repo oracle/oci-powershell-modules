@@ -59,6 +59,9 @@ Can only be set to true when performing ListCompartments on the tenancy (root co
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter that returns recommendations that match the status specified.")]
         public System.Nullable<Oci.OptimizerService.Models.Status> Status { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Supplement additional resource information in extended metadata response.")]
+        public System.Nullable<bool> IncludeResourceMetadata { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -86,6 +89,7 @@ Can only be set to true when performing ListCompartments on the tenancy (root co
                     SortBy = SortBy,
                     LifecycleState = LifecycleState,
                     Status = Status,
+                    IncludeResourceMetadata = IncludeResourceMetadata,
                     OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListHistoriesResponse> responses = GetRequestDelegate().Invoke(request);

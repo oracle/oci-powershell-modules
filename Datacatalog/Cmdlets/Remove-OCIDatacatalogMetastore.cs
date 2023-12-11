@@ -28,6 +28,9 @@ namespace Oci.DatacatalogService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Whether to override locks (if any exist).")]
+        public System.Nullable<bool> IsLockOverride { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "Ignore confirmation and force the Cmdlet to complete action.")]
         public SwitchParameter Force { get; set; }
 
@@ -48,7 +51,8 @@ namespace Oci.DatacatalogService.Cmdlets
                 {
                     MetastoreId = MetastoreId,
                     IfMatch = IfMatch,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    IsLockOverride = IsLockOverride
                 };
 
                 response = client.DeleteMetastore(request).GetAwaiter().GetResult();

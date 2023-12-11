@@ -21,8 +21,8 @@ namespace Oci.PsqlService.Cmdlets
     public class GetOCIPsqlConfiguration : OCIPostgresqlCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Configuration identifier", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Configuration identifier", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique identifier for the configuration.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique identifier for the configuration.", ParameterSetName = Default)]
         public string ConfigurationId { get; set; }
 
         

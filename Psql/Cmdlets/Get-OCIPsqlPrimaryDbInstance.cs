@@ -19,7 +19,7 @@ namespace Oci.PsqlService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PsqlService.Models.PrimaryDbInstanceDetails), typeof(Oci.PsqlService.Responses.GetPrimaryDbInstanceResponse) })]
     public class GetOCIPsqlPrimaryDbInstance : OCIPostgresqlCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique DbSystem identifier")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique identifier for the database system.")]
         public string DbSystemId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

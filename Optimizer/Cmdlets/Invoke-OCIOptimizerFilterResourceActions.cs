@@ -52,6 +52,9 @@ Please note that this parameter shouldn't be used along with childTenancyIds par
 When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.")]
         public System.Nullable<bool> IncludeOrganization { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Supplement additional resource information in extended metadata response.")]
+        public System.Nullable<bool> IncludeResourceMetadata { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return in a paginated ""List"" call.")]
         public System.Nullable<int> Limit { get; set; }
 
@@ -77,6 +80,7 @@ When using this parameter, please make sure to set the compartmentId with the pa
                     RecommendationName = RecommendationName,
                     ChildTenancyIds = ChildTenancyIds,
                     IncludeOrganization = IncludeOrganization,
+                    IncludeResourceMetadata = IncludeResourceMetadata,
                     Limit = Limit,
                     Page = Page,
                     OpcRequestId = OpcRequestId

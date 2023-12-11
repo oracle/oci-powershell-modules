@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Datacatalog.dll'
 
 # Version number of this module.
-ModuleVersion = '72.0.0'
+ModuleVersion = '73.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '72.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '73.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Datacatalog.dll'
@@ -71,7 +71,10 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Datacatalog.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Add-OCIDatacatalogDataSelectorPatterns', 
+CmdletsToExport = 'Add-OCIDatacatalogCatalogLock', 
+               'Add-OCIDatacatalogCatalogPrivateEndpointLock', 
+               'Add-OCIDatacatalogDataSelectorPatterns', 
+               'Add-OCIDatacatalogMetastoreLock', 
                'Confirm-OCIDatacatalogConnection', 'Confirm-OCIDatacatalogPattern', 
                'DisMount-OCIDatacatalogCatalogPrivateEndpoint', 
                'Export-OCIDatacatalogGlossary', 
@@ -144,7 +147,9 @@ CmdletsToExport = 'Add-OCIDatacatalogDataSelectorPatterns',
                'New-OCIDatacatalogTermRelationship', 
                'Remove-OCIDatacatalogAttribute', 
                'Remove-OCIDatacatalogAttributeTag', 'Remove-OCIDatacatalogCatalog', 
+               'Remove-OCIDatacatalogCatalogLock', 
                'Remove-OCIDatacatalogCatalogPrivateEndpoint', 
+               'Remove-OCIDatacatalogCatalogPrivateEndpointLock', 
                'Remove-OCIDatacatalogConnection', 
                'Remove-OCIDatacatalogCustomProperty', 
                'Remove-OCIDatacatalogDataAsset', 
@@ -154,8 +159,10 @@ CmdletsToExport = 'Add-OCIDatacatalogDataSelectorPatterns',
                'Remove-OCIDatacatalogFolder', 'Remove-OCIDatacatalogFolderTag', 
                'Remove-OCIDatacatalogGlossary', 'Remove-OCIDatacatalogJob', 
                'Remove-OCIDatacatalogJobDefinition', 
-               'Remove-OCIDatacatalogMetastore', 'Remove-OCIDatacatalogNamespace', 
-               'Remove-OCIDatacatalogPattern', 'Remove-OCIDatacatalogTerm', 
+               'Remove-OCIDatacatalogMetastore', 
+               'Remove-OCIDatacatalogMetastoreLock', 
+               'Remove-OCIDatacatalogNamespace', 'Remove-OCIDatacatalogPattern', 
+               'Remove-OCIDatacatalogTerm', 
                'Remove-OCIDatacatalogTermRelationship', 
                'Update-OCIDatacatalogAttribute', 'Update-OCIDatacatalogCatalog', 
                'Update-OCIDatacatalogCatalogPrivateEndpoint', 

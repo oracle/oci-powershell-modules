@@ -34,6 +34,9 @@ namespace Oci.DatacatalogService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
         public string OpcRetryToken { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Whether to override locks (if any exist).")]
+        public System.Nullable<bool> IsLockOverride { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -47,7 +50,8 @@ namespace Oci.DatacatalogService.Cmdlets
                     CatalogId = CatalogId,
                     IfMatch = IfMatch,
                     OpcRequestId = OpcRequestId,
-                    OpcRetryToken = OpcRetryToken
+                    OpcRetryToken = OpcRetryToken,
+                    IsLockOverride = IsLockOverride
                 };
 
                 response = client.AttachCatalogPrivateEndpoint(request).GetAwaiter().GetResult();

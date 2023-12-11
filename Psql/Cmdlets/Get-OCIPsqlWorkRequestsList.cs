@@ -27,7 +27,7 @@ namespace Oci.PsqlService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the asynchronous work request.")]
         public string WorkRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources their lifecycleState matches the given OperationStatus.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources if their `lifecycleState` matches the given OperationStatus.")]
         public System.Nullable<Oci.PsqlService.Models.OperationStatus> Status { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the resource affected by the request.")]
