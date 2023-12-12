@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Usageapi.dll'
 
 # Version number of this module.
-ModuleVersion = '72.0.0'
+ModuleVersion = '73.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '72.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '73.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Usageapi.dll'
@@ -75,13 +75,23 @@ CmdletsToExport = 'Get-OCIUsageapiCustomTable', 'Get-OCIUsageapiCustomTablesList
                'Get-OCIUsageapiQueriesList', 'Get-OCIUsageapiQuery', 
                'Get-OCIUsageapiSchedule', 'Get-OCIUsageapiScheduledRun', 
                'Get-OCIUsageapiScheduledRunsList', 'Get-OCIUsageapiSchedulesList', 
+               'Get-OCIUsageapiUsageCarbonEmissionsQueriesList', 
+               'Get-OCIUsageapiUsageCarbonEmissionsQuery', 
+               'Invoke-OCIUsageapiRequestAverageCarbonEmission', 
+               'Invoke-OCIUsageapiRequestCleanEnergyUsage', 
                'Invoke-OCIUsageapiRequestSummarizedConfigurations', 
                'Invoke-OCIUsageapiRequestSummarizedUsages', 
+               'Invoke-OCIUsageapiRequestUsageCarbonEmissionConfig', 
+               'Invoke-OCIUsageapiRequestUsageCarbonEmissions', 
                'New-OCIUsageapiCustomTable', 'New-OCIUsageapiQuery', 
-               'New-OCIUsageapiSchedule', 'Remove-OCIUsageapiCustomTable', 
-               'Remove-OCIUsageapiQuery', 'Remove-OCIUsageapiSchedule', 
+               'New-OCIUsageapiSchedule', 
+               'New-OCIUsageapiUsageCarbonEmissionsQuery', 
+               'Remove-OCIUsageapiCustomTable', 'Remove-OCIUsageapiQuery', 
+               'Remove-OCIUsageapiSchedule', 
+               'Remove-OCIUsageapiUsageCarbonEmissionsQuery', 
                'Update-OCIUsageapiCustomTable', 'Update-OCIUsageapiQuery', 
-               'Update-OCIUsageapiSchedule'
+               'Update-OCIUsageapiSchedule', 
+               'Update-OCIUsageapiUsageCarbonEmissionsQuery'
 
 # Variables to export from this module
 VariablesToExport = '*'

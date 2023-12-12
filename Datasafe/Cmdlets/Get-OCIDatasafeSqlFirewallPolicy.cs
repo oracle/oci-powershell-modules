@@ -21,8 +21,8 @@ namespace Oci.DatasafeService.Cmdlets
     public class GetOCIDatasafeSqlFirewallPolicy : OCIDataSafeCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the SQL firewall policy resource.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the SQL firewall policy resource.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the SQL Firewall policy resource.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the SQL Firewall policy resource.", ParameterSetName = Default)]
         public string SqlFirewallPolicyId { get; set; }
 
         

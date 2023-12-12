@@ -36,19 +36,19 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous ""List"" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The group by parameter to summarize SQL firewall policy aggregation.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The group by parameter to summarize SQL Firewall policy aggregation.")]
         public System.Collections.Generic.List<Oci.DatasafeService.Requests.ListSqlFirewallPolicyAnalyticsRequest.GroupByEnum> GroupBy { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The current state of the SQL firewall policy.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The current state of the SQL Firewall policy.")]
         public System.Nullable<Oci.DatasafeService.Models.SqlFirewallPolicyLifecycleState> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only resources that match the specified OCID of the security policy resource.")]
         public string SecurityPolicyId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return the summary of the SQL firewall policies created after the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return the summary of the SQL Firewall policies created after the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).")]
         public System.Nullable<System.DateTime> TimeStarted { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return the summary of the SQL firewall policies created before the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return the summary of the SQL Firewall policies created before the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).")]
         public System.Nullable<System.DateTime> TimeEnded { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]

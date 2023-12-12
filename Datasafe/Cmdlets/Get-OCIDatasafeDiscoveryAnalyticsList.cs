@@ -36,6 +36,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the specified sensitive data model OCID.")]
         public string SensitiveDataModelId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items related to a specific sensitive type OCID.")]
+        public string SensitiveTypeId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of items to return per page in a paginated ""List"" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -44,6 +47,9 @@ namespace Oci.DatasafeService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the common sensitive type resources. Common sensitive types belong to library sensitive types which are frequently used to perform sensitive data discovery.")]
+        public System.Nullable<bool> IsCommon { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
@@ -62,9 +68,11 @@ namespace Oci.DatasafeService.Cmdlets
                     GroupBy = GroupBy,
                     TargetId = TargetId,
                     SensitiveDataModelId = SensitiveDataModelId,
+                    SensitiveTypeId = SensitiveTypeId,
                     Limit = Limit,
                     Page = Page,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    IsCommon = IsCommon
                 };
                 IEnumerable<ListDiscoveryAnalyticsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

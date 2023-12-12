@@ -42,10 +42,10 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only resources that match the specified OCID of the security policy resource.")]
         public string SecurityPolicyId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The current state of the SQL firewall policy.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The current state of the SQL Firewall policy.")]
         public System.Nullable<Oci.DatasafeService.Models.SqlFirewallPolicyLifecycleState> LifecycleState { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only resources that match the specified OCID of the SQL firewall policy resource.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only resources that match the specified OCID of the SQL Firewall policy resource.")]
         public string SqlFirewallPolicyId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items that match the specified user name.")]

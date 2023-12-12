@@ -26,6 +26,11 @@ namespace Oci.OptimizerService.Cmdlets
         public string ResourceActionId { get; set; }
 
         
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Supplement additional resource information in extended metadata response.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Supplement additional resource information in extended metadata response.", ParameterSetName = Default)]
+        public System.Nullable<bool> IncludeResourceMetadata { get; set; }
+
+        
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.", ParameterSetName = LifecycleStateParamSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.", ParameterSetName = Default)]
         public string OpcRequestId { get; set; }
@@ -49,6 +54,7 @@ namespace Oci.OptimizerService.Cmdlets
                 request = new GetResourceActionRequest
                 {
                     ResourceActionId = ResourceActionId,
+                    IncludeResourceMetadata = IncludeResourceMetadata,
                     OpcRequestId = OpcRequestId
                 };
 

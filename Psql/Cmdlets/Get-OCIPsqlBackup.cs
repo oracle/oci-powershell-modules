@@ -21,8 +21,8 @@ namespace Oci.PsqlService.Cmdlets
     public class GetOCIPsqlBackup : OCIPostgresqlCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Backup identifier", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Backup identifier", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique identifier for the backup.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique identifier for the backup.", ParameterSetName = Default)]
         public string BackupId { get; set; }
 
         
