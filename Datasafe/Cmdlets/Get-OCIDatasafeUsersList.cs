@@ -96,6 +96,12 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return items that contain the specified schema list.")]
+        public System.Collections.Generic.List<string> SchemaList { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items that match the criteria that all schemas can be accessed by a user.")]
+        public System.Nullable<bool> AreAllSchemasAccessible { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -130,7 +136,9 @@ namespace Oci.DatasafeService.Cmdlets
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    SchemaList = SchemaList,
+                    AreAllSchemasAccessible = AreAllSchemasAccessible
                 };
                 IEnumerable<ListUsersResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

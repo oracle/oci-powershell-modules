@@ -27,8 +27,14 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the findings that are marked as top findings.")]
+        public System.Nullable<bool> IsTopFinding { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only findings of a particular risk level.")]
         public System.Nullable<Oci.DatasafeService.Requests.ListFindingsRequest.SeverityEnum> Severity { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the findings that match the specified lifecycle states.")]
+        public System.Nullable<Oci.DatasafeService.Models.FindingLifecycleState> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only findings that match the specified reference.")]
         public System.Nullable<Oci.DatasafeService.Models.SecurityAssessmentReferences> References { get; set; }
@@ -62,7 +68,9 @@ namespace Oci.DatasafeService.Cmdlets
                 {
                     SecurityAssessmentId = SecurityAssessmentId,
                     OpcRequestId = OpcRequestId,
+                    IsTopFinding = IsTopFinding,
                     Severity = Severity,
+                    LifecycleState = LifecycleState,
                     References = References,
                     Limit = Limit,
                     Page = Page,

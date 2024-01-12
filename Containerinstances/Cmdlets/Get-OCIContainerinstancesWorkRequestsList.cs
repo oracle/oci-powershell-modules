@@ -50,6 +50,9 @@ Example: `Uocm:PHX-AD-1`")]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (ASC) or descending (DESC).")]
         public System.Nullable<Oci.ContainerinstancesService.Models.SortOrder> SortOrder { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the resource affected by the work request.")]
+        public string ResourceId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -70,7 +73,8 @@ Example: `Uocm:PHX-AD-1`")]
                     AvailabilityDomain = AvailabilityDomain,
                     Status = Status,
                     SortBy = SortBy,
-                    SortOrder = SortOrder
+                    SortOrder = SortOrder,
+                    ResourceId = ResourceId
                 };
                 IEnumerable<ListWorkRequestsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

@@ -27,11 +27,14 @@ namespace Oci.AdmService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only Vulnerability Audits that match the specified id.")]
         public string VulnerabilityId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 3 (CVSS V3) greater or equal than the specified value.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter that returns only Vulnerabilities that have a Common Vulnerability Scoring System Version 3 (CVSS V3) greater than or equal to the specified value.")]
         public System.Nullable<float> CvssV3GreaterThanOrEqual { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 2 (CVSS V2) greater or equal than the specified value.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter that returns only Vulnerabilities that have a Common Vulnerability Scoring System Version 2 (CVSS V2) greater than or equal to the specified value.")]
         public System.Nullable<float> CvssV2GreaterThanOrEqual { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter that returns only Vulnerabilities that have a severity greater than or equal to the specified value.")]
+        public System.Nullable<Oci.AdmService.Models.VulnerabilitySeverity> SeverityGreaterThanOrEqual { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -42,7 +45,7 @@ namespace Oci.AdmService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'ASC' or 'DESC'.")]
         public System.Nullable<Oci.AdmService.Models.SortOrder> SortOrder { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. If sort order is dfs, the nodes are returned by going through the application dependency tree in a depth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending. If sort order is bfs, the nodes are returned by going through the application dependency tree in a breadth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending. Default order for gav is ascending where ascending corresponds to alphanumerical order. Default order for nodeId is ascending where ascending corresponds to alphanumerical order. Sorting by DFS or BFS cannot be used in conjunction with the following query parameters: ""gav"", ""cvssV2GreaterThanOrEqual"", ""cvssV3GreaterThanOrEqual"" and ""vulnerabilityId"".")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. If sort order is dfs, the nodes are returned by going through the application dependency tree in a depth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending. If sort order is bfs, the nodes are returned by going through the application dependency tree in a breadth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending. Default order for gav is ascending where ascending corresponds to alphanumerical order. Default order for purl is ascending where ascending corresponds to alphabetical order Default order for nodeId is ascending where ascending corresponds to alphanumerical order. Sorting by DFS or BFS cannot be used in conjunction with the following query parameters: ""gav"", ""cvssV2GreaterThanOrEqual"", ""cvssV3GreaterThanOrEqual"" and ""vulnerabilityId"".")]
         public System.Nullable<Oci.AdmService.Requests.ListApplicationDependencyVulnerabilitiesRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to override the top level root identifier with the new given value. The application dependency tree will only be traversed from the given node. Query parameters ""cvssV2GreaterThanOrEqual"", ""cvssV3GreaterThanOrEqual"", ""gav"" and ""vulnerabilityId"" cannot be used in conjunction with this parameter.")]
@@ -53,6 +56,9 @@ namespace Oci.AdmService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.")]
         public string Gav { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).")]
+        public string Purl { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
@@ -73,6 +79,7 @@ namespace Oci.AdmService.Cmdlets
                     VulnerabilityId = VulnerabilityId,
                     CvssV3GreaterThanOrEqual = CvssV3GreaterThanOrEqual,
                     CvssV2GreaterThanOrEqual = CvssV2GreaterThanOrEqual,
+                    SeverityGreaterThanOrEqual = SeverityGreaterThanOrEqual,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,
@@ -80,6 +87,7 @@ namespace Oci.AdmService.Cmdlets
                     RootNodeId = RootNodeId,
                     Depth = Depth,
                     Gav = Gav,
+                    Purl = Purl,
                     OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListApplicationDependencyVulnerabilitiesResponse> responses = GetRequestDelegate().Invoke(request);

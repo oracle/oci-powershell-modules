@@ -39,7 +39,10 @@ namespace Oci.AdmService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.")]
         public string Gav { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. If sort order is dfs, the nodes are returned by going through the application dependency tree in a depth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending. If sort order is bfs, the nodes are returned by going through the application dependency tree in a breadth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending. Default order for gav is ascending where ascending corresponds to alphanumerical order. Default order for nodeId is ascending where ascending corresponds to alphanumerical order. Sorting by DFS or BFS cannot be used in conjunction with the following query parameters: ""gav"", ""cvssV2GreaterThanOrEqual"", ""cvssV3GreaterThanOrEqual"" and ""vulnerabilityId"".")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).")]
+        public string Purl { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. If sort order is dfs, the nodes are returned by going through the application dependency tree in a depth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending. If sort order is bfs, the nodes are returned by going through the application dependency tree in a breadth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending. Default order for gav is ascending where ascending corresponds to alphanumerical order. Default order for purl is ascending where ascending corresponds to alphabetical order Default order for nodeId is ascending where ascending corresponds to alphanumerical order. Sorting by DFS or BFS cannot be used in conjunction with the following query parameters: ""gav"", ""cvssV2GreaterThanOrEqual"", ""cvssV3GreaterThanOrEqual"" and ""vulnerabilityId"".")]
         public System.Nullable<Oci.AdmService.Requests.ListApplicationDependencyRecommendationsRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
@@ -60,6 +63,7 @@ namespace Oci.AdmService.Cmdlets
                     Page = Page,
                     SortOrder = SortOrder,
                     Gav = Gav,
+                    Purl = Purl,
                     SortBy = SortBy
                 };
                 IEnumerable<ListApplicationDependencyRecommendationsResponse> responses = GetRequestDelegate().Invoke(request);
