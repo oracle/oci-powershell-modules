@@ -42,12 +42,12 @@ Example: 500")]
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.
 
-Example: `2019-01-01T01:00:00.789Z`")]
+Example: `2023-01-01T01:00:00.789Z`")]
         public System.Nullable<System.DateTime> TimestampGreaterThanOrEqualTo { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.
 
-Example: `2019-01-02T01:00:00.789Z`")]
+Example: `2023-01-02T01:00:00.789Z`")]
         public System.Nullable<System.DateTime> TimestampLessThan { get; set; }
 
         protected override void ProcessRecord()

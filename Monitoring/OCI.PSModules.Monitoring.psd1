@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Monitoring.dll'
 
 # Version number of this module.
-ModuleVersion = '73.1.0'
+ModuleVersion = '74.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '73.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '74.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Monitoring.dll'
@@ -73,11 +73,15 @@ FunctionsToExport = '*'
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Get-OCIMonitoringAlarm', 'Get-OCIMonitoringAlarmHistory', 
                'Get-OCIMonitoringAlarmsList', 'Get-OCIMonitoringAlarmsStatusList', 
+               'Get-OCIMonitoringAlarmSuppression', 
+               'Get-OCIMonitoringAlarmSuppressionsList', 
                'Get-OCIMonitoringMetricsList', 
                'Invoke-OCIMonitoringRetrieveDimensionStates', 
+               'Invoke-OCIMonitoringSummarizeAlarmSuppressionHistory', 
                'Invoke-OCIMonitoringSummarizeMetricsData', 
                'Move-OCIMonitoringAlarmCompartment', 'New-OCIMonitoringAlarm', 
-               'Remove-OCIMonitoringAlarm', 'Remove-OCIMonitoringAlarmSuppression', 
+               'New-OCIMonitoringAlarmSuppression', 'Remove-OCIMonitoringAlarm', 
+               'Remove-OCIMonitoringAlarmSuppression', 
                'Submit-OCIMonitoringMetricData', 'Update-OCIMonitoringAlarm'
 
 # Variables to export from this module
