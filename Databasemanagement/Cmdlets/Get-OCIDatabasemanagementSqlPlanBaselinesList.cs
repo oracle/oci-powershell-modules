@@ -63,8 +63,23 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The option to sort information in ascending ('ASC') or descending ('DESC') order. Descending order is the default order.")]
         public System.Nullable<Oci.DatabasemanagementService.Models.SortOrders> SortOrder { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only SQL plan baselines that are either auto-purged or not auto-purged. By default, all SQL plan baselines are returned.")]
+        public System.Nullable<bool> IsAutoPurged { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only SQL plan baselines whose last execution time is after the specified value. By default, all SQL plan baselines are returned.")]
+        public System.Nullable<System.DateTime> TimeLastExecutedGreaterThan { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only SQL plan baselines whose last execution time is before the specified value. By default, all SQL plan baselines are returned.")]
+        public System.Nullable<System.DateTime> TimeLastExecutedLessThan { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only SQL plan baselines that are not executed till now. By default, all SQL plan baselines are returned.")]
+        public System.Nullable<bool> IsNeverExecuted { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the Named Credential.")]
+        public string OpcNamedCredentialId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
@@ -92,7 +107,12 @@ namespace Oci.DatabasemanagementService.Cmdlets
                     Limit = Limit,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
-                    OpcRequestId = OpcRequestId
+                    IsAutoPurged = IsAutoPurged,
+                    TimeLastExecutedGreaterThan = TimeLastExecutedGreaterThan,
+                    TimeLastExecutedLessThan = TimeLastExecutedLessThan,
+                    IsNeverExecuted = IsNeverExecuted,
+                    OpcRequestId = OpcRequestId,
+                    OpcNamedCredentialId = OpcNamedCredentialId
                 };
                 IEnumerable<ListSqlPlanBaselinesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

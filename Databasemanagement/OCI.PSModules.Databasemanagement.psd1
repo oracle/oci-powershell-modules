@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Databasemanagement.dll'
 
 # Version number of this module.
-ModuleVersion = '74.1.0'
+ModuleVersion = '74.2.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '74.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '74.2.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasemanagement.dll'
@@ -155,6 +155,8 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Get-OCIDatabasemanagementManagedMySqlDatabasesList', 
                'Get-OCIDatabasemanagementManagedMySqlDatabaseSqlDataList', 
                'Get-OCIDatabasemanagementMySqlFleetMetric', 
+               'Get-OCIDatabasemanagementNamedCredential', 
+               'Get-OCIDatabasemanagementNamedCredentialsList', 
                'Get-OCIDatabasemanagementObjectPrivilegesList', 
                'Get-OCIDatabasemanagementOpenAlertHistory', 
                'Get-OCIDatabasemanagementOptimizerStatisticsAdvisorExecution', 
@@ -231,6 +233,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Invoke-OCIDatabasemanagementSummarizeManagedMySqlDatabaseAvailabilityMetrics', 
                'Invoke-OCIDatabasemanagementSummarizeSqlPlanBaselines', 
                'Invoke-OCIDatabasemanagementSummarizeSqlPlanBaselinesByLastExecution', 
+               'Invoke-OCIDatabasemanagementTestNamedCredential', 
                'Invoke-OCIDatabasemanagementTestPreferredCredential', 
                'Move-OCIDatabasemanagementDatabaseParameters', 
                'Move-OCIDatabasemanagementDbManagementPrivateEndpointCompartment', 
@@ -238,6 +241,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Move-OCIDatabasemanagementExternalExadataInfrastructureCompartment', 
                'Move-OCIDatabasemanagementJobCompartment', 
                'Move-OCIDatabasemanagementManagedDatabaseGroupCompartment', 
+               'Move-OCIDatabasemanagementNamedCredentialCompartment', 
                'Move-OCIDatabasemanagementPlanRetention', 
                'Move-OCIDatabasemanagementSpaceBudget', 
                'Move-OCIDatabasemanagementSqlPlanBaselinesAttributes', 
@@ -250,6 +254,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'New-OCIDatabasemanagementExternalExadataStorageConnector', 
                'New-OCIDatabasemanagementJob', 
                'New-OCIDatabasemanagementManagedDatabaseGroup', 
+               'New-OCIDatabasemanagementNamedCredential', 
                'New-OCIDatabasemanagementSqlTuningSet', 
                'New-OCIDatabasemanagementTablespace', 
                'Remove-OCIDatabasemanagementDataFile', 
@@ -262,6 +267,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Remove-OCIDatabasemanagementJob', 
                'Remove-OCIDatabasemanagementManagedDatabaseFromManagedDatabaseGroup', 
                'Remove-OCIDatabasemanagementManagedDatabaseGroup', 
+               'Remove-OCIDatabasemanagementNamedCredential', 
                'Remove-OCIDatabasemanagementPreferredCredential', 
                'Reset-OCIDatabasemanagementDatabaseParameters', 
                'Start-OCIDatabasemanagementSqlTuningTask', 
@@ -278,6 +284,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Update-OCIDatabasemanagementExternalListener', 
                'Update-OCIDatabasemanagementJob', 
                'Update-OCIDatabasemanagementManagedDatabaseGroup', 
+               'Update-OCIDatabasemanagementNamedCredential', 
                'Update-OCIDatabasemanagementPreferredCredential', 
                'Update-OCIDatabasemanagementTablespace'
 

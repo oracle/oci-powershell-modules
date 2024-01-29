@@ -25,6 +25,9 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the Named Credential.")]
+        public string OpcNamedCredentialId { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -35,7 +38,8 @@ namespace Oci.DatabasemanagementService.Cmdlets
                 request = new GetSqlPlanBaselineConfigurationRequest
                 {
                     ManagedDatabaseId = ManagedDatabaseId,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    OpcNamedCredentialId = OpcNamedCredentialId
                 };
 
                 response = client.GetSqlPlanBaselineConfiguration(request).GetAwaiter().GetResult();

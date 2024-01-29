@@ -273,6 +273,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Generativeai"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Generativeaiinference", "Generativeaiinference\OCI.PSModules.Generativeaiinference.csproj", "{97E16131-BBB7-4287-A92D-32C11EE040F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Capacitymanagement", "Capacitymanagement\OCI.PSModules.Capacitymanagement.csproj", "{A21EDE73-396F-47B6-85C7-E1284399B2BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1918,5 +1920,17 @@ Global
         {97E16131-BBB7-4287-A92D-32C11EE040F2}.Release|x64.Build.0 = Release|Any CPU
         {97E16131-BBB7-4287-A92D-32C11EE040F2}.Release|x86.ActiveCfg = Release|Any CPU
         {97E16131-BBB7-4287-A92D-32C11EE040F2}.Release|x86.Build.0 = Release|Any CPU
+        {A21EDE73-396F-47B6-85C7-E1284399B2BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {A21EDE73-396F-47B6-85C7-E1284399B2BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {A21EDE73-396F-47B6-85C7-E1284399B2BE}.Debug|x64.ActiveCfg = Debug|Any CPU
+        {A21EDE73-396F-47B6-85C7-E1284399B2BE}.Debug|x64.Build.0 = Debug|Any CPU
+        {A21EDE73-396F-47B6-85C7-E1284399B2BE}.Debug|x86.ActiveCfg = Debug|Any CPU
+        {A21EDE73-396F-47B6-85C7-E1284399B2BE}.Debug|x86.Build.0 = Debug|Any CPU
+        {A21EDE73-396F-47B6-85C7-E1284399B2BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {A21EDE73-396F-47B6-85C7-E1284399B2BE}.Release|Any CPU.Build.0 = Release|Any CPU
+        {A21EDE73-396F-47B6-85C7-E1284399B2BE}.Release|x64.ActiveCfg = Release|Any CPU
+        {A21EDE73-396F-47B6-85C7-E1284399B2BE}.Release|x64.Build.0 = Release|Any CPU
+        {A21EDE73-396F-47B6-85C7-E1284399B2BE}.Release|x86.ActiveCfg = Release|Any CPU
+        {A21EDE73-396F-47B6-85C7-E1284399B2BE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

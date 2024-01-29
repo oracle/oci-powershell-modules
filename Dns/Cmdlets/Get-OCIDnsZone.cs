@@ -46,8 +46,8 @@ namespace Oci.DnsService.Cmdlets
         public System.Nullable<Oci.DnsService.Models.Scope> Scope { get; set; }
 
         
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the view the resource is associated with.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the view the resource is associated with.", ParameterSetName = Default)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the view the zone is associated with. Required when accessing a private zone by name.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the view the zone is associated with. Required when accessing a private zone by name.", ParameterSetName = Default)]
         public string ViewId { get; set; }
 
         

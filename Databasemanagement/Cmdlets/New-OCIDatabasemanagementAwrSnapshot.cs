@@ -28,6 +28,9 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the Named Credential.")]
+        public string OpcNamedCredentialId { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -39,7 +42,8 @@ namespace Oci.DatabasemanagementService.Cmdlets
                 {
                     ManagedDatabaseId = ManagedDatabaseId,
                     OpcRetryToken = OpcRetryToken,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    OpcNamedCredentialId = OpcNamedCredentialId
                 };
 
                 response = client.GenerateAwrSnapshot(request).GetAwaiter().GetResult();

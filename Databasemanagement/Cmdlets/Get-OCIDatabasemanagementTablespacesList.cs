@@ -42,6 +42,9 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of records returned in the paginated response.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the Named Credential.")]
+        public string OpcNamedCredentialId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -60,7 +63,8 @@ namespace Oci.DatabasemanagementService.Cmdlets
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     Page = Page,
-                    Limit = Limit
+                    Limit = Limit,
+                    OpcNamedCredentialId = OpcNamedCredentialId
                 };
                 IEnumerable<ListTablespacesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

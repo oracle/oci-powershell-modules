@@ -25,7 +25,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the preferred credential.")]
         public string CredentialName { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to update preferred credential. This parameter also accepts subtype <Oci.DatabasemanagementService.Models.UpdateBasicPreferredCredentialDetails> of type <Oci.DatabasemanagementService.Models.UpdatePreferredCredentialDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to update preferred credential. This parameter also accepts subtypes <Oci.DatabasemanagementService.Models.UpdateNamedPreferredCredentialDetails>, <Oci.DatabasemanagementService.Models.UpdateBasicPreferredCredentialDetails> of type <Oci.DatabasemanagementService.Models.UpdatePreferredCredentialDetails>.")]
         public UpdatePreferredCredentialDetails UpdatePreferredCredentialDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

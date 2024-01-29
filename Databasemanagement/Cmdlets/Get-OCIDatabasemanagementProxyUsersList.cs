@@ -45,6 +45,9 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The page token representing the page from where the next set of paginated results are retrieved. This is usually retrieved from a previous list call.")]
         public string Page { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the Named Credential.")]
+        public string OpcNamedCredentialId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -64,7 +67,8 @@ namespace Oci.DatabasemanagementService.Cmdlets
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     Limit = Limit,
-                    Page = Page
+                    Page = Page,
+                    OpcNamedCredentialId = OpcNamedCredentialId
                 };
                 IEnumerable<ListProxyUsersResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
