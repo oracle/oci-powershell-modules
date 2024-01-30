@@ -39,6 +39,9 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the Named Credential.")]
+        public string OpcNamedCredentialId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -56,7 +59,8 @@ namespace Oci.DatabasemanagementService.Cmdlets
                     Limit = Limit,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    OpcNamedCredentialId = OpcNamedCredentialId
                 };
                 IEnumerable<ListExternalAsmUsersResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

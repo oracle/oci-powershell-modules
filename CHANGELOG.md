@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 74.2.0 - 2024-01-30
+### Added
+Support for OCI Control Center service
+Support for giro value set for address rules in the Oracle Store Platform service
+Support for giro in tax information for subscriptions in the Oracle Store Platform service
+Support for REST connectivity with Oath2 in the Data Integration service
+Support for resolver rules limit increase in the DNS service
+Support for named credentials in the Database Management service
+
 ## 74.1.0 - 2024-01-23
 ### Added
 - Support for the Generative AI service

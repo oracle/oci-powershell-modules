@@ -28,7 +28,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to test preferred credential. This parameter also accepts subtype <Oci.DatabasemanagementService.Models.TestBasicPreferredCredentialDetails> of type <Oci.DatabasemanagementService.Models.TestPreferredCredentialDetails>.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to test preferred credential. This parameter also accepts subtypes <Oci.DatabasemanagementService.Models.TestNamedPreferredCredentialDetails>, <Oci.DatabasemanagementService.Models.TestBasicPreferredCredentialDetails> of type <Oci.DatabasemanagementService.Models.TestPreferredCredentialDetails>.")]
         public TestPreferredCredentialDetails TestPreferredCredentialDetails { get; set; }
 
         protected override void ProcessRecord()
