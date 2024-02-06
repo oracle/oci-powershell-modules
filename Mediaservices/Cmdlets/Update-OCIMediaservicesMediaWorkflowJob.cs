@@ -25,6 +25,9 @@ namespace Oci.MediaservicesService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated.")]
         public UpdateMediaWorkflowJobDetails UpdateMediaWorkflowJobDetails { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Whether to override locks (if any exist).")]
+        public System.Nullable<bool> IsLockOverride { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
         public string IfMatch { get; set; }
 
@@ -42,6 +45,7 @@ namespace Oci.MediaservicesService.Cmdlets
                 {
                     MediaWorkflowJobId = MediaWorkflowJobId,
                     UpdateMediaWorkflowJobDetails = UpdateMediaWorkflowJobDetails,
+                    IsLockOverride = IsLockOverride,
                     IfMatch = IfMatch,
                     OpcRequestId = OpcRequestId
                 };

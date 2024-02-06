@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 75.0.0 - 2024-02-06
+### Added
+- Support for the Globally Distributed Database service
+- Support for secret auto-rotation in the Secret Management service
+- Support for dedicated key management in the Key Management service
+- Support for resource locking operations in the Digital Media service
+- Support for data sources, including prometheus emitter, in the Management Agent service
+- Support for Bring Your Own Certificates (BYOC) in the MySQL HeatWave Database service
+ 
+### Breaking Changes
+- The cmdlet `Get-OCIMediaservicesMediaWorkflowJobFact` was removed from the Digital Media service
+- The type `Oci.PSModules.Common.Cmdlets.WorkRequest` is no longer returned in the cmdlets `Move-OCIMediaservicesMediaWorkflowCompartment`, `Move-OCIMediaservicesMediaWorkflowConfigurationCompartment`, `Move-OCIMediaservicesMediaWorkflowJobCompartment`, `Move-OCIMediaservicesStreamDistributionChannelCompartment`, `Remove-OCIMediaservicesMediaWorkflowConfiguration`, and `Remove-OCIMediaservicesMediaWorkflowJob` in the Digital Media service
+- The models `MediaWorkflowJobFact` and `MediaWorkflowJobFactSummary` were removed from the Digital Media service in the .NET SDK
+
 ## 74.2.0 - 2024-01-30
 ### Added
 Support for OCI Control Center service

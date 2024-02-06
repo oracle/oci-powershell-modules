@@ -16,11 +16,14 @@ using Oci.Common.Model;
 namespace Oci.MediaservicesService.Cmdlets
 {
     [Cmdlet("Remove", "OCIMediaservicesMediaWorkflowJob", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.MediaservicesService.Responses.DeleteMediaWorkflowJobResponse) })]
+    [OutputType(new System.Type[] { typeof(void), typeof(Oci.MediaservicesService.Responses.DeleteMediaWorkflowJobResponse) })]
     public class RemoveOCIMediaservicesMediaWorkflowJob : OCIMediaServicesCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique MediaWorkflowJob identifier.")]
         public string MediaWorkflowJobId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Whether to override locks (if any exist).")]
+        public System.Nullable<bool> IsLockOverride { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
@@ -47,12 +50,13 @@ namespace Oci.MediaservicesService.Cmdlets
                 request = new DeleteMediaWorkflowJobRequest
                 {
                     MediaWorkflowJobId = MediaWorkflowJobId,
+                    IsLockOverride = IsLockOverride,
                     OpcRequestId = OpcRequestId,
                     IfMatch = IfMatch
                 };
 
                 response = client.DeleteMediaWorkflowJob(request).GetAwaiter().GetResult();
-                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
+                WriteOutput(response);
                 FinishProcessing(response);
             }
             catch (OciException ex)

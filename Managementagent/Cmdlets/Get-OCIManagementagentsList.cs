@@ -75,6 +75,12 @@ namespace Oci.ManagementagentService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"When the value is ""ACCESSIBLE"", insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.")]
         public string AccessLevel { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of the dataSource.")]
+        public System.Nullable<Oci.ManagementagentService.Models.DataSourceTypes> DataSourceType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique name of the dataSource.")]
+        public System.Collections.Generic.List<string> DataSourceName { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -104,7 +110,9 @@ namespace Oci.ManagementagentService.Cmdlets
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
-                    AccessLevel = AccessLevel
+                    AccessLevel = AccessLevel,
+                    DataSourceType = DataSourceType,
+                    DataSourceName = DataSourceName
                 };
                 IEnumerable<ListManagementAgentsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

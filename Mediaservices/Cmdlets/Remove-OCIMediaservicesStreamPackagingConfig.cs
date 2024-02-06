@@ -22,6 +22,9 @@ namespace Oci.MediaservicesService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Stream Packaging Configuration path identifier.")]
         public string StreamPackagingConfigId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Whether to override locks (if any exist).")]
+        public System.Nullable<bool> IsLockOverride { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
@@ -47,6 +50,7 @@ namespace Oci.MediaservicesService.Cmdlets
                 request = new DeleteStreamPackagingConfigRequest
                 {
                     StreamPackagingConfigId = StreamPackagingConfigId,
+                    IsLockOverride = IsLockOverride,
                     OpcRequestId = OpcRequestId,
                     IfMatch = IfMatch
                 };
