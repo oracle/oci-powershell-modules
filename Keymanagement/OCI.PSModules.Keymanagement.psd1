@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Keymanagement.dll'
 
 # Version number of this module.
-ModuleVersion = '74.2.0'
+ModuleVersion = '75.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '74.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '75.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Keymanagement.dll'
@@ -76,37 +76,49 @@ CmdletsToExport = 'Backup-OCIKeymanagementKey', 'Backup-OCIKeymanagementVault',
                'Export-OCIKeymanagementKey', 
                'Get-OCIKeymanagementEkmsPrivateEndpoint', 
                'Get-OCIKeymanagementEkmsPrivateEndpointsList', 
-               'Get-OCIKeymanagementKey', 'Get-OCIKeymanagementKeysList', 
-               'Get-OCIKeymanagementKeyVersion', 
+               'Get-OCIKeymanagementHsmCluster', 
+               'Get-OCIKeymanagementHsmClustersList', 
+               'Get-OCIKeymanagementHsmPartition', 
+               'Get-OCIKeymanagementHsmPartitionsList', 'Get-OCIKeymanagementKey', 
+               'Get-OCIKeymanagementKeysList', 'Get-OCIKeymanagementKeyVersion', 
                'Get-OCIKeymanagementKeyVersionsList', 
+               'Get-OCIKeymanagementPreCoUserCredentials', 
                'Get-OCIKeymanagementReplicationStatus', 
                'Get-OCIKeymanagementVault', 
                'Get-OCIKeymanagementVaultReplicasList', 
                'Get-OCIKeymanagementVaultsList', 'Get-OCIKeymanagementVaultUsage', 
                'Get-OCIKeymanagementWrappingKey', 'Import-OCIKeymanagementKey', 
                'Import-OCIKeymanagementKeyVersion', 
-               'Invoke-OCIKeymanagementDecrypt', 'Invoke-OCIKeymanagementEncrypt', 
+               'Invoke-OCIKeymanagementDecrypt', 
+               'Invoke-OCIKeymanagementDownloadCertificateSigningRequest', 
+               'Invoke-OCIKeymanagementEncrypt', 
+               'Invoke-OCIKeymanagementScheduleHsmClusterDeletion', 
                'Invoke-OCIKeymanagementScheduleKeyDeletion', 
                'Invoke-OCIKeymanagementScheduleKeyVersionDeletion', 
                'Invoke-OCIKeymanagementScheduleVaultDeletion', 
                'Invoke-OCIKeymanagementSign', 'Invoke-OCIKeymanagementVerify', 
+               'Move-OCIKeymanagementHsmClusterCompartment', 
                'Move-OCIKeymanagementKeyCompartment', 
                'Move-OCIKeymanagementVaultCompartment', 
                'New-OCIKeymanagementDataEncryptionKey', 
                'New-OCIKeymanagementEkmsPrivateEndpoint', 
-               'New-OCIKeymanagementKey', 'New-OCIKeymanagementKeyVersion', 
-               'New-OCIKeymanagementVault', 'New-OCIKeymanagementVaultReplica', 
+               'New-OCIKeymanagementHsmCluster', 'New-OCIKeymanagementKey', 
+               'New-OCIKeymanagementKeyVersion', 'New-OCIKeymanagementVault', 
+               'New-OCIKeymanagementVaultReplica', 
                'Remove-OCIKeymanagementEkmsPrivateEndpoint', 
                'Remove-OCIKeymanagementVaultReplica', 
                'Restore-OCIKeymanagementKeyFromFile', 
                'Restore-OCIKeymanagementKeyFromObjectStore', 
                'Restore-OCIKeymanagementVaultFromFile', 
                'Restore-OCIKeymanagementVaultFromObjectStore', 
+               'Stop-OCIKeymanagementHsmClusterDeletion', 
                'Stop-OCIKeymanagementKeyDeletion', 
                'Stop-OCIKeymanagementKeyVersionDeletion', 
                'Stop-OCIKeymanagementVaultDeletion', 
                'Update-OCIKeymanagementEkmsPrivateEndpoint', 
-               'Update-OCIKeymanagementKey', 'Update-OCIKeymanagementVault'
+               'Update-OCIKeymanagementHsmCluster', 'Update-OCIKeymanagementKey', 
+               'Update-OCIKeymanagementVault', 
+               'Write-OCIKeymanagementPartitionCertificates'
 
 # Variables to export from this module
 VariablesToExport = '*'

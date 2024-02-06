@@ -16,7 +16,7 @@ using Oci.Common.Model;
 namespace Oci.MediaservicesService.Cmdlets
 {
     [Cmdlet("Move", "OCIMediaservicesMediaWorkflowJobCompartment")]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.MediaservicesService.Responses.ChangeMediaWorkflowJobCompartmentResponse) })]
+    [OutputType(new System.Type[] { typeof(void), typeof(Oci.MediaservicesService.Responses.ChangeMediaWorkflowJobCompartmentResponse) })]
     public class MoveOCIMediaservicesMediaWorkflowJobCompartment : OCIMediaServicesCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique MediaWorkflowJob identifier.")]
@@ -24,6 +24,9 @@ namespace Oci.MediaservicesService.Cmdlets
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The change compartment payload.")]
         public ChangeMediaWorkflowJobCompartmentDetails ChangeMediaWorkflowJobCompartmentDetails { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Whether to override locks (if any exist).")]
+        public System.Nullable<bool> IsLockOverride { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
         public string OpcRetryToken { get; set; }
@@ -45,13 +48,14 @@ namespace Oci.MediaservicesService.Cmdlets
                 {
                     MediaWorkflowJobId = MediaWorkflowJobId,
                     ChangeMediaWorkflowJobCompartmentDetails = ChangeMediaWorkflowJobCompartmentDetails,
+                    IsLockOverride = IsLockOverride,
                     OpcRetryToken = OpcRetryToken,
                     IfMatch = IfMatch,
                     OpcRequestId = OpcRequestId
                 };
 
                 response = client.ChangeMediaWorkflowJobCompartment(request).GetAwaiter().GetResult();
-                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
+                WriteOutput(response);
                 FinishProcessing(response);
             }
             catch (OciException ex)

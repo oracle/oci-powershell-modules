@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Mediaservices.dll'
 
 # Version number of this module.
-ModuleVersion = '74.2.0'
+ModuleVersion = '75.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '74.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '75.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Mediaservices.dll'
@@ -71,7 +71,14 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Mediaservices.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIMediaservicesMediaAsset', 
+CmdletsToExport = 'Add-OCIMediaservicesMediaAssetLock', 
+               'Add-OCIMediaservicesMediaWorkflowConfigurationLock', 
+               'Add-OCIMediaservicesMediaWorkflowJobLock', 
+               'Add-OCIMediaservicesMediaWorkflowLock', 
+               'Add-OCIMediaservicesStreamCdnConfigLock', 
+               'Add-OCIMediaservicesStreamDistributionChannelLock', 
+               'Add-OCIMediaservicesStreamPackagingConfigLock', 
+               'Get-OCIMediaservicesMediaAsset', 
                'Get-OCIMediaservicesMediaAssetDistributionChannelAttachment', 
                'Get-OCIMediaservicesMediaAssetDistributionChannelAttachmentsList', 
                'Get-OCIMediaservicesMediaAssetsList', 
@@ -79,8 +86,6 @@ CmdletsToExport = 'Get-OCIMediaservicesMediaAsset',
                'Get-OCIMediaservicesMediaWorkflowConfiguration', 
                'Get-OCIMediaservicesMediaWorkflowConfigurationsList', 
                'Get-OCIMediaservicesMediaWorkflowJob', 
-               'Get-OCIMediaservicesMediaWorkflowJobFact', 
-               'Get-OCIMediaservicesMediaWorkflowJobFactsList', 
                'Get-OCIMediaservicesMediaWorkflowJobsList', 
                'Get-OCIMediaservicesMediaWorkflowsList', 
                'Get-OCIMediaservicesMediaWorkflowTaskDeclarationsList', 
@@ -107,12 +112,19 @@ CmdletsToExport = 'Get-OCIMediaservicesMediaAsset',
                'New-OCIMediaservicesStreamPackagingConfig', 
                'Remove-OCIMediaservicesMediaAsset', 
                'Remove-OCIMediaservicesMediaAssetDistributionChannelAttachment', 
+               'Remove-OCIMediaservicesMediaAssetLock', 
                'Remove-OCIMediaservicesMediaWorkflow', 
                'Remove-OCIMediaservicesMediaWorkflowConfiguration', 
+               'Remove-OCIMediaservicesMediaWorkflowConfigurationLock', 
                'Remove-OCIMediaservicesMediaWorkflowJob', 
+               'Remove-OCIMediaservicesMediaWorkflowJobLock', 
+               'Remove-OCIMediaservicesMediaWorkflowLock', 
                'Remove-OCIMediaservicesStreamCdnConfig', 
+               'Remove-OCIMediaservicesStreamCdnConfigLock', 
                'Remove-OCIMediaservicesStreamDistributionChannel', 
+               'Remove-OCIMediaservicesStreamDistributionChannelLock', 
                'Remove-OCIMediaservicesStreamPackagingConfig', 
+               'Remove-OCIMediaservicesStreamPackagingConfigLock', 
                'Update-OCIMediaservicesMediaAsset', 
                'Update-OCIMediaservicesMediaWorkflow', 
                'Update-OCIMediaservicesMediaWorkflowConfiguration', 

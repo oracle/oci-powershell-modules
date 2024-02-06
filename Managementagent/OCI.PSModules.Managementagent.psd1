@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Managementagent.dll'
 
 # Version number of this module.
-ModuleVersion = '74.2.0'
+ModuleVersion = '75.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '74.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '75.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Managementagent.dll'
@@ -74,6 +74,8 @@ FunctionsToExport = '*'
 CmdletsToExport = 'Get-OCIManagementagent', 
                'Get-OCIManagementagentAutoUpgradableConfig', 
                'Get-OCIManagementagentAvailabilityHistoriesList', 
+               'Get-OCIManagementagentDataSource', 
+               'Get-OCIManagementagentDataSourcesList', 
                'Get-OCIManagementagentImagesList', 
                'Get-OCIManagementagentInstallKey', 
                'Get-OCIManagementagentInstallKeyContent', 
@@ -87,9 +89,12 @@ CmdletsToExport = 'Get-OCIManagementagent',
                'Invoke-OCIManagementagentSetAutoUpgradableConfig', 
                'Invoke-OCIManagementagentSummarizeManagementAgentCounts', 
                'Invoke-OCIManagementagentSummarizeManagementAgentPluginCounts', 
+               'New-OCIManagementagentDataSource', 
                'New-OCIManagementagentInstallKey', 'Remove-OCIManagementagent', 
+               'Remove-OCIManagementagentDataSource', 
                'Remove-OCIManagementagentInstallKey', 
                'Remove-OCIManagementagentWorkRequest', 'Update-OCIManagementagent', 
+               'Update-OCIManagementagentDataSource', 
                'Update-OCIManagementagentInstallKey'
 
 # Variables to export from this module
