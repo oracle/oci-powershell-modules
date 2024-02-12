@@ -37,6 +37,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Discovery data type")]
         public System.Nullable<Oci.LoganalyticsService.Requests.UploadDiscoveryDataRequest.DiscoveryDataTypeEnum> DiscoveryDataType { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The log group OCID that gets mapped to the logs in the discovery data.")]
+        public string LogGroupId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Identifies the type of request payload.")]
         public System.Nullable<Oci.LoganalyticsService.Models.PayloadType> PayloadType { get; set; }
 
@@ -69,6 +72,7 @@ namespace Oci.LoganalyticsService.Cmdlets
                     OpcRequestId = OpcRequestId,
                     OpcMetaProperties = OpcMetaProperties,
                     DiscoveryDataType = DiscoveryDataType,
+                    LogGroupId = LogGroupId,
                     PayloadType = PayloadType,
                     ContentType = ContentType,
                     OpcRetryToken = OpcRetryToken,

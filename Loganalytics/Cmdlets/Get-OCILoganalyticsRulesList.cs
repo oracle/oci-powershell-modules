@@ -33,6 +33,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The rule kind used for filtering. Only rules of the specified kind will be returned.")]
         public System.Nullable<Oci.LoganalyticsService.Requests.ListRulesRequest.KindEnum> Kind { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The target service to use for filtering.")]
+        public string TargetService { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.")]
         public System.Nullable<Oci.LoganalyticsService.Models.ConfigLifecycleState> LifecycleState { get; set; }
 
@@ -67,6 +70,7 @@ namespace Oci.LoganalyticsService.Cmdlets
                     CompartmentId = CompartmentId,
                     DisplayName = DisplayName,
                     Kind = Kind,
+                    TargetService = TargetService,
                     LifecycleState = LifecycleState,
                     Limit = Limit,
                     Page = Page,

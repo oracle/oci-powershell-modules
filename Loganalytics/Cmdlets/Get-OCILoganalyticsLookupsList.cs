@@ -24,7 +24,7 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics namespace used for the request.")]
         public string NamespaceName { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The lookup type.  Valid values are Lookup or Dictionary.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The lookup type.  Valid values are Lookup, Dictionary or Module.")]
         public System.Nullable<Oci.LoganalyticsService.Requests.ListLookupsRequest.TypeEnum> Type { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The lookup text used for filtering.  Only lookups with the specified name or description will be returned.")]

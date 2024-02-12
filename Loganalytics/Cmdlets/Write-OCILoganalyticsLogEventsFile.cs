@@ -46,6 +46,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
         public string OpcRetryToken { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Metadata key and value pairs separated by a semicolon. Example k1:v1;k2:v2;k3:v3")]
+        public string OpcMetaProperties { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is ""100-Continue"" (case-insensitive).")]
         public string Expect { get; set; }
 
@@ -72,6 +75,7 @@ namespace Oci.LoganalyticsService.Cmdlets
                     PayloadType = PayloadType,
                     ContentType = ContentType,
                     OpcRetryToken = OpcRetryToken,
+                    OpcMetaProperties = OpcMetaProperties,
                     Expect = Expect
                 };
 
