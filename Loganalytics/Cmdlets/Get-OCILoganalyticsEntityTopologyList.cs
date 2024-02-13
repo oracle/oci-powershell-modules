@@ -45,6 +45,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format ""{name}:{value}:{type}"".  All inputs are case-insensitive.")]
+        public System.Collections.Generic.List<string> MetadataEquals { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -64,7 +67,8 @@ namespace Oci.LoganalyticsService.Cmdlets
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    MetadataEquals = MetadataEquals
                 };
                 IEnumerable<ListLogAnalyticsEntityTopologyResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

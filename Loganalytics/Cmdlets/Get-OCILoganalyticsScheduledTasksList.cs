@@ -54,6 +54,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose display name contains the substring.")]
         public string DisplayNameContains { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The target service to use for filtering.")]
+        public string TargetService { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -76,7 +79,8 @@ namespace Oci.LoganalyticsService.Cmdlets
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     SavedSearchId = SavedSearchId,
-                    DisplayNameContains = DisplayNameContains
+                    DisplayNameContains = DisplayNameContains,
+                    TargetService = TargetService
                 };
                 IEnumerable<ListScheduledTasksResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

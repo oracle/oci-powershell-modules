@@ -54,6 +54,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.")]
         public string Name { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The source type.")]
+        public string SourceType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A comma-separated list of categories used for filtering")]
         public string Categories { get; set; }
 
@@ -86,6 +89,7 @@ namespace Oci.LoganalyticsService.Cmdlets
                     Limit = Limit,
                     Page = Page,
                     Name = Name,
+                    SourceType = SourceType,
                     Categories = Categories,
                     IsSimplified = IsSimplified,
                     OpcRequestId = OpcRequestId
