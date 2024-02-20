@@ -6,8 +6,8 @@ namespace Oci.PSModules.Common.Cmdlets
 {
     public class Version
     {
-        public static string MAJOR = "75";
-        public static string MINOR = "1";
+        public static string MAJOR = "76";
+        public static string MINOR = "0";
         public static string PATCH = "0";
 
         public static string GetVersion()
