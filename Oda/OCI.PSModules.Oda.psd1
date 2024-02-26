@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Oda.dll'
 
 # Version number of this module.
-ModuleVersion = '76.0.0'
+ModuleVersion = '77.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '76.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '77.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Oda.dll'
@@ -92,9 +92,12 @@ CmdletsToExport = 'Export-OCIOdaDigitalAssistant', 'Export-OCIOdaSkill',
                'Get-OCIOdaTranslatorsList', 'Get-OCIOdaWorkRequest', 
                'Get-OCIOdaWorkRequestErrorsList', 'Get-OCIOdaWorkRequestLogsList', 
                'Get-OCIOdaWorkRequestsList', 'Import-OCIOdaBot', 
+               'Invoke-OCIOdaBulkCreateSkillEntities', 
+               'Invoke-OCIOdaCascadingDeleteSkillCustomEntities', 
                'Invoke-OCIOdaConfigureDigitalAssistantParameters', 
                'Invoke-OCIOdaPublishDigitalAssistant', 'Invoke-OCIOdaPublishSkill', 
-               'Invoke-OCIOdaRotateChannelKeys', 'Move-OCIOdaInstanceCompartment', 
+               'Invoke-OCIOdaRotateChannelKeys', 'Invoke-OCIOdaTrainSkill', 
+               'Move-OCIOdaInstanceCompartment', 
                'Move-OCIOdaPrivateEndpointCompartment', 
                'New-OCIOdaAuthenticationProvider', 'New-OCIOdaChannel', 
                'New-OCIOdaDigitalAssistant', 'New-OCIOdaImportedPackage', 

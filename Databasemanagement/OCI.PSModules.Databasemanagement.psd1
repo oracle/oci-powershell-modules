@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Databasemanagement.dll'
 
 # Version number of this module.
-ModuleVersion = '76.0.0'
+ModuleVersion = '77.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '76.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '77.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasemanagement.dll'
@@ -273,16 +273,21 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Start-OCIDatabasemanagementSqlTuningTask', 
                'Update-OCIDatabasemanagementDbManagementPrivateEndpoint', 
                'Update-OCIDatabasemanagementExternalAsm', 
+               'Update-OCIDatabasemanagementExternalAsmInstance', 
                'Update-OCIDatabasemanagementExternalCluster', 
                'Update-OCIDatabasemanagementExternalClusterInstance', 
+               'Update-OCIDatabasemanagementExternalDbHome', 
                'Update-OCIDatabasemanagementExternalDbNode', 
                'Update-OCIDatabasemanagementExternalDbSystem', 
                'Update-OCIDatabasemanagementExternalDbSystemConnector', 
                'Update-OCIDatabasemanagementExternalDbSystemDiscovery', 
                'Update-OCIDatabasemanagementExternalExadataInfrastructure', 
                'Update-OCIDatabasemanagementExternalExadataStorageConnector', 
+               'Update-OCIDatabasemanagementExternalExadataStorageGrid', 
+               'Update-OCIDatabasemanagementExternalExadataStorageServer', 
                'Update-OCIDatabasemanagementExternalListener', 
                'Update-OCIDatabasemanagementJob', 
+               'Update-OCIDatabasemanagementManagedDatabase', 
                'Update-OCIDatabasemanagementManagedDatabaseGroup', 
                'Update-OCIDatabasemanagementNamedCredential', 
                'Update-OCIDatabasemanagementPreferredCredential', 

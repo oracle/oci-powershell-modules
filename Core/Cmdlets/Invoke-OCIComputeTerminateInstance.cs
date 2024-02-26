@@ -28,6 +28,9 @@ namespace Oci.CoreService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies whether to delete or preserve the boot volume when terminating an instance. When set to `true`, the boot volume is preserved. The default value is `false`.")]
         public System.Nullable<bool> PreserveBootVolume { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies whether to delete or preserve the data volumes created during launch when terminating an instance. When set to `true`, the data volumes are preserved. The default value is `true`.")]
+        public System.Nullable<bool> PreserveDataVolumesCreatedAtLaunch { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "Ignore confirmation and force the Cmdlet to complete action.")]
         public SwitchParameter Force { get; set; }
 
@@ -48,7 +51,8 @@ namespace Oci.CoreService.Cmdlets
                 {
                     InstanceId = InstanceId,
                     IfMatch = IfMatch,
-                    PreserveBootVolume = PreserveBootVolume
+                    PreserveBootVolume = PreserveBootVolume,
+                    PreserveDataVolumesCreatedAtLaunch = PreserveDataVolumesCreatedAtLaunch
                 };
 
                 response = client.TerminateInstance(request).GetAwaiter().GetResult();

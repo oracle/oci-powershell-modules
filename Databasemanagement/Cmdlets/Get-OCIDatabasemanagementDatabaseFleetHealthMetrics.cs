@@ -46,11 +46,35 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The filter used to filter the databases in the fleet by a specific Oracle Database subtype.")]
         public string FilterByDatabaseSubType { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The page token representing the page from where the next set of paginated results are retrieved. This is usually retrieved from a previous list call.")]
+        public string Page { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of records returned in the paginated response.")]
+        public System.Nullable<int> Limit { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort information by. Only one sortOrder can be used. The default sort order for 'TIMECREATED' is descending and the default sort order for 'NAME' is ascending. The 'NAME' sort order is case-sensitive.")]
+        public System.Nullable<Oci.DatabasemanagementService.Requests.GetDatabaseFleetHealthMetricsRequest.SortByEnum> SortBy { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The option to sort information in ascending ('ASC') or descending ('DESC') order. Ascending order is the default order.")]
+        public System.Nullable<Oci.DatabasemanagementService.Models.SortOrders> SortOrder { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The filter used to filter the databases in the fleet by a specific Oracle Database deployment type.")]
         public string FilterByDatabaseDeploymentType { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The filter used to filter the databases in the fleet by a specific Oracle Database version.")]
         public string FilterByDatabaseVersion { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format ""{namespace}.{tagName}.{value}"".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as ""OR"". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as ""AND"".")]
+        public System.Collections.Generic.List<string> DefinedTagEquals { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned. The key for each tag is ""{tagName}.{value}"".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as ""OR"".  Values for different tag names are interpreted as ""AND"".")]
+        public System.Collections.Generic.List<string> FreeformTagEquals { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned. Each item in the list has the format ""{namespace}.{tagName}.true"" (for checking existence of a defined tag) or ""{namespace}.true"".  All inputs are case-insensitive. Currently, only existence (""true"" at the end) is supported. Absence (""false"" at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as ""OR"". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as ""AND"".")]
+        public System.Collections.Generic.List<string> DefinedTagExists { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned. The key for each tag is ""{tagName}.true"".  All inputs are case-insensitive. Currently, only existence (""true"" at the end) is supported. Absence (""false"" at the end) is not supported. Multiple values for different tag names are interpreted as ""AND"".")]
+        public System.Collections.Generic.List<string> FreeformTagExists { get; set; }
 
         protected override void ProcessRecord()
         {
@@ -70,8 +94,16 @@ namespace Oci.DatabasemanagementService.Cmdlets
                     FilterByMetricNames = FilterByMetricNames,
                     FilterByDatabaseType = FilterByDatabaseType,
                     FilterByDatabaseSubType = FilterByDatabaseSubType,
+                    Page = Page,
+                    Limit = Limit,
+                    SortBy = SortBy,
+                    SortOrder = SortOrder,
                     FilterByDatabaseDeploymentType = FilterByDatabaseDeploymentType,
-                    FilterByDatabaseVersion = FilterByDatabaseVersion
+                    FilterByDatabaseVersion = FilterByDatabaseVersion,
+                    DefinedTagEquals = DefinedTagEquals,
+                    FreeformTagEquals = FreeformTagEquals,
+                    DefinedTagExists = DefinedTagExists,
+                    FreeformTagExists = FreeformTagExists
                 };
 
                 response = client.GetDatabaseFleetHealthMetrics(request).GetAwaiter().GetResult();
