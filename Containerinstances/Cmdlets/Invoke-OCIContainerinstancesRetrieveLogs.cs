@@ -29,6 +29,9 @@ namespace Oci.ContainerinstancesService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Returns the logs for the previous run of the container in a pod if the pod exists. If the container fails for some reason, this parameter is useful to determine the root cause of the failure.")]
+        public System.Nullable<bool> IsPrevious { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = "Path to the output file.", ParameterSetName = WriteToFileSet)]
         public string OutputFile { get; set; }
 
@@ -45,7 +48,8 @@ namespace Oci.ContainerinstancesService.Cmdlets
                 request = new RetrieveLogsRequest
                 {
                     ContainerId = ContainerId,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    IsPrevious = IsPrevious
                 };
 
                 response = client.RetrieveLogs(request).GetAwaiter().GetResult();
