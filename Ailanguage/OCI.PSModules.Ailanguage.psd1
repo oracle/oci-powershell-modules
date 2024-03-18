@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Ailanguage.dll'
 
 # Version number of this module.
-ModuleVersion = '78.1.0'
+ModuleVersion = '78.2.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '78.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '78.2.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Ailanguage.dll'
@@ -72,7 +72,8 @@ FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Get-OCIAilanguageEndpoint', 'Get-OCIAilanguageEndpointsList', 
-               'Get-OCIAilanguageEvaluationResultsList', 'Get-OCIAilanguageModel', 
+               'Get-OCIAilanguageEvaluationResultsList', 'Get-OCIAilanguageJob', 
+               'Get-OCIAilanguageJobsList', 'Get-OCIAilanguageModel', 
                'Get-OCIAilanguageModelsList', 'Get-OCIAilanguageModelType', 
                'Get-OCIAilanguageProject', 'Get-OCIAilanguageProjectsList', 
                'Get-OCIAilanguageWorkRequest', 
@@ -92,11 +93,14 @@ CmdletsToExport = 'Get-OCIAilanguageEndpoint', 'Get-OCIAilanguageEndpointsList',
                'Invoke-OCIAilanguageDetectLanguageSentiments', 
                'Invoke-OCIAilanguageDetectLanguageTextClassification', 
                'Move-OCIAilanguageEndpointCompartment', 
+               'Move-OCIAilanguageJobCompartment', 
                'Move-OCIAilanguageModelCompartment', 
                'Move-OCIAilanguageProjectCompartment', 'New-OCIAilanguageEndpoint', 
-               'New-OCIAilanguageModel', 'New-OCIAilanguageProject', 
-               'Remove-OCIAilanguageEndpoint', 'Remove-OCIAilanguageModel', 
-               'Remove-OCIAilanguageProject', 'Update-OCIAilanguageEndpoint', 
+               'New-OCIAilanguageJob', 'New-OCIAilanguageModel', 
+               'New-OCIAilanguageProject', 'Remove-OCIAilanguageEndpoint', 
+               'Remove-OCIAilanguageJob', 'Remove-OCIAilanguageModel', 
+               'Remove-OCIAilanguageProject', 'Stop-OCIAilanguageJob', 
+               'Update-OCIAilanguageEndpoint', 'Update-OCIAilanguageJob', 
                'Update-OCIAilanguageModel', 'Update-OCIAilanguageProject'
 
 # Variables to export from this module

@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Apmtraces.dll'
 
 # Version number of this module.
-ModuleVersion = '78.1.0'
+ModuleVersion = '78.2.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '78.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '78.2.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Apmtraces.dll'
@@ -73,8 +73,15 @@ FunctionsToExport = '*'
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Get-OCIApmtracesAggregatedSnapshot', 
                'Get-OCIApmtracesQuickPicksList', 'Get-OCIApmtracesSpan', 
-               'Get-OCIApmtracesTrace', 'Get-OCIApmtracesTraceSnapshot', 
-               'Invoke-OCIApmtracesQuery'
+               'Get-OCIApmtracesStatusAutoActivate', 'Get-OCIApmtracesTrace', 
+               'Get-OCIApmtracesTraceSnapshot', 
+               'Invoke-OCIApmtracesBulkActivateAttribute', 
+               'Invoke-OCIApmtracesBulkDeActivateAttribute', 
+               'Invoke-OCIApmtracesBulkPinAttribute', 
+               'Invoke-OCIApmtracesBulkUnpinAttribute', 
+               'Invoke-OCIApmtracesBulkUpdateAttribute', 
+               'Invoke-OCIApmtracesBulkUpdateAttributeNotes', 
+               'Invoke-OCIApmtracesQuery', 'Write-OCIApmtracesToggleAutoActivate'
 
 # Variables to export from this module
 VariablesToExport = '*'

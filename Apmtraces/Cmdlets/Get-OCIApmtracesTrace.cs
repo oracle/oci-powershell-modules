@@ -19,7 +19,7 @@ namespace Oci.ApmtracesService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ApmtracesService.Models.Trace), typeof(Oci.ApmtracesService.Responses.GetTraceResponse) })]
     public class GetOCIApmtracesTrace : OCITraceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain ID the request is intended for.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain ID for the intended request.")]
         public string ApmDomainId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Application Performance Monitoring trace identifier (traceId).")]
@@ -27,6 +27,15 @@ namespace Oci.ApmtracesService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Include traces that have a `minTraceStartTime` equal to or greater than this value.")]
+        public System.Nullable<System.DateTime> TimeTraceStartedGreaterThanOrEqualTo { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Include traces that have a `minTraceStartTime` less than this value.")]
+        public System.Nullable<System.DateTime> TimeTraceStartedLessThan { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Name space from which the trace details need to be retrieved.")]
+        public System.Nullable<Oci.ApmtracesService.Requests.GetTraceRequest.TraceNamespaceEnum> TraceNamespace { get; set; }
 
         protected override void ProcessRecord()
         {
@@ -39,7 +48,10 @@ namespace Oci.ApmtracesService.Cmdlets
                 {
                     ApmDomainId = ApmDomainId,
                     TraceKey = TraceKey,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    TimeTraceStartedGreaterThanOrEqualTo = TimeTraceStartedGreaterThanOrEqualTo,
+                    TimeTraceStartedLessThan = TimeTraceStartedLessThan,
+                    TraceNamespace = TraceNamespace
                 };
 
                 response = client.GetTrace(request).GetAwaiter().GetResult();
