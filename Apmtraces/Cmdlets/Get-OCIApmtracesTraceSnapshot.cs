@@ -19,7 +19,7 @@ namespace Oci.ApmtracesService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ApmtracesService.Models.TraceSnapshot), typeof(Oci.ApmtracesService.Responses.GetTraceSnapshotResponse) })]
     public class GetOCIApmtracesTraceSnapshot : OCITraceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain ID the request is intended for.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain ID for the intended request.")]
         public string ApmDomainId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Application Performance Monitoring trace identifier (traceId).")]
@@ -28,10 +28,10 @@ namespace Oci.ApmtracesService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If enabled, then only span level details will be sent.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If enabled, only span level details are sent.")]
         public System.Nullable<bool> IsSummarized { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.")]
         public string ThreadId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Epoch time of snapshot.")]

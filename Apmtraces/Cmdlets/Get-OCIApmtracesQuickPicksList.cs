@@ -21,7 +21,7 @@ namespace Oci.ApmtracesService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ApmtracesService.Models.QuickPickSummary), typeof(Oci.ApmtracesService.Responses.ListQuickPicksResponse) })]
     public class GetOCIApmtracesQuickPicksList : OCIQueryCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain ID the request is intended for.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain ID for the intended request.")]
         public string ApmDomainId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, please provide the request ID.")]
@@ -30,7 +30,7 @@ namespace Oci.ApmtracesService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The page token representing the page at which to start retrieving results. This is usually retrieved from a previous response.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The page token representing the page where to start retrieving results. This is usually retrieved from a previous response.")]
         public string Page { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]

@@ -19,7 +19,7 @@ namespace Oci.ApmtracesService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ApmtracesService.Models.Span), typeof(Oci.ApmtracesService.Responses.GetSpanResponse) })]
     public class GetOCIApmtracesSpan : OCITraceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain ID the request is intended for.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain ID for the intended request.")]
         public string ApmDomainId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Application Performance Monitoring span identifier (spanId).")]
@@ -30,6 +30,15 @@ namespace Oci.ApmtracesService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Include spans that have a `spanStartTime` equal to or greater than this value.")]
+        public System.Nullable<System.DateTime> TimeSpanStartedGreaterThanOrEqualTo { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Include spans that have a `spanStartTime`less than this value.")]
+        public System.Nullable<System.DateTime> TimeSpanStartedLessThan { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Name space from which the span details need to be retrieved.")]
+        public System.Nullable<Oci.ApmtracesService.Requests.GetSpanRequest.SpanNamespaceEnum> SpanNamespace { get; set; }
 
         protected override void ProcessRecord()
         {
@@ -43,7 +52,10 @@ namespace Oci.ApmtracesService.Cmdlets
                     ApmDomainId = ApmDomainId,
                     SpanKey = SpanKey,
                     TraceKey = TraceKey,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    TimeSpanStartedGreaterThanOrEqualTo = TimeSpanStartedGreaterThanOrEqualTo,
+                    TimeSpanStartedLessThan = TimeSpanStartedLessThan,
+                    SpanNamespace = SpanNamespace
                 };
 
                 response = client.GetSpan(request).GetAwaiter().GetResult();
