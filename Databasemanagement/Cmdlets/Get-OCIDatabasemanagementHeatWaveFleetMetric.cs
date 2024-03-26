@@ -15,9 +15,9 @@ using Oci.Common.Model;
 
 namespace Oci.DatabasemanagementService.Cmdlets
 {
-    [Cmdlet("Get", "OCIDatabasemanagementMySqlFleetMetric")]
-    [OutputType(new System.Type[] { typeof(Oci.DatabasemanagementService.Models.MySqlFleetMetrics), typeof(Oci.DatabasemanagementService.Responses.GetMySqlFleetMetricResponse) })]
-    public class GetOCIDatabasemanagementMySqlFleetMetric : OCIManagedMySqlDatabasesCmdlet
+    [Cmdlet("Get", "OCIDatabasemanagementHeatWaveFleetMetric")]
+    [OutputType(new System.Type[] { typeof(Oci.DatabasemanagementService.Models.HeatWaveFleetMetrics), typeof(Oci.DatabasemanagementService.Responses.GetHeatWaveFleetMetricResponse) })]
+    public class GetOCIDatabasemanagementHeatWaveFleetMetric : OCIManagedMySqlDatabasesCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
@@ -34,44 +34,36 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.")]
         public string FilterByMetricNames { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The parameter to filter by MySQL deployment type.")]
-        public System.Nullable<Oci.DatabasemanagementService.Models.MySqlDeploymentType> FilterByMySqlDeploymentTypeParam { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The parameter to filter by HeatWave cluster status.")]
+        public System.Nullable<Oci.DatabasemanagementService.Models.HeatWaveClusterStatus> FilterByHeatWaveStatus { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The parameter to filter by MySQL Database System type.")]
-        public System.Nullable<Oci.DatabasemanagementService.Models.MdsType> FilterByMdsDeploymentType { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The parameter to filter by HeatWave node shape.")]
+        public string FilterByHeatWaveShape { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The parameter to filter by MySQL Database status.")]
-        public System.Nullable<Oci.DatabasemanagementService.Models.DatabaseStatus> FilterByMySqlStatus { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The parameter to filter by MySQL database version.")]
-        public string FilterByMySqlDatabaseVersion { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The parameter to filter based on whether HeatWave is enabled for the database.")]
-        public System.Nullable<bool> IsHeatWaveEnabled { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The parameter to filter based on whether HeatWave Lakehouse is enabled for the cluster.")]
+        public System.Nullable<bool> IsHeatWaveLakehouseEnabled { get; set; }
 
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            GetMySqlFleetMetricRequest request;
+            GetHeatWaveFleetMetricRequest request;
 
             try
             {
-                request = new GetMySqlFleetMetricRequest
+                request = new GetHeatWaveFleetMetricRequest
                 {
                     CompartmentId = CompartmentId,
                     StartTime = StartTime,
                     EndTime = EndTime,
                     OpcRequestId = OpcRequestId,
                     FilterByMetricNames = FilterByMetricNames,
-                    FilterByMySqlDeploymentTypeParam = FilterByMySqlDeploymentTypeParam,
-                    FilterByMdsDeploymentType = FilterByMdsDeploymentType,
-                    FilterByMySqlStatus = FilterByMySqlStatus,
-                    FilterByMySqlDatabaseVersion = FilterByMySqlDatabaseVersion,
-                    IsHeatWaveEnabled = IsHeatWaveEnabled
+                    FilterByHeatWaveStatus = FilterByHeatWaveStatus,
+                    FilterByHeatWaveShape = FilterByHeatWaveShape,
+                    IsHeatWaveLakehouseEnabled = IsHeatWaveLakehouseEnabled
                 };
 
-                response = client.GetMySqlFleetMetric(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.MySqlFleetMetrics);
+                response = client.GetHeatWaveFleetMetric(request).GetAwaiter().GetResult();
+                WriteOutput(response, response.HeatWaveFleetMetrics);
                 FinishProcessing(response);
             }
             catch (OciException ex)
@@ -90,6 +82,6 @@ namespace Oci.DatabasemanagementService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private GetMySqlFleetMetricResponse response;
+        private GetHeatWaveFleetMetricResponse response;
     }
 }
