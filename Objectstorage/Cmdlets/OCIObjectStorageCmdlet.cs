@@ -17,7 +17,7 @@ namespace Oci.ObjectstorageService.Cmdlets
     { 
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "If set, the realm specific endpoint is used. The -Endpoint parameter takes precedence over this option.")]
-        public SwitchParameter UseRealmSpecificEndpoint { get; set; }
+        public SwitchParameter DisableRealmSpecificEndpoint { get; set; }
 
         protected override void BeginProcessing()
         {
@@ -48,7 +48,7 @@ namespace Oci.ObjectstorageService.Cmdlets
                     TimeoutMillis = timeout,
                     ClientUserAgent = PSUserAgent
                 });
-                client.UseRealmSpecificEndpointTemplate(UseRealmSpecificEndpoint);
+                client.UseRealmSpecificEndpointTemplate(!DisableRealmSpecificEndpoint);
                 string region = GetPreferredRegion();
                 if (region != null)
                 {

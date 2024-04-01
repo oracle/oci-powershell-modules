@@ -8,6 +8,7 @@
 
 using System;
 using System.Management.Automation;
+using System.Net.Http;
 using Oci.GenerativeaiinferenceService.Requests;
 using Oci.GenerativeaiinferenceService.Responses;
 using Oci.GenerativeaiinferenceService.Models;
@@ -28,6 +29,9 @@ namespace Oci.GenerativeaiinferenceService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The http completion option to use for this request. Use ResponseHeadersRead for streams; Default is ResponseContentRead")]
+        public HttpCompletionOption HttpCompletionOption { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -42,7 +46,7 @@ namespace Oci.GenerativeaiinferenceService.Cmdlets
                     OpcRequestId = OpcRequestId
                 };
 
-                response = client.GenerateText(request).GetAwaiter().GetResult();
+                response = client.GenerateText(request, completionOption: HttpCompletionOption).GetAwaiter().GetResult();
                 WriteOutput(response, response.GenerateTextResult);
                 FinishProcessing(response);
             }

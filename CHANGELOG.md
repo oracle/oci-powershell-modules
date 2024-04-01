@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 80.0.0 - 2024-04-02
+### Added
+- Support for assigned private IP and single stack IPV6 feature for Network Load Balancer Service
+- Support for Configuration API in Email Delivery Service
+- Support for the status field in creating data source resource for Cloud Guard Service
+- Support for TLSv1.3 in Load Balancer Service
+- Support for sending mails via HTTPS for Email Delivery Service
+ 
+### Breaking Changes
+- The type of property `Reason` was changed from `ReasonEnum` to `SuppressionReason` in the model `SuppressionSummary` in the Email Delivery Service in the .NET SDK
+
 ## 79.0.0 - 2024-03-26
 ### Added
 - Support for creating and updating a refreshable clone with auto-refresh for an Autonomous Database in the Database service
