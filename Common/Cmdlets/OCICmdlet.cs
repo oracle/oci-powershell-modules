@@ -5,8 +5,10 @@
 using System;
 using System.IO;
 using System.Management.Automation;
-using Oci.Common.Model;
+using System.Threading.Tasks;
+using Oci.Common;
 using Oci.Common.Auth;
+using Oci.Common.Model;
 using Oci.Common.DeveloperToolConfigurations;
 using Oci.PSModules.Common.Cmdlets.ClientManagement;
 using Oci.PSModules.Common.Cmdlets.CmdletHistory;
@@ -269,11 +271,20 @@ namespace Oci.PSModules.Common.Cmdlets
         /// <param name="response">Response of the operation API</param>
         /// <param name="responseBody">Resonse body of the operation API</param>
         /// <param name="enumerateCollection">Enumerate response or response body</param>
-        protected void WriteOutput(Object response, Object responseBody, bool enumerateCollection = false)
+        protected async void WriteOutput(Object response, Object responseBody, bool enumerateCollection = false)
         {
+            string ContentType = ((OciResponse) response).httpResponseMessage.Content.Headers.ContentType?.MediaType;
             if (FullResponse)
             {
                 WriteObject(response, enumerateCollection);
+            }
+            else if ("text/event-stream".Equals(ContentType, StringComparison.OrdinalIgnoreCase))
+            {
+                WriteDebug("ContentType is text/event-stream, output is a stream");
+                using (Stream stream = await ((OciResponse) response).httpResponseMessage.Content.ReadAsStreamAsync())
+                {
+                    WriteObject(stream);
+                }
             }
             else
             {
