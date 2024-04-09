@@ -30,6 +30,9 @@ namespace Oci.StackmonitoringService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources which were impacted as part of this work request identifier.")]
         public string WorkRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources with matching lifecycleState.")]
+        public System.Nullable<Oci.StackmonitoringService.Models.ResourceLifecycleState> Status { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for resources is ascending.")]
         public System.Nullable<Oci.StackmonitoringService.Models.MonitoredResourceSortBy> SortBy { get; set; }
 
@@ -60,6 +63,7 @@ namespace Oci.StackmonitoringService.Cmdlets
                     CompartmentId = CompartmentId,
                     Name = Name,
                     WorkRequestId = WorkRequestId,
+                    Status = Status,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     Limit = Limit,

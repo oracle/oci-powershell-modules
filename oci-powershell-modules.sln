@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Announcements
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Apigateway", "Apigateway\OCI.PSModules.Apigateway.csproj", "{D8C6CC71-C908-4B01-9484-0B272D2AF590}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Applicationmigration", "Applicationmigration\OCI.PSModules.Applicationmigration.csproj", "{D0485C5A-BB55-4C5F-9A71-C395AA331FCA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Audit", "Audit\OCI.PSModules.Audit.csproj", "{459F4B5B-1433-42D7-9458-B9059563C42D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Autoscaling", "Autoscaling\OCI.PSModules.Autoscaling.csproj", "{C35A771A-5D37-485C-A5E0-3698DE1847DB}"
@@ -330,18 +328,6 @@ Global
 		{D8C6CC71-C908-4B01-9484-0B272D2AF590}.Release|x64.Build.0 = Release|Any CPU
 		{D8C6CC71-C908-4B01-9484-0B272D2AF590}.Release|x86.ActiveCfg = Release|Any CPU
 		{D8C6CC71-C908-4B01-9484-0B272D2AF590}.Release|x86.Build.0 = Release|Any CPU
-		{D0485C5A-BB55-4C5F-9A71-C395AA331FCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0485C5A-BB55-4C5F-9A71-C395AA331FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D0485C5A-BB55-4C5F-9A71-C395AA331FCA}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{D0485C5A-BB55-4C5F-9A71-C395AA331FCA}.Debug|x64.Build.0 = Debug|Any CPU
-		{D0485C5A-BB55-4C5F-9A71-C395AA331FCA}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{D0485C5A-BB55-4C5F-9A71-C395AA331FCA}.Debug|x86.Build.0 = Debug|Any CPU
-		{D0485C5A-BB55-4C5F-9A71-C395AA331FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D0485C5A-BB55-4C5F-9A71-C395AA331FCA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D0485C5A-BB55-4C5F-9A71-C395AA331FCA}.Release|x64.ActiveCfg = Release|Any CPU
-		{D0485C5A-BB55-4C5F-9A71-C395AA331FCA}.Release|x64.Build.0 = Release|Any CPU
-		{D0485C5A-BB55-4C5F-9A71-C395AA331FCA}.Release|x86.ActiveCfg = Release|Any CPU
-		{D0485C5A-BB55-4C5F-9A71-C395AA331FCA}.Release|x86.Build.0 = Release|Any CPU
 		{459F4B5B-1433-42D7-9458-B9059563C42D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{459F4B5B-1433-42D7-9458-B9059563C42D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{459F4B5B-1433-42D7-9458-B9059563C42D}.Debug|x64.ActiveCfg = Debug|Any CPU
