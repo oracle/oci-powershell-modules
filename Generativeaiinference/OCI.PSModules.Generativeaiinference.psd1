@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Generativeaiinference.dll'
 
 # Version number of this module.
-ModuleVersion = '81.0.0'
+ModuleVersion = '81.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '81.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '81.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Generativeaiinference.dll'
@@ -71,7 +71,8 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Generativeaiinference.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Invoke-OCIGenerativeaiinferenceEmbedText', 
+CmdletsToExport = 'Invoke-OCIGenerativeaiinferenceChat', 
+               'Invoke-OCIGenerativeaiinferenceEmbedText', 
                'Invoke-OCIGenerativeaiinferenceSummarizeText', 
                'New-OCIGenerativeaiinferenceText'
 

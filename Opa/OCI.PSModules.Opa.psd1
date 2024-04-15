@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Opa.dll'
 
 # Version number of this module.
-ModuleVersion = '81.0.0'
+ModuleVersion = '81.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '81.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '81.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Opa.dll'
@@ -75,7 +75,8 @@ CmdletsToExport = 'Get-OCIOpaInstance', 'Get-OCIOpaInstancesList',
                'Get-OCIOpaWorkRequest', 'Get-OCIOpaWorkRequestErrorsList', 
                'Get-OCIOpaWorkRequestLogsList', 'Get-OCIOpaWorkRequestsList', 
                'Move-OCIOpaInstanceCompartment', 'New-OCIOpaInstance', 
-               'Remove-OCIOpaInstance', 'Stop-OCIOpaWorkRequest', 
+               'Remove-OCIOpaInstance', 'Start-OCIOpaInstance', 
+               'Stop-OCIOpaInstance', 'Stop-OCIOpaWorkRequest', 
                'Update-OCIOpaInstance'
 
 # Variables to export from this module
