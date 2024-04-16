@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '81.0.0'
+ModuleVersion = '81.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '81.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '81.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -122,6 +122,8 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Get-OCIDatabaseAutonomousDatabaseRefreshableClonesList', 
                'Get-OCIDatabaseAutonomousDatabaseRegionalWallet', 
                'Get-OCIDatabaseAutonomousDatabasesList', 
+               'Get-OCIDatabaseAutonomousDatabaseSoftwareImage', 
+               'Get-OCIDatabaseAutonomousDatabaseSoftwareImagesList', 
                'Get-OCIDatabaseAutonomousDatabaseWallet', 
                'Get-OCIDatabaseAutonomousDbPreviewVersionsList', 
                'Get-OCIDatabaseAutonomousDbVersionsList', 
@@ -264,6 +266,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Invoke-OCIDatabaseUpgradeDbSystem', 
                'Move-OCIDatabaseAutonomousContainerDatabaseCompartment', 
                'Move-OCIDatabaseAutonomousDatabaseCompartment', 
+               'Move-OCIDatabaseAutonomousDatabaseSoftwareImageCompartment', 
                'Move-OCIDatabaseAutonomousExadataInfrastructureCompartment', 
                'Move-OCIDatabaseAutonomousVmClusterCompartment', 
                'Move-OCIDatabaseBackupDestinationCompartment', 
@@ -287,6 +290,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'New-OCIDatabaseAutonomousContainerDatabaseDataguardAssociation', 
                'New-OCIDatabaseAutonomousDatabase', 
                'New-OCIDatabaseAutonomousDatabaseBackup', 
+               'New-OCIDatabaseAutonomousDatabaseSoftwareImage', 
                'New-OCIDatabaseAutonomousDatabaseWallet', 
                'New-OCIDatabaseAutonomousVmCluster', 'New-OCIDatabaseBackup', 
                'New-OCIDatabaseBackupDestination', 
@@ -310,6 +314,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Remove-OCIDatabase', 'Remove-OCIDatabaseApplicationVip', 
                'Remove-OCIDatabaseAutonomousDatabase', 
                'Remove-OCIDatabaseAutonomousDatabaseBackup', 
+               'Remove-OCIDatabaseAutonomousDatabaseSoftwareImage', 
                'Remove-OCIDatabaseAutonomousVmCluster', 'Remove-OCIDatabaseBackup', 
                'Remove-OCIDatabaseBackupDestination', 
                'Remove-OCIDatabaseCloudAutonomousVmCluster', 
@@ -342,6 +347,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Update-OCIDatabaseAutonomousDatabase', 
                'Update-OCIDatabaseAutonomousDatabaseBackup', 
                'Update-OCIDatabaseAutonomousDatabaseRegionalWallet', 
+               'Update-OCIDatabaseAutonomousDatabaseSoftwareImage', 
                'Update-OCIDatabaseAutonomousDatabaseWallet', 
                'Update-OCIDatabaseAutonomousExadataInfrastructure', 
                'Update-OCIDatabaseAutonomousVmCluster', 
