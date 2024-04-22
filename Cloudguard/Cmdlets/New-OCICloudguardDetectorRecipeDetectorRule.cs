@@ -19,10 +19,10 @@ namespace Oci.CloudguardService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CloudguardService.Models.DetectorRecipeDetectorRule), typeof(Oci.CloudguardService.Responses.CreateDetectorRecipeDetectorRuleResponse) })]
     public class NewOCICloudguardDetectorRecipeDetectorRule : OCICloudGuardCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"DetectorRecipe OCID")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Detector recipe OCID")]
         public string DetectorRecipeId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details with which detector rule has to be created.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details with which detector rule is to be created.")]
         public CreateDetectorRecipeDetectorRuleDetails CreateDetectorRecipeDetectorRuleDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

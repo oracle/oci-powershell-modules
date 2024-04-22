@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Lockbox.dll'
 
 # Version number of this module.
-ModuleVersion = '81.1.0'
+ModuleVersion = '82.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '81.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '82.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Lockbox.dll'
@@ -73,6 +73,7 @@ FunctionsToExport = '*'
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Export-OCILockboxAccessRequests', 'Get-OCILockbox', 
                'Get-OCILockboxAccessMaterials', 'Get-OCILockboxAccessRequest', 
+               'Get-OCILockboxAccessRequestInternal', 
                'Get-OCILockboxAccessRequestsList', 
                'Get-OCILockboxApprovalTemplate', 
                'Get-OCILockboxApprovalTemplatesList', 'Get-OCILockboxesList', 

@@ -23,19 +23,19 @@ namespace Oci.OsmanagementhubService.Cmdlets
     [OutputType(new System.Type[] { typeof(System.IO.Stream), typeof(void), typeof(Oci.OsmanagementhubService.Responses.GetManagedInstanceAnalyticContentResponse) })]
     public class GetOCIOsmanagementhubManagedInstanceAnalyticContent : OCIReportingManagedInstanceCmdlet
     {
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This compartmentId is used to list managed instances within a compartment. Or serve as an additional filter to restrict only managed instances with in certain compartment if other filter presents.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This filter returns only resources contained within the specified compartment.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the managed instance group for which to list resources.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.")]
         public string ManagedInstanceGroupId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the lifecycle environment.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment. This filter returns only resource contained with the specified lifecycle environment.")]
         public string LifecycleEnvironmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the lifecycle stage for which to list resources.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage. This resource returns resources associated with this lifecycle stage.")]
         public string LifecycleStageId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only instances whose managed instance status matches the given status.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only managed instances whose status matches the status provided.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ManagedInstanceStatus> Status { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that match the given display names.")]
@@ -44,20 +44,35 @@ namespace Oci.OsmanagementhubService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that may partially match the given display name.")]
         public string DisplayNameContains { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter instances by Location. Used when report target type is compartment or group.")]
-        public System.Nullable<Oci.OsmanagementhubService.Models.ManagedInstanceLocation> InstanceLocation { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return instances with number of available security updates equals to the number specified.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return instances that have the specified number of available security updates.")]
         public System.Nullable<int> SecurityUpdatesAvailableEqualsTo { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return instances with number of available bug updates equals to the number specified.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return instances that have the specified number of available bug updates.")]
         public System.Nullable<int> BugUpdatesAvailableEqualsTo { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return instances with number of available security updates greater than the number specified.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return instances that have more available security updates than the number specified.")]
         public System.Nullable<int> SecurityUpdatesAvailableGreaterThan { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return instances with number of available bug updates greater than the number specified.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return instances that have more available bug updates than the number specified.")]
         public System.Nullable<int> BugUpdatesAvailableGreaterThan { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose location matches the given value.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ManagedInstanceLocation> Location { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose location does not match the given value.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ManagedInstanceLocation> LocationNotEqualTo { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given operating system family.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.OsFamily> OsFamily { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates whether to list only resources managed by the Autonomous Linux service.")]
+        public System.Nullable<bool> IsManagedByAutonomousLinux { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The format of the report to download. Default is CSV.")]
+        public System.Nullable<Oci.OsmanagementhubService.Requests.GetManagedInstanceAnalyticContentRequest.ReportFormatEnum> ReportFormat { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of the report the user wants to download. Default is ALL.")]
+        public System.Nullable<Oci.OsmanagementhubService.Requests.GetManagedInstanceAnalyticContentRequest.ReportTypeEnum> ReportType { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
@@ -84,11 +99,16 @@ namespace Oci.OsmanagementhubService.Cmdlets
                     Status = Status,
                     DisplayName = DisplayName,
                     DisplayNameContains = DisplayNameContains,
-                    InstanceLocation = InstanceLocation,
                     SecurityUpdatesAvailableEqualsTo = SecurityUpdatesAvailableEqualsTo,
                     BugUpdatesAvailableEqualsTo = BugUpdatesAvailableEqualsTo,
                     SecurityUpdatesAvailableGreaterThan = SecurityUpdatesAvailableGreaterThan,
                     BugUpdatesAvailableGreaterThan = BugUpdatesAvailableGreaterThan,
+                    Location = Location,
+                    LocationNotEqualTo = LocationNotEqualTo,
+                    OsFamily = OsFamily,
+                    IsManagedByAutonomousLinux = IsManagedByAutonomousLinux,
+                    ReportFormat = ReportFormat,
+                    ReportType = ReportType,
                     OpcRequestId = OpcRequestId
                 };
 

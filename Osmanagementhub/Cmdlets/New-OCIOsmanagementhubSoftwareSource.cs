@@ -19,7 +19,7 @@ namespace Oci.OsmanagementhubService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OsmanagementhubService.Models.SoftwareSource), typeof(Oci.OsmanagementhubService.Responses.CreateSoftwareSourceResponse) })]
     public class NewOCIOsmanagementhubSoftwareSource : OCISoftwareSourceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new software source. This parameter also accepts subtypes <Oci.OsmanagementhubService.Models.CreateCustomSoftwareSourceDetails>, <Oci.OsmanagementhubService.Models.CreateVersionedCustomSoftwareSourceDetails> of type <Oci.OsmanagementhubService.Models.CreateSoftwareSourceDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new software source. This parameter also accepts subtypes <Oci.OsmanagementhubService.Models.CreateCustomSoftwareSourceDetails>, <Oci.OsmanagementhubService.Models.CreateVendorSoftwareSourceDetails>, <Oci.OsmanagementhubService.Models.CreateVersionedCustomSoftwareSourceDetails> of type <Oci.OsmanagementhubService.Models.CreateSoftwareSourceDetails>.")]
         public CreateSoftwareSourceDetails CreateSoftwareSourceDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

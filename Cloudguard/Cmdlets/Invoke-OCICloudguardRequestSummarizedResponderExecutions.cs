@@ -19,25 +19,25 @@ namespace Oci.CloudguardService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CloudguardService.Models.ResponderExecutionAggregationCollection), typeof(Oci.CloudguardService.Responses.RequestSummarizedResponderExecutionsResponse) })]
     public class InvokeOCICloudguardRequestSummarizedResponderExecutions : OCICloudGuardCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The possible attributes based on which the responder executions can be distinguished")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The possible attributes based on which the responder executions can be distinguished.")]
         public System.Collections.Generic.List<Oci.CloudguardService.Models.ResponderDimension> ResponderExecutionsDimensions { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The possible filters for Responder Type Dimension to distinguish Responder Executions. If no values are passed, the metric for responder executions of all reponder types are returned")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The possible filters for responder type dimension to distinguish responder executions. If no values are passed, the metric for responder executions of all responder types are returned.")]
         public System.Collections.Generic.List<Oci.CloudguardService.Models.ResponderType> ResponderTypeFilter { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The possible filters for Responder Type Dimension to distinguish Responder Executions. If no values are passed, the metric for responder executions of all status are returned")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The possible filters for responder type dimension to distinguish responder executions. If no values are passed, the metric for responder executions of all status are returned.")]
         public System.Collections.Generic.List<Oci.CloudguardService.Models.ResponderExecutionStatus> ResponderExecutionStatusFilter { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.")]
         public System.Nullable<bool> CompartmentIdInSubtree { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.")]
         public System.Nullable<Oci.CloudguardService.Requests.RequestSummarizedResponderExecutionsRequest.AccessLevelEnum> AccessLevel { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return")]
         public System.Nullable<int> Limit { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.")]

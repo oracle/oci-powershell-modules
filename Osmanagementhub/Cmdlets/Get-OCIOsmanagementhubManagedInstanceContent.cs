@@ -23,8 +23,11 @@ namespace Oci.OsmanagementhubService.Cmdlets
     [OutputType(new System.Type[] { typeof(System.IO.Stream), typeof(void), typeof(Oci.OsmanagementhubService.Responses.GetManagedInstanceContentResponse) })]
     public class GetOCIOsmanagementhubManagedInstanceContent : OCIReportingManagedInstanceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the managed instance.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.")]
         public string ManagedInstanceId { get; set; }
+
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only vulnerabilities matching the given types.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.VulnerabilityTypes> VulnerabilityType { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The assigned erratum name. It's unique and not changeable.
 
@@ -35,7 +38,16 @@ Example: `ELSA-2020-5804`")]
         public string AdvisoryNameContains { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only errata that match the given advisory types.")]
-        public System.Collections.Generic.List<Oci.OsmanagementhubService.Requests.GetManagedInstanceContentRequest.AdvisoryTypeEnum> AdvisoryType { get; set; }
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.AdvisoryTypes> AdvisoryType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return vulnerabilities that match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.")]
+        public System.Collections.Generic.List<string> VulnerabilityName { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return vulnerabilities that partially match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.")]
+        public string VulnerabilityNameContains { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The format of the report to download. Default is CSV.")]
+        public System.Nullable<Oci.OsmanagementhubService.Requests.GetManagedInstanceContentRequest.ReportFormatEnum> ReportFormat { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
@@ -56,9 +68,13 @@ Example: `ELSA-2020-5804`")]
                 request = new GetManagedInstanceContentRequest
                 {
                     ManagedInstanceId = ManagedInstanceId,
+                    VulnerabilityType = VulnerabilityType,
                     AdvisoryName = AdvisoryName,
                     AdvisoryNameContains = AdvisoryNameContains,
                     AdvisoryType = AdvisoryType,
+                    VulnerabilityName = VulnerabilityName,
+                    VulnerabilityNameContains = VulnerabilityNameContains,
+                    ReportFormat = ReportFormat,
                     OpcRequestId = OpcRequestId
                 };
 

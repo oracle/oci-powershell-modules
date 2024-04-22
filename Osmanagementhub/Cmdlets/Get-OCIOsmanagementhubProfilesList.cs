@@ -21,7 +21,7 @@ namespace Oci.OsmanagementhubService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OsmanagementhubService.Models.ProfileCollection), typeof(Oci.OsmanagementhubService.Responses.ListProfilesResponse) })]
     public class GetOCIOsmanagementhubProfilesList : OCIOnboardingCmdlet
     {
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the resources to list.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that match the given display names.")]
@@ -30,19 +30,28 @@ namespace Oci.OsmanagementhubService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that may partially match the given display name.")]
         public string DisplayNameContains { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return registration profiles that match the given profileType.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return registration profiles that match the given profile type.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ProfileType> ProfileType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the registration profile.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.")]
         public string ProfileId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only profiles that match the given osFamily.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given operating system family.")]
         public System.Nullable<Oci.OsmanagementhubService.Models.OsFamily> OsFamily { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only profiles that match the given archType.")]
         public System.Nullable<Oci.OsmanagementhubService.Models.ArchType> ArchType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only profiles that match the given vendorName.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return profiles that match the given instance type.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.Profile.RegistrationTypeEnum> RegistrationType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A boolean variable that is used to list only the default profile resources.")]
+        public System.Nullable<bool> IsDefaultProfile { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only service-provided profiles.")]
+        public System.Nullable<bool> IsServiceProvidedProfile { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given vendor name.")]
         public System.Nullable<Oci.OsmanagementhubService.Models.VendorName> VendorName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -55,7 +64,7 @@ Example: `50`", ParameterSetName = LimitSet)]
 Example: `3`")]
         public string Page { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only registration profile whose lifecycleState matches the given lifecycleState.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only registration profiles in the given state.")]
         public System.Nullable<Oci.OsmanagementhubService.Models.Profile.LifecycleStateEnum> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'ASC' or 'DESC'.")]
@@ -86,6 +95,9 @@ Example: `3`")]
                     ProfileId = ProfileId,
                     OsFamily = OsFamily,
                     ArchType = ArchType,
+                    RegistrationType = RegistrationType,
+                    IsDefaultProfile = IsDefaultProfile,
+                    IsServiceProvidedProfile = IsServiceProvidedProfile,
                     VendorName = VendorName,
                     Limit = Limit,
                     Page = Page,

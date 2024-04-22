@@ -21,7 +21,7 @@ namespace Oci.OsmanagementhubService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OsmanagementhubService.Models.ErratumCollection), typeof(Oci.OsmanagementhubService.Responses.ListErrataResponse) })]
     public class GetOCIOsmanagementhubErrataList : OCISoftwareSourceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the resources to list. This parameter is required.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The assigned erratum name. It's unique and not changeable.
@@ -35,7 +35,10 @@ Example: `ELSA-2020-5804`")]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only packages that match the given update classification type.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ClassificationTypes> ClassificationType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only profiles that match the given osFamily.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only errata that match the given advisory types.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.AdvisoryTypes> AdvisoryType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given operating system family.")]
         public System.Nullable<Oci.OsmanagementhubService.Models.OsFamily> OsFamily { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The advisory severity.")]
@@ -86,6 +89,7 @@ Example: `3`")]
                     Name = Name,
                     NameContains = NameContains,
                     ClassificationType = ClassificationType,
+                    AdvisoryType = AdvisoryType,
                     OsFamily = OsFamily,
                     AdvisorySeverity = AdvisorySeverity,
                     TimeIssueDateStart = TimeIssueDateStart,

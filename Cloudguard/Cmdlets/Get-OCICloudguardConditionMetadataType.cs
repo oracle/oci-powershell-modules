@@ -19,16 +19,16 @@ namespace Oci.CloudguardService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CloudguardService.Models.ConditionMetadataType), typeof(Oci.CloudguardService.Responses.GetConditionMetadataTypeResponse) })]
     public class GetOCICloudguardConditionMetadataType : OCICloudGuardCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of the condition meta data.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of the condition metadata.")]
         public System.Nullable<Oci.CloudguardService.Models.ConditionTypeEnum> ConditionMetadataTypeId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"ServiceType filter for the condition meta data.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Service type filter for the condition metadata.")]
         public string ServiceType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Resource filter for the condition meta data.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Resource filter for the condition metadata.")]
         public string ResourceType { get; set; }
 
         protected override void ProcessRecord()
