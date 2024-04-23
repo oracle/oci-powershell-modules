@@ -16,13 +16,13 @@ using Oci.Common.Model;
 namespace Oci.OsmanagementhubService.Cmdlets
 {
     [Cmdlet("Mount", "OCIOsmanagementhubSoftwareSourcesToManagedInstanceGroup")]
-    [OutputType(new System.Type[] { typeof(void), typeof(Oci.OsmanagementhubService.Responses.AttachSoftwareSourcesToManagedInstanceGroupResponse) })]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OsmanagementhubService.Responses.AttachSoftwareSourcesToManagedInstanceGroupResponse) })]
     public class MountOCIOsmanagementhubSoftwareSourcesToManagedInstanceGroup : OCIManagedInstanceGroupCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The managed instance group OCID.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.")]
         public string ManagedInstanceGroupId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for software sources to attach to the managed instance group.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to the managed instance group.")]
         public AttachSoftwareSourcesToManagedInstanceGroupDetails AttachSoftwareSourcesToManagedInstanceGroupDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
@@ -51,7 +51,7 @@ namespace Oci.OsmanagementhubService.Cmdlets
                 };
 
                 response = client.AttachSoftwareSourcesToManagedInstanceGroup(request).GetAwaiter().GetResult();
-                WriteOutput(response);
+                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
             }
             catch (OciException ex)

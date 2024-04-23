@@ -21,8 +21,8 @@ namespace Oci.OsmanagementhubService.Cmdlets
     public class GetOCIOsmanagementhubLifecycleStage : OCILifecycleEnvironmentCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the lifecycle stage.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the lifecycle stage.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.", ParameterSetName = Default)]
         public string LifecycleStageId { get; set; }
 
         

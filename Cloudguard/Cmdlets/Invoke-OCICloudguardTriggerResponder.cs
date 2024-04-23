@@ -19,10 +19,10 @@ namespace Oci.CloudguardService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.CloudguardService.Responses.TriggerResponderResponse) })]
     public class InvokeOCICloudguardTriggerResponder : OCICloudGuardCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCId of the problem.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the problem.")]
         public string ProblemId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The responder may update the problem.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The responder may update the problem")]
         public TriggerResponderDetails TriggerResponderDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]

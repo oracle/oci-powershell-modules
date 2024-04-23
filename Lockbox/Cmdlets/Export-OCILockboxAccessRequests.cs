@@ -23,7 +23,7 @@ namespace Oci.LockboxService.Cmdlets
     [OutputType(new System.Type[] { typeof(System.IO.Stream), typeof(void), typeof(Oci.LockboxService.Responses.ExportAccessRequestsResponse) })]
     public class ExportOCILockboxAccessRequests : OCILockboxCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Exports the list of access requests for given date range in text format")]
         public ExportAccessRequestsDetails ExportAccessRequestsDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

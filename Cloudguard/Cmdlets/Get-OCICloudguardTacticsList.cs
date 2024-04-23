@@ -21,19 +21,19 @@ namespace Oci.CloudguardService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CloudguardService.Models.TacticCollection), typeof(Oci.CloudguardService.Responses.ListTacticsResponse) })]
     public class GetOCICloudguardTacticsList : OCICloudGuardCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.")]
         public System.Nullable<Oci.CloudguardService.Models.LifecycleState> LifecycleState { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.")]
         public string Page { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'asc' or 'desc'.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use")]
         public System.Nullable<Oci.CloudguardService.Models.SortOrders> SortOrder { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for displayName is ascending. If no value is specified displayName is default.")]

@@ -19,7 +19,7 @@ namespace Oci.CloudguardService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CloudguardService.Models.DetectorRecipe), typeof(Oci.CloudguardService.Responses.UpdateDetectorRecipeResponse) })]
     public class UpdateOCICloudguardDetectorRecipe : OCICloudGuardCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"DetectorRecipe OCID")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Detector recipe OCID")]
         public string DetectorRecipeId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the DetectorRecipe to be updated")]

@@ -19,7 +19,7 @@ namespace Oci.OsmanagementhubService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OsmanagementhubService.Models.LifecycleEnvironment), typeof(Oci.OsmanagementhubService.Responses.UpdateLifecycleEnvironmentResponse) })]
     public class UpdateOCIOsmanagementhubLifecycleEnvironment : OCILifecycleEnvironmentCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the lifecycle environment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.")]
         public string LifecycleEnvironmentId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated.")]

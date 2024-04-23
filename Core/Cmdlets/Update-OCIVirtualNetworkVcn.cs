@@ -19,7 +19,7 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.Vcn), typeof(Oci.CoreService.Responses.UpdateVcnResponse) })]
     public class UpdateOCIVirtualNetworkVcn : OCIVirtualNetworkCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.")]
         public string VcnId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details object for updating a VCN.")]

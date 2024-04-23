@@ -22,29 +22,38 @@ namespace Oci.OsmanagementhubService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only metrics whose name matches the given metric names.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.MetricName> MetricNames { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This compartmentId is used to list managed instances within a compartment. Or serve as an additional filter to restrict only managed instances with in certain compartment if other filter presents.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This filter returns only resources contained within the specified compartment.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the managed instance group for which to list resources.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.")]
         public string ManagedInstanceGroupId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the lifecycle environment.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment. This filter returns only resource contained with the specified lifecycle environment.")]
         public string LifecycleEnvironmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the lifecycle stage for which to list resources.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage. This resource returns resources associated with this lifecycle stage.")]
         public string LifecycleStageId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only instances whose managed instance status matches the given status.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only managed instances whose status matches the status provided.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ManagedInstanceStatus> Status { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose location matches the given value.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ManagedInstanceLocation> Location { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose location does not match the given value.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ManagedInstanceLocation> LocationNotEqualTo { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given operating system family.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.OsFamily> OsFamily { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates whether to list only resources managed by the Autonomous Linux service.")]
+        public System.Nullable<bool> IsManagedByAutonomousLinux { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that match the given display names.")]
         public System.Collections.Generic.List<string> DisplayName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that may partially match the given display name.")]
         public string DisplayNameContains { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter instances by Location. Used when report target type is compartment or group.")]
-        public System.Nullable<Oci.OsmanagementhubService.Models.ManagedInstanceLocation> InstanceLocation { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
 
@@ -56,7 +65,7 @@ Example: `50`")]
 Example: `3`")]
         public string Page { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for name is ascending.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. The default is to sort in ascending order by metricName (previously name, which is now depricated). You can also sort by displayName (default is ascending order).")]
         public System.Nullable<Oci.OsmanagementhubService.Requests.SummarizeManagedInstanceAnalyticsRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'ASC' or 'DESC'.")]
@@ -80,9 +89,12 @@ Example: `3`")]
                     LifecycleEnvironmentId = LifecycleEnvironmentId,
                     LifecycleStageId = LifecycleStageId,
                     Status = Status,
+                    Location = Location,
+                    LocationNotEqualTo = LocationNotEqualTo,
+                    OsFamily = OsFamily,
+                    IsManagedByAutonomousLinux = IsManagedByAutonomousLinux,
                     DisplayName = DisplayName,
                     DisplayNameContains = DisplayNameContains,
-                    InstanceLocation = InstanceLocation,
                     Limit = Limit,
                     Page = Page,
                     SortBy = SortBy,

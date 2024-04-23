@@ -21,16 +21,16 @@ namespace Oci.OsmanagementhubService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OsmanagementhubService.Models.WorkRequestSummaryCollection), typeof(Oci.OsmanagementhubService.Responses.ListWorkRequestsResponse) })]
     public class GetOCIOsmanagementhubWorkRequestsList : OCIWorkRequestCmdlet
     {
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the resources to list.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the work request.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.")]
         public string WorkRequestId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return work requests that match the given status.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.OperationStatus> Status { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the resource affected by the work request.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource. This filter returns resources associated with the specified resource.")]
         public string ResourceId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
@@ -52,13 +52,13 @@ Example: `50`", ParameterSetName = LimitSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.")]
         public System.Nullable<Oci.OsmanagementhubService.Requests.ListWorkRequestsRequest.SortByEnum> SortBy { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the schedule job that initiated the work request.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule job that initiated the work request.")]
         public string InitiatorId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the parent work request.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent work request.")]
         public string ParentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the resources whose parent resources are not the same as the given resource OCID(s).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the resources whose parent resources are not the same as the given resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
         public System.Collections.Generic.List<string> ParentResourcesNotEqualTo { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The asynchronous operation tracked by this work request. The filter returns only resources that match the given OperationType.")]
@@ -66,6 +66,18 @@ Example: `50`", ParameterSetName = LimitSet)]
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that may partially match the given display name.")]
         public string DisplayNameContains { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the work requests that are a retry of the given work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        public string RetryOfId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return work requests that were created before the date provided (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format). Example: '2023-08-25T21:10:29.600Z'")]
+        public System.Nullable<System.DateTime> TimeCreatedLessThan { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return work requests that were created on or after the date provided (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format). Example: '2023-08-25T21:10:29.600Z'")]
+        public System.Nullable<System.DateTime> TimeCreatedGreaterThanOrEqualTo { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates whether to list only resources managed by the Autonomous Linux service.")]
+        public System.Nullable<bool> IsManagedByAutonomousLinux { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
@@ -92,7 +104,11 @@ Example: `50`", ParameterSetName = LimitSet)]
                     ParentId = ParentId,
                     ParentResourcesNotEqualTo = ParentResourcesNotEqualTo,
                     OperationType = OperationType,
-                    DisplayNameContains = DisplayNameContains
+                    DisplayNameContains = DisplayNameContains,
+                    RetryOfId = RetryOfId,
+                    TimeCreatedLessThan = TimeCreatedLessThan,
+                    TimeCreatedGreaterThanOrEqualTo = TimeCreatedGreaterThanOrEqualTo,
+                    IsManagedByAutonomousLinux = IsManagedByAutonomousLinux
                 };
                 IEnumerable<ListWorkRequestsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

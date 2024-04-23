@@ -21,13 +21,13 @@ namespace Oci.CloudguardService.Cmdlets
     public class GetOCICloudguardDetectorRule : OCICloudGuardCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Name of Detector.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Name of Detector.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Detector name.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Detector name.", ParameterSetName = Default)]
         public string DetectorId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The key of Detector Rule.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The key of Detector Rule.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier of a detector rule.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier of a detector rule.", ParameterSetName = Default)]
         public string DetectorRuleId { get; set; }
 
         

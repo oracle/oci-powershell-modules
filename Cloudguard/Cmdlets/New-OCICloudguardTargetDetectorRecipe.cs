@@ -19,10 +19,10 @@ namespace Oci.CloudguardService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CloudguardService.Models.TargetDetectorRecipe), typeof(Oci.CloudguardService.Responses.CreateTargetDetectorRecipeResponse) })]
     public class NewOCICloudguardTargetDetectorRecipe : OCICloudGuardCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of target")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the target")]
         public string TargetId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for associating DetectorRecipe to Target")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for associating DetectorRecipe with Target")]
         public AttachTargetDetectorRecipeDetails AttachTargetDetectorRecipeDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]

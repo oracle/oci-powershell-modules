@@ -19,7 +19,7 @@ namespace Oci.OsmanagementhubService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OsmanagementhubService.Models.ManagedInstance), typeof(Oci.OsmanagementhubService.Responses.GetManagedInstanceResponse) })]
     public class GetOCIOsmanagementhubManagedInstance : OCIManagedInstanceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the managed instance.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.")]
         public string ManagedInstanceId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

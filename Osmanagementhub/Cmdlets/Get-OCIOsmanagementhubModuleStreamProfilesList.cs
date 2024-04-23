@@ -21,13 +21,13 @@ namespace Oci.OsmanagementhubService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OsmanagementhubService.Models.ModuleStreamProfileCollection), typeof(Oci.OsmanagementhubService.Responses.ListModuleStreamProfilesResponse) })]
     public class GetOCIOsmanagementhubModuleStreamProfilesList : OCISoftwareSourceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The software source OCID.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.")]
         public string SoftwareSourceId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of a module. This parameter is required if a streamName is specified.")]
         public string ModuleName { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the stream of the containing module.  This parameter is required if a profileName is specified.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the module stream. This parameter is required if a profile name is specified.")]
         public string StreamName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the entity to be queried.")]

@@ -19,7 +19,7 @@ namespace Oci.OsmanagementhubService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OsmanagementhubService.Responses.RemoveModuleStreamProfileFromManagedInstanceResponse) })]
     public class RemoveOCIOsmanagementhubModuleStreamProfileFromManagedInstance : OCIManagedInstanceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the managed instance.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.")]
         public string ManagedInstanceId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details of the module stream profile to be removed from a managed instance.")]

@@ -21,8 +21,8 @@ namespace Oci.CloudguardService.Cmdlets
     public class GetOCICloudguardResponderRecipe : OCICloudGuardCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of ResponderRecipe", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of ResponderRecipe", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the responder recipe.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the responder recipe.", ParameterSetName = Default)]
         public string ResponderRecipeId { get; set; }
 
         

@@ -21,8 +21,8 @@ namespace Oci.CloudguardService.Cmdlets
     public class GetOCICloudguardSecurityPolicy : OCICloudGuardCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier of the security zone policy (`SecurityPolicy`)", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier of the security zone policy (`SecurityPolicy`)", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier of the security zone policy. (`SecurityPolicy`)", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier of the security zone policy. (`SecurityPolicy`)", ParameterSetName = Default)]
         public string SecurityPolicyId { get; set; }
 
         

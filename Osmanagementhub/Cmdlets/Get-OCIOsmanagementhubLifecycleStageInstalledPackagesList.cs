@@ -21,10 +21,10 @@ namespace Oci.OsmanagementhubService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OsmanagementhubService.Models.InstalledPackageCollection), typeof(Oci.OsmanagementhubService.Responses.ListLifecycleStageInstalledPackagesResponse) })]
     public class GetOCIOsmanagementhubLifecycleStageInstalledPackagesList : OCILifecycleEnvironmentCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the lifecycle stage.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.")]
         public string LifecycleStageId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the resources to list.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that match the given display names.")]
@@ -43,7 +43,7 @@ Example: `50`", ParameterSetName = LimitSet)]
 Example: `3`")]
         public string Page { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.")]
         public System.Nullable<Oci.OsmanagementhubService.Models.LifecycleStage.LifecycleStateEnum> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'ASC' or 'DESC'.")]

@@ -21,8 +21,8 @@ namespace Oci.CloudguardService.Cmdlets
     public class GetOCICloudguardResponderRule : OCICloudGuardCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The id of ResponderRule", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The id of ResponderRule", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier of the responder rule.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier of the responder rule.", ParameterSetName = Default)]
         public string ResponderRuleId { get; set; }
 
         

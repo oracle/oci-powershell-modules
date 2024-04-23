@@ -19,16 +19,16 @@ namespace Oci.CloudguardService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CloudguardService.Models.TargetDetectorRecipeDetectorRule), typeof(Oci.CloudguardService.Responses.UpdateTargetDetectorRecipeDetectorRuleResponse) })]
     public class UpdateOCICloudguardTargetDetectorRecipeDetectorRule : OCICloudGuardCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of target")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the target")]
         public string TargetId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of TargetDetectorRecipe")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the target detector recipe.")]
         public string TargetDetectorRecipeId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The id of DetectorRule")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier of the detector rule.")]
         public string DetectorRuleId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details to be updated for DetectorRule.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details to be updated for the detector rule")]
         public UpdateTargetDetectorRecipeDetectorRuleDetails UpdateTargetDetectorRecipeDetectorRuleDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

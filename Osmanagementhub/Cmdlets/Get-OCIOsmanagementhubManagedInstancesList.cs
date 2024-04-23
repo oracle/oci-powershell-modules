@@ -21,7 +21,7 @@ namespace Oci.OsmanagementhubService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OsmanagementhubService.Models.ManagedInstanceCollection), typeof(Oci.OsmanagementhubService.Responses.ListManagedInstancesResponse) })]
     public class GetOCIOsmanagementhubManagedInstancesList : OCIManagedInstanceCmdlet
     {
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the resources to list.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that match the given display names.")]
@@ -30,19 +30,19 @@ namespace Oci.OsmanagementhubService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that may partially match the given display name.")]
         public string DisplayNameContains { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the managed instance for which to list resources.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.")]
         public string ManagedInstanceId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only instances whose managed instance status matches the given status.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only managed instances whose status matches the status provided.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ManagedInstanceStatus> Status { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only instances whose architecture type matches the given architecture.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ArchType> ArchType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only instances whose OS family type matches the given OS family.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given operating system family.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.OsFamily> OsFamily { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only managed instances acting as management stations.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only managed instances that are acting as management stations.")]
         public System.Nullable<bool> IsManagementStation { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only managed instances that are attached to the specified group.")]
@@ -60,13 +60,37 @@ namespace Oci.OsmanagementhubService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only managed instances that are attached to the specified group or lifecycle environment.")]
         public System.Nullable<bool> IsAttachedToGroupOrLifecycleStage { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID for the software source.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.")]
         public string SoftwareSourceId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The assigned erratum name. It's unique and not changeable.
 
 Example: `ELSA-2020-5804`")]
         public System.Collections.Generic.List<string> AdvisoryName { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only managed instances in a specific lifecycle environment.")]
+        public string LifecycleEnvironment { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only managed instances that aren't in a specific lifecycle environment.")]
+        public string LifecycleEnvironmentNotEqualTo { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose location matches the given value.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ManagedInstanceLocation> Location { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose location does not match the given value.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ManagedInstanceLocation> LocationNotEqualTo { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A multi filter to return only managed instances that match the given profile ids.This property corresponds to Profile parameter in the API.")]
+        public System.Collections.Generic.List<string> OsmanagementhubProfile { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A multi filter to return only managed instances that don't contain the given profile [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        public System.Collections.Generic.List<string> ProfileNotEqualTo { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only managed instances with a registration profile attached.")]
+        public System.Nullable<bool> IsProfileAttached { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates whether to list only resources managed by the Autonomous Linux service.")]
+        public System.Nullable<bool> IsManagedByAutonomousLinux { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
 
@@ -114,6 +138,14 @@ Example: `3`")]
                     IsAttachedToGroupOrLifecycleStage = IsAttachedToGroupOrLifecycleStage,
                     SoftwareSourceId = SoftwareSourceId,
                     AdvisoryName = AdvisoryName,
+                    LifecycleEnvironment = LifecycleEnvironment,
+                    LifecycleEnvironmentNotEqualTo = LifecycleEnvironmentNotEqualTo,
+                    Location = Location,
+                    LocationNotEqualTo = LocationNotEqualTo,
+                    Profile = OsmanagementhubProfile,
+                    ProfileNotEqualTo = ProfileNotEqualTo,
+                    IsProfileAttached = IsProfileAttached,
+                    IsManagedByAutonomousLinux = IsManagedByAutonomousLinux,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,

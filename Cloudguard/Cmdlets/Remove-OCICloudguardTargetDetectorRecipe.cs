@@ -19,10 +19,10 @@ namespace Oci.CloudguardService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.CloudguardService.Responses.DeleteTargetDetectorRecipeResponse) })]
     public class RemoveOCICloudguardTargetDetectorRecipe : OCICloudGuardCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of target")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the target")]
         public string TargetId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of TargetDetectorRecipe")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCID of the target detector recipe.")]
         public string TargetDetectorRecipeId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

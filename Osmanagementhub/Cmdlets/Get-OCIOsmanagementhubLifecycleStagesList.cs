@@ -21,7 +21,7 @@ namespace Oci.OsmanagementhubService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OsmanagementhubService.Models.LifecycleStageCollection), typeof(Oci.OsmanagementhubService.Responses.ListLifecycleStagesResponse) })]
     public class GetOCIOsmanagementhubLifecycleStagesList : OCILifecycleEnvironmentCmdlet
     {
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the resources to list.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that match the given display names.")]
@@ -30,17 +30,23 @@ namespace Oci.OsmanagementhubService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that may partially match the given display name.")]
         public string DisplayNameContains { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the lifecycle stage.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.")]
         public string LifecycleStageId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID for the software source.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.")]
         public string SoftwareSourceId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only profiles that match the given archType.")]
         public System.Nullable<Oci.OsmanagementhubService.Models.ArchType> ArchType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only profiles that match the given osFamily.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given operating system family.")]
         public System.Nullable<Oci.OsmanagementhubService.Models.OsFamily> OsFamily { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose location matches the given value.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ManagedInstanceLocation> Location { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose location does not match the given value.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ManagedInstanceLocation> LocationNotEqualTo { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
 
@@ -52,7 +58,7 @@ Example: `50`", ParameterSetName = LimitSet)]
 Example: `3`")]
         public string Page { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.")]
         public System.Nullable<Oci.OsmanagementhubService.Models.LifecycleStage.LifecycleStateEnum> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'ASC' or 'DESC'.")]
@@ -83,6 +89,8 @@ Example: `3`")]
                     SoftwareSourceId = SoftwareSourceId,
                     ArchType = ArchType,
                     OsFamily = OsFamily,
+                    Location = Location,
+                    LocationNotEqualTo = LocationNotEqualTo,
                     Limit = Limit,
                     Page = Page,
                     LifecycleState = LifecycleState,

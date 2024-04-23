@@ -21,30 +21,37 @@ namespace Oci.OsmanagementhubService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OsmanagementhubService.Models.SoftwareSourceCollection), typeof(Oci.OsmanagementhubService.Responses.ListSoftwareSourcesResponse) })]
     public class GetOCIOsmanagementhubSoftwareSourcesList : OCISoftwareSourceCmdlet
     {
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the resources to list.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID for the software source.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the software source.")]
         public string SoftwareSourceId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of the software source.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.SoftwareSourceType> SoftwareSourceType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only profiles that match the given vendorName.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given vendor name.")]
         public System.Nullable<Oci.OsmanagementhubService.Models.VendorName> VendorName { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only instances whose OS family type matches the given OS family.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given operating system family.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.OsFamily> OsFamily { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only instances whose architecture type matches the given architecture.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ArchType> ArchType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The availabilities of the software source for a tenant.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The availabilities of the software source in a non-OCI environment for a tenancy.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.Availability> Availability { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A user-friendly name. Does not have to be unique, and it's changeable.
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The availabilities of the software source in an OCI environment for a tenancy.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.Availability> AvailabilityAtOci { get; set; }
 
-Example: `My new resource`")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.Availability> AvailabilityAnywhere { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates whether the software source is mandatory for the Autonomous Linux service.")]
+        public System.Nullable<bool> IsMandatoryForAutonomousLinux { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that match the given user-friendly name.")]
         public string DisplayName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that may partially match the given display name.")]
@@ -69,7 +76,7 @@ Example: `3`")]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.")]
         public System.Nullable<Oci.OsmanagementhubService.Requests.ListSoftwareSourcesRequest.SortByEnum> SortBy { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose lifecycleState matches the given lifecycleStates.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only software sources whose state matches the given state.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.SoftwareSource.LifecycleStateEnum> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
@@ -94,6 +101,9 @@ Example: `3`")]
                     OsFamily = OsFamily,
                     ArchType = ArchType,
                     Availability = Availability,
+                    AvailabilityAtOci = AvailabilityAtOci,
+                    AvailabilityAnywhere = AvailabilityAnywhere,
+                    IsMandatoryForAutonomousLinux = IsMandatoryForAutonomousLinux,
                     DisplayName = DisplayName,
                     DisplayNameContains = DisplayNameContains,
                     DisplayNameNotEqualTo = DisplayNameNotEqualTo,

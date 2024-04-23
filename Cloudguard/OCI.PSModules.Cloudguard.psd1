@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Cloudguard.dll'
 
 # Version number of this module.
-ModuleVersion = '81.1.0'
+ModuleVersion = '82.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '81.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '82.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Cloudguard.dll'
@@ -71,7 +71,10 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Cloudguard.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Add-OCICloudguardCompartment', 
+CmdletsToExport = 'Add-OCICloudguardCompartment', 'Get-OCICloudguardAdhocQueriesList', 
+               'Get-OCICloudguardAdhocQuery', 
+               'Get-OCICloudguardAdhocQueryResultContent', 
+               'Get-OCICloudguardAdhocQueryResultsList', 
                'Get-OCICloudguardConditionMetadataType', 
                'Get-OCICloudguardConditionMetadataTypesList', 
                'Get-OCICloudguardConfiguration', 'Get-OCICloudguardDataMaskRule', 
@@ -93,12 +96,16 @@ CmdletsToExport = 'Add-OCICloudguardCompartment',
                'Get-OCICloudguardProblemEntitiesList', 
                'Get-OCICloudguardProblemHistoriesList', 
                'Get-OCICloudguardProblemsList', 
-               'Get-OCICloudguardRecommendationsList', 
+               'Get-OCICloudguardRecommendationsList', 'Get-OCICloudguardResource', 
+               'Get-OCICloudguardResourcePortsList', 
                'Get-OCICloudguardResourceProfile', 
                'Get-OCICloudguardResourceProfileEndpointsList', 
                'Get-OCICloudguardResourceProfileImpactedResourcesList', 
                'Get-OCICloudguardResourceProfilesList', 
+               'Get-OCICloudguardResourcesList', 
                'Get-OCICloudguardResourceTypesList', 
+               'Get-OCICloudguardResourceVulnerabilitiesList', 
+               'Get-OCICloudguardResourceVulnerability', 
                'Get-OCICloudguardResponderActivitiesList', 
                'Get-OCICloudguardResponderExecution', 
                'Get-OCICloudguardResponderExecutionsList', 
@@ -108,6 +115,7 @@ CmdletsToExport = 'Add-OCICloudguardCompartment',
                'Get-OCICloudguardResponderRecipesList', 
                'Get-OCICloudguardResponderRule', 
                'Get-OCICloudguardResponderRulesList', 
+               'Get-OCICloudguardSavedQueriesList', 'Get-OCICloudguardSavedQuery', 
                'Get-OCICloudguardSecurityPoliciesList', 
                'Get-OCICloudguardSecurityPolicy', 
                'Get-OCICloudguardSecurityRecipe', 
@@ -126,6 +134,7 @@ CmdletsToExport = 'Add-OCICloudguardCompartment',
                'Get-OCICloudguardTargetResponderRecipeResponderRulesList', 
                'Get-OCICloudguardTargetResponderRecipesList', 
                'Get-OCICloudguardTargetsList', 'Get-OCICloudguardTechniquesList', 
+               'Get-OCICloudguardWlpAgent', 'Get-OCICloudguardWlpAgentsList', 
                'Get-OCICloudguardWorkRequest', 
                'Get-OCICloudguardWorkRequestErrorsList', 
                'Get-OCICloudguardWorkRequestLogsList', 
@@ -151,15 +160,18 @@ CmdletsToExport = 'Add-OCICloudguardCompartment',
                'Move-OCICloudguardDetectorRecipeCompartment', 
                'Move-OCICloudguardManagedListCompartment', 
                'Move-OCICloudguardResponderRecipeCompartment', 
+               'Move-OCICloudguardSavedQueryCompartment', 
                'Move-OCICloudguardSecurityRecipeCompartment', 
                'Move-OCICloudguardSecurityZoneCompartment', 
-               'New-OCICloudguardDataMaskRule', 'New-OCICloudguardDataSource', 
-               'New-OCICloudguardDetectorRecipe', 
+               'New-OCICloudguardAdhocQuery', 'New-OCICloudguardDataMaskRule', 
+               'New-OCICloudguardDataSource', 'New-OCICloudguardDetectorRecipe', 
                'New-OCICloudguardDetectorRecipeDetectorRule', 
                'New-OCICloudguardManagedList', 'New-OCICloudguardResponderRecipe', 
-               'New-OCICloudguardSecurityRecipe', 'New-OCICloudguardSecurityZone', 
-               'New-OCICloudguardTarget', 'New-OCICloudguardTargetDetectorRecipe', 
+               'New-OCICloudguardSavedQuery', 'New-OCICloudguardSecurityRecipe', 
+               'New-OCICloudguardSecurityZone', 'New-OCICloudguardTarget', 
+               'New-OCICloudguardTargetDetectorRecipe', 
                'New-OCICloudguardTargetResponderRecipe', 
+               'New-OCICloudguardWlpAgent', 'Remove-OCICloudguardAdhocQuery', 
                'Remove-OCICloudguardCompartment', 
                'Remove-OCICloudguardDataMaskRule', 
                'Remove-OCICloudguardDataSource', 
@@ -168,11 +180,12 @@ CmdletsToExport = 'Add-OCICloudguardCompartment',
                'Remove-OCICloudguardDetectorRecipeDetectorRuleDataSource', 
                'Remove-OCICloudguardManagedList', 
                'Remove-OCICloudguardResponderRecipe', 
+               'Remove-OCICloudguardSavedQuery', 
                'Remove-OCICloudguardSecurityRecipe', 
                'Remove-OCICloudguardSecurityZone', 'Remove-OCICloudguardTarget', 
                'Remove-OCICloudguardTargetDetectorRecipe', 
                'Remove-OCICloudguardTargetResponderRecipe', 
-               'Stop-OCICloudguardWorkRequest', 
+               'Remove-OCICloudguardWlpAgent', 'Stop-OCICloudguardWorkRequest', 
                'Update-OCICloudguardBulkProblemStatus', 
                'Update-OCICloudguardConfiguration', 
                'Update-OCICloudguardDataMaskRule', 
@@ -183,12 +196,14 @@ CmdletsToExport = 'Add-OCICloudguardCompartment',
                'Update-OCICloudguardProblemStatus', 
                'Update-OCICloudguardResponderRecipe', 
                'Update-OCICloudguardResponderRecipeResponderRule', 
+               'Update-OCICloudguardSavedQuery', 
                'Update-OCICloudguardSecurityRecipe', 
                'Update-OCICloudguardSecurityZone', 'Update-OCICloudguardTarget', 
                'Update-OCICloudguardTargetDetectorRecipe', 
                'Update-OCICloudguardTargetDetectorRecipeDetectorRule', 
                'Update-OCICloudguardTargetResponderRecipe', 
-               'Update-OCICloudguardTargetResponderRecipeResponderRule'
+               'Update-OCICloudguardTargetResponderRecipeResponderRule', 
+               'Update-OCICloudguardWlpAgent'
 
 # Variables to export from this module
 VariablesToExport = '*'

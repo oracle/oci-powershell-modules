@@ -21,44 +21,42 @@ namespace Oci.OsmanagementhubService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OsmanagementhubService.Models.ScheduledJobCollection), typeof(Oci.OsmanagementhubService.Responses.ListScheduledJobsResponse) })]
     public class GetOCIOsmanagementhubScheduledJobsList : OCIScheduledJobCmdlet
     {
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the resources to list.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A user-friendly name. Does not have to be unique, and it's changeable.
-
-Example: `My new resource`")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that match the given user-friendly name.")]
         public string DisplayName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that may partially match the given display name.")]
         public string DisplayNameContains { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources their lifecycleState matches the given lifecycleState.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only scheduled jobs currently in the given state.")]
         public System.Nullable<Oci.OsmanagementhubService.Models.ScheduledJob.LifecycleStateEnum> LifecycleState { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the managed instance for which to list resources.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.")]
         public string ManagedInstanceId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the managed instance group for which to list resources.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.")]
         public string ManagedInstanceGroupId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the managed compartment for which to list resources.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed compartment. This filter returns resources associated with this compartment.")]
         public string ManagedCompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the lifecycle stage for which to list resources.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage. This resource returns resources associated with this lifecycle stage.")]
         public string LifecycleStageId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The operation type for which to list resources.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only scheduled jobs with the given operation type.")]
         public System.Nullable<Oci.OsmanagementhubService.Models.OperationTypes> OperationType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The schedule type for which to list resources.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only scheduled jobs of the given scheduling type (one-time or recurring).")]
         public System.Nullable<Oci.OsmanagementhubService.Models.ScheduleTypes> ScheduleType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The start time after which to list all schedules, in ISO 8601 format.
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources with a date on or after the given value, in ISO 8601 format.
 
 Example: 2017-07-14T02:40:00.000Z")]
         public System.Nullable<System.DateTime> TimeStart { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The cut-off time before which to list all upcoming schedules, in ISO 8601 format.
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources with a date on or before the given value, in ISO 8601 format.
 
 Example: 2017-07-14T02:40:00.000Z")]
         public System.Nullable<System.DateTime> TimeEnd { get; set; }
@@ -82,14 +80,23 @@ Example: `3`")]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If true, will only filter out restricted scheduled job.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only restricted scheduled jobs.")]
         public System.Nullable<bool> IsRestricted { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the scheduled job.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job. A filter to return the specified job.")]
         public string Id { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Default is false. When set to true ,returns results from {compartmentId} or any of its subcompartment.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates whether to include subcompartments in the returned results. Default is false.")]
         public System.Nullable<bool> CompartmentIdInSubtree { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose location matches the given value.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ManagedInstanceLocation> Location { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose location does not match the given value.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ManagedInstanceLocation> LocationNotEqualTo { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates whether to list only resources managed by the Autonomous Linux service.")]
+        public System.Nullable<bool> IsManagedByAutonomousLinux { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
@@ -122,7 +129,10 @@ Example: `3`")]
                     OpcRequestId = OpcRequestId,
                     IsRestricted = IsRestricted,
                     Id = Id,
-                    CompartmentIdInSubtree = CompartmentIdInSubtree
+                    CompartmentIdInSubtree = CompartmentIdInSubtree,
+                    Location = Location,
+                    LocationNotEqualTo = LocationNotEqualTo,
+                    IsManagedByAutonomousLinux = IsManagedByAutonomousLinux
                 };
                 IEnumerable<ListScheduledJobsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

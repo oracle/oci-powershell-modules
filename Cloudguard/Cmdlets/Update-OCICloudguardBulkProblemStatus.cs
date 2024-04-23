@@ -19,7 +19,7 @@ namespace Oci.CloudguardService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.CloudguardService.Responses.UpdateBulkProblemStatusResponse) })]
     public class UpdateOCICloudguardBulkProblemStatus : OCICloudGuardCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A list of problem ids to be passed in to update the Problem status")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A list of Problem IDs to be passed in to update the Problem status")]
         public UpdateBulkProblemStatusDetails UpdateBulkProblemStatusDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

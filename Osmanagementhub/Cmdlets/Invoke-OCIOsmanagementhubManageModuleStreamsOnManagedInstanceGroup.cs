@@ -19,10 +19,10 @@ namespace Oci.OsmanagementhubService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OsmanagementhubService.Responses.ManageModuleStreamsOnManagedInstanceGroupResponse) })]
     public class InvokeOCIOsmanagementhubManageModuleStreamsOnManagedInstanceGroup : OCIManagedInstanceGroupCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The managed instance group OCID.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.")]
         public string ManagedInstanceGroupId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A description of an operation to perform against the modules, streams, and profiles of a managed instance group")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The set of changes to make to the modules, streams, and profiles on a managed instance group.")]
         public ManageModuleStreamsOnManagedInstanceGroupDetails ManageModuleStreamsOnManagedInstanceGroupDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

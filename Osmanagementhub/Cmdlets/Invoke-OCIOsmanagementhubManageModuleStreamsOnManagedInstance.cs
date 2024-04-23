@@ -19,7 +19,7 @@ namespace Oci.OsmanagementhubService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OsmanagementhubService.Responses.ManageModuleStreamsOnManagedInstanceResponse) })]
     public class InvokeOCIOsmanagementhubManageModuleStreamsOnManagedInstance : OCIManagedInstanceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the managed instance.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.")]
         public string ManagedInstanceId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A description of an operation to perform against the modules, streams, and profiles of a managed instance.")]

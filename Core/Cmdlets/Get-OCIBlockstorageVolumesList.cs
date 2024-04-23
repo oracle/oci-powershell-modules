@@ -51,6 +51,9 @@ Example: `50`", ParameterSetName = LimitSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the volume group.")]
         public string VolumeGroupId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given cluster placement group Id exactly.")]
+        public string ClusterPlacementGroupId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.")]
         public System.Nullable<Oci.CoreService.Models.Volume.LifecycleStateEnum> LifecycleState { get; set; }
 
@@ -74,6 +77,7 @@ Example: `50`", ParameterSetName = LimitSet)]
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     VolumeGroupId = VolumeGroupId,
+                    ClusterPlacementGroupId = ClusterPlacementGroupId,
                     LifecycleState = LifecycleState
                 };
                 IEnumerable<ListVolumesResponse> responses = GetRequestDelegate().Invoke(request);

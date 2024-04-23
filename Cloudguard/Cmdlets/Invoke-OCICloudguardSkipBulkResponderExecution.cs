@@ -19,7 +19,7 @@ namespace Oci.CloudguardService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.CloudguardService.Responses.SkipBulkResponderExecutionResponse) })]
     public class InvokeOCICloudguardSkipBulkResponderExecution : OCICloudGuardCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A list of responder execution ids to skip the execution")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A list of responder execution IDs to skip the execution")]
         public SkipBulkResponderExecutionDetails SkipBulkResponderExecutionDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

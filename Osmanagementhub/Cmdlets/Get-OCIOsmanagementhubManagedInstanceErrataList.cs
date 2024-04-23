@@ -21,11 +21,11 @@ namespace Oci.OsmanagementhubService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OsmanagementhubService.Models.ManagedInstanceErratumSummaryCollection), typeof(Oci.OsmanagementhubService.Responses.ListManagedInstanceErrataResponse) })]
     public class GetOCIOsmanagementhubManagedInstanceErrataList : OCIManagedInstanceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the managed instance.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.")]
         public string ManagedInstanceId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only errata that match the given advisory types.")]
-        public System.Collections.Generic.List<Oci.OsmanagementhubService.Requests.ListManagedInstanceErrataRequest.AdvisoryTypeEnum> AdvisoryType { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only packages that match the given update classification type.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ClassificationTypes> ClassificationType { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The assigned erratum name. It's unique and not changeable.
 
@@ -35,7 +35,7 @@ Example: `ELSA-2020-5804`")]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that may partially match the erratum name given.")]
         public string NameContains { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the resources to list.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -70,7 +70,7 @@ Example: `3`")]
                 request = new ListManagedInstanceErrataRequest
                 {
                     ManagedInstanceId = ManagedInstanceId,
-                    AdvisoryType = AdvisoryType,
+                    ClassificationType = ClassificationType,
                     Name = Name,
                     NameContains = NameContains,
                     CompartmentId = CompartmentId,
