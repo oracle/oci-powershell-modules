@@ -24,7 +24,7 @@ namespace Oci.RecoveryService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment OCID.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the specified lifecycle state. Allowed values are:   - CREATING   - UPDATING   - ACTIVE   - DELETING   - DELETED   - FAILED")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the specified lifecycle state.")]
         public System.Nullable<Oci.RecoveryService.Models.LifecycleState> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire 'displayname' given.")]

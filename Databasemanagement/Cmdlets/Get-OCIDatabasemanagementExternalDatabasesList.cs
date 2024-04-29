@@ -27,6 +27,9 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the external DB system.")]
         public string ExternalDbSystemId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the external database.")]
+        public string ExternalDatabaseId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to only return the resources that match the entire display name.")]
         public string DisplayName { get; set; }
 
@@ -59,6 +62,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     ExternalDbSystemId = ExternalDbSystemId,
+                    ExternalDatabaseId = ExternalDatabaseId,
                     DisplayName = DisplayName,
                     Page = Page,
                     Limit = Limit,
