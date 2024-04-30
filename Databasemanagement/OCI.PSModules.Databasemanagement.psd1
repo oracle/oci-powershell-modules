@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Databasemanagement.dll'
 
 # Version number of this module.
-ModuleVersion = '82.0.0'
+ModuleVersion = '83.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '82.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '83.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasemanagement.dll'
@@ -77,18 +77,30 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Confirm-OCIDatabasemanagementBasicFilter', 
                'Disable-OCIDatabasemanagementAutomaticInitialPlanCapture', 
                'Disable-OCIDatabasemanagementAutomaticSpmEvolveAdvisorTask', 
+               'Disable-OCIDatabasemanagementExternalContainerDatabaseManagementFeature', 
                'Disable-OCIDatabasemanagementExternalDbSystemDatabaseManagement', 
                'Disable-OCIDatabasemanagementExternalDbSystemStackMonitoring', 
                'Disable-OCIDatabasemanagementExternalExadataInfrastructureManagement', 
+               'Disable-OCIDatabasemanagementExternalNonContainerDatabaseManagementFeature', 
+               'Disable-OCIDatabasemanagementExternalPluggableDatabaseManagementFeature', 
+               'Disable-OCIDatabasemanagementFeature', 
                'Disable-OCIDatabasemanagementHighFrequencyAutomaticSpmEvolveAdvisorTask', 
+               'Disable-OCIDatabasemanagementPluggableDatabaseManagementFeature', 
                'Disable-OCIDatabasemanagementSqlPlanBaselinesUsage', 
+               'Edit-OCIDatabasemanagementFeature', 
+               'Edit-OCIDatabasemanagementPluggableDatabaseManagementFeature', 
                'Edit-OCIDatabasemanagementSnapshotSettings', 
                'Enable-OCIDatabasemanagementAutomaticInitialPlanCapture', 
                'Enable-OCIDatabasemanagementAutomaticSpmEvolveAdvisorTask', 
+               'Enable-OCIDatabasemanagementExternalContainerDatabaseManagementFeature', 
                'Enable-OCIDatabasemanagementExternalDbSystemDatabaseManagement', 
                'Enable-OCIDatabasemanagementExternalDbSystemStackMonitoring', 
                'Enable-OCIDatabasemanagementExternalExadataInfrastructureManagement', 
+               'Enable-OCIDatabasemanagementExternalNonContainerDatabaseManagementFeature', 
+               'Enable-OCIDatabasemanagementExternalPluggableDatabaseManagementFeature', 
+               'Enable-OCIDatabasemanagementFeature', 
                'Enable-OCIDatabasemanagementHighFrequencyAutomaticSpmEvolveAdvisorTask', 
+               'Enable-OCIDatabasemanagementPluggableDatabaseManagementFeature', 
                'Enable-OCIDatabasemanagementSqlPlanBaselinesUsage', 
                'Get-OCIDatabasemanagementAlertLogsList', 
                'Get-OCIDatabasemanagementAsmPropertiesList', 

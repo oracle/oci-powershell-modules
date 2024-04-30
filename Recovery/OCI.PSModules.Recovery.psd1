@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Recovery.dll'
 
 # Version number of this module.
-ModuleVersion = '82.0.0'
+ModuleVersion = '83.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '82.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '83.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Recovery.dll'
@@ -80,6 +80,7 @@ CmdletsToExport = 'Get-OCIRecoveryProtectedDatabase',
                'Get-OCIRecoveryWorkRequestLogsList', 
                'Get-OCIRecoveryWorkRequestsList', 
                'Invoke-OCIRecoveryFetchProtectedDatabaseConfiguration', 
+               'Invoke-OCIRecoveryScheduleProtectedDatabaseDeletion', 
                'Move-OCIRecoveryProtectedDatabaseCompartment', 
                'Move-OCIRecoveryProtectionPolicyCompartment', 
                'Move-OCIRecoveryServiceSubnetCompartment', 
@@ -88,6 +89,7 @@ CmdletsToExport = 'Get-OCIRecoveryProtectedDatabase',
                'Remove-OCIRecoveryProtectedDatabase', 
                'Remove-OCIRecoveryProtectionPolicy', 
                'Remove-OCIRecoveryServiceSubnet', 
+               'Stop-OCIRecoveryProtectedDatabaseDeletion', 
                'Update-OCIRecoveryProtectedDatabase', 
                'Update-OCIRecoveryProtectionPolicy', 
                'Update-OCIRecoveryServiceSubnet'

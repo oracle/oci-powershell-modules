@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Datasafe.dll'
 
 # Version number of this module.
-ModuleVersion = '82.0.0'
+ModuleVersion = '83.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '82.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '83.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Datasafe.dll'
@@ -116,8 +116,11 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'Get-OCIDatasafeMaskingColumn', 'Get-OCIDatasafeMaskingColumnsList', 
                'Get-OCIDatasafeMaskingObjectsList', 
                'Get-OCIDatasafeMaskingPoliciesList', 
-               'Get-OCIDatasafeMaskingPolicy', 'Get-OCIDatasafeMaskingReport', 
-               'Get-OCIDatasafeMaskingReportsList', 
+               'Get-OCIDatasafeMaskingPolicy', 
+               'Get-OCIDatasafeMaskingPolicyHealthReport', 
+               'Get-OCIDatasafeMaskingPolicyHealthReportLogsList', 
+               'Get-OCIDatasafeMaskingPolicyHealthReportsList', 
+               'Get-OCIDatasafeMaskingReport', 'Get-OCIDatasafeMaskingReportsList', 
                'Get-OCIDatasafeMaskingSchemasList', 
                'Get-OCIDatasafeOnPremConnector', 
                'Get-OCIDatasafeOnPremConnectorsList', 
@@ -223,6 +226,7 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'Move-OCIDatasafeDiscoveryJobCompartment', 
                'Move-OCIDatasafeLibraryMaskingFormatCompartment', 
                'Move-OCIDatasafeMaskingPolicyCompartment', 
+               'Move-OCIDatasafeMaskingPolicyHealthReportCompartment', 
                'Move-OCIDatasafeOnPremConnectorCompartment', 
                'Move-OCIDatasafePrivateEndpointCompartment', 
                'Move-OCIDatasafeReportCompartment', 
@@ -242,6 +246,7 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'New-OCIDatasafeAuditArchiveRetrieval', 
                'New-OCIDatasafeDiscoveryJob', 
                'New-OCIDatasafeDiscoveryReportForDownload', 
+               'New-OCIDatasafeHealthReport', 
                'New-OCIDatasafeLibraryMaskingFormat', 
                'New-OCIDatasafeMaskingColumn', 'New-OCIDatasafeMaskingPolicy', 
                'New-OCIDatasafeMaskingPolicyForDownload', 
@@ -268,6 +273,7 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'Remove-OCIDatasafeLibraryMaskingFormat', 
                'Remove-OCIDatasafeMaskingColumn', 
                'Remove-OCIDatasafeMaskingPolicy', 
+               'Remove-OCIDatasafeMaskingPolicyHealthReport', 
                'Remove-OCIDatasafeOnPremConnector', 
                'Remove-OCIDatasafePeerTargetDatabase', 
                'Remove-OCIDatasafePrivateEndpoint', 

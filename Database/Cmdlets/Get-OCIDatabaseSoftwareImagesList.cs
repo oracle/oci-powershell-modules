@@ -30,7 +30,7 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The pagination token to continue listing from.")]
         public string Page { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive. Default order for PATCHSET is descending.")]
         public System.Nullable<Oci.DatabaseService.Requests.ListDatabaseSoftwareImagesRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (`ASC`) or descending (`DESC`).")]
@@ -47,6 +47,9 @@ namespace Oci.DatabaseService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given image shape family exactly.")]
         public System.Nullable<Oci.DatabaseService.Models.DatabaseSoftwareImageSummary.ImageShapeFamilyEnum> ImageShapeFamily { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources with `patchSet` greater than or equal to given value.")]
+        public string PatchSetGreaterThanOrEqualTo { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If provided, filters the results to the set of database versions which are supported for Upgrade.")]
         public System.Nullable<bool> IsUpgradeSupported { get; set; }
@@ -72,6 +75,7 @@ namespace Oci.DatabaseService.Cmdlets
                     DisplayName = DisplayName,
                     ImageType = ImageType,
                     ImageShapeFamily = ImageShapeFamily,
+                    PatchSetGreaterThanOrEqualTo = PatchSetGreaterThanOrEqualTo,
                     IsUpgradeSupported = IsUpgradeSupported
                 };
                 IEnumerable<ListDatabaseSoftwareImagesResponse> responses = GetRequestDelegate().Invoke(request);

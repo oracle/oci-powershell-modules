@@ -22,6 +22,9 @@ namespace Oci.RecoveryService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The protected database OCID.")]
         public string ProtectedDatabaseId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Defines a preferred schedule to delete a protected database after you terminate the source database. * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated . * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.")]
+        public System.Nullable<Oci.RecoveryService.Models.DeletionSchedule> DeletionSchedule { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
         public string IfMatch { get; set; }
 
@@ -47,6 +50,7 @@ namespace Oci.RecoveryService.Cmdlets
                 request = new DeleteProtectedDatabaseRequest
                 {
                     ProtectedDatabaseId = ProtectedDatabaseId,
+                    DeletionSchedule = DeletionSchedule,
                     IfMatch = IfMatch,
                     OpcRequestId = OpcRequestId
                 };

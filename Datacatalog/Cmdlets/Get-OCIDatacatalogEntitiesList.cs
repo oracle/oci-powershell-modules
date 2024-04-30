@@ -105,6 +105,9 @@ namespace Oci.DatacatalogService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only process entities.")]
+        public System.Nullable<bool> IsProcess { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -144,7 +147,8 @@ namespace Oci.DatacatalogService.Cmdlets
                     SortOrder = SortOrder,
                     Limit = Limit,
                     Page = Page,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    IsProcess = IsProcess
                 };
                 IEnumerable<ListEntitiesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
