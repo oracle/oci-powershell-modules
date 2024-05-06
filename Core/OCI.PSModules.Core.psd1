@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Core.dll'
 
 # Version number of this module.
-ModuleVersion = '83.0.0'
+ModuleVersion = '83.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '83.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '83.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Core.dll'
@@ -208,6 +208,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Get-OCIVirtualNetworkFastConnectProviderVirtualCircuitBandwidthShapesList', 
                'Get-OCIVirtualNetworkInternetGateway', 
                'Get-OCIVirtualNetworkInternetGatewaysList', 
+               'Get-OCIVirtualNetworkIpInventoryList', 
                'Get-OCIVirtualNetworkIPSecConnection', 
                'Get-OCIVirtualNetworkIPSecConnectionDeviceConfig', 
                'Get-OCIVirtualNetworkIPSecConnectionDeviceStatus', 
@@ -239,6 +240,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Get-OCIVirtualNetworkPublicIpsList', 
                'Get-OCIVirtualNetworkRemotePeeringConnection', 
                'Get-OCIVirtualNetworkRemotePeeringConnectionsList', 
+               'Get-OCIVirtualNetworkResourceIpInventory', 
                'Get-OCIVirtualNetworkRouteTable', 
                'Get-OCIVirtualNetworkRouteTablesList', 
                'Get-OCIVirtualNetworkSecurityList', 
@@ -247,13 +249,16 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Get-OCIVirtualNetworkServiceGateway', 
                'Get-OCIVirtualNetworkServiceGatewaysList', 
                'Get-OCIVirtualNetworkServicesList', 'Get-OCIVirtualNetworkSubnet', 
+               'Get-OCIVirtualNetworkSubnetCidrUtilization', 
+               'Get-OCIVirtualNetworkSubnetIpInventory', 
                'Get-OCIVirtualNetworkSubnetsList', 
                'Get-OCIVirtualNetworkSubnetTopology', 
                'Get-OCIVirtualNetworkTunnelCpeDeviceConfig', 
                'Get-OCIVirtualNetworkTunnelCpeDeviceConfigContent', 
                'Get-OCIVirtualNetworkUpgradeStatus', 'Get-OCIVirtualNetworkVcn', 
                'Get-OCIVirtualNetworkVcnDnsResolverAssociation', 
-               'Get-OCIVirtualNetworkVcnsList', 'Get-OCIVirtualNetworkVcnTopology', 
+               'Get-OCIVirtualNetworkVcnOverlap', 'Get-OCIVirtualNetworkVcnsList', 
+               'Get-OCIVirtualNetworkVcnTopology', 
                'Get-OCIVirtualNetworkVirtualCircuit', 
                'Get-OCIVirtualNetworkVirtualCircuitAssociatedTunnelsList', 
                'Get-OCIVirtualNetworkVirtualCircuitBandwidthShapesList', 
