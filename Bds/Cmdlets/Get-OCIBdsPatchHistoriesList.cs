@@ -30,11 +30,11 @@ namespace Oci.BdsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The status of the patch.")]
         public System.Nullable<Oci.BdsService.Models.PatchHistorySummary.LifecycleStateEnum> LifecycleState { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.")]
-        public System.Nullable<Oci.BdsService.Requests.ListPatchHistoriesRequest.SortByEnum> SortBy { get; set; }
-
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The version of the patch")]
         public string PatchVersion { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.")]
+        public System.Nullable<Oci.BdsService.Requests.ListPatchHistoriesRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'asc' or 'desc'.")]
         public System.Nullable<Oci.BdsService.Models.SortOrders> SortOrder { get; set; }
@@ -63,8 +63,8 @@ namespace Oci.BdsService.Cmdlets
                     BdsInstanceId = BdsInstanceId,
                     OpcRequestId = OpcRequestId,
                     LifecycleState = LifecycleState,
-                    SortBy = SortBy,
                     PatchVersion = PatchVersion,
+                    SortBy = SortBy,
                     SortOrder = SortOrder,
                     Page = Page,
                     Limit = Limit,
