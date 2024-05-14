@@ -20,6 +20,7 @@ try {
     $CompartmentId = $env:CompartmentId
 
     #Setup
+    $Chars = [Char[]]'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
     $RandomSufix = Get-Random -Minimum 1 -Maximum 1000
     $DisplayName = "PSExample" + $RandomSufix
     $CidrBlock = '10.0.0.0/16'
@@ -28,6 +29,7 @@ try {
     $DbDomain = $DisplayName + 'Domain'
     $DbHomeName = $DisplayName + 'DbHome'
     $DbShape = 'BM.DenseIO2.52'
+    $AdminPassword = (Get-Random -Count 15 -InputObject $Chars) -join ''
 
     #Get Availability domain list
     Write-Host "Get-OCIIdentityAvailabilityDomainsList -CompartmentId $CompartmentId"
@@ -86,7 +88,7 @@ try {
 
     #Create DB Details
     $CreateDbDetails = New-Object "Oci.DatabaseService.Models.CreateDatabaseDetails"
-    $CreateDbDetails.AdminPassword = "ATle##19chars"
+    $CreateDbDetails.AdminPassword = $AdminPassword
     $CreateDbDetails.DbName = $DbName
 
     $CreateDbHomeDetails = New-Object "Oci.DatabaseService.Models.CreateDbHomeDetails"
