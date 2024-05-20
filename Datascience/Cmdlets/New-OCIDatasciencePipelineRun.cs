@@ -28,6 +28,9 @@ namespace Oci.DatascienceService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"URL to fetch the Resource Principal Token from the parent resource.")]
+        public string OpcParentRptUrl { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -39,7 +42,8 @@ namespace Oci.DatascienceService.Cmdlets
                 {
                     CreatePipelineRunDetails = CreatePipelineRunDetails,
                     OpcRetryToken = OpcRetryToken,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    OpcParentRptUrl = OpcParentRptUrl
                 };
 
                 response = client.CreatePipelineRun(request).GetAwaiter().GetResult();
