@@ -28,6 +28,9 @@ namespace Oci.DatascienceService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
         public string OpcRetryToken { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"URL to fetch the Resource Principal Token from the parent resource.")]
+        public string OpcParentRptUrl { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -39,7 +42,8 @@ namespace Oci.DatascienceService.Cmdlets
                 {
                     CreateModelDeploymentDetails = CreateModelDeploymentDetails,
                     OpcRequestId = OpcRequestId,
-                    OpcRetryToken = OpcRetryToken
+                    OpcRetryToken = OpcRetryToken,
+                    OpcParentRptUrl = OpcParentRptUrl
                 };
 
                 response = client.CreateModelDeployment(request).GetAwaiter().GetResult();

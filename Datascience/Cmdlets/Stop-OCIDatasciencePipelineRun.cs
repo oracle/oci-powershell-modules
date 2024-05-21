@@ -31,6 +31,9 @@ namespace Oci.DatascienceService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource is updated or deleted only if the `etag` you provide matches the resource's current `etag` value.")]
         public string IfMatch { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A boolean value to specify whether to terminate pipeline run gracefully.")]
+        public System.Nullable<bool> TerminateGracefully { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -43,7 +46,8 @@ namespace Oci.DatascienceService.Cmdlets
                     PipelineRunId = PipelineRunId,
                     OpcRequestId = OpcRequestId,
                     OpcRetryToken = OpcRetryToken,
-                    IfMatch = IfMatch
+                    IfMatch = IfMatch,
+                    TerminateGracefully = TerminateGracefully
                 };
 
                 response = client.CancelPipelineRun(request).GetAwaiter().GetResult();
