@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 84.0.0 - 2024-05-28
+### Added
+- Support for Demand Signal service
+- Support for external database connectors in the Database service
+- Support for monitoring standby databases in the Database Management service
+- Support for resource overviews in the Capacity Management service
+- Support for optional parameters in the download API in the Java Management Service Downloads service
+  
+### Breaking Changes
+- The return type of property `ResourceType` and `WorkloadType` was change to `string` in `ListOccAvailabilitiesRequest`, `OccCapacityRequestBaseDetails`, and `OccAvailabilitySummary` models in the OCI Control Center service in the .NET SDK
+- The model `OccCapacityRequestComputeDetails` has been removed in the OCI Control Center service in the .NET SDK
+
 ## 83.3.0 - 2024-05-21
 ### Added
 - Support for the Resource Scheduler service

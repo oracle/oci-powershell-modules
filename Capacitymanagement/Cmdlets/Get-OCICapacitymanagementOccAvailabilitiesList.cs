@@ -31,10 +31,10 @@ namespace Oci.CapacitymanagementService.Cmdlets
         public string ResourceName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Resource type using which the capacity constraints of an availability catalog can be filtered.")]
-        public System.Nullable<Oci.CapacitymanagementService.Models.OccAvailabilitySummary.ResourceTypeEnum> ResourceType { get; set; }
+        public string ResourceType { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Workload type using the resources in an availability catalog can be filtered.")]
-        public System.Nullable<Oci.CapacitymanagementService.Models.OccAvailabilitySummary.WorkloadTypeEnum> WorkloadType { get; set; }
+        public string WorkloadType { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }

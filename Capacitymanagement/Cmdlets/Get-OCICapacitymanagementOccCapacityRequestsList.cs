@@ -30,6 +30,9 @@ namespace Oci.CapacitymanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The namespace by which we would filter the list.")]
         public System.Nullable<Oci.CapacitymanagementService.Models.Namespace> Namespace { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the request type. The match is not case sensitive.")]
+        public System.Nullable<Oci.CapacitymanagementService.Models.OccCapacityRequest.RequestTypeEnum> RequestType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the entire display name. The match is not case sensitive.")]
         public string DisplayName { get; set; }
 
@@ -66,6 +69,7 @@ namespace Oci.CapacitymanagementService.Cmdlets
                     CompartmentId = CompartmentId,
                     OccAvailabilityCatalogId = OccAvailabilityCatalogId,
                     Namespace = Namespace,
+                    RequestType = RequestType,
                     DisplayName = DisplayName,
                     Id = Id,
                     Limit = Limit,

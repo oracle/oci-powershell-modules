@@ -19,7 +19,7 @@ namespace Oci.CapacitymanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CapacitymanagementService.Models.OccCapacityRequest), typeof(Oci.CapacitymanagementService.Responses.PatchOccCapacityRequestResponse) })]
     public class InvokeOCICapacitymanagementPatchOccCapacityRequest : OCICapacityManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the properties of the capacity request.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the details of the capacity request.")]
         public PatchOccCapacityRequestDetails PatchOccCapacityRequestDetails { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the capacity request.")]
