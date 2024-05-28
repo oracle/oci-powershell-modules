@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Databasemanagement.dll'
 
 # Version number of this module.
-ModuleVersion = '83.3.0'
+ModuleVersion = '84.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '83.3.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '84.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasemanagement.dll'
@@ -117,6 +117,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Get-OCIDatabasemanagementDatabaseFleetHealthMetrics', 
                'Get-OCIDatabasemanagementDatabaseHomeMetrics', 
                'Get-OCIDatabasemanagementDatabaseParametersList', 
+               'Get-OCIDatabasemanagementDataguardPerformanceMetrics', 
                'Get-OCIDatabasemanagementDbManagementPrivateEndpoint', 
                'Get-OCIDatabasemanagementDbManagementPrivateEndpointsList', 
                'Get-OCIDatabasemanagementExecutionPlanStatsComparision', 
@@ -179,6 +180,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Get-OCIDatabasemanagementOptimizerStatisticsCollectionOperation', 
                'Get-OCIDatabasemanagementOptimizerStatisticsCollectionOperationsList', 
                'Get-OCIDatabasemanagementPdbMetrics', 
+               'Get-OCIDatabasemanagementPeerDatabaseMetrics', 
                'Get-OCIDatabasemanagementPreferredCredential', 
                'Get-OCIDatabasemanagementPreferredCredentialsList', 
                'Get-OCIDatabasemanagementProxiedForUsersList', 

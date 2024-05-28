@@ -285,6 +285,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Marketplacepr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Resourcescheduler", "Resourcescheduler\OCI.PSModules.Resourcescheduler.csproj", "{0523DA2D-7F38-4D95-9827-BD3D9D076BE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Demandsignal", "Demandsignal\OCI.PSModules.Demandsignal.csproj", "{78005AA9-9A1B-4E73-9B57-FB80CF073ECF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2002,5 +2004,17 @@ Global
         {0523DA2D-7F38-4D95-9827-BD3D9D076BE7}.Release|x64.Build.0 = Release|Any CPU
         {0523DA2D-7F38-4D95-9827-BD3D9D076BE7}.Release|x86.ActiveCfg = Release|Any CPU
         {0523DA2D-7F38-4D95-9827-BD3D9D076BE7}.Release|x86.Build.0 = Release|Any CPU
+        {78005AA9-9A1B-4E73-9B57-FB80CF073ECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {78005AA9-9A1B-4E73-9B57-FB80CF073ECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {78005AA9-9A1B-4E73-9B57-FB80CF073ECF}.Debug|x64.ActiveCfg = Debug|Any CPU
+        {78005AA9-9A1B-4E73-9B57-FB80CF073ECF}.Debug|x64.Build.0 = Debug|Any CPU
+        {78005AA9-9A1B-4E73-9B57-FB80CF073ECF}.Debug|x86.ActiveCfg = Debug|Any CPU
+        {78005AA9-9A1B-4E73-9B57-FB80CF073ECF}.Debug|x86.Build.0 = Debug|Any CPU
+        {78005AA9-9A1B-4E73-9B57-FB80CF073ECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {78005AA9-9A1B-4E73-9B57-FB80CF073ECF}.Release|Any CPU.Build.0 = Release|Any CPU
+        {78005AA9-9A1B-4E73-9B57-FB80CF073ECF}.Release|x64.ActiveCfg = Release|Any CPU
+        {78005AA9-9A1B-4E73-9B57-FB80CF073ECF}.Release|x64.Build.0 = Release|Any CPU
+        {78005AA9-9A1B-4E73-9B57-FB80CF073ECF}.Release|x86.ActiveCfg = Release|Any CPU
+        {78005AA9-9A1B-4E73-9B57-FB80CF073ECF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

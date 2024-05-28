@@ -36,6 +36,9 @@ namespace Oci.CapacitymanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the entire display name. The match is not case sensitive.")]
         public string DisplayName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the request type. The match is not case sensitive.")]
+        public System.Nullable<Oci.CapacitymanagementService.Models.OccCapacityRequest.RequestTypeEnum> RequestType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the list of capacity requests based on the OCID of the capacity request. This is done for the users who have INSPECT permission on the resource but do not have READ permission.")]
         public string Id { get; set; }
 
@@ -71,6 +74,7 @@ namespace Oci.CapacitymanagementService.Cmdlets
                     OccAvailabilityCatalogId = OccAvailabilityCatalogId,
                     Namespace = Namespace,
                     DisplayName = DisplayName,
+                    RequestType = RequestType,
                     Id = Id,
                     Limit = Limit,
                     Page = Page,
