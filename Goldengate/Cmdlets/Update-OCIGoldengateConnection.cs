@@ -22,7 +22,7 @@ namespace Oci.GoldengateService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Connection.")]
         public string ConnectionId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The new Connection specifications to apply. This parameter also accepts subtypes <Oci.GoldengateService.Models.UpdateElasticsearchConnectionDetails>, <Oci.GoldengateService.Models.UpdateGoogleBigQueryConnectionDetails>, <Oci.GoldengateService.Models.UpdateOracleConnectionDetails>, <Oci.GoldengateService.Models.UpdateAmazonRedshiftConnectionDetails>, <Oci.GoldengateService.Models.UpdateOciObjectStorageConnectionDetails>, <Oci.GoldengateService.Models.UpdateRedisConnectionDetails>, <Oci.GoldengateService.Models.UpdateMongoDbConnectionDetails>, <Oci.GoldengateService.Models.UpdateGoogleCloudStorageConnectionDetails>, <Oci.GoldengateService.Models.UpdateAzureDataLakeStorageConnectionDetails>, <Oci.GoldengateService.Models.UpdateAmazonKinesisConnectionDetails>, <Oci.GoldengateService.Models.UpdateJavaMessageServiceConnectionDetails>, <Oci.GoldengateService.Models.UpdateGoldenGateConnectionDetails>, <Oci.GoldengateService.Models.UpdatePostgresqlConnectionDetails>, <Oci.GoldengateService.Models.UpdateMicrosoftSqlserverConnectionDetails>, <Oci.GoldengateService.Models.UpdateOracleNosqlConnectionDetails>, <Oci.GoldengateService.Models.UpdateKafkaSchemaRegistryConnectionDetails>, <Oci.GoldengateService.Models.UpdateAmazonS3ConnectionDetails>, <Oci.GoldengateService.Models.UpdateSnowflakeConnectionDetails>, <Oci.GoldengateService.Models.UpdateHdfsConnectionDetails>, <Oci.GoldengateService.Models.UpdateMysqlConnectionDetails>, <Oci.GoldengateService.Models.UpdateKafkaConnectionDetails>, <Oci.GoldengateService.Models.UpdateGenericConnectionDetails>, <Oci.GoldengateService.Models.UpdateAzureSynapseConnectionDetails> of type <Oci.GoldengateService.Models.UpdateConnectionDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The new Connection specifications to apply. This parameter also accepts subtypes <Oci.GoldengateService.Models.UpdateElasticsearchConnectionDetails>, <Oci.GoldengateService.Models.UpdateGoogleBigQueryConnectionDetails>, <Oci.GoldengateService.Models.UpdateOracleConnectionDetails>, <Oci.GoldengateService.Models.UpdateAmazonRedshiftConnectionDetails>, <Oci.GoldengateService.Models.UpdateOciObjectStorageConnectionDetails>, <Oci.GoldengateService.Models.UpdateRedisConnectionDetails>, <Oci.GoldengateService.Models.UpdateMongoDbConnectionDetails>, <Oci.GoldengateService.Models.UpdateGoogleCloudStorageConnectionDetails>, <Oci.GoldengateService.Models.UpdateAzureDataLakeStorageConnectionDetails>, <Oci.GoldengateService.Models.UpdateAmazonKinesisConnectionDetails>, <Oci.GoldengateService.Models.UpdateJavaMessageServiceConnectionDetails>, <Oci.GoldengateService.Models.UpdateGoldenGateConnectionDetails>, <Oci.GoldengateService.Models.UpdatePostgresqlConnectionDetails>, <Oci.GoldengateService.Models.UpdateMicrosoftSqlserverConnectionDetails>, <Oci.GoldengateService.Models.UpdateOracleNosqlConnectionDetails>, <Oci.GoldengateService.Models.UpdateKafkaSchemaRegistryConnectionDetails>, <Oci.GoldengateService.Models.UpdateAmazonS3ConnectionDetails>, <Oci.GoldengateService.Models.UpdateSnowflakeConnectionDetails>, <Oci.GoldengateService.Models.UpdateHdfsConnectionDetails>, <Oci.GoldengateService.Models.UpdateMysqlConnectionDetails>, <Oci.GoldengateService.Models.UpdateKafkaConnectionDetails>, <Oci.GoldengateService.Models.UpdateDb2ConnectionDetails>, <Oci.GoldengateService.Models.UpdateGenericConnectionDetails>, <Oci.GoldengateService.Models.UpdateAzureSynapseConnectionDetails> of type <Oci.GoldengateService.Models.UpdateConnectionDetails>.")]
         public UpdateConnectionDetails UpdateConnectionDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.")]
@@ -30,6 +30,9 @@ namespace Oci.GoldengateService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Whether to override locks (if any exist).")]
+        public System.Nullable<bool> IsLockOverride { get; set; }
 
         protected override void ProcessRecord()
         {
@@ -43,7 +46,8 @@ namespace Oci.GoldengateService.Cmdlets
                     ConnectionId = ConnectionId,
                     UpdateConnectionDetails = UpdateConnectionDetails,
                     IfMatch = IfMatch,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    IsLockOverride = IsLockOverride
                 };
 
                 response = client.UpdateConnection(request).GetAwaiter().GetResult();
