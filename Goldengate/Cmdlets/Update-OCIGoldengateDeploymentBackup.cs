@@ -31,6 +31,9 @@ namespace Oci.GoldengateService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Whether to override locks (if any exist).")]
+        public System.Nullable<bool> IsLockOverride { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -43,7 +46,8 @@ namespace Oci.GoldengateService.Cmdlets
                     DeploymentBackupId = DeploymentBackupId,
                     UpdateDeploymentBackupDetails = UpdateDeploymentBackupDetails,
                     IfMatch = IfMatch,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    IsLockOverride = IsLockOverride
                 };
 
                 response = client.UpdateDeploymentBackup(request).GetAwaiter().GetResult();
