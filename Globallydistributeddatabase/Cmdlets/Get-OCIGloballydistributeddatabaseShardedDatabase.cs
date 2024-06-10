@@ -31,6 +31,11 @@ namespace Oci.GloballydistributeddatabaseService.Cmdlets
         public string Metadata { get; set; }
 
         
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For conditional requests. In the GET call for a resource, set the `If-None-Match` header to the value of the ETag from a previous GET (or POST or PUT) response for that resource. The server will return with either a 304 Not Modified response if the resource has not changed, or a 200 OK response with the updated representation.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For conditional requests. In the GET call for a resource, set the `If-None-Match` header to the value of the ETag from a previous GET (or POST or PUT) response for that resource. The server will return with either a 304 Not Modified response if the resource has not changed, or a 200 OK response with the updated representation.", ParameterSetName = Default)]
+        public string IfNoneMatch { get; set; }
+
+        
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.", ParameterSetName = LifecycleStateParamSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.", ParameterSetName = Default)]
         public string OpcRequestId { get; set; }
@@ -55,6 +60,7 @@ namespace Oci.GloballydistributeddatabaseService.Cmdlets
                 {
                     ShardedDatabaseId = ShardedDatabaseId,
                     Metadata = Metadata,
+                    IfNoneMatch = IfNoneMatch,
                     OpcRequestId = OpcRequestId
                 };
 

@@ -15,12 +15,12 @@ using Oci.Common.Model;
 
 namespace Oci.GloballydistributeddatabaseService.Cmdlets
 {
-    [Cmdlet("New", "OCIGloballydistributeddatabaseGsmCertificateSigningRequest")]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.GloballydistributeddatabaseService.Responses.GenerateGsmCertificateSigningRequestResponse) })]
-    public class NewOCIGloballydistributeddatabaseGsmCertificateSigningRequest : OCIShardedDatabaseServiceCmdlet
+    [Cmdlet("Invoke", "OCIGloballydistributeddatabaseReinstateProxyInstance")]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.GloballydistributeddatabaseService.Responses.ReinstateProxyInstanceResponse) })]
+    public class InvokeOCIGloballydistributeddatabaseReinstateProxyInstance : OCIShardedDatabaseServiceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Sharded Database identifier")]
-        public string ShardedDatabaseId { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Oracle Sharded Database PrivateEndpoint identifier")]
+        public string PrivateEndpointId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
@@ -31,26 +31,22 @@ namespace Oci.GloballydistributeddatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
         public string OpcRetryToken { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the Ca Bundle.")]
-        public string CaBundleId { get; set; }
-
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            GenerateGsmCertificateSigningRequestRequest request;
+            ReinstateProxyInstanceRequest request;
 
             try
             {
-                request = new GenerateGsmCertificateSigningRequestRequest
+                request = new ReinstateProxyInstanceRequest
                 {
-                    ShardedDatabaseId = ShardedDatabaseId,
+                    PrivateEndpointId = PrivateEndpointId,
                     OpcRequestId = OpcRequestId,
                     IfMatch = IfMatch,
-                    OpcRetryToken = OpcRetryToken,
-                    CaBundleId = CaBundleId
+                    OpcRetryToken = OpcRetryToken
                 };
 
-                response = client.GenerateGsmCertificateSigningRequest(request).GetAwaiter().GetResult();
+                response = client.ReinstateProxyInstance(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
             }
@@ -70,6 +66,6 @@ namespace Oci.GloballydistributeddatabaseService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private GenerateGsmCertificateSigningRequestResponse response;
+        private ReinstateProxyInstanceResponse response;
     }
 }
