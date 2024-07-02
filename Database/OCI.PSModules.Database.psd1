@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '86.0.0'
+ModuleVersion = '86.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '86.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '86.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -183,7 +183,14 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Get-OCIDatabaseExadataInfrastructureOcpus', 
                'Get-OCIDatabaseExadataInfrastructuresList', 
                'Get-OCIDatabaseExadataInfrastructureUnAllocatedResources', 
-               'Get-OCIDatabaseExadataIormConfig', 
+               'Get-OCIDatabaseExadataIormConfig', 'Get-OCIDatabaseExadbVmCluster', 
+               'Get-OCIDatabaseExadbVmClustersList', 
+               'Get-OCIDatabaseExadbVmClusterUpdate', 
+               'Get-OCIDatabaseExadbVmClusterUpdateHistoryEntriesList', 
+               'Get-OCIDatabaseExadbVmClusterUpdateHistoryEntry', 
+               'Get-OCIDatabaseExadbVmClusterUpdatesList', 
+               'Get-OCIDatabaseExascaleDbStorageVault', 
+               'Get-OCIDatabaseExascaleDbStorageVaultsList', 
                'Get-OCIDatabaseExternalBackupJob', 
                'Get-OCIDatabaseExternalContainerDatabase', 
                'Get-OCIDatabaseExternalContainerDatabasesList', 
@@ -194,6 +201,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Get-OCIDatabaseExternalPluggableDatabase', 
                'Get-OCIDatabaseExternalPluggableDatabasesList', 
                'Get-OCIDatabaseFlexComponentsList', 
+               'Get-OCIDatabaseGiVersionMinorVersionsList', 
                'Get-OCIDatabaseGiVersionsList', 
                'Get-OCIDatabaseInfrastructureTargetVersions', 
                'Get-OCIDatabaseKeyStore', 'Get-OCIDatabaseKeyStoresList', 
@@ -278,6 +286,8 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Move-OCIDatabaseDbSystemCompartment', 
                'Move-OCIDatabaseDisasterRecoveryConfiguration', 
                'Move-OCIDatabaseExadataInfrastructureCompartment', 
+               'Move-OCIDatabaseExadbVmClusterCompartment', 
+               'Move-OCIDatabaseExascaleDbStorageVaultCompartment', 
                'Move-OCIDatabaseExternalContainerDatabaseCompartment', 
                'Move-OCIDatabaseExternalNonContainerDatabaseCompartment', 
                'Move-OCIDatabaseExternalPluggableDatabaseCompartment', 
@@ -301,6 +311,8 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'New-OCIDatabaseConsoleHistory', 
                'New-OCIDatabaseDataGuardAssociation', 'New-OCIDatabaseDbHome', 
                'New-OCIDatabaseDbSystem', 'New-OCIDatabaseExadataInfrastructure', 
+               'New-OCIDatabaseExadbVmCluster', 
+               'New-OCIDatabaseExascaleDbStorageVault', 
                'New-OCIDatabaseExternalBackupJob', 
                'New-OCIDatabaseExternalContainerDatabase', 
                'New-OCIDatabaseExternalDatabaseConnector', 
@@ -324,6 +336,8 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Remove-OCIDatabaseConsoleConnection', 
                'Remove-OCIDatabaseConsoleHistory', 'Remove-OCIDatabaseDbHome', 
                'Remove-OCIDatabaseExadataInfrastructure', 
+               'Remove-OCIDatabaseExadbVmCluster', 
+               'Remove-OCIDatabaseExascaleDbStorageVault', 
                'Remove-OCIDatabaseExternalContainerDatabase', 
                'Remove-OCIDatabaseExternalDatabaseConnector', 
                'Remove-OCIDatabaseExternalNonContainerDatabase', 
@@ -332,6 +346,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Remove-OCIDatabasePluggableDatabase', 
                'Remove-OCIDatabaseSoftwareImage', 
                'Remove-OCIDatabaseVirtualMachineFromCloudVmCluster', 
+               'Remove-OCIDatabaseVirtualMachineFromExadbVmCluster', 
                'Remove-OCIDatabaseVirtualMachineFromVmCluster', 
                'Remove-OCIDatabaseVmCluster', 'Remove-OCIDatabaseVmClusterNetwork', 
                'Restart-OCIDatabaseAutonomousContainerDatabase', 
@@ -364,6 +379,8 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Update-OCIDatabaseDbSystem', 
                'Update-OCIDatabaseExadataInfrastructure', 
                'Update-OCIDatabaseExadataIormConfig', 
+               'Update-OCIDatabaseExadbVmCluster', 
+               'Update-OCIDatabaseExascaleDbStorageVault', 
                'Update-OCIDatabaseExternalContainerDatabase', 
                'Update-OCIDatabaseExternalDatabaseConnector', 
                'Update-OCIDatabaseExternalNonContainerDatabase', 

@@ -75,6 +75,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of Exadata Insight VM cluster name.")]
         public System.Collections.Generic.List<string> VmclusterName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Resource Status")]
+        public System.Collections.Generic.List<Oci.OpsiService.Models.ResourceStatus> Status { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -104,7 +107,8 @@ namespace Oci.OpsiService.Cmdlets
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
                     HostType = HostType,
                     HostId = HostId,
-                    VmclusterName = VmclusterName
+                    VmclusterName = VmclusterName,
+                    Status = Status
                 };
                 IEnumerable<ListHostConfigurationsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

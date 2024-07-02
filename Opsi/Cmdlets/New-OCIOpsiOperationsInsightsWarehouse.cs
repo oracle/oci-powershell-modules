@@ -19,7 +19,7 @@ namespace Oci.OpsiService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OpsiService.Models.OperationsInsightsWarehouse), typeof(Oci.OpsiService.Responses.CreateOperationsInsightsWarehouseResponse) })]
     public class NewOCIOpsiOperationsInsightsWarehouse : OCIOperationsInsightsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details using which an Operations Insights Warehouse resource will be created in Operations Insights.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details using which an Ops Insights Warehouse resource will be created in Ops Insights.")]
         public CreateOperationsInsightsWarehouseDetails CreateOperationsInsightsWarehouseDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request that can be retried in case of a timeout or server error without risk of executing the same action again. Retry tokens expire after 24 hours.

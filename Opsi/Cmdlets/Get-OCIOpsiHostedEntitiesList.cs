@@ -63,6 +63,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host (Compute Id)")]
         public string HostId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Resource Status")]
+        public System.Collections.Generic.List<Oci.OpsiService.Models.ResourceStatus> Status { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -88,7 +91,8 @@ namespace Oci.OpsiService.Cmdlets
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,
                     HostType = HostType,
-                    HostId = HostId
+                    HostId = HostId,
+                    Status = Status
                 };
                 IEnumerable<ListHostedEntitiesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

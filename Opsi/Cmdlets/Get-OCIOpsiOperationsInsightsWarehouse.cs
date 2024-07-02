@@ -21,8 +21,8 @@ namespace Oci.OpsiService.Cmdlets
     public class GetOCIOpsiOperationsInsightsWarehouse : OCIOperationsInsightsCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Operations Insights Warehouse identifier", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Operations Insights Warehouse identifier", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Ops Insights Warehouse identifier", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Ops Insights Warehouse identifier", ParameterSetName = Default)]
         public string OperationsInsightsWarehouseId { get; set; }
 
         

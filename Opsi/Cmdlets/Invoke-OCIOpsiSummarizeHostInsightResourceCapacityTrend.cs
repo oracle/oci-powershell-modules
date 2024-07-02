@@ -88,6 +88,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Percent value in which a resource metric is considered low utilized.")]
         public System.Nullable<int> LowUtilizationThreshold { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Resource Status")]
+        public System.Collections.Generic.List<Oci.OpsiService.Models.ResourceStatus> Status { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -119,7 +122,8 @@ namespace Oci.OpsiService.Cmdlets
                     HostId = HostId,
                     VmclusterName = VmclusterName,
                     HighUtilizationThreshold = HighUtilizationThreshold,
-                    LowUtilizationThreshold = LowUtilizationThreshold
+                    LowUtilizationThreshold = LowUtilizationThreshold,
+                    Status = Status
                 };
 
                 response = client.SummarizeHostInsightResourceCapacityTrend(request).GetAwaiter().GetResult();

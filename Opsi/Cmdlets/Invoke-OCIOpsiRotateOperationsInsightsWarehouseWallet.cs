@@ -19,7 +19,7 @@ namespace Oci.OpsiService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OpsiService.Responses.RotateOperationsInsightsWarehouseWalletResponse) })]
     public class InvokeOCIOpsiRotateOperationsInsightsWarehouseWallet : OCIOperationsInsightsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Operations Insights Warehouse identifier")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Ops Insights Warehouse identifier")]
         public string OperationsInsightsWarehouseId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
