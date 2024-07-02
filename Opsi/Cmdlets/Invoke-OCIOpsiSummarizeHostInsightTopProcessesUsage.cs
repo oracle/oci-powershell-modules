@@ -58,6 +58,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Choose the type of statistic metric data to be used for forecasting.")]
         public System.Nullable<Oci.OpsiService.Requests.SummarizeHostInsightTopProcessesUsageRequest.StatisticEnum> Statistic { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Resource Status")]
+        public System.Collections.Generic.List<Oci.OpsiService.Models.ResourceStatus> Status { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -79,7 +82,8 @@ namespace Oci.OpsiService.Cmdlets
                     AnalysisTimeInterval = AnalysisTimeInterval,
                     HostType = HostType,
                     HostId = HostId,
-                    Statistic = Statistic
+                    Statistic = Statistic,
+                    Status = Status
                 };
 
                 response = client.SummarizeHostInsightTopProcessesUsage(request).GetAwaiter().GetResult();

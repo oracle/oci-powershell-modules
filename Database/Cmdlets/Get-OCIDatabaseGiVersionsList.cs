@@ -36,6 +36,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If provided, filters the results for the given shape.")]
         public string Shape { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The target availability domain. Only passed if the limit is AD-specific.")]
+        public string AvailabilityDomain { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -52,7 +55,8 @@ namespace Oci.DatabaseService.Cmdlets
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,
-                    Shape = Shape
+                    Shape = Shape,
+                    AvailabilityDomain = AvailabilityDomain
                 };
                 IEnumerable<ListGiVersionsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

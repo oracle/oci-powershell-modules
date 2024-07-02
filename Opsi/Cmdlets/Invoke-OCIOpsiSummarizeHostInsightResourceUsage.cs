@@ -76,6 +76,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional list of Exadata Insight VM cluster name.")]
         public System.Collections.Generic.List<string> VmclusterName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Resource Status")]
+        public System.Collections.Generic.List<Oci.OpsiService.Models.ResourceStatus> Status { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -103,7 +106,8 @@ namespace Oci.OpsiService.Cmdlets
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
                     HostType = HostType,
                     HostId = HostId,
-                    VmclusterName = VmclusterName
+                    VmclusterName = VmclusterName,
+                    Status = Status
                 };
 
                 response = client.SummarizeHostInsightResourceUsage(request).GetAwaiter().GetResult();

@@ -23,7 +23,7 @@ namespace Oci.OpsiService.Cmdlets
     [OutputType(new System.Type[] { typeof(System.IO.Stream), typeof(void), typeof(Oci.OpsiService.Responses.DownloadOperationsInsightsWarehouseWalletResponse) })]
     public class InvokeOCIOpsiDownloadOperationsInsightsWarehouseWallet : OCIOperationsInsightsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Operations Insights Warehouse identifier")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Ops Insights Warehouse identifier")]
         public string OperationsInsightsWarehouseId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated.")]

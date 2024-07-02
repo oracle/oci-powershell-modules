@@ -100,6 +100,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Name of the network interface.")]
         public string InterfaceName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Resource Status")]
+        public System.Collections.Generic.List<Oci.OpsiService.Models.ResourceStatus> Status { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -135,7 +138,8 @@ namespace Oci.OpsiService.Cmdlets
                     HighUtilizationThreshold = HighUtilizationThreshold,
                     LowUtilizationThreshold = LowUtilizationThreshold,
                     MountPoint = MountPoint,
-                    InterfaceName = InterfaceName
+                    InterfaceName = InterfaceName,
+                    Status = Status
                 };
 
                 response = client.SummarizeHostInsightResourceForecastTrend(request).GetAwaiter().GetResult();

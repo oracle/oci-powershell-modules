@@ -33,6 +33,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The pagination token to continue listing from.")]
         public string Page { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If provided, filters the results to the set of database versions which are supported for the given shape family.")]
+        public System.Nullable<Oci.DatabaseService.Requests.ListBackupsRequest.ShapeFamilyEnum> ShapeFamily { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -48,7 +51,8 @@ namespace Oci.DatabaseService.Cmdlets
                     DatabaseId = DatabaseId,
                     CompartmentId = CompartmentId,
                     Limit = Limit,
-                    Page = Page
+                    Page = Page,
+                    ShapeFamily = ShapeFamily
                 };
                 IEnumerable<ListBackupsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
