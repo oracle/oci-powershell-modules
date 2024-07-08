@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 86.2.0 - 2024-07-09
+### Added
+- Support for cost management of shared resources in the Usage service
+- Support for creating new databases with oracle key vault on Exadata Cloud at Customer in the Database service
+- Support for confirming key store details on Exadata Cloud at Customer in the Database service
+
 ## 86.1.0 - 2024-07-02
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the `ap-singapore-2` region
