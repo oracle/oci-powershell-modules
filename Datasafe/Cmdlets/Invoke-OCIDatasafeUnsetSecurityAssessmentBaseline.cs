@@ -31,6 +31,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details of the target associated with the security assessment for which the user intents to unset the baseline.")]
+        public UnsetSecurityAssessmentBaselineDetails UnsetSecurityAssessmentBaselineDetails { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -43,7 +46,8 @@ namespace Oci.DatasafeService.Cmdlets
                     SecurityAssessmentId = SecurityAssessmentId,
                     IfMatch = IfMatch,
                     OpcRetryToken = OpcRetryToken,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    UnsetSecurityAssessmentBaselineDetails = UnsetSecurityAssessmentBaselineDetails
                 };
 
                 response = client.UnsetSecurityAssessmentBaseline(request).GetAwaiter().GetResult();
