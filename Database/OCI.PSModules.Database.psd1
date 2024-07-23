@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '86.3.0'
+ModuleVersion = '86.4.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '86.3.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '86.4.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -277,12 +277,15 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Move-OCIDatabaseAutonomousContainerDatabaseCompartment', 
                'Move-OCIDatabaseAutonomousDatabaseCompartment', 
                'Move-OCIDatabaseAutonomousDatabaseSoftwareImageCompartment', 
+               'Move-OCIDatabaseAutonomousDatabaseSubscription', 
                'Move-OCIDatabaseAutonomousExadataInfrastructureCompartment', 
                'Move-OCIDatabaseAutonomousVmClusterCompartment', 
                'Move-OCIDatabaseBackupDestinationCompartment', 
                'Move-OCIDatabaseCloudAutonomousVmClusterCompartment', 
                'Move-OCIDatabaseCloudExadataInfrastructureCompartment', 
+               'Move-OCIDatabaseCloudExadataInfrastructureSubscription', 
                'Move-OCIDatabaseCloudVmClusterCompartment', 
+               'Move-OCIDatabaseCloudVmClusterSubscription', 
                'Move-OCIDatabaseDataguardRole', 
                'Move-OCIDatabaseDbSystemCompartment', 
                'Move-OCIDatabaseDisasterRecoveryConfiguration', 

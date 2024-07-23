@@ -51,6 +51,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.")]
         public System.Nullable<Oci.DatasafeService.Requests.ListFindingsRequest.AccessLevelEnum> AccessLevel { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items related to a specific target OCID.")]
+        public string TargetId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.")]
         public string FindingKey { get; set; }
 
@@ -76,6 +79,7 @@ namespace Oci.DatasafeService.Cmdlets
                     Page = Page,
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
                     AccessLevel = AccessLevel,
+                    TargetId = TargetId,
                     FindingKey = FindingKey
                 };
                 IEnumerable<ListFindingsResponse> responses = GetRequestDelegate().Invoke(request);
