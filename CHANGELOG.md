@@ -3,9 +3,33 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## 73.0.0 - 2025-07-12
+## 99.9.0 - 2025-07-14
+### Added 
+- Support for changing compartments of configurations in the PostgreSQL service 
+- Support for granular policies including compartments, resource types, and recommendations in the Optimizer service 
+- Support for token exchanges in the Identity Domains service 
+- Support for Apache HTTP server discovery and monitoring in the Stack Monitoring service 
+- Support for resource locking in the Data Catalog service 
+- Support for concurrency throttling in the Data Integration service 
+- Support for reboot migrations for VMs on dedicated hosts in the Compute service 
+- Support for connection routing method settings and subnet update in the GoldenGate service 
+- Support for data discovery of commonly used sensitive types in the Data Safe service 
+- Support for incremental extraction and updates to the workflows in the Data Integration service 
 
-- My Changelog Update
+### Breaking Changes 
+- The properties `Etag` and `Configuration` were removed from the model `ChangeConfigurationCompartmentResponse` in the PostgreSQL service in the .NET SDK
+
+## 86.4.0 - 2024-07-23
+### Added
+- Support for subscription id attribute in Cloud Exadata Infrastructure and Cloud VM Clusters in the Database service
+- Support for SQL and FTP monitors on create and update operations in the Application Performance Monitoring service
+- Support for MySQL Heatwave database systems in the Operations Insights service
+- Support for creating and updating schedules for user assessments and security assessments in the Data Safe service
+- Support for creating and updating sensitive data models of the tables for discovery in the Data Safe service
+- Support for additional optional parameters on autonomous database create and update operations in the Database service
+ 
+### Fixed
+- The path parameter values and query parameter names are now url encoded
 
 ## 86.3.0 - 2024-07-16
 ### Added
