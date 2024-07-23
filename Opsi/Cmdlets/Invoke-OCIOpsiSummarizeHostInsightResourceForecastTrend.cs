@@ -100,6 +100,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Name of the network interface.")]
         public string InterfaceName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"GPU identifier.")]
+        public System.Nullable<int> GpuId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Resource Status")]
         public System.Collections.Generic.List<Oci.OpsiService.Models.ResourceStatus> Status { get; set; }
 
@@ -139,6 +142,7 @@ namespace Oci.OpsiService.Cmdlets
                     LowUtilizationThreshold = LowUtilizationThreshold,
                     MountPoint = MountPoint,
                     InterfaceName = InterfaceName,
+                    GpuId = GpuId,
                     Status = Status
                 };
 
