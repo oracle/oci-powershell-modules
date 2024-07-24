@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 99.9.0 - 2025-07-14
+### Added 
+- Support for changing compartments of configurations in the PostgreSQL service 
+- Support for granular policies including compartments, resource types, and recommendations in the Optimizer service 
+- Support for token exchanges in the Identity Domains service 
+- Support for Apache HTTP server discovery and monitoring in the Stack Monitoring service 
+- Support for resource locking in the Data Catalog service 
+- Support for concurrency throttling in the Data Integration service 
+- Support for reboot migrations for VMs on dedicated hosts in the Compute service 
+- Support for connection routing method settings and subnet update in the GoldenGate service 
+- Support for data discovery of commonly used sensitive types in the Data Safe service 
+- Support for incremental extraction and updates to the workflows in the Data Integration service 
+
+### Breaking Changes 
+- The properties `Etag` and `Configuration` were removed from the model `ChangeConfigurationCompartmentResponse` in the PostgreSQL service in the .NET SDK
+
 ## 86.4.0 - 2024-07-23
 ### Added
 - Support for subscription id attribute in Cloud Exadata Infrastructure and Cloud VM Clusters in the Database service
