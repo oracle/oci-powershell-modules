@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Networkfirewall.dll'
 
 # Version number of this module.
-ModuleVersion = '99.9.0'
+ModuleVersion = '87.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '99.9.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '87.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Networkfirewall.dll'
@@ -91,6 +91,8 @@ CmdletsToExport = 'Get-OCINetworkfirewall', 'Get-OCINetworkfirewallAddressList',
                'Get-OCINetworkfirewallServiceList', 
                'Get-OCINetworkfirewallServiceListsList', 
                'Get-OCINetworkfirewallServicesList', 'Get-OCINetworkfirewallsList', 
+               'Get-OCINetworkfirewallTunnelInspectionRule', 
+               'Get-OCINetworkfirewallTunnelInspectionRulesList', 
                'Get-OCINetworkfirewallUrlList', 
                'Get-OCINetworkfirewallUrlListsList', 
                'Get-OCINetworkfirewallWorkRequest', 
@@ -107,6 +109,7 @@ CmdletsToExport = 'Get-OCINetworkfirewall', 'Get-OCINetworkfirewallAddressList',
                'Invoke-OCINetworkfirewallBulkUploadSecurityRules', 
                'Invoke-OCINetworkfirewallBulkUploadServiceLists', 
                'Invoke-OCINetworkfirewallBulkUploadServices', 
+               'Invoke-OCINetworkfirewallBulkUploadTunnelInspectionRules', 
                'Invoke-OCINetworkfirewallBulkUploadUrlLists', 
                'Invoke-OCINetworkfirewallCloneNetworkFirewallPolicy', 
                'Invoke-OCINetworkfirewallMigrateNetworkFirewallPolicy', 
@@ -122,6 +125,7 @@ CmdletsToExport = 'Get-OCINetworkfirewall', 'Get-OCINetworkfirewallAddressList',
                'New-OCINetworkfirewallSecurityRule', 
                'New-OCINetworkfirewallService', 
                'New-OCINetworkfirewallServiceList', 
+               'New-OCINetworkfirewallTunnelInspectionRule', 
                'New-OCINetworkfirewallUrlList', 'Remove-OCINetworkfirewall', 
                'Remove-OCINetworkfirewallAddressList', 
                'Remove-OCINetworkfirewallApplication', 
@@ -133,6 +137,7 @@ CmdletsToExport = 'Get-OCINetworkfirewall', 'Get-OCINetworkfirewallAddressList',
                'Remove-OCINetworkfirewallSecurityRule', 
                'Remove-OCINetworkfirewallService', 
                'Remove-OCINetworkfirewallServiceList', 
+               'Remove-OCINetworkfirewallTunnelInspectionRule', 
                'Remove-OCINetworkfirewallUrlList', 
                'Stop-OCINetworkfirewallWorkRequest', 'Update-OCINetworkfirewall', 
                'Update-OCINetworkfirewallAddressList', 
@@ -145,6 +150,7 @@ CmdletsToExport = 'Get-OCINetworkfirewall', 'Get-OCINetworkfirewallAddressList',
                'Update-OCINetworkfirewallSecurityRule', 
                'Update-OCINetworkfirewallService', 
                'Update-OCINetworkfirewallServiceList', 
+               'Update-OCINetworkfirewallTunnelInspectionRule', 
                'Update-OCINetworkfirewallUrlList'
 
 # Variables to export from this module

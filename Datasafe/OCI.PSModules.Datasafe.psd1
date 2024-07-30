@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Datasafe.dll'
 
 # Version number of this module.
-ModuleVersion = '99.9.0'
+ModuleVersion = '87.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '99.9.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '87.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Datasafe.dll'
@@ -76,6 +76,7 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'Enable-OCIDatasafeTargetDatabase', 'Get-OCIDatasafeAlert', 
                'Get-OCIDatasafeAlertAnalyticsList', 
                'Get-OCIDatasafeAlertPoliciesList', 'Get-OCIDatasafeAlertPolicy', 
+               'Get-OCIDatasafeAlertPolicyRule', 
                'Get-OCIDatasafeAlertPolicyRulesList', 'Get-OCIDatasafeAlertsList', 
                'Get-OCIDatasafeAuditArchiveRetrieval', 
                'Get-OCIDatasafeAuditArchiveRetrievalsList', 
@@ -220,6 +221,7 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'Invoke-OCIDatasafeUnsetSecurityAssessmentBaseline', 
                'Invoke-OCIDatasafeUnsetUserAssessmentBaseline', 
                'Move-OCIDatasafeAlertCompartment', 
+               'Move-OCIDatasafeAlertPolicyCompartment', 
                'Move-OCIDatasafeAuditArchiveRetrievalCompartment', 
                'Move-OCIDatasafeAuditPolicyCompartment', 
                'Move-OCIDatasafeAuditProfileCompartment', 
@@ -244,6 +246,7 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'Move-OCIDatasafeTargetAlertPolicyAssociationCompartment', 
                'Move-OCIDatasafeTargetDatabaseCompartment', 
                'Move-OCIDatasafeUserAssessmentCompartment', 
+               'New-OCIDatasafeAlertPolicy', 'New-OCIDatasafeAlertPolicyRule', 
                'New-OCIDatasafeAuditArchiveRetrieval', 
                'New-OCIDatasafeDiscoveryJob', 
                'New-OCIDatasafeDiscoveryReportForDownload', 
@@ -268,6 +271,8 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'New-OCIDatasafeTargetAlertPolicyAssociation', 
                'New-OCIDatasafeTargetDatabase', 'New-OCIDatasafeUserAssessment', 
                'New-OCIDatasafeUserAssessmentReport', 
+               'Remove-OCIDatasafeAlertPolicy', 
+               'Remove-OCIDatasafeAlertPolicyRule', 
                'Remove-OCIDatasafeAuditArchiveRetrieval', 
                'Remove-OCIDatasafeAuditTrail', 'Remove-OCIDatasafeDiscoveryJob', 
                'Remove-OCIDatasafeDiscoveryJobResult', 
@@ -292,7 +297,8 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'Remove-OCIDatasafeUserAssessment', 'Start-OCIDatasafeAuditTrail', 
                'Start-OCIDatasafeSqlCollection', 'Stop-OCIDatasafeAuditTrail', 
                'Stop-OCIDatasafeSqlCollection', 'Stop-OCIDatasafeWorkRequest', 
-               'Update-OCIDatasafeAlert', 
+               'Update-OCIDatasafeAlert', 'Update-OCIDatasafeAlertPolicy', 
+               'Update-OCIDatasafeAlertPolicyRule', 
                'Update-OCIDatasafeAuditArchiveRetrieval', 
                'Update-OCIDatasafeAuditPolicy', 'Update-OCIDatasafeAuditProfile', 
                'Update-OCIDatasafeAuditTrail', 
