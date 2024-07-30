@@ -27,6 +27,12 @@ namespace Oci.StackmonitoringService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Resource Group")]
         public string ResourceGroup { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Resource Type")]
+        public string ResourceType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Is the baseline enabled metric defined out of box by Oracle or by end-user")]
+        public System.Nullable<bool> IsOutOfBox { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Metric Name")]
         public string Name { get; set; }
 
@@ -65,6 +71,8 @@ namespace Oci.StackmonitoringService.Cmdlets
                 {
                     OpcRequestId = OpcRequestId,
                     ResourceGroup = ResourceGroup,
+                    ResourceType = ResourceType,
+                    IsOutOfBox = IsOutOfBox,
                     Name = Name,
                     MetricNamespace = MetricNamespace,
                     Limit = Limit,

@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Aispeech.dll'
 
 # Version number of this module.
-ModuleVersion = '86.4.0'
+ModuleVersion = '87.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '86.4.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '87.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Aispeech.dll'
@@ -71,15 +71,21 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Aispeech.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIAispeechTranscriptionJob', 
+CmdletsToExport = 'Get-OCIAispeechCustomization', 'Get-OCIAispeechCustomizationsList', 
+               'Get-OCIAispeechTranscriptionJob', 
                'Get-OCIAispeechTranscriptionJobsList', 
                'Get-OCIAispeechTranscriptionTask', 
                'Get-OCIAispeechTranscriptionTasksList', 
+               'Move-OCIAispeechCustomizationCompartment', 
                'Move-OCIAispeechTranscriptionJobCompartment', 
+               'New-OCIAispeechCustomization', 
+               'New-OCIAispeechRealtimeSessionToken', 
                'New-OCIAispeechTranscriptionJob', 
+               'Remove-OCIAispeechCustomization', 
                'Remove-OCIAispeechTranscriptionJob', 
                'Stop-OCIAispeechTranscriptionJob', 
                'Stop-OCIAispeechTranscriptionTask', 
+               'Update-OCIAispeechCustomization', 
                'Update-OCIAispeechTranscriptionJob'
 
 # Variables to export from this module

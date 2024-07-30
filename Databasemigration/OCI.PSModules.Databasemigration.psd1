@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Databasemigration.dll'
 
 # Version number of this module.
-ModuleVersion = '86.4.0'
+ModuleVersion = '87.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '86.4.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '87.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasemigration.dll'
@@ -86,22 +86,28 @@ CmdletsToExport = 'Add-OCIDatabasemigrationMigrationObjects',
                'Get-OCIDatabasemigrationMigrationObjectTypesList', 
                'Get-OCIDatabasemigrationMigrationParametersList', 
                'Get-OCIDatabasemigrationMigrationsList', 
+               'Get-OCIDatabasemigrationParameterFileVersion', 
+               'Get-OCIDatabasemigrationParameterFileVersionsList', 
                'Get-OCIDatabasemigrationWorkRequest', 
                'Get-OCIDatabasemigrationWorkRequestErrorsList', 
                'Get-OCIDatabasemigrationWorkRequestLogsList', 
                'Get-OCIDatabasemigrationWorkRequestsList', 
                'Invoke-OCIDatabasemigrationCloneMigration', 
                'Invoke-OCIDatabasemigrationEvaluateMigration', 
+               'Invoke-OCIDatabasemigrationMakeCurrentParameterFileVersion', 
                'Invoke-OCIDatabasemigrationResumeJob', 
                'Invoke-OCIDatabasemigrationRetrieveSupportedPhases', 
+               'Invoke-OCIDatabasemigrationSuspendJob', 
                'Move-OCIDatabasemigrationConnectionCompartment', 
                'Move-OCIDatabasemigrationMigrationCompartment', 
                'New-OCIDatabasemigrationConnection', 
                'New-OCIDatabasemigrationMigration', 
+               'New-OCIDatabasemigrationParameterFileVersion', 
                'Remove-OCIDatabasemigrationConnection', 
                'Remove-OCIDatabasemigrationJob', 
                'Remove-OCIDatabasemigrationMigration', 
                'Remove-OCIDatabasemigrationMigrationObjects', 
+               'Remove-OCIDatabasemigrationParameterFileVersion', 
                'Start-OCIDatabasemigrationMigration', 
                'Stop-OCIDatabasemigrationJob', 
                'Update-OCIDatabasemigrationConnection', 
