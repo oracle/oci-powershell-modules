@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Identitydomains.dll'
 
 # Version number of this module.
-ModuleVersion = '86.4.0'
+ModuleVersion = '87.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '86.4.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '87.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Identitydomains.dll'
@@ -167,6 +167,8 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'Get-OCIIdentitydomainsSettingsList', 
                'Get-OCIIdentitydomainsSmtpCredential', 
                'Get-OCIIdentitydomainsSmtpCredentialsList', 
+               'Get-OCIIdentitydomainsSocialIdentityProvider', 
+               'Get-OCIIdentitydomainsSocialIdentityProvidersList', 
                'Get-OCIIdentitydomainsUser', 
                'Get-OCIIdentitydomainsUserAttributesSetting', 
                'Get-OCIIdentitydomainsUserAttributesSettingsList', 
@@ -212,6 +214,7 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'Invoke-OCIIdentitydomainsPatchSelfRegistrationProfile', 
                'Invoke-OCIIdentitydomainsPatchSetting', 
                'Invoke-OCIIdentitydomainsPatchSmtpCredential', 
+               'Invoke-OCIIdentitydomainsPatchSocialIdentityProvider', 
                'Invoke-OCIIdentitydomainsPatchUser', 
                'Invoke-OCIIdentitydomainsPatchUserAttributesSetting', 
                'Invoke-OCIIdentitydomainsSearchAccountMgmtInfos', 
@@ -250,6 +253,7 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'Invoke-OCIIdentitydomainsSearchSelfRegistrationProfiles', 
                'Invoke-OCIIdentitydomainsSearchSettings', 
                'Invoke-OCIIdentitydomainsSearchSmtpCredentials', 
+               'Invoke-OCIIdentitydomainsSearchSocialIdentityProviders', 
                'Invoke-OCIIdentitydomainsSearchUserAttributesSettings', 
                'Invoke-OCIIdentitydomainsSearchUserDbCredentials', 
                'Invoke-OCIIdentitydomainsSearchUsers', 
@@ -289,6 +293,7 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'New-OCIIdentitydomainsSecurityQuestion', 
                'New-OCIIdentitydomainsSelfRegistrationProfile', 
                'New-OCIIdentitydomainsSmtpCredential', 
+               'New-OCIIdentitydomainsSocialIdentityProvider', 
                'New-OCIIdentitydomainsUser', 
                'New-OCIIdentitydomainsUserDbCredential', 
                'Remove-OCIIdentitydomainsApiKey', 'Remove-OCIIdentitydomainsApp', 
@@ -324,6 +329,7 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'Remove-OCIIdentitydomainsSecurityQuestion', 
                'Remove-OCIIdentitydomainsSelfRegistrationProfile', 
                'Remove-OCIIdentitydomainsSmtpCredential', 
+               'Remove-OCIIdentitydomainsSocialIdentityProvider', 
                'Remove-OCIIdentitydomainsUser', 
                'Remove-OCIIdentitydomainsUserDbCredential', 
                'Write-OCIIdentitydomainsAccountRecoverySetting', 
@@ -349,7 +355,9 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'Write-OCIIdentitydomainsSchema', 
                'Write-OCIIdentitydomainsSecurityQuestionSetting', 
                'Write-OCIIdentitydomainsSelfRegistrationProfile', 
-               'Write-OCIIdentitydomainsSetting', 'Write-OCIIdentitydomainsUser', 
+               'Write-OCIIdentitydomainsSetting', 
+               'Write-OCIIdentitydomainsSocialIdentityProvider', 
+               'Write-OCIIdentitydomainsUser', 
                'Write-OCIIdentitydomainsUserCapabilitiesChanger', 
                'Write-OCIIdentitydomainsUserPasswordChanger', 
                'Write-OCIIdentitydomainsUserPasswordResetter', 
