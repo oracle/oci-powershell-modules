@@ -30,6 +30,15 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Fleet-unique identifier of the related application.")]
         public string ApplicationId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the managed instance.")]
+        public string HostName { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).")]
+        public System.Nullable<System.DateTime> TimeStart { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).")]
+        public System.Nullable<System.DateTime> TimeEnd { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -44,12 +53,6 @@ namespace Oci.JmsService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).")]
-        public System.Nullable<System.DateTime> TimeStart { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).")]
-        public System.Nullable<System.DateTime> TimeEnd { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
@@ -66,13 +69,14 @@ namespace Oci.JmsService.Cmdlets
                     FleetId = FleetId,
                     ManagedInstanceId = ManagedInstanceId,
                     ApplicationId = ApplicationId,
+                    HostName = HostName,
+                    TimeStart = TimeStart,
+                    TimeEnd = TimeEnd,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
-                    OpcRequestId = OpcRequestId,
-                    TimeStart = TimeStart,
-                    TimeEnd = TimeEnd
+                    OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListPerformanceTuningAnalysisResultsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

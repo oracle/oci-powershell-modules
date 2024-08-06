@@ -40,6 +40,12 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The library name.")]
         public string LibraryName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis.")]
+        public System.Nullable<int> CvssScoreGreaterThan { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis.")]
+        public System.Nullable<int> CvssScoreLessThan { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).")]
         public System.Nullable<System.DateTime> TimeStart { get; set; }
 
@@ -77,6 +83,8 @@ namespace Oci.JmsService.Cmdlets
                     LibraryKey = LibraryKey,
                     LibraryNameContains = LibraryNameContains,
                     LibraryName = LibraryName,
+                    CvssScoreGreaterThan = CvssScoreGreaterThan,
+                    CvssScoreLessThan = CvssScoreLessThan,
                     TimeStart = TimeStart,
                     TimeEnd = TimeEnd,
                     Limit = Limit,
