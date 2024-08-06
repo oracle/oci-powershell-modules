@@ -42,6 +42,12 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Fleet-unique identifier of the managed instance.")]
         public string ManagedInstanceId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The operation type of the work request.")]
+        public System.Nullable<Oci.JmsService.Models.OperationType> OperationType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The status of the work request.")]
+        public System.Collections.Generic.List<Oci.JmsService.Models.OperationStatus> Status { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -60,7 +66,9 @@ namespace Oci.JmsService.Cmdlets
                     OpcRequestId = OpcRequestId,
                     Page = Page,
                     Limit = Limit,
-                    ManagedInstanceId = ManagedInstanceId
+                    ManagedInstanceId = ManagedInstanceId,
+                    OperationType = OperationType,
+                    Status = Status
                 };
                 IEnumerable<ListWorkRequestsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

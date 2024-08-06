@@ -28,6 +28,9 @@ namespace Oci.DevopsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The commit or reference name to compare changes against. If base version is not provided, the difference goes against an empty tree.")]
         public string BaseVersion { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The target repository identifier")]
+        public string TargetRepositoryId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Boolean value to indicate whether to use merge base or most recent revision.")]
         public System.Nullable<bool> IsComparisonFromMergeBase { get; set; }
 
@@ -46,6 +49,7 @@ namespace Oci.DevopsService.Cmdlets
                     RepositoryId = RepositoryId,
                     TargetVersion = TargetVersion,
                     BaseVersion = BaseVersion,
+                    TargetRepositoryId = TargetRepositoryId,
                     IsComparisonFromMergeBase = IsComparisonFromMergeBase,
                     OpcRequestId = OpcRequestId
                 };
