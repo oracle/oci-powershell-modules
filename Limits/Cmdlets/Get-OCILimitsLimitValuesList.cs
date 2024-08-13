@@ -27,6 +27,9 @@ namespace Oci.LimitsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The target service name.")]
         public string ServiceName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the subscription assigned to tenant")]
+        public string SubscriptionId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter entries by scope type.")]
         public System.Nullable<Oci.LimitsService.Requests.ListLimitValuesRequest.ScopeTypeEnum> ScopeType { get; set; }
 
@@ -65,6 +68,7 @@ namespace Oci.LimitsService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     ServiceName = ServiceName,
+                    SubscriptionId = SubscriptionId,
                     ScopeType = ScopeType,
                     AvailabilityDomain = AvailabilityDomain,
                     Name = Name,

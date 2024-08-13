@@ -34,6 +34,9 @@ namespace Oci.LimitsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the subscription assigned to tenant")]
+        public string SubscriptionId { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -47,7 +50,8 @@ namespace Oci.LimitsService.Cmdlets
                     LimitName = LimitName,
                     CompartmentId = CompartmentId,
                     AvailabilityDomain = AvailabilityDomain,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    SubscriptionId = SubscriptionId
                 };
 
                 response = client.GetResourceAvailability(request).GetAwaiter().GetResult();
