@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 99.0.0 - 08-13-2024
+
+- my changelog
+
 ## 88.0.0 - 2024-08-06
 ### Added 
 - Support for calling Oracle Cloud Infrastructure services in the `me-riyadh-1` region 
