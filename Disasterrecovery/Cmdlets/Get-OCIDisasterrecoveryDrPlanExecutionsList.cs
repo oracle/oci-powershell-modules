@@ -34,9 +34,6 @@ Example: `ocid1.drprotectiongroup.oc1..uniqueID`")]
 Example: `ocid1.drplanexecution.oc1..uniqueID`")]
         public string DrPlanExecutionId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The DR plan execution type.")]
-        public System.Nullable<Oci.DisasterrecoveryService.Models.DrPlanExecutionType> DrPlanExecutionType { get; set; }
-
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given display name.
 
 Example: `MyResourceDisplayName`")]
@@ -80,7 +77,6 @@ Example: `MyResourceDisplayName`")]
                     DrProtectionGroupId = DrProtectionGroupId,
                     LifecycleState = LifecycleState,
                     DrPlanExecutionId = DrPlanExecutionId,
-                    DrPlanExecutionType = DrPlanExecutionType,
                     DisplayName = DisplayName,
                     Limit = Limit,
                     Page = Page,
