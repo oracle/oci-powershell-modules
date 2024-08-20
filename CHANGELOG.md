@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 89.0.0 - 2024-08-20
+### Added 
+- Support for Fleet Application Management service 
+- Support for creating maintenance runs using autonomous database software images in the Database service 
+- Support for Object Storage buckets, Oracle databases, Oracle databases on exascale Infrastructure, autonomous container databases, and autonomous container databases on Cloud at Customer in the Disaster Recovery service 
+- Support for multiple sharing modes in the OCI Cache service 
+- Support for extended data retention periods for instances in the Integration Cloud service 
+- Support for SQL watch and lifecycle management in the Database management service 
+- Support for identity domains and feature sets in the Analytics Cloud service 
+- Support for automatically extending the storage space for MySQL DB systems in pre-defined increments in the MySQL Database service 
+
+### Breaking Changes 
+- The parameter `DrPlanExecutionType` has been removed from the `Get-OCIDisasterrecoveryDrPlanExecutionsList` cmdlet in the Disaster Recovery service
+
 ## 88.1.0 - 2024-08-13
 ### Added 
 - Support for calling Oracle Cloud Infrastructure services in the `me-abudhabi-4` region 
