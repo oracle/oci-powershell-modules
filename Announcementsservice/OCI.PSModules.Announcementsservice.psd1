@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Announcementsservice.dll'
 
 # Version number of this module.
-ModuleVersion = '89.0.0'
+ModuleVersion = '90.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '89.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '90.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Announcementsservice.dll'
@@ -72,12 +72,14 @@ FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Get-OCIAnnouncementsserviceAnnouncement', 
+               'Get-OCIAnnouncementsserviceAnnouncementCompartment', 
                'Get-OCIAnnouncementsserviceAnnouncementsList', 
                'Get-OCIAnnouncementsserviceAnnouncementsPreference', 
                'Get-OCIAnnouncementsserviceAnnouncementsPreferencesList', 
                'Get-OCIAnnouncementsserviceAnnouncementSubscription', 
                'Get-OCIAnnouncementsserviceAnnouncementSubscriptionsList', 
                'Get-OCIAnnouncementsserviceAnnouncementUserStatus', 
+               'Get-OCIAnnouncementsserviceServicesList', 
                'Move-OCIAnnouncementsserviceAnnouncementSubscriptionCompartment', 
                'New-OCIAnnouncementsserviceAnnouncementsPreference', 
                'New-OCIAnnouncementsserviceAnnouncementSubscription', 

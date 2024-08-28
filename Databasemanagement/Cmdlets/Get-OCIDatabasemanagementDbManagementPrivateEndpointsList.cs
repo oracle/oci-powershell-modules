@@ -33,6 +33,9 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The option to filter Database Management private endpoints that can used for Oracle Databases in a cluster. This should be used along with the vcnId query parameter.")]
         public System.Nullable<bool> IsCluster { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.")]
+        public System.Nullable<bool> IsDnsResolutionEnabled { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The lifecycle state of a resource.")]
         public System.Nullable<Oci.DatabasemanagementService.Models.LifecycleStates> LifecycleState { get; set; }
 
@@ -67,6 +70,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
                     Name = Name,
                     VcnId = VcnId,
                     IsCluster = IsCluster,
+                    IsDnsResolutionEnabled = IsDnsResolutionEnabled,
                     LifecycleState = LifecycleState,
                     Limit = Limit,
                     Page = Page,

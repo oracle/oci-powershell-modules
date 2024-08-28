@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Objectstorage.dll'
 
 # Version number of this module.
-ModuleVersion = '89.0.0'
+ModuleVersion = '90.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '89.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '90.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Objectstorage.dll'
@@ -83,6 +83,8 @@ CmdletsToExport = 'Copy-OCIObjectstorageObject', 'Get-OCIObjectstorageBucket',
                'Get-OCIObjectstorageObjectVersionsList', 
                'Get-OCIObjectstoragePreauthenticatedRequest', 
                'Get-OCIObjectstoragePreauthenticatedRequestsList', 
+               'Get-OCIObjectstoragePrivateEndpoint', 
+               'Get-OCIObjectstoragePrivateEndpointsList', 
                'Get-OCIObjectstorageReplicationPoliciesList', 
                'Get-OCIObjectstorageReplicationPolicy', 
                'Get-OCIObjectstorageReplicationSourcesList', 
@@ -100,17 +102,20 @@ CmdletsToExport = 'Copy-OCIObjectstorageObject', 'Get-OCIObjectstorageBucket',
                'Invoke-OCIObjectstorageReencryptObject', 
                'New-OCIObjectstorageBucket', 'New-OCIObjectstorageMultipartUpload', 
                'New-OCIObjectstoragePreauthenticatedRequest', 
+               'New-OCIObjectstoragePrivateEndpoint', 
                'New-OCIObjectstorageReplicationPolicy', 
                'New-OCIObjectstorageRetentionRule', 
                'Remove-OCIObjectstorageBucket', 'Remove-OCIObjectstorageObject', 
                'Remove-OCIObjectstorageObjectLifecyclePolicy', 
                'Remove-OCIObjectstoragePreauthenticatedRequest', 
+               'Remove-OCIObjectstoragePrivateEndpoint', 
                'Remove-OCIObjectstorageReplicationPolicy', 
                'Remove-OCIObjectstorageRetentionRule', 
                'Rename-OCIObjectstorageObject', 'Restore-OCIObjectstorageObjects', 
                'Stop-OCIObjectstorageMultipartUpload', 
                'Stop-OCIObjectstorageWorkRequest', 'Update-OCIObjectstorageBucket', 
                'Update-OCIObjectstorageNamespaceMetadata', 
+               'Update-OCIObjectstoragePrivateEndpoint', 
                'Update-OCIObjectstorageRetentionRule', 
                'Update-OCIObjectstorageTier', 'Write-OCIObjectstorageObject', 
                'Write-OCIObjectstorageObjectLifecyclePolicy', 

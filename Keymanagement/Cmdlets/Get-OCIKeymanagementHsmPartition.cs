@@ -21,13 +21,13 @@ namespace Oci.KeymanagementService.Cmdlets
     public class GetOCIKeymanagementHsmPartition : OCIKmsHsmClusterCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the HSM Cluster.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the HSM Cluster.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.", ParameterSetName = Default)]
         public string HsmClusterId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the HSM Partition.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the HSM Partition.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the HSM Partition. This is a unique identifier which each hsmPartition will have.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the HSM Partition. This is a unique identifier which each hsmPartition will have.", ParameterSetName = Default)]
         public string HsmPartitionId { get; set; }
 
         

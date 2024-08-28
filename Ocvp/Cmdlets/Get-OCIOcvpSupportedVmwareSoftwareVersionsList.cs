@@ -39,6 +39,9 @@ namespace Oci.OcvpService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match or support the given ESXi host shape.")]
         public string HostShapeName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only VMware software versions that the given VMware software version can be upgraded to.")]
+        public string VersionToUpgrade { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -56,7 +59,8 @@ namespace Oci.OcvpService.Cmdlets
                     Page = Page,
                     OpcRequestId = OpcRequestId,
                     Version = Version,
-                    HostShapeName = HostShapeName
+                    HostShapeName = HostShapeName,
+                    VersionToUpgrade = VersionToUpgrade
                 };
                 IEnumerable<ListSupportedVmwareSoftwareVersionsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

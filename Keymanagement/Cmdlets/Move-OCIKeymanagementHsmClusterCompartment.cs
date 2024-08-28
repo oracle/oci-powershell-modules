@@ -19,7 +19,7 @@ namespace Oci.KeymanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.KeymanagementService.Responses.ChangeHsmClusterCompartmentResponse) })]
     public class MoveOCIKeymanagementHsmClusterCompartment : OCIKmsHsmClusterCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the HSM Cluster.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.")]
         public string HsmClusterId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details of change HSM Cluster compartment.")]
