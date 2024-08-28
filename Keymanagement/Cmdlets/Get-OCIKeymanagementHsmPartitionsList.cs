@@ -21,7 +21,7 @@ namespace Oci.KeymanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.KeymanagementService.Models.HsmPartitionCollection), typeof(Oci.KeymanagementService.Responses.ListHsmPartitionsResponse) })]
     public class GetOCIKeymanagementHsmPartitionsList : OCIKmsHsmClusterCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the HSM Cluster.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.")]
         public string HsmClusterId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return in a paginated ""List"" call.", ParameterSetName = LimitSet)]

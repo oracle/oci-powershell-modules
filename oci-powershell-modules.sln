@@ -289,6 +289,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Demandsignal"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Fleetappsmanagement", "Fleetappsmanagement\OCI.PSModules.Fleetappsmanagement.csproj", "{0C4F70F6-1623-4922-AB8F-6B01AD0A39F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Delegateaccesscontrol", "Delegateaccesscontrol\OCI.PSModules.Delegateaccesscontrol.csproj", "{FCA319E3-3347-4B26-8E03-74F907536FEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2030,5 +2032,17 @@ Global
         {0C4F70F6-1623-4922-AB8F-6B01AD0A39F4}.Release|x64.Build.0 = Release|Any CPU
         {0C4F70F6-1623-4922-AB8F-6B01AD0A39F4}.Release|x86.ActiveCfg = Release|Any CPU
         {0C4F70F6-1623-4922-AB8F-6B01AD0A39F4}.Release|x86.Build.0 = Release|Any CPU
+        {FCA319E3-3347-4B26-8E03-74F907536FEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {FCA319E3-3347-4B26-8E03-74F907536FEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {FCA319E3-3347-4B26-8E03-74F907536FEB}.Debug|x64.ActiveCfg = Debug|Any CPU
+        {FCA319E3-3347-4B26-8E03-74F907536FEB}.Debug|x64.Build.0 = Debug|Any CPU
+        {FCA319E3-3347-4B26-8E03-74F907536FEB}.Debug|x86.ActiveCfg = Debug|Any CPU
+        {FCA319E3-3347-4B26-8E03-74F907536FEB}.Debug|x86.Build.0 = Debug|Any CPU
+        {FCA319E3-3347-4B26-8E03-74F907536FEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {FCA319E3-3347-4B26-8E03-74F907536FEB}.Release|Any CPU.Build.0 = Release|Any CPU
+        {FCA319E3-3347-4B26-8E03-74F907536FEB}.Release|x64.ActiveCfg = Release|Any CPU
+        {FCA319E3-3347-4B26-8E03-74F907536FEB}.Release|x64.Build.0 = Release|Any CPU
+        {FCA319E3-3347-4B26-8E03-74F907536FEB}.Release|x86.ActiveCfg = Release|Any CPU
+        {FCA319E3-3347-4B26-8E03-74F907536FEB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

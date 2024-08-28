@@ -19,7 +19,7 @@ namespace Oci.KeymanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.KeymanagementService.Models.HsmCluster), typeof(Oci.KeymanagementService.Responses.CancelHsmClusterDeletionResponse) })]
     public class StopOCIKeymanagementHsmClusterDeletion : OCIKmsHsmClusterCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the HSM Cluster.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.")]
         public string HsmClusterId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

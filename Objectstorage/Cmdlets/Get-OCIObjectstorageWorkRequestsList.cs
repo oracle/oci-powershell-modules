@@ -24,6 +24,9 @@ namespace Oci.ObjectstorageService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list buckets.")]
         public string CompartmentId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the privateEndpoint for which to list work requests.")]
+        public string PrivateEndpointName { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcClientRequestId { get; set; }
 
@@ -46,6 +49,7 @@ namespace Oci.ObjectstorageService.Cmdlets
                 request = new ListWorkRequestsRequest
                 {
                     CompartmentId = CompartmentId,
+                    PrivateEndpointName = PrivateEndpointName,
                     OpcClientRequestId = OpcClientRequestId,
                     Page = Page,
                     Limit = Limit
