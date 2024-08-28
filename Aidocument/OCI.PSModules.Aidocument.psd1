@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Aidocument.dll'
 
 # Version number of this module.
-ModuleVersion = '89.0.0'
+ModuleVersion = '90.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '89.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '90.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Aidocument.dll'
@@ -71,7 +71,8 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Aidocument.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIAidocumentModel', 'Get-OCIAidocumentModelsList', 
+CmdletsToExport = 'Add-OCIAidocumentModelLock', 'Add-OCIAidocumentProjectLock', 
+               'Get-OCIAidocumentModel', 'Get-OCIAidocumentModelsList', 
                'Get-OCIAidocumentProcessorJob', 'Get-OCIAidocumentProject', 
                'Get-OCIAidocumentProjectsList', 'Get-OCIAidocumentWorkRequest', 
                'Get-OCIAidocumentWorkRequestErrorsList', 
@@ -82,7 +83,8 @@ CmdletsToExport = 'Get-OCIAidocumentModel', 'Get-OCIAidocumentModelsList',
                'Move-OCIAidocumentModelCompartment', 
                'Move-OCIAidocumentProjectCompartment', 'New-OCIAidocumentModel', 
                'New-OCIAidocumentProcessorJob', 'New-OCIAidocumentProject', 
-               'Remove-OCIAidocumentModel', 'Remove-OCIAidocumentProject', 
+               'Remove-OCIAidocumentModel', 'Remove-OCIAidocumentModelLock', 
+               'Remove-OCIAidocumentProject', 'Remove-OCIAidocumentProjectLock', 
                'Stop-OCIAidocumentProcessorJob', 'Stop-OCIAidocumentWorkRequest', 
                'Update-OCIAidocumentModel', 'Update-OCIAidocumentProject'
 
