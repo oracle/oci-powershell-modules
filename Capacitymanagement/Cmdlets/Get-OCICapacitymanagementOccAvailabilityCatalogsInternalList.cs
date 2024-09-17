@@ -24,6 +24,9 @@ namespace Oci.CapacitymanagementService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.")]
         public string CompartmentId { get; set; }
 
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The customer group ocid by which we would filter the list.")]
+        public string OccCustomerGroupId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The namespace by which we would filter the list.")]
         public System.Nullable<Oci.CapacitymanagementService.Models.Namespace> Namespace { get; set; }
 
@@ -35,9 +38,6 @@ namespace Oci.CapacitymanagementService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter the list of availability catalogs based on the catalog state.")]
         public System.Nullable<Oci.CapacitymanagementService.Models.OccAvailabilityCatalog.CatalogStateEnum> CatalogState { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The customer group ocid by which we would filter the list.")]
-        public string OccCustomerGroupId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -67,11 +67,11 @@ namespace Oci.CapacitymanagementService.Cmdlets
                 request = new ListOccAvailabilityCatalogsInternalRequest
                 {
                     CompartmentId = CompartmentId,
+                    OccCustomerGroupId = OccCustomerGroupId,
                     Namespace = Namespace,
                     Id = Id,
                     DisplayName = DisplayName,
                     CatalogState = CatalogState,
-                    OccCustomerGroupId = OccCustomerGroupId,
                     Limit = Limit,
                     Page = Page,
                     OpcRequestId = OpcRequestId,
