@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Capacitymanagement.dll'
 
 # Version number of this module.
-ModuleVersion = '90.0.0'
+ModuleVersion = '91.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '90.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '91.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Capacitymanagement.dll'
@@ -72,6 +72,8 @@ FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Get-OCICapacitymanagementInternalNamespaceOccOverviewsList', 
+               'Get-OCICapacitymanagementInternalOccHandoverResourceBlockDetailsList', 
+               'Get-OCICapacitymanagementInternalOccHandoverResourceBlocksList', 
                'Get-OCICapacitymanagementOccAvailabilitiesList', 
                'Get-OCICapacitymanagementOccAvailabilityCatalog', 
                'Get-OCICapacitymanagementOccAvailabilityCatalogContent', 
@@ -82,17 +84,25 @@ CmdletsToExport = 'Get-OCICapacitymanagementInternalNamespaceOccOverviewsList',
                'Get-OCICapacitymanagementOccCapacityRequestsList', 
                'Get-OCICapacitymanagementOccCustomerGroup', 
                'Get-OCICapacitymanagementOccCustomerGroupsList', 
+               'Get-OCICapacitymanagementOccHandoverResourceBlockDetailsList', 
+               'Get-OCICapacitymanagementOccHandoverResourceBlocksList', 
                'Get-OCICapacitymanagementOccOverviewsList', 
                'Invoke-OCICapacitymanagementPatchInternalOccCapacityRequest', 
                'Invoke-OCICapacitymanagementPatchOccCapacityRequest', 
                'Invoke-OCICapacitymanagementPublishOccAvailabilityCatalog', 
                'New-OCICapacitymanagementOccAvailabilityCatalog', 
                'New-OCICapacitymanagementOccCapacityRequest', 
+               'New-OCICapacitymanagementOccCustomer', 
+               'New-OCICapacitymanagementOccCustomerGroup', 
                'Remove-OCICapacitymanagementOccAvailabilityCatalog', 
                'Remove-OCICapacitymanagementOccCapacityRequest', 
+               'Remove-OCICapacitymanagementOccCustomer', 
+               'Remove-OCICapacitymanagementOccCustomerGroup', 
                'Update-OCICapacitymanagementInternalOccCapacityRequest', 
                'Update-OCICapacitymanagementOccAvailabilityCatalog', 
-               'Update-OCICapacitymanagementOccCapacityRequest'
+               'Update-OCICapacitymanagementOccCapacityRequest', 
+               'Update-OCICapacitymanagementOccCustomer', 
+               'Update-OCICapacitymanagementOccCustomerGroup'
 
 # Variables to export from this module
 VariablesToExport = '*'
