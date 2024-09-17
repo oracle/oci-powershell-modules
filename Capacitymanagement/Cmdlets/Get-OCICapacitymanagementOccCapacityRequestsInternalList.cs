@@ -24,7 +24,7 @@ namespace Oci.CapacitymanagementService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The customer group ocid by which we would filter the list.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The customer group ocid by which we would filter the list.")]
         public string OccCustomerGroupId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the list of capacity requests based on the OCID of the availability catalog against which they were created.")]
