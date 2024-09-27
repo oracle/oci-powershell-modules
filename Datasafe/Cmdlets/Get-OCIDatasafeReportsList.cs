@@ -45,6 +45,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for timeGenerated is descending. Default order for displayName is ascending. If no value is specified timeGenerated is default.")]
         public System.Nullable<Oci.DatasafeService.Requests.ListReportsRequest.SortByEnum> SortBy { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only resources that match the specified mime type.")]
+        public System.Nullable<Oci.DatasafeService.Requests.ListReportsRequest.MimeTypeEnum> MimeType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the report definition to filter the list of reports")]
         public string ReportDefinitionId { get; set; }
 
@@ -87,6 +90,7 @@ namespace Oci.DatasafeService.Cmdlets
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
+                    MimeType = MimeType,
                     ReportDefinitionId = ReportDefinitionId,
                     TimeGeneratedGreaterThanOrEqualTo = TimeGeneratedGreaterThanOrEqualTo,
                     TimeGeneratedLessThan = TimeGeneratedLessThan,
