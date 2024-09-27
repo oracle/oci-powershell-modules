@@ -79,6 +79,9 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned. The key for each tag is ""{tagName}.true"".  All inputs are case-insensitive. Currently, only existence (""true"" at the end) is supported. Absence (""false"" at the end) is not supported. Multiple values for different tag names are interpreted as ""AND"".")]
         public System.Collections.Generic.List<string> FreeformTagExists { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A flag to search all resources within a given compartment and all sub-compartments.")]
+        public System.Nullable<bool> CompartmentIdInSubtree { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -111,6 +114,7 @@ namespace Oci.OpsiService.Cmdlets
                     FreeformTagEquals = FreeformTagEquals,
                     DefinedTagExists = DefinedTagExists,
                     FreeformTagExists = FreeformTagExists,
+                    CompartmentIdInSubtree = CompartmentIdInSubtree,
                     OpcRequestId = OpcRequestId
                 };
 

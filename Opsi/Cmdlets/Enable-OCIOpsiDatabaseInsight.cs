@@ -19,7 +19,7 @@ namespace Oci.OpsiService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OpsiService.Responses.EnableDatabaseInsightResponse) })]
     public class EnableOCIOpsiDatabaseInsight : OCIOperationsInsightsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the database to be enabled in Operations Insights. This parameter also accepts subtypes <Oci.OpsiService.Models.EnableEmManagedExternalDatabaseInsightDetails>, <Oci.OpsiService.Models.EnableMdsMySqlDatabaseInsightDetails>, <Oci.OpsiService.Models.EnablePeComanagedDatabaseInsightDetails> of type <Oci.OpsiService.Models.EnableDatabaseInsightDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the database to be enabled in Operations Insights. This parameter also accepts subtypes <Oci.OpsiService.Models.EnableEmManagedExternalDatabaseInsightDetails>, <Oci.OpsiService.Models.EnableMdsMySqlDatabaseInsightDetails>, <Oci.OpsiService.Models.EnableMacsManagedCloudDatabaseInsightDetails>, <Oci.OpsiService.Models.EnablePeComanagedDatabaseInsightDetails> of type <Oci.OpsiService.Models.EnableDatabaseInsightDetails>.")]
         public EnableDatabaseInsightDetails EnableDatabaseInsightDetails { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique database insight identifier")]
