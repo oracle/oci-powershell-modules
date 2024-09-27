@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Datasafe.dll'
 
 # Version number of this module.
-ModuleVersion = '91.0.0'
+ModuleVersion = '91.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '91.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '91.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Datasafe.dll'
@@ -162,6 +162,7 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'Get-OCIDatasafeSqlCollectionAnalyticsList', 
                'Get-OCIDatasafeSqlCollectionLogInsightsList', 
                'Get-OCIDatasafeSqlCollectionsList', 
+               'Get-OCIDatasafeSqlFirewallAllowedSql', 
                'Get-OCIDatasafeSqlFirewallAllowedSqlAnalyticsList', 
                'Get-OCIDatasafeSqlFirewallAllowedSqlsList', 
                'Get-OCIDatasafeSqlFirewallPoliciesList', 
@@ -184,6 +185,8 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'Get-OCIDatasafeWorkRequestsList', 'Invoke-OCIDatasafeAlertsUpdate', 
                'Invoke-OCIDatasafeApplyDiscoveryJobResults', 
                'Invoke-OCIDatasafeApplySdmMaskingPolicyDifference', 
+               'Invoke-OCIDatasafeBulkCreateSqlFirewallAllowedSqls', 
+               'Invoke-OCIDatasafeBulkDeleteSqlFirewallAllowedSqls', 
                'Invoke-OCIDatasafeCalculateAuditVolumeAvailable', 
                'Invoke-OCIDatasafeCalculateAuditVolumeCollected', 
                'Invoke-OCIDatasafeCompareSecurityAssessment', 
@@ -203,6 +206,7 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'Invoke-OCIDatasafePatchMaskingColumns', 
                'Invoke-OCIDatasafePatchSdmMaskingPolicyDifferenceColumns', 
                'Invoke-OCIDatasafePatchSensitiveColumns', 
+               'Invoke-OCIDatasafePatchSqlFirewallAllowedSql', 
                'Invoke-OCIDatasafePatchTargetAlertPolicyAssociation', 
                'Invoke-OCIDatasafeProvisionAuditPolicy', 
                'Invoke-OCIDatasafePurgeSqlCollectionLogs', 
@@ -291,6 +295,7 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'Remove-OCIDatasafeSensitiveDataModel', 
                'Remove-OCIDatasafeSensitiveType', 
                'Remove-OCIDatasafeSqlCollection', 
+               'Remove-OCIDatasafeSqlFirewallAllowedSql', 
                'Remove-OCIDatasafeSqlFirewallPolicy', 
                'Remove-OCIDatasafeTargetAlertPolicyAssociation', 
                'Remove-OCIDatasafeTargetDatabase', 
