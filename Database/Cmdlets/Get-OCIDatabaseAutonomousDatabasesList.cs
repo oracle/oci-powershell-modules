@@ -47,6 +47,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given lifecycle state exactly.")]
         public System.Nullable<Oci.DatabaseService.Models.AutonomousDatabaseSummary.LifecycleStateEnum> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that not match the given lifecycle state.")]
+        public System.Nullable<Oci.DatabaseService.Models.AutonomousDatabaseSummary.LifecycleStateEnum> LifecycleStateNotEqualTo { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only autonomous database resources that match the specified workload type.")]
         public System.Nullable<Oci.DatabaseService.Models.AutonomousDatabaseSummary.DbWorkloadEnum> DbWorkload { get; set; }
 
@@ -94,6 +97,7 @@ namespace Oci.DatabaseService.Cmdlets
                     SortOrder = SortOrder,
                     InfrastructureType = InfrastructureType,
                     LifecycleState = LifecycleState,
+                    LifecycleStateNotEqualTo = LifecycleStateNotEqualTo,
                     DbWorkload = DbWorkload,
                     DbVersion = DbVersion,
                     IsFreeTier = IsFreeTier,
