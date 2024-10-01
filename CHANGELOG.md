@@ -3,6 +3,31 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 92.0.0 - 2024-10-01
+### Added 
+- Support for calling Oracle Cloud Infrastructure services in the `us-somerset-1` region 
+- Support for calling Oracle Cloud Infrastructure services in the `us-thames-1` region 
+- Support for Generative AI Agent service 
+- Support for Security Attribute service 
+- Support for Zero Trust Packet Routing service 
+- Support for zero trust packet routing security attributes in the Database service 
+- Support for zero trust packet routing security attributes in the Networking service 
+- Support for zero trust packet routing security attributes in the Network Load Balancer service 
+- Support for disaster recovery failover in the Integration Cloud service 
+- Support for undeleting autonomous databases in the Database service 
+- Support for assigning key versions for the pluggable databases in the Database service 
+- Support for lifecycle states on list autonomous database operation in the Database service 
+- Support for data masking parameter on list refresh activity operation in the Fusion Application as a Service 
+- Support for configuring custom endpoints on an instance in the Integration Cloud service 
+- Support for updating channel schedules on instance create operation in the Analytics service 
+- Support for ExaCC via management agents in the Operations Insights service 
+- Support for appending and deleting allowed SQLs from SQL firewall policies in the Data Safe service 
+- Support for alarm suppressions with compartment targets and recurring schedules in the Monitoring service 
+
+### Breaking Changes 
+- The enum value `Standby` has been removed from the enum `LifecycleStateEnum` in the models `Oci.IntegrationService.Models.IntegrationInstance` and `Oci.IntegrationService.Models.IntegrationInstanceSummary` in the Integration Cloud service in the .NET SDK 
+- The enum value `Standby` has been removed from the enum `LifecycleStateEnum` in the request `Oci.IntegrationService.Requests.ListIntegrationInstancesRequest` in the Integration Cloud service in the .NET SDK
+
 ## 92.0.0 - 2024-09-24
 ### Added
 - Support for Generative AI Agent service
