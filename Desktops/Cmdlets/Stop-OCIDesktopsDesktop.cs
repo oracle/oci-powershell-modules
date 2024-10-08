@@ -31,6 +31,9 @@ namespace Oci.DesktopsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request.")]
         public string OpcRetryToken { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Force a STOP(power off) of the desktop if set to false")]
+        public System.Nullable<bool> IsSoftStop { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -43,7 +46,8 @@ namespace Oci.DesktopsService.Cmdlets
                     DesktopId = DesktopId,
                     OpcRequestId = OpcRequestId,
                     IfMatch = IfMatch,
-                    OpcRetryToken = OpcRetryToken
+                    OpcRetryToken = OpcRetryToken,
+                    IsSoftStop = IsSoftStop
                 };
 
                 response = client.StopDesktop(request).GetAwaiter().GetResult();

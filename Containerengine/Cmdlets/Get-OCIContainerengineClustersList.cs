@@ -24,7 +24,7 @@ namespace Oci.ContainerengineService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A cluster lifecycle state to filter on. Can have multiple parameters of this name.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A cluster lifecycle state to filter on. Can have multiple parameters of this name. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)")]
         public System.Collections.Generic.List<Oci.ContainerengineService.Models.ClusterLifecycleState> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name to filter on.")]
