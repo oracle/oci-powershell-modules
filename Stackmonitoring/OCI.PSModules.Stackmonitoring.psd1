@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Stackmonitoring.dll'
 
 # Version number of this module.
-ModuleVersion = '92.0.0'
+ModuleVersion = '92.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '92.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '92.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Stackmonitoring.dll'
@@ -81,6 +81,8 @@ CmdletsToExport = 'Disable-OCIStackmonitoringExternalDatabase',
                'Get-OCIStackmonitoringDiscoveryJob', 
                'Get-OCIStackmonitoringDiscoveryJobLogsList', 
                'Get-OCIStackmonitoringDiscoveryJobsList', 
+               'Get-OCIStackmonitoringMaintenanceWindow', 
+               'Get-OCIStackmonitoringMaintenanceWindowsList', 
                'Get-OCIStackmonitoringMetricExtension', 
                'Get-OCIStackmonitoringMetricExtensionsList', 
                'Get-OCIStackmonitoringMonitoredResource', 
@@ -101,6 +103,7 @@ CmdletsToExport = 'Disable-OCIStackmonitoringExternalDatabase',
                'Invoke-OCIStackmonitoringManageLicense', 
                'Invoke-OCIStackmonitoringPublishMetricExtension', 
                'Invoke-OCIStackmonitoringRequestMonitoredResourcesSummarizedCount', 
+               'Invoke-OCIStackmonitoringRetryFailedMaintenanceWindowOperation', 
                'Invoke-OCIStackmonitoringSearchAssociatedResources', 
                'Invoke-OCIStackmonitoringSearchMonitoredResourceAssociations', 
                'Invoke-OCIStackmonitoringSearchMonitoredResourceMembers', 
@@ -114,6 +117,7 @@ CmdletsToExport = 'Disable-OCIStackmonitoringExternalDatabase',
                'New-OCIStackmonitoringBaselineableMetric', 
                'New-OCIStackmonitoringConfig', 
                'New-OCIStackmonitoringDiscoveryJob', 
+               'New-OCIStackmonitoringMaintenanceWindow', 
                'New-OCIStackmonitoringMetricExtension', 
                'New-OCIStackmonitoringMonitoredResource', 
                'New-OCIStackmonitoringMonitoredResourceTask', 
@@ -122,13 +126,16 @@ CmdletsToExport = 'Disable-OCIStackmonitoringExternalDatabase',
                'Remove-OCIStackmonitoringBaselineableMetric', 
                'Remove-OCIStackmonitoringConfig', 
                'Remove-OCIStackmonitoringDiscoveryJob', 
+               'Remove-OCIStackmonitoringMaintenanceWindow', 
                'Remove-OCIStackmonitoringMetricExtension', 
                'Remove-OCIStackmonitoringMonitoredResource', 
                'Remove-OCIStackmonitoringMonitoredResourceType', 
                'Remove-OCIStackmonitoringProcessSet', 
+               'Stop-OCIStackmonitoringMaintenanceWindow', 
                'Update-OCIStackmonitoringAndPropagateTags', 
                'Update-OCIStackmonitoringBaselineableMetric', 
                'Update-OCIStackmonitoringConfig', 
+               'Update-OCIStackmonitoringMaintenanceWindow', 
                'Update-OCIStackmonitoringMetricExtension', 
                'Update-OCIStackmonitoringMonitoredResource', 
                'Update-OCIStackmonitoringMonitoredResourceTask', 
