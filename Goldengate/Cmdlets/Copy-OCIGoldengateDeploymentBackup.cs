@@ -16,7 +16,7 @@ using Oci.Common.Model;
 namespace Oci.GoldengateService.Cmdlets
 {
     [Cmdlet("Copy", "OCIGoldengateDeploymentBackup")]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.GoldengateService.Responses.CopyDeploymentBackupResponse) })]
+    [OutputType(new System.Type[] { typeof(Oci.GoldengateService.Models.DeploymentBackup), typeof(Oci.GoldengateService.Responses.CopyDeploymentBackupResponse) })]
     public class CopyOCIGoldengateDeploymentBackup : OCIGoldenGateCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique DeploymentBackup identifier.")]
@@ -51,7 +51,7 @@ namespace Oci.GoldengateService.Cmdlets
                 };
 
                 response = client.CopyDeploymentBackup(request).GetAwaiter().GetResult();
-                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
+                WriteOutput(response, response.DeploymentBackup);
                 FinishProcessing(response);
             }
             catch (OciException ex)
