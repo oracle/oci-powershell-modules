@@ -16,19 +16,19 @@ using Oci.Common.Waiters;
 
 namespace Oci.DnsService.Cmdlets
 {
-    [Cmdlet("Update", "OCIDnsSteeringPolicy", DefaultParameterSetName = Default)]
-    [OutputType(new System.Type[] { typeof(Oci.DnsService.Models.SteeringPolicy), typeof(Oci.DnsService.Responses.UpdateSteeringPolicyResponse) })]
-    public class UpdateOCIDnsSteeringPolicy : OCIDnsCmdlet
+    [Cmdlet("Invoke", "OCIDnsStageZoneDnssecKeyVersion", DefaultParameterSetName = Default)]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.DnsService.Responses.StageZoneDnssecKeyVersionResponse) })]
+    public class InvokeOCIDnsStageZoneDnssecKeyVersion : OCIDnsCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the target steering policy.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the target steering policy.", ParameterSetName = Default)]
-        public string SteeringPolicyId { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the target zone.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the target zone.", ParameterSetName = Default)]
+        public string ZoneId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"New data for the steering policy.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"New data for the steering policy.", ParameterSetName = Default)]
-        public UpdateSteeringPolicyDetails UpdateSteeringPolicyDetails { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for staging a DnssecKeyVersion.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for staging a DnssecKeyVersion.", ParameterSetName = Default)]
+        public StageZoneDnssecKeyVersionDetails StageZoneDnssecKeyVersionDetails { get; set; }
 
         
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The `If-Match` header field makes the request method conditional on the existence of at least one current representation of the target resource, when the field-value is `*`, or having a current representation of the target resource that has an entity-tag matching a member of the list of entity-tags provided in the field-value.", ParameterSetName = StatusParamSet)]
@@ -39,6 +39,11 @@ namespace Oci.DnsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The `If-Unmodified-Since` header field makes the request method conditional on the selected representation's last modification date being earlier than or equal to the date provided in the field-value.  This field accomplishes the same purpose as If-Match for cases where the user agent does not have an entity-tag for the representation.", ParameterSetName = StatusParamSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The `If-Unmodified-Since` header field makes the request method conditional on the selected representation's last modification date being earlier than or equal to the date provided in the field-value.  This field accomplishes the same purpose as If-Match for cases where the user agent does not have an entity-tag for the representation.", ParameterSetName = Default)]
         public string IfUnmodifiedSince { get; set; }
+
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).", ParameterSetName = Default)]
+        public string OpcRetryToken { get; set; }
 
         
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.", ParameterSetName = StatusParamSet)]
@@ -62,16 +67,17 @@ namespace Oci.DnsService.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            UpdateSteeringPolicyRequest request;
+            StageZoneDnssecKeyVersionRequest request;
 
             try
             {
-                request = new UpdateSteeringPolicyRequest
+                request = new StageZoneDnssecKeyVersionRequest
                 {
-                    SteeringPolicyId = SteeringPolicyId,
-                    UpdateSteeringPolicyDetails = UpdateSteeringPolicyDetails,
+                    ZoneId = ZoneId,
+                    StageZoneDnssecKeyVersionDetails = StageZoneDnssecKeyVersionDetails,
                     IfMatch = IfMatch,
                     IfUnmodifiedSince = IfUnmodifiedSince,
+                    OpcRetryToken = OpcRetryToken,
                     OpcRequestId = OpcRequestId,
                     Scope = Scope
                 };
@@ -95,7 +101,7 @@ namespace Oci.DnsService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private void HandleOutput(UpdateSteeringPolicyRequest request)
+        private void HandleOutput(StageZoneDnssecKeyVersionRequest request)
         {
             var waiterConfig = new WaiterConfiguration
             {
@@ -106,17 +112,17 @@ namespace Oci.DnsService.Cmdlets
             switch (ParameterSetName)
             { 
                 case StatusParamSet:
-                    response = client.Waiters.ForUpdateSteeringPolicy(request, waiterConfig, WaitForStatus).Execute();
+                    response = client.Waiters.ForStageZoneDnssecKeyVersion(request, waiterConfig, WaitForStatus).Execute();
                     break;
 
                 case Default:
-                    response = client.UpdateSteeringPolicy(request).GetAwaiter().GetResult();
+                    response = client.StageZoneDnssecKeyVersion(request).GetAwaiter().GetResult();
                     break;
             }
-            WriteOutput(response, response.SteeringPolicy);
+            WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
         }
 
-        private UpdateSteeringPolicyResponse response;
+        private StageZoneDnssecKeyVersionResponse response;
         private const string StatusParamSet = "StatusParamSet";
         private const string Default = "Default";
     }

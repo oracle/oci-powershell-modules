@@ -16,7 +16,7 @@ using Oci.Common.Model;
 namespace Oci.GoldengateService.Cmdlets
 {
     [Cmdlet("New", "OCIGoldengateDeploymentBackup")]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.GoldengateService.Responses.CreateDeploymentBackupResponse) })]
+    [OutputType(new System.Type[] { typeof(Oci.GoldengateService.Models.DeploymentBackup), typeof(Oci.GoldengateService.Responses.CreateDeploymentBackupResponse) })]
     public class NewOCIGoldengateDeploymentBackup : OCIGoldenGateCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specification of the DeploymentBackup to create.")]
@@ -43,7 +43,7 @@ namespace Oci.GoldengateService.Cmdlets
                 };
 
                 response = client.CreateDeploymentBackup(request).GetAwaiter().GetResult();
-                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
+                WriteOutput(response, response.DeploymentBackup);
                 FinishProcessing(response);
             }
             catch (OciException ex)
