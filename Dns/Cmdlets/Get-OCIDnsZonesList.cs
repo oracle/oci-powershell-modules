@@ -66,6 +66,9 @@ namespace Oci.DnsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Search for zones that are associated with a TSIG key.")]
         public string TsigKeyId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Search for zones that have the given `DnssecState`.")]
+        public System.Nullable<Oci.DnsService.Models.ZoneDnssecState> DnssecState { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -92,7 +95,8 @@ namespace Oci.DnsService.Cmdlets
                     SortOrder = SortOrder,
                     Scope = Scope,
                     ViewId = ViewId,
-                    TsigKeyId = TsigKeyId
+                    TsigKeyId = TsigKeyId,
+                    DnssecState = DnssecState
                 };
                 IEnumerable<ListZonesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

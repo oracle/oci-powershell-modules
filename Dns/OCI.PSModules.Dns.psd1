@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Dns.dll'
 
 # Version number of this module.
-ModuleVersion = '92.1.0'
+ModuleVersion = '93.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '92.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '93.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Dns.dll'
@@ -81,7 +81,10 @@ CmdletsToExport = 'Get-OCIDnsDomainRecords', 'Get-OCIDnsResolver',
                'Get-OCIDnsZone', 'Get-OCIDnsZoneContent', 'Get-OCIDnsZoneRecords', 
                'Get-OCIDnsZonesList', 'Get-OCIDnsZoneTransferServersList', 
                'Invoke-OCIDnsPatchDomainRecords', 'Invoke-OCIDnsPatchRRSet', 
-               'Invoke-OCIDnsPatchZoneRecords', 'Move-OCIDnsResolverCompartment', 
+               'Invoke-OCIDnsPatchZoneRecords', 
+               'Invoke-OCIDnsPromoteZoneDnssecKeyVersion', 
+               'Invoke-OCIDnsStageZoneDnssecKeyVersion', 
+               'Move-OCIDnsResolverCompartment', 
                'Move-OCIDnsSteeringPolicyCompartment', 
                'Move-OCIDnsTsigKeyCompartment', 'Move-OCIDnsViewCompartment', 
                'Move-OCIDnsZoneCompartment', 'New-OCIDnsResolverEndpoint', 
