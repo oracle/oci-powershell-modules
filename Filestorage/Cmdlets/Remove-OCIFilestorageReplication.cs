@@ -31,6 +31,9 @@ namespace Oci.FilestorageService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"You can choose a mode for deleting the replication resource. - `FINISH_CYCLE_IF_CAPTURING_OR_APPLYING` Before deleting, complete the current delta cycle. If cycle is idle, delete immediately. Safest option. - `ONE_MORE_CYCLE` Before deleting, complete the current delta cycle, and initiate one more cycle. If cycle is idle, initiate one more cycle. Use for lossless failover. - `FINISH_CYCLE_IF_APPLYING` Before deleting, finish applying. If cycle is idle or capturing, delete immediately. Fastest option.")]
         public System.Nullable<Oci.FilestorageService.Requests.DeleteReplicationRequest.DeleteModeEnum> DeleteMode { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Whether to override locks (if any exist).")]
+        public System.Nullable<bool> IsLockOverride { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "Ignore confirmation and force the Cmdlet to complete action.")]
         public SwitchParameter Force { get; set; }
 
@@ -52,7 +55,8 @@ namespace Oci.FilestorageService.Cmdlets
                     ReplicationId = ReplicationId,
                     IfMatch = IfMatch,
                     OpcRequestId = OpcRequestId,
-                    DeleteMode = DeleteMode
+                    DeleteMode = DeleteMode,
+                    IsLockOverride = IsLockOverride
                 };
 
                 response = client.DeleteReplication(request).GetAwaiter().GetResult();

@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Filestorage.dll'
 
 # Version number of this module.
-ModuleVersion = '93.0.0'
+ModuleVersion = '94.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '93.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '94.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Filestorage.dll'
@@ -71,10 +71,16 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Filestorage.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Confirm-OCIFilestorageKeyTabs', 'DisMount-OCIFilestorageClone', 
-               'Get-OCIFilestorageExport', 'Get-OCIFilestorageExportSet', 
-               'Get-OCIFilestorageExportSetsList', 'Get-OCIFilestorageExportsList', 
-               'Get-OCIFilestorageFileSystem', 'Get-OCIFilestorageFileSystemsList', 
+CmdletsToExport = 'Add-OCIFilestorageExportLock', 'Add-OCIFilestorageFileSystemLock', 
+               'Add-OCIFilestorageFilesystemSnapshotPolicyLock', 
+               'Add-OCIFilestorageMountTargetLock', 
+               'Add-OCIFilestorageOutboundConnectorLock', 
+               'Add-OCIFilestorageReplicationLock', 
+               'Add-OCIFilestorageSnapshotLock', 'Confirm-OCIFilestorageKeyTabs', 
+               'DisMount-OCIFilestorageClone', 'Get-OCIFilestorageExport', 
+               'Get-OCIFilestorageExportSet', 'Get-OCIFilestorageExportSetsList', 
+               'Get-OCIFilestorageExportsList', 'Get-OCIFilestorageFileSystem', 
+               'Get-OCIFilestorageFileSystemsList', 
                'Get-OCIFilestorageFilesystemSnapshotPoliciesList', 
                'Get-OCIFilestorageFilesystemSnapshotPolicy', 
                'Get-OCIFilestorageMountTarget', 
@@ -101,13 +107,20 @@ CmdletsToExport = 'Confirm-OCIFilestorageKeyTabs', 'DisMount-OCIFilestorageClone
                'New-OCIFilestorageMountTarget', 
                'New-OCIFilestorageOutboundConnector', 
                'New-OCIFilestorageReplication', 'New-OCIFilestorageSnapshot', 
-               'Remove-OCIFilestorageExport', 'Remove-OCIFilestorageFileSystem', 
+               'Remove-OCIFilestorageExport', 'Remove-OCIFilestorageExportLock', 
+               'Remove-OCIFilestorageFileSystem', 
+               'Remove-OCIFilestorageFileSystemLock', 
                'Remove-OCIFilestorageFilesystemSnapshotPolicy', 
+               'Remove-OCIFilestorageFilesystemSnapshotPolicyLock', 
                'Remove-OCIFilestorageMountTarget', 
+               'Remove-OCIFilestorageMountTargetLock', 
                'Remove-OCIFilestorageOutboundConnector', 
+               'Remove-OCIFilestorageOutboundConnectorLock', 
                'Remove-OCIFilestorageReplication', 
+               'Remove-OCIFilestorageReplicationLock', 
                'Remove-OCIFilestorageReplicationTarget', 
                'Remove-OCIFilestorageSnapshot', 
+               'Remove-OCIFilestorageSnapshotLock', 
                'Stop-OCIFilestorageDowngradeShapeMountTarget', 
                'Update-OCIFilestorageExport', 'Update-OCIFilestorageExportSet', 
                'Update-OCIFilestorageFileSystem', 

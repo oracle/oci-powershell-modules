@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Datascience.dll'
 
 # Version number of this module.
-ModuleVersion = '93.0.0'
+ModuleVersion = '94.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '93.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '94.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Datascience.dll'
@@ -132,10 +132,11 @@ CmdletsToExport = 'Enable-OCIDatascienceModel',
                'Remove-OCIDatascienceNotebookSession', 
                'Remove-OCIDatasciencePipeline', 'Remove-OCIDatasciencePipelineRun', 
                'Remove-OCIDatasciencePrivateEndpoint', 
-               'Remove-OCIDatascienceProject', 'Stop-OCIDatascienceJobRun', 
-               'Stop-OCIDatasciencePipelineRun', 'Stop-OCIDatascienceWorkRequest', 
-               'Update-OCIDatascienceJob', 'Update-OCIDatascienceJobRun', 
-               'Update-OCIDatascienceModel', 
+               'Remove-OCIDatascienceProject', 
+               'Restore-OCIDatascienceArchivedModelArtifact', 
+               'Stop-OCIDatascienceJobRun', 'Stop-OCIDatasciencePipelineRun', 
+               'Stop-OCIDatascienceWorkRequest', 'Update-OCIDatascienceJob', 
+               'Update-OCIDatascienceJobRun', 'Update-OCIDatascienceModel', 
                'Update-OCIDatascienceModelDeployment', 
                'Update-OCIDatascienceModelProvenance', 
                'Update-OCIDatascienceModelVersionSet', 

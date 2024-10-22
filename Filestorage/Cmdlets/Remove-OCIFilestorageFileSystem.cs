@@ -28,6 +28,9 @@ namespace Oci.FilestorageService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Whether to override locks (if any exist).")]
+        public System.Nullable<bool> IsLockOverride { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If the value is set to true, then the file system will be deleted by detaching its child file system, turning the child file system into an independent File System.")]
         public System.Nullable<bool> CanDetachChildFileSystem { get; set; }
 
@@ -52,6 +55,7 @@ namespace Oci.FilestorageService.Cmdlets
                     FileSystemId = FileSystemId,
                     IfMatch = IfMatch,
                     OpcRequestId = OpcRequestId,
+                    IsLockOverride = IsLockOverride,
                     CanDetachChildFileSystem = CanDetachChildFileSystem
                 };
 
