@@ -19,7 +19,7 @@ namespace Oci.CloudbridgeService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CloudbridgeService.Models.AssetSource), typeof(Oci.CloudbridgeService.Responses.CreateAssetSourceResponse) })]
     public class NewOCICloudbridgeAssetSource : OCIDiscoveryCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new asset source. This parameter also accepts subtype <Oci.CloudbridgeService.Models.CreateVmWareAssetSourceDetails> of type <Oci.CloudbridgeService.Models.CreateAssetSourceDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new asset source. This parameter also accepts subtypes <Oci.CloudbridgeService.Models.CreateVmWareAssetSourceDetails>, <Oci.CloudbridgeService.Models.CreateAwsAssetSourceDetails> of type <Oci.CloudbridgeService.Models.CreateAssetSourceDetails>.")]
         public CreateAssetSourceDetails CreateAssetSourceDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing the same action again. Retry tokens expire after 24 hours, but can be invalidated before 24 hours due to conflicting operations. For example, if a resource has been deleted and purged from the system, a retry of the original creation request might be rejected.")]

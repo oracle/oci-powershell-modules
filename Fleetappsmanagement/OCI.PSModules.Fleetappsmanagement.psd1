@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Fleetappsmanagement.dll'
 
 # Version number of this module.
-ModuleVersion = '93.0.0'
+ModuleVersion = '94.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '93.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '94.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Fleetappsmanagement.dll'
@@ -71,7 +71,14 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Fleetappsmanagement.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIFleetappsmanagementAnnouncementsList', 
+CmdletsToExport = 'Enable-OCIFleetappsmanagementLatestPolicy', 
+               'Export-OCIFleetappsmanagementComplianceReport', 
+               'Get-OCIFleetappsmanagementAnnouncementsList', 
+               'Get-OCIFleetappsmanagementCompliancePoliciesList', 
+               'Get-OCIFleetappsmanagementCompliancePolicy', 
+               'Get-OCIFleetappsmanagementCompliancePolicyRule', 
+               'Get-OCIFleetappsmanagementCompliancePolicyRulesList', 
+               'Get-OCIFleetappsmanagementComplianceRecordsList', 
                'Get-OCIFleetappsmanagementComplianceReport', 
                'Get-OCIFleetappsmanagementExecution', 
                'Get-OCIFleetappsmanagementExecutionsList', 
@@ -89,10 +96,16 @@ CmdletsToExport = 'Get-OCIFleetappsmanagementAnnouncementsList',
                'Get-OCIFleetappsmanagementJobActivity', 
                'Get-OCIFleetappsmanagementMaintenanceWindow', 
                'Get-OCIFleetappsmanagementMaintenanceWindowsList', 
+               'Get-OCIFleetappsmanagementOnboarding', 
                'Get-OCIFleetappsmanagementOnboardingPoliciesList', 
                'Get-OCIFleetappsmanagementOnboardingsList', 
+               'Get-OCIFleetappsmanagementPatch', 
+               'Get-OCIFleetappsmanagementPatchesList', 
+               'Get-OCIFleetappsmanagementPlatformConfiguration', 
+               'Get-OCIFleetappsmanagementPlatformConfigurationsList', 
                'Get-OCIFleetappsmanagementPropertiesList', 
                'Get-OCIFleetappsmanagementProperty', 
+               'Get-OCIFleetappsmanagementResourcesList', 
                'Get-OCIFleetappsmanagementRunbook', 
                'Get-OCIFleetappsmanagementRunbooksList', 
                'Get-OCIFleetappsmanagementScheduledFleetsList', 
@@ -100,6 +113,7 @@ CmdletsToExport = 'Get-OCIFleetappsmanagementAnnouncementsList',
                'Get-OCIFleetappsmanagementSchedulerDefinitionsList', 
                'Get-OCIFleetappsmanagementSchedulerJob', 
                'Get-OCIFleetappsmanagementSchedulerJobsList', 
+               'Get-OCIFleetappsmanagementStepsList', 
                'Get-OCIFleetappsmanagementTargetsList', 
                'Get-OCIFleetappsmanagementTaskRecord', 
                'Get-OCIFleetappsmanagementTaskRecordsList', 
@@ -109,8 +123,16 @@ CmdletsToExport = 'Get-OCIFleetappsmanagementAnnouncementsList',
                'Get-OCIFleetappsmanagementWorkRequestsList', 
                'Invoke-OCIFleetappsmanagementCheckResourceTagging', 
                'Invoke-OCIFleetappsmanagementConfirmTargets', 
+               'Invoke-OCIFleetappsmanagementManageJobExecution', 
+               'Invoke-OCIFleetappsmanagementManageSettings', 
+               'Invoke-OCIFleetappsmanagementPublishRunbook', 
                'Invoke-OCIFleetappsmanagementRequestResourceValidation', 
                'Invoke-OCIFleetappsmanagementRequestTargetDiscovery', 
+               'Invoke-OCIFleetappsmanagementSetDefaultRunbook', 
+               'Invoke-OCIFleetappsmanagementSummarizeComplianceRecordCounts', 
+               'Invoke-OCIFleetappsmanagementSummarizeManagedEntityCounts', 
+               'Invoke-OCIFleetappsmanagementSummarizeSchedulerJobCounts', 
+               'New-OCIFleetappsmanagementCompliancePolicyRule', 
                'New-OCIFleetappsmanagementComplianceReport', 
                'New-OCIFleetappsmanagementFleet', 
                'New-OCIFleetappsmanagementFleetCredential', 
@@ -118,24 +140,40 @@ CmdletsToExport = 'Get-OCIFleetappsmanagementAnnouncementsList',
                'New-OCIFleetappsmanagementFleetResource', 
                'New-OCIFleetappsmanagementMaintenanceWindow', 
                'New-OCIFleetappsmanagementOnboarding', 
+               'New-OCIFleetappsmanagementPatch', 
+               'New-OCIFleetappsmanagementPlatformConfiguration', 
                'New-OCIFleetappsmanagementProperty', 
+               'New-OCIFleetappsmanagementRunbook', 
                'New-OCIFleetappsmanagementSchedulerDefinition', 
+               'New-OCIFleetappsmanagementTaskRecord', 
+               'Remove-OCIFleetappsmanagementCompliancePolicyRule', 
                'Remove-OCIFleetappsmanagementFleet', 
                'Remove-OCIFleetappsmanagementFleetCredential', 
                'Remove-OCIFleetappsmanagementFleetProperty', 
                'Remove-OCIFleetappsmanagementFleetResource', 
                'Remove-OCIFleetappsmanagementMaintenanceWindow', 
+               'Remove-OCIFleetappsmanagementOnboarding', 
+               'Remove-OCIFleetappsmanagementPatch', 
+               'Remove-OCIFleetappsmanagementPlatformConfiguration', 
                'Remove-OCIFleetappsmanagementProperty', 
+               'Remove-OCIFleetappsmanagementRunbook', 
                'Remove-OCIFleetappsmanagementSchedulerDefinition', 
                'Remove-OCIFleetappsmanagementSchedulerJob', 
+               'Remove-OCIFleetappsmanagementTaskRecord', 
+               'Update-OCIFleetappsmanagementCompliancePolicyRule', 
                'Update-OCIFleetappsmanagementFleet', 
                'Update-OCIFleetappsmanagementFleetCredential', 
                'Update-OCIFleetappsmanagementFleetProperty', 
                'Update-OCIFleetappsmanagementFleetResource', 
                'Update-OCIFleetappsmanagementMaintenanceWindow', 
+               'Update-OCIFleetappsmanagementOnboarding', 
+               'Update-OCIFleetappsmanagementPatch', 
+               'Update-OCIFleetappsmanagementPlatformConfiguration', 
                'Update-OCIFleetappsmanagementProperty', 
+               'Update-OCIFleetappsmanagementRunbook', 
                'Update-OCIFleetappsmanagementSchedulerDefinition', 
-               'Update-OCIFleetappsmanagementSchedulerJob'
+               'Update-OCIFleetappsmanagementSchedulerJob', 
+               'Update-OCIFleetappsmanagementTaskRecord'
 
 # Variables to export from this module
 VariablesToExport = '*'

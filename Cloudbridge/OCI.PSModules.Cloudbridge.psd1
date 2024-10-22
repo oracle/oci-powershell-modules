@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Cloudbridge.dll'
 
 # Version number of this module.
-ModuleVersion = '93.0.0'
+ModuleVersion = '94.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '93.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '94.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Cloudbridge.dll'
@@ -84,7 +84,9 @@ CmdletsToExport = 'Add-OCICloudbridgeAgentDependency', 'Get-OCICloudbridgeAgent'
                'Get-OCICloudbridgeEnvironmentsList', 
                'Get-OCICloudbridgeHistoricalMetricsList', 
                'Get-OCICloudbridgeInventoriesList', 'Get-OCICloudbridgeInventory', 
-               'Get-OCICloudbridgePlugin', 'Get-OCICloudbridgeWorkRequest', 
+               'Get-OCICloudbridgePlugin', 
+               'Get-OCICloudbridgeSupportedCloudRegionsList', 
+               'Get-OCICloudbridgeWorkRequest', 
                'Get-OCICloudbridgeWorkRequestErrorsList', 
                'Get-OCICloudbridgeWorkRequestLogsList', 
                'Get-OCICloudbridgeWorkRequestsList', 
@@ -114,7 +116,7 @@ CmdletsToExport = 'Add-OCICloudbridgeAgentDependency', 'Get-OCICloudbridgeAgent'
                'Update-OCICloudbridgeAsset', 'Update-OCICloudbridgeAssetSource', 
                'Update-OCICloudbridgeDiscoverySchedule', 
                'Update-OCICloudbridgeEnvironment', 
-               'Update-OCICloudbridgeInventory', 'Update-OCICloudbridgePlugin'
+               'Update-OCICloudbridgeInventory'
 
 # Variables to export from this module
 VariablesToExport = '*'
