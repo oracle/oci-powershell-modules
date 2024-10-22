@@ -24,7 +24,7 @@ namespace Oci.FleetappsmanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources their lifecycleState matches the given lifecycleState.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose lifecycleState matches the given lifecycleState.")]
         public System.Nullable<Oci.FleetappsmanagementService.Models.SchedulerJob.LifecycleStateEnum> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Fleet identifier")]
@@ -38,6 +38,9 @@ namespace Oci.FleetappsmanagementService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetch next remediation Job")]
         public System.Nullable<bool> IsRemediationJobNeeded { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources their subState matches the given subState.")]
+        public string SubState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given.")]
         public string DisplayName { get; set; }
@@ -81,6 +84,7 @@ namespace Oci.FleetappsmanagementService.Cmdlets
                     TimeScheduledGreaterThanOrEqualTo = TimeScheduledGreaterThanOrEqualTo,
                     TimeScheduledLessThan = TimeScheduledLessThan,
                     IsRemediationJobNeeded = IsRemediationJobNeeded,
+                    SubState = SubState,
                     DisplayName = DisplayName,
                     Id = Id,
                     DefintionId = DefintionId,

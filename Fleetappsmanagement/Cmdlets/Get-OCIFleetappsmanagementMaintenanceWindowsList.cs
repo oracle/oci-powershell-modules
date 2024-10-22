@@ -24,13 +24,16 @@ namespace Oci.FleetappsmanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources their lifecycleState matches the given lifecycleState.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose lifecycleState matches the given lifecycleState.")]
         public System.Nullable<Oci.FleetappsmanagementService.Models.MaintenanceWindow.LifecycleStateEnum> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given.")]
         public string DisplayName { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique MaintenanceWindow identifier")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose timeScheduleStart is greater than or equal to the provided date and time.")]
+        public System.Nullable<System.DateTime> TimeScheduleStartGreaterThanOrEqualTo { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the Maintenance Windows whose identifier matches the given identifier.")]
         public string Id { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
@@ -63,6 +66,7 @@ namespace Oci.FleetappsmanagementService.Cmdlets
                     CompartmentId = CompartmentId,
                     LifecycleState = LifecycleState,
                     DisplayName = DisplayName,
+                    TimeScheduleStartGreaterThanOrEqualTo = TimeScheduleStartGreaterThanOrEqualTo,
                     Id = Id,
                     Limit = Limit,
                     Page = Page,

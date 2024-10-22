@@ -21,7 +21,7 @@ namespace Oci.FleetappsmanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.FleetappsmanagementService.Models.AnnouncementCollection), typeof(Oci.FleetappsmanagementService.Responses.ListAnnouncementsResponse) })]
     public class GetOCIFleetappsmanagementAnnouncementsList : OCIFleetAppsManagementCmdlet
     {
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter the list with summary contains the given value.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter the list of announcements that contains the given summary value.")]
         public string SummaryContains { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given.")]
@@ -36,7 +36,7 @@ namespace Oci.FleetappsmanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'ASC' or 'DESC'.")]
         public System.Nullable<Oci.FleetappsmanagementService.Models.SortOrder> SortOrder { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort AnnouncementSummary by.  Only one sort order may be provided. If no value is specified _timeReleased_ is default.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort AnnouncementSummary by. Only one sort order may be provided. If no value is specified timeReleased is default.")]
         public System.Nullable<Oci.FleetappsmanagementService.Models.AnnouncementSortBy> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

@@ -19,10 +19,10 @@ namespace Oci.FleetappsmanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.FleetappsmanagementService.Responses.DeleteFleetPropertyResponse) })]
     public class RemoveOCIFleetappsmanagementFleetProperty : OCIFleetAppsManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique FleetProperty identifier")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique FleetProperty identifier.")]
         public string FleetPropertyId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Fleet identifier")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Fleet identifier.")]
         public string FleetId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

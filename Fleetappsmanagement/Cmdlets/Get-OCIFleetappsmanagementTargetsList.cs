@@ -21,7 +21,7 @@ namespace Oci.FleetappsmanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.FleetappsmanagementService.Models.FleetTargetCollection), typeof(Oci.FleetappsmanagementService.Responses.ListTargetsResponse) })]
     public class GetOCIFleetappsmanagementTargetsList : OCIFleetAppsManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Fleet identifier")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Fleet identifier.")]
         public string FleetId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given.")]

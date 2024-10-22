@@ -19,7 +19,7 @@ namespace Oci.FleetappsmanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.FleetappsmanagementService.Models.Onboarding), typeof(Oci.FleetappsmanagementService.Responses.CreateOnboardingResponse) })]
     public class NewOCIFleetappsmanagementOnboarding : OCIFleetAppsManagementAdminCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for onboarding FAMS.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for onboarding Fleet Application Management.")]
         public CreateOnboardingDetails CreateOnboardingDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]

@@ -19,7 +19,7 @@ namespace Oci.CloudbridgeService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CloudbridgeService.Models.Asset), typeof(Oci.CloudbridgeService.Responses.CreateAssetResponse) })]
     public class NewOCICloudbridgeAsset : OCIInventoryCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtype <Oci.CloudbridgeService.Models.CreateVmwareVmAssetDetails> of type <Oci.CloudbridgeService.Models.CreateAssetDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtypes <Oci.CloudbridgeService.Models.CreateAwsEbsAssetDetails>, <Oci.CloudbridgeService.Models.CreateVmwareVmAssetDetails>, <Oci.CloudbridgeService.Models.CreateAwsEc2AssetDetails> of type <Oci.CloudbridgeService.Models.CreateAssetDetails>.")]
         public CreateAssetDetails CreateAssetDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

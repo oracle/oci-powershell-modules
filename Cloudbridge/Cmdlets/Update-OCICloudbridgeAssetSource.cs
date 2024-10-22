@@ -22,7 +22,7 @@ namespace Oci.CloudbridgeService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asset source.")]
         public string AssetSourceId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Asset source information to be updated. This parameter also accepts subtype <Oci.CloudbridgeService.Models.UpdateVmWareAssetSourceDetails> of type <Oci.CloudbridgeService.Models.UpdateAssetSourceDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Asset source information to be updated. This parameter also accepts subtypes <Oci.CloudbridgeService.Models.UpdateVmWareAssetSourceDetails>, <Oci.CloudbridgeService.Models.UpdateAwsAssetSourceDetails> of type <Oci.CloudbridgeService.Models.UpdateAssetSourceDetails>.")]
         public UpdateAssetSourceDetails UpdateAssetSourceDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

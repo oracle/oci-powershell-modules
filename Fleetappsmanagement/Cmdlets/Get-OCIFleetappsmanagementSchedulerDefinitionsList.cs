@@ -24,20 +24,23 @@ namespace Oci.FleetappsmanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources their lifecycleState matches the given lifecycleState.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only scheduleDefinitions whose lifecycleState matches the given lifecycleState.")]
         public System.Nullable<Oci.FleetappsmanagementService.Models.SchedulerDefinition.LifecycleStateEnum> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given.")]
         public string DisplayName { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only Scheduler Definitions whose assocaited product matches the given product")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only dchedule definitions whose assocaited product matches the given product")]
         public string Product { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique SchedulerDefinition identifier")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only schedule definitions whose identifier matches the given identifier.")]
         public string Id { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique MaintenanceWindow identifier")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only schedule definitions whose associated maintenanceWindowId matches the given maintenanceWindowId.")]
         public string MaintenanceWindowId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only schedule definitions whose associated runbookId matches the given runbookId.")]
+        public string RunbookId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique Fleet identifier")]
         public string FleetId { get; set; }
@@ -75,6 +78,7 @@ namespace Oci.FleetappsmanagementService.Cmdlets
                     Product = Product,
                     Id = Id,
                     MaintenanceWindowId = MaintenanceWindowId,
+                    RunbookId = RunbookId,
                     FleetId = FleetId,
                     Limit = Limit,
                     Page = Page,
