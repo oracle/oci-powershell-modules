@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 94.1.0 - 2024-10-29
+### Added 
+- Support for L3IP (Layer 3 IP) listeners in the Network Load Balancing service 
+- Support for overriding an existing add-on installation in the Kubernetes Engine service
+
 ## 94.0.0 - 2024-10-22
 ### Added 
 - Support for resource locking in the File storage service 
