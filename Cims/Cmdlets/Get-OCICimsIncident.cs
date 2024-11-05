@@ -22,20 +22,20 @@ namespace Oci.CimsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the support ticket.")]
         public string IncidentKey { get; set; }
 
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the tenancy.")]
+        public string CompartmentId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Customer Support Identifier (CSI) associated with the support account.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Customer Support Identifier (CSI) number associated with the support account. The CSI is required for technical support tickets and optional for limits and billing tickets.")]
         public string Csi { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for Multicloud users.")]
         public string Ocid { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The region of the tenancy.")]
         public string Homeregion { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the tenancy.")]
-        public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The kind of support request.")]
         public string Problemtype { get; set; }
@@ -49,7 +49,7 @@ namespace Oci.CimsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"IdToken that provided by multi cloud provider, which help to validate the email.")]
         public string Idtoken { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of identity domain.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of identity domain. DomainID is mandatory if the user is part of Non Default Identity domain.")]
         public string Domainid { get; set; }
 
         protected override void ProcessRecord()
@@ -62,11 +62,11 @@ namespace Oci.CimsService.Cmdlets
                 request = new GetIncidentRequest
                 {
                     IncidentKey = IncidentKey,
+                    CompartmentId = CompartmentId,
                     OpcRequestId = OpcRequestId,
                     Csi = Csi,
                     Ocid = Ocid,
                     Homeregion = Homeregion,
-                    CompartmentId = CompartmentId,
                     Problemtype = Problemtype,
                     Bearertokentype = Bearertokentype,
                     Bearertoken = Bearertoken,

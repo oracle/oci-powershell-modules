@@ -19,7 +19,7 @@ namespace Oci.CimsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CimsService.Models.ValidationResponse), typeof(Oci.CimsService.Responses.ValidateUserResponse) })]
     public class ConfirmOCICimsUser : OCIIncidentCmdlet
     {
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Customer Support Identifier (CSI) associated with the support account.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Customer Support Identifier (CSI) number associated with the support account. The CSI is required for technical support tickets and optional for limits and billing tickets.")]
         public string Csi { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
@@ -28,7 +28,7 @@ namespace Oci.CimsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The kind of support request.")]
         public System.Nullable<Oci.CimsService.Models.ProblemType> ProblemType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for Multicloud users.")]
         public string Ocid { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The region of the tenancy.")]
@@ -43,7 +43,7 @@ namespace Oci.CimsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"IdToken that provided by multi cloud provider, which help to validate the email.")]
         public string Idtoken { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of identity domain.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of identity domain. DomainID is mandatory if the user is part of Non Default Identity domain.")]
         public string Domainid { get; set; }
 
         protected override void ProcessRecord()
