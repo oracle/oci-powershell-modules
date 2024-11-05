@@ -3,6 +3,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 95.0.0 - 2024-11-05
+### Added 
+- Support for calling Oracle Cloud Infrastructure services in the `ap-seoul-2` region 
+- Support for calling Oracle Cloud Infrastructure services in the `ap-suwon-1` region 
+- Support for calling Oracle Cloud Infrastructure services in the `ap-chuncheon-2` region 
+- Support for MFA Enablement v2 in the Identity Domains service 
+- Support for starting, stopping and updating min/max executor count for SQL Endpoints in the Data Flow service 
+- Support for customer message in the Customer Incident Management Service 
+- Support for REJECTED limitStatus in the Customer Incident Management Service 
+
+### Breaking Changes 
+- The cmdlets `Get-OCICimsStatus` and `Get-OCICimsCsiNumber` were removed from the Customer Incident Management Service 
+- The property `ServiceCategories` was removed from the model `IncidentResourceType` in the Customer Incident Management Service in the .NET SDK 
+- The properties `ServiceCategory` and `IssueType` were removed from the model `ServiceCategories` in the Customer Incident Management Service in the .NET SDK
+
 ## 94.1.0 - 2024-10-29
 ### Added 
 - Support for L3IP (Layer 3 IP) listeners in the Network Load Balancing service 

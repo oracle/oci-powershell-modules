@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Identitydomains.dll'
 
 # Version number of this module.
-ModuleVersion = '94.1.0'
+ModuleVersion = '95.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '94.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '95.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Identitydomains.dll'
@@ -150,6 +150,8 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'Get-OCIIdentitydomainsOAuthClientCertificatesList', 
                'Get-OCIIdentitydomainsOAuthPartnerCertificate', 
                'Get-OCIIdentitydomainsOAuthPartnerCertificatesList', 
+               'Get-OCIIdentitydomainsOciConsoleSignOnPolicyConsent', 
+               'Get-OCIIdentitydomainsOciConsoleSignOnPolicyConsentsList', 
                'Get-OCIIdentitydomainsPasswordPoliciesList', 
                'Get-OCIIdentitydomainsPasswordPolicy', 
                'Get-OCIIdentitydomainsPoliciesList', 
@@ -243,6 +245,7 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'Invoke-OCIIdentitydomainsSearchOAuth2ClientCredentials', 
                'Invoke-OCIIdentitydomainsSearchOAuthClientCertificates', 
                'Invoke-OCIIdentitydomainsSearchOAuthPartnerCertificates', 
+               'Invoke-OCIIdentitydomainsSearchOciConsoleSignOnPolicyConsents', 
                'Invoke-OCIIdentitydomainsSearchPasswordPolicies', 
                'Invoke-OCIIdentitydomainsSearchPolicies', 
                'Invoke-OCIIdentitydomainsSearchResourceTypeSchemaAttributes', 
@@ -289,7 +292,9 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'New-OCIIdentitydomainsOAuthClientCertificate', 
                'New-OCIIdentitydomainsOAuthPartnerCertificate', 
                'New-OCIIdentitydomainsPasswordPolicy', 
-               'New-OCIIdentitydomainsPolicy', 'New-OCIIdentitydomainsRule', 
+               'New-OCIIdentitydomainsPolicy', 
+               'New-OCIIdentitydomainsRestoreOciConsolePolicy', 
+               'New-OCIIdentitydomainsRule', 
                'New-OCIIdentitydomainsSecurityQuestion', 
                'New-OCIIdentitydomainsSelfRegistrationProfile', 
                'New-OCIIdentitydomainsSmtpCredential', 
