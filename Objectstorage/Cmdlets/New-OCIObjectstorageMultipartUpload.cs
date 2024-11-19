@@ -49,6 +49,9 @@ namespace Oci.ObjectstorageService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.")]
         public string OpcSseKmsKeyId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The optional checksum algorithm to use to compute and store the checksum of the body of the HTTP request (or the parts in case of multipart uploads), in addition to the default MD5 checksum.")]
+        public System.Nullable<Oci.ObjectstorageService.Models.ChecksumAlgorithm> OpcChecksumAlgorithm { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -67,7 +70,8 @@ namespace Oci.ObjectstorageService.Cmdlets
                     OpcSseCustomerAlgorithm = OpcSseCustomerAlgorithm,
                     OpcSseCustomerKey = OpcSseCustomerKey,
                     OpcSseCustomerKeySha256 = OpcSseCustomerKeySha256,
-                    OpcSseKmsKeyId = OpcSseKmsKeyId
+                    OpcSseKmsKeyId = OpcSseKmsKeyId,
+                    OpcChecksumAlgorithm = OpcChecksumAlgorithm
                 };
 
                 response = client.CreateMultipartUpload(request).GetAwaiter().GetResult();

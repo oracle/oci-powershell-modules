@@ -45,6 +45,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only list of Vaults that are linked to the exadata infrastructure Id.")]
+        public string ExadataInfrastructureId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -64,7 +67,8 @@ namespace Oci.DatabaseService.Cmdlets
                     SortOrder = SortOrder,
                     LifecycleState = LifecycleState,
                     DisplayName = DisplayName,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    ExadataInfrastructureId = ExadataInfrastructureId
                 };
                 IEnumerable<ListExascaleDbStorageVaultsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
