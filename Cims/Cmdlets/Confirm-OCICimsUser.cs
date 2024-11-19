@@ -19,7 +19,7 @@ namespace Oci.CimsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CimsService.Models.ValidationResponse), typeof(Oci.CimsService.Responses.ValidateUserResponse) })]
     public class ConfirmOCICimsUser : OCIIncidentCmdlet
     {
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Customer Support Identifier (CSI) number associated with the support account. The CSI is required for technical support tickets and optional for limits and billing tickets.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Customer Support Identifier (CSI) number associated with the support account. The CSI is optional for all support request types.")]
         public string Csi { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
