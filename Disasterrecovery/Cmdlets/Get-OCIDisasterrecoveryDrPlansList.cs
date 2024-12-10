@@ -65,6 +65,9 @@ Example: `MyResourceDisplayName`")]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only DR plans that match the given lifecycle sub-state.")]
+        public System.Nullable<Oci.DisasterrecoveryService.Models.DrPlanLifecycleSubState> LifecycleSubState { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -86,7 +89,8 @@ Example: `MyResourceDisplayName`")]
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    LifecycleSubState = LifecycleSubState
                 };
                 IEnumerable<ListDrPlansResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
