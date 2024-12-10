@@ -40,6 +40,11 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.", ParameterSetName = Default)]
         public string OpcRequestId { get; set; }
 
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Key details provided by the user for rotate key operation for Autonomous Database.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Key details provided by the user for rotate key operation for Autonomous Database.", ParameterSetName = Default)]
+        public RotateAutonomousContainerDatabaseEncryptionKeyDetails RotateAutonomousContainerDatabaseEncryptionKeyDetails { get; set; }
+
         [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = StatusParamSet)]
         public WorkrequestsService.Models.WorkRequest.StatusEnum[] WaitForStatus { get; set; }
 
@@ -61,7 +66,8 @@ namespace Oci.DatabaseService.Cmdlets
                     AutonomousContainerDatabaseId = AutonomousContainerDatabaseId,
                     IfMatch = IfMatch,
                     OpcRetryToken = OpcRetryToken,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    RotateAutonomousContainerDatabaseEncryptionKeyDetails = RotateAutonomousContainerDatabaseEncryptionKeyDetails
                 };
 
                 HandleOutput(request);

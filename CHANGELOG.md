@@ -3,6 +3,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 97.0.0 - 2024-12-10
+### Added 
+- Support for Bring Your Own Key (BYOK) in the Database service 
+- Support for refreshing disaster recovery plans in the Disaster Recovery service 
+- Support for private access to service instances in the Visual Builder service 
+- Support for exadata fleet update and rollback maintenance cycle in the Fleet Application Management service 
+- Support for Bring Your Own License (BYOL) for windows virtual machines in the Compute service 
+- Support for cascading deletion of applications and runs in the Data Flow service 
+- Support for on-demand translation and auto language detection during file translation in the AI Language service 
+- Support for alias for endpoints in custom model flow and custom anonymization in the AI Language service 
+
+### Breaking Changes 
+- The properties `IdcsInfo` and `Attachments` were removed from the model `VbInstance` in the Visual Builder service in the .NET SDK 
+- The models `AttachmentDetails` and `IdcsInfoDetails` were deleted from the Visual Builder service in the .NET SDK
+
 ## 96.0.0 - 2024-11-19
 ### Added 
 - Support for optional parameters for unified auditing in the Database service 
