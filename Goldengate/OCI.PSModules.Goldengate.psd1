@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Goldengate.dll'
 
 # Version number of this module.
-ModuleVersion = '97.0.0'
+ModuleVersion = '97.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '97.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '97.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Goldengate.dll'
@@ -92,7 +92,13 @@ CmdletsToExport = 'Add-OCIGoldengateConnectionLock',
                'Get-OCIGoldengateDeploymentUpgradesList', 
                'Get-OCIGoldengateDeploymentVersionsList', 
                'Get-OCIGoldengateDeploymentWalletsOperationsList', 
-               'Get-OCIGoldengateMessagesList', 'Get-OCIGoldengateTrailFilesList', 
+               'Get-OCIGoldengateMessagesList', 'Get-OCIGoldengatePipeline', 
+               'Get-OCIGoldengatePipelineInitializationStepsList', 
+               'Get-OCIGoldengatePipelineRunningProcessesList', 
+               'Get-OCIGoldengatePipelineSchemasList', 
+               'Get-OCIGoldengatePipelineSchemaTablesList', 
+               'Get-OCIGoldengatePipelinesList', 'Get-OCIGoldengateRecipesList', 
+               'Get-OCIGoldengateTrailFilesList', 
                'Get-OCIGoldengateTrailSequencesList', 
                'Get-OCIGoldengateWorkRequest', 
                'Get-OCIGoldengateWorkRequestErrorsList', 
@@ -106,18 +112,20 @@ CmdletsToExport = 'Add-OCIGoldengateConnectionLock',
                'Invoke-OCIGoldengateRollbackDeploymentUpgrade', 
                'Invoke-OCIGoldengateSnoozeDeploymentUpgrade', 
                'Invoke-OCIGoldengateTestConnectionAssignment', 
+               'Invoke-OCIGoldengateTestPipelineConnection', 
                'Invoke-OCIGoldengateUpgradeDeployment', 
                'Invoke-OCIGoldengateUpgradeDeploymentUpgrade', 
                'Move-OCIGoldengateConnectionCompartment', 
                'Move-OCIGoldengateDatabaseRegistrationCompartment', 
                'Move-OCIGoldengateDeploymentBackupCompartment', 
                'Move-OCIGoldengateDeploymentCompartment', 
+               'Move-OCIGoldengatePipelineCompartment', 
                'New-OCIGoldengateCertificate', 'New-OCIGoldengateConnection', 
                'New-OCIGoldengateConnectionAssignment', 
                'New-OCIGoldengateDatabaseRegistration', 
                'New-OCIGoldengateDeployment', 'New-OCIGoldengateDeploymentBackup', 
-               'New-OCIGoldengateLibraryUrl', 'Remove-OCIGoldengateCertificate', 
-               'Remove-OCIGoldengateConnection', 
+               'New-OCIGoldengateLibraryUrl', 'New-OCIGoldengatePipeline', 
+               'Remove-OCIGoldengateCertificate', 'Remove-OCIGoldengateConnection', 
                'Remove-OCIGoldengateConnectionAssignment', 
                'Remove-OCIGoldengateConnectionLock', 
                'Remove-OCIGoldengateDatabaseRegistration', 
@@ -125,15 +133,17 @@ CmdletsToExport = 'Add-OCIGoldengateConnectionLock',
                'Remove-OCIGoldengateDeploymentBackup', 
                'Remove-OCIGoldengateDeploymentBackupLock', 
                'Remove-OCIGoldengateDeploymentLock', 
-               'Restore-OCIGoldengateDeployment', 'Start-OCIGoldengateDeployment', 
+               'Remove-OCIGoldengatePipeline', 'Restore-OCIGoldengateDeployment', 
+               'Start-OCIGoldengateDeployment', 'Start-OCIGoldengatePipeline', 
                'Stop-OCIGoldengateDeployment', 
                'Stop-OCIGoldengateDeploymentBackup', 
-               'Stop-OCIGoldengateDeploymentUpgrade', 
+               'Stop-OCIGoldengateDeploymentUpgrade', 'Stop-OCIGoldengatePipeline', 
                'Stop-OCIGoldengateSnoozeDeploymentUpgrade', 
                'Update-OCIGoldengateConnection', 
                'Update-OCIGoldengateDatabaseRegistration', 
                'Update-OCIGoldengateDeployment', 
-               'Update-OCIGoldengateDeploymentBackup'
+               'Update-OCIGoldengateDeploymentBackup', 
+               'Update-OCIGoldengatePipeline'
 
 # Variables to export from this module
 VariablesToExport = '*'

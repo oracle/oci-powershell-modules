@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Bds.dll'
 
 # Version number of this module.
-ModuleVersion = '97.0.0'
+ModuleVersion = '97.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '97.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '97.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Bds.dll'
@@ -75,10 +75,13 @@ CmdletsToExport = 'Add-OCIBdsAutoScalingConfiguration', 'Add-OCIBdsBlockStorage'
                'Add-OCIBdsCloudSql', 'Add-OCIBdsKafka', 'Add-OCIBdsMasterNodes', 
                'Add-OCIBdsUtilityNodes', 'Add-OCIBdsWorkerNodes', 
                'Backup-OCIBdsNode', 'Disable-OCIBdsCertificate', 
-               'Enable-OCIBdsCertificate', 'Enable-OCIBdsMetastoreConfiguration', 
-               'Get-OCIBdsApiKey', 'Get-OCIBdsApiKeysList', 
-               'Get-OCIBdsAutoScalingConfiguration', 
-               'Get-OCIBdsAutoScalingConfigurationsList', 'Get-OCIBdsInstance', 
+               'Enable-OCIBdsCertificate', 'Enable-OCIBdsIamUserSyncConfiguration', 
+               'Enable-OCIBdsMetastoreConfiguration', 
+               'Enable-OCIBdsUpstConfiguration', 'Get-OCIBdsApiKey', 
+               'Get-OCIBdsApiKeysList', 'Get-OCIBdsAutoScalingConfiguration', 
+               'Get-OCIBdsAutoScalingConfigurationsList', 
+               'Get-OCIBdsClusterVersionsList', 'Get-OCIBdsIdentityConfiguration', 
+               'Get-OCIBdsIdentityConfigurationsList', 'Get-OCIBdsInstance', 
                'Get-OCIBdsInstancesList', 'Get-OCIBdsMetastoreConfiguration', 
                'Get-OCIBdsMetastoreConfigurationsList', 'Get-OCIBdsNodeBackup', 
                'Get-OCIBdsNodeBackupConfiguration', 
@@ -92,26 +95,32 @@ CmdletsToExport = 'Add-OCIBdsAutoScalingConfiguration', 'Add-OCIBdsBlockStorage'
                'Get-OCIBdsWorkRequest', 'Get-OCIBdsWorkRequestErrorsList', 
                'Get-OCIBdsWorkRequestLogsList', 'Get-OCIBdsWorkRequestsList', 
                'Invoke-OCIBdsCertificateServiceInfo', 
+               'Invoke-OCIBdsDeactivateIamUserSyncConfiguration', 
+               'Invoke-OCIBdsDeactivateUpstConfiguration', 
                'Invoke-OCIBdsExecuteBootstrapScript', 
                'Invoke-OCIBdsForceRefreshResourcePrincipal', 
                'Invoke-OCIBdsInstallOsPatch', 'Invoke-OCIBdsInstallPatch', 
+               'Invoke-OCIBdsRefreshConfidentialApplication', 
+               'Invoke-OCIBdsRefreshUpstTokenExchangeKeytab', 
                'Invoke-OCIBdsRenewCertificate', 'Invoke-OCIBdsReplaceNode', 
                'Invoke-OCIBdsTestBdsMetastoreConfiguration', 
                'Invoke-OCIBdsTestBdsObjectStorageConnection', 
                'Move-OCIBdsInstanceCompartment', 'Move-OCIBdsShape', 
-               'New-OCIBdsApiKey', 'New-OCIBdsInstance', 
-               'New-OCIBdsMetastoreConfiguration', 
+               'New-OCIBdsApiKey', 'New-OCIBdsIdentityConfiguration', 
+               'New-OCIBdsInstance', 'New-OCIBdsMetastoreConfiguration', 
                'New-OCIBdsNodeBackupConfiguration', 
                'New-OCIBdsNodeReplaceConfiguration', 
                'New-OCIBdsResourcePrincipalConfiguration', 'Remove-OCIBdsApiKey', 
                'Remove-OCIBdsAutoScalingConfiguration', 'Remove-OCIBdsCloudSql', 
-               'Remove-OCIBdsInstance', 'Remove-OCIBdsKafka', 
-               'Remove-OCIBdsMetastoreConfiguration', 'Remove-OCIBdsNode', 
-               'Remove-OCIBdsNodeBackup', 'Remove-OCIBdsNodeBackupConfiguration', 
+               'Remove-OCIBdsIdentityConfiguration', 'Remove-OCIBdsInstance', 
+               'Remove-OCIBdsKafka', 'Remove-OCIBdsMetastoreConfiguration', 
+               'Remove-OCIBdsNode', 'Remove-OCIBdsNodeBackup', 
+               'Remove-OCIBdsNodeBackupConfiguration', 
                'Remove-OCIBdsNodeReplaceConfiguration', 
                'Remove-OCIBdsResourcePrincipalConfiguration', 'Restart-OCIBdsNode', 
                'Start-OCIBdsInstance', 'Stop-OCIBdsInstance', 
-               'Update-OCIBdsAutoScalingConfiguration', 'Update-OCIBdsInstance', 
+               'Update-OCIBdsAutoScalingConfiguration', 
+               'Update-OCIBdsIdentityConfiguration', 'Update-OCIBdsInstance', 
                'Update-OCIBdsMetastoreConfiguration', 
                'Update-OCIBdsNodeBackupConfiguration', 
                'Update-OCIBdsNodeReplaceConfiguration', 
