@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Aivision.dll'
 
 # Version number of this module.
-ModuleVersion = '97.0.0'
+ModuleVersion = '97.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '97.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '97.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Aivision.dll'
@@ -74,7 +74,7 @@ FunctionsToExport = '*'
 CmdletsToExport = 'Get-OCIAivisionDocumentJob', 'Get-OCIAivisionImageJob', 
                'Get-OCIAivisionModel', 'Get-OCIAivisionModelsList', 
                'Get-OCIAivisionProject', 'Get-OCIAivisionProjectsList', 
-               'Get-OCIAivisionWorkRequest', 
+               'Get-OCIAivisionVideoJob', 'Get-OCIAivisionWorkRequest', 
                'Get-OCIAivisionWorkRequestErrorsList', 
                'Get-OCIAivisionWorkRequestLogsList', 
                'Get-OCIAivisionWorkRequestsList', 
@@ -83,9 +83,10 @@ CmdletsToExport = 'Get-OCIAivisionDocumentJob', 'Get-OCIAivisionImageJob',
                'Move-OCIAivisionModelCompartment', 
                'Move-OCIAivisionProjectCompartment', 'New-OCIAivisionDocumentJob', 
                'New-OCIAivisionImageJob', 'New-OCIAivisionModel', 
-               'New-OCIAivisionProject', 'Remove-OCIAivisionModel', 
-               'Remove-OCIAivisionProject', 'Stop-OCIAivisionDocumentJob', 
-               'Stop-OCIAivisionImageJob', 'Stop-OCIAivisionWorkRequest', 
+               'New-OCIAivisionProject', 'New-OCIAivisionVideoJob', 
+               'Remove-OCIAivisionModel', 'Remove-OCIAivisionProject', 
+               'Stop-OCIAivisionDocumentJob', 'Stop-OCIAivisionImageJob', 
+               'Stop-OCIAivisionVideoJob', 'Stop-OCIAivisionWorkRequest', 
                'Update-OCIAivisionModel', 'Update-OCIAivisionProject'
 
 # Variables to export from this module

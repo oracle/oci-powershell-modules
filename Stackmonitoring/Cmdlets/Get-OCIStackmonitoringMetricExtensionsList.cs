@@ -21,9 +21,6 @@ namespace Oci.StackmonitoringService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.StackmonitoringService.Models.MetricExtensionCollection), typeof(Oci.StackmonitoringService.Responses.ListMetricExtensionsResponse) })]
     public class GetOCIStackmonitoringMetricExtensionsList : OCIStackMonitoringCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which data is listed.")]
-        public string CompartmentId { get; set; }
-
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -35,6 +32,9 @@ namespace Oci.StackmonitoringService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (`ASC`) or descending (`DESC`).")]
         public System.Nullable<Oci.StackmonitoringService.Models.SortOrder> SortOrder { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which data is listed.")]
+        public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources based on resource type.")]
         public string ResourceType { get; set; }
@@ -51,6 +51,9 @@ namespace Oci.StackmonitoringService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return metric extensions based on input resource Id on which metric extension is enabled")]
         public string EnabledOnResourceId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Identifier for the metric extension")]
+        public string MetricExtensionId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -66,16 +69,17 @@ namespace Oci.StackmonitoringService.Cmdlets
             {
                 request = new ListMetricExtensionsRequest
                 {
-                    CompartmentId = CompartmentId,
                     Limit = Limit,
                     Page = Page,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
+                    CompartmentId = CompartmentId,
                     ResourceType = ResourceType,
                     Name = Name,
                     Status = Status,
                     LifecycleState = LifecycleState,
                     EnabledOnResourceId = EnabledOnResourceId,
+                    MetricExtensionId = MetricExtensionId,
                     OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListMetricExtensionsResponse> responses = GetRequestDelegate().Invoke(request);
