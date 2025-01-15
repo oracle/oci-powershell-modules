@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 97.2.0 - 2025-01-15
+### Added 
+- Support for attaching route tables to VNICs and private IPs in the Networking service 
+- Support for Cross Cluster Search(CCS) for an opensearch cluster in the OpenSearch service 
+- Support for patch-level updates of the autonomous databases after provisioning in the Database service
+
 ## 97.1.0 - 2025-01-14
 ### Added 
 - Support for attaching route tables to VNICs and private IPs in the Networking service 
