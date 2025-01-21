@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Core.dll'
 
 # Version number of this module.
-ModuleVersion = '97.2.0'
+ModuleVersion = '97.3.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '97.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '97.3.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Core.dll'
@@ -78,7 +78,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Add-OCIVirtualNetworkIpv6VcnCidr', 
                'Add-OCIVirtualNetworkNetworkSecurityGroupSecurityRules', 
                'Add-OCIVirtualNetworkPublicIpPoolCapacity', 
-               'Add-OCIVirtualNetworkVcnCidr', 
+               'Add-OCIVirtualNetworkVcnCidr', 'Confirm-OCIVirtualNetworkByoasn', 
                'Confirm-OCIVirtualNetworkByoipRange', 
                'Connect-OCIVirtualNetworkLocalPeeringGateways', 
                'Connect-OCIVirtualNetworkRemotePeeringConnections', 
@@ -173,6 +173,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Get-OCIVirtualNetworkAllDrgAttachments', 
                'Get-OCIVirtualNetworkAllowedIkeIPSecParameters', 
                'Get-OCIVirtualNetworkAllowedPeerRegionsForRemotePeeringList', 
+               'Get-OCIVirtualNetworkByoasn', 'Get-OCIVirtualNetworkByoasnsList', 
                'Get-OCIVirtualNetworkByoipAllocatedRangesList', 
                'Get-OCIVirtualNetworkByoipRange', 
                'Get-OCIVirtualNetworkByoipRangesList', 
@@ -278,6 +279,8 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Invoke-OCIVirtualNetworkAdvertiseByoipRange', 
                'Invoke-OCIVirtualNetworkBulkAddVirtualCircuitPublicPrefixes', 
                'Invoke-OCIVirtualNetworkBulkDeleteVirtualCircuitPublicPrefixes', 
+               'Invoke-OCIVirtualNetworkSetOriginAsn', 
+               'Invoke-OCIVirtualNetworkSetOriginAsnToOracle', 
                'Invoke-OCIVirtualNetworkUpgradeDrg', 
                'Invoke-OCIVirtualNetworkWithdrawByoipRange', 
                'Mount-OCIComputeBootVolume', 
@@ -300,6 +303,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Move-OCIComputeManagementClusterNetworkCompartment', 
                'Move-OCIComputeManagementInstanceConfigurationCompartment', 
                'Move-OCIComputeManagementInstancePoolCompartment', 
+               'Move-OCIVirtualNetworkByoasnCompartment', 
                'Move-OCIVirtualNetworkByoipRangeCompartment', 
                'Move-OCIVirtualNetworkCaptureFilterCompartment', 
                'Move-OCIVirtualNetworkCpeCompartment', 
@@ -339,7 +343,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'New-OCIComputeManagementClusterNetwork', 
                'New-OCIComputeManagementInstanceConfiguration', 
                'New-OCIComputeManagementInstancePool', 
-               'New-OCIVirtualNetworkByoipRange', 
+               'New-OCIVirtualNetworkByoasn', 'New-OCIVirtualNetworkByoipRange', 
                'New-OCIVirtualNetworkCaptureFilter', 'New-OCIVirtualNetworkCpe', 
                'New-OCIVirtualNetworkCrossConnect', 
                'New-OCIVirtualNetworkCrossConnectGroup', 
@@ -381,6 +385,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Remove-OCIComputeImageShapeCompatibilityEntry', 
                'Remove-OCIComputeInstanceConsoleConnection', 
                'Remove-OCIComputeManagementInstanceConfiguration', 
+               'Remove-OCIVirtualNetworkByoasn', 
                'Remove-OCIVirtualNetworkByoipRange', 
                'Remove-OCIVirtualNetworkCaptureFilter', 
                'Remove-OCIVirtualNetworkCpe', 
@@ -441,6 +446,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Update-OCIComputeManagementInstanceConfiguration', 
                'Update-OCIComputeManagementInstancePool', 
                'Update-OCIComputeVolumeAttachment', 
+               'Update-OCIVirtualNetworkByoasn', 
                'Update-OCIVirtualNetworkByoipRange', 
                'Update-OCIVirtualNetworkCaptureFilter', 
                'Update-OCIVirtualNetworkCpe', 

@@ -21,8 +21,8 @@ namespace Oci.DatabaseService.Cmdlets
     public class NewOCIDatabase : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create a new database. This parameter also accepts subtypes <Oci.DatabaseService.Models.CreateNewDatabaseDetails>, <Oci.DatabaseService.Models.CreateDatabaseFromBackup> of type <Oci.DatabaseService.Models.CreateDatabaseBase>.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create a new database. This parameter also accepts subtypes <Oci.DatabaseService.Models.CreateNewDatabaseDetails>, <Oci.DatabaseService.Models.CreateDatabaseFromBackup> of type <Oci.DatabaseService.Models.CreateDatabaseBase>.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create a new database. This parameter also accepts subtypes <Oci.DatabaseService.Models.CreateNewDatabaseDetails>, <Oci.DatabaseService.Models.CreateStandByDatabaseDetails>, <Oci.DatabaseService.Models.CreateDatabaseFromBackup> of type <Oci.DatabaseService.Models.CreateDatabaseBase>.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create a new database. This parameter also accepts subtypes <Oci.DatabaseService.Models.CreateNewDatabaseDetails>, <Oci.DatabaseService.Models.CreateStandByDatabaseDetails>, <Oci.DatabaseService.Models.CreateDatabaseFromBackup> of type <Oci.DatabaseService.Models.CreateDatabaseBase>.", ParameterSetName = Default)]
         public CreateDatabaseBase CreateNewDatabaseDetails { get; set; }
 
         

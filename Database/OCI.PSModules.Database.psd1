@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '97.2.0'
+ModuleVersion = '97.3.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '97.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '97.3.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -251,6 +251,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Invoke-OCIDatabaseConfirmKeyStoreDetailsAreCorrect', 
                'Invoke-OCIDatabaseConvertToPdb', 
                'Invoke-OCIDatabaseConvertToRegularPluggableDatabase', 
+               'Invoke-OCIDatabaseConvertToStandalone', 
                'Invoke-OCIDatabaseDbNodeAction', 
                'Invoke-OCIDatabaseDownloadExadataInfrastructureConfigFile', 
                'Invoke-OCIDatabaseDownloadOneoffPatch', 
@@ -258,13 +259,16 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Invoke-OCIDatabaseDownloadVmClusterNetworkConfigFile', 
                'Invoke-OCIDatabaseFailoverAutonomousContainerDatabaseDataguardAssociation', 
                'Invoke-OCIDatabaseFailOverAutonomousDatabase', 
+               'Invoke-OCIDatabaseFailoverDataGuard', 
                'Invoke-OCIDatabaseFailoverDataGuardAssociation', 
                'Invoke-OCIDatabaseLaunchAutonomousExadataInfrastructure', 
                'Invoke-OCIDatabaseLocalClonePluggableDatabase', 
+               'Invoke-OCIDatabaseMigrateDataGuardAssociationToMultiDataGuards', 
                'Invoke-OCIDatabaseMigrateExadataDbSystemResourceModel', 
                'Invoke-OCIDatabaseMigrateVaultKey', 
                'Invoke-OCIDatabaseRefreshPluggableDatabase', 
                'Invoke-OCIDatabaseReinstateAutonomousContainerDatabaseDataguardAssociation', 
+               'Invoke-OCIDatabaseReinstateDataGuard', 
                'Invoke-OCIDatabaseReinstateDataGuardAssociation', 
                'Invoke-OCIDatabaseRemoteClonePluggableDatabase', 
                'Invoke-OCIDatabaseReorderExecutionActions', 
@@ -288,6 +292,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Invoke-OCIDatabaseShrinkAutonomousDatabase', 
                'Invoke-OCIDatabaseSwitchoverAutonomousContainerDatabaseDataguardAssociation', 
                'Invoke-OCIDatabaseSwitchoverAutonomousDatabase', 
+               'Invoke-OCIDatabaseSwitchOverDataGuard', 
                'Invoke-OCIDatabaseSwitchoverDataGuardAssociation', 
                'Invoke-OCIDatabaseTerminateAutonomousContainerDatabase', 
                'Invoke-OCIDatabaseTerminateAutonomousExadataInfrastructure', 
@@ -309,6 +314,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Move-OCIDatabaseDataguardRole', 
                'Move-OCIDatabaseDbSystemCompartment', 
                'Move-OCIDatabaseDisasterRecoveryConfiguration', 
+               'Move-OCIDatabaseEncryptionKeyLocation', 
                'Move-OCIDatabaseExadataInfrastructureCompartment', 
                'Move-OCIDatabaseExadbVmClusterCompartment', 
                'Move-OCIDatabaseExascaleDbStorageVaultCompartment', 
@@ -410,7 +416,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Update-OCIDatabaseCloudVmCluster', 
                'Update-OCIDatabaseCloudVmClusterIormConfig', 
                'Update-OCIDatabaseConsoleConnection', 
-               'Update-OCIDatabaseConsoleHistory', 
+               'Update-OCIDatabaseConsoleHistory', 'Update-OCIDatabaseDataGuard', 
                'Update-OCIDatabaseDataGuardAssociation', 
                'Update-OCIDatabaseDbHome', 'Update-OCIDatabaseDbNode', 
                'Update-OCIDatabaseDbSystem', 
