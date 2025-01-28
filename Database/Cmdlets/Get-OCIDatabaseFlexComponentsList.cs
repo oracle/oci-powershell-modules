@@ -27,6 +27,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire name given. The match is not case sensitive.")]
         public string Name { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.")]
+        public string Shape { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (`ASC`) or descending (`DESC`).")]
         public System.Nullable<Oci.DatabaseService.Requests.ListFlexComponentsRequest.SortOrderEnum> SortOrder { get; set; }
 
@@ -53,6 +56,7 @@ namespace Oci.DatabaseService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     Name = Name,
+                    Shape = Shape,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     Limit = Limit,
