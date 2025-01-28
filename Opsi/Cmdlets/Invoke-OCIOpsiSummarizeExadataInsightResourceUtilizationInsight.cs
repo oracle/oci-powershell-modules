@@ -79,6 +79,12 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Percent value in which a resource metric is considered highly utilized.")]
+        public System.Nullable<int> HighUtilizationThreshold { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Percent value in which a resource metric is considered low utilized.")]
+        public System.Nullable<int> LowUtilizationThreshold { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -107,7 +113,9 @@ namespace Oci.OpsiService.Cmdlets
                     DefinedTagExists = DefinedTagExists,
                     FreeformTagExists = FreeformTagExists,
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    HighUtilizationThreshold = HighUtilizationThreshold,
+                    LowUtilizationThreshold = LowUtilizationThreshold
                 };
 
                 response = client.SummarizeExadataInsightResourceUtilizationInsight(request).GetAwaiter().GetResult();

@@ -33,6 +33,9 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of records returned in the paginated response.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.")]
+        public System.Nullable<Oci.DatabasemanagementService.Models.MySqlType> FilterByMySqlDatabaseTypeParam { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort information by. Only one sortOrder can be used. The default sort order for 'TIMECREATED' is descending and the default sort order for 'NAME' is ascending. The 'NAME' sort order is case-sensitive.")]
         public System.Nullable<Oci.DatabasemanagementService.Requests.ListManagedMySqlDatabasesRequest.SortByEnum> SortBy { get; set; }
 
@@ -55,6 +58,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
                     OpcRequestId = OpcRequestId,
                     Page = Page,
                     Limit = Limit,
+                    FilterByMySqlDatabaseTypeParam = FilterByMySqlDatabaseTypeParam,
                     SortBy = SortBy,
                     SortOrder = SortOrder
                 };

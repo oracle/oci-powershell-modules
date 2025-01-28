@@ -40,6 +40,9 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The parameter to filter by MySQL Database System type.")]
         public System.Nullable<Oci.DatabasemanagementService.Models.MdsType> FilterByMdsDeploymentType { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.")]
+        public System.Nullable<Oci.DatabasemanagementService.Models.MySqlType> FilterByMySqlDatabaseTypeParam { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The parameter to filter by MySQL Database status.")]
         public System.Nullable<Oci.DatabasemanagementService.Models.DatabaseStatus> FilterByMySqlStatus { get; set; }
 
@@ -65,6 +68,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
                     FilterByMetricNames = FilterByMetricNames,
                     FilterByMySqlDeploymentTypeParam = FilterByMySqlDeploymentTypeParam,
                     FilterByMdsDeploymentType = FilterByMdsDeploymentType,
+                    FilterByMySqlDatabaseTypeParam = FilterByMySqlDatabaseTypeParam,
                     FilterByMySqlStatus = FilterByMySqlStatus,
                     FilterByMySqlDatabaseVersion = FilterByMySqlDatabaseVersion,
                     IsHeatWaveEnabled = IsHeatWaveEnabled
