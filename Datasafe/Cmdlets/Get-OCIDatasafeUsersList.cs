@@ -84,6 +84,12 @@ namespace Oci.DatasafeService.Cmdlets
 **Example:** 2016-12-19T16:39:57.600Z")]
         public System.Nullable<System.DateTime> TimePasswordLastChangedLessThan { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z")]
+        public System.Nullable<System.DateTime> TimePasswordExpiryGreaterThanOrEqualTo { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z")]
+        public System.Nullable<System.DateTime> TimePasswordExpiryLessThan { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous ""List"" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
 
@@ -133,6 +139,8 @@ namespace Oci.DatasafeService.Cmdlets
                     TimeUserCreatedLessThan = TimeUserCreatedLessThan,
                     TimePasswordLastChangedGreaterThanOrEqualTo = TimePasswordLastChangedGreaterThanOrEqualTo,
                     TimePasswordLastChangedLessThan = TimePasswordLastChangedLessThan,
+                    TimePasswordExpiryGreaterThanOrEqualTo = TimePasswordExpiryGreaterThanOrEqualTo,
+                    TimePasswordExpiryLessThan = TimePasswordExpiryLessThan,
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,

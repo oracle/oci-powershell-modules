@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Datascience.dll'
 
 # Version number of this module.
-ModuleVersion = '98.0.0'
+ModuleVersion = '99.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '98.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '99.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Datascience.dll'
@@ -74,7 +74,9 @@ FunctionsToExport = '*'
 CmdletsToExport = 'Enable-OCIDatascienceModel', 
                'Enable-OCIDatascienceModelDeployment', 
                'Enable-OCIDatascienceNotebookSession', 
+               'Enable-OCIDatascienceSchedule', 
                'Export-OCIDatascienceModelArtifact', 
+               'Get-OCIDatascienceContainersList', 
                'Get-OCIDatascienceFastLaunchJobConfigsList', 
                'Get-OCIDatascienceJob', 'Get-OCIDatascienceJobArtifactContent', 
                'Get-OCIDatascienceJobRun', 'Get-OCIDatascienceJobRunsList', 
@@ -95,6 +97,7 @@ CmdletsToExport = 'Enable-OCIDatascienceModel',
                'Get-OCIDatasciencePrivateEndpoint', 
                'Get-OCIDatasciencePrivateEndpointsList', 
                'Get-OCIDatascienceProject', 'Get-OCIDatascienceProjectsList', 
+               'Get-OCIDatascienceSchedule', 'Get-OCIDatascienceSchedulesList', 
                'Get-OCIDatascienceStepArtifactContent', 
                'Get-OCIDatascienceWorkRequest', 
                'Get-OCIDatascienceWorkRequestErrorsList', 
@@ -104,6 +107,7 @@ CmdletsToExport = 'Enable-OCIDatascienceModel',
                'Invoke-OCIDatascienceDeactivateModel', 
                'Invoke-OCIDatascienceDeactivateModelDeployment', 
                'Invoke-OCIDatascienceDeactivateNotebookSession', 
+               'Invoke-OCIDatascienceDeactivateSchedule', 
                'Invoke-OCIDatascienceHeadJobArtifact', 
                'Invoke-OCIDatascienceHeadModelArtifact', 
                'Invoke-OCIDatascienceHeadStepArtifact', 
@@ -116,7 +120,8 @@ CmdletsToExport = 'Enable-OCIDatascienceModel',
                'Move-OCIDatasciencePipelineCompartment', 
                'Move-OCIDatasciencePipelineRunCompartment', 
                'Move-OCIDatasciencePrivateEndpointCompartment', 
-               'Move-OCIDatascienceProjectCompartment', 'New-OCIDatascienceJob', 
+               'Move-OCIDatascienceProjectCompartment', 
+               'Move-OCIDatascienceScheduleCompartment', 'New-OCIDatascienceJob', 
                'New-OCIDatascienceJobArtifact', 'New-OCIDatascienceJobRun', 
                'New-OCIDatascienceModel', 'New-OCIDatascienceModelArtifact', 
                'New-OCIDatascienceModelDeployment', 
@@ -125,14 +130,15 @@ CmdletsToExport = 'Enable-OCIDatascienceModel',
                'New-OCIDatascienceNotebookSession', 'New-OCIDatasciencePipeline', 
                'New-OCIDatasciencePipelineRun', 
                'New-OCIDatasciencePrivateEndpoint', 'New-OCIDatascienceProject', 
-               'New-OCIDatascienceStepArtifact', 'Remove-OCIDatascienceJob', 
-               'Remove-OCIDatascienceJobRun', 'Remove-OCIDatascienceModel', 
+               'New-OCIDatascienceSchedule', 'New-OCIDatascienceStepArtifact', 
+               'Remove-OCIDatascienceJob', 'Remove-OCIDatascienceJobRun', 
+               'Remove-OCIDatascienceModel', 
                'Remove-OCIDatascienceModelDeployment', 
                'Remove-OCIDatascienceModelVersionSet', 
                'Remove-OCIDatascienceNotebookSession', 
                'Remove-OCIDatasciencePipeline', 'Remove-OCIDatasciencePipelineRun', 
                'Remove-OCIDatasciencePrivateEndpoint', 
-               'Remove-OCIDatascienceProject', 
+               'Remove-OCIDatascienceProject', 'Remove-OCIDatascienceSchedule', 
                'Restore-OCIDatascienceArchivedModelArtifact', 
                'Stop-OCIDatascienceJobRun', 'Stop-OCIDatasciencePipelineRun', 
                'Stop-OCIDatascienceWorkRequest', 'Update-OCIDatascienceJob', 
@@ -143,7 +149,7 @@ CmdletsToExport = 'Enable-OCIDatascienceModel',
                'Update-OCIDatascienceNotebookSession', 
                'Update-OCIDatasciencePipeline', 'Update-OCIDatasciencePipelineRun', 
                'Update-OCIDatasciencePrivateEndpoint', 
-               'Update-OCIDatascienceProject'
+               'Update-OCIDatascienceProject', 'Update-OCIDatascienceSchedule'
 
 # Variables to export from this module
 VariablesToExport = '*'
