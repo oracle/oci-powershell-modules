@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Jms.dll'
 
 # Version number of this module.
-ModuleVersion = '99.1.0'
+ModuleVersion = '99.2.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '99.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '99.2.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Jms.dll'
@@ -80,18 +80,19 @@ CmdletsToExport = 'Add-OCIJmsFleetInstallationSites', 'Disable-OCIJmsDrs',
                'Get-OCIJmsExportStatus', 'Get-OCIJmsFleet', 
                'Get-OCIJmsFleetAdvancedFeatureConfiguration', 
                'Get-OCIJmsFleetAgentConfiguration', 'Get-OCIJmsFleetDiagnosesList', 
-               'Get-OCIJmsFleetsList', 'Get-OCIJmsInstallationSitesList', 
-               'Get-OCIJmsJavaFamiliesList', 'Get-OCIJmsJavaFamily', 
-               'Get-OCIJmsJavaMigrationAnalysisResult', 
+               'Get-OCIJmsFleetErrorsList', 'Get-OCIJmsFleetsList', 
+               'Get-OCIJmsInstallationSitesList', 'Get-OCIJmsJavaFamiliesList', 
+               'Get-OCIJmsJavaFamily', 'Get-OCIJmsJavaMigrationAnalysisResult', 
                'Get-OCIJmsJavaMigrationAnalysisResultsList', 
                'Get-OCIJmsJavaRelease', 'Get-OCIJmsJavaReleasesList', 
                'Get-OCIJmsJreUsageList', 
                'Get-OCIJmsPerformanceTuningAnalysisResult', 
                'Get-OCIJmsPerformanceTuningAnalysisResultsList', 
-               'Get-OCIJmsPlugin', 'Get-OCIJmsPluginsList', 
-               'Get-OCIJmsWorkItemsList', 'Get-OCIJmsWorkRequest', 
-               'Get-OCIJmsWorkRequestErrorsList', 'Get-OCIJmsWorkRequestLogsList', 
-               'Get-OCIJmsWorkRequestsList', 'Invoke-OCIJmsRequestCryptoAnalyses', 
+               'Get-OCIJmsPlugin', 'Get-OCIJmsPluginErrorsList', 
+               'Get-OCIJmsPluginsList', 'Get-OCIJmsWorkItemsList', 
+               'Get-OCIJmsWorkRequest', 'Get-OCIJmsWorkRequestErrorsList', 
+               'Get-OCIJmsWorkRequestLogsList', 'Get-OCIJmsWorkRequestsList', 
+               'Invoke-OCIJmsRequestCryptoAnalyses', 
                'Invoke-OCIJmsRequestDeployedApplicationMigrationAnalyses', 
                'Invoke-OCIJmsRequestJavaMigrationAnalyses', 
                'Invoke-OCIJmsRequestJfrRecordings', 
@@ -101,12 +102,14 @@ CmdletsToExport = 'Add-OCIJmsFleetInstallationSites', 'Disable-OCIJmsDrs',
                'Invoke-OCIJmsSummarizeApplicationUsage', 
                'Invoke-OCIJmsSummarizeDeployedApplicationInstallationUsage', 
                'Invoke-OCIJmsSummarizeDeployedApplicationUsage', 
+               'Invoke-OCIJmsSummarizeFleetErrors', 
                'Invoke-OCIJmsSummarizeInstallationUsage', 
                'Invoke-OCIJmsSummarizeJavaServerInstanceUsage', 
                'Invoke-OCIJmsSummarizeJavaServerUsage', 
                'Invoke-OCIJmsSummarizeJreUsage', 
                'Invoke-OCIJmsSummarizeLibraryUsage', 
                'Invoke-OCIJmsSummarizeManagedInstanceUsage', 
+               'Invoke-OCIJmsSummarizePluginErrors', 
                'Invoke-OCIJmsSummarizeResourceInventory', 
                'Move-OCIJmsFleetCompartment', 'New-OCIJmsAgentDeployScript', 
                'New-OCIJmsAgentInstallerConfiguration', 'New-OCIJmsBlocklist', 

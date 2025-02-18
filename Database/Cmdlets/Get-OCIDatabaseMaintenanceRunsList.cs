@@ -39,6 +39,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The pagination token to continue listing from.")]
         public string Page { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.")]
+        public System.Nullable<bool> IsLocalAdg { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIME_SCHEDULED and TIME_ENDED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
 
 **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.")]
@@ -74,6 +77,7 @@ namespace Oci.DatabaseService.Cmdlets
                     MaintenanceType = MaintenanceType,
                     Limit = Limit,
                     Page = Page,
+                    IsLocalAdg = IsLocalAdg,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     LifecycleState = LifecycleState,

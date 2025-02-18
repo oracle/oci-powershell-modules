@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 99.2.0 - 2025-02-18
+### Added 
+- Support for Customer Onboarding Success(COS) in the Java Management service 
+- Support for filtering performance tuning analysis results in the Java Management service 
+- Support for improved plugin filtering in the Java Management service 
+- Support for operating system distribution information in the Java Management service
+
 ## 99.1.0 - 2025-02-11
 ### Added 
 - Support for backups and recovery enhancements in autonomous databases in the Database service 
