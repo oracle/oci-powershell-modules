@@ -17,9 +17,9 @@ using Oci.Common.Model;
 
 namespace Oci.JmsService.Cmdlets
 {
-    [Cmdlet("Get", "OCIJmsPluginsList")]
-    [OutputType(new System.Type[] { typeof(Oci.JmsService.Models.JmsPluginCollection), typeof(Oci.JmsService.Responses.ListJmsPluginsResponse) })]
-    public class GetOCIJmsPluginsList : OCIJavaManagementServiceCmdlet
+    [Cmdlet("Get", "OCIJmsPluginErrorsList")]
+    [OutputType(new System.Type[] { typeof(Oci.JmsService.Models.PluginErrorCollection), typeof(Oci.JmsService.Responses.ListPluginErrorsResponse) })]
+    public class GetOCIJmsPluginErrorsList : OCIJavaManagementServiceCmdlet
     {
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
@@ -27,29 +27,20 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.")]
         public System.Nullable<bool> CompartmentIdInSubtree { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the JmsPlugin.")]
-        public string Id { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Fleet-unique identifier of the managed instance.")]
+        public string ManagedInstanceId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the Fleet.")]
-        public string FleetId { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If specified, only errors with a first seen time earlier than this parameter will be included in the search (formatted according to RFC3339).")]
+        public System.Nullable<System.DateTime> TimeFirstSeenLessThanOrEqualTo { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) that identifies the Agent.")]
-        public string AgentId { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If specified, only errors with a first seen time later than this parameter will be included in the search (formatted according to RFC3339).")]
+        public System.Nullable<System.DateTime> TimeFirstSeenGreaterThanOrEqualTo { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter JmsPlugin with its lifecycle state.")]
-        public System.Nullable<Oci.JmsService.Models.JmsPluginLifecycleState> LifecycleState { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter JmsPlugin with its availability status.")]
-        public System.Nullable<Oci.JmsService.Models.JmsPluginAvailabilityStatus> AvailabilityStatus { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter JmsPlugin with agent type.")]
-        public System.Nullable<Oci.JmsService.Models.AgentType> AgentType { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If present, only plugins with a registration time before this parameter are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).")]
-        public System.Nullable<System.DateTime> TimeRegisteredLessThanOrEqualTo { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If present, only plugins with a last seen time before this parameter are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If specified, only errors with a last seen time earlier than this parameter will be included in the search (formatted according to RFC3339).")]
         public System.Nullable<System.DateTime> TimeLastSeenLessThanOrEqualTo { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If specified, only errors with a last seen time later than this parameter will be included in the search (formatted according to RFC3339).")]
+        public System.Nullable<System.DateTime> TimeLastSeenGreaterThanOrEqualTo { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -57,14 +48,11 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.")]
         public string Page { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort PluginError. Only one sort order may be provided. Default order is **descending**. If no value is specified _timeLastSeen_ is default.")]
+        public System.Nullable<Oci.JmsService.Models.PluginErrorSortBy> SortBy { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order, either 'asc' or 'desc'.")]
         public System.Nullable<Oci.JmsService.Models.SortOrder> SortOrder { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort JmsPlugin. Only one sort order may be provided. Default order is **descending**. If no value is specified _timeLastSeen_ is default.")]
-        public System.Nullable<Oci.JmsService.Models.JmsPluginSortBy> SortBy { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter the list with hostname contains the given value.")]
-        public string HostnameContains { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
@@ -75,34 +63,30 @@ namespace Oci.JmsService.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            ListJmsPluginsRequest request;
+            ListPluginErrorsRequest request;
 
             try
             {
-                request = new ListJmsPluginsRequest
+                request = new ListPluginErrorsRequest
                 {
                     CompartmentId = CompartmentId,
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
-                    Id = Id,
-                    FleetId = FleetId,
-                    AgentId = AgentId,
-                    LifecycleState = LifecycleState,
-                    AvailabilityStatus = AvailabilityStatus,
-                    AgentType = AgentType,
-                    TimeRegisteredLessThanOrEqualTo = TimeRegisteredLessThanOrEqualTo,
+                    ManagedInstanceId = ManagedInstanceId,
+                    TimeFirstSeenLessThanOrEqualTo = TimeFirstSeenLessThanOrEqualTo,
+                    TimeFirstSeenGreaterThanOrEqualTo = TimeFirstSeenGreaterThanOrEqualTo,
                     TimeLastSeenLessThanOrEqualTo = TimeLastSeenLessThanOrEqualTo,
+                    TimeLastSeenGreaterThanOrEqualTo = TimeLastSeenGreaterThanOrEqualTo,
                     Limit = Limit,
                     Page = Page,
-                    SortOrder = SortOrder,
                     SortBy = SortBy,
-                    HostnameContains = HostnameContains,
+                    SortOrder = SortOrder,
                     OpcRequestId = OpcRequestId
                 };
-                IEnumerable<ListJmsPluginsResponse> responses = GetRequestDelegate().Invoke(request);
+                IEnumerable<ListPluginErrorsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
                 {
                     response = item;
-                    WriteOutput(response, response.JmsPluginCollection, true);
+                    WriteOutput(response, response.PluginErrorCollection, true);
                 }
                 if(!ParameterSetName.Equals(AllPageSet) && !ParameterSetName.Equals(LimitSet) && response.OpcNextPage != null)
                 {
@@ -128,16 +112,16 @@ namespace Oci.JmsService.Cmdlets
 
         private RequestDelegate GetRequestDelegate()
         {
-            IEnumerable<ListJmsPluginsResponse> DefaultRequest(ListJmsPluginsRequest request) => Enumerable.Repeat(client.ListJmsPlugins(request).GetAwaiter().GetResult(), 1);
+            IEnumerable<ListPluginErrorsResponse> DefaultRequest(ListPluginErrorsRequest request) => Enumerable.Repeat(client.ListPluginErrors(request).GetAwaiter().GetResult(), 1);
             if (ParameterSetName.Equals(AllPageSet))
             {
-                return req => client.Paginators.ListJmsPluginsResponseEnumerator(req);
+                return req => client.Paginators.ListPluginErrorsResponseEnumerator(req);
             }
             return DefaultRequest;
         }
 
-        private ListJmsPluginsResponse response;
-        private delegate IEnumerable<ListJmsPluginsResponse> RequestDelegate(ListJmsPluginsRequest request);
+        private ListPluginErrorsResponse response;
+        private delegate IEnumerable<ListPluginErrorsResponse> RequestDelegate(ListPluginErrorsRequest request);
         private const string AllPageSet = "AllPages";
         private const string LimitSet = "Limit";
     }

@@ -30,6 +30,9 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Fleet-unique identifier of the related application.")]
         public string ApplicationId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the application.")]
+        public string ApplicationName { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the managed instance.")]
         public string HostName { get; set; }
 
@@ -69,6 +72,7 @@ namespace Oci.JmsService.Cmdlets
                     FleetId = FleetId,
                     ManagedInstanceId = ManagedInstanceId,
                     ApplicationId = ApplicationId,
+                    ApplicationName = ApplicationName,
                     HostName = HostName,
                     TimeStart = TimeStart,
                     TimeEnd = TimeEnd,
