@@ -15,9 +15,9 @@ using Oci.Common.Model;
 
 namespace Oci.JmsService.Cmdlets
 {
-    [Cmdlet("Invoke", "OCIJmsSummarizeResourceInventory")]
-    [OutputType(new System.Type[] { typeof(Oci.JmsService.Models.ResourceInventory), typeof(Oci.JmsService.Responses.SummarizeResourceInventoryResponse) })]
-    public class InvokeOCIJmsSummarizeResourceInventory : OCIJavaManagementServiceCmdlet
+    [Cmdlet("Invoke", "OCIJmsSummarizeFleetErrors")]
+    [OutputType(new System.Type[] { typeof(Oci.JmsService.Models.FleetErrorAggregationCollection), typeof(Oci.JmsService.Responses.SummarizeFleetErrorsResponse) })]
+    public class InvokeOCIJmsSummarizeFleetErrors : OCIJavaManagementServiceCmdlet
     {
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
@@ -25,11 +25,11 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.")]
         public System.Nullable<bool> CompartmentIdInSubtree { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).")]
-        public System.Nullable<System.DateTime> TimeStart { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.")]
+        public System.Nullable<int> Limit { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).")]
-        public System.Nullable<System.DateTime> TimeEnd { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.")]
+        public string Page { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
@@ -37,21 +37,21 @@ namespace Oci.JmsService.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            SummarizeResourceInventoryRequest request;
+            SummarizeFleetErrorsRequest request;
 
             try
             {
-                request = new SummarizeResourceInventoryRequest
+                request = new SummarizeFleetErrorsRequest
                 {
                     CompartmentId = CompartmentId,
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
-                    TimeStart = TimeStart,
-                    TimeEnd = TimeEnd,
+                    Limit = Limit,
+                    Page = Page,
                     OpcRequestId = OpcRequestId
                 };
 
-                response = client.SummarizeResourceInventory(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.ResourceInventory);
+                response = client.SummarizeFleetErrors(request).GetAwaiter().GetResult();
+                WriteOutput(response, response.FleetErrorAggregationCollection);
                 FinishProcessing(response);
             }
             catch (OciException ex)
@@ -70,6 +70,6 @@ namespace Oci.JmsService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private SummarizeResourceInventoryResponse response;
+        private SummarizeFleetErrorsResponse response;
     }
 }
