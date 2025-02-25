@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <SDKVersion>103.2.0</SDKVersion>
+    <SDKVersion>104.0.0</SDKVersion>
   </PropertyGroup>
 </Project>
 

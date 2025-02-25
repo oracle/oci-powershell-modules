@@ -38,6 +38,12 @@ Example: `50`", ParameterSetName = LimitSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the VNIC.")]
         public string VnicId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE")]
+        public string IpState { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Lifetime of the IP address. There are two types of IPs:  - Ephemeral  - Reserved")]
+        public string Lifetime { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -58,6 +64,8 @@ Example: `50`", ParameterSetName = LimitSet)]
                     IpAddress = IpAddress,
                     SubnetId = SubnetId,
                     VnicId = VnicId,
+                    IpState = IpState,
+                    Lifetime = Lifetime,
                     OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListIpv6sResponse> responses = GetRequestDelegate().Invoke(request);

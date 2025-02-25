@@ -70,6 +70,9 @@ Example: `50`", ParameterSetName = LimitSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the work requests that are a retry of the given work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
         public string RetryOfId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the work requests that are a rerun of the given work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        public string RerunOfId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return work requests that were created before the date provided (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format). Example: '2023-08-25T21:10:29.600Z'")]
         public System.Nullable<System.DateTime> TimeCreatedLessThan { get; set; }
 
@@ -106,6 +109,7 @@ Example: `50`", ParameterSetName = LimitSet)]
                     OperationType = OperationType,
                     DisplayNameContains = DisplayNameContains,
                     RetryOfId = RetryOfId,
+                    RerunOfId = RerunOfId,
                     TimeCreatedLessThan = TimeCreatedLessThan,
                     TimeCreatedGreaterThanOrEqualTo = TimeCreatedGreaterThanOrEqualTo,
                     IsManagedByAutonomousLinux = IsManagedByAutonomousLinux
