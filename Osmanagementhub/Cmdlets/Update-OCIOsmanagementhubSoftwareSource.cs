@@ -22,7 +22,7 @@ namespace Oci.OsmanagementhubService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.")]
         public string SoftwareSourceId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtypes <Oci.OsmanagementhubService.Models.UpdateCustomSoftwareSourceDetails>, <Oci.OsmanagementhubService.Models.UpdateVersionedCustomSoftwareSourceDetails>, <Oci.OsmanagementhubService.Models.UpdateVendorSoftwareSourceDetails> of type <Oci.OsmanagementhubService.Models.UpdateSoftwareSourceDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtypes <Oci.OsmanagementhubService.Models.UpdateCustomSoftwareSourceDetails>, <Oci.OsmanagementhubService.Models.UpdatePrivateSoftwareSourceDetails>, <Oci.OsmanagementhubService.Models.UpdateVersionedCustomSoftwareSourceDetails>, <Oci.OsmanagementhubService.Models.UpdateVendorSoftwareSourceDetails>, <Oci.OsmanagementhubService.Models.UpdateThirdPartySoftwareSourceDetails> of type <Oci.OsmanagementhubService.Models.UpdateSoftwareSourceDetails>.")]
         public UpdateSoftwareSourceDetails UpdateSoftwareSourceDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

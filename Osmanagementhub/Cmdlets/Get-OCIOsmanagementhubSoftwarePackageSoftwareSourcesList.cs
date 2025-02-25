@@ -36,13 +36,13 @@ namespace Oci.OsmanagementhubService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only instances whose architecture type matches the given architecture.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ArchType> ArchType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The availabilities of the software source in a non-OCI environment for a tenancy.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The availability of the software source in a non-OCI environment for a tenancy.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.Availability> Availability { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The availabilities of the software source in an OCI environment for a tenancy.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The availability of the software source in an OCI environment for a tenancy.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.Availability> AvailabilityAtOci { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The availability of the software source. Use this query parameter to filter across availabilities in different environments.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.Availability> AvailabilityAnywhere { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that match the given user-friendly name.")]

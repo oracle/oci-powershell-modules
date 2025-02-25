@@ -3,6 +3,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 100.0.0 - 2025-02-25
+### Added 
+- Support for Database Lifecycle Management service 
+- Support for Valkey cluster creation and Valkey migration in the OCI Cache service 
+- Support for Dataflow Steps and Storage Mounts in Pipelines in the Data Science service 
+- Support for Bring Your Own DKIM Keys in the Email Delivery service 
+- Support for OpenId Connect Multi Authentication command in the OCI Kubernetes Engine service 
+- Support for security attributes for Load Balancer resource in the Load Balancer service 
+- Support for reservation of private IP addresses in the Networking service 
+- Support for additional configuration parameters in the HeatWave service 
+- Support for private and 3rd party software repositories, and rebooting of instances in the OS Management service 
+
+### Breaking Changes 
+- The property `ZprTags` was removed from models `UpdateLoadBalancerDetails`, `CreateLoadBalancerDetails` and `LoadBalancer` in the Load Balancer service in the .NET SDK 
+- The models `CreateContainerCommandHealthCheckDetails` and `ContainerCommandHealthCheck` were removed in the Container Instances service in the .NET SDK 
+- The enum member `Command` was removed from the enum `ContainerHealthCheckType` in the Container Instances service in the .NET SDK
+
 ## 99.2.0 - 2025-02-18
 ### Added 
 - Support for Customer Onboarding Success(COS) in the Java Management service 

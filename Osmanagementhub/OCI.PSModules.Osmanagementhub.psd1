@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Osmanagementhub.dll'
 
 # Version number of this module.
-ModuleVersion = '99.2.0'
+ModuleVersion = '100.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '99.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '100.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Osmanagementhub.dll'
@@ -79,9 +79,11 @@ CmdletsToExport = 'Add-OCIOsmanagementhubPackagesToSoftwareSource',
                'DisMount-OCIOsmanagementhubProfileFromManagedInstance', 
                'DisMount-OCIOsmanagementhubSoftwareSourcesFromManagedInstance', 
                'DisMount-OCIOsmanagementhubSoftwareSourcesFromManagedInstanceGroup', 
+               'DisMount-OCIOsmanagementhubSoftwareSourcesFromProfile', 
                'Enable-OCIOsmanagementhubModuleStreamOnManagedInstance', 
                'Enable-OCIOsmanagementhubModuleStreamOnManagedInstanceGroup', 
                'Get-OCIOsmanagementhubAllSoftwarePackagesList', 
+               'Get-OCIOsmanagementhubAvailableSoftwarePackagesList', 
                'Get-OCIOsmanagementhubEntitlementsList', 
                'Get-OCIOsmanagementhubErrataList', 'Get-OCIOsmanagementhubErratum', 
                'Get-OCIOsmanagementhubEvent', 'Get-OCIOsmanagementhubEventContent', 
@@ -120,7 +122,9 @@ CmdletsToExport = 'Add-OCIOsmanagementhubPackagesToSoftwareSource',
                'Get-OCIOsmanagementhubPackageGroup', 
                'Get-OCIOsmanagementhubPackageGroupsList', 
                'Get-OCIOsmanagementhubProfile', 
+               'Get-OCIOsmanagementhubProfileAvailableSoftwareSourcesList', 
                'Get-OCIOsmanagementhubProfilesList', 
+               'Get-OCIOsmanagementhubProfileVersion', 
                'Get-OCIOsmanagementhubScheduledJob', 
                'Get-OCIOsmanagementhubScheduledJobsList', 
                'Get-OCIOsmanagementhubSoftwarePackage', 
@@ -128,6 +132,7 @@ CmdletsToExport = 'Add-OCIOsmanagementhubPackagesToSoftwareSource',
                'Get-OCIOsmanagementhubSoftwarePackagesList', 
                'Get-OCIOsmanagementhubSoftwarePackageSoftwareSourcesList', 
                'Get-OCIOsmanagementhubSoftwareSource', 
+               'Get-OCIOsmanagementhubSoftwareSourceManifest', 
                'Get-OCIOsmanagementhubSoftwareSourcesList', 
                'Get-OCIOsmanagementhubSoftwareSourceVendorsList', 
                'Get-OCIOsmanagementhubWindowsUpdate', 
@@ -137,6 +142,7 @@ CmdletsToExport = 'Add-OCIOsmanagementhubPackagesToSoftwareSource',
                'Get-OCIOsmanagementhubWorkRequestLogsList', 
                'Get-OCIOsmanagementhubWorkRequestsList', 
                'Import-OCIOsmanagementhubEventContent', 
+               'Invoke-OCIOsmanagementhubAssociateManagedInstancesWithManagementStation', 
                'Invoke-OCIOsmanagementhubInstallAllWindowsUpdatesOnManagedInstancesInCompartment', 
                'Invoke-OCIOsmanagementhubInstallModuleStreamProfileOnManagedInstance', 
                'Invoke-OCIOsmanagementhubInstallModuleStreamProfileOnManagedInstanceGroup', 
@@ -147,22 +153,32 @@ CmdletsToExport = 'Add-OCIOsmanagementhubPackagesToSoftwareSource',
                'Invoke-OCIOsmanagementhubManageModuleStreamsOnManagedInstance', 
                'Invoke-OCIOsmanagementhubManageModuleStreamsOnManagedInstanceGroup', 
                'Invoke-OCIOsmanagementhubPromoteSoftwareSourceToLifecycleStage', 
+               'Invoke-OCIOsmanagementhubRebootLifecycleStage', 
+               'Invoke-OCIOsmanagementhubRebootManagedInstance', 
+               'Invoke-OCIOsmanagementhubRebootManagedInstanceGroup', 
                'Invoke-OCIOsmanagementhubRefreshManagementStationConfig', 
                'Invoke-OCIOsmanagementhubRefreshSoftwareOnManagedInstance', 
+               'Invoke-OCIOsmanagementhubReplacePackagesInSoftwareSource', 
+               'Invoke-OCIOsmanagementhubRerunWorkRequest', 
                'Invoke-OCIOsmanagementhubRunScheduledJobNow', 
                'Invoke-OCIOsmanagementhubSearchSoftwareSourceModules', 
                'Invoke-OCIOsmanagementhubSearchSoftwareSourceModuleStreams', 
                'Invoke-OCIOsmanagementhubSearchSoftwareSourcePackageGroups', 
+               'Invoke-OCIOsmanagementhubSoftwareSourceGenerateMetadata', 
                'Invoke-OCIOsmanagementhubSummarizeManagedInstanceAnalytics', 
                'Invoke-OCIOsmanagementhubSwitchModuleStreamOnManagedInstance', 
                'Invoke-OCIOsmanagementhubSwitchModuleStreamOnManagedInstanceGroup', 
                'Invoke-OCIOsmanagementhubSynchronizeMirrors', 
                'Invoke-OCIOsmanagementhubSynchronizeSingleMirrors', 
+               'Mount-OCIOsmanagementhubLifecycleStageToProfile', 
+               'Mount-OCIOsmanagementhubManagedInstanceGroupToProfile', 
                'Mount-OCIOsmanagementhubManagedInstancesToLifecycleStage', 
                'Mount-OCIOsmanagementhubManagedInstancesToManagedInstanceGroup', 
+               'Mount-OCIOsmanagementhubManagementStationToProfile', 
                'Mount-OCIOsmanagementhubProfileToManagedInstance', 
                'Mount-OCIOsmanagementhubSoftwareSourcesToManagedInstance', 
                'Mount-OCIOsmanagementhubSoftwareSourcesToManagedInstanceGroup', 
+               'Mount-OCIOsmanagementhubSoftwareSourcesToProfile', 
                'Move-OCIOsmanagementhubAvailabilityOfSoftwareSources', 
                'Move-OCIOsmanagementhubEventCompartment', 
                'Move-OCIOsmanagementhubLifecycleEnvironmentCompartment', 
@@ -188,6 +204,7 @@ CmdletsToExport = 'Add-OCIOsmanagementhubPackagesToSoftwareSource',
                'Remove-OCIOsmanagementhubModuleStreamProfileFromManagedInstanceGroup', 
                'Remove-OCIOsmanagementhubPackagesFromManagedInstance', 
                'Remove-OCIOsmanagementhubPackagesFromManagedInstanceGroup', 
+               'Remove-OCIOsmanagementhubPackagesFromSoftwareSource', 
                'Remove-OCIOsmanagementhubProfile', 
                'Remove-OCIOsmanagementhubScheduledJob', 
                'Remove-OCIOsmanagementhubSoftwareSource', 
@@ -201,7 +218,8 @@ CmdletsToExport = 'Add-OCIOsmanagementhubPackagesToSoftwareSource',
                'Update-OCIOsmanagementhubPackagesOnManagedInstance', 
                'Update-OCIOsmanagementhubProfile', 
                'Update-OCIOsmanagementhubScheduledJob', 
-               'Update-OCIOsmanagementhubSoftwareSource'
+               'Update-OCIOsmanagementhubSoftwareSource', 
+               'Update-OCIOsmanagementhubSoftwareSourceManifest'
 
 # Variables to export from this module
 VariablesToExport = '*'
