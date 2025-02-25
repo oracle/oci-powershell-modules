@@ -45,11 +45,20 @@ namespace Oci.OsmanagementhubService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return profiles that match the given instance type.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.Profile.RegistrationTypeEnum> RegistrationType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A boolean variable that is used to list only the default profile resources.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only default profiles.")]
         public System.Nullable<bool> IsDefaultProfile { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only service-provided profiles.")]
         public System.Nullable<bool> IsServiceProvidedProfile { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that are associated with the specified management station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        public System.Collections.Generic.List<string> ManagementStation { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that aren't associated with the specified management station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        public System.Collections.Generic.List<string> ManagementStationNotEqualTo { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The version of the registration profile.")]
+        public string ProfileVersion { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given vendor name.")]
         public System.Nullable<Oci.OsmanagementhubService.Models.VendorName> VendorName { get; set; }
@@ -98,6 +107,9 @@ Example: `3`")]
                     RegistrationType = RegistrationType,
                     IsDefaultProfile = IsDefaultProfile,
                     IsServiceProvidedProfile = IsServiceProvidedProfile,
+                    ManagementStation = ManagementStation,
+                    ManagementStationNotEqualTo = ManagementStationNotEqualTo,
+                    ProfileVersion = ProfileVersion,
                     VendorName = VendorName,
                     Limit = Limit,
                     Page = Page,

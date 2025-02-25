@@ -46,6 +46,12 @@ Example: `50`", ParameterSetName = LimitSet)]
 Example: `3`")]
         public string Page { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose location matches the given value.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ManagedInstanceLocation> Location { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose location does not match the given value.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ManagedInstanceLocation> LocationNotEqualTo { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'ASC' or 'DESC'.")]
         public System.Nullable<Oci.OsmanagementhubService.Models.SortOrder> SortOrder { get; set; }
 
@@ -77,6 +83,8 @@ Example: `3`")]
                     ManagedInstanceId = ManagedInstanceId,
                     Limit = Limit,
                     Page = Page,
+                    Location = Location,
+                    LocationNotEqualTo = LocationNotEqualTo,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,

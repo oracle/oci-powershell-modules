@@ -92,6 +92,18 @@ Example: `ELSA-2020-5804`")]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates whether to list only resources managed by the Autonomous Linux service.")]
         public System.Nullable<bool> IsManagedByAutonomousLinux { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only managed instances with the specified version of osmh-agent running.")]
+        public string AgentVersion { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that are associated with the specified management station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        public System.Collections.Generic.List<string> ManagementStation { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that aren't associated with the specified management station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        public System.Collections.Generic.List<string> ManagementStationNotEqualTo { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only managed instances that require a reboot to install updates.")]
+        public System.Nullable<bool> IsRebootRequired { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
 
 Example: `50`", ParameterSetName = LimitSet)]
@@ -146,6 +158,10 @@ Example: `3`")]
                     ProfileNotEqualTo = ProfileNotEqualTo,
                     IsProfileAttached = IsProfileAttached,
                     IsManagedByAutonomousLinux = IsManagedByAutonomousLinux,
+                    AgentVersion = AgentVersion,
+                    ManagementStation = ManagementStation,
+                    ManagementStationNotEqualTo = ManagementStationNotEqualTo,
+                    IsRebootRequired = IsRebootRequired,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,
