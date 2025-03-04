@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Psql.dll'
 
 # Version number of this module.
-ModuleVersion = '100.0.0'
+ModuleVersion = '101.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '100.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '101.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Psql.dll'
@@ -71,7 +71,7 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Psql.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIPsqlBackup', 'Get-OCIPsqlBackupsList', 
+CmdletsToExport = 'Backup-OCIPsqlCopy', 'Get-OCIPsqlBackup', 'Get-OCIPsqlBackupsList', 
                'Get-OCIPsqlConfiguration', 'Get-OCIPsqlConfigurationsList', 
                'Get-OCIPsqlConnectionDetails', 'Get-OCIPsqlDbSystem', 
                'Get-OCIPsqlDbSystemsList', 'Get-OCIPsqlDefaultConfiguration', 

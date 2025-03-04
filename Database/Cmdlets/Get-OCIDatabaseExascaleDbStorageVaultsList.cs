@@ -39,6 +39,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.")]
         public System.Nullable<Oci.DatabaseService.Models.ExascaleDbStorageVault.LifecycleStateEnum> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given cluster placement group ID exactly.")]
+        public string ClusterPlacementGroupId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given. The match is not case sensitive.")]
         public string DisplayName { get; set; }
 
@@ -66,6 +69,7 @@ namespace Oci.DatabaseService.Cmdlets
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     LifecycleState = LifecycleState,
+                    ClusterPlacementGroupId = ClusterPlacementGroupId,
                     DisplayName = DisplayName,
                     OpcRequestId = OpcRequestId,
                     ExadataInfrastructureId = ExadataInfrastructureId

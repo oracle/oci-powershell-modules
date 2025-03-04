@@ -27,6 +27,9 @@ namespace Oci.PsqlService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.")]
         public System.Nullable<Oci.PsqlService.Models.Configuration.LifecycleStateEnum> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources if their `configType` matches the given `configType`.")]
+        public System.Nullable<Oci.PsqlService.Models.Configuration.ConfigTypeEnum> ConfigType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given.")]
         public string DisplayName { get; set; }
 
@@ -68,6 +71,7 @@ namespace Oci.PsqlService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     LifecycleState = LifecycleState,
+                    ConfigType = ConfigType,
                     DisplayName = DisplayName,
                     DbVersion = DbVersion,
                     Shape = Shape,
