@@ -42,6 +42,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given Exascale Database Storage Vault ID.")]
         public string ExascaleDbStorageVaultId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given cluster placement group ID exactly.")]
+        public string ClusterPlacementGroupId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given. The match is not case sensitive.")]
         public string DisplayName { get; set; }
 
@@ -67,6 +70,7 @@ namespace Oci.DatabaseService.Cmdlets
                     SortOrder = SortOrder,
                     LifecycleState = LifecycleState,
                     ExascaleDbStorageVaultId = ExascaleDbStorageVaultId,
+                    ClusterPlacementGroupId = ClusterPlacementGroupId,
                     DisplayName = DisplayName,
                     OpcRequestId = OpcRequestId
                 };

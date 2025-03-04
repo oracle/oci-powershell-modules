@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Filestorage.dll'
 
 # Version number of this module.
-ModuleVersion = '100.0.0'
+ModuleVersion = '101.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '100.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '101.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Filestorage.dll'
@@ -87,6 +87,7 @@ CmdletsToExport = 'Add-OCIFilestorageExportLock', 'Add-OCIFilestorageFileSystemL
                'Get-OCIFilestorageMountTargetsList', 
                'Get-OCIFilestorageOutboundConnector', 
                'Get-OCIFilestorageOutboundConnectorsList', 
+               'Get-OCIFilestorageQuotaRule', 'Get-OCIFilestorageQuotaRulesList', 
                'Get-OCIFilestorageReplication', 
                'Get-OCIFilestorageReplicationsList', 
                'Get-OCIFilestorageReplicationTarget', 
@@ -95,6 +96,7 @@ CmdletsToExport = 'Add-OCIFilestorageExportLock', 'Add-OCIFilestorageFileSystemL
                'Invoke-OCIFilestorageEstimateReplication', 
                'Invoke-OCIFilestoragePauseFilesystemSnapshotPolicy', 
                'Invoke-OCIFilestorageScheduleDowngradeShapeMountTarget', 
+               'Invoke-OCIFilestorageToggleQuotaRules', 
                'Invoke-OCIFilestorageUnpauseFilesystemSnapshotPolicy', 
                'Invoke-OCIFilestorageUpgradeShapeMountTarget', 
                'Move-OCIFilestorageFileSystemCompartment', 
@@ -106,8 +108,9 @@ CmdletsToExport = 'Add-OCIFilestorageExportLock', 'Add-OCIFilestorageFileSystemL
                'New-OCIFilestorageFilesystemSnapshotPolicy', 
                'New-OCIFilestorageMountTarget', 
                'New-OCIFilestorageOutboundConnector', 
-               'New-OCIFilestorageReplication', 'New-OCIFilestorageSnapshot', 
-               'Remove-OCIFilestorageExport', 'Remove-OCIFilestorageExportLock', 
+               'New-OCIFilestorageQuotaRule', 'New-OCIFilestorageReplication', 
+               'New-OCIFilestorageSnapshot', 'Remove-OCIFilestorageExport', 
+               'Remove-OCIFilestorageExportLock', 
                'Remove-OCIFilestorageFileSystem', 
                'Remove-OCIFilestorageFileSystemLock', 
                'Remove-OCIFilestorageFilesystemSnapshotPolicy', 
@@ -116,6 +119,7 @@ CmdletsToExport = 'Add-OCIFilestorageExportLock', 'Add-OCIFilestorageFileSystemL
                'Remove-OCIFilestorageMountTargetLock', 
                'Remove-OCIFilestorageOutboundConnector', 
                'Remove-OCIFilestorageOutboundConnectorLock', 
+               'Remove-OCIFilestorageQuotaRule', 
                'Remove-OCIFilestorageReplication', 
                'Remove-OCIFilestorageReplicationLock', 
                'Remove-OCIFilestorageReplicationTarget', 
@@ -127,6 +131,7 @@ CmdletsToExport = 'Add-OCIFilestorageExportLock', 'Add-OCIFilestorageFileSystemL
                'Update-OCIFilestorageFilesystemSnapshotPolicy', 
                'Update-OCIFilestorageMountTarget', 
                'Update-OCIFilestorageOutboundConnector', 
+               'Update-OCIFilestorageQuotaRule', 
                'Update-OCIFilestorageReplication', 'Update-OCIFilestorageSnapshot'
 
 # Variables to export from this module
