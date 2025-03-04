@@ -36,6 +36,24 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If provided, filters the results to the set of database versions which are supported for the given shape family.")]
         public System.Nullable<Oci.DatabaseService.Requests.ListBackupsRequest.ShapeFamilyEnum> ShapeFamily { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given database version.")]
+        public string Version { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only backups that matches with the given type of Backup.")]
+        public string Type { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given lifecycle state exactly.")]
+        public System.Nullable<Oci.DatabaseService.Models.BackupSummary.LifecycleStateEnum> LifecycleState { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The start of date-time range of expiration for the long term backups to be fetched.")]
+        public System.Nullable<System.DateTime> TimeExpiryScheduledGreaterThanOrEqualTo { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The end of date-time range of expiration for the long term backups to be fetched.")]
+        public System.Nullable<System.DateTime> TimeExpiryScheduledLessThan { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given backup destination type.")]
+        public string BackupDestinationType { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -52,7 +70,13 @@ namespace Oci.DatabaseService.Cmdlets
                     CompartmentId = CompartmentId,
                     Limit = Limit,
                     Page = Page,
-                    ShapeFamily = ShapeFamily
+                    ShapeFamily = ShapeFamily,
+                    Version = Version,
+                    Type = Type,
+                    LifecycleState = LifecycleState,
+                    TimeExpiryScheduledGreaterThanOrEqualTo = TimeExpiryScheduledGreaterThanOrEqualTo,
+                    TimeExpiryScheduledLessThan = TimeExpiryScheduledLessThan,
+                    BackupDestinationType = BackupDestinationType
                 };
                 IEnumerable<ListBackupsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

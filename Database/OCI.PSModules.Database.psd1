@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '100.0.0'
+ModuleVersion = '101.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '100.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '101.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -71,7 +71,8 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure', 
+CmdletsToExport = 'Add-OCIDatabaseStandbyAutonomousContainerDatabase', 
+               'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure', 
                'Add-OCIDatabaseStorageCapacityExadataInfrastructure', 
                'Add-OCIDatabaseVirtualMachineToCloudVmCluster', 
                'Add-OCIDatabaseVirtualMachineToVmCluster', 
@@ -249,6 +250,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Invoke-OCIDatabaseConfigureExascaleExadataInfrastructure', 
                'Invoke-OCIDatabaseConfigureSaasAdminUser', 
                'Invoke-OCIDatabaseConfirmKeyStoreDetailsAreCorrect', 
+               'Invoke-OCIDatabaseConvertStandbyAutonomousContainerDatabase', 
                'Invoke-OCIDatabaseConvertToPdb', 
                'Invoke-OCIDatabaseConvertToRegularPluggableDatabase', 
                'Invoke-OCIDatabaseConvertToStandalone', 
@@ -257,16 +259,20 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Invoke-OCIDatabaseDownloadOneoffPatch', 
                'Invoke-OCIDatabaseDownloadValidationReport', 
                'Invoke-OCIDatabaseDownloadVmClusterNetworkConfigFile', 
+               'Invoke-OCIDatabaseEditAutonomousContainerDatabaseDataguard', 
+               'Invoke-OCIDatabaseFailoverAutonomousContainerDatabaseDataguard', 
                'Invoke-OCIDatabaseFailoverAutonomousContainerDatabaseDataguardAssociation', 
                'Invoke-OCIDatabaseFailOverAutonomousDatabase', 
                'Invoke-OCIDatabaseFailoverDataGuard', 
                'Invoke-OCIDatabaseFailoverDataGuardAssociation', 
                'Invoke-OCIDatabaseLaunchAutonomousExadataInfrastructure', 
                'Invoke-OCIDatabaseLocalClonePluggableDatabase', 
+               'Invoke-OCIDatabaseMigrateAutonomousContainerDatabaseDataguardAssociation', 
                'Invoke-OCIDatabaseMigrateDataGuardAssociationToMultiDataGuards', 
                'Invoke-OCIDatabaseMigrateExadataDbSystemResourceModel', 
                'Invoke-OCIDatabaseMigrateVaultKey', 
                'Invoke-OCIDatabaseRefreshPluggableDatabase', 
+               'Invoke-OCIDatabaseReinstateAutonomousContainerDatabaseDataguard', 
                'Invoke-OCIDatabaseReinstateAutonomousContainerDatabaseDataguardAssociation', 
                'Invoke-OCIDatabaseReinstateDataGuard', 
                'Invoke-OCIDatabaseReinstateDataGuardAssociation', 
@@ -290,6 +296,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Invoke-OCIDatabaseSetDbKeyVersion', 
                'Invoke-OCIDatabaseSetPdbKeyVersion', 
                'Invoke-OCIDatabaseShrinkAutonomousDatabase', 
+               'Invoke-OCIDatabaseSwitchoverAutonomousContainerDatabaseDataguard', 
                'Invoke-OCIDatabaseSwitchoverAutonomousContainerDatabaseDataguardAssociation', 
                'Invoke-OCIDatabaseSwitchoverAutonomousDatabase', 
                'Invoke-OCIDatabaseSwitchOverDataGuard', 
@@ -317,7 +324,9 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Move-OCIDatabaseEncryptionKeyLocation', 
                'Move-OCIDatabaseExadataInfrastructureCompartment', 
                'Move-OCIDatabaseExadbVmClusterCompartment', 
+               'Move-OCIDatabaseExadbVmClusterSubscription', 
                'Move-OCIDatabaseExascaleDbStorageVaultCompartment', 
+               'Move-OCIDatabaseExascaleDbStorageVaultSubscription', 
                'Move-OCIDatabaseExecutionActionMember', 
                'Move-OCIDatabaseExternalContainerDatabaseCompartment', 
                'Move-OCIDatabaseExternalNonContainerDatabaseCompartment', 
@@ -409,7 +418,7 @@ CmdletsToExport = 'Add-OCIDatabaseStorageCapacityCloudExadataInfrastructure',
                'Update-OCIDatabaseAutonomousDatabaseSoftwareImage', 
                'Update-OCIDatabaseAutonomousDatabaseWallet', 
                'Update-OCIDatabaseAutonomousExadataInfrastructure', 
-               'Update-OCIDatabaseAutonomousVmCluster', 
+               'Update-OCIDatabaseAutonomousVmCluster', 'Update-OCIDatabaseBackup', 
                'Update-OCIDatabaseBackupDestination', 
                'Update-OCIDatabaseCloudAutonomousVmCluster', 
                'Update-OCIDatabaseCloudExadataInfrastructure', 
