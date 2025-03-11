@@ -30,6 +30,9 @@ namespace Oci.DatascienceService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"<b>Filter</b> results by version label.")]
         public string VersionLabel { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies the type of models to list. By default, user models are listed.")]
+        public System.Nullable<Oci.DatascienceService.Requests.ListModelsRequest.CategoryEnum> Category { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"<b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.")]
         public string Id { get; set; }
 
@@ -79,6 +82,7 @@ See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concept
                     CompartmentId = CompartmentId,
                     ModelVersionSetName = ModelVersionSetName,
                     VersionLabel = VersionLabel,
+                    Category = Category,
                     Id = Id,
                     ProjectId = ProjectId,
                     DisplayName = DisplayName,

@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Opensearch.dll'
 
 # Version number of this module.
-ModuleVersion = '101.1.0'
+ModuleVersion = '102.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '101.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '102.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Opensearch.dll'
@@ -74,6 +74,8 @@ FunctionsToExport = '*'
 CmdletsToExport = 'Backup-OCIOpensearchCluster', 'Get-OCIOpensearchCluster', 
                'Get-OCIOpensearchClusterBackup', 
                'Get-OCIOpensearchClusterBackupsList', 
+               'Get-OCIOpensearchClusterPipeline', 
+               'Get-OCIOpensearchClusterPipelinesList', 
                'Get-OCIOpensearchClustersList', 'Get-OCIOpensearchVersionsList', 
                'Get-OCIOpensearchWorkRequest', 
                'Get-OCIOpensearchWorkRequestErrorsList', 
@@ -84,9 +86,11 @@ CmdletsToExport = 'Backup-OCIOpensearchCluster', 'Get-OCIOpensearchCluster',
                'Invoke-OCIOpensearchResizeOpensearchClusterHorizontal', 
                'Invoke-OCIOpensearchResizeOpensearchClusterVertical', 
                'Invoke-OCIOpensearchUpgradeOpenSearchCluster', 
-               'New-OCIOpensearchCluster', 'Remove-OCIOpensearchCluster', 
-               'Remove-OCIOpensearchClusterBackup', 'Update-OCIOpensearchCluster', 
-               'Update-OCIOpensearchClusterBackup'
+               'New-OCIOpensearchCluster', 'New-OCIOpensearchClusterPipeline', 
+               'Remove-OCIOpensearchCluster', 'Remove-OCIOpensearchClusterBackup', 
+               'Remove-OCIOpensearchClusterPipeline', 
+               'Update-OCIOpensearchCluster', 'Update-OCIOpensearchClusterBackup', 
+               'Update-OCIOpensearchClusterPipeline'
 
 # Variables to export from this module
 VariablesToExport = '*'

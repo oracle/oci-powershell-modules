@@ -51,6 +51,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources with `patchSet` greater than or equal to given value.")]
         public string PatchSetGreaterThanOrEqualTo { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.")]
+        public string DbSystemId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If provided, filters the results to the set of database versions which are supported for Upgrade.")]
         public System.Nullable<bool> IsUpgradeSupported { get; set; }
 
@@ -76,6 +79,7 @@ namespace Oci.DatabaseService.Cmdlets
                     ImageType = ImageType,
                     ImageShapeFamily = ImageShapeFamily,
                     PatchSetGreaterThanOrEqualTo = PatchSetGreaterThanOrEqualTo,
+                    DbSystemId = DbSystemId,
                     IsUpgradeSupported = IsUpgradeSupported
                 };
                 IEnumerable<ListDatabaseSoftwareImagesResponse> responses = GetRequestDelegate().Invoke(request);
