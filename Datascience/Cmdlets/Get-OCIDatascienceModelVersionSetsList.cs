@@ -24,6 +24,9 @@ namespace Oci.DatascienceService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"<b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies the type of model version sets to list. By default, user model version sets are listed.")]
+        public System.Nullable<Oci.DatascienceService.Requests.ListModelVersionSetsRequest.CategoryEnum> Category { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"<b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.")]
         public string Id { get; set; }
 
@@ -71,6 +74,7 @@ See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concept
                 request = new ListModelVersionSetsRequest
                 {
                     CompartmentId = CompartmentId,
+                    Category = Category,
                     Id = Id,
                     ProjectId = ProjectId,
                     Name = Name,
