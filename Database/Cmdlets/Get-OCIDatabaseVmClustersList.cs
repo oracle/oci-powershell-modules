@@ -48,6 +48,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only vmclusters that match the given vmcluster type exactly.")]
+        public System.Nullable<Oci.DatabaseService.Models.VmClusterSummary.VmClusterTypeEnum> VmClusterType { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -68,7 +71,8 @@ namespace Oci.DatabaseService.Cmdlets
                     SortOrder = SortOrder,
                     LifecycleState = LifecycleState,
                     DisplayName = DisplayName,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    VmClusterType = VmClusterType
                 };
                 IEnumerable<ListVmClustersResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

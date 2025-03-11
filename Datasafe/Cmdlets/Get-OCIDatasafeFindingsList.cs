@@ -54,6 +54,19 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items related to a specific target OCID.")]
         public string TargetId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+
+**Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq ""Users"") and (targetId eq ""target_1"") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+
+Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified")]
+        public string ScimQuery { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies a subset of fields to be returned in the response.")]
+        public System.Collections.Generic.List<Oci.DatasafeService.Requests.ListFindingsRequest.FieldEnum> Field { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. You can specify only one sort order(sortOrder). The default order for category is alphabetical.")]
+        public System.Nullable<Oci.DatasafeService.Requests.ListFindingsRequest.SortByEnum> SortBy { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.")]
         public string FindingKey { get; set; }
 
@@ -80,6 +93,9 @@ namespace Oci.DatasafeService.Cmdlets
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
                     AccessLevel = AccessLevel,
                     TargetId = TargetId,
+                    ScimQuery = ScimQuery,
+                    Field = Field,
+                    SortBy = SortBy,
                     FindingKey = FindingKey
                 };
                 IEnumerable<ListFindingsResponse> responses = GetRequestDelegate().Invoke(request);
