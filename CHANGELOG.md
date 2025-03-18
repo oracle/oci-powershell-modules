@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 103.0.0 - 2025-03-18
+### Added 
+- Support for Managed Services for Mac service 
+- Support for scheduling customer-initiated backups in the GoldenGate service 
+- Support for GPU memory clusters and fabrics in the Compute service 
+
+### Breaking Changes 
+- The properties `IpAnycastId` and `MonitorIp` were removed from the models `CreateByoipRangeDetails` and `UpdateByoipRangeDetails` in the Compute service in the .NET SDK
+
 ## 102.0.0 - 2025-03-11
 ### Added 
 - Support for pipelines in the OpenSearch service 
