@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Core.dll'
 
 # Version number of this module.
-ModuleVersion = '103.0.0'
+ModuleVersion = '104.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '103.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '104.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Core.dll'
@@ -147,7 +147,8 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Get-OCIComputeGpuMemoryClusterInstancesList', 
                'Get-OCIComputeGpuMemoryClustersList', 
                'Get-OCIComputeGpuMemoryFabric', 
-               'Get-OCIComputeGpuMemoryFabricsList', 'Get-OCIComputeImage', 
+               'Get-OCIComputeGpuMemoryFabricsList', 'Get-OCIComputeHost', 
+               'Get-OCIComputeHostsList', 'Get-OCIComputeImage', 
                'Get-OCIComputeImageCapabilitySchema', 
                'Get-OCIComputeImageCapabilitySchemasList', 
                'Get-OCIComputeImageShapeCompatibilityEntriesList', 
@@ -306,6 +307,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Move-OCIComputeDedicatedVmHostCompartment', 
                'Move-OCIComputeGpuMemoryClusterCompartment', 
                'Move-OCIComputeGpuMemoryFabricCompartment', 
+               'Move-OCIComputeHostCompartment', 
                'Move-OCIComputeImageCapabilitySchemaCompartment', 
                'Move-OCIComputeImageCompartment', 
                'Move-OCIComputeInstanceCompartment', 
@@ -449,8 +451,8 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Update-OCIComputeConsoleHistory', 
                'Update-OCIComputeDedicatedVmHost', 
                'Update-OCIComputeGpuMemoryCluster', 
-               'Update-OCIComputeGpuMemoryFabric', 'Update-OCIComputeImage', 
-               'Update-OCIComputeImageCapabilitySchema', 
+               'Update-OCIComputeGpuMemoryFabric', 'Update-OCIComputeHost', 
+               'Update-OCIComputeImage', 'Update-OCIComputeImageCapabilitySchema', 
                'Update-OCIComputeInstance', 
                'Update-OCIComputeInstanceConsoleConnection', 
                'Update-OCIComputeInstanceMaintenanceEvent', 
