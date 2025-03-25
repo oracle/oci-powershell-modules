@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Generativeaiagent.dll'
 
 # Version number of this module.
-ModuleVersion = '103.0.0'
+ModuleVersion = '104.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '103.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '104.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Generativeaiagent.dll'
@@ -82,6 +82,7 @@ CmdletsToExport = 'Get-OCIGenerativeaiagentAgent',
                'Get-OCIGenerativeaiagentDataSourcesList', 
                'Get-OCIGenerativeaiagentKnowledgeBase', 
                'Get-OCIGenerativeaiagentKnowledgeBasesList', 
+               'Get-OCIGenerativeaiagentTool', 'Get-OCIGenerativeaiagentToolsList', 
                'Get-OCIGenerativeaiagentWorkRequest', 
                'Get-OCIGenerativeaiagentWorkRequestErrorsList', 
                'Get-OCIGenerativeaiagentWorkRequestLogsList', 
@@ -94,16 +95,18 @@ CmdletsToExport = 'Get-OCIGenerativeaiagentAgent',
                'New-OCIGenerativeaiagentDataIngestionJob', 
                'New-OCIGenerativeaiagentDataSource', 
                'New-OCIGenerativeaiagentKnowledgeBase', 
-               'Remove-OCIGenerativeaiagentAgent', 
+               'New-OCIGenerativeaiagentTool', 'Remove-OCIGenerativeaiagentAgent', 
                'Remove-OCIGenerativeaiagentAgentEndpoint', 
                'Remove-OCIGenerativeaiagentDataIngestionJob', 
                'Remove-OCIGenerativeaiagentDataSource', 
                'Remove-OCIGenerativeaiagentKnowledgeBase', 
+               'Remove-OCIGenerativeaiagentTool', 
                'Stop-OCIGenerativeaiagentWorkRequest', 
                'Update-OCIGenerativeaiagentAgent', 
                'Update-OCIGenerativeaiagentAgentEndpoint', 
                'Update-OCIGenerativeaiagentDataSource', 
-               'Update-OCIGenerativeaiagentKnowledgeBase'
+               'Update-OCIGenerativeaiagentKnowledgeBase', 
+               'Update-OCIGenerativeaiagentTool'
 
 # Variables to export from this module
 VariablesToExport = '*'

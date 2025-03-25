@@ -36,6 +36,12 @@ namespace Oci.StackmonitoringService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return monitored resource types that has the matching namespace.")]
         public string MetricNamespace { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources with matching source type.")]
+        public System.Nullable<Oci.StackmonitoringService.Models.SourceType> SourceType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources with matching resource category.")]
+        public System.Nullable<Oci.StackmonitoringService.Models.ResourceCategory> ResourceCategory { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for 'timeUpdated' is descending. Default order for 'name' is ascending.")]
         public System.Nullable<Oci.StackmonitoringService.Requests.ListMonitoredResourceTypesRequest.SortByEnum> SortBy { get; set; }
 
@@ -76,6 +82,8 @@ MonitoredResourceType Id, name and compartment will be added by default.")]
                     Status = Status,
                     IsExcludeSystemTypes = IsExcludeSystemTypes,
                     MetricNamespace = MetricNamespace,
+                    SourceType = SourceType,
+                    ResourceCategory = ResourceCategory,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     Limit = Limit,
