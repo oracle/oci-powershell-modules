@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Datascience.dll'
 
 # Version number of this module.
-ModuleVersion = '104.0.0'
+ModuleVersion = '104.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '104.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '104.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Datascience.dll'
@@ -71,7 +71,9 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Datascience.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Enable-OCIDatascienceModel', 
+CmdletsToExport = 'Disable-OCIDatascienceMlApplicationInstanceViewTrigger', 
+               'Enable-OCIDatascienceMlApplicationInstanceViewTrigger', 
+               'Enable-OCIDatascienceModel', 
                'Enable-OCIDatascienceModelDeployment', 
                'Enable-OCIDatascienceNotebookSession', 
                'Enable-OCIDatascienceSchedule', 
@@ -81,7 +83,19 @@ CmdletsToExport = 'Enable-OCIDatascienceModel',
                'Get-OCIDatascienceJob', 'Get-OCIDatascienceJobArtifactContent', 
                'Get-OCIDatascienceJobRun', 'Get-OCIDatascienceJobRunsList', 
                'Get-OCIDatascienceJobShapesList', 'Get-OCIDatascienceJobsList', 
-               'Get-OCIDatascienceModel', 'Get-OCIDatascienceModelArtifactContent', 
+               'Get-OCIDatascienceMlApplication', 
+               'Get-OCIDatascienceMlApplicationHistoricalPackageContent', 
+               'Get-OCIDatascienceMlApplicationImplementation', 
+               'Get-OCIDatascienceMlApplicationImplementationsList', 
+               'Get-OCIDatascienceMlApplicationImplementationVersion', 
+               'Get-OCIDatascienceMlApplicationImplementationVersionsList', 
+               'Get-OCIDatascienceMlApplicationInstance', 
+               'Get-OCIDatascienceMlApplicationInstancesList', 
+               'Get-OCIDatascienceMlApplicationInstanceView', 
+               'Get-OCIDatascienceMlApplicationInstanceViewsList', 
+               'Get-OCIDatascienceMlApplicationPackageContent', 
+               'Get-OCIDatascienceMlApplicationsList', 'Get-OCIDatascienceModel', 
+               'Get-OCIDatascienceModelArtifactContent', 
                'Get-OCIDatascienceModelCustomMetadatumArtifactContent', 
                'Get-OCIDatascienceModelDefinedMetadatumArtifactContent', 
                'Get-OCIDatascienceModelDeployment', 
@@ -115,8 +129,14 @@ CmdletsToExport = 'Enable-OCIDatascienceModel',
                'Invoke-OCIDatascienceHeadModelCustomMetadatumArtifact', 
                'Invoke-OCIDatascienceHeadModelDefinedMetadatumArtifact', 
                'Invoke-OCIDatascienceHeadStepArtifact', 
+               'Invoke-OCIDatascienceTriggerMlApplicationInstanceFlow', 
+               'Invoke-OCIDatascienceTriggerMlApplicationInstanceViewFlow', 
                'Move-OCIDatascienceJobCompartment', 
                'Move-OCIDatascienceJobRunCompartment', 
+               'Move-OCIDatascienceMlApplicationCompartment', 
+               'Move-OCIDatascienceMlApplicationImplementationCompartment', 
+               'Move-OCIDatascienceMlApplicationInstanceCompartment', 
+               'Move-OCIDatascienceMlApplicationInstanceViewCompartment', 
                'Move-OCIDatascienceModelCompartment', 
                'Move-OCIDatascienceModelDeploymentCompartment', 
                'Move-OCIDatascienceModelVersionSetCompartment', 
@@ -127,6 +147,9 @@ CmdletsToExport = 'Enable-OCIDatascienceModel',
                'Move-OCIDatascienceProjectCompartment', 
                'Move-OCIDatascienceScheduleCompartment', 'New-OCIDatascienceJob', 
                'New-OCIDatascienceJobArtifact', 'New-OCIDatascienceJobRun', 
+               'New-OCIDatascienceMlApplication', 
+               'New-OCIDatascienceMlApplicationImplementation', 
+               'New-OCIDatascienceMlApplicationInstance', 
                'New-OCIDatascienceModel', 'New-OCIDatascienceModelArtifact', 
                'New-OCIDatascienceModelCustomMetadatumArtifact', 
                'New-OCIDatascienceModelDefinedMetadatumArtifact', 
@@ -139,6 +162,9 @@ CmdletsToExport = 'Enable-OCIDatascienceModel',
                'New-OCIDatascienceSchedule', 'New-OCIDatascienceStepArtifact', 
                'Register-OCIDatascienceModelArtifactReference', 
                'Remove-OCIDatascienceJob', 'Remove-OCIDatascienceJobRun', 
+               'Remove-OCIDatascienceMlApplication', 
+               'Remove-OCIDatascienceMlApplicationImplementation', 
+               'Remove-OCIDatascienceMlApplicationInstance', 
                'Remove-OCIDatascienceModel', 
                'Remove-OCIDatascienceModelCustomMetadatumArtifact', 
                'Remove-OCIDatascienceModelDefinedMetadatumArtifact', 
@@ -149,9 +175,15 @@ CmdletsToExport = 'Enable-OCIDatascienceModel',
                'Remove-OCIDatasciencePrivateEndpoint', 
                'Remove-OCIDatascienceProject', 'Remove-OCIDatascienceSchedule', 
                'Restore-OCIDatascienceArchivedModelArtifact', 
+               'Restore-OCIDatascienceMlApplicationInstanceView', 
                'Stop-OCIDatascienceJobRun', 'Stop-OCIDatasciencePipelineRun', 
                'Stop-OCIDatascienceWorkRequest', 'Update-OCIDatascienceJob', 
-               'Update-OCIDatascienceJobRun', 'Update-OCIDatascienceModel', 
+               'Update-OCIDatascienceJobRun', 'Update-OCIDatascienceMlApplication', 
+               'Update-OCIDatascienceMlApplicationImplementation', 
+               'Update-OCIDatascienceMlApplicationImplementationVersion', 
+               'Update-OCIDatascienceMlApplicationInstance', 
+               'Update-OCIDatascienceMlApplicationInstanceView', 
+               'Update-OCIDatascienceModel', 
                'Update-OCIDatascienceModelCustomMetadatumArtifact', 
                'Update-OCIDatascienceModelDefinedMetadatumArtifact', 
                'Update-OCIDatascienceModelDeployment', 
@@ -160,7 +192,8 @@ CmdletsToExport = 'Enable-OCIDatascienceModel',
                'Update-OCIDatascienceNotebookSession', 
                'Update-OCIDatasciencePipeline', 'Update-OCIDatasciencePipelineRun', 
                'Update-OCIDatasciencePrivateEndpoint', 
-               'Update-OCIDatascienceProject', 'Update-OCIDatascienceSchedule'
+               'Update-OCIDatascienceProject', 'Update-OCIDatascienceSchedule', 
+               'Write-OCIDatascienceMlApplicationPackage'
 
 # Variables to export from this module
 VariablesToExport = '*'
