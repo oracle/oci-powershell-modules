@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Goldengate.dll'
 
 # Version number of this module.
-ModuleVersion = '104.1.0'
+ModuleVersion = '105.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '104.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '105.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Goldengate.dll'
@@ -73,6 +73,7 @@ FunctionsToExport = '*'
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Add-OCIGoldengateConnectionLock', 
                'Add-OCIGoldengateDeploymentBackupLock', 
+               'Add-OCIGoldengateDeploymentLocalPeer', 
                'Add-OCIGoldengateDeploymentLock', 
                'Copy-OCIGoldengateDeploymentBackup', 
                'Export-OCIGoldengateDeploymentWallet', 
@@ -86,6 +87,7 @@ CmdletsToExport = 'Add-OCIGoldengateConnectionLock',
                'Get-OCIGoldengateDeployment', 'Get-OCIGoldengateDeploymentBackup', 
                'Get-OCIGoldengateDeploymentBackupsList', 
                'Get-OCIGoldengateDeploymentEnvironmentsList', 
+               'Get-OCIGoldengateDeploymentPeersList', 
                'Get-OCIGoldengateDeploymentsList', 
                'Get-OCIGoldengateDeploymentTypesList', 
                'Get-OCIGoldengateDeploymentUpgrade', 
@@ -106,11 +108,13 @@ CmdletsToExport = 'Add-OCIGoldengateConnectionLock',
                'Get-OCIGoldengateWorkRequestsList', 
                'Import-OCIGoldengateDeploymentWallet', 
                'Invoke-OCIGoldengateCollectDeploymentDiagnostic', 
+               'Invoke-OCIGoldengateCollectPipelineDiagnostic', 
                'Invoke-OCIGoldengateDeploymentWalletExists', 
                'Invoke-OCIGoldengateRefreshConnection', 
                'Invoke-OCIGoldengateRescheduleDeploymentUpgrade', 
                'Invoke-OCIGoldengateRollbackDeploymentUpgrade', 
                'Invoke-OCIGoldengateSnoozeDeploymentUpgrade', 
+               'Invoke-OCIGoldengateSwitchoverDeploymentPeer', 
                'Invoke-OCIGoldengateTestConnectionAssignment', 
                'Invoke-OCIGoldengateTestPipelineConnection', 
                'Invoke-OCIGoldengateUpgradeDeployment', 
@@ -132,6 +136,7 @@ CmdletsToExport = 'Add-OCIGoldengateConnectionLock',
                'Remove-OCIGoldengateDeployment', 
                'Remove-OCIGoldengateDeploymentBackup', 
                'Remove-OCIGoldengateDeploymentBackupLock', 
+               'Remove-OCIGoldengateDeploymentLocalPeer', 
                'Remove-OCIGoldengateDeploymentLock', 
                'Remove-OCIGoldengatePipeline', 'Restore-OCIGoldengateDeployment', 
                'Start-OCIGoldengateDeployment', 'Start-OCIGoldengatePipeline', 
