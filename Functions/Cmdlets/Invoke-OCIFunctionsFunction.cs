@@ -45,6 +45,9 @@ namespace Oci.FunctionsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates that the request is a dry run, if set to ""true"". A dry run request does not execute the function.")]
+        public System.Nullable<bool> IsDryRun { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = "Path to the output file.", ParameterSetName = WriteToFileSet)]
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = "Path to the output file.", ParameterSetName = FromStreamSet + "-" + WriteToFileSet)]
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = "Path to the output file.", ParameterSetName = FromFileSet + "-" + WriteToFileSet)]
@@ -74,7 +77,8 @@ namespace Oci.FunctionsService.Cmdlets
                     InvokeFunctionBody = InvokeFunctionBody,
                     FnIntent = FnIntent,
                     FnInvokeType = FnInvokeType,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    IsDryRun = IsDryRun
                 };
 
                 response = client.InvokeFunction(request).GetAwaiter().GetResult();
