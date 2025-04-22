@@ -30,6 +30,11 @@ namespace Oci.ContainerengineService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.", ParameterSetName = Default)]
         public string OpcRequestId { get; set; }
 
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.", ParameterSetName = Default)]
+        public System.Nullable<bool> ShouldIncludeOidcConfigFile { get; set; }
+
         [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = LifecycleStateParamSet)]
         public Oci.ContainerengineService.Models.ClusterLifecycleState[] WaitForLifecycleState { get; set; }
 
@@ -49,7 +54,8 @@ namespace Oci.ContainerengineService.Cmdlets
                 request = new GetClusterRequest
                 {
                     ClusterId = ClusterId,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    ShouldIncludeOidcConfigFile = ShouldIncludeOidcConfigFile
                 };
 
                 HandleOutput(request);

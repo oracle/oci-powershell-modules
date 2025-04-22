@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Containerengine.dll'
 
 # Version number of this module.
-ModuleVersion = '105.1.0'
+ModuleVersion = '105.2.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '105.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '105.2.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Containerengine.dll'
@@ -95,6 +95,8 @@ CmdletsToExport = 'Complete-OCIContainerengineCredentialRotation',
                'Get-OCIContainerengineWorkRequestsList', 
                'Invoke-OCIContainerengineClusterMigrateToNativeVcn', 
                'Invoke-OCIContainerengineInstallAddon', 
+               'Invoke-OCIContainerengineRebootClusterNode', 
+               'Invoke-OCIContainerengineReplaceBootVolumeClusterNode', 
                'New-OCIContainerengineCluster', 'New-OCIContainerengineKubeconfig', 
                'New-OCIContainerengineNodePool', 
                'New-OCIContainerengineVirtualNodePool', 
