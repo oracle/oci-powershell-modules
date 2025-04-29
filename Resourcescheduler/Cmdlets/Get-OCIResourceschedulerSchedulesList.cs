@@ -48,6 +48,9 @@ namespace Oci.ResourceschedulerService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This is a unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID. The only valid characters for request IDs are letters, numbers, underscore, and dash.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.")]
+        public string ResourceId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -68,7 +71,8 @@ namespace Oci.ResourceschedulerService.Cmdlets
                     Page = Page,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    ResourceId = ResourceId
                 };
                 IEnumerable<ListSchedulesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
