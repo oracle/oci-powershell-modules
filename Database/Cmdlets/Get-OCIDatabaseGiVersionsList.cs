@@ -39,6 +39,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The target availability domain. Only passed if the limit is AD-specific.")]
         public string AvailabilityDomain { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If provided, filters the results for the specified resource Id.")]
+        public string ResourceId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -56,7 +59,8 @@ namespace Oci.DatabaseService.Cmdlets
                     Page = Page,
                     SortOrder = SortOrder,
                     Shape = Shape,
-                    AvailabilityDomain = AvailabilityDomain
+                    AvailabilityDomain = AvailabilityDomain,
+                    ResourceId = ResourceId
                 };
                 IEnumerable<ListGiVersionsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

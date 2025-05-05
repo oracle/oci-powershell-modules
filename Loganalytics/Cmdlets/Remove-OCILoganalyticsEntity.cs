@@ -31,6 +31,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Option to delete entity even if the entity is associated with a log source and stop any log collections associated with this entity.")]
+        public System.Nullable<bool> IsForceDelete { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "Ignore confirmation and force the Cmdlet to complete action.")]
         public SwitchParameter Force { get; set; }
 
@@ -52,7 +55,8 @@ namespace Oci.LoganalyticsService.Cmdlets
                     NamespaceName = NamespaceName,
                     LogAnalyticsEntityId = LogAnalyticsEntityId,
                     IfMatch = IfMatch,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    IsForceDelete = IsForceDelete
                 };
 
                 response = client.DeleteLogAnalyticsEntity(request).GetAwaiter().GetResult();

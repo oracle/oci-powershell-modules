@@ -24,9 +24,6 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies shape query parameter.")]
-        public string Shape { get; set; }
-
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies gi version query parameter.")]
         public string GiVersion { get; set; }
 
@@ -42,6 +39,15 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If provided, filters the results for the given shape.")]
+        public string Shape { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If provided, return highest versions from each major version family.")]
+        public System.Nullable<bool> IsLatest { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If provided, filters the results for the specified resource Id.")]
+        public string ResourceId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -55,12 +61,14 @@ namespace Oci.DatabaseService.Cmdlets
                 request = new ListSystemVersionsRequest
                 {
                     CompartmentId = CompartmentId,
-                    Shape = Shape,
                     GiVersion = GiVersion,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    Shape = Shape,
+                    IsLatest = IsLatest,
+                    ResourceId = ResourceId
                 };
                 IEnumerable<ListSystemVersionsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

@@ -48,6 +48,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format ""{name}:{value}:{type}"".  All inputs are case-insensitive.")]
         public System.Collections.Generic.List<string> MetadataEquals { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return log analytics entity toplogy whose context matches the specified string.")]
+        public string Context { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -68,7 +71,8 @@ namespace Oci.LoganalyticsService.Cmdlets
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,
-                    MetadataEquals = MetadataEquals
+                    MetadataEquals = MetadataEquals,
+                    Context = Context
                 };
                 IEnumerable<ListLogAnalyticsEntityTopologyResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
