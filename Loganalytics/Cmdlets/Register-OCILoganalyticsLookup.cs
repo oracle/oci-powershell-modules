@@ -25,10 +25,10 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The lookup type.  Valid values are Lookup, Dictionary or Module.")]
         public System.Nullable<Oci.LoganalyticsService.Requests.RegisterLookupRequest.TypeEnum> Type { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"file containing data for lookup creation", ParameterSetName = FromStreamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The lookup content to be created, with or without tags. The following formats are supported as binary data:   1. If there are no tags: file containing the lookup content.   2. If there are tags: JSON file containing the lookup content and tags.", ParameterSetName = FromStreamSet)]
         public System.IO.Stream RegisterLookupContentFileBody { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Use this parameter to provide the file location from where the input stream to be read. file containing data for lookup creation", ParameterSetName = FromFileSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Use this parameter to provide the file location from where the input stream to be read. The lookup content to be created, with or without tags. The following formats are supported as binary data:   1. If there are no tags: file containing the lookup content.   2. If there are tags: JSON file containing the lookup content and tags.", ParameterSetName = FromFileSet)]
         public String RegisterLookupContentFileBodyFromFile { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.")]
@@ -51,6 +51,9 @@ namespace Oci.LoganalyticsService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is ""100-Continue"" (case-insensitive).")]
         public string Expect { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment id")]
+        public string CompartmentId { get; set; }
 
         protected override void ProcessRecord()
         {
@@ -76,7 +79,8 @@ namespace Oci.LoganalyticsService.Cmdlets
                     IsHidden = IsHidden,
                     OpcRetryToken = OpcRetryToken,
                     OpcRequestId = OpcRequestId,
-                    Expect = Expect
+                    Expect = Expect,
+                    CompartmentId = CompartmentId
                 };
 
                 response = client.RegisterLookup(request).GetAwaiter().GetResult();

@@ -25,6 +25,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment id")]
+        public string CompartmentId { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -35,7 +38,8 @@ namespace Oci.LoganalyticsService.Cmdlets
                 request = new GetLookupSummaryRequest
                 {
                     NamespaceName = NamespaceName,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    CompartmentId = CompartmentId
                 };
 
                 response = client.GetLookupSummary(request).GetAwaiter().GetResult();

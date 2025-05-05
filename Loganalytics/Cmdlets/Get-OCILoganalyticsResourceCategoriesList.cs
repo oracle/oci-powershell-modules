@@ -33,6 +33,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A comma-separated list of resource unique identifiers used for filtering. Only resources with matching unique identifiers will be returned.")]
         public string ResourceIds { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment id")]
+        public string CompartmentId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (`ASC`) or descending (`DESC`).")]
         public System.Nullable<Oci.LoganalyticsService.Requests.ListResourceCategoriesRequest.SortOrderEnum> SortOrder { get; set; }
 
@@ -64,6 +67,7 @@ namespace Oci.LoganalyticsService.Cmdlets
                     Categories = Categories,
                     ResourceTypes = ResourceTypes,
                     ResourceIds = ResourceIds,
+                    CompartmentId = CompartmentId,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     Limit = Limit,

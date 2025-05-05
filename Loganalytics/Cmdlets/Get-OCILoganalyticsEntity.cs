@@ -35,6 +35,11 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.", ParameterSetName = Default)]
         public string OpcRequestId { get; set; }
 
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Option to return count of associated log sources for log analytics entity(s).", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Option to return count of associated log sources for log analytics entity(s).", ParameterSetName = Default)]
+        public System.Nullable<bool> IsShowAssociatedSourcesCount { get; set; }
+
         [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = LifecycleStateParamSet)]
         public Oci.LoganalyticsService.Models.EntityLifecycleStates[] WaitForLifecycleState { get; set; }
 
@@ -55,7 +60,8 @@ namespace Oci.LoganalyticsService.Cmdlets
                 {
                     NamespaceName = NamespaceName,
                     LogAnalyticsEntityId = LogAnalyticsEntityId,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    IsShowAssociatedSourcesCount = IsShowAssociatedSourcesCount
                 };
 
                 HandleOutput(request);
