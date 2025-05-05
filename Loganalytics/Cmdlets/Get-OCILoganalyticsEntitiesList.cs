@@ -81,6 +81,21 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format ""{name}:{value}:{type}"".  All inputs are case-insensitive.")]
         public System.Collections.Generic.List<string> MetadataEquals { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A list of tag filters to apply.  Only entities with a defined tag matching the value will be returned. Each item in the list has the format ""{namespace}.{tagName}.{value}"".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as ""OR"". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as ""AND"".")]
+        public System.Collections.Generic.List<string> DefinedTagEquals { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A list of tag filters to apply.  Only entities with a freeform tag matching the value will be returned. The key for each tag is ""{tagName}.{value}"".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as ""OR"".  Values for different tag names are interpreted as ""AND"".")]
+        public System.Collections.Generic.List<string> FreeformTagEquals { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A list of tag existence filters to apply.  Only entities for which the specified defined tags exist will be returned. Each item in the list has the format ""{namespace}.{tagName}.true"" (for checking existence of a defined tag) or ""{namespace}.true"".  All inputs are case-insensitive. Currently, only existence (""true"" at the end) is supported. Absence (""false"" at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as ""OR"". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as ""AND"".")]
+        public System.Collections.Generic.List<string> DefinedTagExists { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A list of tag existence filters to apply.  Only entities for which the specified freeform tags exist the value will be returned. The key for each tag is ""{tagName}.true"".  All inputs are case-insensitive. Currently, only existence (""true"" at the end) is supported. Absence (""false"" at the end) is not supported. Multiple values for different tag names are interpreted as ""AND"".")]
+        public System.Collections.Generic.List<string> FreeformTagExists { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Option to return count of associated log sources for log analytics entity(s).")]
+        public System.Nullable<bool> IsShowAssociatedSourcesCount { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -112,7 +127,12 @@ namespace Oci.LoganalyticsService.Cmdlets
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,
-                    MetadataEquals = MetadataEquals
+                    MetadataEquals = MetadataEquals,
+                    DefinedTagEquals = DefinedTagEquals,
+                    FreeformTagEquals = FreeformTagEquals,
+                    DefinedTagExists = DefinedTagExists,
+                    FreeformTagExists = FreeformTagExists,
+                    IsShowAssociatedSourcesCount = IsShowAssociatedSourcesCount
                 };
                 IEnumerable<ListLogAnalyticsEntitiesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
