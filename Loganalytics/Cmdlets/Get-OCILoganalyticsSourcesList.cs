@@ -60,6 +60,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A comma-separated list of categories used for filtering")]
         public string Categories { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The pattern text filter. Only sources with a pattern | which contains text with the specified string will be returned.")]
+        public string PatternText { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A flag specifying whether or not to return all source information, or a subset of the information about each source.  A value of true will return only the source unique identifier and the source name.  A value of false will return all source information (such as author, updated date, system flag, etc.)")]
         public System.Nullable<bool> IsSimplified { get; set; }
 
@@ -91,6 +94,7 @@ namespace Oci.LoganalyticsService.Cmdlets
                     Name = Name,
                     SourceType = SourceType,
                     Categories = Categories,
+                    PatternText = PatternText,
                     IsSimplified = IsSimplified,
                     OpcRequestId = OpcRequestId
                 };

@@ -39,6 +39,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The pattern id.")]
         public System.Nullable<int> PatternId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The pattern id (long).")]
+        public System.Nullable<long> PatternIdLong { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The property name used for filtering.")]
         public string Name { get; set; }
 
@@ -75,6 +78,7 @@ namespace Oci.LoganalyticsService.Cmdlets
                     IsIncludePatterns = IsIncludePatterns,
                     EntityId = EntityId,
                     PatternId = PatternId,
+                    PatternIdLong = PatternIdLong,
                     Name = Name,
                     Limit = Limit,
                     Page = Page,

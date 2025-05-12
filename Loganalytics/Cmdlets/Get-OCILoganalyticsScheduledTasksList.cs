@@ -48,6 +48,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.")]
         public System.Nullable<Oci.LoganalyticsService.Requests.ListScheduledTasksRequest.SortByEnum> SortBy { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only scheduled tasks whose stream action templateId matches the given id  exactly.")]
+        public string TemplateId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only scheduled tasks whose stream action savedSearchId matches the given ManagementSavedSearch id [OCID] exactly.")]
         public string SavedSearchId { get; set; }
 
@@ -78,6 +81,7 @@ namespace Oci.LoganalyticsService.Cmdlets
                     DisplayName = DisplayName,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
+                    TemplateId = TemplateId,
                     SavedSearchId = SavedSearchId,
                     DisplayNameContains = DisplayNameContains,
                     TargetService = TargetService

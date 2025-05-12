@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Loganalytics.dll'
 
 # Version number of this module.
-ModuleVersion = '105.2.0'
+ModuleVersion = '106.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '105.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '106.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Loganalytics.dll'
@@ -109,6 +109,7 @@ CmdletsToExport = 'Add-OCILoganalyticsEntityAssociation',
                'Get-OCILoganalyticsEntityType', 
                'Get-OCILoganalyticsEntityTypesList', 'Get-OCILoganalyticsField', 
                'Get-OCILoganalyticsFieldsList', 'Get-OCILoganalyticsFieldsSummary', 
+               'Get-OCILoganalyticsFieldUsages', 
                'Get-OCILoganalyticsIngestTimeRule', 
                'Get-OCILoganalyticsIngestTimeRulesList', 
                'Get-OCILoganalyticsLabel', 
@@ -126,7 +127,7 @@ CmdletsToExport = 'Add-OCILoganalyticsEntityAssociation',
                'Get-OCILoganalyticsObjectCollectionRule', 
                'Get-OCILoganalyticsObjectCollectionRulesList', 
                'Get-OCILoganalyticsOverlappingRecallsList', 
-               'Get-OCILoganalyticsParser', 
+               'Get-OCILoganalyticsParser', 'Get-OCILoganalyticsParserActionsList', 
                'Get-OCILoganalyticsParserFunctionsList', 
                'Get-OCILoganalyticsParserMetaPluginsList', 
                'Get-OCILoganalyticsParsersList', 
@@ -139,6 +140,7 @@ CmdletsToExport = 'Add-OCILoganalyticsEntityAssociation',
                'Get-OCILoganalyticsRecallCount', 
                'Get-OCILoganalyticsRecalledDataList', 
                'Get-OCILoganalyticsRecalledDataSize', 
+               'Get-OCILoganalyticsRecalledInfoList', 
                'Get-OCILoganalyticsResourceCategoriesList', 
                'Get-OCILoganalyticsRulesList', 'Get-OCILoganalyticsRulesSummary', 
                'Get-OCILoganalyticsScheduledTask', 
@@ -158,6 +160,7 @@ CmdletsToExport = 'Add-OCILoganalyticsEntityAssociation',
                'Get-OCILoganalyticsStorageWorkRequestsList', 
                'Get-OCILoganalyticsSupportedCharEncodingsList', 
                'Get-OCILoganalyticsSupportedTimezonesList', 
+               'Get-OCILoganalyticsTemplate', 'Get-OCILoganalyticsTemplatesList', 
                'Get-OCILoganalyticsUnprocessedDataBucket', 
                'Get-OCILoganalyticsUpload', 'Get-OCILoganalyticsUploadFilesList', 
                'Get-OCILoganalyticsUploadsList', 
@@ -203,6 +206,7 @@ CmdletsToExport = 'Add-OCILoganalyticsEntityAssociation',
                'Move-OCILoganalyticsEntityCompartment', 
                'Move-OCILoganalyticsIngestTimeRuleCompartment', 
                'Move-OCILoganalyticsLogGroupCompartment', 
+               'Move-OCILoganalyticsLookupCompartment', 
                'Move-OCILoganalyticsObjectCollectionRuleCompartment', 
                'Move-OCILoganalyticsScheduledTaskCompartment', 
                'New-OCILoganalyticsEmBridge', 'New-OCILoganalyticsEntity', 
@@ -239,7 +243,7 @@ CmdletsToExport = 'Add-OCILoganalyticsEntityAssociation',
                'Update-OCILoganalyticsStorage', 
                'Write-OCILoganalyticsDiscoveryData', 
                'Write-OCILoganalyticsLogEventsFile', 
-               'Write-OCILoganalyticsLogFile', 
+               'Write-OCILoganalyticsLogFile', 'Write-OCILoganalyticsOtlpLogs', 
                'Write-OCILoganalyticsQueryWorkRequestBackground'
 
 # Variables to export from this module

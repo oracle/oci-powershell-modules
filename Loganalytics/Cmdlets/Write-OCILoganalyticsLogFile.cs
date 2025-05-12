@@ -22,9 +22,6 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics namespace used for the request.")]
         public string NamespaceName { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the upload. This can be considered as a container name where different kind of logs will be collected and searched together. This upload name/id can further be used for retrieving the details of the upload, including its status or deleting the upload.")]
-        public string UploadName { get; set; }
-
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Name of the log source that will be used to process the files being uploaded.")]
         public string LogSourceName { get; set; }
 
@@ -39,6 +36,9 @@ namespace Oci.LoganalyticsService.Cmdlets
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Use this parameter to provide the file location from where the input stream to be read. Log data", ParameterSetName = FromFileSet)]
         public String UploadLogFileBodyFromFile { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the upload. This can be considered as a container name where different kind of logs will be collected and searched together. This upload name/id can further be used for retrieving the details of the upload, including its status or deleting the upload.")]
+        public string UploadName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The entity OCID.")]
         public string EntityId { get; set; }
@@ -94,11 +94,11 @@ namespace Oci.LoganalyticsService.Cmdlets
                 request = new UploadLogFileRequest
                 {
                     NamespaceName = NamespaceName,
-                    UploadName = UploadName,
                     LogSourceName = LogSourceName,
                     Filename = Filename,
                     OpcMetaLoggrpid = OpcMetaLoggrpid,
                     UploadLogFileBody = UploadLogFileBody,
+                    UploadName = UploadName,
                     EntityId = EntityId,
                     Timezone = Timezone,
                     CharEncoding = CharEncoding,
