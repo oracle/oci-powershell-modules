@@ -15,15 +15,18 @@ using Oci.Common.Model;
 
 namespace Oci.DatabasemanagementService.Cmdlets
 {
-    [Cmdlet("Enable", "OCIDatabasemanagementExternalMysqlAssociatedService")]
-    [OutputType(new System.Type[] { typeof(void), typeof(Oci.DatabasemanagementService.Responses.EnableExternalMysqlAssociatedServiceResponse) })]
-    public class EnableOCIDatabasemanagementExternalMysqlAssociatedService : OCIManagedMySqlDatabasesCmdlet
+    [Cmdlet("Edit", "OCIDatabasemanagementExternalContainerDatabaseManagementFeature")]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.DatabasemanagementService.Responses.ModifyExternalContainerDatabaseManagementFeatureResponse) })]
+    public class EditOCIDatabasemanagementExternalContainerDatabaseManagementFeature : OCIDbManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the External MySQL Database.")]
-        public string ExternalMySqlDatabaseId { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the external container database.")]
+        public string ExternalContainerDatabaseId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to enable an Associated Service for an external MySQL database resource.")]
-        public EnableExternalMysqlAssociatedServiceDetails EnableExternalMysqlAssociatedServiceDetails { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to enable a Database Management feature for an external container database.")]
+        public EnableExternalContainerDatabaseManagementFeatureDetails EnableExternalContainerDatabaseManagementFeatureDetails { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
+        public string OpcRequestId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
         public string OpcRetryToken { get; set; }
@@ -31,27 +34,24 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
         public string IfMatch { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
-        public string OpcRequestId { get; set; }
-
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            EnableExternalMysqlAssociatedServiceRequest request;
+            ModifyExternalContainerDatabaseManagementFeatureRequest request;
 
             try
             {
-                request = new EnableExternalMysqlAssociatedServiceRequest
+                request = new ModifyExternalContainerDatabaseManagementFeatureRequest
                 {
-                    ExternalMySqlDatabaseId = ExternalMySqlDatabaseId,
-                    EnableExternalMysqlAssociatedServiceDetails = EnableExternalMysqlAssociatedServiceDetails,
+                    ExternalContainerDatabaseId = ExternalContainerDatabaseId,
+                    EnableExternalContainerDatabaseManagementFeatureDetails = EnableExternalContainerDatabaseManagementFeatureDetails,
+                    OpcRequestId = OpcRequestId,
                     OpcRetryToken = OpcRetryToken,
-                    IfMatch = IfMatch,
-                    OpcRequestId = OpcRequestId
+                    IfMatch = IfMatch
                 };
 
-                response = client.EnableExternalMysqlAssociatedService(request).GetAwaiter().GetResult();
-                WriteOutput(response);
+                response = client.ModifyExternalContainerDatabaseManagementFeature(request).GetAwaiter().GetResult();
+                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
             }
             catch (OciException ex)
@@ -70,6 +70,6 @@ namespace Oci.DatabasemanagementService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private EnableExternalMysqlAssociatedServiceResponse response;
+        private ModifyExternalContainerDatabaseManagementFeatureResponse response;
     }
 }
