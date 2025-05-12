@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Databasemanagement.dll'
 
 # Version number of this module.
-ModuleVersion = '106.0.0'
+ModuleVersion = '107.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '106.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '107.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasemanagement.dll'
@@ -82,7 +82,6 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Disable-OCIDatabasemanagementExternalDbSystemDatabaseManagement', 
                'Disable-OCIDatabasemanagementExternalDbSystemStackMonitoring', 
                'Disable-OCIDatabasemanagementExternalExadataInfrastructureManagement', 
-               'Disable-OCIDatabasemanagementExternalMysqlAssociatedService', 
                'Disable-OCIDatabasemanagementExternalMySqlDatabaseManagement', 
                'Disable-OCIDatabasemanagementExternalNonContainerDatabaseManagementFeature', 
                'Disable-OCIDatabasemanagementExternalPluggableDatabaseManagementFeature', 
@@ -91,6 +90,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Disable-OCIDatabasemanagementPluggableDatabaseManagementFeature', 
                'Disable-OCIDatabasemanagementSqlPlanBaselinesUsage', 
                'Edit-OCIDatabasemanagementAutonomousDatabaseManagementFeature', 
+               'Edit-OCIDatabasemanagementExternalContainerDatabaseManagementFeature', 
                'Edit-OCIDatabasemanagementFeature', 
                'Edit-OCIDatabasemanagementPluggableDatabaseManagementFeature', 
                'Edit-OCIDatabasemanagementSnapshotSettings', 
@@ -101,7 +101,6 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Enable-OCIDatabasemanagementExternalDbSystemDatabaseManagement', 
                'Enable-OCIDatabasemanagementExternalDbSystemStackMonitoring', 
                'Enable-OCIDatabasemanagementExternalExadataInfrastructureManagement', 
-               'Enable-OCIDatabasemanagementExternalMysqlAssociatedService', 
                'Enable-OCIDatabasemanagementExternalMySqlDatabaseManagement', 
                'Enable-OCIDatabasemanagementExternalNonContainerDatabaseManagementFeature', 
                'Enable-OCIDatabasemanagementExternalPluggableDatabaseManagementFeature', 

@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 107.0.0 - 2025-05-13
+### Added 
+- Support for the Model Deployment service 
+- Support for enabling and monitoring Pluggable Databases(PDB) in the Database Management service 
+- Support for additional unit shapes in AI clusters in the Generative AI service 
+- Support for node search details and node shape details on create and update cluster operations in the OpenSearch service 
+
+### Breaking Changes 
+- The operations `DisableExternalMysqlAssociatedService` and `EnableExternalMysqlAssociatedService` were removed from the `ManagedMySqlDatabasesClient` in the Database Management service in the .NET SDK 
+- The property `LifecycleState` and its enum `LifecycleStateEnum` were removed from the model `ExadataInfrastructureLifecycleStateValues` in the Database Management service in the .NET SDK 
+- The models `DisableExternalMysqlAssociatedServiceDetails`, `EnableExternalMysqlAssociatedServiceDetails`, `DisableExternalMysqlAssociatedServiceRequest`, `EnableExternalMysqlAssociatedServiceRequest`, `DisableExternalMysqlAssociatedServiceResponse`, `EnableExternalMysqlAssociatedServiceResponse`, and `ExternalMysqlAssociatedServiceName` were removed in the Database Management service in the .NET SDK
+
 ## 106.0.0 - 2025-05-06
 ### Added 
 - Support for dry run while creating cloud exadata Infrastructure and VM clusters in the Database service 
