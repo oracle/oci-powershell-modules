@@ -31,6 +31,11 @@ namespace Oci.DatabaseService.Cmdlets
         public string OpcRequestId { get; set; }
 
         
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates that the request is a dry run, if set to ""true"". A dry run request does not actually creating or updating a resource and is used only to perform validation on the submitted data.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates that the request is a dry run, if set to ""true"". A dry run request does not actually creating or updating a resource and is used only to perform validation on the submitted data.", ParameterSetName = Default)]
+        public System.Nullable<bool> OpcDryRun { get; set; }
+
+        
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for deregistering an Autonomous Database with Data Safe.", ParameterSetName = StatusParamSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for deregistering an Autonomous Database with Data Safe.", ParameterSetName = Default)]
         public DeregisterAutonomousDatabaseDataSafeDetails DeregisterAutonomousDatabaseDataSafeDetails { get; set; }
@@ -55,6 +60,7 @@ namespace Oci.DatabaseService.Cmdlets
                 {
                     AutonomousDatabaseId = AutonomousDatabaseId,
                     OpcRequestId = OpcRequestId,
+                    OpcDryRun = OpcDryRun,
                     DeregisterAutonomousDatabaseDataSafeDetails = DeregisterAutonomousDatabaseDataSafeDetails
                 };
 
