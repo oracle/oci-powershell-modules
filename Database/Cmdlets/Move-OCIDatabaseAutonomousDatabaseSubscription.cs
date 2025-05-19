@@ -45,6 +45,11 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.", ParameterSetName = Default)]
         public string IfMatch { get; set; }
 
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates that the request is a dry run, if set to ""true"". A dry run request does not actually creating or updating a resource and is used only to perform validation on the submitted data.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates that the request is a dry run, if set to ""true"". A dry run request does not actually creating or updating a resource and is used only to perform validation on the submitted data.", ParameterSetName = Default)]
+        public System.Nullable<bool> OpcDryRun { get; set; }
+
         [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = StatusParamSet)]
         public WorkrequestsService.Models.WorkRequest.StatusEnum[] WaitForStatus { get; set; }
 
@@ -67,7 +72,8 @@ namespace Oci.DatabaseService.Cmdlets
                     AutonomousDatabaseId = AutonomousDatabaseId,
                     OpcRetryToken = OpcRetryToken,
                     OpcRequestId = OpcRequestId,
-                    IfMatch = IfMatch
+                    IfMatch = IfMatch,
+                    OpcDryRun = OpcDryRun
                 };
 
                 HandleOutput(request);

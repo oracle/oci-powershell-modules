@@ -35,6 +35,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).")]
         public string OpcRetryToken { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates that the request is a dry run, if set to ""true"". A dry run request does not actually creating or updating a resource and is used only to perform validation on the submitted data.")]
+        public System.Nullable<bool> OpcDryRun { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = "Path to the output file.", ParameterSetName = WriteToFileSet)]
         public string OutputFile { get; set; }
 
@@ -53,7 +56,8 @@ namespace Oci.DatabaseService.Cmdlets
                     AutonomousDatabaseId = AutonomousDatabaseId,
                     GenerateAutonomousDatabaseWalletDetails = GenerateAutonomousDatabaseWalletDetails,
                     OpcRequestId = OpcRequestId,
-                    OpcRetryToken = OpcRetryToken
+                    OpcRetryToken = OpcRetryToken,
+                    OpcDryRun = OpcDryRun
                 };
 
                 response = client.GenerateAutonomousDatabaseWallet(request).GetAwaiter().GetResult();
