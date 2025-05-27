@@ -25,6 +25,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional. Filters the performance results by shape type.")]
         public string ShapeType { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database edition of quota (STANDARD_EDITION/ENTERPRISE_EDITION/ENTERPRISE_EDITION_HIGH_PERFORMANCE/ENTERPRISE_EDITION_EXTREME/ENTERPRISE_EDITION_DEVELOPER)")]
+        public System.Nullable<Oci.DatabaseService.Requests.ListDbSystemStoragePerformancesRequest.DatabaseEditionEnum> DatabaseEdition { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
@@ -39,6 +42,7 @@ namespace Oci.DatabaseService.Cmdlets
                 {
                     StorageManagement = StorageManagement,
                     ShapeType = ShapeType,
+                    DatabaseEdition = DatabaseEdition,
                     OpcRequestId = OpcRequestId
                 };
 

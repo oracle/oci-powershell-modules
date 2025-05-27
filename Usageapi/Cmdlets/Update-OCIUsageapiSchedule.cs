@@ -19,7 +19,7 @@ namespace Oci.UsageapiService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.UsageapiService.Models.Schedule), typeof(Oci.UsageapiService.Responses.UpdateScheduleResponse) })]
     public class UpdateOCIUsageapiSchedule : OCIUsageapiCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. Currently supports only tags")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. Currently supports only tags.")]
         public UpdateScheduleDetails UpdateScheduleDetails { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The schedule unique OCID.")]

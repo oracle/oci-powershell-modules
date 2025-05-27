@@ -21,8 +21,8 @@ namespace Oci.UsageapiService.Cmdlets
     public class GetOCIUsageapiScheduledRun : OCIUsageapiCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The scheduledRun unique OCID", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The scheduledRun unique OCID", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The scheduled run unique OCID.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The scheduled run unique OCID.", ParameterSetName = Default)]
         public string ScheduledRunId { get; set; }
 
         
