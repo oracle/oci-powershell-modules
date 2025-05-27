@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Bds.dll'
 
 # Version number of this module.
-ModuleVersion = '107.1.0'
+ModuleVersion = '108.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '107.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '108.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Bds.dll'
@@ -92,6 +92,7 @@ CmdletsToExport = 'Add-OCIBdsAutoScalingConfiguration', 'Add-OCIBdsBlockStorage'
                'Get-OCIBdsPatchesList', 'Get-OCIBdsPatchHistoriesList', 
                'Get-OCIBdsResourcePrincipalConfiguration', 
                'Get-OCIBdsResourcePrincipalConfigurationsList', 
+               'Get-OCIBdsSoftwareUpdate', 'Get-OCIBdsSoftwareUpdatesList', 
                'Get-OCIBdsWorkRequest', 'Get-OCIBdsWorkRequestErrorsList', 
                'Get-OCIBdsWorkRequestLogsList', 'Get-OCIBdsWorkRequestsList', 
                'Invoke-OCIBdsCertificateServiceInfo', 
@@ -100,14 +101,16 @@ CmdletsToExport = 'Add-OCIBdsAutoScalingConfiguration', 'Add-OCIBdsBlockStorage'
                'Invoke-OCIBdsExecuteBootstrapScript', 
                'Invoke-OCIBdsForceRefreshResourcePrincipal', 
                'Invoke-OCIBdsInstallOsPatch', 'Invoke-OCIBdsInstallPatch', 
+               'Invoke-OCIBdsInstallSoftwareUpdates', 
                'Invoke-OCIBdsRefreshConfidentialApplication', 
                'Invoke-OCIBdsRefreshUpstTokenExchangeKeytab', 
                'Invoke-OCIBdsRenewCertificate', 'Invoke-OCIBdsReplaceNode', 
                'Invoke-OCIBdsTestBdsMetastoreConfiguration', 
                'Invoke-OCIBdsTestBdsObjectStorageConnection', 
                'Move-OCIBdsInstanceCompartment', 'Move-OCIBdsShape', 
-               'New-OCIBdsApiKey', 'New-OCIBdsIdentityConfiguration', 
-               'New-OCIBdsInstance', 'New-OCIBdsMetastoreConfiguration', 
+               'New-OCIBdsApiKey', 'New-OCIBdsCapacityReport', 
+               'New-OCIBdsIdentityConfiguration', 'New-OCIBdsInstance', 
+               'New-OCIBdsMetastoreConfiguration', 
                'New-OCIBdsNodeBackupConfiguration', 
                'New-OCIBdsNodeReplaceConfiguration', 
                'New-OCIBdsResourcePrincipalConfiguration', 'Remove-OCIBdsApiKey', 

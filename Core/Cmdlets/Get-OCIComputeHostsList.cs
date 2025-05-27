@@ -60,6 +60,9 @@ Example: `50`", ParameterSetName = LimitSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only ComputeHostSummary resources that match the given Compute Host health State OCID exactly.")]
         public string ComputeHostHealth { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.")]
+        public string ComputeHostGroupId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -82,7 +85,8 @@ Example: `50`", ParameterSetName = LimitSet)]
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     ComputeHostLifecycleState = ComputeHostLifecycleState,
-                    ComputeHostHealth = ComputeHostHealth
+                    ComputeHostHealth = ComputeHostHealth,
+                    ComputeHostGroupId = ComputeHostGroupId
                 };
                 IEnumerable<ListComputeHostsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

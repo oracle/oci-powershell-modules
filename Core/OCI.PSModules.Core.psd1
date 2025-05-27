@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Core.dll'
 
 # Version number of this module.
-ModuleVersion = '107.1.0'
+ModuleVersion = '108.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '107.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '108.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Core.dll'
@@ -85,7 +85,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Copy-OCIBlockstorageBootVolumeBackup', 
                'Copy-OCIBlockstorageVolumeBackup', 
                'Copy-OCIBlockstorageVolumeGroupBackup', 
-               'DisMount-OCIComputeBootVolume', 
+               'DisMount-OCIComputeBootVolume', 'DisMount-OCIComputeHostGroupHost', 
                'DisMount-OCIComputeManagementInstancePoolInstance', 
                'DisMount-OCIComputeManagementLoadBalancer', 
                'DisMount-OCIComputeVnic', 'DisMount-OCIComputeVolume', 
@@ -148,6 +148,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Get-OCIComputeGpuMemoryClustersList', 
                'Get-OCIComputeGpuMemoryFabric', 
                'Get-OCIComputeGpuMemoryFabricsList', 'Get-OCIComputeHost', 
+               'Get-OCIComputeHostGroup', 'Get-OCIComputeHostGroupsList', 
                'Get-OCIComputeHostsList', 'Get-OCIComputeImage', 
                'Get-OCIComputeImageCapabilitySchema', 
                'Get-OCIComputeImageCapabilitySchemasList', 
@@ -291,7 +292,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Invoke-OCIVirtualNetworkSetOriginAsnToOracle', 
                'Invoke-OCIVirtualNetworkUpgradeDrg', 
                'Invoke-OCIVirtualNetworkWithdrawByoipRange', 
-               'Mount-OCIComputeBootVolume', 
+               'Mount-OCIComputeBootVolume', 'Mount-OCIComputeHostGroupHost', 
                'Mount-OCIComputeManagementInstancePoolInstance', 
                'Mount-OCIComputeManagementLoadBalancer', 'Mount-OCIComputeVnic', 
                'Mount-OCIComputeVolume', 'Mount-OCIVirtualNetworkServiceId', 
@@ -308,6 +309,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Move-OCIComputeGpuMemoryClusterCompartment', 
                'Move-OCIComputeGpuMemoryFabricCompartment', 
                'Move-OCIComputeHostCompartment', 
+               'Move-OCIComputeHostGroupCompartment', 
                'Move-OCIComputeImageCapabilitySchemaCompartment', 
                'Move-OCIComputeImageCompartment', 
                'Move-OCIComputeInstanceCompartment', 
@@ -349,8 +351,9 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'New-OCIComputeCapacityReport', 'New-OCIComputeCapacityReservation', 
                'New-OCIComputeCapacityTopology', 'New-OCIComputeCluster', 
                'New-OCIComputeDedicatedVmHost', 'New-OCIComputeGpuMemoryCluster', 
-               'New-OCIComputeImage', 'New-OCIComputeImageCapabilitySchema', 
-               'New-OCIComputeInstance', 'New-OCIComputeInstanceConsoleConnection', 
+               'New-OCIComputeHostGroup', 'New-OCIComputeImage', 
+               'New-OCIComputeImageCapabilitySchema', 'New-OCIComputeInstance', 
+               'New-OCIComputeInstanceConsoleConnection', 
                'New-OCIComputeManagementClusterNetwork', 
                'New-OCIComputeManagementInstanceConfiguration', 
                'New-OCIComputeManagementInstancePool', 
@@ -392,8 +395,8 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Remove-OCIComputeCapacityTopology', 'Remove-OCIComputeCluster', 
                'Remove-OCIComputeConsoleHistory', 
                'Remove-OCIComputeDedicatedVmHost', 
-               'Remove-OCIComputeGpuMemoryCluster', 'Remove-OCIComputeImage', 
-               'Remove-OCIComputeImageCapabilitySchema', 
+               'Remove-OCIComputeGpuMemoryCluster', 'Remove-OCIComputeHostGroup', 
+               'Remove-OCIComputeImage', 'Remove-OCIComputeImageCapabilitySchema', 
                'Remove-OCIComputeImageShapeCompatibilityEntry', 
                'Remove-OCIComputeInstanceConsoleConnection', 
                'Remove-OCIComputeManagementInstanceConfiguration', 
@@ -452,7 +455,8 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Update-OCIComputeDedicatedVmHost', 
                'Update-OCIComputeGpuMemoryCluster', 
                'Update-OCIComputeGpuMemoryFabric', 'Update-OCIComputeHost', 
-               'Update-OCIComputeImage', 'Update-OCIComputeImageCapabilitySchema', 
+               'Update-OCIComputeHostGroup', 'Update-OCIComputeImage', 
+               'Update-OCIComputeImageCapabilitySchema', 
                'Update-OCIComputeInstance', 
                'Update-OCIComputeInstanceConsoleConnection', 
                'Update-OCIComputeInstanceMaintenanceEvent', 

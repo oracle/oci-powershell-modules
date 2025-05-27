@@ -19,10 +19,10 @@ namespace Oci.UsageapiService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.UsageapiService.Responses.DeleteEmailRecipientsGroupResponse) })]
     public class RemoveOCIUsageapiEmailRecipientsGroup : OCIUsageapiCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The email recipient group OCID.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The email recipients group OCID.")]
         public string EmailRecipientsGroupId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The UsageStatement Subscription unique OCID.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The usage statement subscription unique OCID.")]
         public string SubscriptionId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment ID in which to list resources.")]
