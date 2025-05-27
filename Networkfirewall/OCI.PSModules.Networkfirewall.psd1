@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Networkfirewall.dll'
 
 # Version number of this module.
-ModuleVersion = '107.1.0'
+ModuleVersion = '108.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '107.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '108.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Networkfirewall.dll'
@@ -83,6 +83,8 @@ CmdletsToExport = 'Get-OCINetworkfirewall', 'Get-OCINetworkfirewallAddressList',
                'Get-OCINetworkfirewallDecryptionRulesList', 
                'Get-OCINetworkfirewallMappedSecret', 
                'Get-OCINetworkfirewallMappedSecretsList', 
+               'Get-OCINetworkfirewallNatRule', 
+               'Get-OCINetworkfirewallNatRulesList', 
                'Get-OCINetworkfirewallPoliciesList', 
                'Get-OCINetworkfirewallPolicy', 
                'Get-OCINetworkfirewallSecurityRule', 
@@ -106,6 +108,7 @@ CmdletsToExport = 'Get-OCINetworkfirewall', 'Get-OCINetworkfirewallAddressList',
                'Invoke-OCINetworkfirewallBulkUploadDecryptionProfiles', 
                'Invoke-OCINetworkfirewallBulkUploadDecryptionRules', 
                'Invoke-OCINetworkfirewallBulkUploadMappedSecrets', 
+               'Invoke-OCINetworkfirewallBulkUploadNatRules', 
                'Invoke-OCINetworkfirewallBulkUploadSecurityRules', 
                'Invoke-OCINetworkfirewallBulkUploadServiceLists', 
                'Invoke-OCINetworkfirewallBulkUploadServices', 
@@ -121,7 +124,7 @@ CmdletsToExport = 'Get-OCINetworkfirewall', 'Get-OCINetworkfirewallAddressList',
                'New-OCINetworkfirewallDecryptionProfile', 
                'New-OCINetworkfirewallDecryptionRule', 
                'New-OCINetworkfirewallMappedSecret', 
-               'New-OCINetworkfirewallPolicy', 
+               'New-OCINetworkfirewallNatRule', 'New-OCINetworkfirewallPolicy', 
                'New-OCINetworkfirewallSecurityRule', 
                'New-OCINetworkfirewallService', 
                'New-OCINetworkfirewallServiceList', 
@@ -133,6 +136,7 @@ CmdletsToExport = 'Get-OCINetworkfirewall', 'Get-OCINetworkfirewallAddressList',
                'Remove-OCINetworkfirewallDecryptionProfile', 
                'Remove-OCINetworkfirewallDecryptionRule', 
                'Remove-OCINetworkfirewallMappedSecret', 
+               'Remove-OCINetworkfirewallNatRule', 
                'Remove-OCINetworkfirewallPolicy', 
                'Remove-OCINetworkfirewallSecurityRule', 
                'Remove-OCINetworkfirewallService', 
@@ -146,6 +150,7 @@ CmdletsToExport = 'Get-OCINetworkfirewall', 'Get-OCINetworkfirewallAddressList',
                'Update-OCINetworkfirewallDecryptionProfile', 
                'Update-OCINetworkfirewallDecryptionRule', 
                'Update-OCINetworkfirewallMappedSecret', 
+               'Update-OCINetworkfirewallNatRule', 
                'Update-OCINetworkfirewallPolicy', 
                'Update-OCINetworkfirewallSecurityRule', 
                'Update-OCINetworkfirewallService', 

@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Capacitymanagement.dll'
 
 # Version number of this module.
-ModuleVersion = '107.1.0'
+ModuleVersion = '108.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '107.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '108.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Capacitymanagement.dll'
@@ -74,6 +74,14 @@ FunctionsToExport = '*'
 CmdletsToExport = 'Get-OCICapacitymanagementInternalNamespaceOccOverviewsList', 
                'Get-OCICapacitymanagementInternalOccHandoverResourceBlockDetailsList', 
                'Get-OCICapacitymanagementInternalOccHandoverResourceBlocksList', 
+               'Get-OCICapacitymanagementInternalOccmDemandSignal', 
+               'Get-OCICapacitymanagementInternalOccmDemandSignalCatalog', 
+               'Get-OCICapacitymanagementInternalOccmDemandSignalCatalogResourcesList', 
+               'Get-OCICapacitymanagementInternalOccmDemandSignalCatalogsList', 
+               'Get-OCICapacitymanagementInternalOccmDemandSignalDeliveriesList', 
+               'Get-OCICapacitymanagementInternalOccmDemandSignalDelivery', 
+               'Get-OCICapacitymanagementInternalOccmDemandSignalItemsList', 
+               'Get-OCICapacitymanagementInternalOccmDemandSignalsList', 
                'Get-OCICapacitymanagementOccAvailabilitiesList', 
                'Get-OCICapacitymanagementOccAvailabilityCatalog', 
                'Get-OCICapacitymanagementOccAvailabilityCatalogContent', 
@@ -86,23 +94,40 @@ CmdletsToExport = 'Get-OCICapacitymanagementInternalNamespaceOccOverviewsList',
                'Get-OCICapacitymanagementOccCustomerGroupsList', 
                'Get-OCICapacitymanagementOccHandoverResourceBlockDetailsList', 
                'Get-OCICapacitymanagementOccHandoverResourceBlocksList', 
+               'Get-OCICapacitymanagementOccmDemandSignal', 
+               'Get-OCICapacitymanagementOccmDemandSignalCatalogResourcesList', 
+               'Get-OCICapacitymanagementOccmDemandSignalDeliveriesList', 
+               'Get-OCICapacitymanagementOccmDemandSignalItem', 
+               'Get-OCICapacitymanagementOccmDemandSignalItemsList', 
+               'Get-OCICapacitymanagementOccmDemandSignalsList', 
                'Get-OCICapacitymanagementOccOverviewsList', 
+               'Invoke-OCICapacitymanagementBulkCreateOccmDemandSignalItem', 
                'Invoke-OCICapacitymanagementPatchInternalOccCapacityRequest', 
                'Invoke-OCICapacitymanagementPatchOccCapacityRequest', 
                'Invoke-OCICapacitymanagementPublishOccAvailabilityCatalog', 
+               'New-OCICapacitymanagementInternalOccmDemandSignalDelivery', 
                'New-OCICapacitymanagementOccAvailabilityCatalog', 
                'New-OCICapacitymanagementOccCapacityRequest', 
                'New-OCICapacitymanagementOccCustomer', 
                'New-OCICapacitymanagementOccCustomerGroup', 
+               'New-OCICapacitymanagementOccmDemandSignal', 
+               'New-OCICapacitymanagementOccmDemandSignalItem', 
+               'Remove-OCICapacitymanagementInternalOccmDemandSignalDelivery', 
                'Remove-OCICapacitymanagementOccAvailabilityCatalog', 
                'Remove-OCICapacitymanagementOccCapacityRequest', 
                'Remove-OCICapacitymanagementOccCustomer', 
                'Remove-OCICapacitymanagementOccCustomerGroup', 
+               'Remove-OCICapacitymanagementOccmDemandSignal', 
+               'Remove-OCICapacitymanagementOccmDemandSignalItem', 
                'Update-OCICapacitymanagementInternalOccCapacityRequest', 
+               'Update-OCICapacitymanagementInternalOccmDemandSignal', 
+               'Update-OCICapacitymanagementInternalOccmDemandSignalDelivery', 
                'Update-OCICapacitymanagementOccAvailabilityCatalog', 
                'Update-OCICapacitymanagementOccCapacityRequest', 
                'Update-OCICapacitymanagementOccCustomer', 
-               'Update-OCICapacitymanagementOccCustomerGroup'
+               'Update-OCICapacitymanagementOccCustomerGroup', 
+               'Update-OCICapacitymanagementOccmDemandSignal', 
+               'Update-OCICapacitymanagementOccmDemandSignalItem'
 
 # Variables to export from this module
 VariablesToExport = '*'

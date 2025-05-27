@@ -28,7 +28,7 @@ namespace Oci.ApmsyntheticsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The vantagePoint name.")]
         public string VantagePoint { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The result type: har, screenshot, log, or network.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The result type: har, screenshot, log, network, diagnostics or script.")]
         public string ResultType { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The result content type: zip or raw.")]

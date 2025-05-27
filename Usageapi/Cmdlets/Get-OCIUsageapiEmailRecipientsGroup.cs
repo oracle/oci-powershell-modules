@@ -21,13 +21,13 @@ namespace Oci.UsageapiService.Cmdlets
     public class GetOCIUsageapiEmailRecipientsGroup : OCIUsageapiCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The email recipient group OCID.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The email recipient group OCID.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The email recipients group OCID.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The email recipients group OCID.", ParameterSetName = Default)]
         public string EmailRecipientsGroupId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The UsageStatement Subscription unique OCID.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The UsageStatement Subscription unique OCID.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The usage statement subscription unique OCID.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The usage statement subscription unique OCID.", ParameterSetName = Default)]
         public string SubscriptionId { get; set; }
 
         
