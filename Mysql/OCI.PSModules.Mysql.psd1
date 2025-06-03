@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Mysql.dll'
 
 # Version number of this module.
-ModuleVersion = '108.0.0'
+ModuleVersion = '109.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '108.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '109.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Mysql.dll'
@@ -91,11 +91,11 @@ CmdletsToExport = 'Add-OCIMysqlHeatWaveCluster', 'Copy-OCIMysqlBackup',
                'Remove-OCIMysqlHeatWaveCluster', 'Remove-OCIMysqlReplica', 
                'Reset-OCIMysqlChannel', 'Restart-OCIMysqlDbSystem', 
                'Restart-OCIMysqlHeatWaveCluster', 'Start-OCIMysqlDbSystem', 
-               'Start-OCIMysqlHeatWaveCluster', 'Stop-OCIMysqlDbSystem', 
-               'Stop-OCIMysqlHeatWaveCluster', 'Update-OCIMysqlBackup', 
-               'Update-OCIMysqlChannel', 'Update-OCIMysqlConfiguration', 
-               'Update-OCIMysqlDbSystem', 'Update-OCIMysqlHeatWaveCluster', 
-               'Update-OCIMysqlReplica'
+               'Start-OCIMysqlHeatWaveCluster', 'Stop-OCIMysqlBackupDeletion', 
+               'Stop-OCIMysqlDbSystem', 'Stop-OCIMysqlHeatWaveCluster', 
+               'Update-OCIMysqlBackup', 'Update-OCIMysqlChannel', 
+               'Update-OCIMysqlConfiguration', 'Update-OCIMysqlDbSystem', 
+               'Update-OCIMysqlHeatWaveCluster', 'Update-OCIMysqlReplica'
 
 # Variables to export from this module
 VariablesToExport = '*'

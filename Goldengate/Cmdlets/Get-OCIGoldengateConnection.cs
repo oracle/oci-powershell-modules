@@ -30,6 +30,11 @@ namespace Oci.GoldengateService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.", ParameterSetName = Default)]
         public string OpcRequestId { get; set; }
 
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Selects the connection fields returned in connection details.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Selects the connection fields returned in connection details.", ParameterSetName = Default)]
+        public System.Nullable<Oci.GoldengateService.Requests.GetConnectionRequest.ViewEnum> View { get; set; }
+
         [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = LifecycleStateParamSet)]
         public Oci.GoldengateService.Models.Connection.LifecycleStateEnum[] WaitForLifecycleState { get; set; }
 
@@ -49,7 +54,8 @@ namespace Oci.GoldengateService.Cmdlets
                 request = new GetConnectionRequest
                 {
                     ConnectionId = ConnectionId,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    View = View
                 };
 
                 HandleOutput(request);

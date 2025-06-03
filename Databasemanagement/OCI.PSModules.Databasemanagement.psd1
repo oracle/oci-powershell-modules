@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Databasemanagement.dll'
 
 # Version number of this module.
-ModuleVersion = '108.0.0'
+ModuleVersion = '109.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '108.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '109.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasemanagement.dll'
@@ -116,6 +116,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Get-OCIDatabasemanagementAwrDbsList', 
                'Get-OCIDatabasemanagementAwrDbSnapshotsList', 
                'Get-OCIDatabasemanagementAwrDbSqlReport', 
+               'Get-OCIDatabasemanagementBinaryLogInformation', 
                'Get-OCIDatabasemanagementClusterCacheMetric', 
                'Get-OCIDatabasemanagementConsumerGroupPrivilegesList', 
                'Get-OCIDatabasemanagementCursorCacheStatementsList', 
@@ -166,7 +167,10 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Get-OCIDatabasemanagementExternalMySqlDatabase', 
                'Get-OCIDatabasemanagementExternalMySqlDatabaseConnector', 
                'Get-OCIDatabasemanagementExternalMySqlDatabasesList', 
+               'Get-OCIDatabasemanagementGeneralReplicationInformation', 
                'Get-OCIDatabasemanagementHeatWaveFleetMetric', 
+               'Get-OCIDatabasemanagementHighAvailabilityMembersList', 
+               'Get-OCIDatabasemanagementInboundReplicationsList', 
                'Get-OCIDatabasemanagementIormPlan', 'Get-OCIDatabasemanagementJob', 
                'Get-OCIDatabasemanagementJobExecution', 
                'Get-OCIDatabasemanagementJobExecutionsList', 
@@ -182,7 +186,9 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Get-OCIDatabasemanagementManagedMySqlDatabasesList', 
                'Get-OCIDatabasemanagementManagedMySqlDatabaseSqlDataList', 
                'Get-OCIDatabasemanagementMySqlDatabaseConnectorsList', 
+               'Get-OCIDatabasemanagementMySqlDigestErrorsList', 
                'Get-OCIDatabasemanagementMySqlFleetMetric', 
+               'Get-OCIDatabasemanagementMySqlQueryDetails', 
                'Get-OCIDatabasemanagementNamedCredential', 
                'Get-OCIDatabasemanagementNamedCredentialsList', 
                'Get-OCIDatabasemanagementObjectPrivilegesList', 
@@ -193,6 +199,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Get-OCIDatabasemanagementOptimizerStatisticsCollectionAggregationsList', 
                'Get-OCIDatabasemanagementOptimizerStatisticsCollectionOperation', 
                'Get-OCIDatabasemanagementOptimizerStatisticsCollectionOperationsList', 
+               'Get-OCIDatabasemanagementOutboundReplicationsList', 
                'Get-OCIDatabasemanagementPdbMetrics', 
                'Get-OCIDatabasemanagementPeerDatabaseMetrics', 
                'Get-OCIDatabasemanagementPreferredCredential', 
@@ -271,6 +278,7 @@ CmdletsToExport = 'Add-OCIDatabasemanagementDataFiles',
                'Move-OCIDatabasemanagementExternalExadataInfrastructureCompartment', 
                'Move-OCIDatabasemanagementJobCompartment', 
                'Move-OCIDatabasemanagementManagedDatabaseGroupCompartment', 
+               'Move-OCIDatabasemanagementMysqlDatabaseManagementType', 
                'Move-OCIDatabasemanagementNamedCredentialCompartment', 
                'Move-OCIDatabasemanagementPlanRetention', 
                'Move-OCIDatabasemanagementSpaceBudget', 
