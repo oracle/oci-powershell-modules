@@ -21,9 +21,9 @@ namespace Oci.DatabaseService.Cmdlets
     public class NewOCIDatabaseAutonomousContainerDatabase : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure or in Autonomous VM Cluster.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure or in Autonomous VM Cluster.", ParameterSetName = Default)]
-        public CreateAutonomousContainerDatabaseDetails CreateAutonomousContainerDatabaseDetails { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure or in Autonomous VM Cluster. This parameter also accepts subtypes <Oci.DatabaseService.Models.CreateAutonomousContainerDatabaseDetails>, <Oci.DatabaseService.Models.CreateAutonomousContainerDatabaseFromBackupDetails> of type <Oci.DatabaseService.Models.CreateAutonomousContainerDatabaseBase>.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure or in Autonomous VM Cluster. This parameter also accepts subtypes <Oci.DatabaseService.Models.CreateAutonomousContainerDatabaseDetails>, <Oci.DatabaseService.Models.CreateAutonomousContainerDatabaseFromBackupDetails> of type <Oci.DatabaseService.Models.CreateAutonomousContainerDatabaseBase>.", ParameterSetName = Default)]
+        public CreateAutonomousContainerDatabaseBase CreateAutonomousContainerDatabaseDetails { get; set; }
 
         
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).", ParameterSetName = StatusParamSet)]

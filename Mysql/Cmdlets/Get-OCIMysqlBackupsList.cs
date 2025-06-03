@@ -39,6 +39,9 @@ namespace Oci.MysqlService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resource matching the given display name exactly.")]
         public string DisplayName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Backup Soft Delete")]
+        public System.Nullable<Oci.MysqlService.Models.SoftDelete> SoftDelete { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Backup creationType")]
         public System.Nullable<Oci.MysqlService.Models.Backup.CreationTypeEnum> CreationType { get; set; }
 
@@ -72,6 +75,7 @@ namespace Oci.MysqlService.Cmdlets
                     LifecycleState = LifecycleState,
                     DbSystemId = DbSystemId,
                     DisplayName = DisplayName,
+                    SoftDelete = SoftDelete,
                     CreationType = CreationType,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
