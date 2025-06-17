@@ -19,7 +19,7 @@ namespace Oci.ComputeinstanceagentService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ComputeinstanceagentService.Models.InstanceAgentPlugin), typeof(Oci.ComputeinstanceagentService.Responses.GetInstanceAgentPluginResponse) })]
     public class GetOCIComputeinstanceagentInstanceAgentPlugin : OCIPluginCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the instance.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the instance.")]
         public string InstanceagentId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.")]

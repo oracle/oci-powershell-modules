@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Redis.dll'
 
 # Version number of this module.
-ModuleVersion = '109.1.0'
+ModuleVersion = '109.2.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '109.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '109.2.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Redis.dll'
@@ -71,13 +71,19 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Redis.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIRedisCluster', 'Get-OCIRedisClusterNodesList', 
-               'Get-OCIRedisClustersList', 'Get-OCIRedisWorkRequest', 
-               'Get-OCIRedisWorkRequestErrorsList', 
+CmdletsToExport = 'DisMount-OCIRedisOciCacheUsers', 
+               'Get-OCIRedisAttachedOciCacheUsersList', 
+               'Get-OCIRedisAttachedRedisClustersList', 'Get-OCIRedisCluster', 
+               'Get-OCIRedisClusterNodesList', 'Get-OCIRedisClustersList', 
+               'Get-OCIRedisOciCacheUser', 'Get-OCIRedisOciCacheUsersList', 
+               'Get-OCIRedisWorkRequest', 'Get-OCIRedisWorkRequestErrorsList', 
                'Get-OCIRedisWorkRequestLogsList', 'Get-OCIRedisWorkRequestsList', 
-               'Move-OCIRedisClusterCompartment', 'New-OCIRedisCluster', 
-               'Remove-OCIRedisCluster', 'Stop-OCIRedisWorkRequest', 
-               'Update-OCIRedisCluster'
+               'Mount-OCIRedisOciCacheUsers', 'Move-OCIRedisClusterCompartment', 
+               'Move-OCIRedisOciCacheUserCompartment', 'New-OCIRedisCluster', 
+               'New-OCIRedisIdentityToken', 'New-OCIRedisOciCacheUser', 
+               'Remove-OCIRedisCluster', 'Remove-OCIRedisOciCacheUser', 
+               'Stop-OCIRedisWorkRequest', 'Update-OCIRedisCluster', 
+               'Update-OCIRedisOciCacheUser'
 
 # Variables to export from this module
 VariablesToExport = '*'
