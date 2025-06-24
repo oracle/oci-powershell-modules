@@ -19,7 +19,7 @@ namespace Oci.FleetsoftwareupdateService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.FleetsoftwareupdateService.Models.FsuCycle), typeof(Oci.FleetsoftwareupdateService.Responses.CreateFsuCycleResponse) })]
     public class NewOCIFleetsoftwareupdateFsuCycle : OCIFleetSoftwareUpdateCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new Exadata Fleet Update Maintenance Cycle. Targets can only exist in one active Fleet Software Update Maintenance Cycle. This parameter also accepts subtype <Oci.FleetsoftwareupdateService.Models.CreatePatchFsuCycle> of type <Oci.FleetsoftwareupdateService.Models.CreateFsuCycleDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new Exadata Fleet Update Maintenance Cycle. Targets can only exist in one active Fleet Software Update Maintenance Cycle. This parameter also accepts subtypes <Oci.FleetsoftwareupdateService.Models.CreatePatchFsuCycle>, <Oci.FleetsoftwareupdateService.Models.CreateUpgradeFsuCycle> of type <Oci.FleetsoftwareupdateService.Models.CreateFsuCycleDetails>.")]
         public CreateFsuCycleDetails CreateFsuCycleDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]

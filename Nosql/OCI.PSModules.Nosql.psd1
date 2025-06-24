@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Nosql.dll'
 
 # Version number of this module.
-ModuleVersion = '109.2.0'
+ModuleVersion = '109.3.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '109.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '109.3.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Nosql.dll'
@@ -71,17 +71,18 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Nosql.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCINosqlIndex', 'Get-OCINosqlIndexesList', 'Get-OCINosqlRow', 
-               'Get-OCINosqlTable', 'Get-OCINosqlTablesList', 
-               'Get-OCINosqlTableUsageList', 'Get-OCINosqlWorkRequest', 
-               'Get-OCINosqlWorkRequestErrorsList', 
+CmdletsToExport = 'Get-OCINosqlConfiguration', 'Get-OCINosqlIndex', 
+               'Get-OCINosqlIndexesList', 'Get-OCINosqlRow', 'Get-OCINosqlTable', 
+               'Get-OCINosqlTablesList', 'Get-OCINosqlTableUsageList', 
+               'Get-OCINosqlWorkRequest', 'Get-OCINosqlWorkRequestErrorsList', 
                'Get-OCINosqlWorkRequestLogsList', 'Get-OCINosqlWorkRequestsList', 
                'Invoke-OCINosqlPrepareStatement', 'Invoke-OCINosqlQuery', 
                'Invoke-OCINosqlSummarizeStatement', 
-               'Move-OCINosqlTableCompartment', 'New-OCINosqlIndex', 
-               'New-OCINosqlReplica', 'New-OCINosqlTable', 'Remove-OCINosqlIndex', 
-               'Remove-OCINosqlReplica', 'Remove-OCINosqlRow', 
-               'Remove-OCINosqlTable', 'Remove-OCINosqlWorkRequest', 
+               'Invoke-OCINosqlUnassignKmsKey', 'Move-OCINosqlTableCompartment', 
+               'New-OCINosqlIndex', 'New-OCINosqlReplica', 'New-OCINosqlTable', 
+               'Remove-OCINosqlIndex', 'Remove-OCINosqlReplica', 
+               'Remove-OCINosqlRow', 'Remove-OCINosqlTable', 
+               'Remove-OCINosqlWorkRequest', 'Update-OCINosqlConfiguration', 
                'Update-OCINosqlRow', 'Update-OCINosqlTable'
 
 # Variables to export from this module
