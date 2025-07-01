@@ -22,13 +22,13 @@ namespace Oci.ApmtracesService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain ID for the intended request.")]
         public string ApmDomainId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Include spans that have a `spanStartTime` equal to or greater than this value.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Include spans that have a `spanStartTime` equal to or greater than this value.  Also, include logs and traces that have startTime greater than this value.")]
         public System.Nullable<System.DateTime> TimeSpanStartedGreaterThanOrEqualTo { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Include spans that have a `spanStartTime`less than this value.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Include spans that have a `spanStartTime` less than this value.  Also, include traces that have startTime less than this value and logs that have endTime less than this value.")]
         public System.Nullable<System.DateTime> TimeSpanStartedLessThan { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request body containing the query to be run against the trace data and to filter and retrieve trace data results.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request body containing the query to be run against the trace, span, services, background queries and other metric data and to filter and retrieve the results.")]
         public QueryDetails QueryDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, please provide the request ID.")]
