@@ -28,10 +28,10 @@ namespace Oci.ApmtracesService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Include traces that have a `minTraceStartTime` equal to or greater than this value.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Include traces that have a minTraceStartTime equal to or greater than this value.")]
         public System.Nullable<System.DateTime> TimeTraceStartedGreaterThanOrEqualTo { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Include traces that have a `minTraceStartTime` less than this value.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Include traces that have a minTraceStartTime less than this value.")]
         public System.Nullable<System.DateTime> TimeTraceStartedLessThan { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Name space from which the trace details need to be retrieved.")]

@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Apmtraces.dll'
 
 # Version number of this module.
-ModuleVersion = '109.3.0'
+ModuleVersion = '110.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '109.3.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '110.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Apmtraces.dll'
@@ -71,8 +71,10 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Apmtraces.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIApmtracesAggregatedSnapshot', 
-               'Get-OCIApmtracesQuickPicksList', 'Get-OCIApmtracesSpan', 
+CmdletsToExport = 'Get-OCIApmtracesAggregatedSnapshot', 'Get-OCIApmtracesLog', 
+               'Get-OCIApmtracesQuickPicksList', 
+               'Get-OCIApmtracesScheduledQueriesList', 
+               'Get-OCIApmtracesScheduledQuery', 'Get-OCIApmtracesSpan', 
                'Get-OCIApmtracesStatusAutoActivate', 'Get-OCIApmtracesTrace', 
                'Get-OCIApmtracesTraceSnapshot', 
                'Invoke-OCIApmtracesBulkActivateAttribute', 
@@ -81,7 +83,10 @@ CmdletsToExport = 'Get-OCIApmtracesAggregatedSnapshot',
                'Invoke-OCIApmtracesBulkUnpinAttribute', 
                'Invoke-OCIApmtracesBulkUpdateAttribute', 
                'Invoke-OCIApmtracesBulkUpdateAttributeNotes', 
-               'Invoke-OCIApmtracesQuery', 'Write-OCIApmtracesToggleAutoActivate'
+               'Invoke-OCIApmtracesQuery', 'New-OCIApmtracesScheduledQuery', 
+               'Remove-OCIApmtracesScheduledQuery', 
+               'Update-OCIApmtracesScheduledQuery', 
+               'Write-OCIApmtracesToggleAutoActivate'
 
 # Variables to export from this module
 VariablesToExport = '*'

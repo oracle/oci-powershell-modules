@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '109.3.0'
+ModuleVersion = '110.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '109.3.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '110.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -223,6 +223,7 @@ CmdletsToExport = 'Add-OCIDatabaseStandbyAutonomousContainerDatabase',
                'Get-OCIDatabasePluggableDatabase', 
                'Get-OCIDatabasePluggableDatabasesList', 
                'Get-OCIDatabaseRecommendedScheduledActionsList', 
+               'Get-OCIDatabaseResourcePoolMembersList', 
                'Get-OCIDatabaseScheduledAction', 
                'Get-OCIDatabaseScheduledActionsList', 
                'Get-OCIDatabaseSchedulingPlan', 
@@ -307,6 +308,7 @@ CmdletsToExport = 'Add-OCIDatabaseStandbyAutonomousContainerDatabase',
                'Invoke-OCIDatabaseTerminateAutonomousContainerDatabase', 
                'Invoke-OCIDatabaseTerminateAutonomousExadataInfrastructure', 
                'Invoke-OCIDatabaseTerminateDbSystem', 
+               'Invoke-OCIDatabaseUnregisterCloudVmClusterPkcs', 
                'Invoke-OCIDatabaseUpgradeDatabase', 
                'Invoke-OCIDatabaseUpgradeDbSystem', 
                'Move-OCIDatabaseAutonomousContainerDatabaseCompartment', 
@@ -317,6 +319,7 @@ CmdletsToExport = 'Add-OCIDatabaseStandbyAutonomousContainerDatabase',
                'Move-OCIDatabaseAutonomousVmClusterCompartment', 
                'Move-OCIDatabaseBackupDestinationCompartment', 
                'Move-OCIDatabaseCloudAutonomousVmClusterCompartment', 
+               'Move-OCIDatabaseCloudAutonomousVmClusterSubscription', 
                'Move-OCIDatabaseCloudExadataInfrastructureCompartment', 
                'Move-OCIDatabaseCloudExadataInfrastructureSubscription', 
                'Move-OCIDatabaseCloudVmClusterCompartment', 
@@ -372,7 +375,8 @@ CmdletsToExport = 'Add-OCIDatabaseStandbyAutonomousContainerDatabase',
                'New-OCIDatabaseSchedulingWindow', 'New-OCIDatabaseSoftwareImage', 
                'New-OCIDatabaseVmCluster', 'New-OCIDatabaseVmClusterNetwork', 
                'Register-OCIDatabaseAutonomousDatabaseDataSafe', 
-               'Remove-OCIDatabase', 'Remove-OCIDatabaseApplicationVip', 
+               'Register-OCIDatabaseCloudVmClusterPkcs', 'Remove-OCIDatabase', 
+               'Remove-OCIDatabaseApplicationVip', 
                'Remove-OCIDatabaseAutonomousDatabase', 
                'Remove-OCIDatabaseAutonomousDatabaseBackup', 
                'Remove-OCIDatabaseAutonomousDatabaseSoftwareImage', 
