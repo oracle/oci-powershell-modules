@@ -15,15 +15,15 @@ using Oci.Common.Model;
 
 namespace Oci.OpsiService.Cmdlets
 {
-    [Cmdlet("Update", "OCIOpsiDatabaseInsight")]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OpsiService.Responses.UpdateDatabaseInsightResponse) })]
-    public class UpdateOCIOpsiDatabaseInsight : OCIOperationsInsightsCmdlet
+    [Cmdlet("Move", "OCIOpsiMacsManagedAutonomousDatabaseInsightConnection")]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OpsiService.Responses.ChangeMacsManagedAutonomousDatabaseInsightConnectionResponse) })]
+    public class MoveOCIOpsiMacsManagedAutonomousDatabaseInsightConnection : OCIOperationsInsightsCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique database insight identifier")]
         public string DatabaseInsightId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The configuration to be updated. This parameter also accepts subtypes <Oci.OpsiService.Models.UpdateMacsManagedExternalDatabaseInsightDetails>, <Oci.OpsiService.Models.UpdateEmManagedExternalDatabaseInsightDetails>, <Oci.OpsiService.Models.UpdatePeComanagedDatabaseInsightDetails>, <Oci.OpsiService.Models.UpdateAutonomousDatabaseInsightDetails>, <Oci.OpsiService.Models.UpdateMdsMySqlDatabaseInsight>, <Oci.OpsiService.Models.UpdateMacsManagedCloudDatabaseInsightDetails>, <Oci.OpsiService.Models.UpdateExternalMysqlDatabaseInsightDetails>, <Oci.OpsiService.Models.UpdateMacsManagedAutonomousDatabaseInsightDetails> of type <Oci.OpsiService.Models.UpdateDatabaseInsightDetails>.")]
-        public UpdateDatabaseInsightDetails UpdateDatabaseInsightDetails { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated.")]
+        public ChangeMacsManagedAutonomousDatabaseInsightConnectionDetails ChangeMacsManagedAutonomousDatabaseInsightConnectionDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match` parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
         public string IfMatch { get; set; }
@@ -31,22 +31,28 @@ namespace Oci.OpsiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request that can be retried in case of a timeout or server error without risk of executing the same action again. Retry tokens expire after 24 hours.
+
+*Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting operations, such as a resource being deleted or purged from the system.")]
+        public string OpcRetryToken { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            UpdateDatabaseInsightRequest request;
+            ChangeMacsManagedAutonomousDatabaseInsightConnectionRequest request;
 
             try
             {
-                request = new UpdateDatabaseInsightRequest
+                request = new ChangeMacsManagedAutonomousDatabaseInsightConnectionRequest
                 {
                     DatabaseInsightId = DatabaseInsightId,
-                    UpdateDatabaseInsightDetails = UpdateDatabaseInsightDetails,
+                    ChangeMacsManagedAutonomousDatabaseInsightConnectionDetails = ChangeMacsManagedAutonomousDatabaseInsightConnectionDetails,
                     IfMatch = IfMatch,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    OpcRetryToken = OpcRetryToken
                 };
 
-                response = client.UpdateDatabaseInsight(request).GetAwaiter().GetResult();
+                response = client.ChangeMacsManagedAutonomousDatabaseInsightConnection(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
             }
@@ -66,6 +72,6 @@ namespace Oci.OpsiService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private UpdateDatabaseInsightResponse response;
+        private ChangeMacsManagedAutonomousDatabaseInsightConnectionResponse response;
     }
 }

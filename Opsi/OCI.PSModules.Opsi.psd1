@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Opsi.dll'
 
 # Version number of this module.
-ModuleVersion = '110.0.0'
+ModuleVersion = '110.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '110.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '110.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Opsi.dll'
@@ -181,6 +181,8 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Invoke-OCIOpsiSummarizeSqlStatistics', 
                'Invoke-OCIOpsiSummarizeSqlStatisticsTimeSeries', 
                'Invoke-OCIOpsiSummarizeSqlStatisticsTimeSeriesByPlan', 
+               'Invoke-OCIOpsiSynchronizeAutonomousDatabaseToExadata', 
+               'Invoke-OCIOpsiTestMacsManagedAutonomousDatabaseInsightConnection', 
                'Invoke-OCIOpsiTestMacsManagedCloudDatabaseInsightConnection', 
                'Move-OCIOpsiAutonomousDatabaseInsightAdvancedFeatures', 
                'Move-OCIOpsiAwrHubSourceCompartment', 
@@ -190,6 +192,7 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Move-OCIOpsiExadataInsightCompartment', 
                'Move-OCIOpsiExternalMysqlDatabaseInsightConnection', 
                'Move-OCIOpsiHostInsightCompartment', 
+               'Move-OCIOpsiMacsManagedAutonomousDatabaseInsightConnection', 
                'Move-OCIOpsiMacsManagedCloudDatabaseInsightConnection', 
                'Move-OCIOpsiNewsReportCompartment', 
                'Move-OCIOpsiOperationsInsightsPrivateEndpointCompartment', 
