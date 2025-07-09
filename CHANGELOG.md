@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 110.1.0 - 2025-07-08
+### Added 
+- Support for insight of Autonomous Database on Exadata Cloud@Customer (ADB on ExaC@C) in the Operations Insights service 
+- Support for Spanish and Portuguese language recognition with Azure-backed Optical Character Recognition (OCR) in the AI Document service 
+- Support for UK, Australian, and Canadian address and tax form recognition in the AI Document service 
+- Support for Personal-to-Corporate conversation check in the OSP Gateway service
+
 ## 110.0.0 - 2025-07-01
 ### Added 
 - Support for calling Oracle Cloud Infrastructure services in the us-ashburn-2 region 
