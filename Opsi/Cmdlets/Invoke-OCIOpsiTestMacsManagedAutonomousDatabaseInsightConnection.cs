@@ -15,18 +15,18 @@ using Oci.Common.Model;
 
 namespace Oci.OpsiService.Cmdlets
 {
-    [Cmdlet("Enable", "OCIOpsiDatabaseInsight")]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OpsiService.Responses.EnableDatabaseInsightResponse) })]
-    public class EnableOCIOpsiDatabaseInsight : OCIOperationsInsightsCmdlet
+    [Cmdlet("Invoke", "OCIOpsiTestMacsManagedAutonomousDatabaseInsightConnection")]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OpsiService.Responses.TestMacsManagedAutonomousDatabaseInsightConnectionResponse) })]
+    public class InvokeOCIOpsiTestMacsManagedAutonomousDatabaseInsightConnection : OCIOperationsInsightsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the database to be enabled in Operations Insights. This parameter also accepts subtypes <Oci.OpsiService.Models.EnableEmManagedExternalDatabaseInsightDetails>, <Oci.OpsiService.Models.EnableMdsMySqlDatabaseInsightDetails>, <Oci.OpsiService.Models.EnableMacsManagedAutonomousDatabaseInsightDetails>, <Oci.OpsiService.Models.EnableExternalMysqlDatabaseInsightDetails>, <Oci.OpsiService.Models.EnableAutonomousDatabaseInsightDetails>, <Oci.OpsiService.Models.EnableMacsManagedCloudDatabaseInsightDetails>, <Oci.OpsiService.Models.EnablePeComanagedDatabaseInsightDetails> of type <Oci.OpsiService.Models.EnableDatabaseInsightDetails>.")]
-        public EnableDatabaseInsightDetails EnableDatabaseInsightDetails { get; set; }
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database connection information for the MACS-managed autonomous database.")]
+        public TestMacsManagedAutonomousDatabaseInsightConnectionDetails TestMacsManagedAutonomousDatabaseInsightConnectionDetails { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique database insight identifier")]
-        public string DatabaseInsightId { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.")]
+        public string DatabaseId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match` parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
-        public string IfMatch { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.")]
+        public string Id { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
@@ -39,20 +39,20 @@ namespace Oci.OpsiService.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            EnableDatabaseInsightRequest request;
+            TestMacsManagedAutonomousDatabaseInsightConnectionRequest request;
 
             try
             {
-                request = new EnableDatabaseInsightRequest
+                request = new TestMacsManagedAutonomousDatabaseInsightConnectionRequest
                 {
-                    EnableDatabaseInsightDetails = EnableDatabaseInsightDetails,
-                    DatabaseInsightId = DatabaseInsightId,
-                    IfMatch = IfMatch,
+                    TestMacsManagedAutonomousDatabaseInsightConnectionDetails = TestMacsManagedAutonomousDatabaseInsightConnectionDetails,
+                    DatabaseId = DatabaseId,
+                    Id = Id,
                     OpcRequestId = OpcRequestId,
                     OpcRetryToken = OpcRetryToken
                 };
 
-                response = client.EnableDatabaseInsight(request).GetAwaiter().GetResult();
+                response = client.TestMacsManagedAutonomousDatabaseInsightConnection(request).GetAwaiter().GetResult();
                 WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
             }
@@ -72,6 +72,6 @@ namespace Oci.OpsiService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private EnableDatabaseInsightResponse response;
+        private TestMacsManagedAutonomousDatabaseInsightConnectionResponse response;
     }
 }
