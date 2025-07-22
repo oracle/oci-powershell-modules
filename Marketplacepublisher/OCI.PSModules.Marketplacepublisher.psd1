@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Marketplacepublisher.dll'
 
 # Version number of this module.
-ModuleVersion = '110.2.0'
+ModuleVersion = '111.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '110.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '111.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Marketplacepublisher.dll'
@@ -75,15 +75,19 @@ CmdletsToExport = 'Confirm-OCIMarketplacepublisherAndPublishArtifact',
                'Enable-OCIMarketplacepublisherTermVersion', 
                'Get-OCIMarketplacepublisherArtifact', 
                'Get-OCIMarketplacepublisherArtifactsList', 
-               'Get-OCIMarketplacepublisherAttachment', 
-               'Get-OCIMarketplacepublisherAttachmentContent', 
-               'Get-OCIMarketplacepublisherAttachmentsList', 
+               'Get-OCIMarketplacepublisherAvailableServicesList', 
                'Get-OCIMarketplacepublisherCategoriesList', 
                'Get-OCIMarketplacepublisherCategory', 
+               'Get-OCIMarketplacepublisherCustomerInstanceReportRecordsList', 
+               'Get-OCIMarketplacepublisherDisbursementReportRecordsList', 
+               'Get-OCIMarketplacepublisherLead', 
+               'Get-OCIMarketplacepublisherLeadsList', 
                'Get-OCIMarketplacepublisherListing', 
                'Get-OCIMarketplacepublisherListingRevision', 
                'Get-OCIMarketplacepublisherListingRevisionAttachment', 
+               'Get-OCIMarketplacepublisherListingRevisionAttachmentContent', 
                'Get-OCIMarketplacepublisherListingRevisionAttachmentsList', 
+               'Get-OCIMarketplacepublisherListingRevisionIconContent', 
                'Get-OCIMarketplacepublisherListingRevisionNote', 
                'Get-OCIMarketplacepublisherListingRevisionNotesList', 
                'Get-OCIMarketplacepublisherListingRevisionPackage', 
@@ -92,16 +96,19 @@ CmdletsToExport = 'Confirm-OCIMarketplacepublisherAndPublishArtifact',
                'Get-OCIMarketplacepublisherListingsList', 
                'Get-OCIMarketplacepublisherMarket', 
                'Get-OCIMarketplacepublisherMarketsList', 
-               'Get-OCIMarketplacepublisherOffer', 
-               'Get-OCIMarketplacepublisherOfferInternalDetail', 
-               'Get-OCIMarketplacepublisherOffersList', 
                'Get-OCIMarketplacepublisherProduct', 
                'Get-OCIMarketplacepublisherProductsList', 
                'Get-OCIMarketplacepublisherPublisher', 
                'Get-OCIMarketplacepublisherPublishersList', 
+               'Get-OCIMarketplacepublisherSupportDoc', 
+               'Get-OCIMarketplacepublisherSupportDocContent', 
+               'Get-OCIMarketplacepublisherSupportDocsList', 
+               'Get-OCIMarketplacepublisherSupportedCurrenciesList', 
+               'Get-OCIMarketplacepublisherSupportedShapesList', 
                'Get-OCIMarketplacepublisherTerm', 
                'Get-OCIMarketplacepublisherTermsList', 
                'Get-OCIMarketplacepublisherTermVersion', 
+               'Get-OCIMarketplacepublisherTermVersionContent', 
                'Get-OCIMarketplacepublisherTermVersionsList', 
                'Get-OCIMarketplacepublisherWorkRequest', 
                'Get-OCIMarketplacepublisherWorkRequestErrorsList', 
@@ -122,23 +129,19 @@ CmdletsToExport = 'Confirm-OCIMarketplacepublisherAndPublishArtifact',
                'Move-OCIMarketplacepublisherListingRevisionToNewStatus', 
                'Move-OCIMarketplacepublisherTermCompartment', 
                'New-OCIMarketplacepublisherArtifact', 
-               'New-OCIMarketplacepublisherAttachment', 
                'New-OCIMarketplacepublisherListing', 
                'New-OCIMarketplacepublisherListingRevision', 
                'New-OCIMarketplacepublisherListingRevisionAttachment', 
                'New-OCIMarketplacepublisherListingRevisionNote', 
                'New-OCIMarketplacepublisherListingRevisionPackage', 
-               'New-OCIMarketplacepublisherOffer', 
                'New-OCIMarketplacepublisherTerm', 
                'New-OCIMarketplacepublisherTermVersion', 
                'Remove-OCIMarketplacepublisherArtifact', 
-               'Remove-OCIMarketplacepublisherAttachment', 
                'Remove-OCIMarketplacepublisherListing', 
                'Remove-OCIMarketplacepublisherListingRevision', 
                'Remove-OCIMarketplacepublisherListingRevisionAttachment', 
                'Remove-OCIMarketplacepublisherListingRevisionNote', 
                'Remove-OCIMarketplacepublisherListingRevisionPackage', 
-               'Remove-OCIMarketplacepublisherOffer', 
                'Remove-OCIMarketplacepublisherTerm', 
                'Remove-OCIMarketplacepublisherTermVersion', 
                'Stop-OCIMarketplacepublisherWorkRequest', 
@@ -148,8 +151,8 @@ CmdletsToExport = 'Confirm-OCIMarketplacepublisherAndPublishArtifact',
                'Update-OCIMarketplacepublisherListingRevisionAttachment', 
                'Update-OCIMarketplacepublisherListingRevisionAttachmentContent', 
                'Update-OCIMarketplacepublisherListingRevisionIconContent', 
+               'Update-OCIMarketplacepublisherListingRevisionNote', 
                'Update-OCIMarketplacepublisherListingRevisionPackage', 
-               'Update-OCIMarketplacepublisherOffer', 
                'Update-OCIMarketplacepublisherTerm', 
                'Update-OCIMarketplacepublisherTermVersion', 
                'Update-OCIMarketplacepublisherTermVersionContent'
