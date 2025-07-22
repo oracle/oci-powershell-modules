@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Managementagent.dll'
 
 # Version number of this module.
-ModuleVersion = '110.2.0'
+ModuleVersion = '111.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '110.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '111.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Managementagent.dll'
@@ -80,6 +80,9 @@ CmdletsToExport = 'Get-OCIManagementagent',
                'Get-OCIManagementagentInstallKey', 
                'Get-OCIManagementagentInstallKeyContent', 
                'Get-OCIManagementagentInstallKeysList', 
+               'Get-OCIManagementagentNamedCredential', 
+               'Get-OCIManagementagentNamedCredentialsList', 
+               'Get-OCIManagementagentNamedCredentialsMetadatum', 
                'Get-OCIManagementagentPluginsList', 'Get-OCIManagementagentsList', 
                'Get-OCIManagementagentWorkRequest', 
                'Get-OCIManagementagentWorkRequestErrorsList', 
@@ -90,12 +93,15 @@ CmdletsToExport = 'Get-OCIManagementagent',
                'Invoke-OCIManagementagentSummarizeManagementAgentCounts', 
                'Invoke-OCIManagementagentSummarizeManagementAgentPluginCounts', 
                'New-OCIManagementagentDataSource', 
-               'New-OCIManagementagentInstallKey', 'Remove-OCIManagementagent', 
-               'Remove-OCIManagementagentDataSource', 
+               'New-OCIManagementagentInstallKey', 
+               'New-OCIManagementagentNamedCredential', 
+               'Remove-OCIManagementagent', 'Remove-OCIManagementagentDataSource', 
                'Remove-OCIManagementagentInstallKey', 
+               'Remove-OCIManagementagentNamedCredential', 
                'Remove-OCIManagementagentWorkRequest', 'Update-OCIManagementagent', 
                'Update-OCIManagementagentDataSource', 
-               'Update-OCIManagementagentInstallKey'
+               'Update-OCIManagementagentInstallKey', 
+               'Update-OCIManagementagentNamedCredential'
 
 # Variables to export from this module
 VariablesToExport = '*'
