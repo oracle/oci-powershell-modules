@@ -34,6 +34,9 @@ namespace Oci.ApigatewayService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request id for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Whether to override locks (if any exist).")]
+        public System.Nullable<bool> IsLockOverride { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -47,7 +50,8 @@ namespace Oci.ApigatewayService.Cmdlets
                     ChangeUsagePlanCompartmentDetails = ChangeUsagePlanCompartmentDetails,
                     OpcRetryToken = OpcRetryToken,
                     IfMatch = IfMatch,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    IsLockOverride = IsLockOverride
                 };
 
                 response = client.ChangeUsagePlanCompartment(request).GetAwaiter().GetResult();

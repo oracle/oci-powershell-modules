@@ -28,6 +28,9 @@ namespace Oci.ManagementdashboardService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates whether tags must be included when exporting dashboards and saved searches. If this attribute is set to true, then both defined and free-form tags are included in the response. The default is false and tag fields are empty objects in the response. If set to true, NotAuthorizedException is returned if you do not have the permission to access tags, even if you have the permission to access dashboards and saved searches.")]
+        public string ExportTags { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -39,7 +42,8 @@ namespace Oci.ManagementdashboardService.Cmdlets
                 {
                     ExportDashboardId = ExportDashboardId,
                     OpcRetryToken = OpcRetryToken,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    ExportTags = ExportTags
                 };
 
                 response = client.ExportDashboard(request).GetAwaiter().GetResult();
