@@ -22,8 +22,11 @@ namespace Oci.AispeechService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The model the user wants to run the inference on.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The model name to filter voices for given model name.")]
         public System.Nullable<Oci.AispeechService.Models.TtsOracleModelDetails.ModelNameEnum> ModelName { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Code or Id of the language to filter voices for given language code.")]
+        public string LanguageCode { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the speaker voice in which the user wants tts inference to be.")]
         public string DisplayName { get; set; }
@@ -42,6 +45,7 @@ namespace Oci.AispeechService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     ModelName = ModelName,
+                    LanguageCode = LanguageCode,
                     DisplayName = DisplayName,
                     OpcRequestId = OpcRequestId
                 };

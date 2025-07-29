@@ -21,7 +21,7 @@ namespace Oci.ApigatewayService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ApigatewayService.Models.SdkCollection), typeof(Oci.ApigatewayService.Responses.ListSdksResponse) })]
     public class GetOCIApigatewaySdksList : OCIApiGatewayCmdlet
     {
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ocid of the SDK.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ocid of the SDK. This value must be present unless apiId is present.")]
         public string SdkId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A user-friendly name. Does not have to be unique, and it's changeable.
@@ -46,7 +46,7 @@ Example: `ACTIVE` or `DELETED`")]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. You can provide one sort order (`sortOrder`). Default order for `timeCreated` is descending. Default order for `displayName` is ascending. The `displayName` sort order is case sensitive.")]
         public System.Nullable<Oci.ApigatewayService.Requests.ListSdksRequest.SortByEnum> SortBy { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ocid of the API.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ocid of the API. This value must be present unless sdkId is present.")]
         public string ApiId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request id for tracing.")]
