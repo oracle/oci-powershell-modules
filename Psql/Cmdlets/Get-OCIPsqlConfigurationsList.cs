@@ -36,11 +36,17 @@ namespace Oci.PsqlService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Version of the PostgreSQL database, such as 14.9.")]
         public string DbVersion { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compute name of the shape for the configuration.")]
         public string Shape { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique identifier for the configuration.")]
         public string ConfigurationId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The instance ocpu count for the configuration.")]
+        public System.Nullable<int> InstanceOcpuCount { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The instance memory size in GBs for the configuration.")]
+        public System.Nullable<int> InstanceMemorySizeInGBs { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -76,6 +82,8 @@ namespace Oci.PsqlService.Cmdlets
                     DbVersion = DbVersion,
                     Shape = Shape,
                     ConfigurationId = ConfigurationId,
+                    InstanceOcpuCount = InstanceOcpuCount,
+                    InstanceMemorySizeInGBs = InstanceMemorySizeInGBs,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,

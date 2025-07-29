@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Apigateway.dll'
 
 # Version number of this module.
-ModuleVersion = '111.0.0'
+ModuleVersion = '112.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '111.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '112.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Apigateway.dll'
@@ -71,7 +71,11 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Apigateway.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIApigatewayApi', 'Get-OCIApigatewayApiContent', 
+CmdletsToExport = 'Add-OCIApigatewayApiLock', 'Add-OCIApigatewayCertificateLock', 
+               'Add-OCIApigatewayDeploymentLock', 'Add-OCIApigatewayGatewayLock', 
+               'Add-OCIApigatewaySdkLock', 'Add-OCIApigatewaySubscriberLock', 
+               'Add-OCIApigatewayUsagePlanLock', 'Get-OCIApigatewayApi', 
+               'Get-OCIApigatewayApiContent', 
                'Get-OCIApigatewayApiDeploymentSpecification', 
                'Get-OCIApigatewayApisList', 'Get-OCIApigatewayApiValidations', 
                'Get-OCIApigatewayCertificate', 'Get-OCIApigatewayCertificatesList', 
@@ -93,14 +97,20 @@ CmdletsToExport = 'Get-OCIApigatewayApi', 'Get-OCIApigatewayApiContent',
                'New-OCIApigatewayCertificate', 'New-OCIApigatewayDeployment', 
                'New-OCIApigatewayGateway', 'New-OCIApigatewaySdk', 
                'New-OCIApigatewaySubscriber', 'New-OCIApigatewayUsagePlan', 
-               'Remove-OCIApigatewayApi', 'Remove-OCIApigatewayCertificate', 
-               'Remove-OCIApigatewayDeployment', 'Remove-OCIApigatewayGateway', 
-               'Remove-OCIApigatewaySdk', 'Remove-OCIApigatewaySubscriber', 
-               'Remove-OCIApigatewayUsagePlan', 'Stop-OCIApigatewayWorkRequest', 
-               'Update-OCIApigatewayApi', 'Update-OCIApigatewayCertificate', 
-               'Update-OCIApigatewayDeployment', 'Update-OCIApigatewayGateway', 
-               'Update-OCIApigatewaySdk', 'Update-OCIApigatewaySubscriber', 
-               'Update-OCIApigatewayUsagePlan'
+               'Remove-OCIApigatewayApi', 'Remove-OCIApigatewayApiLock', 
+               'Remove-OCIApigatewayCertificate', 
+               'Remove-OCIApigatewayCertificateLock', 
+               'Remove-OCIApigatewayDeployment', 
+               'Remove-OCIApigatewayDeploymentLock', 'Remove-OCIApigatewayGateway', 
+               'Remove-OCIApigatewayGatewayLock', 'Remove-OCIApigatewaySdk', 
+               'Remove-OCIApigatewaySdkLock', 'Remove-OCIApigatewaySubscriber', 
+               'Remove-OCIApigatewaySubscriberLock', 
+               'Remove-OCIApigatewayUsagePlan', 
+               'Remove-OCIApigatewayUsagePlanLock', 
+               'Stop-OCIApigatewayWorkRequest', 'Update-OCIApigatewayApi', 
+               'Update-OCIApigatewayCertificate', 'Update-OCIApigatewayDeployment', 
+               'Update-OCIApigatewayGateway', 'Update-OCIApigatewaySdk', 
+               'Update-OCIApigatewaySubscriber', 'Update-OCIApigatewayUsagePlan'
 
 # Variables to export from this module
 VariablesToExport = '*'
