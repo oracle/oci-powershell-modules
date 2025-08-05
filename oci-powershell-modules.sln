@@ -317,6 +317,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Dbmulticloud"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Apiplatform", "Apiplatform\OCI.PSModules.Apiplatform.csproj", "{3D66C5CB-FD61-4E7E-B6E9-D06E808DDEE1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Multicloud", "Multicloud\OCI.PSModules.Multicloud.csproj", "{75D81538-2ED7-4B98-8F34-57F86989358C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2226,5 +2228,17 @@ Global
         {3D66C5CB-FD61-4E7E-B6E9-D06E808DDEE1}.Release|x64.Build.0 = Release|Any CPU
         {3D66C5CB-FD61-4E7E-B6E9-D06E808DDEE1}.Release|x86.ActiveCfg = Release|Any CPU
         {3D66C5CB-FD61-4E7E-B6E9-D06E808DDEE1}.Release|x86.Build.0 = Release|Any CPU
+        {75D81538-2ED7-4B98-8F34-57F86989358C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {75D81538-2ED7-4B98-8F34-57F86989358C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {75D81538-2ED7-4B98-8F34-57F86989358C}.Debug|x64.ActiveCfg = Debug|Any CPU
+        {75D81538-2ED7-4B98-8F34-57F86989358C}.Debug|x64.Build.0 = Debug|Any CPU
+        {75D81538-2ED7-4B98-8F34-57F86989358C}.Debug|x86.ActiveCfg = Debug|Any CPU
+        {75D81538-2ED7-4B98-8F34-57F86989358C}.Debug|x86.Build.0 = Debug|Any CPU
+        {75D81538-2ED7-4B98-8F34-57F86989358C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {75D81538-2ED7-4B98-8F34-57F86989358C}.Release|Any CPU.Build.0 = Release|Any CPU
+        {75D81538-2ED7-4B98-8F34-57F86989358C}.Release|x64.ActiveCfg = Release|Any CPU
+        {75D81538-2ED7-4B98-8F34-57F86989358C}.Release|x64.Build.0 = Release|Any CPU
+        {75D81538-2ED7-4B98-8F34-57F86989358C}.Release|x86.ActiveCfg = Release|Any CPU
+        {75D81538-2ED7-4B98-8F34-57F86989358C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
