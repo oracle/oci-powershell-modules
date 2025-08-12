@@ -42,7 +42,7 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only security assessments of type save schedule.")]
         public System.Nullable<bool> IsScheduleAssessment { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only security asessments that were created by either user or system.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only security assessments that were created by either user or system.")]
         public System.Nullable<Oci.DatasafeService.Requests.ListSecurityAssessmentsRequest.TriggeredByEnum> TriggeredBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items related to a specific target OCID.")]
@@ -79,6 +79,15 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the specified lifecycle state.")]
         public System.Nullable<Oci.DatasafeService.Models.SecurityAssessmentLifecycleState> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only only target database resources or target database group resources.")]
+        public System.Nullable<Oci.DatasafeService.Models.SecurityAssessmentTargetType> TargetType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the target database group that matches the specified OCID.")]
+        public string TargetDatabaseGroupId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the security assessment of type TEMPLATE.")]
+        public string TemplateAssessmentId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -108,7 +117,10 @@ namespace Oci.DatasafeService.Cmdlets
                     OpcRequestId = OpcRequestId,
                     Limit = Limit,
                     Page = Page,
-                    LifecycleState = LifecycleState
+                    LifecycleState = LifecycleState,
+                    TargetType = TargetType,
+                    TargetDatabaseGroupId = TargetDatabaseGroupId,
+                    TemplateAssessmentId = TemplateAssessmentId
                 };
                 IEnumerable<ListSecurityAssessmentsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

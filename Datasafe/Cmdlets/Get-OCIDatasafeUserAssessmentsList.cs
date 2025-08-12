@@ -79,6 +79,12 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only only target database resources or target database group resources.")]
+        public System.Nullable<Oci.DatasafeService.Models.UserAssessmentTargetType> TargetType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the target database group that matches the specified OCID.")]
+        public string TargetDatabaseGroupId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -108,7 +114,9 @@ namespace Oci.DatasafeService.Cmdlets
                     LifecycleState = LifecycleState,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    TargetType = TargetType,
+                    TargetDatabaseGroupId = TargetDatabaseGroupId
                 };
                 IEnumerable<ListUserAssessmentsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

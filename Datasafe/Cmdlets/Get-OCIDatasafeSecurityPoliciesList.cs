@@ -42,6 +42,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The current state of the security policy.")]
         public System.Nullable<Oci.DatasafeService.Models.SecurityPolicyLifecycleState> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of the security policy.")]
+        public System.Nullable<Oci.DatasafeService.Models.SecurityPolicy.SecurityPolicyTypeEnum> SecurityPolicyType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only resources that match the specified OCID of the security policy resource.")]
         public string SecurityPolicyId { get; set; }
 
@@ -73,6 +76,7 @@ namespace Oci.DatasafeService.Cmdlets
                     Limit = Limit,
                     Page = Page,
                     LifecycleState = LifecycleState,
+                    SecurityPolicyType = SecurityPolicyType,
                     SecurityPolicyId = SecurityPolicyId,
                     SortOrder = SortOrder,
                     SortBy = SortBy,

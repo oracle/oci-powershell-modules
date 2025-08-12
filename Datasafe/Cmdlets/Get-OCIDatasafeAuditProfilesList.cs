@@ -36,6 +36,12 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items related to a specific target OCID.")]
         public string TargetId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the target database group that matches the specified OCID.")]
+        public string TargetDatabaseGroupId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A optional filter to return only resources that belong to the specified audit profile type.")]
+        public System.Nullable<Oci.DatasafeService.Models.AuditProfileTargetType> TargetType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the specified display name.")]
         public string DisplayName { get; set; }
 
@@ -83,6 +89,8 @@ namespace Oci.DatasafeService.Cmdlets
                     AccessLevel = AccessLevel,
                     AuditProfileId = AuditProfileId,
                     TargetId = TargetId,
+                    TargetDatabaseGroupId = TargetDatabaseGroupId,
+                    TargetType = TargetType,
                     DisplayName = DisplayName,
                     Limit = Limit,
                     Page = Page,

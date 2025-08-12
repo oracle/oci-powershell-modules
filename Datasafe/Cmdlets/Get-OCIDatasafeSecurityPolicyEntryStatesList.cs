@@ -36,6 +36,12 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only resources that match the specified security policy entry OCID.")]
         public string SecurityPolicyEntryId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of the security policy deployment.")]
+        public System.Nullable<Oci.DatasafeService.Models.SecurityPolicyEntryStateSummary.EntryTypeEnum> SecurityPolicyEntryType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only resources that match the specified target id.")]
+        public string TargetId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
@@ -56,6 +62,8 @@ namespace Oci.DatasafeService.Cmdlets
                     Page = Page,
                     DeploymentStatus = DeploymentStatus,
                     SecurityPolicyEntryId = SecurityPolicyEntryId,
+                    SecurityPolicyEntryType = SecurityPolicyEntryType,
+                    TargetId = TargetId,
                     OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListSecurityPolicyEntryStatesResponse> responses = GetRequestDelegate().Invoke(request);

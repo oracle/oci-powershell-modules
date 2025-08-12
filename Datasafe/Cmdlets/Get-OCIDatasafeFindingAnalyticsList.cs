@@ -54,6 +54,28 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous ""List"" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the target database group that matches the specified OCID.")]
+        public string TargetDatabaseGroupId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.")]
+        public System.Collections.Generic.List<Oci.DatasafeService.Models.SecurityAssessmentReferences> ContainsReferences { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only findings that match the specified target ids. Use this parameter to filter by multiple target ids.")]
+        public System.Collections.Generic.List<string> TargetIds { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The category of the finding.")]
+        public string Category { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.")]
+        public System.Collections.Generic.List<Oci.DatasafeService.Requests.ListFindingAnalyticsRequest.ContainsSeverityEnum> ContainsSeverity { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+
+**Example:** | scimQuery=(severity eq 'high') scimQuery=(category eq ""Users"") and (reference eq 'CIS')
+
+Supported fields: severity reference title category")]
+        public string ScimQuery { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -76,7 +98,13 @@ namespace Oci.DatasafeService.Cmdlets
                     FindingKey = FindingKey,
                     OpcRequestId = OpcRequestId,
                     Limit = Limit,
-                    Page = Page
+                    Page = Page,
+                    TargetDatabaseGroupId = TargetDatabaseGroupId,
+                    ContainsReferences = ContainsReferences,
+                    TargetIds = TargetIds,
+                    Category = Category,
+                    ContainsSeverity = ContainsSeverity,
+                    ScimQuery = ScimQuery
                 };
                 IEnumerable<ListFindingAnalyticsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

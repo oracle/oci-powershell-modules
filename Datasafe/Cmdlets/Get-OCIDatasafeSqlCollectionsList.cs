@@ -58,6 +58,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items related to a specific target OCID.")]
         public string TargetId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the target database group that matches the specified OCID.")]
+        public string TargetDatabaseGroupId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items that match the specified user name.")]
         public string DbUserName { get; set; }
 
@@ -93,6 +96,7 @@ namespace Oci.DatasafeService.Cmdlets
                     TimeCreatedGreaterThanOrEqualTo = TimeCreatedGreaterThanOrEqualTo,
                     TimeCreatedLessThan = TimeCreatedLessThan,
                     TargetId = TargetId,
+                    TargetDatabaseGroupId = TargetDatabaseGroupId,
                     DbUserName = DbUserName,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
