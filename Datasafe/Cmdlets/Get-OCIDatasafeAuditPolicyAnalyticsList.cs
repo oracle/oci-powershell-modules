@@ -48,6 +48,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items related to a specific target OCID.")]
         public string TargetId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the target database group that matches the specified OCID.")]
+        public string TargetDatabaseGroupId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The current state of the audit policy.")]
         public System.Nullable<Oci.DatasafeService.Models.AuditPolicyLifecycleState> LifecycleState { get; set; }
 
@@ -75,6 +78,7 @@ namespace Oci.DatasafeService.Cmdlets
                     AuditPolicyCategory = AuditPolicyCategory,
                     AuditPolicyName = AuditPolicyName,
                     TargetId = TargetId,
+                    TargetDatabaseGroupId = TargetDatabaseGroupId,
                     LifecycleState = LifecycleState,
                     OpcRequestId = OpcRequestId
                 };

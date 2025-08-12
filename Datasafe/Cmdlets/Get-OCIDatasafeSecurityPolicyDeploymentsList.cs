@@ -48,6 +48,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items related to a specific target OCID.")]
         public string TargetId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A optional filter to return only resources that belong to the specified target type.")]
+        public System.Nullable<Oci.DatasafeService.Models.SecurityPolicyDeployment.TargetTypeEnum> TargetType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only resources that match the specified OCID of the security policy resource.")]
         public string SecurityPolicyId { get; set; }
 
@@ -81,6 +84,7 @@ namespace Oci.DatasafeService.Cmdlets
                     LifecycleState = LifecycleState,
                     SecurityPolicyDeploymentId = SecurityPolicyDeploymentId,
                     TargetId = TargetId,
+                    TargetType = TargetType,
                     SecurityPolicyId = SecurityPolicyId,
                     SortOrder = SortOrder,
                     SortBy = SortBy,

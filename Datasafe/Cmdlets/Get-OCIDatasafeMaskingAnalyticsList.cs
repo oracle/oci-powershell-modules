@@ -36,6 +36,18 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the specified masking policy OCID.")]
         public string MaskingPolicyId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items related to a specific sensitive type OCID.")]
+        public string SensitiveTypeId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the target database group that matches the specified OCID.")]
+        public string TargetDatabaseGroupId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for all the fields is ascending.")]
+        public System.Nullable<Oci.DatasafeService.Requests.ListMaskingAnalyticsRequest.SortByEnum> SortBy { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (ASC) or descending (DESC).")]
+        public System.Nullable<Oci.DatasafeService.Requests.ListMaskingAnalyticsRequest.SortOrderEnum> SortOrder { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of items to return per page in a paginated ""List"" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -62,6 +74,10 @@ namespace Oci.DatasafeService.Cmdlets
                     GroupBy = GroupBy,
                     TargetId = TargetId,
                     MaskingPolicyId = MaskingPolicyId,
+                    SensitiveTypeId = SensitiveTypeId,
+                    TargetDatabaseGroupId = TargetDatabaseGroupId,
+                    SortBy = SortBy,
+                    SortOrder = SortOrder,
                     Limit = Limit,
                     Page = Page,
                     OpcRequestId = OpcRequestId

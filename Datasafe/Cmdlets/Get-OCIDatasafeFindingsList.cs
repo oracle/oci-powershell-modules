@@ -33,11 +33,20 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only findings of a particular risk level.")]
         public System.Nullable<Oci.DatasafeService.Requests.ListFindingsRequest.SeverityEnum> Severity { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.")]
+        public System.Collections.Generic.List<Oci.DatasafeService.Requests.ListFindingsRequest.ContainsSeverityEnum> ContainsSeverity { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The category of the finding.")]
+        public string Category { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the findings that match the specified lifecycle states.")]
         public System.Nullable<Oci.DatasafeService.Models.FindingLifecycleState> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only findings that match the specified reference.")]
         public System.Nullable<Oci.DatasafeService.Models.SecurityAssessmentReferences> References { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.")]
+        public System.Collections.Generic.List<Oci.DatasafeService.Models.SecurityAssessmentReferences> ContainsReferences { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of items to return per page in a paginated ""List"" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -54,6 +63,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items related to a specific target OCID.")]
         public string TargetId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only findings that match the specified target ids. Use this parameter to filter by multiple target ids.")]
+        public System.Collections.Generic.List<string> TargetIds { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
 
 **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq ""Users"") and (targetId eq ""target_1"") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
@@ -66,6 +78,9 @@ Supported fields: severity findingKey reference targetId isTopFinding title cate
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. You can specify only one sort order(sortOrder). The default order for category is alphabetical.")]
         public System.Nullable<Oci.DatasafeService.Requests.ListFindingsRequest.SortByEnum> SortBy { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (ASC) or descending (DESC).")]
+        public System.Nullable<Oci.DatasafeService.Requests.ListFindingsRequest.SortOrderEnum> SortOrder { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.")]
         public string FindingKey { get; set; }
@@ -86,16 +101,21 @@ Supported fields: severity findingKey reference targetId isTopFinding title cate
                     OpcRequestId = OpcRequestId,
                     IsTopFinding = IsTopFinding,
                     Severity = Severity,
+                    ContainsSeverity = ContainsSeverity,
+                    Category = Category,
                     LifecycleState = LifecycleState,
                     References = References,
+                    ContainsReferences = ContainsReferences,
                     Limit = Limit,
                     Page = Page,
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
                     AccessLevel = AccessLevel,
                     TargetId = TargetId,
+                    TargetIds = TargetIds,
                     ScimQuery = ScimQuery,
                     Field = Field,
                     SortBy = SortBy,
+                    SortOrder = SortOrder,
                     FindingKey = FindingKey
                 };
                 IEnumerable<ListFindingsResponse> responses = GetRequestDelegate().Invoke(request);

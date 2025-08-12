@@ -31,7 +31,7 @@ namespace Oci.DatasafeService.Cmdlets
         public string DisplayName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only on-premises connector resources that match the specified lifecycle state.")]
-        public System.Nullable<Oci.DatasafeService.Models.OnPremConnectorLifecycleState> OnPremConnectorLifecycleState { get; set; }
+        public System.Nullable<Oci.DatasafeService.Models.OnPremConnectorLifecycleState> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of items to return per page in a paginated ""List"" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -69,7 +69,7 @@ namespace Oci.DatasafeService.Cmdlets
                     CompartmentId = CompartmentId,
                     OnPremConnectorId = OnPremConnectorId,
                     DisplayName = DisplayName,
-                    OnPremConnectorLifecycleState = OnPremConnectorLifecycleState,
+                    LifecycleState = LifecycleState,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,

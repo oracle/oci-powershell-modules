@@ -42,7 +42,7 @@ namespace Oci.CimsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The order to sort the results in.")]
         public System.Nullable<Oci.CimsService.Models.SortOrder> SortOrder { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The user-friendly name of the support ticket type.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The user-friendly name of the support request type.")]
         public string Name { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Customer Support Identifier (CSI) number associated with the support account. The CSI is optional for all support request types.")]

@@ -75,6 +75,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous ""List"" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the target database group that matches the specified OCID.")]
+        public string TargetDatabaseGroupId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -104,7 +107,8 @@ namespace Oci.DatasafeService.Cmdlets
                     TargetsWithExternalAuthentication = TargetsWithExternalAuthentication,
                     OpcRequestId = OpcRequestId,
                     Limit = Limit,
-                    Page = Page
+                    Page = Page,
+                    TargetDatabaseGroupId = TargetDatabaseGroupId
                 };
                 IEnumerable<ListSecurityFeaturesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Aivision.dll'
 
 # Version number of this module.
-ModuleVersion = '112.1.0'
+ModuleVersion = '113.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '112.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '113.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Aivision.dll'
@@ -74,20 +74,38 @@ FunctionsToExport = '*'
 CmdletsToExport = 'Get-OCIAivisionDocumentJob', 'Get-OCIAivisionImageJob', 
                'Get-OCIAivisionModel', 'Get-OCIAivisionModelsList', 
                'Get-OCIAivisionProject', 'Get-OCIAivisionProjectsList', 
-               'Get-OCIAivisionVideoJob', 'Get-OCIAivisionWorkRequest', 
+               'Get-OCIAivisionStreamGroup', 'Get-OCIAivisionStreamGroupsList', 
+               'Get-OCIAivisionStreamJob', 'Get-OCIAivisionStreamJobsList', 
+               'Get-OCIAivisionStreamSource', 'Get-OCIAivisionStreamSourcesList', 
+               'Get-OCIAivisionVideoJob', 'Get-OCIAivisionVisionPrivateEndpoint', 
+               'Get-OCIAivisionVisionPrivateEndpointsList', 
+               'Get-OCIAivisionWorkRequest', 
                'Get-OCIAivisionWorkRequestErrorsList', 
                'Get-OCIAivisionWorkRequestLogsList', 
                'Get-OCIAivisionWorkRequestsList', 
                'Invoke-OCIAivisionAnalyzeDocument', 
                'Invoke-OCIAivisionAnalyzeImage', 
                'Move-OCIAivisionModelCompartment', 
-               'Move-OCIAivisionProjectCompartment', 'New-OCIAivisionDocumentJob', 
-               'New-OCIAivisionImageJob', 'New-OCIAivisionModel', 
-               'New-OCIAivisionProject', 'New-OCIAivisionVideoJob', 
-               'Remove-OCIAivisionModel', 'Remove-OCIAivisionProject', 
-               'Stop-OCIAivisionDocumentJob', 'Stop-OCIAivisionImageJob', 
+               'Move-OCIAivisionProjectCompartment', 
+               'Move-OCIAivisionStreamGroupCompartment', 
+               'Move-OCIAivisionStreamJobCompartment', 
+               'Move-OCIAivisionStreamSourceCompartment', 
+               'Move-OCIAivisionVisionPrivateEndpointCompartment', 
+               'New-OCIAivisionDocumentJob', 'New-OCIAivisionImageJob', 
+               'New-OCIAivisionModel', 'New-OCIAivisionProject', 
+               'New-OCIAivisionStreamGroup', 'New-OCIAivisionStreamJob', 
+               'New-OCIAivisionStreamSource', 'New-OCIAivisionVideoJob', 
+               'New-OCIAivisionVisionPrivateEndpoint', 'Remove-OCIAivisionModel', 
+               'Remove-OCIAivisionProject', 'Remove-OCIAivisionStreamGroup', 
+               'Remove-OCIAivisionStreamJob', 'Remove-OCIAivisionStreamSource', 
+               'Remove-OCIAivisionVisionPrivateEndpoint', 
+               'Start-OCIAivisionStreamJob', 'Stop-OCIAivisionDocumentJob', 
+               'Stop-OCIAivisionImageJob', 'Stop-OCIAivisionStreamJob', 
                'Stop-OCIAivisionVideoJob', 'Stop-OCIAivisionWorkRequest', 
-               'Update-OCIAivisionModel', 'Update-OCIAivisionProject'
+               'Update-OCIAivisionModel', 'Update-OCIAivisionProject', 
+               'Update-OCIAivisionStreamGroup', 'Update-OCIAivisionStreamJob', 
+               'Update-OCIAivisionStreamSource', 
+               'Update-OCIAivisionVisionPrivateEndpoint'
 
 # Variables to export from this module
 VariablesToExport = '*'

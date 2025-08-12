@@ -33,6 +33,15 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items related to a specific target OCID.")]
         public string TargetId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the target database group that matches the specified OCID.")]
+        public string TargetDatabaseGroupId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for all the fields is ascending.")]
+        public System.Nullable<Oci.DatasafeService.Requests.ListDiscoveryAnalyticsRequest.SortByEnum> SortBy { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (ASC) or descending (DESC).")]
+        public System.Nullable<Oci.DatasafeService.Requests.ListDiscoveryAnalyticsRequest.SortOrderEnum> SortOrder { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the specified sensitive data model OCID.")]
         public string SensitiveDataModelId { get; set; }
 
@@ -51,6 +60,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the common sensitive type resources. Common sensitive types belong to library sensitive types which are frequently used to perform sensitive data discovery.")]
         public System.Nullable<bool> IsCommon { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only resources that match the specified OCID of the sensitive type group resource.")]
+        public string SensitiveTypeGroupId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -67,12 +79,16 @@ namespace Oci.DatasafeService.Cmdlets
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
                     GroupBy = GroupBy,
                     TargetId = TargetId,
+                    TargetDatabaseGroupId = TargetDatabaseGroupId,
+                    SortBy = SortBy,
+                    SortOrder = SortOrder,
                     SensitiveDataModelId = SensitiveDataModelId,
                     SensitiveTypeId = SensitiveTypeId,
                     Limit = Limit,
                     Page = Page,
                     OpcRequestId = OpcRequestId,
-                    IsCommon = IsCommon
+                    IsCommon = IsCommon,
+                    SensitiveTypeGroupId = SensitiveTypeGroupId
                 };
                 IEnumerable<ListDiscoveryAnalyticsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

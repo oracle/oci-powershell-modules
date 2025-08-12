@@ -19,7 +19,7 @@ namespace Oci.CimsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CimsService.Models.Incident), typeof(Oci.CimsService.Responses.GetIncidentResponse) })]
     public class GetOCICimsIncident : OCIIncidentCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the support ticket.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the support request.")]
         public string IncidentKey { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the tenancy.")]
