@@ -42,6 +42,18 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items related to a specific target OCID.")]
         public string TargetId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).")]
+        public System.Nullable<System.DateTime> TimeStarted { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).")]
+        public System.Nullable<System.DateTime> TimeEnded { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.")]
+        public string QueryTimeZone { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the target database group that matches the specified OCID.")]
+        public string TargetDatabaseGroupId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
@@ -64,6 +76,10 @@ namespace Oci.DatasafeService.Cmdlets
                     Page = Page,
                     GroupBy = GroupBy,
                     TargetId = TargetId,
+                    TimeStarted = TimeStarted,
+                    TimeEnded = TimeEnded,
+                    QueryTimeZone = QueryTimeZone,
+                    TargetDatabaseGroupId = TargetDatabaseGroupId,
                     OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListAuditTrailAnalyticsResponse> responses = GetRequestDelegate().Invoke(request);

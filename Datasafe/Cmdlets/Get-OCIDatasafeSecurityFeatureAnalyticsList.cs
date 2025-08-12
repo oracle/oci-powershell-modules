@@ -34,6 +34,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the target database group that matches the specified OCID.")]
+        public string TargetDatabaseGroupId { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -47,7 +50,8 @@ namespace Oci.DatasafeService.Cmdlets
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
                     AccessLevel = AccessLevel,
                     TargetId = TargetId,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    TargetDatabaseGroupId = TargetDatabaseGroupId
                 };
 
                 response = client.ListSecurityFeatureAnalytics(request).GetAwaiter().GetResult();

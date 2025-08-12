@@ -33,6 +33,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items related to a specific target OCID.")]
         public string TargetId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the target database group that matches the specified OCID.")]
+        public string TargetDatabaseGroupId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.")]
         public System.Collections.Generic.List<string> SensitiveTypeId { get; set; }
 
@@ -79,6 +82,7 @@ namespace Oci.DatasafeService.Cmdlets
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
                     AccessLevel = AccessLevel,
                     TargetId = TargetId,
+                    TargetDatabaseGroupId = TargetDatabaseGroupId,
                     SensitiveTypeId = SensitiveTypeId,
                     SensitiveTypeGroupId = SensitiveTypeGroupId,
                     SensitiveDataModelId = SensitiveDataModelId,

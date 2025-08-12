@@ -42,6 +42,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items related to a specific target OCID.")]
         public string TargetId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the target database group that matches the specified OCID.")]
+        public string TargetDatabaseGroupId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
@@ -73,6 +76,7 @@ namespace Oci.DatasafeService.Cmdlets
                     Page = Page,
                     LifecycleState = LifecycleState,
                     TargetId = TargetId,
+                    TargetDatabaseGroupId = TargetDatabaseGroupId,
                     OpcRequestId = OpcRequestId,
                     GroupBy = GroupBy,
                     TimeStarted = TimeStarted,

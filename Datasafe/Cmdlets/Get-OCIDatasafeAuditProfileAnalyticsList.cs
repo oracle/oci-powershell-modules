@@ -39,6 +39,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The group by parameter for summarize operation on audit.")]
         public System.Collections.Generic.List<Oci.DatasafeService.Requests.ListAuditProfileAnalyticsRequest.GroupByEnum> GroupBy { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A optional filter to return only resources that belong to the specified audit profile type.")]
+        public System.Nullable<Oci.DatasafeService.Models.AuditProfileTargetType> TargetType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
@@ -60,6 +63,7 @@ namespace Oci.DatasafeService.Cmdlets
                     Limit = Limit,
                     Page = Page,
                     GroupBy = GroupBy,
+                    TargetType = TargetType,
                     OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListAuditProfileAnalyticsResponse> responses = GetRequestDelegate().Invoke(request);

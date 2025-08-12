@@ -70,6 +70,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An optional filter to return only resources that match the specified type.")]
         public System.Nullable<Oci.DatasafeService.Models.ReportType> Type { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies the name of a resource that provides data for the report. For example  alerts, events.")]
+        public System.Nullable<Oci.DatasafeService.Models.ReportDefinitionDataSource> DataSource { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -96,7 +99,8 @@ namespace Oci.DatasafeService.Cmdlets
                     TimeGeneratedLessThan = TimeGeneratedLessThan,
                     OpcRequestId = OpcRequestId,
                     LifecycleState = LifecycleState,
-                    Type = Type
+                    Type = Type,
+                    DataSource = DataSource
                 };
                 IEnumerable<ListReportsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

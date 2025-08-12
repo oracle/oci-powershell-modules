@@ -31,6 +31,9 @@ namespace Oci.CoreService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies whether to delete or preserve the data volumes created during launch when terminating an instance. When set to `true`, the data volumes are preserved. The default value is `true`.")]
         public System.Nullable<bool> PreserveDataVolumesCreatedAtLaunch { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This optional parameter overrides recycle level for hosts. The parameter can be used when hosts are associated with a Capacity Reservation. * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.")]
+        public System.Nullable<Oci.CoreService.Requests.TerminateInstanceRequest.RecycleLevelEnum> RecycleLevel { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "Ignore confirmation and force the Cmdlet to complete action.")]
         public SwitchParameter Force { get; set; }
 
@@ -52,7 +55,8 @@ namespace Oci.CoreService.Cmdlets
                     InstanceId = InstanceId,
                     IfMatch = IfMatch,
                     PreserveBootVolume = PreserveBootVolume,
-                    PreserveDataVolumesCreatedAtLaunch = PreserveDataVolumesCreatedAtLaunch
+                    PreserveDataVolumesCreatedAtLaunch = PreserveDataVolumesCreatedAtLaunch,
+                    RecycleLevel = RecycleLevel
                 };
 
                 response = client.TerminateInstance(request).GetAwaiter().GetResult();
