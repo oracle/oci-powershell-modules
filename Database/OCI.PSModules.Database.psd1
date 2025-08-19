@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '113.0.0'
+ModuleVersion = '114.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '113.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '114.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -222,6 +222,8 @@ CmdletsToExport = 'Add-OCIDatabaseStandbyAutonomousContainerDatabase',
                'Get-OCIDatabasePdbConversionHistoryEntry', 
                'Get-OCIDatabasePluggableDatabase', 
                'Get-OCIDatabasePluggableDatabasesList', 
+               'Get-OCIDatabasePluggableDatabaseSnapshot', 
+               'Get-OCIDatabasePluggableDatabaseSnapshotsList', 
                'Get-OCIDatabaseRecommendedScheduledActionsList', 
                'Get-OCIDatabaseResourcePoolMembersList', 
                'Get-OCIDatabaseScheduledAction', 
@@ -369,6 +371,7 @@ CmdletsToExport = 'Add-OCIDatabaseStandbyAutonomousContainerDatabase',
                'New-OCIDatabaseExternalPluggableDatabase', 
                'New-OCIDatabaseKeyStore', 'New-OCIDatabaseMaintenanceRun', 
                'New-OCIDatabaseOneoffPatch', 'New-OCIDatabasePluggableDatabase', 
+               'New-OCIDatabasePluggableDatabaseSnapshot', 
                'New-OCIDatabaseRecommendedVmClusterNetwork', 
                'New-OCIDatabaseScheduledAction', 'New-OCIDatabaseSchedulingPlan', 
                'New-OCIDatabaseSchedulingPolicy', 
@@ -398,6 +401,7 @@ CmdletsToExport = 'Add-OCIDatabaseStandbyAutonomousContainerDatabase',
                'Remove-OCIDatabaseExternalPluggableDatabase', 
                'Remove-OCIDatabaseKeyStore', 'Remove-OCIDatabaseOneoffPatch', 
                'Remove-OCIDatabasePluggableDatabase', 
+               'Remove-OCIDatabasePluggableDatabaseSnapshot', 
                'Remove-OCIDatabaseScheduledAction', 
                'Remove-OCIDatabaseSchedulingPlan', 
                'Remove-OCIDatabaseSchedulingPolicy', 
