@@ -42,6 +42,18 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given cluster placement group ID exactly.")]
         public string ClusterPlacementGroupId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only Exadata Database Storage Vaults which do not match the given attachedShapeAttributes")]
+        public string AttachedShapeAttributesNotEqualTo { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only Exadata Database Storage Vaults which match the given attachedShapeAttributes or has null attachedShapeAttributes")]
+        public string AttachedShapeAttributes { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters less than or equal to the given count")]
+        public System.Nullable<int> VmClusterCountLessThanOrEqualTo { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters greater than or equal to the given count")]
+        public System.Nullable<int> VmClusterCountGreaterThanOrEqualTo { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given. The match is not case sensitive.")]
         public string DisplayName { get; set; }
 
@@ -70,6 +82,10 @@ namespace Oci.DatabaseService.Cmdlets
                     SortOrder = SortOrder,
                     LifecycleState = LifecycleState,
                     ClusterPlacementGroupId = ClusterPlacementGroupId,
+                    AttachedShapeAttributesNotEqualTo = AttachedShapeAttributesNotEqualTo,
+                    AttachedShapeAttributes = AttachedShapeAttributes,
+                    VmClusterCountLessThanOrEqualTo = VmClusterCountLessThanOrEqualTo,
+                    VmClusterCountGreaterThanOrEqualTo = VmClusterCountGreaterThanOrEqualTo,
                     DisplayName = DisplayName,
                     OpcRequestId = OpcRequestId,
                     ExadataInfrastructureId = ExadataInfrastructureId

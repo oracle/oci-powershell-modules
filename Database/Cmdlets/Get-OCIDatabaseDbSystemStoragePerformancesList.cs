@@ -31,6 +31,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        public string CompartmentId { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -43,7 +46,8 @@ namespace Oci.DatabaseService.Cmdlets
                     StorageManagement = StorageManagement,
                     ShapeType = ShapeType,
                     DatabaseEdition = DatabaseEdition,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    CompartmentId = CompartmentId
                 };
 
                 response = client.ListDbSystemStoragePerformances(request).GetAwaiter().GetResult();

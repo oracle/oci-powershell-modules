@@ -39,6 +39,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`. * ASM specifies Oracle Automatic Storage Management * LVM specifies logical volume manager, sometimes called logical disk manager.")]
         public System.Nullable<Oci.DatabaseService.Models.DbSystemOptions.StorageManagementEnum> StorageManagement { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If provided and applicable, return DB System shape parameters based on the shapeAttribute provided")]
+        public string ShapeAttribute { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If provided, filters the results to the set of database versions which are supported for Upgrade.")]
         public System.Nullable<bool> IsUpgradeSupported { get; set; }
 
@@ -63,6 +66,7 @@ namespace Oci.DatabaseService.Cmdlets
                     DbSystemShape = DbSystemShape,
                     DbSystemId = DbSystemId,
                     StorageManagement = StorageManagement,
+                    ShapeAttribute = ShapeAttribute,
                     IsUpgradeSupported = IsUpgradeSupported,
                     IsDatabaseSoftwareImageSupported = IsDatabaseSoftwareImageSupported
                 };
