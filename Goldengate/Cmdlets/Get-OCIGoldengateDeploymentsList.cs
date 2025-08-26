@@ -39,6 +39,9 @@ namespace Oci.GoldengateService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the 'lifecycleSubState' given.")]
         public System.Nullable<Oci.GoldengateService.Models.LifecycleSubState> LifecycleSubState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter that returns only the resources matching the specified 'deploymentType'.")]
+        public System.Nullable<Oci.GoldengateService.Models.DeploymentType> DeploymentType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the entire 'displayName' given.")]
         public string DisplayName { get; set; }
 
@@ -78,6 +81,7 @@ namespace Oci.GoldengateService.Cmdlets
                     AssignableConnectionId = AssignableConnectionId,
                     LifecycleState = LifecycleState,
                     LifecycleSubState = LifecycleSubState,
+                    DeploymentType = DeploymentType,
                     DisplayName = DisplayName,
                     Fqdn = Fqdn,
                     Limit = Limit,

@@ -33,6 +33,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The pagination token to continue listing from.")]
         public string Page { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If provided and applicable, return DB System shape parameters based on the shapeAttribute provided")]
+        public string ShapeAttribute { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -48,7 +51,8 @@ namespace Oci.DatabaseService.Cmdlets
                     CompartmentId = CompartmentId,
                     AvailabilityDomain = AvailabilityDomain,
                     Limit = Limit,
-                    Page = Page
+                    Page = Page,
+                    ShapeAttribute = ShapeAttribute
                 };
                 IEnumerable<ListDbSystemShapesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
