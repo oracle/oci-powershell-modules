@@ -24,20 +24,23 @@ namespace Oci.DbmulticloudService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Display Name of the Multi Cloud Discovery Resource.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.")]
         public string DisplayName { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery resource.")]
         public string MultiCloudResourceDiscoveryId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.")]
         public System.Nullable<Oci.DbmulticloudService.Models.MultiCloudResourceDiscovery.LifecycleStateEnum> LifecycleState { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return Oracle DB Azure Blob Mount Resources.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return Oracle DB Azure Azure Identity Connector resources.")]
         public string OracleDbAzureConnectorId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of Multi Cloud Resource.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of Multicloud Resource.")]
         public System.Nullable<Oci.DbmulticloudService.Models.MultiCloudResourceDiscovery.ResourceTypeEnum> ResourceType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies the type(s) of resources to discover in the target cloud provider.")]
+        public System.Collections.Generic.List<string> ResourcesFilter { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -72,6 +75,7 @@ namespace Oci.DbmulticloudService.Cmdlets
                     LifecycleState = LifecycleState,
                     OracleDbAzureConnectorId = OracleDbAzureConnectorId,
                     ResourceType = ResourceType,
+                    ResourcesFilter = ResourcesFilter,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,
