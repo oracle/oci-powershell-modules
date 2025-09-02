@@ -21,8 +21,8 @@ namespace Oci.DbmulticloudService.Cmdlets
     public class GetOCIDbmulticloudOracleDbAzureVaultAssociation : OCIOracleDbAzureVaultAssociationCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the Oracle DB Azure Vault Association Resource.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the Oracle DB Azure Vault Association Resource.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.", ParameterSetName = Default)]
         public string OracleDbAzureVaultAssociationId { get; set; }
 
         

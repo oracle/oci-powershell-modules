@@ -19,10 +19,14 @@ namespace Oci.DbmulticloudService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DbmulticloudService.Models.OracleDbAzureConnector), typeof(Oci.DbmulticloudService.Responses.CreateOracleDbAzureConnectorResponse) })]
     public class NewOCIDbmulticloudOracleDbAzureConnector : OCIOracleDBAzureConnectorCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for to Create Oracle DB Azure Connector Resource and configured Azure Identity in OCI Database Resource.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for to Create Oracle DB Azure Connector resource and configured Azure Identity in Oracle Database resource.")]
         public CreateOracleDbAzureConnectorDetails CreateOracleDbAzureConnectorDetails { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request, allowing it to be safely retried in the event of a timeout or server error without the risk of the action being executed more than once.
+
+Retry tokens expire after 24 hours but can be invalidated sooner if conflicting operations occur.
+
+For example, if a resource has been deleted and permanently purged from the system, a retry of the original creation request may be rejected.")]
         public string OpcRetryToken { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

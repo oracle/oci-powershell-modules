@@ -19,7 +19,7 @@ namespace Oci.DbmulticloudService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.DbmulticloudService.Responses.UpdateOracleDbAzureBlobContainerResponse) })]
     public class UpdateOCIDbmulticloudOracleDbAzureBlobContainer : OCIOracleDBAzureBlobContainerCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the Oracle DB Azure Blob Container Resource.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource.")]
         public string OracleDbAzureBlobContainerId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for to update OracleDbAzureBlobContainer.")]

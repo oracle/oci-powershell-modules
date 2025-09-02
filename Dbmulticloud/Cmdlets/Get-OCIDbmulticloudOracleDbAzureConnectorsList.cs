@@ -24,16 +24,16 @@ namespace Oci.DbmulticloudService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return Oracle DB Azure Connector Resource that match the given display name.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return Oracle DB Azure Connector resources that match the specified display name.")]
         public string DisplayName { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return Oracle DB Azure Blob Mount Resources.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return Oracle DB Azure Azure Identity Connector resources.")]
         public string OracleDbAzureConnectorId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.")]
         public System.Nullable<Oci.DbmulticloudService.Models.OracleDbAzureConnector.LifecycleStateEnum> LifecycleState { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database resource.")]
         public string DbClusterResourceId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
