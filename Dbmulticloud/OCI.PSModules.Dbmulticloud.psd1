@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Dbmulticloud.dll'
 
 # Version number of this module.
-ModuleVersion = '114.1.0'
+ModuleVersion = '114.2.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '114.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '114.2.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Dbmulticloud.dll'
@@ -85,38 +85,55 @@ CmdletsToExport = 'Get-OCIDbmulticloudMultiCloudResourceDiscoveriesList',
                'Get-OCIDbmulticloudOracleDbAzureVaultAssociation', 
                'Get-OCIDbmulticloudOracleDbAzureVaultAssociationsList', 
                'Get-OCIDbmulticloudOracleDbAzureVaultsList', 
+               'Get-OCIDbmulticloudOracleDbGcpIdentityConnector', 
+               'Get-OCIDbmulticloudOracleDbGcpIdentityConnectorsList', 
+               'Get-OCIDbmulticloudOracleDbGcpKey', 
+               'Get-OCIDbmulticloudOracleDbGcpKeyRing', 
+               'Get-OCIDbmulticloudOracleDbGcpKeyRingsList', 
+               'Get-OCIDbmulticloudOracleDbGcpKeysList', 
                'Get-OCIDbmulticloudWorkRequest', 
                'Get-OCIDbmulticloudWorkRequestErrorsList', 
                'Get-OCIDbmulticloudWorkRequestLogsList', 
                'Get-OCIDbmulticloudWorkRequestsList', 
                'Invoke-OCIDbmulticloudCascadingDeleteOracleDbAzureVaultAssociation', 
                'Invoke-OCIDbmulticloudPatchOracleDbAzureConnector', 
+               'Invoke-OCIDbmulticloudRefreshOracleDbAzureConnector', 
                'Invoke-OCIDbmulticloudRefreshOracleDbAzureVault', 
+               'Invoke-OCIDbmulticloudRefreshOracleDbGcpIdentityConnector', 
+               'Invoke-OCIDbmulticloudRefreshOracleDbGcpKeyRing', 
                'Move-OCIDbmulticloudMultiCloudResourceDiscoveryCompartment', 
                'Move-OCIDbmulticloudOracleDbAzureBlobContainerCompartment', 
                'Move-OCIDbmulticloudOracleDbAzureBlobMountCompartment', 
                'Move-OCIDbmulticloudOracleDbAzureConnectorCompartment', 
                'Move-OCIDbmulticloudOracleDbAzureVaultAssociationCompartment', 
                'Move-OCIDbmulticloudOracleDbAzureVaultCompartment', 
+               'Move-OCIDbmulticloudOracleDbGcpIdentityConnectorCompartment', 
+               'Move-OCIDbmulticloudOracleDbGcpKeyRingCompartment', 
                'New-OCIDbmulticloudMultiCloudResourceDiscovery', 
                'New-OCIDbmulticloudOracleDbAzureBlobContainer', 
                'New-OCIDbmulticloudOracleDbAzureBlobMount', 
                'New-OCIDbmulticloudOracleDbAzureConnector', 
                'New-OCIDbmulticloudOracleDbAzureVault', 
                'New-OCIDbmulticloudOracleDbAzureVaultAssociation', 
+               'New-OCIDbmulticloudOracleDbGcpIdentityConnector', 
+               'New-OCIDbmulticloudOracleDbGcpKeyRing', 
                'Remove-OCIDbmulticloudMultiCloudResourceDiscovery', 
                'Remove-OCIDbmulticloudOracleDbAzureBlobContainer', 
                'Remove-OCIDbmulticloudOracleDbAzureBlobMount', 
                'Remove-OCIDbmulticloudOracleDbAzureConnector', 
                'Remove-OCIDbmulticloudOracleDbAzureVault', 
                'Remove-OCIDbmulticloudOracleDbAzureVaultAssociation', 
+               'Remove-OCIDbmulticloudOracleDbGcpIdentityConnector', 
+               'Remove-OCIDbmulticloudOracleDbGcpKeyRing', 
                'Stop-OCIDbmulticloudWorkRequest', 
                'Update-OCIDbmulticloudMultiCloudResourceDiscovery', 
                'Update-OCIDbmulticloudOracleDbAzureBlobContainer', 
                'Update-OCIDbmulticloudOracleDbAzureBlobMount', 
                'Update-OCIDbmulticloudOracleDbAzureConnector', 
                'Update-OCIDbmulticloudOracleDbAzureVault', 
-               'Update-OCIDbmulticloudOracleDbAzureVaultAssociation'
+               'Update-OCIDbmulticloudOracleDbAzureVaultAssociation', 
+               'Update-OCIDbmulticloudOracleDbGcpIdentityConnector', 
+               'Update-OCIDbmulticloudOracleDbGcpKeyRing'
 
 # Variables to export from this module
 VariablesToExport = '*'

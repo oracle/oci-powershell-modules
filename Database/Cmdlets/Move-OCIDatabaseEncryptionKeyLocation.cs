@@ -26,8 +26,8 @@ namespace Oci.DatabaseService.Cmdlets
         public string DatabaseId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to change the source of the encryption key for the database. This parameter also accepts subtypes <Oci.DatabaseService.Models.ExternalHsmEncryptionDetails>, <Oci.DatabaseService.Models.AzureEncryptionKeyDetails> of type <Oci.DatabaseService.Models.EncryptionKeyLocationDetails>.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to change the source of the encryption key for the database. This parameter also accepts subtypes <Oci.DatabaseService.Models.ExternalHsmEncryptionDetails>, <Oci.DatabaseService.Models.AzureEncryptionKeyDetails> of type <Oci.DatabaseService.Models.EncryptionKeyLocationDetails>.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to change the source of the encryption key for the database. This parameter also accepts subtypes <Oci.DatabaseService.Models.ExternalHsmEncryptionDetails>, <Oci.DatabaseService.Models.GoogleCloudProviderEncryptionKeyDetails>, <Oci.DatabaseService.Models.AzureEncryptionKeyDetails> of type <Oci.DatabaseService.Models.EncryptionKeyLocationDetails>.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to change the source of the encryption key for the database. This parameter also accepts subtypes <Oci.DatabaseService.Models.ExternalHsmEncryptionDetails>, <Oci.DatabaseService.Models.GoogleCloudProviderEncryptionKeyDetails>, <Oci.DatabaseService.Models.AzureEncryptionKeyDetails> of type <Oci.DatabaseService.Models.EncryptionKeyLocationDetails>.", ParameterSetName = Default)]
         public EncryptionKeyLocationDetails EncryptionKeyLocationDetails { get; set; }
 
         

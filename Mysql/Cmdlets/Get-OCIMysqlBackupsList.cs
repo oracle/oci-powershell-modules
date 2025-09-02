@@ -42,6 +42,12 @@ namespace Oci.MysqlService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Backup Soft Delete")]
         public System.Nullable<Oci.MysqlService.Models.SoftDelete> SoftDelete { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates whether the backup has been prepared successfully.")]
+        public System.Nullable<Oci.MysqlService.Models.BackupValidationDetails.BackupPreparationStatusEnum> BackupPreparationStatus { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Backup validation status")]
+        public System.Nullable<Oci.MysqlService.Models.BackupValidationDetails.ValidationStatusEnum> ValidationStatus { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Backup creationType")]
         public System.Nullable<Oci.MysqlService.Models.Backup.CreationTypeEnum> CreationType { get; set; }
 
@@ -76,6 +82,8 @@ namespace Oci.MysqlService.Cmdlets
                     DbSystemId = DbSystemId,
                     DisplayName = DisplayName,
                     SoftDelete = SoftDelete,
+                    BackupPreparationStatus = BackupPreparationStatus,
+                    ValidationStatus = ValidationStatus,
                     CreationType = CreationType,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
