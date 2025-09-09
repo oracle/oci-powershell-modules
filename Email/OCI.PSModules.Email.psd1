@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Email.dll'
 
 # Version number of this module.
-ModuleVersion = '114.2.0'
+ModuleVersion = '1.115.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '114.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '1.115.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Email.dll'
@@ -71,8 +71,9 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Email.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIEmailConfiguration', 'Get-OCIEmailDkim', 
-               'Get-OCIEmailDkimsList', 'Get-OCIEmailDomain', 
+CmdletsToExport = 'Add-OCIEmailDomainLock', 'Add-OCIEmailReturnPathLock', 
+               'Add-OCIEmailSenderLock', 'Get-OCIEmailConfiguration', 
+               'Get-OCIEmailDkim', 'Get-OCIEmailDkimsList', 'Get-OCIEmailDomain', 
                'Get-OCIEmailDomainsList', 'Get-OCIEmailReturnPath', 
                'Get-OCIEmailReturnPathsList', 'Get-OCIEmailSender', 
                'Get-OCIEmailSendersList', 'Get-OCIEmailSuppression', 
@@ -83,10 +84,11 @@ CmdletsToExport = 'Get-OCIEmailConfiguration', 'Get-OCIEmailDkim',
                'New-OCIEmailDkim', 'New-OCIEmailDomain', 'New-OCIEmailReturnPath', 
                'New-OCIEmailSender', 'New-OCIEmailSuppression', 
                'Remove-OCIEmailDkim', 'Remove-OCIEmailDomain', 
-               'Remove-OCIEmailReturnPath', 'Remove-OCIEmailSender', 
-               'Remove-OCIEmailSuppression', 'Update-OCIEmailDkim', 
-               'Update-OCIEmailDomain', 'Update-OCIEmailReturnPath', 
-               'Update-OCIEmailSender'
+               'Remove-OCIEmailDomainLock', 'Remove-OCIEmailReturnPath', 
+               'Remove-OCIEmailReturnPathLock', 'Remove-OCIEmailSender', 
+               'Remove-OCIEmailSenderLock', 'Remove-OCIEmailSuppression', 
+               'Update-OCIEmailDkim', 'Update-OCIEmailDomain', 
+               'Update-OCIEmailReturnPath', 'Update-OCIEmailSender'
 
 # Variables to export from this module
 VariablesToExport = '*'

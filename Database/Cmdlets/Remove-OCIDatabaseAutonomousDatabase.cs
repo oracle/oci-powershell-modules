@@ -36,6 +36,11 @@ namespace Oci.DatabaseService.Cmdlets
         public string OpcRequestId { get; set; }
 
         
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If set to true, terminating the Autonomous Database also deletes its associated long-term backups if the retention lock is not enabled.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If set to true, terminating the Autonomous Database also deletes its associated long-term backups if the retention lock is not enabled.", ParameterSetName = Default)]
+        public System.Nullable<bool> MustDeleteAssociatedLongTermBackups { get; set; }
+
+        
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates that the request is a dry run, if set to ""true"". A dry run request does not actually creating or updating a resource and is used only to perform validation on the submitted data.", ParameterSetName = StatusParamSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates that the request is a dry run, if set to ""true"". A dry run request does not actually creating or updating a resource and is used only to perform validation on the submitted data.", ParameterSetName = Default)]
         public System.Nullable<bool> OpcDryRun { get; set; }
@@ -70,6 +75,7 @@ namespace Oci.DatabaseService.Cmdlets
                     AutonomousDatabaseId = AutonomousDatabaseId,
                     IfMatch = IfMatch,
                     OpcRequestId = OpcRequestId,
+                    MustDeleteAssociatedLongTermBackups = MustDeleteAssociatedLongTermBackups,
                     OpcDryRun = OpcDryRun
                 };
 
