@@ -50,6 +50,15 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only backups that matches with the given type of Backup.")]
         public string Type { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that have the given backup destination id.")]
+        public string BackupDestinationId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that have the given key store id.")]
+        public string KeyStoreId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given Infrastructure Type.")]
+        public System.Nullable<Oci.DatabaseService.Models.AutonomousDatabaseBackupSummary.InfrastructureTypeEnum> InfrastructureType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
@@ -74,6 +83,9 @@ namespace Oci.DatabaseService.Cmdlets
                     LifecycleState = LifecycleState,
                     DisplayName = DisplayName,
                     Type = Type,
+                    BackupDestinationId = BackupDestinationId,
+                    KeyStoreId = KeyStoreId,
+                    InfrastructureType = InfrastructureType,
                     OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListAutonomousDatabaseBackupsResponse> responses = GetRequestDelegate().Invoke(request);
