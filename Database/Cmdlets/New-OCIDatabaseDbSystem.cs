@@ -38,6 +38,11 @@ For Exadata Cloud Service instances, support for this API will end on May 15th, 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).", ParameterSetName = Default)]
         public string OpcRetryToken { get; set; }
 
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates that the request is a dry run, if set to ""true"". A dry run request does not actually creating or updating a resource and is used only to perform validation on the submitted data.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates that the request is a dry run, if set to ""true"". A dry run request does not actually creating or updating a resource and is used only to perform validation on the submitted data.", ParameterSetName = Default)]
+        public System.Nullable<bool> OpcDryRun { get; set; }
+
         [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = StatusParamSet)]
         public WorkrequestsService.Models.WorkRequest.StatusEnum[] WaitForStatus { get; set; }
 
@@ -57,7 +62,8 @@ For Exadata Cloud Service instances, support for this API will end on May 15th, 
                 request = new LaunchDbSystemRequest
                 {
                     LaunchDbSystemDetails = LaunchDbSystemDetails,
-                    OpcRetryToken = OpcRetryToken
+                    OpcRetryToken = OpcRetryToken,
+                    OpcDryRun = OpcDryRun
                 };
 
                 HandleOutput(request);

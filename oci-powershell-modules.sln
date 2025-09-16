@@ -313,6 +313,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Multicloud", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Managedkafka", "Managedkafka\OCI.PSModules.Managedkafka.csproj", "{C3B18A78-A0D4-4E03-BB7B-0FA7292B6E0C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Aidataplatform", "Aidataplatform\OCI.PSModules.Aidataplatform.csproj", "{1EC4EFED-BB69-46E3-A7C8-7A1A83CE5174}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2198,5 +2200,17 @@ Global
         {C3B18A78-A0D4-4E03-BB7B-0FA7292B6E0C}.Release|x64.Build.0 = Release|Any CPU
         {C3B18A78-A0D4-4E03-BB7B-0FA7292B6E0C}.Release|x86.ActiveCfg = Release|Any CPU
         {C3B18A78-A0D4-4E03-BB7B-0FA7292B6E0C}.Release|x86.Build.0 = Release|Any CPU
+        {1EC4EFED-BB69-46E3-A7C8-7A1A83CE5174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {1EC4EFED-BB69-46E3-A7C8-7A1A83CE5174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {1EC4EFED-BB69-46E3-A7C8-7A1A83CE5174}.Debug|x64.ActiveCfg = Debug|Any CPU
+        {1EC4EFED-BB69-46E3-A7C8-7A1A83CE5174}.Debug|x64.Build.0 = Debug|Any CPU
+        {1EC4EFED-BB69-46E3-A7C8-7A1A83CE5174}.Debug|x86.ActiveCfg = Debug|Any CPU
+        {1EC4EFED-BB69-46E3-A7C8-7A1A83CE5174}.Debug|x86.Build.0 = Debug|Any CPU
+        {1EC4EFED-BB69-46E3-A7C8-7A1A83CE5174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {1EC4EFED-BB69-46E3-A7C8-7A1A83CE5174}.Release|Any CPU.Build.0 = Release|Any CPU
+        {1EC4EFED-BB69-46E3-A7C8-7A1A83CE5174}.Release|x64.ActiveCfg = Release|Any CPU
+        {1EC4EFED-BB69-46E3-A7C8-7A1A83CE5174}.Release|x64.Build.0 = Release|Any CPU
+        {1EC4EFED-BB69-46E3-A7C8-7A1A83CE5174}.Release|x86.ActiveCfg = Release|Any CPU
+        {1EC4EFED-BB69-46E3-A7C8-7A1A83CE5174}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
