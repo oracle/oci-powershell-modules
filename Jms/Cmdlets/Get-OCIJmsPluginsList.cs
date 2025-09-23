@@ -33,7 +33,7 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the Fleet.")]
         public string FleetId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) that identifies the Agent.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) that identifies the Agent.")]
         public string AgentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter JmsPlugin with its lifecycle state.")]

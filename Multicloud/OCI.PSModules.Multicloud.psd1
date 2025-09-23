@@ -11,13 +11,13 @@
 RootModule = 'assemblies/OCI.PSModules.Multicloud.dll'
 
 # Version number of this module.
-ModuleVersion = '115.1.0'
+ModuleVersion = '116.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
 
 # ID used to uniquely identify this module
-GUID = '8a1b9107-8ae4-4585-8416-fe71e5e031ea'
+GUID = 'a5b6c1c2-c807-42be-a814-ca726f7f346e'
 
 # Author of this module
 Author = 'Oracle Cloud Infrastructure'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '115.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '116.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Multicloud.dll'

@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Jms.dll'
 
 # Version number of this module.
-ModuleVersion = '115.1.0'
+ModuleVersion = '116.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '115.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '116.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Jms.dll'
@@ -74,7 +74,7 @@ FunctionsToExport = '*'
 CmdletsToExport = 'Add-OCIJmsFleetInstallationSites', 'Disable-OCIJmsDrs', 
                'Enable-OCIJmsDrs', 'Get-OCIJmsAgentInstallersList', 
                'Get-OCIJmsAnnouncementsList', 'Get-OCIJmsBlocklistsList', 
-               'Get-OCIJmsCryptoAnalysisResult', 
+               'Get-OCIJmsContainersList', 'Get-OCIJmsCryptoAnalysisResult', 
                'Get-OCIJmsCryptoAnalysisResultsList', 'Get-OCIJmsDrsFile', 
                'Get-OCIJmsDrsFilesList', 'Get-OCIJmsExportSetting', 
                'Get-OCIJmsExportStatus', 'Get-OCIJmsFleet', 
@@ -85,11 +85,16 @@ CmdletsToExport = 'Add-OCIJmsFleetInstallationSites', 'Disable-OCIJmsDrs',
                'Get-OCIJmsJavaFamily', 'Get-OCIJmsJavaMigrationAnalysisResult', 
                'Get-OCIJmsJavaMigrationAnalysisResultsList', 
                'Get-OCIJmsJavaRelease', 'Get-OCIJmsJavaReleasesList', 
-               'Get-OCIJmsJreUsageList', 
+               'Get-OCIJmsJreUsageList', 'Get-OCIJmsLibraryApplicationUsageList', 
+               'Get-OCIJmsLibraryManagedInstanceUsageList', 
                'Get-OCIJmsPerformanceTuningAnalysisResult', 
                'Get-OCIJmsPerformanceTuningAnalysisResultsList', 
                'Get-OCIJmsPlugin', 'Get-OCIJmsPluginErrorsList', 
-               'Get-OCIJmsPluginsList', 'Get-OCIJmsWorkItemsList', 
+               'Get-OCIJmsPluginsList', 'Get-OCIJmsTaskSchedule', 
+               'Get-OCIJmsTaskSchedulesList', 
+               'Get-OCIJmsUncorrelatedPackageApplicationUsageList', 
+               'Get-OCIJmsUncorrelatedPackageManagedInstanceUsageList', 
+               'Get-OCIJmsUncorrelatedPackageUsageList', 'Get-OCIJmsWorkItemsList', 
                'Get-OCIJmsWorkRequest', 'Get-OCIJmsWorkRequestErrorsList', 
                'Get-OCIJmsWorkRequestLogsList', 'Get-OCIJmsWorkRequestsList', 
                'Invoke-OCIJmsRequestCryptoAnalyses', 
@@ -107,6 +112,7 @@ CmdletsToExport = 'Add-OCIJmsFleetInstallationSites', 'Disable-OCIJmsDrs',
                'Invoke-OCIJmsSummarizeJavaServerInstanceUsage', 
                'Invoke-OCIJmsSummarizeJavaServerUsage', 
                'Invoke-OCIJmsSummarizeJreUsage', 
+               'Invoke-OCIJmsSummarizeLibraryInventory', 
                'Invoke-OCIJmsSummarizeLibraryUsage', 
                'Invoke-OCIJmsSummarizeManagedInstanceUsage', 
                'Invoke-OCIJmsSummarizePluginErrors', 
@@ -115,16 +121,17 @@ CmdletsToExport = 'Add-OCIJmsFleetInstallationSites', 'Disable-OCIJmsDrs',
                'New-OCIJmsAgentInstallerConfiguration', 'New-OCIJmsBlocklist', 
                'New-OCIJmsDrsFile', 'New-OCIJmsFleet', 
                'New-OCIJmsLoadPipelineScript', 'New-OCIJmsPlugin', 
-               'Remove-OCIJmsBlocklist', 'Remove-OCIJmsCryptoAnalysisResult', 
-               'Remove-OCIJmsDrsFile', 'Remove-OCIJmsFleet', 
-               'Remove-OCIJmsFleetInstallationSites', 
+               'New-OCIJmsTaskSchedule', 'Remove-OCIJmsBlocklist', 
+               'Remove-OCIJmsCryptoAnalysisResult', 'Remove-OCIJmsDrsFile', 
+               'Remove-OCIJmsFleet', 'Remove-OCIJmsFleetInstallationSites', 
                'Remove-OCIJmsJavaMigrationAnalysisResult', 
                'Remove-OCIJmsPerformanceTuningAnalysisResult', 
-               'Remove-OCIJmsPlugin', 'Stop-OCIJmsWorkRequest', 
-               'Update-OCIJmsDrsFile', 'Update-OCIJmsExportSetting', 
-               'Update-OCIJmsFleet', 
+               'Remove-OCIJmsPlugin', 'Remove-OCIJmsTaskSchedule', 
+               'Stop-OCIJmsWorkRequest', 'Update-OCIJmsDrsFile', 
+               'Update-OCIJmsExportSetting', 'Update-OCIJmsFleet', 
                'Update-OCIJmsFleetAdvancedFeatureConfiguration', 
-               'Update-OCIJmsFleetAgentConfiguration', 'Update-OCIJmsPlugin'
+               'Update-OCIJmsFleetAgentConfiguration', 'Update-OCIJmsPlugin', 
+               'Update-OCIJmsTaskSchedule'
 
 # Variables to export from this module
 VariablesToExport = '*'
