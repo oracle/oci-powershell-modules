@@ -36,6 +36,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items related to a specific target OCID.")]
         public string TargetId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the target database group that matches the specified OCID.")]
+        public string TargetDatabaseGroupId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (ASC) or descending (DESC).")]
         public System.Nullable<Oci.DatasafeService.Requests.ListMaskingReportsRequest.SortOrderEnum> SortOrder { get; set; }
 
@@ -68,6 +71,7 @@ namespace Oci.DatasafeService.Cmdlets
                     Page = Page,
                     MaskingPolicyId = MaskingPolicyId,
                     TargetId = TargetId,
+                    TargetDatabaseGroupId = TargetDatabaseGroupId,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,

@@ -21,8 +21,8 @@ namespace Oci.DatasafeService.Cmdlets
     public class GetOCIDatasafeConfiguration : OCIDataSafeCmdlet
     {
         
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the specified compartment OCID.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the specified compartment OCID.", ParameterSetName = Default)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the Data Safe configuration for the specified tenancy OCID.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the Data Safe configuration for the specified tenancy OCID.", ParameterSetName = Default)]
         public string CompartmentId { get; set; }
 
         

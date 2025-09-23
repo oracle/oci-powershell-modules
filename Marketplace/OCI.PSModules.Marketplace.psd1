@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Marketplace.dll'
 
 # Version number of this module.
-ModuleVersion = '115.1.0'
+ModuleVersion = '116.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '115.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '116.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Marketplace.dll'
@@ -77,8 +77,10 @@ CmdletsToExport = 'Export-OCIMarketplaceListing',
                'Get-OCIMarketplaceAgreement', 'Get-OCIMarketplaceAgreementsList', 
                'Get-OCIMarketplaceCategoriesList', 
                'Get-OCIMarketplaceLaunchEligibility', 'Get-OCIMarketplaceListing', 
-               'Get-OCIMarketplaceListingsList', 'Get-OCIMarketplacePackage', 
-               'Get-OCIMarketplacePackagesList', 'Get-OCIMarketplacePublication', 
+               'Get-OCIMarketplaceListingsList', 
+               'Get-OCIMarketplaceMetadataPublicKeysList', 
+               'Get-OCIMarketplacePackage', 'Get-OCIMarketplacePackagesList', 
+               'Get-OCIMarketplacePublication', 
                'Get-OCIMarketplacePublicationPackage', 
                'Get-OCIMarketplacePublicationPackagesList', 
                'Get-OCIMarketplacePublicationsList', 
@@ -92,6 +94,7 @@ CmdletsToExport = 'Export-OCIMarketplaceListing',
                'Invoke-OCIMarketplaceSearchListings', 
                'Move-OCIMarketplacePublicationCompartment', 
                'New-OCIMarketplaceAcceptedAgreement', 
+               'New-OCIMarketplaceExternalAttestedMetadata', 
                'New-OCIMarketplacePublication', 
                'Remove-OCIMarketplaceAcceptedAgreement', 
                'Remove-OCIMarketplacePublication', 

@@ -41,10 +41,10 @@ namespace Oci.JmsService.Cmdlets
         public string LibraryName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis.")]
-        public System.Nullable<int> CvssScoreGreaterThan { get; set; }
+        public System.Nullable<float> CvssScoreGreaterThan { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis.")]
-        public System.Nullable<int> CvssScoreLessThan { get; set; }
+        public System.Nullable<float> CvssScoreLessThan { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).")]
         public System.Nullable<System.DateTime> TimeStart { get; set; }

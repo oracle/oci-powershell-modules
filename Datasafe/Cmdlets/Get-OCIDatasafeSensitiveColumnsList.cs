@@ -43,6 +43,12 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filters the sensitive column resources with the given lifecycle state values.")]
         public System.Nullable<Oci.DatasafeService.Models.SensitiveColumnLifecycleState> SensitiveColumnLifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filters the sensitive columns with respect to the estimated row count.")]
+        public System.Nullable<Oci.DatasafeService.Requests.ListSensitiveColumnsRequest.ColumnDataCountFilterEnum> ColumnDataCountFilter { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the sensitive columns with the specified confidence level. Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of sensitive column associated with a user defined sensitive will be NONE. For sensitive columns added manually the confidence level will also be NONE.")]
+        public System.Collections.Generic.List<Oci.DatasafeService.Models.ConfidenceLevelEnum> ConfidenceLevel { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only items related to specific schema name.")]
         public System.Collections.Generic.List<string> SchemaName { get; set; }
 
@@ -109,6 +115,8 @@ namespace Oci.DatasafeService.Cmdlets
                     TimeUpdatedGreaterThanOrEqualTo = TimeUpdatedGreaterThanOrEqualTo,
                     TimeUpdatedLessThan = TimeUpdatedLessThan,
                     SensitiveColumnLifecycleState = SensitiveColumnLifecycleState,
+                    ColumnDataCountFilter = ColumnDataCountFilter,
+                    ConfidenceLevel = ConfidenceLevel,
                     SchemaName = SchemaName,
                     ObjectName = ObjectName,
                     ColumnName = ColumnName,

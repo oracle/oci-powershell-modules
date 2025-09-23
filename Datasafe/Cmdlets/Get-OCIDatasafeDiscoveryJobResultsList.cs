@@ -45,6 +45,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (ASC) or descending (DESC).")]
         public System.Nullable<Oci.DatasafeService.Requests.ListDiscoveryJobResultsRequest.SortOrderEnum> SortOrder { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the discovery job results with the specified confidence level. Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of discovery job result associated with a user defined sensitive will be NONE.")]
+        public System.Collections.Generic.List<Oci.DatasafeService.Models.ConfidenceLevelEnum> ConfidenceLevel { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeFinished is descending. The default order for discoveryType, schemaName, objectName, columnName and plannedAction is ascending.")]
         public System.Nullable<Oci.DatasafeService.Requests.ListDiscoveryJobResultsRequest.SortByEnum> SortBy { get; set; }
 
@@ -77,6 +80,7 @@ namespace Oci.DatasafeService.Cmdlets
                     ObjectName = ObjectName,
                     ColumnName = ColumnName,
                     SortOrder = SortOrder,
+                    ConfidenceLevel = ConfidenceLevel,
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,
                     Limit = Limit,
