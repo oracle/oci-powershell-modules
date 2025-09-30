@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Generativeai.dll'
 
 # Version number of this module.
-ModuleVersion = '116.0.0'
+ModuleVersion = '116.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '116.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '116.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Generativeai.dll'
@@ -75,6 +75,8 @@ CmdletsToExport = 'Get-OCIGenerativeaiDedicatedAiCluster',
                'Get-OCIGenerativeaiDedicatedAiClustersList', 
                'Get-OCIGenerativeaiEndpoint', 'Get-OCIGenerativeaiEndpointsList', 
                'Get-OCIGenerativeaiModel', 'Get-OCIGenerativeaiModelsList', 
+               'Get-OCIGenerativeaiPrivateEndpoint', 
+               'Get-OCIGenerativeaiPrivateEndpointsList', 
                'Get-OCIGenerativeaiWorkRequest', 
                'Get-OCIGenerativeaiWorkRequestErrorsList', 
                'Get-OCIGenerativeaiWorkRequestLogsList', 
@@ -82,12 +84,16 @@ CmdletsToExport = 'Get-OCIGenerativeaiDedicatedAiCluster',
                'Move-OCIGenerativeaiDedicatedAiClusterCompartment', 
                'Move-OCIGenerativeaiEndpointCompartment', 
                'Move-OCIGenerativeaiModelCompartment', 
+               'Move-OCIGenerativeaiPrivateEndpointCompartment', 
                'New-OCIGenerativeaiDedicatedAiCluster', 
                'New-OCIGenerativeaiEndpoint', 'New-OCIGenerativeaiModel', 
+               'New-OCIGenerativeaiPrivateEndpoint', 
                'Remove-OCIGenerativeaiDedicatedAiCluster', 
                'Remove-OCIGenerativeaiEndpoint', 'Remove-OCIGenerativeaiModel', 
+               'Remove-OCIGenerativeaiPrivateEndpoint', 
                'Update-OCIGenerativeaiDedicatedAiCluster', 
-               'Update-OCIGenerativeaiEndpoint', 'Update-OCIGenerativeaiModel'
+               'Update-OCIGenerativeaiEndpoint', 'Update-OCIGenerativeaiModel', 
+               'Update-OCIGenerativeaiPrivateEndpoint'
 
 # Variables to export from this module
 VariablesToExport = '*'
