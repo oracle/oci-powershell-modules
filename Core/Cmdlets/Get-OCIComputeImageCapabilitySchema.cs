@@ -12,18 +12,32 @@ using Oci.CoreService.Requests;
 using Oci.CoreService.Responses;
 using Oci.CoreService.Models;
 using Oci.Common.Model;
+using Oci.Common.Waiters;
 
 namespace Oci.CoreService.Cmdlets
 {
-    [Cmdlet("Get", "OCIComputeImageCapabilitySchema")]
+    [Cmdlet("Get", "OCIComputeImageCapabilitySchema", DefaultParameterSetName = Default)]
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.ComputeImageCapabilitySchema), typeof(Oci.CoreService.Responses.GetComputeImageCapabilitySchemaResponse) })]
     public class GetOCIComputeImageCapabilitySchema : OCIComputeCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The id of the compute image capability schema or the image ocid")]
+        
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The id of the compute image capability schema or the image ocid", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The id of the compute image capability schema or the image ocid", ParameterSetName = Default)]
         public string ComputeImageCapabilitySchemaId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Merge the image capability schema with the global image capability schema")]
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Merge the image capability schema with the global image capability schema", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Merge the image capability schema with the global image capability schema", ParameterSetName = Default)]
         public System.Nullable<bool> IsMergeEnabled { get; set; }
+
+        [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = LifecycleStateParamSet)]
+        public Oci.CoreService.Models.ComputeImageCapabilitySchema.LifecycleStateEnum[] WaitForLifecycleState { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = @"Check every WaitIntervalSeconds to see whether the resource has reached a desired state.", ParameterSetName = LifecycleStateParamSet)]
+        public int WaitIntervalSeconds { get; set; } = WAIT_INTERVAL_SECONDS;
+
+        [Parameter(Mandatory = false, HelpMessage = @"Maximum number of attempts to be made until the resource reaches a desired state.", ParameterSetName = LifecycleStateParamSet)]
+        public int MaxWaitAttempts { get; set; } = MAX_WAITER_ATTEMPTS;
 
         protected override void ProcessRecord()
         {
@@ -38,8 +52,7 @@ namespace Oci.CoreService.Cmdlets
                     IsMergeEnabled = IsMergeEnabled
                 };
 
-                response = client.GetComputeImageCapabilitySchema(request).GetAwaiter().GetResult();
-                WriteOutput(response, response.ComputeImageCapabilitySchema);
+                HandleOutput(request);
                 FinishProcessing(response);
             }
             catch (OciException ex)
@@ -58,6 +71,29 @@ namespace Oci.CoreService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
+        private void HandleOutput(GetComputeImageCapabilitySchemaRequest request)
+        {
+            var waiterConfig = new WaiterConfiguration
+            {
+                MaxAttempts = MaxWaitAttempts,
+                GetNextDelayInSeconds = (_) => WaitIntervalSeconds
+            };
+
+            switch (ParameterSetName)
+            { 
+                case LifecycleStateParamSet:
+                    response = client.Waiters.ForComputeImageCapabilitySchema(request, waiterConfig, WaitForLifecycleState).Execute();
+                    break;
+
+                case Default:
+                    response = client.GetComputeImageCapabilitySchema(request).GetAwaiter().GetResult();
+                    break;
+            }
+            WriteOutput(response, response.ComputeImageCapabilitySchema);
+        }
+
         private GetComputeImageCapabilitySchemaResponse response;
+        private const string LifecycleStateParamSet = "LifecycleStateParamSet";
+        private const string Default = "Default";
     }
 }

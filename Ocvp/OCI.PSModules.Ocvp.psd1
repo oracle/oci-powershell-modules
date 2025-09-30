@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Ocvp.dll'
 
 # Version number of this module.
-ModuleVersion = '116.0.0'
+ModuleVersion = '116.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '116.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '116.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Ocvp.dll'
@@ -71,7 +71,13 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Ocvp.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIOcvpCluster', 'Get-OCIOcvpClustersList', 
+CmdletsToExport = 'Add-OCIOcvpBlockVolumeToDatastore', 
+               'Add-OCIOcvpDatastoreToDatastoreCluster', 
+               'DisMount-OCIOcvpDatastoreClusterFromCluster', 
+               'DisMount-OCIOcvpDatastoreClusterFromEsxiHost', 
+               'Get-OCIOcvpCluster', 'Get-OCIOcvpClustersList', 
+               'Get-OCIOcvpDatastore', 'Get-OCIOcvpDatastoreCluster', 
+               'Get-OCIOcvpDatastoreClustersList', 'Get-OCIOcvpDatastoresList', 
                'Get-OCIOcvpEsxiHost', 'Get-OCIOcvpEsxiHostsList', 'Get-OCIOcvpSddc', 
                'Get-OCIOcvpSddcsList', 'Get-OCIOcvpSupportedCommitmentsList', 
                'Get-OCIOcvpSupportedHostShapesList', 
@@ -82,10 +88,18 @@ CmdletsToExport = 'Get-OCIOcvpCluster', 'Get-OCIOcvpClustersList',
                'Invoke-OCIOcvpRefreshHcxLicenseStatus', 
                'Invoke-OCIOcvpReplaceHost', 'Invoke-OCIOcvpRetrievePassword', 
                'Invoke-OCIOcvpSwapBilling', 'Invoke-OCIOcvpUpgradeHcx', 
-               'Move-OCIOcvpSddcCompartment', 'New-OCIOcvpCluster', 
-               'New-OCIOcvpEsxiHost', 'New-OCIOcvpSddc', 'Remove-OCIOcvpCluster', 
+               'Mount-OCIOcvpDatastoreClusterToCluster', 
+               'Mount-OCIOcvpDatastoreClusterToEsxiHost', 
+               'Move-OCIOcvpDatastoreClusterCompartment', 
+               'Move-OCIOcvpDatastoreCompartment', 'Move-OCIOcvpSddcCompartment', 
+               'New-OCIOcvpCluster', 'New-OCIOcvpDatastore', 
+               'New-OCIOcvpDatastoreCluster', 'New-OCIOcvpEsxiHost', 
+               'New-OCIOcvpSddc', 'Remove-OCIOcvpCluster', 'Remove-OCIOcvpDatastore', 
+               'Remove-OCIOcvpDatastoreCluster', 
+               'Remove-OCIOcvpDatastoreFromDatastoreCluster', 
                'Remove-OCIOcvpEsxiHost', 'Remove-OCIOcvpSddc', 
                'Stop-OCIOcvpDowngradeHcx', 'Update-OCIOcvpCluster', 
+               'Update-OCIOcvpDatastore', 'Update-OCIOcvpDatastoreCluster', 
                'Update-OCIOcvpEsxiHost', 'Update-OCIOcvpSddc'
 
 # Variables to export from this module
