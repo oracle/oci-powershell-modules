@@ -19,6 +19,9 @@ namespace Oci.OpensearchService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OpensearchService.Models.ShapesDetails), typeof(Oci.OpensearchService.Responses.ListOpensearchClusterShapesResponse) })]
     public class GetOCIOpensearchClusterShapesList : OCIOpensearchClusterCmdlet
     {
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
+        public string CompartmentId { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -28,6 +31,7 @@ namespace Oci.OpensearchService.Cmdlets
             {
                 request = new ListOpensearchClusterShapesRequest
                 {
+                    CompartmentId = CompartmentId
                 };
 
                 response = client.ListOpensearchClusterShapes(request).GetAwaiter().GetResult();
