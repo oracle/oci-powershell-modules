@@ -30,7 +30,7 @@ namespace Oci.ResourcemanagerService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.")]
         public string WorkRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter that returns only resources that match the given drift status. The value is case-insensitive. Allowable values -   - NOT_CHECKED   - MODIFIED   - IN_SYNC   - DELETED")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter that returns only resources that match the given drift status. The value is case-insensitive.")]
         public System.Collections.Generic.List<Oci.ResourcemanagerService.Models.StackResourceDriftSummary.ResourceDriftStatusEnum> ResourceDriftStatus { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The number of items returned in a paginated `List` call. For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).", ParameterSetName = LimitSet)]
