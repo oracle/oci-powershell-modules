@@ -16,7 +16,7 @@ using Oci.Common.Model;
 namespace Oci.ResourcemanagerService.Cmdlets
 {
     [Cmdlet("Remove", "OCIResourcemanagerPrivateEndpoint", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
-    [OutputType(new System.Type[] { typeof(void), typeof(Oci.ResourcemanagerService.Responses.DeletePrivateEndpointResponse) })]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.ResourcemanagerService.Responses.DeletePrivateEndpointResponse) })]
     public class RemoveOCIResourcemanagerPrivateEndpoint : OCIResourceManagerCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.")]
@@ -52,7 +52,7 @@ namespace Oci.ResourcemanagerService.Cmdlets
                 };
 
                 response = client.DeletePrivateEndpoint(request).GetAwaiter().GetResult();
-                WriteOutput(response);
+                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
             }
             catch (OciException ex)

@@ -42,6 +42,9 @@ namespace Oci.ContainerengineService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The optional field to sort the results by.")]
         public System.Nullable<Oci.ContainerengineService.Requests.ListAddonOptionsRequest.SortByEnum> SortBy { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Whether to show all add-on versions")]
+        public System.Nullable<bool> ShouldShowAllVersions { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -60,7 +63,8 @@ namespace Oci.ContainerengineService.Cmdlets
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,
-                    SortBy = SortBy
+                    SortBy = SortBy,
+                    ShouldShowAllVersions = ShouldShowAllVersions
                 };
                 IEnumerable<ListAddonOptionsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
