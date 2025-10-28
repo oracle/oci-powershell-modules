@@ -21,8 +21,8 @@ namespace Oci.DatabaseService.Cmdlets
     public class MoveOCIDatabaseAutonomousDatabaseSubscription : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Associate an Autonomous Database with a different subscription.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Associate an Autonomous Database with a different subscription.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Associate an Autonomous AI Database with a different subscription.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Associate an Autonomous AI Database with a different subscription.", ParameterSetName = Default)]
         public ChangeAutonomousDatabaseSubscriptionDetails ChangeAutonomousDatabaseSubscriptionDetails { get; set; }
 
         

@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Databasetools.dll'
 
 # Version number of this module.
-ModuleVersion = '117.1.0'
+ModuleVersion = '118.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '117.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '118.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasetools.dll'
@@ -72,27 +72,36 @@ FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Add-OCIDatabasetoolsConnectionLock', 
+               'Add-OCIDatabasetoolsIdentityLock', 
                'Add-OCIDatabasetoolsPrivateEndpointLock', 
                'Confirm-OCIDatabasetoolsConnection', 
+               'Confirm-OCIDatabasetoolsIdentityCredential', 
                'Get-OCIDatabasetoolsConnection', 
                'Get-OCIDatabasetoolsConnectionsList', 
                'Get-OCIDatabasetoolsEndpointService', 
                'Get-OCIDatabasetoolsEndpointServicesList', 
+               'Get-OCIDatabasetoolsIdentitiesList', 
+               'Get-OCIDatabasetoolsIdentity', 
                'Get-OCIDatabasetoolsPrivateEndpoint', 
                'Get-OCIDatabasetoolsPrivateEndpointsList', 
                'Get-OCIDatabasetoolsWorkRequest', 
                'Get-OCIDatabasetoolsWorkRequestErrorsList', 
                'Get-OCIDatabasetoolsWorkRequestLogsList', 
                'Get-OCIDatabasetoolsWorkRequestsList', 
+               'Invoke-OCIDatabasetoolsRefreshDatabaseToolsIdentityCredential', 
                'Move-OCIDatabasetoolsConnectionCompartment', 
+               'Move-OCIDatabasetoolsIdentityCompartment', 
                'Move-OCIDatabasetoolsPrivateEndpointCompartment', 
-               'New-OCIDatabasetoolsConnection', 
+               'New-OCIDatabasetoolsConnection', 'New-OCIDatabasetoolsIdentity', 
                'New-OCIDatabasetoolsPrivateEndpoint', 
                'Remove-OCIDatabasetoolsConnection', 
                'Remove-OCIDatabasetoolsConnectionLock', 
+               'Remove-OCIDatabasetoolsIdentity', 
+               'Remove-OCIDatabasetoolsIdentityLock', 
                'Remove-OCIDatabasetoolsPrivateEndpoint', 
                'Remove-OCIDatabasetoolsPrivateEndpointLock', 
                'Update-OCIDatabasetoolsConnection', 
+               'Update-OCIDatabasetoolsIdentity', 
                'Update-OCIDatabasetoolsPrivateEndpoint'
 
 # Variables to export from this module

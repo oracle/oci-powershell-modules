@@ -26,8 +26,8 @@ namespace Oci.DatabaseService.Cmdlets
         public string AutonomousDatabaseId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the properties of an Autonomous Database.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the properties of an Autonomous Database.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the properties of an Autonomous AI Database.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the properties of an Autonomous AI Database.", ParameterSetName = Default)]
         public UpdateAutonomousDatabaseDetails UpdateAutonomousDatabaseDetails { get; set; }
 
         

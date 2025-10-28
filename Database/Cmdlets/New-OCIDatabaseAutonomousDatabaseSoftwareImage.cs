@@ -21,8 +21,8 @@ namespace Oci.DatabaseService.Cmdlets
     public class NewOCIDatabaseAutonomousDatabaseSoftwareImage : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create Autonomous Database Software Image.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create Autonomous Database Software Image.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create Autonomous AI Database Software Image.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create Autonomous AI Database Software Image.", ParameterSetName = Default)]
         public CreateAutonomousDatabaseSoftwareImageDetails CreateAutonomousDatabaseSoftwareImageDetails { get; set; }
 
         

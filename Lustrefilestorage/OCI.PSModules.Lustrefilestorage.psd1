@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Lustrefilestorage.dll'
 
 # Version number of this module.
-ModuleVersion = '117.1.0'
+ModuleVersion = '118.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '117.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '118.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Lustrefilestorage.dll'
@@ -73,15 +73,27 @@ FunctionsToExport = '*'
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Get-OCILustrefilestorageLustreFileSystem', 
                'Get-OCILustrefilestorageLustreFileSystemsList', 
+               'Get-OCILustrefilestorageObjectStorageLink', 
+               'Get-OCILustrefilestorageObjectStorageLinksList', 
+               'Get-OCILustrefilestorageSyncJob', 
+               'Get-OCILustrefilestorageSyncJobsList', 
                'Get-OCILustrefilestorageWorkRequest', 
                'Get-OCILustrefilestorageWorkRequestErrorsList', 
                'Get-OCILustrefilestorageWorkRequestLogsList', 
                'Get-OCILustrefilestorageWorkRequestsList', 
                'Move-OCILustrefilestorageLustreFileSystemCompartment', 
+               'Move-OCILustrefilestorageObjectStorageLinkCompartment', 
                'New-OCILustrefilestorageLustreFileSystem', 
+               'New-OCILustrefilestorageObjectStorageLink', 
                'Remove-OCILustrefilestorageLustreFileSystem', 
+               'Remove-OCILustrefilestorageObjectStorageLink', 
+               'Start-OCILustrefilestorageExportToObject', 
+               'Start-OCILustrefilestorageImportFromObject', 
+               'Stop-OCILustrefilestorageExportToObject', 
+               'Stop-OCILustrefilestorageImportFromObject', 
                'Stop-OCILustrefilestorageWorkRequest', 
-               'Update-OCILustrefilestorageLustreFileSystem'
+               'Update-OCILustrefilestorageLustreFileSystem', 
+               'Update-OCILustrefilestorageObjectStorageLink'
 
 # Variables to export from this module
 VariablesToExport = '*'

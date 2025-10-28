@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Disasterrecovery.dll'
 
 # Version number of this module.
-ModuleVersion = '117.1.0'
+ModuleVersion = '118.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '117.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '118.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Disasterrecovery.dll'
@@ -71,7 +71,9 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Disasterrecovery.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIDisasterrecoveryDrPlan', 
+CmdletsToExport = 'Get-OCIDisasterrecoveryAutomaticDrConfiguration', 
+               'Get-OCIDisasterrecoveryAutomaticDrConfigurationsList', 
+               'Get-OCIDisasterrecoveryDrPlan', 
                'Get-OCIDisasterrecoveryDrPlanExecution', 
                'Get-OCIDisasterrecoveryDrPlanExecutionsList', 
                'Get-OCIDisasterrecoveryDrPlansList', 
@@ -90,14 +92,17 @@ CmdletsToExport = 'Get-OCIDisasterrecoveryDrPlan',
                'Invoke-OCIDisasterrecoveryRetryDrPlanExecution', 
                'Invoke-OCIDisasterrecoveryVerifyDrPlan', 
                'Move-OCIDisasterrecoveryDrProtectionGroupCompartment', 
+               'New-OCIDisasterrecoveryAutomaticDrConfiguration', 
                'New-OCIDisasterrecoveryDrPlan', 
                'New-OCIDisasterrecoveryDrPlanExecution', 
                'New-OCIDisasterrecoveryDrProtectionGroup', 
+               'Remove-OCIDisasterrecoveryAutomaticDrConfiguration', 
                'Remove-OCIDisasterrecoveryDrPlan', 
                'Remove-OCIDisasterrecoveryDrPlanExecution', 
                'Remove-OCIDisasterrecoveryDrProtectionGroup', 
                'Stop-OCIDisasterrecoveryDrPlanExecution', 
                'Stop-OCIDisasterrecoveryWorkRequest', 
+               'Update-OCIDisasterrecoveryAutomaticDrConfiguration', 
                'Update-OCIDisasterrecoveryDrPlan', 
                'Update-OCIDisasterrecoveryDrPlanExecution', 
                'Update-OCIDisasterrecoveryDrProtectionGroup', 

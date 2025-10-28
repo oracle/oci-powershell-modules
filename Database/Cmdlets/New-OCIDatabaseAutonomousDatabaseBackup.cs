@@ -21,8 +21,8 @@ namespace Oci.DatabaseService.Cmdlets
     public class NewOCIDatabaseAutonomousDatabaseBackup : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create a new Autonomous Database backup.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create a new Autonomous Database backup.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create a new Autonomous AI Database backup.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create a new Autonomous AI Database backup.", ParameterSetName = Default)]
         public CreateAutonomousDatabaseBackupDetails CreateAutonomousDatabaseBackupDetails { get; set; }
 
         

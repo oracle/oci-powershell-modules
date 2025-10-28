@@ -26,8 +26,8 @@ namespace Oci.DatabaseService.Cmdlets
         public string AutonomousDatabaseId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update SaaS administrative user configuration of the Autonomous Database.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update SaaS administrative user configuration of the Autonomous Database.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update SaaS administrative user configuration of the Autonomous AI Database.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update SaaS administrative user configuration of the Autonomous AI Database.", ParameterSetName = Default)]
         public ConfigureSaasAdminUserDetails ConfigureSaasAdminUserDetails { get; set; }
 
         
