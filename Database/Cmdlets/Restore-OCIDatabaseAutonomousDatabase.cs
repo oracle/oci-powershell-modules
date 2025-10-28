@@ -26,8 +26,8 @@ namespace Oci.DatabaseService.Cmdlets
         public string AutonomousDatabaseId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to perform an Autonomous Database restore.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to perform an Autonomous Database restore.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to perform an Autonomous AI Database restore.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to perform an Autonomous AI Database restore.", ParameterSetName = Default)]
         public RestoreAutonomousDatabaseDetails RestoreAutonomousDatabaseDetails { get; set; }
 
         

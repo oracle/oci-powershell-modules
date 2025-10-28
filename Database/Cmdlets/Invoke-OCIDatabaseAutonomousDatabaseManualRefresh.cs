@@ -26,8 +26,8 @@ namespace Oci.DatabaseService.Cmdlets
         public string AutonomousDatabaseId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request details for manually refreshing an Autonomous Database refreshable clone.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request details for manually refreshing an Autonomous Database refreshable clone.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request details for manually refreshing an Autonomous AI Database refreshable clone.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request details for manually refreshing an Autonomous AI Database refreshable clone.", ParameterSetName = Default)]
         public AutonomousDatabaseManualRefreshDetails AutonomousDatabaseManualRefreshDetails { get; set; }
 
         
