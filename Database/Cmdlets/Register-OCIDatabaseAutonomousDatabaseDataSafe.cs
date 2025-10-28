@@ -36,8 +36,8 @@ namespace Oci.DatabaseService.Cmdlets
         public System.Nullable<bool> OpcDryRun { get; set; }
 
         
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to register an Autonomous Database with Data Safe.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to register an Autonomous Database with Data Safe.", ParameterSetName = Default)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to register an Autonomous AI Database with Data Safe.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to register an Autonomous AI Database with Data Safe.", ParameterSetName = Default)]
         public RegisterAutonomousDatabaseDataSafeDetails RegisterAutonomousDatabaseDataSafeDetails { get; set; }
 
         [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = StatusParamSet)]

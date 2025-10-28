@@ -41,8 +41,8 @@ namespace Oci.DatabaseService.Cmdlets
         public string OpcRequestId { get; set; }
 
         
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Key details provided by the user for rotate key operation for Autonomous Database.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Key details provided by the user for rotate key operation for Autonomous Database.", ParameterSetName = Default)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Key details provided by the user for rotate key operation for Autonomous AI Database.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Key details provided by the user for rotate key operation for Autonomous AI Database.", ParameterSetName = Default)]
         public RotateAutonomousDatabaseEncryptionKeyDetails RotateAutonomousDatabaseEncryptionKeyDetails { get; set; }
 
         [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = StatusParamSet)]

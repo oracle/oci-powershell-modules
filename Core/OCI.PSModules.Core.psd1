@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Core.dll'
 
 # Version number of this module.
-ModuleVersion = '117.1.0'
+ModuleVersion = '118.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '117.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '118.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Core.dll'
@@ -74,6 +74,7 @@ FunctionsToExport = '*'
 CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry', 
                'Add-OCIVirtualNetworkDrgRouteDistributionStatements', 
                'Add-OCIVirtualNetworkDrgRouteRules', 
+               'Add-OCIVirtualNetworkIpv4SubnetCidr', 
                'Add-OCIVirtualNetworkIpv6SubnetCidr', 
                'Add-OCIVirtualNetworkIpv6VcnCidr', 
                'Add-OCIVirtualNetworkNetworkSecurityGroupSecurityRules', 
@@ -90,6 +91,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'DisMount-OCIComputeManagementLoadBalancer', 
                'DisMount-OCIComputeVnic', 'DisMount-OCIComputeVolume', 
                'DisMount-OCIVirtualNetworkServiceId', 
+               'Edit-OCIVirtualNetworkIpv4SubnetCidr', 
                'Edit-OCIVirtualNetworkVcnCidr', 'Export-OCIComputeImage', 
                'Get-OCIBlockstorageBlockVolumeReplica', 
                'Get-OCIBlockstorageBlockVolumeReplicasList', 
@@ -417,6 +419,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Remove-OCIVirtualNetworkImportDrgRouteDistribution', 
                'Remove-OCIVirtualNetworkInternetGateway', 
                'Remove-OCIVirtualNetworkIPSecConnection', 
+               'Remove-OCIVirtualNetworkIpv4SubnetCidr', 
                'Remove-OCIVirtualNetworkIpv6', 
                'Remove-OCIVirtualNetworkIpv6SubnetCidr', 
                'Remove-OCIVirtualNetworkIpv6VcnCidr', 

@@ -36,8 +36,8 @@ namespace Oci.DatabaseService.Cmdlets
         public string OpcRequestId { get; set; }
 
         
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If set to true, terminating the Autonomous Database also deletes its associated long-term backups if the retention lock is not enabled.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If set to true, terminating the Autonomous Database also deletes its associated long-term backups if the retention lock is not enabled.", ParameterSetName = Default)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If set to true, terminating the Autonomous AI Database also deletes its associated long-term backups if the retention lock is not enabled.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If set to true, terminating the Autonomous AI Database also deletes its associated long-term backups if the retention lock is not enabled.", ParameterSetName = Default)]
         public System.Nullable<bool> MustDeleteAssociatedLongTermBackups { get; set; }
 
         

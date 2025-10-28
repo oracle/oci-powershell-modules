@@ -21,8 +21,8 @@ namespace Oci.DatabaseService.Cmdlets
     public class UpdateOCIDatabaseAutonomousDatabaseRegionalWallet : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the properties of Autonomous Database regional wallet.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the properties of Autonomous Database regional wallet.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the properties of Autonomous AI Database regional wallet.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the properties of Autonomous AI Database regional wallet.", ParameterSetName = Default)]
         public UpdateAutonomousDatabaseWalletDetails UpdateAutonomousDatabaseWalletDetails { get; set; }
 
         

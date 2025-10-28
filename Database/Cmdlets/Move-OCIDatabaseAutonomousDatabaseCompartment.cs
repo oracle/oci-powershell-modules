@@ -21,8 +21,8 @@ namespace Oci.DatabaseService.Cmdlets
     public class MoveOCIDatabaseAutonomousDatabaseCompartment : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to move Autonomous Database to a different compartment", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to move Autonomous Database to a different compartment", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to move Autonomous AI Database to a different compartment", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to move Autonomous AI Database to a different compartment", ParameterSetName = Default)]
         public ChangeCompartmentDetails ChangeCompartmentDetails { get; set; }
 
         

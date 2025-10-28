@@ -19,10 +19,10 @@ namespace Oci.DatabaseService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabaseService.Models.AutonomousDatabaseSoftwareImage), typeof(Oci.DatabaseService.Responses.UpdateAutonomousDatabaseSoftwareImageResponse) })]
     public class UpdateOCIDatabaseAutonomousDatabaseSoftwareImage : OCIDatabaseCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string AutonomousDatabaseSoftwareImageId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the properties of an Autonomous Database Software Image.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update the properties of an Autonomous AI Database Software Image.")]
         public UpdateAutonomousDatabaseSoftwareImageDetails UpdateAutonomousDatabaseSoftwareImageDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

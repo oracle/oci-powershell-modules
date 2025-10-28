@@ -36,6 +36,9 @@ namespace Oci.DatabasetoolsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources with one of the specified type values.")]
         public System.Collections.Generic.List<Oci.DatabasetoolsService.Models.RuntimeSupport> RuntimeSupport { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources with one of the specified runtimeIdentity values.")]
+        public System.Collections.Generic.List<Oci.DatabasetoolsService.Models.RuntimeIdentity> RuntimeIdentity { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related resource.")]
         public string RelatedResourceIdentifier { get; set; }
 
@@ -71,6 +74,7 @@ namespace Oci.DatabasetoolsService.Cmdlets
                     DisplayName = DisplayName,
                     Type = Type,
                     RuntimeSupport = RuntimeSupport,
+                    RuntimeIdentity = RuntimeIdentity,
                     RelatedResourceIdentifier = RelatedResourceIdentifier,
                     Limit = Limit,
                     Page = Page,
