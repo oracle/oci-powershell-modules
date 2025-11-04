@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Core.dll'
 
 # Version number of this module.
-ModuleVersion = '118.0.0'
+ModuleVersion = '119.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '118.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '119.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Core.dll'
@@ -284,6 +284,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Invoke-OCIComputeManagementSoftstopInstancePool', 
                'Invoke-OCIComputeManagementTerminateClusterNetwork', 
                'Invoke-OCIComputeManagementTerminateInstancePool', 
+               'Invoke-OCIComputeManagementTerminationProceedInstancePoolInstance', 
                'Invoke-OCIComputeTerminateInstance', 
                'Invoke-OCIVirtualNetworkAdvertiseByoipRange', 
                'Invoke-OCIVirtualNetworkBulkAddVirtualCircuitPublicPrefixes', 
