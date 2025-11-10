@@ -42,6 +42,9 @@ namespace Oci.FleetappsmanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If set to true, confirmed targets will be returned.")]
+        public System.Nullable<bool> IsConfirmedTargets { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -60,7 +63,8 @@ namespace Oci.FleetappsmanagementService.Cmdlets
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    IsConfirmedTargets = IsConfirmedTargets
                 };
                 IEnumerable<ListTargetsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

@@ -51,6 +51,9 @@ namespace Oci.FleetappsmanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return fleets whose lifecycleState matches the given lifecycleState.")]
+        public System.Nullable<Oci.FleetappsmanagementService.Models.FleetTarget.LifecycleStateEnum> LifecycleState { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -72,7 +75,8 @@ namespace Oci.FleetappsmanagementService.Cmdlets
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    LifecycleState = LifecycleState
                 };
                 IEnumerable<ListFleetTargetsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

@@ -54,6 +54,9 @@ namespace Oci.FleetappsmanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Parameter to list all catalog items only with latest version or list all catalog items with all versions.")]
         public System.Nullable<Oci.FleetappsmanagementService.Models.CatalogListingVersionCriteriaEnum> CatalogListingVersionCriteria { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given package type. The state value is case-insensitive.")]
+        public System.Nullable<Oci.FleetappsmanagementService.Models.CatalogItem.PackageTypeEnum> PackageType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The indicator to append Public Items from the root compartment to any query, when set to TRUE.")]
         public System.Nullable<bool> ShouldListPublicItems { get; set; }
 
@@ -80,6 +83,7 @@ namespace Oci.FleetappsmanagementService.Cmdlets
                     OpcRequestId = OpcRequestId,
                     CatalogListingId = CatalogListingId,
                     CatalogListingVersionCriteria = CatalogListingVersionCriteria,
+                    PackageType = PackageType,
                     ShouldListPublicItems = ShouldListPublicItems
                 };
                 IEnumerable<ListCatalogItemsResponse> responses = GetRequestDelegate().Invoke(request);

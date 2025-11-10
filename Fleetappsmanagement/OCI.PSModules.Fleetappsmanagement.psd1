@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Fleetappsmanagement.dll'
 
 # Version number of this module.
-ModuleVersion = '119.0.0'
+ModuleVersion = '119.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '119.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '119.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Fleetappsmanagement.dll'
@@ -73,9 +73,13 @@ FunctionsToExport = '*'
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Enable-OCIFleetappsmanagementLatestPolicy', 
                'Export-OCIFleetappsmanagementComplianceReport', 
+               'Export-OCIFleetappsmanagementRunbook', 
+               'Export-OCIFleetappsmanagementRunbookVersion', 
                'Get-OCIFleetappsmanagementAnnouncementsList', 
                'Get-OCIFleetappsmanagementCatalogItem', 
                'Get-OCIFleetappsmanagementCatalogItemsList', 
+               'Get-OCIFleetappsmanagementCatalogItemVariablesDefinition', 
+               'Get-OCIFleetappsmanagementCompliance', 
                'Get-OCIFleetappsmanagementCompliancePoliciesList', 
                'Get-OCIFleetappsmanagementCompliancePolicy', 
                'Get-OCIFleetappsmanagementCompliancePolicyRule', 
@@ -94,6 +98,7 @@ CmdletsToExport = 'Enable-OCIFleetappsmanagementLatestPolicy',
                'Get-OCIFleetappsmanagementFleetResourcesList', 
                'Get-OCIFleetappsmanagementFleetsList', 
                'Get-OCIFleetappsmanagementFleetTargetsList', 
+               'Get-OCIFleetappsmanagementInstalledPatchesList', 
                'Get-OCIFleetappsmanagementInventoryRecordsList', 
                'Get-OCIFleetappsmanagementInventoryResourcesList', 
                'Get-OCIFleetappsmanagementJobActivity', 
@@ -110,8 +115,14 @@ CmdletsToExport = 'Enable-OCIFleetappsmanagementLatestPolicy',
                'Get-OCIFleetappsmanagementProperty', 
                'Get-OCIFleetappsmanagementProvision', 
                'Get-OCIFleetappsmanagementProvisionsList', 
+               'Get-OCIFleetappsmanagementRecommendedPatchesList', 
+               'Get-OCIFleetappsmanagementReportMetadataList', 
                'Get-OCIFleetappsmanagementResourcesList', 
                'Get-OCIFleetappsmanagementRunbook', 
+               'Get-OCIFleetappsmanagementRunbookExport', 
+               'Get-OCIFleetappsmanagementRunbookExportStatusesList', 
+               'Get-OCIFleetappsmanagementRunbookImport', 
+               'Get-OCIFleetappsmanagementRunbookImportStatusesList', 
                'Get-OCIFleetappsmanagementRunbooksList', 
                'Get-OCIFleetappsmanagementRunbookVersion', 
                'Get-OCIFleetappsmanagementRunbookVersionsList', 
@@ -122,6 +133,8 @@ CmdletsToExport = 'Enable-OCIFleetappsmanagementLatestPolicy',
                'Get-OCIFleetappsmanagementSchedulerJob', 
                'Get-OCIFleetappsmanagementSchedulerJobsList', 
                'Get-OCIFleetappsmanagementStepsList', 
+               'Get-OCIFleetappsmanagementTargetComponentsList', 
+               'Get-OCIFleetappsmanagementTargetPropertiesList', 
                'Get-OCIFleetappsmanagementTargetsList', 
                'Get-OCIFleetappsmanagementTaskRecord', 
                'Get-OCIFleetappsmanagementTaskRecordsList', 
@@ -129,12 +142,19 @@ CmdletsToExport = 'Enable-OCIFleetappsmanagementLatestPolicy',
                'Get-OCIFleetappsmanagementWorkRequestErrorsList', 
                'Get-OCIFleetappsmanagementWorkRequestLogsList', 
                'Get-OCIFleetappsmanagementWorkRequestsList', 
+               'Import-OCIFleetappsmanagementRunbook', 
+               'Import-OCIFleetappsmanagementRunbookPrecheck', 
+               'Import-OCIFleetappsmanagementRunbookVersion', 
                'Invoke-OCIFleetappsmanagementCheckResourceTagging', 
                'Invoke-OCIFleetappsmanagementCloneCatalogItem', 
+               'Invoke-OCIFleetappsmanagementConfigureCatalogItem', 
                'Invoke-OCIFleetappsmanagementConfirmTargets', 
+               'Invoke-OCIFleetappsmanagementFindRunbookExportDependency', 
+               'Invoke-OCIFleetappsmanagementFindRunbookImportDependency', 
                'Invoke-OCIFleetappsmanagementManageJobExecution', 
                'Invoke-OCIFleetappsmanagementManageSettings', 
                'Invoke-OCIFleetappsmanagementPublishRunbook', 
+               'Invoke-OCIFleetappsmanagementReport', 
                'Invoke-OCIFleetappsmanagementRequestResourceValidation', 
                'Invoke-OCIFleetappsmanagementRequestTargetDiscovery', 
                'Invoke-OCIFleetappsmanagementSetDefaultRunbook', 
