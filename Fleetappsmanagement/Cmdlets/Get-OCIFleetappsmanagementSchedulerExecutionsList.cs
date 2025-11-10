@@ -51,6 +51,12 @@ namespace Oci.FleetappsmanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources their subState matches the given subState.")]
         public string Substate { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources their lifecycleOperation matches the given lifecycleOperation.")]
+        public string LifecycleOperation { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.")]
+        public System.Nullable<bool> CompartmentIdInSubtree { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -88,6 +94,8 @@ namespace Oci.FleetappsmanagementService.Cmdlets
                     RunbookId = RunbookId,
                     RunbookVersionName = RunbookVersionName,
                     Substate = Substate,
+                    LifecycleOperation = LifecycleOperation,
+                    CompartmentIdInSubtree = CompartmentIdInSubtree,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,

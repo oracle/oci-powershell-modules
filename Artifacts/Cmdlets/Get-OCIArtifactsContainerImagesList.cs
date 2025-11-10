@@ -52,6 +52,11 @@ Example: `foo` or `foo*`")]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given lifecycle state name exactly.")]
         public string LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The digest of the container image.
+
+Example: `sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa`")]
+        public string ImageDigest { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
 
 Example: `50`", ParameterSetName = LimitSet)]
@@ -92,6 +97,7 @@ Example: `50`", ParameterSetName = LimitSet)]
                     RepositoryName = RepositoryName,
                     Version = Version,
                     LifecycleState = LifecycleState,
+                    ImageDigest = ImageDigest,
                     Limit = Limit,
                     Page = Page,
                     OpcRequestId = OpcRequestId,

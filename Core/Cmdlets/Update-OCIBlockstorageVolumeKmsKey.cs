@@ -28,6 +28,9 @@ namespace Oci.CoreService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
         public string IfMatch { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The endpoint that will be used to get the resource principal token of the parent resource.")]
+        public string OpcParentResourcePrincipalTokenUrl { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -39,7 +42,8 @@ namespace Oci.CoreService.Cmdlets
                 {
                     VolumeId = VolumeId,
                     UpdateVolumeKmsKeyDetails = UpdateVolumeKmsKeyDetails,
-                    IfMatch = IfMatch
+                    IfMatch = IfMatch,
+                    OpcParentResourcePrincipalTokenUrl = OpcParentResourcePrincipalTokenUrl
                 };
 
                 response = client.UpdateVolumeKmsKey(request).GetAwaiter().GetResult();

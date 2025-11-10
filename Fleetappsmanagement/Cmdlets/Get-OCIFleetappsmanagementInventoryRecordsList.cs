@@ -45,6 +45,9 @@ namespace Oci.FleetappsmanagementService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If set to true, inventory details will be returned.")]
+        public System.Nullable<bool> IsDetailsRequired { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided.")]
         public System.Nullable<Oci.FleetappsmanagementService.Requests.ListInventoryRecordsRequest.SortByEnum> SortBy { get; set; }
 
@@ -68,6 +71,7 @@ namespace Oci.FleetappsmanagementService.Cmdlets
                     Page = Page,
                     SortOrder = SortOrder,
                     OpcRequestId = OpcRequestId,
+                    IsDetailsRequired = IsDetailsRequired,
                     SortBy = SortBy
                 };
                 IEnumerable<ListInventoryRecordsResponse> responses = GetRequestDelegate().Invoke(request);
