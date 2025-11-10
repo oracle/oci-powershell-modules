@@ -25,6 +25,9 @@ namespace Oci.ContainerengineService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment.")]
         public string CompartmentId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Option to show all kubernetes patch versions")]
+        public System.Nullable<bool> ShouldListAllPatchVersions { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -39,6 +42,7 @@ namespace Oci.ContainerengineService.Cmdlets
                 {
                     ClusterOptionId = ClusterOptionId,
                     CompartmentId = CompartmentId,
+                    ShouldListAllPatchVersions = ShouldListAllPatchVersions,
                     OpcRequestId = OpcRequestId
                 };
 

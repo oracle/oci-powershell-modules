@@ -42,7 +42,7 @@ namespace Oci.ContainerengineService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The optional field to sort the results by.")]
         public System.Nullable<Oci.ContainerengineService.Requests.ListAddonOptionsRequest.SortByEnum> SortBy { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Whether to show all add-on versions")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies whether all add-on versions should be displayed. The default value is false. If set to true, the API will return all available add-on versions, including deprecated versions and detailed build numbers. Please note that the use of deprecated versions, as well as the specification of a particular build of a supported version, is not recommended for standard operations.")]
         public System.Nullable<bool> ShouldShowAllVersions { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]

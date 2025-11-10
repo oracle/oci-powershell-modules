@@ -25,6 +25,18 @@ namespace Oci.ContainerengineService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment.")]
         public string CompartmentId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Option to show all kubernetes patch versions")]
+        public System.Nullable<bool> ShouldListAllPatchVersions { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter node pool options by OS type.")]
+        public System.Nullable<Oci.ContainerengineService.Requests.GetNodePoolOptionsRequest.NodePoolOsTypeEnum> NodePoolOsType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter node pool options by OS architecture.")]
+        public System.Nullable<Oci.ContainerengineService.Requests.GetNodePoolOptionsRequest.NodePoolOsArchEnum> NodePoolOsArch { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter node pool options by Kubernetes version.")]
+        public string NodePoolK8sVersion { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -39,6 +51,10 @@ namespace Oci.ContainerengineService.Cmdlets
                 {
                     NodePoolOptionId = NodePoolOptionId,
                     CompartmentId = CompartmentId,
+                    ShouldListAllPatchVersions = ShouldListAllPatchVersions,
+                    NodePoolOsType = NodePoolOsType,
+                    NodePoolOsArch = NodePoolOsArch,
+                    NodePoolK8sVersion = NodePoolK8sVersion,
                     OpcRequestId = OpcRequestId
                 };
 

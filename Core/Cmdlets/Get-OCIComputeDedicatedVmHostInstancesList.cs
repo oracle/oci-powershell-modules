@@ -32,6 +32,9 @@ namespace Oci.CoreService.Cmdlets
 Example: `Uocm:PHX-AD-1`")]
         public string AvailabilityDomain { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.")]
+        public System.Nullable<bool> IsMemoryEncryptionEnabled { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
 
 Example: `50`", ParameterSetName = LimitSet)]
@@ -66,6 +69,7 @@ Example: `50`", ParameterSetName = LimitSet)]
                     CompartmentId = CompartmentId,
                     DedicatedVmHostId = DedicatedVmHostId,
                     AvailabilityDomain = AvailabilityDomain,
+                    IsMemoryEncryptionEnabled = IsMemoryEncryptionEnabled,
                     Limit = Limit,
                     Page = Page,
                     OpcRequestId = OpcRequestId,

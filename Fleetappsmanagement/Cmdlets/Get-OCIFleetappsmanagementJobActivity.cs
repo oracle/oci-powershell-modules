@@ -25,6 +25,9 @@ namespace Oci.FleetappsmanagementService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique jobActivity identifier")]
         public string JobActivityId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If set to true, inventory details will be returned.")]
+        public System.Nullable<bool> IsDetailsRequired { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
@@ -39,6 +42,7 @@ namespace Oci.FleetappsmanagementService.Cmdlets
                 {
                     SchedulerJobId = SchedulerJobId,
                     JobActivityId = JobActivityId,
+                    IsDetailsRequired = IsDetailsRequired,
                     OpcRequestId = OpcRequestId
                 };
 
