@@ -12,47 +12,30 @@ using Oci.MulticloudService.Requests;
 using Oci.MulticloudService.Responses;
 using Oci.MulticloudService.Models;
 using Oci.Common.Model;
-using Oci.Common.Waiters;
 
 namespace Oci.MulticloudService.Cmdlets
 {
-    [Cmdlet("Get", "OCIMulticloudNetworkAnchor", DefaultParameterSetName = Default)]
+    [Cmdlet("Get", "OCIMulticloudNetworkAnchor")]
     [OutputType(new System.Type[] { typeof(Oci.MulticloudService.Models.NetworkAnchor), typeof(Oci.MulticloudService.Responses.GetNetworkAnchorResponse) })]
     public class GetOCIMulticloudNetworkAnchor : OCIOmhubNetworkAnchorCmdlet
     {
-        
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.")]
         public string NetworkAnchorId { get; set; }
 
-        
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The subscription service name of the Cloud Service Provider.")]
         public System.Nullable<Oci.MulticloudService.Models.SubscriptionType> SubscriptionServiceName { get; set; }
 
-        
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.")]
         public string SubscriptionId { get; set; }
 
-        
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID. The only valid characters for request IDs are letters, numbers, underscore, and dash.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID. The only valid characters for request IDs are letters, numbers, underscore, and dash.", ParameterSetName = Default)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID. The only valid characters for request IDs are letters, numbers, underscore, and dash.")]
         public string OpcRequestId { get; set; }
 
-        
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"OMHub Control Plane must know underlying CSP CP Region External Location Name.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"OMHub Control Plane must know underlying CSP CP Region External Location Name.", ParameterSetName = Default)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Cloud Service Provider region.")]
         public string ExternalLocation { get; set; }
 
-        [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = LifecycleStateParamSet)]
-        public Oci.MulticloudService.Models.NetworkAnchor.LifecycleStateEnum[] WaitForLifecycleState { get; set; }
-
-        [Parameter(Mandatory = false, HelpMessage = @"Check every WaitIntervalSeconds to see whether the resource has reached a desired state.", ParameterSetName = LifecycleStateParamSet)]
-        public int WaitIntervalSeconds { get; set; } = WAIT_INTERVAL_SECONDS;
-
-        [Parameter(Mandatory = false, HelpMessage = @"Maximum number of attempts to be made until the resource reaches a desired state.", ParameterSetName = LifecycleStateParamSet)]
-        public int MaxWaitAttempts { get; set; } = MAX_WAITER_ATTEMPTS;
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Whether to fetch and include the vcn display name, which may introduce additional latency.")]
+        public System.Nullable<bool> ShouldFetchVcnName { get; set; }
 
         protected override void ProcessRecord()
         {
@@ -67,10 +50,12 @@ namespace Oci.MulticloudService.Cmdlets
                     SubscriptionServiceName = SubscriptionServiceName,
                     SubscriptionId = SubscriptionId,
                     OpcRequestId = OpcRequestId,
-                    ExternalLocation = ExternalLocation
+                    ExternalLocation = ExternalLocation,
+                    ShouldFetchVcnName = ShouldFetchVcnName
                 };
 
-                HandleOutput(request);
+                response = client.GetNetworkAnchor(request).GetAwaiter().GetResult();
+                WriteOutput(response, response.NetworkAnchor);
                 FinishProcessing(response);
             }
             catch (OciException ex)
@@ -89,29 +74,6 @@ namespace Oci.MulticloudService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private void HandleOutput(GetNetworkAnchorRequest request)
-        {
-            var waiterConfig = new WaiterConfiguration
-            {
-                MaxAttempts = MaxWaitAttempts,
-                GetNextDelayInSeconds = (_) => WaitIntervalSeconds
-            };
-
-            switch (ParameterSetName)
-            { 
-                case LifecycleStateParamSet:
-                    response = client.Waiters.ForNetworkAnchor(request, waiterConfig, WaitForLifecycleState).Execute();
-                    break;
-
-                case Default:
-                    response = client.GetNetworkAnchor(request).GetAwaiter().GetResult();
-                    break;
-            }
-            WriteOutput(response, response.NetworkAnchor);
-        }
-
         private GetNetworkAnchorResponse response;
-        private const string LifecycleStateParamSet = "LifecycleStateParamSet";
-        private const string Default = "Default";
     }
 }
