@@ -21,20 +21,29 @@ namespace Oci.MulticloudService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.MulticloudService.Models.ExternalLocationsMetadatumCollection), typeof(Oci.MulticloudService.Responses.ListExternalLocationDetailsMetadataResponse) })]
     public class GetOCIMulticloudExternalLocationDetailsMetadataList : OCIMetadataCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.")]
         public string SubscriptionId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
-        public string CompartmentId { get; set; }
-
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The subscription service name of the Cloud Service Provider.")]
         public System.Nullable<Oci.MulticloudService.Models.SubscriptionType> SubscriptionServiceName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The resource type query (i.e. dbsystem, instance etc.)")]
         public System.Nullable<Oci.MulticloudService.Requests.ListExternalLocationDetailsMetadataRequest.EntityTypeEnum> EntityType { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources. A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).")]
+        public string CompartmentId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.")]
         public string LinkedCompartmentId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Cloud Service Provider region.")]
+        public string ExternalLocation { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"OCI Logical AD to filter the response.")]
+        public string LogicalZone { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.")]
+        public string ClusterPlacementGroupId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -64,10 +73,13 @@ namespace Oci.MulticloudService.Cmdlets
                 request = new ListExternalLocationDetailsMetadataRequest
                 {
                     SubscriptionId = SubscriptionId,
-                    CompartmentId = CompartmentId,
                     SubscriptionServiceName = SubscriptionServiceName,
                     EntityType = EntityType,
+                    CompartmentId = CompartmentId,
                     LinkedCompartmentId = LinkedCompartmentId,
+                    ExternalLocation = ExternalLocation,
+                    LogicalZone = LogicalZone,
+                    ClusterPlacementGroupId = ClusterPlacementGroupId,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,

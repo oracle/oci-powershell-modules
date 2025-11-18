@@ -36,6 +36,9 @@ namespace Oci.EmailService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The email address of the approved sender.")]
         public string EmailAddress { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to only return resources that match the given IpPool resource exactly.")]
+        public string EmailIpPoolId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The value of the opc-next-page response header from the previous ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
 
@@ -65,6 +68,7 @@ namespace Oci.EmailService.Cmdlets
                     LifecycleState = LifecycleState,
                     Domain = Domain,
                     EmailAddress = EmailAddress,
+                    EmailIpPoolId = EmailIpPoolId,
                     Page = Page,
                     Limit = Limit,
                     SortBy = SortBy,

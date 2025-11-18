@@ -27,6 +27,9 @@ namespace Oci.ServicecatalogService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier for the service catalog.")]
         public string ServiceCatalogId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Status of the service catalog, use as a filter to filter out all active catalogs.")]
+        public System.Nullable<Oci.ServicecatalogService.Models.ServiceCatalogStatusEnum> Status { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -59,6 +62,7 @@ namespace Oci.ServicecatalogService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     ServiceCatalogId = ServiceCatalogId,
+                    Status = Status,
                     OpcRequestId = OpcRequestId,
                     Limit = Limit,
                     Page = Page,

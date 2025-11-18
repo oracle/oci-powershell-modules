@@ -21,16 +21,10 @@ namespace Oci.MulticloudService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.MulticloudService.Models.ResourceAnchorCollection), typeof(Oci.MulticloudService.Responses.ListResourceAnchorsResponse) })]
     public class GetOCIMulticloudResourceAnchorsList : OCIOmhubResourceAnchorCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]")]
-        public System.Nullable<Oci.MulticloudService.Models.SubscriptionType> SubscriptionServiceName { get; set; }
-
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.")]
-        public string SubscriptionId { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.")]
         public string LinkedCompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.")]
@@ -57,6 +51,15 @@ namespace Oci.MulticloudService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Check the sub-compartments of a given compartmentId")]
         public System.Nullable<bool> IsCompartmentIdInSubtree { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.")]
+        public System.Nullable<bool> ShouldFetchCompartmentName { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The subscription service name of the Cloud Service Provider.")]
+        public System.Nullable<Oci.MulticloudService.Models.SubscriptionType> SubscriptionServiceName { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.")]
+        public string SubscriptionId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID. The only valid characters for request IDs are letters, numbers, underscore, and dash.")]
         public string OpcRequestId { get; set; }
 
@@ -72,8 +75,6 @@ namespace Oci.MulticloudService.Cmdlets
             {
                 request = new ListResourceAnchorsRequest
                 {
-                    SubscriptionServiceName = SubscriptionServiceName,
-                    SubscriptionId = SubscriptionId,
                     CompartmentId = CompartmentId,
                     LinkedCompartmentId = LinkedCompartmentId,
                     LifecycleState = LifecycleState,
@@ -84,6 +85,9 @@ namespace Oci.MulticloudService.Cmdlets
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     IsCompartmentIdInSubtree = IsCompartmentIdInSubtree,
+                    ShouldFetchCompartmentName = ShouldFetchCompartmentName,
+                    SubscriptionServiceName = SubscriptionServiceName,
+                    SubscriptionId = SubscriptionId,
                     OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListResourceAnchorsResponse> responses = GetRequestDelegate().Invoke(request);
