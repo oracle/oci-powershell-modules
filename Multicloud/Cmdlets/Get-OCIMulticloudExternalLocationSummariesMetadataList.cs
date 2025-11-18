@@ -21,13 +21,13 @@ namespace Oci.MulticloudService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.MulticloudService.Models.ExternalLocationSummariesMetadatumSummaryCollection), typeof(Oci.MulticloudService.Responses.ListExternalLocationSummariesMetadataResponse) })]
     public class GetOCIMulticloudExternalLocationSummariesMetadataList : OCIMetadataCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The subscription service name of the Cloud Service Provider.")]
         public System.Nullable<Oci.MulticloudService.Models.SubscriptionType> SubscriptionServiceName { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources. A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.")]
         public string SubscriptionId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The resource type query (i.e. dbsystem, instance etc.)")]

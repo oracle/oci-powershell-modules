@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Dbmulticloud.dll'
 
 # Version number of this module.
-ModuleVersion = '119.1.0'
+ModuleVersion = '120.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '119.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '120.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Dbmulticloud.dll'
@@ -73,6 +73,10 @@ FunctionsToExport = '*'
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Get-OCIDbmulticloudMultiCloudResourceDiscoveriesList', 
                'Get-OCIDbmulticloudMultiCloudResourceDiscovery', 
+               'Get-OCIDbmulticloudOracleDbAwsIdentityConnector', 
+               'Get-OCIDbmulticloudOracleDbAwsIdentityConnectorsList', 
+               'Get-OCIDbmulticloudOracleDbAwsKey', 
+               'Get-OCIDbmulticloudOracleDbAwsKeysList', 
                'Get-OCIDbmulticloudOracleDbAzureBlobContainer', 
                'Get-OCIDbmulticloudOracleDbAzureBlobContainersList', 
                'Get-OCIDbmulticloudOracleDbAzureBlobMount', 
@@ -97,11 +101,15 @@ CmdletsToExport = 'Get-OCIDbmulticloudMultiCloudResourceDiscoveriesList',
                'Get-OCIDbmulticloudWorkRequestsList', 
                'Invoke-OCIDbmulticloudCascadingDeleteOracleDbAzureVaultAssociation', 
                'Invoke-OCIDbmulticloudPatchOracleDbAzureConnector', 
+               'Invoke-OCIDbmulticloudRefreshOracleDbAwsIdentityConnector', 
+               'Invoke-OCIDbmulticloudRefreshOracleDbAwsKey', 
                'Invoke-OCIDbmulticloudRefreshOracleDbAzureConnector', 
                'Invoke-OCIDbmulticloudRefreshOracleDbAzureVault', 
                'Invoke-OCIDbmulticloudRefreshOracleDbGcpIdentityConnector', 
                'Invoke-OCIDbmulticloudRefreshOracleDbGcpKeyRing', 
                'Move-OCIDbmulticloudMultiCloudResourceDiscoveryCompartment', 
+               'Move-OCIDbmulticloudOracleDbAwsIdentityConnectorCompartment', 
+               'Move-OCIDbmulticloudOracleDbAwsKeyCompartment', 
                'Move-OCIDbmulticloudOracleDbAzureBlobContainerCompartment', 
                'Move-OCIDbmulticloudOracleDbAzureBlobMountCompartment', 
                'Move-OCIDbmulticloudOracleDbAzureConnectorCompartment', 
@@ -110,6 +118,8 @@ CmdletsToExport = 'Get-OCIDbmulticloudMultiCloudResourceDiscoveriesList',
                'Move-OCIDbmulticloudOracleDbGcpIdentityConnectorCompartment', 
                'Move-OCIDbmulticloudOracleDbGcpKeyRingCompartment', 
                'New-OCIDbmulticloudMultiCloudResourceDiscovery', 
+               'New-OCIDbmulticloudOracleDbAwsIdentityConnector', 
+               'New-OCIDbmulticloudOracleDbAwsKey', 
                'New-OCIDbmulticloudOracleDbAzureBlobContainer', 
                'New-OCIDbmulticloudOracleDbAzureBlobMount', 
                'New-OCIDbmulticloudOracleDbAzureConnector', 
@@ -118,6 +128,8 @@ CmdletsToExport = 'Get-OCIDbmulticloudMultiCloudResourceDiscoveriesList',
                'New-OCIDbmulticloudOracleDbGcpIdentityConnector', 
                'New-OCIDbmulticloudOracleDbGcpKeyRing', 
                'Remove-OCIDbmulticloudMultiCloudResourceDiscovery', 
+               'Remove-OCIDbmulticloudOracleDbAwsIdentityConnector', 
+               'Remove-OCIDbmulticloudOracleDbAwsKey', 
                'Remove-OCIDbmulticloudOracleDbAzureBlobContainer', 
                'Remove-OCIDbmulticloudOracleDbAzureBlobMount', 
                'Remove-OCIDbmulticloudOracleDbAzureConnector', 
@@ -127,6 +139,8 @@ CmdletsToExport = 'Get-OCIDbmulticloudMultiCloudResourceDiscoveriesList',
                'Remove-OCIDbmulticloudOracleDbGcpKeyRing', 
                'Stop-OCIDbmulticloudWorkRequest', 
                'Update-OCIDbmulticloudMultiCloudResourceDiscovery', 
+               'Update-OCIDbmulticloudOracleDbAwsIdentityConnector', 
+               'Update-OCIDbmulticloudOracleDbAwsKey', 
                'Update-OCIDbmulticloudOracleDbAzureBlobContainer', 
                'Update-OCIDbmulticloudOracleDbAzureBlobMount', 
                'Update-OCIDbmulticloudOracleDbAzureConnector', 

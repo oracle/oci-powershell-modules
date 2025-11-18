@@ -21,26 +21,29 @@ namespace Oci.MulticloudService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.MulticloudService.Models.NetworkAnchorCollection), typeof(Oci.MulticloudService.Responses.ListNetworkAnchorsResponse) })]
     public class GetOCIMulticloudNetworkAnchorsList : OCIOmhubNetworkAnchorCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.")]
-        public string SubscriptionId { get; set; }
-
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]")]
-        public System.Nullable<Oci.MulticloudService.Models.SubscriptionType> SubscriptionServiceName { get; set; }
-
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"OMHub Control Plane must know underlying CSP CP Region External Location Name.")]
-        public string ExternalLocation { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an OCI compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).")]
         public string CompartmentId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.")]
+        public string SubscriptionId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The subscription service name of the Cloud Service Provider.")]
+        public System.Nullable<Oci.MulticloudService.Models.SubscriptionType> SubscriptionServiceName { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.")]
-        public System.Nullable<Oci.MulticloudService.Models.NetworkAnchor.LifecycleStateEnum> LifecycleState { get; set; }
+        public System.Nullable<Oci.MulticloudService.Models.NetworkAnchor.NetworkAnchorLifecycleStateEnum> NetworkAnchorLifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given display name exactly.")]
         public string DisplayName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Cloud Service Provider region.")]
+        public string ExternalLocation { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only NetworkAnchor resources that match the given OCI subnet Id.")]
         public string NetworkAnchorOciSubnetId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.")]
+        public System.Nullable<bool> CompartmentIdInSubtree { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only NetworkAnchor resources that match the given OCI Vcn Id.")]
         public string NetworkAnchorOciVcnId { get; set; }
@@ -53,6 +56,9 @@ namespace Oci.MulticloudService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The value of the opc-next-page response header from the previous ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Whether to fetch and include the vcn display name, which may introduce additional latency.")]
+        public System.Nullable<bool> ShouldFetchVcnName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (`ASC`) or descending (`DESC`).")]
         public System.Nullable<Oci.MulticloudService.Models.SortOrder> SortOrder { get; set; }
@@ -75,17 +81,19 @@ namespace Oci.MulticloudService.Cmdlets
             {
                 request = new ListNetworkAnchorsRequest
                 {
+                    CompartmentId = CompartmentId,
                     SubscriptionId = SubscriptionId,
                     SubscriptionServiceName = SubscriptionServiceName,
-                    ExternalLocation = ExternalLocation,
-                    CompartmentId = CompartmentId,
-                    LifecycleState = LifecycleState,
+                    NetworkAnchorLifecycleState = NetworkAnchorLifecycleState,
                     DisplayName = DisplayName,
+                    ExternalLocation = ExternalLocation,
                     NetworkAnchorOciSubnetId = NetworkAnchorOciSubnetId,
+                    CompartmentIdInSubtree = CompartmentIdInSubtree,
                     NetworkAnchorOciVcnId = NetworkAnchorOciVcnId,
                     Id = Id,
                     Limit = Limit,
                     Page = Page,
+                    ShouldFetchVcnName = ShouldFetchVcnName,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId
