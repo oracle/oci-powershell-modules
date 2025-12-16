@@ -40,6 +40,9 @@ Example: `50`", ParameterSetName = LimitSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an image.")]
         public string ImageId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Shape name.")]
+        public string Shape { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -56,7 +59,8 @@ Example: `50`", ParameterSetName = LimitSet)]
                     AvailabilityDomain = AvailabilityDomain,
                     Limit = Limit,
                     Page = Page,
-                    ImageId = ImageId
+                    ImageId = ImageId,
+                    Shape = Shape
                 };
                 IEnumerable<ListShapesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

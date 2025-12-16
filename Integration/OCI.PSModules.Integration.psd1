@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Integration.dll'
 
 # Version number of this module.
-ModuleVersion = '120.1.0'
+ModuleVersion = '120.2.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '120.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '120.2.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Integration.dll'
@@ -71,19 +71,23 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Integration.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Add-OCIIntegrationOracleManagedCustomEndpoint', 
+CmdletsToExport = 'Add-OCIIntegrationLogAnalyticsLogGroup', 
+               'Add-OCIIntegrationOracleManagedCustomEndpoint', 
+               'Disable-OCIIntegrationProcessAutomation', 
                'Enable-OCIIntegrationProcessAutomation', 
                'Get-OCIIntegrationInstance', 'Get-OCIIntegrationInstancesList', 
                'Get-OCIIntegrationWorkRequest', 
                'Get-OCIIntegrationWorkRequestErrorsList', 
                'Get-OCIIntegrationWorkRequestLogsList', 
                'Get-OCIIntegrationWorkRequestsList', 
+               'Invoke-OCIIntegrationConvertInstance', 
                'Invoke-OCIIntegrationDisasterRecoveryFailover', 
                'Invoke-OCIIntegrationExtendDataRetention', 
                'Move-OCIIntegrationInstanceCompartment', 
                'Move-OCIIntegrationInstanceNetworkEndpoint', 
                'Move-OCIIntegrationPrivateEndpointOutboundConnection', 
                'New-OCIIntegrationInstance', 'Remove-OCIIntegrationInstance', 
+               'Remove-OCIIntegrationLogAnalyticsLogGroup', 
                'Remove-OCIIntegrationOracleManagedCustomEndpoint', 
                'Start-OCIIntegrationInstance', 'Stop-OCIIntegrationInstance', 
                'Update-OCIIntegrationInstance'
