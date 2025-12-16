@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Identitydomains.dll'
 
 # Version number of this module.
-ModuleVersion = '120.1.0'
+ModuleVersion = '120.2.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '120.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '120.2.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Identitydomains.dll'
@@ -113,6 +113,8 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'Get-OCIIdentitydomainsIdentitySettingsList', 
                'Get-OCIIdentitydomainsKmsiSetting', 
                'Get-OCIIdentitydomainsKmsiSettingsList', 
+               'Get-OCIIdentitydomainsMappedAttribute', 
+               'Get-OCIIdentitydomainsMappedAttributesList', 
                'Get-OCIIdentitydomainsMe', 'Get-OCIIdentitydomainsMyApiKey', 
                'Get-OCIIdentitydomainsMyApiKeysList', 
                'Get-OCIIdentitydomainsMyAppsList', 
@@ -196,6 +198,7 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'Invoke-OCIIdentitydomainsPatchIdentityProvider', 
                'Invoke-OCIIdentitydomainsPatchIdentitySetting', 
                'Invoke-OCIIdentitydomainsPatchKmsiSetting', 
+               'Invoke-OCIIdentitydomainsPatchMappedAttribute', 
                'Invoke-OCIIdentitydomainsPatchMe', 
                'Invoke-OCIIdentitydomainsPatchMyApiKey', 
                'Invoke-OCIIdentitydomainsPatchMyAuthToken', 
@@ -236,6 +239,7 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'Invoke-OCIIdentitydomainsSearchIdentityProviders', 
                'Invoke-OCIIdentitydomainsSearchIdentitySettings', 
                'Invoke-OCIIdentitydomainsSearchKmsiSettings', 
+               'Invoke-OCIIdentitydomainsSearchMappedAttributes', 
                'Invoke-OCIIdentitydomainsSearchMyApps', 
                'Invoke-OCIIdentitydomainsSearchMyGroups', 
                'Invoke-OCIIdentitydomainsSearchMyRequestableGroups', 
@@ -351,7 +355,9 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'Write-OCIIdentitydomainsIdentityPropagationTrust', 
                'Write-OCIIdentitydomainsIdentityProvider', 
                'Write-OCIIdentitydomainsIdentitySetting', 
-               'Write-OCIIdentitydomainsKmsiSetting', 'Write-OCIIdentitydomainsMe', 
+               'Write-OCIIdentitydomainsKmsiSetting', 
+               'Write-OCIIdentitydomainsMappedAttribute', 
+               'Write-OCIIdentitydomainsMe', 
                'Write-OCIIdentitydomainsMePasswordChanger', 
                'Write-OCIIdentitydomainsNetworkPerimeter', 
                'Write-OCIIdentitydomainsNotificationSetting', 

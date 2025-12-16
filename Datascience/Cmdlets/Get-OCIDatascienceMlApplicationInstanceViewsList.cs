@@ -33,6 +33,9 @@ namespace Oci.DatascienceService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique MlApplicationImplementation identifier")]
         public string MlApplicationImplementationId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"unique MlApplicationInstance identifier")]
+        public string MlApplicationInstanceId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources matching the given lifecycleState.")]
         public System.Nullable<Oci.DatascienceService.Models.MlApplicationInstanceView.LifecycleStateEnum> LifecycleState { get; set; }
 
@@ -71,6 +74,7 @@ See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concept
                     DisplayName = DisplayName,
                     MlApplicationId = MlApplicationId,
                     MlApplicationImplementationId = MlApplicationImplementationId,
+                    MlApplicationInstanceId = MlApplicationInstanceId,
                     LifecycleState = LifecycleState,
                     Limit = Limit,
                     Page = Page,
