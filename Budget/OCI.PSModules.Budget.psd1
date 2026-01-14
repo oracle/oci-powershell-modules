@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Budget.dll'
 
 # Version number of this module.
-ModuleVersion = '120.2.0'
+ModuleVersion = '121.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '120.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '121.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Budget.dll'
@@ -71,11 +71,26 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Budget.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIBudget', 'Get-OCIBudgetAlertRule', 
-               'Get-OCIBudgetAlertRulesList', 'Get-OCIBudgetsList', 'New-OCIBudget', 
-               'New-OCIBudgetAlertRule', 'Remove-OCIBudget', 
-               'Remove-OCIBudgetAlertRule', 'Update-OCIBudget', 
-               'Update-OCIBudgetAlertRule'
+CmdletsToExport = 'Disable-OCIBudgetCostAnomalyMonitor', 
+               'Enable-OCIBudgetCostAnomalyMonitor', 'Get-OCIBudget', 
+               'Get-OCIBudgetAlertRule', 'Get-OCIBudgetAlertRulesList', 
+               'Get-OCIBudgetCostAlertSubscription', 
+               'Get-OCIBudgetCostAlertSubscriptionsList', 
+               'Get-OCIBudgetCostAnomalyEvent', 
+               'Get-OCIBudgetCostAnomalyEventsList', 
+               'Get-OCIBudgetCostAnomalyMonitor', 
+               'Get-OCIBudgetCostAnomalyMonitorsList', 'Get-OCIBudgetsList', 
+               'Invoke-OCIBudgetSummarizeCostAnomalyEventAnalytics', 
+               'New-OCIBudget', 'New-OCIBudgetAlertRule', 
+               'New-OCIBudgetCostAlertSubscription', 
+               'New-OCIBudgetCostAnomalyMonitor', 'Remove-OCIBudget', 
+               'Remove-OCIBudgetAlertRule', 
+               'Remove-OCIBudgetCostAlertSubscription', 
+               'Remove-OCIBudgetCostAnomalyMonitor', 'Update-OCIBudget', 
+               'Update-OCIBudgetAlertRule', 
+               'Update-OCIBudgetCostAlertSubscription', 
+               'Update-OCIBudgetCostAnomalyEvent', 
+               'Update-OCIBudgetCostAnomalyMonitor'
 
 # Variables to export from this module
 VariablesToExport = '*'

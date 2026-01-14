@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Devops.dll'
 
 # Version number of this module.
-ModuleVersion = '120.2.0'
+ModuleVersion = '121.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '120.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '121.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Devops.dll'
@@ -99,11 +99,8 @@ CmdletsToExport = 'Confirm-OCIDevopsConnection', 'Get-OCIDevopsAuthorsList',
                'Get-OCIDevopsPullRequestAttachmentContent', 
                'Get-OCIDevopsPullRequestAttachmentsList', 
                'Get-OCIDevopsPullRequestAuthorsList', 
-               'Get-OCIDevopsPullRequestChangeSummaryMetrics', 
                'Get-OCIDevopsPullRequestComment', 
                'Get-OCIDevopsPullRequestCommentsList', 
-               'Get-OCIDevopsPullRequestCommitsList', 
-               'Get-OCIDevopsPullRequestFileChangesList', 
                'Get-OCIDevopsPullRequestNotificationPreference', 
                'Get-OCIDevopsPullRequestsList', 'Get-OCIDevopsRef', 
                'Get-OCIDevopsRefsList', 'Get-OCIDevopsRepoFileDiff', 
@@ -122,8 +119,6 @@ CmdletsToExport = 'Confirm-OCIDevopsConnection', 'Get-OCIDevopsAuthorsList',
                'Invoke-OCIDevopsMirrorRepository', 
                'Invoke-OCIDevopsPatchPullRequest', 
                'Invoke-OCIDevopsReopenPullRequest', 
-               'Invoke-OCIDevopsReopenPullRequestComment', 
-               'Invoke-OCIDevopsResolvePullRequestComment', 
                'Invoke-OCIDevopsReviewPullRequest', 
                'Invoke-OCIDevopsScheduleCascadingProjectDeletion', 
                'Invoke-OCIDevopsSummarizeProjectRepositoryAnalytics', 
