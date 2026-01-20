@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Generativeai.dll'
 
 # Version number of this module.
-ModuleVersion = '121.0.0'
+ModuleVersion = '121.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '121.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '121.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Generativeai.dll'
@@ -71,7 +71,8 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Generativeai.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIGenerativeaiDedicatedAiCluster', 
+CmdletsToExport = 'Get-OCIGenerativeaiApiKey', 'Get-OCIGenerativeaiApiKeysList', 
+               'Get-OCIGenerativeaiDedicatedAiCluster', 
                'Get-OCIGenerativeaiDedicatedAiClustersList', 
                'Get-OCIGenerativeaiEndpoint', 'Get-OCIGenerativeaiEndpointsList', 
                'Get-OCIGenerativeaiImportedModel', 
@@ -83,19 +84,25 @@ CmdletsToExport = 'Get-OCIGenerativeaiDedicatedAiCluster',
                'Get-OCIGenerativeaiWorkRequestErrorsList', 
                'Get-OCIGenerativeaiWorkRequestLogsList', 
                'Get-OCIGenerativeaiWorkRequestsList', 
+               'Invoke-OCIGenerativeaiRenewApiKey', 
+               'Invoke-OCIGenerativeaiSetApiKeyState', 
+               'Move-OCIGenerativeaiApiKeyCompartment', 
                'Move-OCIGenerativeaiDedicatedAiClusterCompartment', 
                'Move-OCIGenerativeaiEndpointCompartment', 
                'Move-OCIGenerativeaiImportedModelCompartment', 
                'Move-OCIGenerativeaiModelCompartment', 
                'Move-OCIGenerativeaiPrivateEndpointCompartment', 
+               'New-OCIGenerativeaiApiKey', 
                'New-OCIGenerativeaiDedicatedAiCluster', 
                'New-OCIGenerativeaiEndpoint', 'New-OCIGenerativeaiImportedModel', 
                'New-OCIGenerativeaiModel', 'New-OCIGenerativeaiPrivateEndpoint', 
+               'Remove-OCIGenerativeaiApiKey', 
                'Remove-OCIGenerativeaiDedicatedAiCluster', 
                'Remove-OCIGenerativeaiEndpoint', 
                'Remove-OCIGenerativeaiImportedModel', 
                'Remove-OCIGenerativeaiModel', 
                'Remove-OCIGenerativeaiPrivateEndpoint', 
+               'Update-OCIGenerativeaiApiKey', 
                'Update-OCIGenerativeaiDedicatedAiCluster', 
                'Update-OCIGenerativeaiEndpoint', 
                'Update-OCIGenerativeaiImportedModel', 

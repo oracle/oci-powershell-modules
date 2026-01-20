@@ -1,7 +1,7 @@
 ------------------- Third & Fourth Party Components --------------------
 
 OCI .NET SDK
-* Copyright (c) 2020, 2021, Oracle and/or its affiliates.
+* Copyright (c) 2020, 2026, Oracle and/or its affiliates.
 * License: The Universal Permissive License (UPL)
          Apache License Version 2.0
 * Source code: https://github.com/oracle/oci-dotnet-sdk
@@ -227,7 +227,7 @@ System.IdentityModel.Tokens.Jwt
 License notice for OCI Dotnet SDK
 ------------------------------
 
-Copyright (c) 2020, 2021, Oracle and/or its affiliates.
+Copyright (c) 2020, 2026, Oracle and/or its affiliates.
 
 This software is licensed under your choice of the Universal Permissive License (UPL), Version 1.0 or the Apache 2.0 license.
 
