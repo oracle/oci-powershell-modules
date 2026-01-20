@@ -33,6 +33,9 @@ namespace Oci.IotService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter resources whose lifecycleState matches the specified value.")]
         public System.Nullable<Oci.IotService.Models.IotDomainGroup.LifecycleStateEnum> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.")]
+        public System.Nullable<Oci.IotService.Models.IotDomainGroup.TypeEnum> Type { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -64,6 +67,7 @@ namespace Oci.IotService.Cmdlets
                     Id = Id,
                     DisplayName = DisplayName,
                     LifecycleState = LifecycleState,
+                    Type = Type,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,

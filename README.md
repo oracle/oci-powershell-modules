@@ -134,7 +134,7 @@ Please consult the [security guide](./SECURITY.md) for our responsible security 
 
 ## License
 
-Copyright (c) 2020, 2023, Oracle and/or its affiliates. All rights reserved. This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0; third-party content is separately licensed as described in the code.
+Copyright (c) 2020, 2026, Oracle and/or its affiliates. All rights reserved. This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0; third-party content is separately licensed as described in the code.
 
 See [LICENSE](https://github.com/oracle/oci-powershell-modules/blob/master/License.txt) for more details.
 
