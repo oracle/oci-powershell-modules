@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '121.0.0'
+ModuleVersion = '121.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '121.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '121.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -165,7 +165,9 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Get-OCIDatabaseConsoleHistoryContent', 
                'Get-OCIDatabaseContainerDatabasePatchesList', 
                'Get-OCIDatabaseDataGuardAssociation', 
-               'Get-OCIDatabaseDataGuardAssociationsList', 'Get-OCIDatabaseDbHome', 
+               'Get-OCIDatabaseDataGuardAssociationsList', 
+               'Get-OCIDatabaseDbConnectionBundle', 
+               'Get-OCIDatabaseDbConnectionBundlesList', 'Get-OCIDatabaseDbHome', 
                'Get-OCIDatabaseDbHomePatch', 'Get-OCIDatabaseDbHomePatchesList', 
                'Get-OCIDatabaseDbHomePatchHistoryEntriesList', 
                'Get-OCIDatabaseDbHomePatchHistoryEntry', 
@@ -252,6 +254,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Get-OCIDatabaseVmClusterUpdateHistoryEntriesList', 
                'Get-OCIDatabaseVmClusterUpdateHistoryEntry', 
                'Get-OCIDatabaseVmClusterUpdatesList', 
+               'Import-OCIDatabaseTransportableTablespace', 
                'Invoke-OCIDatabaseAutonomousDatabaseManualRefresh', 
                'Invoke-OCIDatabaseCascadingDeleteSchedulingPlan', 
                'Invoke-OCIDatabaseCheckExternalDatabaseConnectorConnectionStatus', 
@@ -266,6 +269,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Invoke-OCIDatabaseConvertToRegularPluggableDatabase', 
                'Invoke-OCIDatabaseConvertToStandalone', 
                'Invoke-OCIDatabaseDbNodeAction', 
+               'Invoke-OCIDatabaseDownloadDbConnectionBundle', 
                'Invoke-OCIDatabaseDownloadExadataInfrastructureConfigFile', 
                'Invoke-OCIDatabaseDownloadOneoffPatch', 
                'Invoke-OCIDatabaseDownloadValidationReport', 
@@ -304,6 +308,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Invoke-OCIDatabaseRotatePluggableDatabaseEncryptionKey', 
                'Invoke-OCIDatabaseRotateSslCerts', 
                'Invoke-OCIDatabaseRotateVaultKey', 
+               'Invoke-OCIDatabaseRunDataPatch', 
                'Invoke-OCIDatabaseSaasAdminUserStatus', 
                'Invoke-OCIDatabaseScanExternalContainerDatabasePluggableDatabases', 
                'Invoke-OCIDatabaseSetDbKeyVersion', 
@@ -318,6 +323,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Invoke-OCIDatabaseTerminateAutonomousExadataInfrastructure', 
                'Invoke-OCIDatabaseTerminateDbSystem', 
                'Invoke-OCIDatabaseUnmountDbnodeSnapshot', 
+               'Invoke-OCIDatabaseUnregisterCloudAutonomousVmClusterPkcs', 
                'Invoke-OCIDatabaseUnregisterCloudVmClusterPkcs', 
                'Invoke-OCIDatabaseUpgradeDatabase', 
                'Invoke-OCIDatabaseUpgradeDbSystem', 
@@ -387,6 +393,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'New-OCIDatabaseSchedulingWindow', 'New-OCIDatabaseSoftwareImage', 
                'New-OCIDatabaseVmCluster', 'New-OCIDatabaseVmClusterNetwork', 
                'Register-OCIDatabaseAutonomousDatabaseDataSafe', 
+               'Register-OCIDatabaseCloudAutonomousVmClusterPkcs', 
                'Register-OCIDatabaseCloudVmClusterPkcs', 'Remove-OCIDatabase', 
                'Remove-OCIDatabaseApplicationVip', 
                'Remove-OCIDatabaseAutonomousDatabase', 
