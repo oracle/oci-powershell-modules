@@ -41,6 +41,9 @@ If the parameter is set to 0, the request is using the short-polling mode and im
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional parameter to filter the channels.")]
         public string ChannelFilter { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional parameter to specify a consumer group.")]
+        public string ConsumerGroupId { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -55,7 +58,8 @@ If the parameter is set to 0, the request is using the short-polling mode and im
                     TimeoutInSeconds = TimeoutInSeconds,
                     Limit = Limit,
                     OpcRequestId = OpcRequestId,
-                    ChannelFilter = ChannelFilter
+                    ChannelFilter = ChannelFilter,
+                    ConsumerGroupId = ConsumerGroupId
                 };
 
                 response = client.GetMessages(request).GetAwaiter().GetResult();

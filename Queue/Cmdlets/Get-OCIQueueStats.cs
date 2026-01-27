@@ -28,6 +28,9 @@ namespace Oci.QueueService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Id to specify channel.")]
         public string ChannelId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional parameter to specify a consumer group.")]
+        public string ConsumerGroupId { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -39,7 +42,8 @@ namespace Oci.QueueService.Cmdlets
                 {
                     QueueId = QueueId,
                     OpcRequestId = OpcRequestId,
-                    ChannelId = ChannelId
+                    ChannelId = ChannelId,
+                    ConsumerGroupId = ConsumerGroupId
                 };
 
                 response = client.GetStats(request).GetAwaiter().GetResult();

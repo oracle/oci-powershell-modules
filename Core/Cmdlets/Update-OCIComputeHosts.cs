@@ -16,9 +16,9 @@ using Oci.Common.Waiters;
 
 namespace Oci.CoreService.Cmdlets
 {
-    [Cmdlet("Update", "OCIComputeHost", DefaultParameterSetName = Default)]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.CoreService.Responses.UpdateComputeHostResponse) })]
-    public class UpdateOCIComputeHost : OCIComputeCmdlet
+    [Cmdlet("Update", "OCIComputeHosts", DefaultParameterSetName = Default)]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.CoreService.Responses.UpdateComputeHostsResponse) })]
+    public class UpdateOCIComputeHosts : OCIComputeCmdlet
     {
         
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host.", ParameterSetName = StatusParamSet)]
@@ -28,7 +28,7 @@ namespace Oci.CoreService.Cmdlets
         
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Update compute capacity topology details.", ParameterSetName = StatusParamSet)]
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Update compute capacity topology details.", ParameterSetName = Default)]
-        public UpdateComputeHostDetails UpdateComputeHostDetails { get; set; }
+        public UpdateComputeHostsDetails UpdateComputeHostsDetails { get; set; }
 
         
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.", ParameterSetName = StatusParamSet)]
@@ -57,14 +57,14 @@ namespace Oci.CoreService.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            UpdateComputeHostRequest request;
+            UpdateComputeHostsRequest request;
 
             try
             {
-                request = new UpdateComputeHostRequest
+                request = new UpdateComputeHostsRequest
                 {
                     ComputeHostId = ComputeHostId,
-                    UpdateComputeHostDetails = UpdateComputeHostDetails,
+                    UpdateComputeHostsDetails = UpdateComputeHostsDetails,
                     IfMatch = IfMatch,
                     OpcRequestId = OpcRequestId,
                     OpcRetryToken = OpcRetryToken
@@ -89,7 +89,7 @@ namespace Oci.CoreService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
-        private void HandleOutput(UpdateComputeHostRequest request)
+        private void HandleOutput(UpdateComputeHostsRequest request)
         {
             var waiterConfig = new WaiterConfiguration
             {
@@ -100,17 +100,17 @@ namespace Oci.CoreService.Cmdlets
             switch (ParameterSetName)
             { 
                 case StatusParamSet:
-                    response = client.Waiters.ForUpdateComputeHost(request, waiterConfig, WaitForStatus).Execute();
+                    response = client.Waiters.ForUpdateComputeHosts(request, waiterConfig, WaitForStatus).Execute();
                     break;
 
                 case Default:
-                    response = client.UpdateComputeHost(request).GetAwaiter().GetResult();
+                    response = client.UpdateComputeHosts(request).GetAwaiter().GetResult();
                     break;
             }
             WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
         }
 
-        private UpdateComputeHostResponse response;
+        private UpdateComputeHostsResponse response;
         private const string StatusParamSet = "StatusParamSet";
         private const string Default = "Default";
     }
