@@ -25,6 +25,9 @@ namespace Oci.QueueService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the messages to delete.")]
         public DeleteMessagesDetails DeleteMessagesDetails { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional parameter to specify a consumer group.")]
+        public string ConsumerGroupId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -39,6 +42,7 @@ namespace Oci.QueueService.Cmdlets
                 {
                     QueueId = QueueId,
                     DeleteMessagesDetails = DeleteMessagesDetails,
+                    ConsumerGroupId = ConsumerGroupId,
                     OpcRequestId = OpcRequestId
                 };
 

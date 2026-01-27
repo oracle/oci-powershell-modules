@@ -28,6 +28,9 @@ namespace Oci.QueueService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional parameter to specify a consumer group.")]
+        public string ConsumerGroupId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "Ignore confirmation and force the Cmdlet to complete action.")]
         public SwitchParameter Force { get; set; }
 
@@ -48,7 +51,8 @@ namespace Oci.QueueService.Cmdlets
                 {
                     QueueId = QueueId,
                     MessageReceipt = MessageReceipt,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    ConsumerGroupId = ConsumerGroupId
                 };
 
                 response = client.DeleteMessage(request).GetAwaiter().GetResult();
