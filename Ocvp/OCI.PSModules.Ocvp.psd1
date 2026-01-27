@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Ocvp.dll'
 
 # Version number of this module.
-ModuleVersion = '121.1.0'
+ModuleVersion = '122.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '121.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '122.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Ocvp.dll'
@@ -78,7 +78,9 @@ CmdletsToExport = 'Add-OCIOcvpBlockVolumeToDatastore',
                'Get-OCIOcvpCluster', 'Get-OCIOcvpClustersList', 
                'Get-OCIOcvpDatastore', 'Get-OCIOcvpDatastoreCluster', 
                'Get-OCIOcvpDatastoreClustersList', 'Get-OCIOcvpDatastoresList', 
-               'Get-OCIOcvpEsxiHost', 'Get-OCIOcvpEsxiHostsList', 'Get-OCIOcvpSddc', 
+               'Get-OCIOcvpEsxiHost', 'Get-OCIOcvpEsxiHostsList', 
+               'Get-OCIOcvpManagementAppliance', 
+               'Get-OCIOcvpManagementAppliancesList', 'Get-OCIOcvpSddc', 
                'Get-OCIOcvpSddcsList', 'Get-OCIOcvpSupportedCommitmentsList', 
                'Get-OCIOcvpSupportedHostShapesList', 
                'Get-OCIOcvpSupportedVmwareSoftwareVersionsList', 
@@ -94,13 +96,15 @@ CmdletsToExport = 'Add-OCIOcvpBlockVolumeToDatastore',
                'Move-OCIOcvpDatastoreCompartment', 'Move-OCIOcvpSddcCompartment', 
                'New-OCIOcvpCluster', 'New-OCIOcvpDatastore', 
                'New-OCIOcvpDatastoreCluster', 'New-OCIOcvpEsxiHost', 
-               'New-OCIOcvpSddc', 'Remove-OCIOcvpCluster', 'Remove-OCIOcvpDatastore', 
+               'New-OCIOcvpManagementAppliance', 'New-OCIOcvpSddc', 
+               'Remove-OCIOcvpCluster', 'Remove-OCIOcvpDatastore', 
                'Remove-OCIOcvpDatastoreCluster', 
                'Remove-OCIOcvpDatastoreFromDatastoreCluster', 
-               'Remove-OCIOcvpEsxiHost', 'Remove-OCIOcvpSddc', 
-               'Stop-OCIOcvpDowngradeHcx', 'Update-OCIOcvpCluster', 
-               'Update-OCIOcvpDatastore', 'Update-OCIOcvpDatastoreCluster', 
-               'Update-OCIOcvpEsxiHost', 'Update-OCIOcvpSddc'
+               'Remove-OCIOcvpEsxiHost', 'Remove-OCIOcvpManagementAppliance', 
+               'Remove-OCIOcvpSddc', 'Stop-OCIOcvpDowngradeHcx', 
+               'Update-OCIOcvpCluster', 'Update-OCIOcvpDatastore', 
+               'Update-OCIOcvpDatastoreCluster', 'Update-OCIOcvpEsxiHost', 
+               'Update-OCIOcvpManagementAppliance', 'Update-OCIOcvpSddc'
 
 # Variables to export from this module
 VariablesToExport = '*'

@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Queue.dll'
 
 # Version number of this module.
-ModuleVersion = '121.1.0'
+ModuleVersion = '122.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '121.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '122.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Queue.dll'
@@ -71,15 +71,17 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Queue.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIQueue', 'Get-OCIQueueChannelsList', 'Get-OCIQueueMessages', 
-               'Get-OCIQueuesList', 'Get-OCIQueueStats', 'Get-OCIQueueWorkRequest', 
-               'Get-OCIQueueWorkRequestErrorsList', 
+CmdletsToExport = 'Get-OCIQueue', 'Get-OCIQueueChannelsList', 
+               'Get-OCIQueueConsumerGroup', 'Get-OCIQueueConsumerGroupsList', 
+               'Get-OCIQueueMessages', 'Get-OCIQueuesList', 'Get-OCIQueueStats', 
+               'Get-OCIQueueWorkRequest', 'Get-OCIQueueWorkRequestErrorsList', 
                'Get-OCIQueueWorkRequestLogsList', 'Get-OCIQueueWorkRequestsList', 
                'Invoke-OCIQueuePurgeQueue', 'Move-OCIQueueCompartment', 
-               'New-OCIQueue', 'Remove-OCIQueue', 'Remove-OCIQueueMessage', 
+               'New-OCIQueue', 'New-OCIQueueConsumerGroup', 'Remove-OCIQueue', 
+               'Remove-OCIQueueConsumerGroup', 'Remove-OCIQueueMessage', 
                'Remove-OCIQueueMessages', 'Update-OCIQueue', 
-               'Update-OCIQueueMessage', 'Update-OCIQueueMessages', 
-               'Write-OCIQueueMessages'
+               'Update-OCIQueueConsumerGroup', 'Update-OCIQueueMessage', 
+               'Update-OCIQueueMessages', 'Write-OCIQueueMessages'
 
 # Variables to export from this module
 VariablesToExport = '*'

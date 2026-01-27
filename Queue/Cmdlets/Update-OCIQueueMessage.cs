@@ -31,6 +31,9 @@ namespace Oci.QueueService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional parameter to specify a consumer group.")]
+        public string ConsumerGroupId { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -43,7 +46,8 @@ namespace Oci.QueueService.Cmdlets
                     QueueId = QueueId,
                     MessageReceipt = MessageReceipt,
                     UpdateMessageDetails = UpdateMessageDetails,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    ConsumerGroupId = ConsumerGroupId
                 };
 
                 response = client.UpdateMessage(request).GetAwaiter().GetResult();
