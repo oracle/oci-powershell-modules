@@ -21,11 +21,14 @@ namespace Oci.LoganalyticsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.LoganalyticsService.Models.LogAnalyticsAssociationCollection), typeof(Oci.LoganalyticsService.Responses.ListEntitySourceAssociationsResponse) })]
     public class GetOCILoganalyticsEntitySourceAssociationsList : OCILogAnalyticsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics namespace used for the request.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'")]
         public string NamespaceName { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The source name.")]
+        public string SourceName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The entity OCID.")]
         public string EntityId { get; set; }
@@ -71,6 +74,7 @@ namespace Oci.LoganalyticsService.Cmdlets
                 {
                     NamespaceName = NamespaceName,
                     CompartmentId = CompartmentId,
+                    SourceName = SourceName,
                     EntityId = EntityId,
                     EntityType = EntityType,
                     EntityTypeDisplayName = EntityTypeDisplayName,

@@ -21,7 +21,7 @@ namespace Oci.LoganalyticsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.LoganalyticsService.Models.LogAnalyticsResourceCategoryCollection), typeof(Oci.LoganalyticsService.Responses.ListResourceCategoriesResponse) })]
     public class GetOCILoganalyticsResourceCategoriesList : OCILogAnalyticsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics namespace used for the request.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'")]
         public string NamespaceName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A comma-separated list of categories used for filtering")]

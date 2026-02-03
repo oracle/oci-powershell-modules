@@ -265,7 +265,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Generativeaii
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Capacitymanagement", "Capacitymanagement\OCI.PSModules.Capacitymanagement.csproj", "{A21EDE73-396F-47B6-85C7-E1284399B2BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Globallydistributeddatabase", "Globallydistributeddatabase\OCI.PSModules.Globallydistributeddatabase.csproj", "{4667EAF5-40A4-469F-A92E-C1C64406DA02}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Desktops", "Desktops\OCI.PSModules.Desktops.csproj", "{7F3DBBC7-559C-43D5-99D5-F65575C7B007}"
 EndProject
@@ -1924,18 +1923,6 @@ Global
         {A21EDE73-396F-47B6-85C7-E1284399B2BE}.Release|x64.Build.0 = Release|Any CPU
         {A21EDE73-396F-47B6-85C7-E1284399B2BE}.Release|x86.ActiveCfg = Release|Any CPU
         {A21EDE73-396F-47B6-85C7-E1284399B2BE}.Release|x86.Build.0 = Release|Any CPU
-        {4667EAF5-40A4-469F-A92E-C1C64406DA02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-        {4667EAF5-40A4-469F-A92E-C1C64406DA02}.Debug|Any CPU.Build.0 = Debug|Any CPU
-        {4667EAF5-40A4-469F-A92E-C1C64406DA02}.Debug|x64.ActiveCfg = Debug|Any CPU
-        {4667EAF5-40A4-469F-A92E-C1C64406DA02}.Debug|x64.Build.0 = Debug|Any CPU
-        {4667EAF5-40A4-469F-A92E-C1C64406DA02}.Debug|x86.ActiveCfg = Debug|Any CPU
-        {4667EAF5-40A4-469F-A92E-C1C64406DA02}.Debug|x86.Build.0 = Debug|Any CPU
-        {4667EAF5-40A4-469F-A92E-C1C64406DA02}.Release|Any CPU.ActiveCfg = Release|Any CPU
-        {4667EAF5-40A4-469F-A92E-C1C64406DA02}.Release|Any CPU.Build.0 = Release|Any CPU
-        {4667EAF5-40A4-469F-A92E-C1C64406DA02}.Release|x64.ActiveCfg = Release|Any CPU
-        {4667EAF5-40A4-469F-A92E-C1C64406DA02}.Release|x64.Build.0 = Release|Any CPU
-        {4667EAF5-40A4-469F-A92E-C1C64406DA02}.Release|x86.ActiveCfg = Release|Any CPU
-        {4667EAF5-40A4-469F-A92E-C1C64406DA02}.Release|x86.Build.0 = Release|Any CPU
         {7F3DBBC7-559C-43D5-99D5-F65575C7B007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
         {7F3DBBC7-559C-43D5-99D5-F65575C7B007}.Debug|Any CPU.Build.0 = Debug|Any CPU
         {7F3DBBC7-559C-43D5-99D5-F65575C7B007}.Debug|x64.ActiveCfg = Debug|Any CPU

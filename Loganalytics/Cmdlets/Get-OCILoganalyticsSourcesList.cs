@@ -21,7 +21,7 @@ namespace Oci.LoganalyticsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.LoganalyticsService.Models.LogAnalyticsSourceCollection), typeof(Oci.LoganalyticsService.Responses.ListSourcesResponse) })]
     public class GetOCILoganalyticsSourcesList : OCILogAnalyticsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics namespace used for the request.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'")]
         public string NamespaceName { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
@@ -35,6 +35,9 @@ namespace Oci.LoganalyticsService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The system value used for filtering.  Only items with the specified system value will be returned.  Valid values are built in, custom (for user defined items), or all (for all items, regardless of system value).")]
         public System.Nullable<Oci.LoganalyticsService.Requests.ListSourcesRequest.IsSystemEnum> IsSystem { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The source lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.")]
+        public System.Nullable<Oci.LoganalyticsService.Requests.ListSourcesRequest.LifecycleStateEnum> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"An auto-associate flag used for filtering.  Only sources which are marked for automatic association will be returned.")]
         public System.Nullable<bool> IsAutoAssociated { get; set; }
@@ -86,6 +89,7 @@ namespace Oci.LoganalyticsService.Cmdlets
                     EntityType = EntityType,
                     SourceDisplayText = SourceDisplayText,
                     IsSystem = IsSystem,
+                    LifecycleState = LifecycleState,
                     IsAutoAssociated = IsAutoAssociated,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
