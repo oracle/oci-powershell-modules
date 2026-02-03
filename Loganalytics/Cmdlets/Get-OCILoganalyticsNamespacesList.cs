@@ -25,6 +25,9 @@ namespace Oci.LoganalyticsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"if true, the request is from compartment delete service.")]
+        public System.Nullable<bool> IsCompartmentDelete { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -35,7 +38,8 @@ namespace Oci.LoganalyticsService.Cmdlets
                 request = new ListNamespacesRequest
                 {
                     CompartmentId = CompartmentId,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    IsCompartmentDelete = IsCompartmentDelete
                 };
 
                 response = client.ListNamespaces(request).GetAwaiter().GetResult();

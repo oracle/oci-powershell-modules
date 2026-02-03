@@ -21,7 +21,7 @@ namespace Oci.LoganalyticsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.LoganalyticsService.Models.LogAnalyticsParserCollection), typeof(Oci.LoganalyticsService.Responses.ListParsersResponse) })]
     public class GetOCILoganalyticsParsersList : OCILogAnalyticsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics namespace used for the request.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'")]
         public string NamespaceName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A flag indicating how to handle filtering when multiple filter criteria are specified. A value of true will always result in the most expansive list of items being returned. For example, if two field lists are supplies as filter criteria, a value of true will result in any item matching a field in either list being returned, while a value of false will result in a list of items which only have fields contained in both input lists.")]

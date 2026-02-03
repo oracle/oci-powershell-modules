@@ -42,6 +42,9 @@ namespace Oci.ManagementdashboardService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is the default.")]
         public System.Nullable<Oci.ManagementdashboardService.Requests.ListManagementDashboardsRequest.SortByEnum> SortBy { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This parameter applies only when compartmentId is root compartment. When set to true, all accessible resources will be returned. Default is false.")]
+        public string CompartmentIdInSubtree { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -60,7 +63,8 @@ namespace Oci.ManagementdashboardService.Cmdlets
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,
-                    SortBy = SortBy
+                    SortBy = SortBy,
+                    CompartmentIdInSubtree = CompartmentIdInSubtree
                 };
                 IEnumerable<ListManagementDashboardsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

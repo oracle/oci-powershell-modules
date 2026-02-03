@@ -21,13 +21,13 @@ namespace Oci.LoganalyticsService.Cmdlets
     public class GetOCILoganalyticsEmBridge : OCILogAnalyticsCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics namespace used for the request.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics namespace used for the request.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'", ParameterSetName = Default)]
         public string NamespaceName { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The log analytics enterprise manager bridge OCID.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The log analytics enterprise manager bridge OCID.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The log analytics enterprise manager bridge OCID. Bridge ID can be obtained by running 'oci log-analytics em-bridge list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the bridge ID.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The log analytics enterprise manager bridge OCID. Bridge ID can be obtained by running 'oci log-analytics em-bridge list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the bridge ID.", ParameterSetName = Default)]
         public string LogAnalyticsEmBridgeId { get; set; }
 
         

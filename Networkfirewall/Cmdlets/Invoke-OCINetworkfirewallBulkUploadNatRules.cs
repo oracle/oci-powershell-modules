@@ -22,10 +22,10 @@ namespace Oci.NetworkfirewallService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Network Firewall Policy identifier")]
         public string NetworkFirewallPolicyId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request Details to create the NAT Rule for the Network Firewall Policy Resource.", ParameterSetName = FromStreamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request details to create the NAT rule for the Network Firewall policy resource.", ParameterSetName = FromStreamSet)]
         public System.IO.Stream BulkUploadNatRulesDetails { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Use this parameter to provide the file location from where the input stream to be read. Request Details to create the NAT Rule for the Network Firewall Policy Resource.", ParameterSetName = FromFileSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Use this parameter to provide the file location from where the input stream to be read. Request details to create the NAT rule for the Network Firewall policy resource.", ParameterSetName = FromFileSet)]
         public String BulkUploadNatRulesDetailsFromFile { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]

@@ -22,7 +22,7 @@ namespace Oci.NetworkfirewallService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Network Firewall Policy identifier")]
         public string NetworkFirewallPolicyId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for NAT Rules in the network firewall policy.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for NAT rules in the Network Firewall policy.")]
         public string NatRuleName { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtype <Oci.NetworkfirewallService.Models.UpdateNatV4RuleDetails> of type <Oci.NetworkfirewallService.Models.UpdateNatRuleDetails>.")]
