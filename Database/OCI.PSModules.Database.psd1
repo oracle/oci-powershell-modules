@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '122.0.0'
+ModuleVersion = '123.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '122.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '123.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -106,6 +106,8 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Enable-OCIDatabaseExternalPluggableDatabaseStackMonitoring', 
                'Enable-OCIDatabaseManagement', 
                'Enable-OCIDatabasePluggableDatabaseManagement', 'Get-OCIDatabase', 
+               'Get-OCIDatabaseAdvancedClusterFileSystem', 
+               'Get-OCIDatabaseAdvancedClusterFileSystemsList', 
                'Get-OCIDatabaseApplicationVip', 
                'Get-OCIDatabaseApplicationVipsList', 
                'Get-OCIDatabaseAutonomousContainerDatabase', 
@@ -286,6 +288,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Invoke-OCIDatabaseMigrateDataGuardAssociationToMultiDataGuards', 
                'Invoke-OCIDatabaseMigrateExadataDbSystemResourceModel', 
                'Invoke-OCIDatabaseMigrateVaultKey', 
+               'Invoke-OCIDatabaseMountAdvancedClusterFileSystem', 
                'Invoke-OCIDatabaseMountDbnodeSnapshot', 
                'Invoke-OCIDatabaseRefreshDataGuardHealthStatus', 
                'Invoke-OCIDatabaseRefreshPluggableDatabase', 
@@ -322,6 +325,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Invoke-OCIDatabaseTerminateAutonomousContainerDatabase', 
                'Invoke-OCIDatabaseTerminateAutonomousExadataInfrastructure', 
                'Invoke-OCIDatabaseTerminateDbSystem', 
+               'Invoke-OCIDatabaseUnmountAdvancedClusterFileSystem', 
                'Invoke-OCIDatabaseUnmountDbnodeSnapshot', 
                'Invoke-OCIDatabaseUnregisterCloudAutonomousVmClusterPkcs', 
                'Invoke-OCIDatabaseUnregisterCloudVmClusterPkcs', 
@@ -361,6 +365,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Move-OCIDatabaseSchedulingPolicyCompartment', 
                'Move-OCIDatabaseSoftwareImageCompartment', 
                'Move-OCIDatabaseVmClusterCompartment', 'New-OCIDatabase', 
+               'New-OCIDatabaseAdvancedClusterFileSystem', 
                'New-OCIDatabaseApplicationVip', 
                'New-OCIDatabaseAutonomousContainerDatabase', 
                'New-OCIDatabaseAutonomousContainerDatabaseDataguardAssociation', 
@@ -395,6 +400,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Register-OCIDatabaseAutonomousDatabaseDataSafe', 
                'Register-OCIDatabaseCloudAutonomousVmClusterPkcs', 
                'Register-OCIDatabaseCloudVmClusterPkcs', 'Remove-OCIDatabase', 
+               'Remove-OCIDatabaseAdvancedClusterFileSystem', 
                'Remove-OCIDatabaseApplicationVip', 
                'Remove-OCIDatabaseAutonomousDatabase', 
                'Remove-OCIDatabaseAutonomousDatabaseBackup', 
@@ -437,7 +443,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Stop-OCIDatabaseExecutionWindow', 
                'Stop-OCIDatabasePluggableDatabase', 
                'Unregister-OCIDatabaseAutonomousDatabaseDataSafe', 
-               'Update-OCIDatabase', 
+               'Update-OCIDatabase', 'Update-OCIDatabaseAdvancedClusterFileSystem', 
                'Update-OCIDatabaseAutonomousContainerDatabase', 
                'Update-OCIDatabaseAutonomousContainerDatabaseDataguardAssociation', 
                'Update-OCIDatabaseAutonomousDatabase', 

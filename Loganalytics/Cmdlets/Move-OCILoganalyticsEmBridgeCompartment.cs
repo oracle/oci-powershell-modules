@@ -19,10 +19,10 @@ namespace Oci.LoganalyticsService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.LoganalyticsService.Responses.ChangeLogAnalyticsEmBridgeCompartmentResponse) })]
     public class MoveOCILoganalyticsEmBridgeCompartment : OCILogAnalyticsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics namespace used for the request.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'")]
         public string NamespaceName { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The log analytics enterprise manager bridge OCID.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The log analytics enterprise manager bridge OCID. Bridge ID can be obtained by running 'oci log-analytics em-bridge list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the bridge ID.")]
         public string LogAnalyticsEmBridgeId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Log analytics enterprise manager bridge compartment Id to be updated.")]

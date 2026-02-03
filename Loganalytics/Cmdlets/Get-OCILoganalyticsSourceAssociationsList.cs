@@ -21,7 +21,7 @@ namespace Oci.LoganalyticsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.LoganalyticsService.Models.LogAnalyticsAssociationCollection), typeof(Oci.LoganalyticsService.Responses.ListSourceAssociationsResponse) })]
     public class GetOCILoganalyticsSourceAssociationsList : OCILogAnalyticsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Logging Analytics namespace used for the request.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'")]
         public string NamespaceName { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The souce name used for filtering associations.")]
@@ -32,6 +32,9 @@ namespace Oci.LoganalyticsService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The entity OCID.")]
         public string EntityId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The entity name used for filtering.")]
+        public string EntityName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The life cycle state used for filtering.  Only associations with the specified life cycle state will be returned.")]
         public System.Nullable<Oci.LoganalyticsService.Requests.ListSourceAssociationsRequest.LifeCycleStateEnum> LifeCycleState { get; set; }
@@ -70,6 +73,7 @@ namespace Oci.LoganalyticsService.Cmdlets
                     SourceName = SourceName,
                     CompartmentId = CompartmentId,
                     EntityId = EntityId,
+                    EntityName = EntityName,
                     LifeCycleState = LifeCycleState,
                     IsShowTotal = IsShowTotal,
                     OpcRequestId = OpcRequestId,

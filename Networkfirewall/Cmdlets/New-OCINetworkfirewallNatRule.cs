@@ -22,7 +22,7 @@ namespace Oci.NetworkfirewallService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Network Firewall Policy identifier")]
         public string NetworkFirewallPolicyId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request Details to create NAT rule under a Network Firewall Policy Resource. This parameter also accepts subtype <Oci.NetworkfirewallService.Models.CreateNatV4RuleDetails> of type <Oci.NetworkfirewallService.Models.CreateNatRuleDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request details used to create NAT rule under a Network Firewall policy resource. This parameter also accepts subtype <Oci.NetworkfirewallService.Models.CreateNatV4RuleDetails> of type <Oci.NetworkfirewallService.Models.CreateNatRuleDetails>.")]
         public CreateNatRuleDetails CreateNatRuleDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
