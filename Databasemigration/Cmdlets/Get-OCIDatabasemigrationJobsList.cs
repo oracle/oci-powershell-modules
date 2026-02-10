@@ -45,6 +45,9 @@ namespace Oci.DatabasemigrationService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The lifecycle state of the Migration Job.")]
         public System.Nullable<Oci.DatabasemigrationService.Models.JobLifecycleStates> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the Job to exclude from the list of jobs.")]
+        public string JobIdNotEqualTo { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -64,7 +67,8 @@ namespace Oci.DatabasemigrationService.Cmdlets
                     Page = Page,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
-                    LifecycleState = LifecycleState
+                    LifecycleState = LifecycleState,
+                    JobIdNotEqualTo = JobIdNotEqualTo
                 };
                 IEnumerable<ListJobsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

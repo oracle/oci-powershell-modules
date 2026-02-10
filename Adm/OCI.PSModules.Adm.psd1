@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Adm.dll'
 
 # Version number of this module.
-ModuleVersion = '123.0.0'
+ModuleVersion = '123.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '123.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '123.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Adm.dll'
@@ -78,9 +78,10 @@ CmdletsToExport = 'Enable-OCIAdmRemediationRecipe',
                'Get-OCIAdmRemediationRecipe', 'Get-OCIAdmRemediationRecipesList', 
                'Get-OCIAdmRemediationRun', 'Get-OCIAdmRemediationRunsList', 
                'Get-OCIAdmStage', 'Get-OCIAdmStagesList', 
-               'Get-OCIAdmVulnerabilityAudit', 'Get-OCIAdmVulnerabilityAuditsList', 
-               'Get-OCIAdmWorkRequest', 'Get-OCIAdmWorkRequestErrorsList', 
-               'Get-OCIAdmWorkRequestLogsList', 'Get-OCIAdmWorkRequestsList', 
+               'Get-OCIAdmVulnerabilitiesList', 'Get-OCIAdmVulnerabilityAudit', 
+               'Get-OCIAdmVulnerabilityAuditsList', 'Get-OCIAdmWorkRequest', 
+               'Get-OCIAdmWorkRequestErrorsList', 'Get-OCIAdmWorkRequestLogsList', 
+               'Get-OCIAdmWorkRequestsList', 
                'Invoke-OCIAdmDeactivateRemediationRecipe', 
                'Move-OCIAdmKnowledgeBaseCompartment', 
                'Move-OCIAdmRemediationRecipeCompartment', 

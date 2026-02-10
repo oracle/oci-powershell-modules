@@ -30,6 +30,9 @@ namespace Oci.DatabasemigrationService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The array of technology types.")]
         public System.Collections.Generic.List<Oci.DatabasemigrationService.Models.TechnologyType> TechnologyType { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database technology sub-type.")]
+        public string TechnologySubType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The array of connection types.")]
         public System.Collections.Generic.List<Oci.DatabasemigrationService.Models.ConnectionType> ConnectionType { get; set; }
 
@@ -69,6 +72,7 @@ namespace Oci.DatabasemigrationService.Cmdlets
                     CompartmentId = CompartmentId,
                     OpcRequestId = OpcRequestId,
                     TechnologyType = TechnologyType,
+                    TechnologySubType = TechnologySubType,
                     ConnectionType = ConnectionType,
                     SourceConnectionId = SourceConnectionId,
                     DisplayName = DisplayName,

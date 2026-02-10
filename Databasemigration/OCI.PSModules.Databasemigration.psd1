@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Databasemigration.dll'
 
 # Version number of this module.
-ModuleVersion = '123.0.0'
+ModuleVersion = '123.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '123.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '123.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasemigration.dll'
@@ -71,11 +71,24 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasemigration.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Add-OCIDatabasemigrationMigrationObjects', 
+CmdletsToExport = 'Add-OCIDatabasemigrationAssessmentObjects', 
+               'Add-OCIDatabasemigrationMigrationObjects', 
                'Connect-OCIDatabasemigrationionDiagnostics', 
                'Get-OCIDatabasemigrationAdvisorReport', 
+               'Get-OCIDatabasemigrationAdvisorReportCheckObjectsList', 
+               'Get-OCIDatabasemigrationAdvisorReportChecksList', 
+               'Get-OCIDatabasemigrationAffectedObjectsList', 
+               'Get-OCIDatabasemigrationAssessment', 
+               'Get-OCIDatabasemigrationAssessmentObjectsList', 
+               'Get-OCIDatabasemigrationAssessmentObjectTypesList', 
+               'Get-OCIDatabasemigrationAssessmentsList', 
+               'Get-OCIDatabasemigrationAssessor', 
+               'Get-OCIDatabasemigrationAssessorCheck', 
+               'Get-OCIDatabasemigrationAssessorChecksList', 
+               'Get-OCIDatabasemigrationAssessorsList', 
                'Get-OCIDatabasemigrationConnection', 
                'Get-OCIDatabasemigrationConnectionsList', 
+               'Get-OCIDatabasemigrationDatabaseConnectionTypeList', 
                'Get-OCIDatabasemigrationExcludedObjectsList', 
                'Get-OCIDatabasemigrationJob', 
                'Get-OCIDatabasemigrationJobOutputContent', 
@@ -88,22 +101,31 @@ CmdletsToExport = 'Add-OCIDatabasemigrationMigrationObjects',
                'Get-OCIDatabasemigrationMigrationsList', 
                'Get-OCIDatabasemigrationParameterFileVersion', 
                'Get-OCIDatabasemigrationParameterFileVersionsList', 
+               'Get-OCIDatabasemigrationScript', 
                'Get-OCIDatabasemigrationWorkRequest', 
                'Get-OCIDatabasemigrationWorkRequestErrorsList', 
                'Get-OCIDatabasemigrationWorkRequestLogsList', 
                'Get-OCIDatabasemigrationWorkRequestsList', 
+               'Invoke-OCIDatabasemigrationCloneAssessment', 
                'Invoke-OCIDatabasemigrationCloneMigration', 
                'Invoke-OCIDatabasemigrationCollectTraces', 
                'Invoke-OCIDatabasemigrationEvaluateMigration', 
                'Invoke-OCIDatabasemigrationMakeCurrentParameterFileVersion', 
+               'Invoke-OCIDatabasemigrationPerformAssessorAction', 
+               'Invoke-OCIDatabasemigrationPerformAssessorActionDownloadSql', 
+               'Invoke-OCIDatabasemigrationPerformAssessorCheckAction', 
                'Invoke-OCIDatabasemigrationResumeJob', 
                'Invoke-OCIDatabasemigrationRetrieveSupportedPhases', 
                'Invoke-OCIDatabasemigrationSuspendJob', 
+               'Move-OCIDatabasemigrationAssessmentCompartment', 
                'Move-OCIDatabasemigrationConnectionCompartment', 
                'Move-OCIDatabasemigrationMigrationCompartment', 
+               'New-OCIDatabasemigrationAssessment', 
                'New-OCIDatabasemigrationConnection', 
                'New-OCIDatabasemigrationMigration', 
                'New-OCIDatabasemigrationParameterFileVersion', 
+               'Remove-OCIDatabasemigrationAssessment', 
+               'Remove-OCIDatabasemigrationAssessmentObjects', 
                'Remove-OCIDatabasemigrationConnection', 
                'Remove-OCIDatabasemigrationJob', 
                'Remove-OCIDatabasemigrationMigration', 
@@ -111,6 +133,10 @@ CmdletsToExport = 'Add-OCIDatabasemigrationMigrationObjects',
                'Remove-OCIDatabasemigrationParameterFileVersion', 
                'Start-OCIDatabasemigrationMigration', 
                'Stop-OCIDatabasemigrationJob', 
+               'Update-OCIDatabasemigrationAdvisorReportCheck', 
+               'Update-OCIDatabasemigrationAdvisorReportCheckObjects', 
+               'Update-OCIDatabasemigrationAssessment', 
+               'Update-OCIDatabasemigrationCheckActionUpdateObject', 
                'Update-OCIDatabasemigrationConnection', 
                'Update-OCIDatabasemigrationJob', 
                'Update-OCIDatabasemigrationMigration'
