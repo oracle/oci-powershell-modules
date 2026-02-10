@@ -17,27 +17,15 @@ using Oci.Common.Model;
 
 namespace Oci.DatabasemigrationService.Cmdlets
 {
-    [Cmdlet("Get", "OCIDatabasemigrationConnectionsList")]
-    [OutputType(new System.Type[] { typeof(Oci.DatabasemigrationService.Models.ConnectionCollection), typeof(Oci.DatabasemigrationService.Responses.ListConnectionsResponse) })]
-    public class GetOCIDatabasemigrationConnectionsList : OCIDatabaseMigrationCmdlet
+    [Cmdlet("Get", "OCIDatabasemigrationAssessmentsList")]
+    [OutputType(new System.Type[] { typeof(Oci.DatabasemigrationService.Models.AssessmentCollection), typeof(Oci.DatabasemigrationService.Responses.ListAssessmentsResponse) })]
+    public class GetOCIDatabasemigrationAssessmentsList : OCIDatabaseMigrationCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The array of technology types.")]
-        public System.Collections.Generic.List<Oci.DatabasemigrationService.Models.TechnologyType> TechnologyType { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database technology sub-type.")]
-        public string TechnologySubType { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The array of connection types.")]
-        public System.Collections.Generic.List<Oci.DatabasemigrationService.Models.ConnectionType> ConnectionType { get; set; }
-
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the source database connection.")]
-        public string SourceConnectionId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given.")]
         public string DisplayName { get; set; }
@@ -49,13 +37,16 @@ namespace Oci.DatabasemigrationService.Cmdlets
         public string Page { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.")]
-        public System.Nullable<Oci.DatabasemigrationService.Requests.ListConnectionsRequest.SortByEnum> SortBy { get; set; }
+        public System.Nullable<Oci.DatabasemigrationService.Requests.ListAssessmentsRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'asc' or 'desc'.")]
         public System.Nullable<Oci.DatabasemigrationService.Models.SortOrders> SortOrder { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The current state of the Database Migration Deployment.")]
-        public System.Nullable<Oci.DatabasemigrationService.Models.LifecycleStates> LifecycleState { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The lifecycle state of the Assessment.")]
+        public System.Nullable<Oci.DatabasemigrationService.Models.AssessmentLifecycleStates> LifecycleState { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The lifecycle detailed status of the Migration.")]
+        public System.Nullable<Oci.DatabasemigrationService.Models.MigrationStatus> LifecycleDetails { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
@@ -63,30 +54,27 @@ namespace Oci.DatabasemigrationService.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            ListConnectionsRequest request;
+            ListAssessmentsRequest request;
 
             try
             {
-                request = new ListConnectionsRequest
+                request = new ListAssessmentsRequest
                 {
                     CompartmentId = CompartmentId,
                     OpcRequestId = OpcRequestId,
-                    TechnologyType = TechnologyType,
-                    TechnologySubType = TechnologySubType,
-                    ConnectionType = ConnectionType,
-                    SourceConnectionId = SourceConnectionId,
                     DisplayName = DisplayName,
                     Limit = Limit,
                     Page = Page,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
-                    LifecycleState = LifecycleState
+                    LifecycleState = LifecycleState,
+                    LifecycleDetails = LifecycleDetails
                 };
-                IEnumerable<ListConnectionsResponse> responses = GetRequestDelegate().Invoke(request);
+                IEnumerable<ListAssessmentsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
                 {
                     response = item;
-                    WriteOutput(response, response.ConnectionCollection, true);
+                    WriteOutput(response, response.AssessmentCollection, true);
                 }
                 if(!ParameterSetName.Equals(AllPageSet) && !ParameterSetName.Equals(LimitSet) && response.OpcNextPage != null)
                 {
@@ -112,16 +100,16 @@ namespace Oci.DatabasemigrationService.Cmdlets
 
         private RequestDelegate GetRequestDelegate()
         {
-            IEnumerable<ListConnectionsResponse> DefaultRequest(ListConnectionsRequest request) => Enumerable.Repeat(client.ListConnections(request).GetAwaiter().GetResult(), 1);
+            IEnumerable<ListAssessmentsResponse> DefaultRequest(ListAssessmentsRequest request) => Enumerable.Repeat(client.ListAssessments(request).GetAwaiter().GetResult(), 1);
             if (ParameterSetName.Equals(AllPageSet))
             {
-                return req => client.Paginators.ListConnectionsResponseEnumerator(req);
+                return req => client.Paginators.ListAssessmentsResponseEnumerator(req);
             }
             return DefaultRequest;
         }
 
-        private ListConnectionsResponse response;
-        private delegate IEnumerable<ListConnectionsResponse> RequestDelegate(ListConnectionsRequest request);
+        private ListAssessmentsResponse response;
+        private delegate IEnumerable<ListAssessmentsResponse> RequestDelegate(ListAssessmentsRequest request);
         private const string AllPageSet = "AllPages";
         private const string LimitSet = "Limit";
     }
