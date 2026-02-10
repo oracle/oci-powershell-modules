@@ -31,6 +31,9 @@ namespace Oci.DatabasemigrationService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
         public string OpcRetryToken { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"When true, run assessment validation checks (e.g., DMSROLE) and include database information (name/version/size) in the response.")]
+        public System.Nullable<bool> IsAssessmentValidation { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -43,7 +46,8 @@ namespace Oci.DatabasemigrationService.Cmdlets
                     ConnectionId = ConnectionId,
                     IfMatch = IfMatch,
                     OpcRequestId = OpcRequestId,
-                    OpcRetryToken = OpcRetryToken
+                    OpcRetryToken = OpcRetryToken,
+                    IsAssessmentValidation = IsAssessmentValidation
                 };
 
                 response = client.ConnectionDiagnostics(request).GetAwaiter().GetResult();

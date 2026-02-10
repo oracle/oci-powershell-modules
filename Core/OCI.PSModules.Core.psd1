@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Core.dll'
 
 # Version number of this module.
-ModuleVersion = '123.0.0'
+ModuleVersion = '123.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '123.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '123.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Core.dll'
@@ -292,7 +292,15 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Invoke-OCIComputeTerminateInstance', 
                'Invoke-OCIVirtualNetworkAdvertiseByoipRange', 
                'Invoke-OCIVirtualNetworkBulkAddVirtualCircuitPublicPrefixes', 
+               'Invoke-OCIVirtualNetworkBulkCreateIpv6s', 
+               'Invoke-OCIVirtualNetworkBulkCreatePrivateIps', 
+               'Invoke-OCIVirtualNetworkBulkDeleteIpv6s', 
+               'Invoke-OCIVirtualNetworkBulkDeletePrivateIps', 
                'Invoke-OCIVirtualNetworkBulkDeleteVirtualCircuitPublicPrefixes', 
+               'Invoke-OCIVirtualNetworkBulkDetachIpv6s', 
+               'Invoke-OCIVirtualNetworkBulkDetachPrivateIps', 
+               'Invoke-OCIVirtualNetworkBulkUpdateIpv6s', 
+               'Invoke-OCIVirtualNetworkBulkUpdatePrivateIps', 
                'Invoke-OCIVirtualNetworkIpv6VnicDetach', 
                'Invoke-OCIVirtualNetworkPrivateIpVnicDetach', 
                'Invoke-OCIVirtualNetworkSetOriginAsn', 
