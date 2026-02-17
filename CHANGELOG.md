@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 123.2.0 - 2026-02-17
+### Added 
+- Support for customer-controlled public IP decommissioning in the Kubernetes Engine service 
+- Support for managing declarative auto-scaling of GPU cluster size in the Compute service 
+- Support for advanced Database Management ExaDB-D/ExaDB-C@C Storage Monitoring in the Oracle Exadata Database service 
+- Support for listing maintenance events and configuring maintenance-disabled windows in the MySQL HeatWave service
+
 ## 123.1.0 - 2026-02-10
 ### Added 
 - Support for assessments in the Database Migration Service 

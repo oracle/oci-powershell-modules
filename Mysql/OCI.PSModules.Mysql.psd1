@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Mysql.dll'
 
 # Version number of this module.
-ModuleVersion = '123.1.0'
+ModuleVersion = '123.2.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '123.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '123.2.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Mysql.dll'
@@ -77,7 +77,8 @@ CmdletsToExport = 'Add-OCIMysqlHeatWaveCluster', 'Confirm-OCIMysqlBackup',
                'Get-OCIMysqlChannelsList', 'Get-OCIMysqlConfiguration', 
                'Get-OCIMysqlConfigurationsList', 'Get-OCIMysqlDbSystem', 
                'Get-OCIMysqlDbSystemsList', 'Get-OCIMysqlHeatWaveCluster', 
-               'Get-OCIMysqlHeatWaveClusterMemoryEstimate', 'Get-OCIMysqlReplica', 
+               'Get-OCIMysqlHeatWaveClusterMemoryEstimate', 
+               'Get-OCIMysqlMaintenanceEventsList', 'Get-OCIMysqlReplica', 
                'Get-OCIMysqlReplicasList', 'Get-OCIMysqlShapesList', 
                'Get-OCIMysqlVersionsList', 'Get-OCIMysqlWorkRequest', 
                'Get-OCIMysqlWorkRequestErrorsList', 
