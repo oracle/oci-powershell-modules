@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Containerengine.dll'
 
 # Version number of this module.
-ModuleVersion = '123.1.0'
+ModuleVersion = '123.2.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '123.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '123.2.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Containerengine.dll'
@@ -83,6 +83,7 @@ CmdletsToExport = 'Complete-OCIContainerengineCredentialRotation',
                'Get-OCIContainerengineNodePoolOptions', 
                'Get-OCIContainerengineNodePoolsList', 
                'Get-OCIContainerenginePodShapesList', 
+               'Get-OCIContainerenginePublicApiEndpointDecommissionStatus', 
                'Get-OCIContainerengineVirtualNode', 
                'Get-OCIContainerengineVirtualNodePool', 
                'Get-OCIContainerengineVirtualNodePoolsList', 
@@ -94,9 +95,11 @@ CmdletsToExport = 'Complete-OCIContainerengineCredentialRotation',
                'Get-OCIContainerengineWorkRequestLogsList', 
                'Get-OCIContainerengineWorkRequestsList', 
                'Invoke-OCIContainerengineClusterMigrateToNativeVcn', 
+               'Invoke-OCIContainerengineExtendEndpointDecommissionRollbackDeadline', 
                'Invoke-OCIContainerengineInstallAddon', 
                'Invoke-OCIContainerengineRebootClusterNode', 
                'Invoke-OCIContainerengineReplaceBootVolumeClusterNode', 
+               'Invoke-OCIContainerengineRollbackPublicApiEndpointDecommission', 
                'New-OCIContainerengineCluster', 'New-OCIContainerengineKubeconfig', 
                'New-OCIContainerengineNodePool', 
                'New-OCIContainerengineVirtualNodePool', 
@@ -107,6 +110,7 @@ CmdletsToExport = 'Complete-OCIContainerengineCredentialRotation',
                'Remove-OCIContainerengineWorkloadMapping', 
                'Remove-OCIContainerengineWorkRequest', 
                'Start-OCIContainerengineCredentialRotation', 
+               'Start-OCIContainerenginePublicApiEndpointDecommission', 
                'Update-OCIContainerengineAddon', 
                'Update-OCIContainerengineCluster', 
                'Update-OCIContainerengineClusterEndpointConfig', 
