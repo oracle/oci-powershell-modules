@@ -21,8 +21,8 @@ namespace Oci.OpsiService.Cmdlets
     public class GetOCIOpsiConfiguration : OCIOperationsInsightsCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"[OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"[OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.", ParameterSetName = Default)]
         public string OpsiConfigurationId { get; set; }
 
         

@@ -19,7 +19,7 @@ namespace Oci.AutoscalingService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.AutoscalingService.Models.AutoScalingConfiguration), typeof(Oci.AutoscalingService.Responses.UpdateAutoScalingConfigurationResponse) })]
     public class UpdateOCIAutoscalingConfiguration : OCIAutoScalingCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.")]
         public string AutoScalingConfigurationId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Update details for an autoscaling configuration.")]

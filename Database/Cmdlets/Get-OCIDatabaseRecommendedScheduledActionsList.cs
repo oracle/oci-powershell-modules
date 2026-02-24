@@ -21,10 +21,10 @@ namespace Oci.DatabaseService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabaseService.Models.RecommendedScheduledActionsCollection), typeof(Oci.DatabaseService.Responses.ListRecommendedScheduledActionsResponse) })]
     public class GetOCIDatabaseRecommendedScheduledActionsList : OCIDatabaseCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Scheduling Policy [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Scheduling Policy [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string SchedulingPolicyId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The target resource [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) the scheduled actions will be for.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The target resource [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) the scheduled actions will be for.")]
         public string SchedulingPolicyTargetResourceId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The scheduling plan intent the scheduled actions will be for.")]

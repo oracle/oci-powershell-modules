@@ -19,7 +19,7 @@ namespace Oci.BatchService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.BatchService.Models.BatchTaskProfile), typeof(Oci.BatchService.Responses.UpdateBatchTaskProfileResponse) })]
     public class UpdateOCIBatchTaskProfile : OCIBatchComputingCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch task profile.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch task profile.")]
         public string BatchTaskProfileId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated.")]

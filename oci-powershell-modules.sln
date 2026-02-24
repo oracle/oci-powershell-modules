@@ -272,7 +272,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Emaildataplan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Clusterplacementgroups", "Clusterplacementgroups\OCI.PSModules.Clusterplacementgroups.csproj", "{379438BB-66DD-4EF5-AF74-4F44654BE619}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Marketplaceprivateoffer", "Marketplaceprivateoffer\OCI.PSModules.Marketplaceprivateoffer.csproj", "{98387E83-9A9A-4432-8F9A-33580208B904}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Resourcescheduler", "Resourcescheduler\OCI.PSModules.Resourcescheduler.csproj", "{0523DA2D-7F38-4D95-9827-BD3D9D076BE7}"
 EndProject
@@ -325,6 +324,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Dif", "Dif\OCI.PSModules.Dif.csproj", "{5007490E-3AC6-4052-A0D1-33C1AB6C1187}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Batch", "Batch\OCI.PSModules.Batch.csproj", "{A57F81C7-4FF6-4EE8-BE07-4BA04DE372B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Marketplaceprivateoffer", "Marketplaceprivateoffer\OCI.PSModules.Marketplaceprivateoffer.csproj", "{4D2364DB-EF75-4197-A71C-EEA13DC9580C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1959,18 +1960,6 @@ Global
         {379438BB-66DD-4EF5-AF74-4F44654BE619}.Release|x64.Build.0 = Release|Any CPU
         {379438BB-66DD-4EF5-AF74-4F44654BE619}.Release|x86.ActiveCfg = Release|Any CPU
         {379438BB-66DD-4EF5-AF74-4F44654BE619}.Release|x86.Build.0 = Release|Any CPU
-        {98387E83-9A9A-4432-8F9A-33580208B904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-        {98387E83-9A9A-4432-8F9A-33580208B904}.Debug|Any CPU.Build.0 = Debug|Any CPU
-        {98387E83-9A9A-4432-8F9A-33580208B904}.Debug|x64.ActiveCfg = Debug|Any CPU
-        {98387E83-9A9A-4432-8F9A-33580208B904}.Debug|x64.Build.0 = Debug|Any CPU
-        {98387E83-9A9A-4432-8F9A-33580208B904}.Debug|x86.ActiveCfg = Debug|Any CPU
-        {98387E83-9A9A-4432-8F9A-33580208B904}.Debug|x86.Build.0 = Debug|Any CPU
-        {98387E83-9A9A-4432-8F9A-33580208B904}.Release|Any CPU.ActiveCfg = Release|Any CPU
-        {98387E83-9A9A-4432-8F9A-33580208B904}.Release|Any CPU.Build.0 = Release|Any CPU
-        {98387E83-9A9A-4432-8F9A-33580208B904}.Release|x64.ActiveCfg = Release|Any CPU
-        {98387E83-9A9A-4432-8F9A-33580208B904}.Release|x64.Build.0 = Release|Any CPU
-        {98387E83-9A9A-4432-8F9A-33580208B904}.Release|x86.ActiveCfg = Release|Any CPU
-        {98387E83-9A9A-4432-8F9A-33580208B904}.Release|x86.Build.0 = Release|Any CPU
         {0523DA2D-7F38-4D95-9827-BD3D9D076BE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
         {0523DA2D-7F38-4D95-9827-BD3D9D076BE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
         {0523DA2D-7F38-4D95-9827-BD3D9D076BE7}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -2283,5 +2272,17 @@ Global
         {A57F81C7-4FF6-4EE8-BE07-4BA04DE372B1}.Release|x64.Build.0 = Release|Any CPU
         {A57F81C7-4FF6-4EE8-BE07-4BA04DE372B1}.Release|x86.ActiveCfg = Release|Any CPU
         {A57F81C7-4FF6-4EE8-BE07-4BA04DE372B1}.Release|x86.Build.0 = Release|Any CPU
+        {4D2364DB-EF75-4197-A71C-EEA13DC9580C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {4D2364DB-EF75-4197-A71C-EEA13DC9580C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {4D2364DB-EF75-4197-A71C-EEA13DC9580C}.Debug|x64.ActiveCfg = Debug|Any CPU
+        {4D2364DB-EF75-4197-A71C-EEA13DC9580C}.Debug|x64.Build.0 = Debug|Any CPU
+        {4D2364DB-EF75-4197-A71C-EEA13DC9580C}.Debug|x86.ActiveCfg = Debug|Any CPU
+        {4D2364DB-EF75-4197-A71C-EEA13DC9580C}.Debug|x86.Build.0 = Debug|Any CPU
+        {4D2364DB-EF75-4197-A71C-EEA13DC9580C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {4D2364DB-EF75-4197-A71C-EEA13DC9580C}.Release|Any CPU.Build.0 = Release|Any CPU
+        {4D2364DB-EF75-4197-A71C-EEA13DC9580C}.Release|x64.ActiveCfg = Release|Any CPU
+        {4D2364DB-EF75-4197-A71C-EEA13DC9580C}.Release|x64.Build.0 = Release|Any CPU
+        {4D2364DB-EF75-4197-A71C-EEA13DC9580C}.Release|x86.ActiveCfg = Release|Any CPU
+        {4D2364DB-EF75-4197-A71C-EEA13DC9580C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

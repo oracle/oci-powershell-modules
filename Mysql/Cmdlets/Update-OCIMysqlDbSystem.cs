@@ -19,7 +19,7 @@ namespace Oci.MysqlService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.MysqlService.Responses.UpdateDbSystemResponse) })]
     public class UpdateOCIMysqlDbSystem : OCIDbSystemCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The DB System [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string DbSystemId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to update a DB System.")]

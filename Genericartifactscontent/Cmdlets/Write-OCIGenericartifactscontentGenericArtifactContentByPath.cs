@@ -19,7 +19,7 @@ namespace Oci.GenericartifactscontentService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.GenericartifactscontentService.Models.GenericArtifact), typeof(Oci.GenericartifactscontentService.Responses.PutGenericArtifactContentByPathResponse) })]
     public class WriteOCIGenericartifactscontentGenericArtifactContentByPath : OCIGenericArtifactsContentCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
 
 Example: `ocid1.repository.oc1..exampleuniqueID`")]
         public string RepositoryId { get; set; }
@@ -43,7 +43,7 @@ Example: `1.1.2` or `1.2-beta-2`")]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.  The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value. When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.")]
         public string IfMatch { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned [request ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned [request ID](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
 
 Example: `bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx` If you contact Oracle about a request, provide this request ID.")]
         public string OpcRequestId { get; set; }

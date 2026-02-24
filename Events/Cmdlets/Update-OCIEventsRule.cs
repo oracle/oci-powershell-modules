@@ -19,7 +19,7 @@ namespace Oci.EventsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.EventsService.Models.Rule), typeof(Oci.EventsService.Responses.UpdateRuleResponse) })]
     public class UpdateOCIEventsRule : OCIEventsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.")]
         public string RuleId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The new rule spec to apply")]

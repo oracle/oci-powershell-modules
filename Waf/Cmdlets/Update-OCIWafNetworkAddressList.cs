@@ -19,7 +19,7 @@ namespace Oci.WafService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.WafService.Responses.UpdateNetworkAddressListResponse) })]
     public class UpdateOCIWafNetworkAddressList : OCIWafCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the NetworkAddressList.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the NetworkAddressList.")]
         public string NetworkAddressListId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtypes <Oci.WafService.Models.UpdateNetworkAddressListAddressesDetails>, <Oci.WafService.Models.UpdateNetworkAddressListVcnAddressesDetails> of type <Oci.WafService.Models.UpdateNetworkAddressListDetails>.")]

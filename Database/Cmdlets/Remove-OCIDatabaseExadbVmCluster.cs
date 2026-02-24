@@ -21,8 +21,8 @@ namespace Oci.DatabaseService.Cmdlets
     public class RemoveOCIDatabaseExadbVmCluster : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Exadata VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) on Exascale Infrastructure.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Exadata VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) on Exascale Infrastructure.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Exadata VM cluster [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) on Exascale Infrastructure.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Exadata VM cluster [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) on Exascale Infrastructure.", ParameterSetName = Default)]
         public string ExadbVmClusterId { get; set; }
 
         

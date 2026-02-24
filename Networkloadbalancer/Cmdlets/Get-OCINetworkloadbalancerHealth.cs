@@ -19,7 +19,7 @@ namespace Oci.NetworkloadbalancerService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.NetworkloadbalancerService.Models.NetworkLoadBalancerHealth), typeof(Oci.NetworkloadbalancerService.Responses.GetNetworkLoadBalancerHealthResponse) })]
     public class GetOCINetworkloadbalancerHealth : OCINetworkLoadBalancerCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.")]
         public string NetworkLoadBalancerId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique Oracle-assigned identifier for the request. If you must contact Oracle about a particular request, then provide the request identifier.")]

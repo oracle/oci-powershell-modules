@@ -21,7 +21,7 @@ namespace Oci.SecurityattributeService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.SecurityattributeService.Models.SecurityAttributeNamespaceSummary), typeof(Oci.SecurityattributeService.Responses.ListSecurityAttributeNamespacesResponse) })]
     public class GetOCISecurityattributeNamespacesList : OCISecurityAttributeCmdlet
     {
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The value of the `opc-next-page` response header from the previous ""List"" call.")]

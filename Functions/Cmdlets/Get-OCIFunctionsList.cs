@@ -21,7 +21,7 @@ namespace Oci.FunctionsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.FunctionsService.Models.FunctionSummary), typeof(Oci.FunctionsService.Responses.ListFunctionsResponse) })]
     public class GetOCIFunctionsList : OCIFunctionsManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.")]
         public string ApplicationId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return. 1 is the minimum, 50 is the maximum.

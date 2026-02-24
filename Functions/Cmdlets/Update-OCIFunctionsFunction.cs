@@ -19,7 +19,7 @@ namespace Oci.FunctionsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.FunctionsService.Models.Function), typeof(Oci.FunctionsService.Responses.UpdateFunctionResponse) })]
     public class UpdateOCIFunctionsFunction : OCIFunctionsManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.")]
         public string FunctionId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The new function spec to apply")]

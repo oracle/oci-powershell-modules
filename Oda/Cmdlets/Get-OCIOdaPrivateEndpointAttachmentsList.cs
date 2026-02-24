@@ -21,7 +21,7 @@ namespace Oci.OdaService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OdaService.Models.OdaPrivateEndpointAttachmentCollection), typeof(Oci.OdaService.Responses.ListOdaPrivateEndpointAttachmentsResponse) })]
     public class GetOCIOdaPrivateEndpointAttachmentsList : OCIManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA Private Endpoint.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA Private Endpoint.")]
         public string OdaPrivateEndpointId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"List the ODA Private Endpoint Attachments that belong to this compartment.")]

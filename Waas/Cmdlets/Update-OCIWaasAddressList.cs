@@ -19,7 +19,7 @@ namespace Oci.WaasService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.WaasService.Models.AddressList), typeof(Oci.WaasService.Responses.UpdateAddressListResponse) })]
     public class UpdateOCIWaasAddressList : OCIWaasCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the address list. This number is generated when the address list is added to the compartment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the address list. This number is generated when the address list is added to the compartment.")]
         public string AddressListId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

@@ -19,7 +19,7 @@ namespace Oci.WaasService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.WaasService.Responses.ChangeAddressListCompartmentResponse) })]
     public class MoveOCIWaasAddressListCompartment : OCIWaasCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the address list. This number is generated when the address list is added to the compartment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the address list. This number is generated when the address list is added to the compartment.")]
         public string AddressListId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true)]

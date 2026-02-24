@@ -19,7 +19,7 @@ namespace Oci.DashboardService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DashboardService.Models.Dashboard), typeof(Oci.DashboardService.Responses.UpdateDashboardResponse) })]
     public class UpdateOCIDashboardserviceDashboard : OCIDashboardCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard.")]
         public string DashboardId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The dashboard details to be updated. This parameter also accepts subtype <Oci.DashboardService.Models.UpdateV1DashboardDetails> of type <Oci.DashboardService.Models.UpdateDashboardDetails>.")]

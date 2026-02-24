@@ -8,7 +8,7 @@
     public class WorkRequest
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
+        /// The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
         /// </summary>
         public string OpcWorkRequestId { get; set; }
     }

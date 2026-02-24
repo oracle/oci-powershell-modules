@@ -19,13 +19,13 @@ namespace Oci.DatabaseService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabaseService.Models.ExadataInfrastructureUnAllocatedResources), typeof(Oci.DatabaseService.Responses.GetExadataInfrastructureUnAllocatedResourcesResponse) })]
     public class GetOCIDatabaseExadataInfrastructureUnAllocatedResources : OCIDatabaseCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Exadata infrastructure [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string ExadataInfrastructureId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db servers.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The list of [OCIDs](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the Db servers.")]
         public System.Collections.Generic.List<string> DbServers { get; set; }
 
         protected override void ProcessRecord()

@@ -21,7 +21,7 @@ namespace Oci.WaasService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.WaasService.Models.WafLog), typeof(Oci.WaasService.Responses.ListWafLogsResponse) })]
     public class GetOCIWaasWafLogsList : OCIWaasCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.")]
         public string WaasPolicyId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
@@ -66,7 +66,7 @@ namespace Oci.WaasService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter logs by incident key.")]
         public System.Collections.Generic.List<string> IncidentKey { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by log type. For more information about WAF logs, see [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by log type. For more information about WAF logs, see [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).")]
         public System.Collections.Generic.List<Oci.WaasService.Requests.ListWafLogsRequest.LogTypeEnum> LogType { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter by origin IP address.")]

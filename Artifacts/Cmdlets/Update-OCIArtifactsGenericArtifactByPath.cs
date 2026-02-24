@@ -19,7 +19,7 @@ namespace Oci.ArtifactsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ArtifactsService.Models.GenericArtifact), typeof(Oci.ArtifactsService.Responses.UpdateGenericArtifactByPathResponse) })]
     public class UpdateOCIArtifactsGenericArtifactByPath : OCIArtifactsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
 
 Example: `ocid1.artifactrepository.oc1..exampleuniqueID`")]
         public string RepositoryId { get; set; }

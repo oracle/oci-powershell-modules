@@ -19,7 +19,7 @@ namespace Oci.ArtifactsService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.ArtifactsService.Responses.ChangeContainerRepositoryCompartmentResponse) })]
     public class MoveOCIArtifactsContainerRepositoryCompartment : OCIArtifactsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
 
 Example: `ocid1.containerrepo.oc1..exampleuniqueID`")]
         public string RepositoryId { get; set; }

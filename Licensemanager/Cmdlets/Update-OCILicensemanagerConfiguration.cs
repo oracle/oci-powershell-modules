@@ -19,7 +19,7 @@ namespace Oci.LicensemanagerService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.LicensemanagerService.Models.Configuration), typeof(Oci.LicensemanagerService.Responses.UpdateConfigurationResponse) })]
     public class UpdateOCILicensemanagerConfiguration : OCILicenseManagerCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Configuration details that need to be updated.")]

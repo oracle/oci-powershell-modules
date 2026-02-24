@@ -19,7 +19,7 @@ namespace Oci.GoldengateService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.GoldengateService.Models.TestConnectionAssignmentResult), typeof(Oci.GoldengateService.Responses.TestConnectionAssignmentResponse) })]
     public class InvokeOCIGoldengateTestConnectionAssignment : OCIGoldenGateCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Connection Assignment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the Connection Assignment.")]
         public string ConnectionAssignmentId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A placeholder for any additional metadata to describe the requested tests of the assigned connection. This parameter also accepts subtype <Oci.GoldengateService.Models.DefaultTestConnectionAssignmentDetails> of type <Oci.GoldengateService.Models.TestConnectionAssignmentDetails>.")]

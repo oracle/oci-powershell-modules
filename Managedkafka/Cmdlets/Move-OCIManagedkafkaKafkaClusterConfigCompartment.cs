@@ -19,7 +19,7 @@ namespace Oci.ManagedkafkaService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.ManagedkafkaService.Responses.ChangeKafkaClusterConfigCompartmentResponse) })]
     public class MoveOCIManagedkafkaKafkaClusterConfigCompartment : OCIKafkaClusterCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaClusterConfig.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaClusterConfig.")]
         public string KafkaClusterConfigId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated.")]

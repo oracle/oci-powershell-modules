@@ -19,7 +19,7 @@ namespace Oci.MysqlService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.MysqlService.Responses.UpdateReplicaResponse) })]
     public class UpdateOCIMysqlReplica : OCIReplicasCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Replica [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Replica [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string ReplicaId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The parameters of the request to update the read replica.")]

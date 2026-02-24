@@ -19,7 +19,7 @@ namespace Oci.WaasService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.WaasService.Responses.ChangeHttpRedirectCompartmentResponse) })]
     public class MoveOCIWaasHttpRedirectCompartment : OCIRedirectCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.")]
         public string HttpRedirectId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true)]

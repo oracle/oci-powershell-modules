@@ -19,7 +19,7 @@ namespace Oci.CloudbridgeService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.CloudbridgeService.Responses.UpdateAssetSourceResponse) })]
     public class UpdateOCICloudbridgeAssetSource : OCIDiscoveryCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asset source.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the asset source.")]
         public string AssetSourceId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Asset source information to be updated. This parameter also accepts subtypes <Oci.CloudbridgeService.Models.UpdateVmWareAssetSourceDetails>, <Oci.CloudbridgeService.Models.UpdateAwsAssetSourceDetails> of type <Oci.CloudbridgeService.Models.UpdateAssetSourceDetails>.")]

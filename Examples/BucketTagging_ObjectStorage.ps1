@@ -3,7 +3,7 @@ This example demonstrates tagging Buckets Resource in Object Storage Service.
 This example requires:
 1) Module OCI.PSModules.Objectstorage. Install the module from Powershell Gallery.
 2) Setting up the environment variable CompartmentId to a Compartment OCID.
-3) Setting up the environment variables TagNS,TagKey to an existing tag namespace and key in your tenancy as explained in https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+3) Setting up the environment variables TagNS,TagKey to an existing tag namespace and key in your tenancy as explained in https://docs.oracle.com/Content/General/Concepts/resourcetags.htm
 #>
 $UserErrorActionPreference = $ErrorActionPreference
 $ErrorActionPreference = "Stop" 

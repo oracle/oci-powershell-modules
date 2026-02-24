@@ -19,7 +19,7 @@ namespace Oci.DatabasetoolsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.DatabasetoolsService.Responses.UpdateDatabaseToolsConnectionResponse) })]
     public class UpdateOCIDatabasetoolsConnection : OCIDatabaseToolsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools connection.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools connection.")]
         public string DatabaseToolsConnectionId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtypes <Oci.DatabasetoolsService.Models.UpdateDatabaseToolsConnectionGenericJdbcDetails>, <Oci.DatabasetoolsService.Models.UpdateDatabaseToolsConnectionPostgresqlDetails>, <Oci.DatabasetoolsService.Models.UpdateDatabaseToolsConnectionMySqlDetails>, <Oci.DatabasetoolsService.Models.UpdateDatabaseToolsConnectionOracleDatabaseDetails> of type <Oci.DatabasetoolsService.Models.UpdateDatabaseToolsConnectionDetails>.")]
