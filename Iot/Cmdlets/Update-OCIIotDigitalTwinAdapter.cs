@@ -19,7 +19,7 @@ namespace Oci.IotService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.IotService.Models.DigitalTwinAdapter), typeof(Oci.IotService.Responses.UpdateDigitalTwinAdapterResponse) })]
     public class UpdateOCIIotDigitalTwinAdapter : OCIIotCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.")]
         public string DigitalTwinAdapterId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The digital twin adapter details to be updated.")]

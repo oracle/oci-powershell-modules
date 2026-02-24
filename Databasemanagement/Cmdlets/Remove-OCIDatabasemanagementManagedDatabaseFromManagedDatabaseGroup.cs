@@ -19,7 +19,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.DatabasemanagementService.Responses.RemoveManagedDatabaseFromManagedDatabaseGroupResponse) })]
     public class RemoveOCIDatabasemanagementManagedDatabaseFromManagedDatabaseGroup : OCIDbManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.")]
         public string ManagedDatabaseGroupId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Managed Database details required to remove the Managed Database from a Managed Database Group.")]

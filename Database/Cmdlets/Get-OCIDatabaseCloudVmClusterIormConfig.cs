@@ -19,7 +19,7 @@ namespace Oci.DatabaseService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabaseService.Models.ExadataIormConfig), typeof(Oci.DatabaseService.Responses.GetCloudVmClusterIormConfigResponse) })]
     public class GetOCIDatabaseCloudVmClusterIormConfig : OCIDatabaseCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The cloud VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The cloud VM cluster [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string CloudVmClusterId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]

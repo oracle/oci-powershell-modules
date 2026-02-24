@@ -19,7 +19,7 @@ namespace Oci.GoldengateService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.GoldengateService.Models.TestPipelineConnectionResult), typeof(Oci.GoldengateService.Responses.TestPipelineConnectionResponse) })]
     public class InvokeOCIGoldengateTestPipelineConnection : OCIGoldenGateCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the pipeline created.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the pipeline created.")]
         public string PipelineId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Additional metadata required to test the connection assigned to the pipeline. This parameter also accepts subtype <Oci.GoldengateService.Models.DefaultTestPipelineConnectionDetails> of type <Oci.GoldengateService.Models.TestPipelineConnectionDetails>.")]

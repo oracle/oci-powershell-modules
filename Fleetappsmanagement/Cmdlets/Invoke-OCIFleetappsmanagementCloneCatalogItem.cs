@@ -19,7 +19,7 @@ namespace Oci.FleetappsmanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.FleetappsmanagementService.Models.CatalogItem), typeof(Oci.FleetappsmanagementService.Responses.CloneCatalogItemResponse) })]
     public class InvokeOCIFleetappsmanagementCloneCatalogItem : OCIFleetAppsManagementCatalogCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CatalogItem.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CatalogItem.")]
         public string CatalogItemId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated.")]

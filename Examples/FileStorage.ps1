@@ -123,7 +123,7 @@ try {
     Write-Host "Remove-OCIFileStorageMountTarget -MountTargetId $MountTarget.Id"
     Remove-OCIFileStorageMountTarget -MountTargetId $MountTarget.Id
 
-    #Wait for Mount target to get deleted https://docs.cloud.oracle.com/en-us/iaas/Content/File/Troubleshooting/orphanedmounttarget.htm
+    #Wait for Mount target to get deleted https://docs.oracle.com/en-us/iaas/Content/File/Troubleshooting/orphanedmounttarget.htm
     $MountTargetState = [Oci.FilestorageService.Models.MountTarget+LifecycleStateEnum]::Deleted
     Write-Host "Get-OCIFileStorageMountTarget -MountTargetId $MountTarget.Id -WaitForLifecycleState $MountTargetState"
     Get-OCIFileStorageMountTarget -MountTargetId $MountTarget.Id -WaitForLifecycleState $MountTargetState

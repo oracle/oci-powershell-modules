@@ -21,7 +21,7 @@ namespace Oci.DbmulticloudService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DbmulticloudService.Models.OracleDbAzureBlobContainerSummaryCollection), typeof(Oci.DbmulticloudService.Responses.ListOracleDbAzureBlobContainersResponse) })]
     public class GetOCIDbmulticloudOracleDbAzureBlobContainersList : OCIOracleDBAzureBlobContainerCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [ID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return Oracle DB Azure Blob Container resources that match the specified display name.")]

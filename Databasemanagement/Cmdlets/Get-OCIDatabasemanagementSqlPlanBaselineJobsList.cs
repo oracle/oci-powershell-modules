@@ -21,7 +21,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabasemanagementService.Models.SqlPlanBaselineJobCollection), typeof(Oci.DatabasemanagementService.Responses.ListSqlPlanBaselineJobsResponse) })]
     public class GetOCIDatabasemanagementSqlPlanBaselineJobsList : OCIDbManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.")]
         public string ManagedDatabaseId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the SQL plan baseline jobs that match the name.")]

@@ -19,7 +19,7 @@ namespace Oci.LoadbalancerService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.LoadbalancerService.Models.HealthChecker), typeof(Oci.LoadbalancerService.Responses.GetHealthCheckerResponse) })]
     public class GetOCILoadbalancerHealthChecker : OCILoadBalancerCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the health check policy to be retrieved.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the health check policy to be retrieved.")]
         public string LoadBalancerId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the backend set associated with the health check policy to be retrieved.

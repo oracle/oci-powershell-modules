@@ -19,7 +19,7 @@ namespace Oci.GenerativeaiService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.GenerativeaiService.Responses.ChangeDedicatedAiClusterCompartmentResponse) })]
     public class MoveOCIGenerativeaiDedicatedAiClusterCompartment : OCIGenerativeAiCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.")]
         public string DedicatedAiClusterId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated.")]

@@ -19,7 +19,7 @@ namespace Oci.DatascienceService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.DatascienceService.Responses.CreateModelArtifactResponse) })]
     public class NewOCIDatascienceModelArtifact : OCIDataScienceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.")]
         public string ModelId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The content length of the body.")]

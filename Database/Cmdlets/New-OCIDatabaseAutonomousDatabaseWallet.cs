@@ -23,7 +23,7 @@ namespace Oci.DatabaseService.Cmdlets
     [OutputType(new System.Type[] { typeof(System.IO.Stream), typeof(void), typeof(Oci.DatabaseService.Responses.GenerateAutonomousDatabaseWalletResponse) })]
     public class NewOCIDatabaseAutonomousDatabaseWallet : OCIDatabaseCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string AutonomousDatabaseId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create a new Autonomous AI Database wallet.")]

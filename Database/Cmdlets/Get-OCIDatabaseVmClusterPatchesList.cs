@@ -21,7 +21,7 @@ namespace Oci.DatabaseService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabaseService.Models.PatchSummary), typeof(Oci.DatabaseService.Responses.ListVmClusterPatchesResponse) })]
     public class GetOCIDatabaseVmClusterPatchesList : OCIDatabaseCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The VM cluster [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string VmClusterId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return per page.", ParameterSetName = LimitSet)]

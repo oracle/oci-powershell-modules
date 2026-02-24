@@ -21,7 +21,7 @@ namespace Oci.DatabaseService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabaseService.Models.PatchHistoryEntrySummary), typeof(Oci.DatabaseService.Responses.ListDbSystemPatchHistoryEntriesResponse) })]
     public class GetOCIDatabaseDbSystemPatchHistoryEntriesList : OCIDatabaseCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The DB system [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string DbSystemId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return per page.", ParameterSetName = LimitSet)]

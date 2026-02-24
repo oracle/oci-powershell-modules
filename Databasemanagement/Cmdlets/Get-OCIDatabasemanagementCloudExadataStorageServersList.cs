@@ -21,10 +21,10 @@ namespace Oci.DatabasemanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabasemanagementService.Models.CloudExadataStorageServerCollection), typeof(Oci.DatabasemanagementService.Responses.ListCloudExadataStorageServersResponse) })]
     public class GetOCIDatabasemanagementCloudExadataStorageServersList : OCIDbManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.")]
         public string CloudExadataInfrastructureId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The optional single value query filter parameter on the entity display name.")]

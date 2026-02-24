@@ -2,7 +2,7 @@
 
 ## About
 
-[Oracle Cloud Infrastructure(OCI) Modules for PowerShell](https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/powershell.htm) is a set of cmdlet modules that can be used with PowerShell Core to manage Oracle Cloud Infrastructure resources. You can invoke these cmdlets from the PowerShell command-line and with the associated PowerShell scripting language.
+[Oracle Cloud Infrastructure(OCI) Modules for PowerShell](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/powershell.htm) is a set of cmdlet modules that can be used with PowerShell Core to manage Oracle Cloud Infrastructure resources. You can invoke these cmdlets from the PowerShell command-line and with the associated PowerShell scripting language.
 
 The project is open source and maintained by Oracle Corp.
 
@@ -48,7 +48,7 @@ PowerShell modules are published to [GitHub](https://github.com/oracle/oci-power
 
 ## Configuring
 
-Before using the cmdlets, set up a config file with the required credentials. Refer [setup](https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/powershellgettingstarted.htm#powershellsdkgettingstarted_topic_setup) for instructions.
+Before using the cmdlets, set up a config file with the required credentials. Refer [setup](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/powershellgettingstarted.htm#powershellsdkgettingstarted_topic_setup) for instructions.
 
 ```
 Import-Module OCI.PSModules.Common
@@ -144,8 +144,8 @@ See [CHANGELOG](https://github.com/oracle/oci-powershell-modules/blob/master/CHA
 
 ### Known Issues
 
-You can find information on any known issues with the OCI modules for PowerShell at [Oracle Cloud Infrastructure Known Issues](https://docs.cloud.oracle.com/en-us/iaas/Content/knownissues.htm) and under the [Issues](https://github.com/oracle/oci-powershell-modules/Issues) tab of this project's GitHub repository.
+You can find information on any known issues with the OCI modules for PowerShell at [Oracle Cloud Infrastructure Known Issues](https://docs.oracle.com/en-us/iaas/Content/knownissues.htm) and under the [Issues](https://github.com/oracle/oci-powershell-modules/Issues) tab of this project's GitHub repository.
 
 ### Related Links
 
-Read more about OCI Modules for PowerShell at https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/powershell.htm
+Read more about OCI Modules for PowerShell at https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/powershell.htm

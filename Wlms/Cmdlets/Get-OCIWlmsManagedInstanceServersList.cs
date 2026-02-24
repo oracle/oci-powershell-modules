@@ -21,7 +21,7 @@ namespace Oci.WlmsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.WlmsService.Models.ServerCollection), typeof(Oci.WlmsService.Responses.ListManagedInstanceServersResponse) })]
     public class GetOCIWlmsManagedInstanceServersList : OCIWeblogicManagementServiceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.")]
         public string ManagedInstanceId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the resource.")]

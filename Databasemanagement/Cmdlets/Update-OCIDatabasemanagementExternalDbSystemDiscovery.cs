@@ -19,7 +19,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabasemanagementService.Models.ExternalDbSystemDiscovery), typeof(Oci.DatabasemanagementService.Responses.UpdateExternalDbSystemDiscoveryResponse) })]
     public class UpdateOCIDatabasemanagementExternalDbSystemDiscovery : OCIDbManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the external DB system discovery.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the external DB system discovery.")]
         public string ExternalDbSystemDiscoveryId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to update an external DB system discovery.")]

@@ -19,7 +19,7 @@ namespace Oci.LicensemanagerService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.LicensemanagerService.Models.LicenseMetric), typeof(Oci.LicensemanagerService.Responses.GetLicenseMetricResponse) })]
     public class GetOCILicensemanagerLicenseMetric : OCILicenseManagerCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

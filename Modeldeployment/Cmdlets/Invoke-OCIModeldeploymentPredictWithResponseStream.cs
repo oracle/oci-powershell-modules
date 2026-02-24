@@ -23,7 +23,7 @@ namespace Oci.ModeldeploymentService.Cmdlets
     [OutputType(new System.Type[] { typeof(System.IO.Stream), typeof(void), typeof(Oci.ModeldeploymentService.Responses.PredictWithResponseStreamResponse) })]
     public class InvokeOCIModeldeploymentPredictWithResponseStream : OCIModelDeploymentCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.")]
         public string ModelDeploymentId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Input data details for making a prediction call")]

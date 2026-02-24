@@ -21,7 +21,7 @@ namespace Oci.JmsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.JmsService.Models.LibraryManagedInstanceUsageCollection), typeof(Oci.JmsService.Responses.ListLibraryManagedInstanceUsageResponse) })]
     public class GetOCIJmsLibraryManagedInstanceUsageList : OCIJavaManagementServiceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.")]
         public string FleetId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier of a Java library.")]
@@ -33,7 +33,7 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Fleet-unique identifier of the managed instance.")]
         public string ManagedInstanceId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the managed instance.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The host [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the managed instance.")]
         public string HostName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter the list with hostname contains the given value.")]

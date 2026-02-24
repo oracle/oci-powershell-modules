@@ -21,7 +21,7 @@ namespace Oci.DatabaseService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabaseService.Models.CloudExadataInfrastructureSummary), typeof(Oci.DatabaseService.Responses.ListCloudExadataInfrastructuresResponse) })]
     public class GetOCIDatabaseCloudExadataInfrastructuresList : OCIDatabaseCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return per page.", ParameterSetName = LimitSet)]

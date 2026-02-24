@@ -19,7 +19,7 @@ namespace Oci.GoldengateService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.GoldengateService.Responses.UpdatePipelineResponse) })]
     public class UpdateOCIGoldengatePipeline : OCIGoldenGateCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the pipeline created.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the pipeline created.")]
         public string PipelineId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The existing pipeline specifications to apply. This parameter also accepts subtype <Oci.GoldengateService.Models.UpdateZeroEtlPipelineDetails> of type <Oci.GoldengateService.Models.UpdatePipelineDetails>.")]

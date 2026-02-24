@@ -21,7 +21,7 @@ namespace Oci.WaasService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.WaasService.Models.CachingRuleSummary), typeof(Oci.WaasService.Responses.ListCachingRulesResponse) })]
     public class GetOCIWaasCachingRulesList : OCIWaasCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.")]
         public string WaasPolicyId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

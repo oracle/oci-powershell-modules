@@ -21,7 +21,7 @@ namespace Oci.ClusterplacementgroupsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ClusterplacementgroupsService.Models.WorkRequestSummaryCollection), typeof(Oci.ClusterplacementgroupsService.Responses.ListWorkRequestsResponse) })]
     public class GetOCIClusterplacementgroupsWorkRequestsList : OCIClusterPlacementGroupsCPCmdlet
     {
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the specified compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the specified compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the asynchronous work request.")]

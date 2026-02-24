@@ -19,7 +19,7 @@ namespace Oci.DbmulticloudService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.DbmulticloudService.Responses.UpdateOracleDbAwsKeyResponse) })]
     public class UpdateOCIDbmulticloudOracleDbAwsKey : OCIDbMulticloudAwsProviderCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key resource.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key resource.")]
         public string OracleDbAwsKeyId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for to update OracleDbAwsKey.")]

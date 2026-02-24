@@ -19,7 +19,7 @@ namespace Oci.IotService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.IotService.Responses.InvokeRawCommandResponse) })]
     public class InvokeOCIIotRawCommand : OCIIotCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of digital twin instance.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of digital twin instance.")]
         public string DigitalTwinInstanceId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the raw command invocation. This parameter also accepts subtypes <Oci.IotService.Models.InvokeRawBinaryCommandDetails>, <Oci.IotService.Models.InvokeRawTextCommandDetails>, <Oci.IotService.Models.InvokeRawJsonCommandDetails> of type <Oci.IotService.Models.InvokeRawCommandDetails>.")]

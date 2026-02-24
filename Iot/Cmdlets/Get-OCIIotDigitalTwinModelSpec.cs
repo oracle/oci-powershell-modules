@@ -19,7 +19,7 @@ namespace Oci.IotService.Cmdlets
     [OutputType(new System.Type[] { typeof(System.Collections.Generic.Dictionary<String, System.Object>), typeof(Oci.IotService.Responses.GetDigitalTwinModelSpecResponse) })]
     public class GetOCIIotDigitalTwinModelSpec : OCIIotCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of digital twin model.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of digital twin model.")]
         public string DigitalTwinModelId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.")]

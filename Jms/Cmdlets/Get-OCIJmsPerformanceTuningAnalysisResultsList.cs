@@ -21,7 +21,7 @@ namespace Oci.JmsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.JmsService.Models.PerformanceTuningAnalysisResultCollection), typeof(Oci.JmsService.Responses.ListPerformanceTuningAnalysisResultsResponse) })]
     public class GetOCIJmsPerformanceTuningAnalysisResultsList : OCIJavaManagementServiceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.")]
         public string FleetId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Fleet-unique identifier of the related managed instance.")]
@@ -33,7 +33,7 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the application.")]
         public string ApplicationName { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the managed instance.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The host [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the managed instance.")]
         public string HostName { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).")]

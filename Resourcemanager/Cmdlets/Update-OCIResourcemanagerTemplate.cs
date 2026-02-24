@@ -19,7 +19,7 @@ namespace Oci.ResourcemanagerService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ResourcemanagerService.Models.Template), typeof(Oci.ResourcemanagerService.Responses.UpdateTemplateResponse) })]
     public class UpdateOCIResourcemanagerTemplate : OCIResourceManagerCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the template.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the template.")]
         public string TemplateId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details for updating a template.")]

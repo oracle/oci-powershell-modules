@@ -19,7 +19,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabasemanagementService.Models.ExternalExadataStorageConnector), typeof(Oci.DatabasemanagementService.Responses.UpdateExternalExadataStorageConnectorResponse) })]
     public class UpdateOCIDatabasemanagementExternalExadataStorageConnector : OCIDbManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the connector to the Exadata storage server.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the connector to the Exadata storage server.")]
         public string ExternalExadataStorageConnectorId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to update connections to the Exadata storage servers.")]

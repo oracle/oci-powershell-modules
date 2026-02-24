@@ -19,7 +19,7 @@ namespace Oci.DemandsignalService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DemandsignalService.Models.OccDemandSignal), typeof(Oci.DemandsignalService.Responses.PatchOccDemandSignalResponse) })]
     public class InvokeOCIDemandsignalPatchOccDemandSignal : OCIOccDemandSignalCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OccDemandSignal.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OccDemandSignal.")]
         public string OccDemandSignalId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated.")]

@@ -21,8 +21,8 @@ namespace Oci.DatabaseService.Cmdlets
     public class EnableOCIDatabaseExadataInfrastructure : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Exadata infrastructure [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Exadata infrastructure [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).", ParameterSetName = Default)]
         public string ExadataInfrastructureId { get; set; }
 
         

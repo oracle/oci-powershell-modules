@@ -19,7 +19,7 @@ namespace Oci.VnmonitoringService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.VnmonitoringService.Models.PathAnalyzerTest), typeof(Oci.VnmonitoringService.Responses.UpdatePathAnalyzerTestResponse) })]
     public class UpdateOCIVnmonitoringPathAnalyzerTest : OCIVnMonitoringCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.")]
         public string PathAnalyzerTestId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to update.")]

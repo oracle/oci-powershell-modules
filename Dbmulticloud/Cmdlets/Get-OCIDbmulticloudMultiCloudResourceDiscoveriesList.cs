@@ -21,13 +21,13 @@ namespace Oci.DbmulticloudService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DbmulticloudService.Models.MultiCloudResourceDiscoverySummaryCollection), typeof(Oci.DbmulticloudService.Responses.ListMultiCloudResourceDiscoveriesResponse) })]
     public class GetOCIDbmulticloudMultiCloudResourceDiscoveriesList : OCIMultiCloudResourceDiscoveryCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [ID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.")]
         public string DisplayName { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery resource.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery resource.")]
         public string MultiCloudResourceDiscoveryId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.")]

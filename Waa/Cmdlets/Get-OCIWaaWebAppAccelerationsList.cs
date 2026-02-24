@@ -21,13 +21,13 @@ namespace Oci.WaaService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.WaaService.Models.WebAppAccelerationCollection), typeof(Oci.WaaService.Responses.ListWebAppAccelerationsResponse) })]
     public class GetOCIWaaWebAppAccelerationsList : OCIWaaCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the WebAppAcceleration with the given [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string Id { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of related WebAppAccelerationPolicy.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the WebAppAcceleration with the given [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of related WebAppAccelerationPolicy.")]
         public string WebAppAccelerationPolicyId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given lifecycleState.")]

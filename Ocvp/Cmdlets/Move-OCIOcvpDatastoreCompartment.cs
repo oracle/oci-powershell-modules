@@ -19,7 +19,7 @@ namespace Oci.OcvpService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.OcvpService.Responses.ChangeDatastoreCompartmentResponse) })]
     public class MoveOCIOcvpDatastoreCompartment : OCIDatastoreCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Datastore.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the Datastore.")]
         public string DatastoreId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to change the compartment of the specified Datastore")]

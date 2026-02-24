@@ -19,7 +19,7 @@ namespace Oci.LoadbalancerService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.LoadbalancerService.Models.ListenerRuleSummary), typeof(Oci.LoadbalancerService.Responses.ListListenerRulesResponse) })]
     public class GetOCILoadbalancerListenerRulesList : OCILoadBalancerCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the listener.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the listener.")]
         public string LoadBalancerId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the listener the rules are associated with. Example: `example_listener`")]

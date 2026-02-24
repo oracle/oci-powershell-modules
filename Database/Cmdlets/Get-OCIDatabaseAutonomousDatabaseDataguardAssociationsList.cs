@@ -21,7 +21,7 @@ namespace Oci.DatabaseService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabaseService.Models.AutonomousDatabaseDataguardAssociation), typeof(Oci.DatabaseService.Responses.ListAutonomousDatabaseDataguardAssociationsResponse) })]
     public class GetOCIDatabaseAutonomousDatabaseDataguardAssociationsList : OCIDatabaseCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string AutonomousDatabaseId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return per page.", ParameterSetName = LimitSet)]

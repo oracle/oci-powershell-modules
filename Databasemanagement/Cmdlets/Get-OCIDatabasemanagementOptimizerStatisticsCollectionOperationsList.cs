@@ -21,7 +21,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabasemanagementService.Models.OptimizerStatisticsCollectionOperationsCollection), typeof(Oci.DatabasemanagementService.Responses.ListOptimizerStatisticsCollectionOperationsResponse) })]
     public class GetOCIDatabasemanagementOptimizerStatisticsCollectionOperationsList : OCIDbManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.")]
         public string ManagedDatabaseId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The start time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is ""yyyy-MM-dd'T'hh:mm:ss.sss'Z'"".")]

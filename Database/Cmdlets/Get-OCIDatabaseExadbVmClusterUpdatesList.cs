@@ -21,7 +21,7 @@ namespace Oci.DatabaseService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabaseService.Models.ExadbVmClusterUpdateSummary), typeof(Oci.DatabaseService.Responses.ListExadbVmClusterUpdatesResponse) })]
     public class GetOCIDatabaseExadbVmClusterUpdatesList : OCIDatabaseCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Exadata VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) on Exascale Infrastructure.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Exadata VM cluster [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) on Exascale Infrastructure.")]
         public string ExadbVmClusterId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given update type exactly.")]

@@ -22,7 +22,7 @@ namespace Oci.OdaService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new ODA Private Endpoint Scan Proxy.")]
         public CreateOdaPrivateEndpointScanProxyDetails CreateOdaPrivateEndpointScanProxyDetails { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique ODA Private Endpoint identifier which is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
         public string OdaPrivateEndpointId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing. This value is included in the opc-request-id response header.")]

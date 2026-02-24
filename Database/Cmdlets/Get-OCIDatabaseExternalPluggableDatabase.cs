@@ -21,8 +21,8 @@ namespace Oci.DatabaseService.Cmdlets
     public class GetOCIDatabaseExternalPluggableDatabase : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ExternalPluggableDatabaseId [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ExternalPluggableDatabaseId [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).", ParameterSetName = Default)]
         public string ExternalPluggableDatabaseId { get; set; }
 
         

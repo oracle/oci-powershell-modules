@@ -19,7 +19,7 @@ namespace Oci.ResourcemanagerService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ResourcemanagerService.Models.ConfigurationSourceProvider), typeof(Oci.ResourcemanagerService.Responses.UpdateConfigurationSourceProviderResponse) })]
     public class UpdateOCIResourcemanagerConfigurationSourceProvider : OCIResourceManagerCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration source provider.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration source provider.")]
         public string ConfigurationSourceProviderId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Updated information provided for the ConfigurationSourceProvider. This parameter also accepts subtypes <Oci.ResourcemanagerService.Models.UpdateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails>, <Oci.ResourcemanagerService.Models.UpdateBitbucketServerAccessTokenConfigurationSourceProviderDetails>, <Oci.ResourcemanagerService.Models.UpdateGitlabAccessTokenConfigurationSourceProviderDetails>, <Oci.ResourcemanagerService.Models.UpdateGithubAccessTokenConfigurationSourceProviderDetails> of type <Oci.ResourcemanagerService.Models.UpdateConfigurationSourceProviderDetails>.")]

@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Mysql.dll'
 
 # Version number of this module.
-ModuleVersion = '123.2.0'
+ModuleVersion = '124.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '123.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '124.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Mysql.dll'
@@ -74,9 +74,10 @@ FunctionsToExport = '*'
 CmdletsToExport = 'Add-OCIMysqlHeatWaveCluster', 'Confirm-OCIMysqlBackup', 
                'Copy-OCIMysqlBackup', 'Export-OCIMysqlBackup', 'Get-OCIMysqlBackup', 
                'Get-OCIMysqlBackupsList', 'Get-OCIMysqlChannel', 
-               'Get-OCIMysqlChannelsList', 'Get-OCIMysqlConfiguration', 
-               'Get-OCIMysqlConfigurationsList', 'Get-OCIMysqlDbSystem', 
-               'Get-OCIMysqlDbSystemsList', 'Get-OCIMysqlHeatWaveCluster', 
+               'Get-OCIMysqlChannelsList', 'Get-OCIMysqlChannelStatus', 
+               'Get-OCIMysqlConfiguration', 'Get-OCIMysqlConfigurationsList', 
+               'Get-OCIMysqlDbSystem', 'Get-OCIMysqlDbSystemsList', 
+               'Get-OCIMysqlDbSystemStatus', 'Get-OCIMysqlHeatWaveCluster', 
                'Get-OCIMysqlHeatWaveClusterMemoryEstimate', 
                'Get-OCIMysqlMaintenanceEventsList', 'Get-OCIMysqlReplica', 
                'Get-OCIMysqlReplicasList', 'Get-OCIMysqlShapesList', 
@@ -85,7 +86,8 @@ CmdletsToExport = 'Add-OCIMysqlHeatWaveCluster', 'Confirm-OCIMysqlBackup',
                'Get-OCIMysqlWorkRequestLogsList', 'Get-OCIMysqlWorkRequestsList', 
                'Invoke-OCIMysqlResumeChannel', 'Move-OCIMysqlBackupCompartment', 
                'New-OCIMysqlBackup', 'New-OCIMysqlChannel', 
-               'New-OCIMysqlConfiguration', 'New-OCIMysqlDbSystem', 
+               'New-OCIMysqlChannelStatus', 'New-OCIMysqlConfiguration', 
+               'New-OCIMysqlDbSystem', 'New-OCIMysqlDbSystemStatus', 
                'New-OCIMysqlHeatWaveClusterMemoryEstimate', 'New-OCIMysqlReplica', 
                'Remove-OCIMysqlBackup', 'Remove-OCIMysqlChannel', 
                'Remove-OCIMysqlConfiguration', 'Remove-OCIMysqlDbSystem', 

@@ -19,7 +19,7 @@ namespace Oci.LustrefilestorageService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.LustrefilestorageService.Models.ObjectStorageLink), typeof(Oci.LustrefilestorageService.Responses.UpdateObjectStorageLinkResponse) })]
     public class UpdateOCILustrefilestorageObjectStorageLink : OCILustreFileStorageCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Object Storage link.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Object Storage link.")]
         public string ObjectStorageLinkId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated.")]

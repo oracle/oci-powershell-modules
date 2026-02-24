@@ -23,7 +23,7 @@ namespace Oci.DatabaseService.Cmdlets
     [OutputType(new System.Type[] { typeof(System.IO.Stream), typeof(void), typeof(Oci.DatabaseService.Responses.DownloadExadataInfrastructureConfigFileResponse) })]
     public class InvokeOCIDatabaseDownloadExadataInfrastructureConfigFile : OCIDatabaseCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Exadata infrastructure [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string ExadataInfrastructureId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]

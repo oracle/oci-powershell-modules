@@ -19,7 +19,7 @@ namespace Oci.DatabaseService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabaseService.Models.OCPUs), typeof(Oci.DatabaseService.Responses.GetExadataInfrastructureOcpusResponse) })]
     public class GetOCIDatabaseExadataInfrastructureOcpus : OCIDatabaseCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Autonomous Exadata Infrastructure  [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string AutonomousExadataInfrastructureId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]

@@ -19,7 +19,7 @@ namespace Oci.DatabasetoolsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabasetoolsService.Models.ValidateDatabaseToolsConnectionResult), typeof(Oci.DatabasetoolsService.Responses.ValidateDatabaseToolsConnectionResponse) })]
     public class ConfirmOCIDatabasetoolsConnection : OCIDatabaseToolsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools connection.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools connection.")]
         public string DatabaseToolsConnectionId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to validate a Database Tools connection. This parameter also accepts subtypes <Oci.DatabasetoolsService.Models.ValidateDatabaseToolsConnectionPostgresqlDetails>, <Oci.DatabasetoolsService.Models.ValidateDatabaseToolsConnectionOracleDatabaseDetails>, <Oci.DatabasetoolsService.Models.ValidateDatabaseToolsConnectionMySqlDetails> of type <Oci.DatabasetoolsService.Models.ValidateDatabaseToolsConnectionDetails>.")]

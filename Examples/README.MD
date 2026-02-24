@@ -3,7 +3,7 @@
 ## About
 
 PowerShell script examples contained herein uses modules published to [PowerShell Gallery](https://www.powershellgallery.com/).
-1. [Setup](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm) a config file with `DEFAULT` profile at `(~/.oci/config)`.
+1. [Setup](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm) a config file with `DEFAULT` profile at `(~/.oci/config)`.
 2. Install the required modules before running the scripts.
 ```
 Install-Module <Module-Name> <-options>

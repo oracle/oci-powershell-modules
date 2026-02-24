@@ -19,7 +19,7 @@ namespace Oci.ResourcemanagerService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ResourcemanagerService.Models.Job), typeof(Oci.ResourcemanagerService.Responses.UpdateJobResponse) })]
     public class UpdateOCIResourcemanagerJob : OCIResourceManagerCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.")]
         public string JobId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Updates properties for the specified job.")]

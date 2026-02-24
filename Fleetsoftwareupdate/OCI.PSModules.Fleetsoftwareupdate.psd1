@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Fleetsoftwareupdate.dll'
 
 # Version number of this module.
-ModuleVersion = '123.2.0'
+ModuleVersion = '124.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '123.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '124.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Fleetsoftwareupdate.dll'
@@ -88,6 +88,8 @@ CmdletsToExport = 'Add-OCIFleetsoftwareupdateFsuCollectionTargets',
                'Get-OCIFleetsoftwareupdateFsuJobOutputContent', 
                'Get-OCIFleetsoftwareupdateFsuJobOutputsList', 
                'Get-OCIFleetsoftwareupdateFsuJobsList', 
+               'Get-OCIFleetsoftwareupdateFsuReadinessCheck', 
+               'Get-OCIFleetsoftwareupdateFsuReadinessChecksList', 
                'Get-OCIFleetsoftwareupdateWorkRequest', 
                'Get-OCIFleetsoftwareupdateWorkRequestErrorsList', 
                'Get-OCIFleetsoftwareupdateWorkRequestLogsList', 
@@ -99,10 +101,12 @@ CmdletsToExport = 'Add-OCIFleetsoftwareupdateFsuCollectionTargets',
                'Move-OCIFleetsoftwareupdateFsuCollectionCompartment', 
                'Move-OCIFleetsoftwareupdateFsuCycleCompartment', 
                'Move-OCIFleetsoftwareupdateFsuDiscoveryCompartment', 
+               'Move-OCIFleetsoftwareupdateFsuReadinessCheckCompartment', 
                'New-OCIFleetsoftwareupdateFsuAction', 
                'New-OCIFleetsoftwareupdateFsuCollection', 
                'New-OCIFleetsoftwareupdateFsuCycle', 
                'New-OCIFleetsoftwareupdateFsuDiscovery', 
+               'New-OCIFleetsoftwareupdateFsuReadinessCheck', 
                'Remove-OCIFleetsoftwareupdateFsuAction', 
                'Remove-OCIFleetsoftwareupdateFsuCollection', 
                'Remove-OCIFleetsoftwareupdateFsuCollectionTarget', 
@@ -110,13 +114,15 @@ CmdletsToExport = 'Add-OCIFleetsoftwareupdateFsuCollectionTargets',
                'Remove-OCIFleetsoftwareupdateFsuCycle', 
                'Remove-OCIFleetsoftwareupdateFsuDiscovery', 
                'Remove-OCIFleetsoftwareupdateFsuJob', 
+               'Remove-OCIFleetsoftwareupdateFsuReadinessCheck', 
                'Stop-OCIFleetsoftwareupdateFsuAction', 
                'Stop-OCIFleetsoftwareupdateFsuDiscovery', 
                'Update-OCIFleetsoftwareupdateFsuAction', 
                'Update-OCIFleetsoftwareupdateFsuCollection', 
                'Update-OCIFleetsoftwareupdateFsuCycle', 
                'Update-OCIFleetsoftwareupdateFsuDiscovery', 
-               'Update-OCIFleetsoftwareupdateFsuJob'
+               'Update-OCIFleetsoftwareupdateFsuJob', 
+               'Update-OCIFleetsoftwareupdateFsuReadinessCheck'
 
 # Variables to export from this module
 VariablesToExport = '*'

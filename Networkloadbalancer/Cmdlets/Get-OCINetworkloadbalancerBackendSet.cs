@@ -19,7 +19,7 @@ namespace Oci.NetworkloadbalancerService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.NetworkloadbalancerService.Models.BackendSet), typeof(Oci.NetworkloadbalancerService.Responses.GetBackendSetResponse) })]
     public class GetOCINetworkloadbalancerBackendSet : OCINetworkLoadBalancerCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.")]
         public string NetworkLoadBalancerId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the backend set to retrieve.

@@ -19,7 +19,7 @@ namespace Oci.ApiaccesscontrolService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.ApiaccesscontrolService.Responses.DeletePrivilegedApiControlResponse) })]
     public class RemoveOCIApiaccesscontrolPrivilegedApiControl : OCIPrivilegedApiControlCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PrivilegedApiControl.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PrivilegedApiControl.")]
         public string PrivilegedApiControlId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"reason for deletion of PrivilegedApiControl.")]

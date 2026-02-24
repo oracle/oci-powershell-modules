@@ -19,7 +19,7 @@ namespace Oci.CloudbridgeService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.CloudbridgeService.Responses.ChangeDiscoveryScheduleCompartmentResponse) })]
     public class MoveOCICloudbridgeDiscoveryScheduleCompartment : OCIDiscoveryCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the discovery schedule.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the discovery schedule.")]
         public string DiscoveryScheduleId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Information about the compartment in to which the discovery schedule should be moved.")]

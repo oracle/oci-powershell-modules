@@ -21,7 +21,7 @@ namespace Oci.MonitoringService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.MonitoringService.Models.AlarmStatusSummary), typeof(Oci.MonitoringService.Responses.ListAlarmsStatusResponse) })]
     public class GetOCIMonitoringAlarmsStatusList : OCIMonitoringCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.
 
 Example: `ocid1.compartment.oc1..exampleuniqueID`")]
         public string CompartmentId { get; set; }
@@ -32,10 +32,10 @@ Example: `ocid1.compartment.oc1..exampleuniqueID`")]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.")]
         public System.Nullable<bool> CompartmentIdInSubtree { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The value of the `opc-next-page` response header from the previous ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The value of the `opc-next-page` response header from the previous ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
 
 Default: 1000
 
@@ -55,7 +55,7 @@ Example: `severity`")]
 Example: `ASC`")]
         public System.Nullable<Oci.MonitoringService.Requests.ListAlarmsStatusRequest.SortOrderEnum> SortOrder { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resource with the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). The resource must be monitored by the metric that you are searching for.
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resource with the specified [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). The resource must be monitored by the metric that you are searching for.
 
 Example: `ocid1.instance.oc1.phx.exampleuniqueID`")]
         public string ResourceId { get; set; }
@@ -65,7 +65,7 @@ Example: `ocid1.instance.oc1.phx.exampleuniqueID`")]
 Example: `logging-analytics`")]
         public string ServiceName { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given entity [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) exactly. The resource (entity) must be monitored by the metric that you are searching for.
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given entity [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) exactly. The resource (entity) must be monitored by the metric that you are searching for.
 
 Example: `ocid1.instance.oc1.phx.exampleuniqueID`")]
         public string EntityId { get; set; }

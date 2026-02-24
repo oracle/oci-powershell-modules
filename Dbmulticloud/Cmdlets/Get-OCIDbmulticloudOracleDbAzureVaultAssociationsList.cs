@@ -21,10 +21,10 @@ namespace Oci.DbmulticloudService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DbmulticloudService.Models.OracleDbAzureVaultAssociationSummaryCollection), typeof(Oci.DbmulticloudService.Responses.ListOracleDbAzureVaultAssociationsResponse) })]
     public class GetOCIDbmulticloudOracleDbAzureVaultAssociationsList : OCIOracleDbAzureVaultAssociationCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [ID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.")]
         public string OracleDbAzureVaultId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return Oracle DB Azure Vault Association resources that match the specified display name.")]

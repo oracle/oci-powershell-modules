@@ -19,7 +19,7 @@ namespace Oci.OnsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OnsService.Models.PublishResult), typeof(Oci.OnsService.Responses.PublishMessageResponse) })]
     public class InvokeOCIOnsPublishMessage : OCINotificationDataPlaneCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.")]
         public string TopicId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The message to publish.")]

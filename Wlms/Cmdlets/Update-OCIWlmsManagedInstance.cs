@@ -19,7 +19,7 @@ namespace Oci.WlmsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.WlmsService.Models.ManagedInstance), typeof(Oci.WlmsService.Responses.UpdateManagedInstanceResponse) })]
     public class UpdateOCIWlmsManagedInstance : OCIWeblogicManagementServiceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.")]
         public string ManagedInstanceId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Provides the informaton used to update a managed instance.")]

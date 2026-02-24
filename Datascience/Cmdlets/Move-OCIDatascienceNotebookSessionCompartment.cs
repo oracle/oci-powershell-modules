@@ -19,7 +19,7 @@ namespace Oci.DatascienceService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.DatascienceService.Responses.ChangeNotebookSessionCompartmentResponse) })]
     public class MoveOCIDatascienceNotebookSessionCompartment : OCIDataScienceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session.")]
         public string NotebookSessionId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for changing the compartment of a notebook session.")]

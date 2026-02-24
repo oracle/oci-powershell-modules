@@ -19,7 +19,7 @@ namespace Oci.OnsService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.OnsService.Responses.ChangeTopicCompartmentResponse) })]
     public class MoveOCIOnsTopicCompartment : OCINotificationControlPlaneCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to move.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to move.")]
         public string TopicId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The configuration details for the move operation.")]

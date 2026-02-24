@@ -21,7 +21,7 @@ namespace Oci.DelegateaccesscontrolService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DelegateaccesscontrolService.Models.DelegationSubscriptionSummaryCollection), typeof(Oci.DelegateaccesscontrolService.Responses.ListDelegationSubscriptionsResponse) })]
     public class GetOCIDelegateaccesscontrolDelegationSubscriptionsList : OCIDelegateAccessControlCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only Delegation Subscription resources whose lifecycleState matches the given Delegation Subscription lifecycle state.")]

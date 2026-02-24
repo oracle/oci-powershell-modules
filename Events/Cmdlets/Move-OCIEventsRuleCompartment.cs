@@ -19,7 +19,7 @@ namespace Oci.EventsService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.EventsService.Responses.ChangeRuleCompartmentResponse) })]
     public class MoveOCIEventsRuleCompartment : OCIEventsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.")]
         public string RuleId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true)]

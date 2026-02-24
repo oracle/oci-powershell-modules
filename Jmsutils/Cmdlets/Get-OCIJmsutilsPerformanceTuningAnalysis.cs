@@ -19,7 +19,7 @@ namespace Oci.JmsutilsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.JmsutilsService.Models.PerformanceTuningAnalysis), typeof(Oci.JmsutilsService.Responses.GetPerformanceTuningAnalysisResponse) })]
     public class GetOCIJmsutilsPerformanceTuningAnalysis : OCIJmsUtilsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Performance Tuning Analysis.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Performance Tuning Analysis.")]
         public string PerformanceTuningAnalysisId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID. The only valid characters for request IDs are letters, numbers, underscore, and dash.")]

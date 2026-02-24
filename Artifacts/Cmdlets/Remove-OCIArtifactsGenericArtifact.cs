@@ -19,7 +19,7 @@ namespace Oci.ArtifactsService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.ArtifactsService.Responses.DeleteGenericArtifactResponse) })]
     public class RemoveOCIArtifactsGenericArtifact : OCIArtifactsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
 
 Example: `ocid1.genericartifact.oc1..exampleuniqueID`")]
         public string ArtifactId { get; set; }

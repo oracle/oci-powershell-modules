@@ -19,7 +19,7 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.ComputeCluster), typeof(Oci.CoreService.Responses.CreateComputeClusterResponse) })]
     public class NewOCIComputeCluster : OCIComputeCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The data for creating a [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute cluster is an empty remote direct memory access (RDMA) network group.
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The data for creating a [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute cluster is an empty remote direct memory access (RDMA) network group.
 
 After the compute cluster is created, you can use the compute cluster's OCID with the LaunchInstance operation to create instances in the compute cluster. The instances must be created in the same compartment and availability domain as the cluster.
 

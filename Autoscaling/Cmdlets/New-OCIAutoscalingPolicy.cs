@@ -19,7 +19,7 @@ namespace Oci.AutoscalingService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.AutoscalingService.Models.AutoScalingPolicy), typeof(Oci.AutoscalingService.Responses.CreateAutoScalingPolicyResponse) })]
     public class NewOCIAutoscalingPolicy : OCIAutoScalingCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.")]
         public string AutoScalingConfigurationId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Creation details for an autoscaling policy. This parameter also accepts subtypes <Oci.AutoscalingService.Models.CreateScheduledPolicyDetails>, <Oci.AutoscalingService.Models.CreateThresholdPolicyDetails> of type <Oci.AutoscalingService.Models.CreateAutoScalingPolicyDetails>.")]

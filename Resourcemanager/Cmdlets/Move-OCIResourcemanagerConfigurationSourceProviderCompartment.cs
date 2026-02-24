@@ -19,7 +19,7 @@ namespace Oci.ResourcemanagerService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.ResourcemanagerService.Responses.ChangeConfigurationSourceProviderCompartmentResponse) })]
     public class MoveOCIResourcemanagerConfigurationSourceProviderCompartment : OCIResourceManagerCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration source provider.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration source provider.")]
         public string ConfigurationSourceProviderId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Defines the properties of changeConfigurationSourceProviderCompartment operation.")]

@@ -19,7 +19,7 @@ namespace Oci.MonitoringService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.MonitoringService.Models.Alarm), typeof(Oci.MonitoringService.Responses.UpdateAlarmResponse) })]
     public class UpdateOCIMonitoringAlarm : OCIMonitoringCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.")]
         public string AlarmId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Document for updating an alarm.")]

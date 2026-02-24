@@ -19,7 +19,7 @@ namespace Oci.DatabasetoolsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.DatabasetoolsService.Responses.RefreshDatabaseToolsIdentityCredentialResponse) })]
     public class InvokeOCIDatabasetoolsRefreshDatabaseToolsIdentityCredential : OCIDatabaseToolsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools identity.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools identity.")]
         public string DatabaseToolsIdentityId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to refresh Database Tools identity credential. This parameter also accepts subtype <Oci.DatabasetoolsService.Models.RefreshDatabaseToolsIdentityOracleDatabaseResourcePrincipalCredentialDetails> of type <Oci.DatabasetoolsService.Models.RefreshDatabaseToolsIdentityCredentialDetails>.")]

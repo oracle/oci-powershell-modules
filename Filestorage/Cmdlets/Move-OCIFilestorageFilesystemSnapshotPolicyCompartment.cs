@@ -19,7 +19,7 @@ namespace Oci.FilestorageService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.FilestorageService.Responses.ChangeFilesystemSnapshotPolicyCompartmentResponse) })]
     public class MoveOCIFilestorageFilesystemSnapshotPolicyCompartment : OCIFileStorageCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system snapshot policy.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the file system snapshot policy.")]
         public string FilesystemSnapshotPolicyId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for changing the compartment of a file system snapshot policy.")]

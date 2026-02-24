@@ -19,7 +19,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.DatabasemanagementService.Responses.ChangeDbManagementPrivateEndpointCompartmentResponse) })]
     public class MoveOCIDatabasemanagementDbManagementPrivateEndpointCompartment : OCIDbManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.")]
         public string DbManagementPrivateEndpointId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details used to move the Database Management private endpoint to another compartment.")]

@@ -3,6 +3,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 124.0.0 - 2026-02-24
+### Added 
+- Support for calling Oracle Cloud Infrastructure services in the af-casablanca-1 region 
+- Support for specifying TCP and SSL scan listener ports for DR networks in the Database service 
+- Support for readiness check in the Exadata Fleet Update service 
+- Support for Zone Transparency in the DNS service 
+- Support for retrieving DB system and Channel status (information about availability and operational indicators) in the MySQL HeatWave service 
+- Support for configuring telemetry (exporting logs to Log Analytics) in MySQL HeatWave Service 
+- Support for enabling and disabling the logging feature in Dataflow SQL Endpoints in the Data Flow service 
+
+### Breaking Changes 
+- Added a required parameter `ResolutionMode` for Zone operations in the DNS service in the .NET SDK
+
 ## 123.2.0 - 2026-02-17
 ### Added 
 - Support for customer-controlled public IP decommissioning in the Kubernetes Engine service 

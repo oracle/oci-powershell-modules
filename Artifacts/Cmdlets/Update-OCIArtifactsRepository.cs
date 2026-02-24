@@ -19,7 +19,7 @@ namespace Oci.ArtifactsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ArtifactsService.Models.Repository), typeof(Oci.ArtifactsService.Responses.UpdateRepositoryResponse) })]
     public class UpdateOCIArtifactsRepository : OCIArtifactsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
 
 Example: `ocid1.artifactrepository.oc1..exampleuniqueID`")]
         public string RepositoryId { get; set; }

@@ -21,13 +21,13 @@ namespace Oci.DatabaseService.Cmdlets
     public class InvokeOCIDatabaseConfigureAutonomousDatabaseVaultKey : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The database [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).", ParameterSetName = Default)]
         public string AutonomousDatabaseId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Configuration details for the Autonomous AI Database Vault service [key](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Configuration details for the Autonomous AI Database Vault service [key](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Configuration details for the Autonomous AI Database Vault service [key](https://docs.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Configuration details for the Autonomous AI Database Vault service [key](https://docs.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).", ParameterSetName = Default)]
         public ConfigureAutonomousDatabaseVaultKeyDetails ConfigureAutonomousDatabaseVaultKeyDetails { get; set; }
 
         

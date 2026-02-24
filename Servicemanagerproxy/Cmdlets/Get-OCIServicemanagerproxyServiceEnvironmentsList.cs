@@ -21,12 +21,12 @@ namespace Oci.ServicemanagerproxyService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ServicemanagerproxyService.Models.ServiceEnvironmentCollection), typeof(Oci.ServicemanagerproxyService.Responses.ListServiceEnvironmentsResponse) })]
     public class GetOCIServicemanagerproxyServiceEnvironmentsList : OCIServiceManagerProxyCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the compartment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) for the compartment.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier associated with the service environment.
 
-**Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+**Note:** Not an [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string ServiceEnvironmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The environment's service definition type. For example, ""RGBUOROMS"" is the service definition type for ""Oracle Retail Order Management Cloud Service"".")]

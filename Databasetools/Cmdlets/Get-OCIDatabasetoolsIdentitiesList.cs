@@ -21,7 +21,7 @@ namespace Oci.DatabasetoolsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabasetoolsService.Models.DatabaseToolsIdentityCollection), typeof(Oci.DatabasetoolsService.Responses.ListDatabaseToolsIdentitiesResponse) })]
     public class GetOCIDatabasetoolsIdentitiesList : OCIDatabaseToolsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources only when their `databaseToolsIdentityLifecycleState` matches the specified `databaseToolsIdentityLifecycleState`.")]

@@ -19,7 +19,7 @@ namespace Oci.OpsiService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OpsiService.Models.IngestHostMetricsResponseDetails), typeof(Oci.OpsiService.Responses.IngestHostMetricsResponse) })]
     public class InvokeOCIOpsiIngestHostMetrics : OCIOperationsInsightsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.")]
         public string Id { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Payload for one or more host performance metrics for a particular host.")]

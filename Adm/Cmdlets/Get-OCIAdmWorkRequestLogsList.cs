@@ -21,7 +21,7 @@ namespace Oci.AdmService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.AdmService.Models.WorkRequestLogEntryCollection), typeof(Oci.AdmService.Responses.ListWorkRequestLogsResponse) })]
     public class GetOCIAdmWorkRequestLogsList : OCIApplicationDependencyManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the asynchronous request.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm)) of the asynchronous request.")]
         public string WorkRequestId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

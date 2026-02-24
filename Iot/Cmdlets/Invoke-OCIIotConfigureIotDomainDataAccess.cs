@@ -19,7 +19,7 @@ namespace Oci.IotService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.IotService.Responses.ConfigureIotDomainDataAccessResponse) })]
     public class InvokeOCIIotConfigureIotDomainDataAccess : OCIIotCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.")]
         public string IotDomainId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for configuring data access. This parameter also accepts subtypes <Oci.IotService.Models.ApexDataAccessDetails>, <Oci.IotService.Models.DirectDataAccessDetails>, <Oci.IotService.Models.OrdsDataAccessDetails> of type <Oci.IotService.Models.ConfigureIotDomainDataAccessDetails>.")]

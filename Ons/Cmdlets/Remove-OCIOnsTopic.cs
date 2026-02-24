@@ -19,7 +19,7 @@ namespace Oci.OnsService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.OnsService.Responses.DeleteTopicResponse) })]
     public class RemoveOCIOnsTopic : OCINotificationControlPlaneCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to delete.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to delete.")]
         public string TopicId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

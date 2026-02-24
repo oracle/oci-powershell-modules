@@ -19,7 +19,7 @@ namespace Oci.GenerativeaiService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.GenerativeaiService.Responses.ChangeApiKeyCompartmentResponse) })]
     public class MoveOCIGenerativeaiApiKeyCompartment : OCIGenerativeAiCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the APIKey.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the APIKey.")]
         public string ApiKeyId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The API key information to be updated.")]

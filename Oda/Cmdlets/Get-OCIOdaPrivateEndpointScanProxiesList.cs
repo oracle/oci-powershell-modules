@@ -21,7 +21,7 @@ namespace Oci.OdaService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OdaService.Models.OdaPrivateEndpointScanProxyCollection), typeof(Oci.OdaService.Responses.ListOdaPrivateEndpointScanProxiesResponse) })]
     public class GetOCIOdaPrivateEndpointScanProxiesList : OCIManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique ODA Private Endpoint identifier which is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
         public string OdaPrivateEndpointId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"List only the ODA Private Endpoint Scan Proxies that are in this lifecycle state.")]

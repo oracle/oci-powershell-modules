@@ -19,7 +19,7 @@ namespace Oci.WlmsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.WlmsService.Models.WlsDomainCredentialCollection), typeof(Oci.WlmsService.Responses.ListWlsDomainCredentialsResponse) })]
     public class GetOCIWlmsWlsDomainCredentialsList : OCIWeblogicManagementServiceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.")]
         public string WlsDomainId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

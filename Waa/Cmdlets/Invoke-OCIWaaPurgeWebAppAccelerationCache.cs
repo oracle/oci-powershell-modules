@@ -19,7 +19,7 @@ namespace Oci.WaaService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.WaaService.Responses.PurgeWebAppAccelerationCacheResponse) })]
     public class InvokeOCIWaaPurgeWebAppAccelerationCache : OCIWaaCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WebAppAcceleration.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the WebAppAcceleration.")]
         public string WebAppAccelerationId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Options for the cache purge. This parameter also accepts subtype <Oci.WaaService.Models.PurgeEntireWebAppAccelerationCacheDetails> of type <Oci.WaaService.Models.PurgeWebAppAccelerationCacheDetails>.")]

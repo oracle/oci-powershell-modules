@@ -19,7 +19,7 @@ namespace Oci.OnsService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.OnsService.Responses.ChangeSubscriptionCompartmentResponse) })]
     public class MoveOCIOnsSubscriptionCompartment : OCINotificationDataPlaneCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to move.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to move.")]
         public string SubscriptionId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The configuration details for the move operation.")]

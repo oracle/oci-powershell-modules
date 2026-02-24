@@ -19,7 +19,7 @@ namespace Oci.JmsService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.JmsService.Responses.DeleteJmsPluginResponse) })]
     public class RemoveOCIJmsPlugin : OCIJavaManagementServiceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the JmsPlugin.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the JmsPlugin.")]
         public string JmsPluginId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

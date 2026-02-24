@@ -19,7 +19,7 @@ namespace Oci.OsmanagementhubService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OsmanagementhubService.Models.SoftwareSource), typeof(Oci.OsmanagementhubService.Responses.UpdateSoftwareSourceResponse) })]
     public class UpdateOCIOsmanagementhubSoftwareSource : OCISoftwareSourceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.")]
         public string SoftwareSourceId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtypes <Oci.OsmanagementhubService.Models.UpdateCustomSoftwareSourceDetails>, <Oci.OsmanagementhubService.Models.UpdatePrivateSoftwareSourceDetails>, <Oci.OsmanagementhubService.Models.UpdateVersionedCustomSoftwareSourceDetails>, <Oci.OsmanagementhubService.Models.UpdateVendorSoftwareSourceDetails>, <Oci.OsmanagementhubService.Models.UpdateThirdPartySoftwareSourceDetails> of type <Oci.OsmanagementhubService.Models.UpdateSoftwareSourceDetails>.")]
