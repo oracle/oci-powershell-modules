@@ -21,8 +21,8 @@ namespace Oci.DbmulticloudService.Cmdlets
     public class GetOCIDbmulticloudOracleDbAwsIdentityConnector : OCIDbMulticloudAwsProviderCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  of the Oracle DB AWS Identity Connector resource.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  of the Oracle DB AWS Identity Connector resource.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  of the Oracle DB AWS Identity Connector resource.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  of the Oracle DB AWS Identity Connector resource.", ParameterSetName = Default)]
         public string OracleDbAwsIdentityConnectorId { get; set; }
 
         

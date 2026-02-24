@@ -19,7 +19,7 @@ namespace Oci.EmailService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.EmailService.Models.EmailIpPool), typeof(Oci.EmailService.Responses.RemoveEmailIpPoolLockResponse) })]
     public class RemoveOCIEmailIpPoolLock : OCIEmailCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IpPool.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IpPool.")]
         public string EmailIpPoolId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for removing a lock to a resource.")]

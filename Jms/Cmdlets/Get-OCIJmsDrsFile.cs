@@ -19,7 +19,7 @@ namespace Oci.JmsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.JmsService.Models.DrsFile), typeof(Oci.JmsService.Responses.GetDrsFileResponse) })]
     public class GetOCIJmsDrsFile : OCIJavaManagementServiceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.")]
         public string FleetId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier of the DRS File in Object Storage.")]

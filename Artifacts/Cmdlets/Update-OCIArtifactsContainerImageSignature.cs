@@ -19,7 +19,7 @@ namespace Oci.ArtifactsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ArtifactsService.Models.ContainerImageSignature), typeof(Oci.ArtifactsService.Responses.UpdateContainerImageSignatureResponse) })]
     public class UpdateOCIArtifactsContainerImageSignature : OCIArtifactsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.
 
 Example: `ocid1.containersignature.oc1..exampleuniqueID`")]
         public string ImageSignatureId { get; set; }

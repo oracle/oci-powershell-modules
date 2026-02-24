@@ -19,7 +19,7 @@ namespace Oci.StackmonitoringService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.StackmonitoringService.Models.MonitoringTemplate), typeof(Oci.StackmonitoringService.Responses.UpdateMonitoringTemplateResponse) })]
     public class UpdateOCIStackmonitoringMonitoringTemplate : OCIStackMonitoringCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the monitoring template.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the monitoring template.")]
         public string MonitoringTemplateId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated.")]

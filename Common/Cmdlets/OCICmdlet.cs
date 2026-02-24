@@ -241,7 +241,7 @@ namespace Oci.PSModules.Common.Cmdlets
         /// <summary>
         /// Creates a work request wrapper object for the passed opcWorkRequestID
         /// </summary>
-        /// <param name="opcWorkRequestId">The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.</param>
+        /// <param name="opcWorkRequestId">The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.</param>
         /// <returns>Work Request Object</returns>
         protected WorkRequest CreateWorkRequestObject(string opcWorkRequestId)
         {

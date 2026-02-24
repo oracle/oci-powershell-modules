@@ -19,7 +19,7 @@ namespace Oci.DatabaseService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabaseService.Models.ExternalBackupJob), typeof(Oci.DatabaseService.Responses.GetExternalBackupJobResponse) })]
     public class GetOCIDatabaseExternalBackupJob : OCIDatabaseCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The backup [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The backup [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string BackupId { get; set; }
 
         protected override void ProcessRecord()

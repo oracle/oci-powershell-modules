@@ -19,7 +19,7 @@ namespace Oci.WaasService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.WaasService.Responses.CancelWorkRequestResponse) })]
     public class StopOCIWaasWorkRequest : OCIWaasCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. This number is generated when work request is created.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. This number is generated when work request is created.")]
         public string WorkRequestId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

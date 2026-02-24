@@ -22,7 +22,7 @@ namespace Oci.ApmconfigService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The APM Domain ID the request is intended for.")]
         public string ApmDomainId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the configuration item.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the configuration item.")]
         public string ConfigId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The configuration details to be updated. This parameter also accepts subtypes <Oci.ApmconfigService.Models.UpdateMetricGroupDetails>, <Oci.ApmconfigService.Models.UpdateAgentConfigDetails>, <Oci.ApmconfigService.Models.UpdateMacsApmExtensionDetails>, <Oci.ApmconfigService.Models.UpdateApdexRulesDetails>, <Oci.ApmconfigService.Models.UpdateSpanFilterDetails>, <Oci.ApmconfigService.Models.UpdateOptionsDetails> of type <Oci.ApmconfigService.Models.UpdateConfigDetails>.")]

@@ -19,7 +19,7 @@ namespace Oci.FunctionsService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.FunctionsService.Responses.ChangeApplicationCompartmentResponse) })]
     public class MoveOCIFunctionsApplicationCompartment : OCIFunctionsManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this application.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this application.")]
         public string ApplicationId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Properties to change the compartment of an application.")]

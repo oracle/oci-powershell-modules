@@ -19,7 +19,7 @@ namespace Oci.WlmsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.WlmsService.Responses.InstallLatestPatchesOnWlsDomainResponse) })]
     public class InvokeOCIWlmsInstallLatestPatchesOnWlsDomain : OCIWeblogicManagementServiceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.")]
         public string WlsDomainId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Information for the operation to install latest patches to a WebLogic domain.")]

@@ -19,7 +19,7 @@ namespace Oci.ResourceschedulerService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.ResourceschedulerService.Responses.UpdateScheduleResponse) })]
     public class UpdateOCIResourceschedulerSchedule : OCIScheduleCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.")]
         public string ScheduleId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information about a schedule that will be updated.")]

@@ -21,13 +21,13 @@ namespace Oci.WafService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.WafService.Models.WebAppFirewallCollection), typeof(Oci.WafService.Responses.ListWebAppFirewallsResponse) })]
     public class GetOCIWafWebAppFirewallsList : OCIWafCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the WebAppFirewall with the given [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string Id { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of related WebAppFirewallPolicy.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the WebAppFirewall with the given [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of related WebAppFirewallPolicy.")]
         public string WebAppFirewallPolicyId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given lifecycleState.")]

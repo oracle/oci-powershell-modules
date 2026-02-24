@@ -21,7 +21,7 @@ namespace Oci.DbmulticloudService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DbmulticloudService.Models.OracleDbGcpKeyRingSummaryCollection), typeof(Oci.DbmulticloudService.Responses.ListOracleDbGcpKeyRingsResponse) })]
     public class GetOCIDbmulticloudOracleDbGcpKeyRingsList : OCIDbMulticloudGCPProviderCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [ID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return Oracle DB GCP Key Ring resources that match the specified display name.")]
@@ -33,7 +33,7 @@ namespace Oci.DbmulticloudService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.")]
         public System.Nullable<Oci.DbmulticloudService.Models.OracleDbGcpKeyRing.LifecycleStateEnum> LifecycleState { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return Oracle DB GCP Identity Connector resources that match the specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return Oracle DB GCP Identity Connector resources that match the specified resource [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).")]
         public string OracleDbGcpConnectorId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]

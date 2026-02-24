@@ -21,8 +21,8 @@ namespace Oci.ResourceschedulerService.Cmdlets
     public class GetOCIResourceschedulerSchedule : OCIScheduleCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.", ParameterSetName = Default)]
         public string ScheduleId { get; set; }
 
         

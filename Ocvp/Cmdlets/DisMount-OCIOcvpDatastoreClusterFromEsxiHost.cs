@@ -19,7 +19,7 @@ namespace Oci.OcvpService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OcvpService.Responses.DetachDatastoreClusterFromEsxiHostResponse) })]
     public class DisMountOCIOcvpDatastoreClusterFromEsxiHost : OCIDatastoreClusterCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Datastore Cluster.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the Datastore Cluster.")]
         public string DatastoreClusterId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information about Datastore Cluster detachment.")]

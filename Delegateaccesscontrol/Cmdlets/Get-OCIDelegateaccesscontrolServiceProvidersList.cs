@@ -21,7 +21,7 @@ namespace Oci.DelegateaccesscontrolService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DelegateaccesscontrolService.Models.ServiceProviderSummaryCollection), typeof(Oci.DelegateaccesscontrolService.Responses.ListServiceProvidersResponse) })]
     public class GetOCIDelegateaccesscontrolServiceProvidersList : OCIDelegateAccessControlCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only Service Provider resources whose lifecycleState matches the given Service Provider lifecycle state.")]

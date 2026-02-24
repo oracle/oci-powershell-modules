@@ -21,7 +21,7 @@ namespace Oci.JmsjavadownloadsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.JmsjavadownloadsService.Models.JavaLicenseAcceptanceRecordCollection), typeof(Oci.JmsjavadownloadsService.Responses.ListJavaLicenseAcceptanceRecordsResponse) })]
     public class GetOCIJmsjavadownloadsJavaLicenseAcceptanceRecordsList : OCIJavaDownloadCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the tenancy.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the tenancy.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the user principal detail. The search string can be any of the property values from the Principal object. This object is used as a response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.")]

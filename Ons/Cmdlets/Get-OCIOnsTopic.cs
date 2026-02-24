@@ -19,7 +19,7 @@ namespace Oci.OnsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OnsService.Models.NotificationTopic), typeof(Oci.OnsService.Responses.GetTopicResponse) })]
     public class GetOCIOnsTopic : OCINotificationControlPlaneCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
 
 Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.")]
         public string TopicId { get; set; }

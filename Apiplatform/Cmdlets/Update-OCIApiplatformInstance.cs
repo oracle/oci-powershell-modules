@@ -19,7 +19,7 @@ namespace Oci.ApiplatformService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ApiplatformService.Models.ApiPlatformInstance), typeof(Oci.ApiplatformService.Responses.UpdateApiPlatformInstanceResponse) })]
     public class UpdateOCIApiplatformInstance : OCIApiPlatformCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance")]
         public string ApiPlatformInstanceId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated.")]

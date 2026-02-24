@@ -19,7 +19,7 @@ namespace Oci.DatabasetoolsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabasetoolsService.Models.DatabaseToolsIdentity), typeof(Oci.DatabasetoolsService.Responses.RemoveDatabaseToolsIdentityLockResponse) })]
     public class RemoveOCIDatabasetoolsIdentityLock : OCIDatabaseToolsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools identity.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of a Database Tools identity.")]
         public string DatabaseToolsIdentityId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"RemoveResourceLockDetails body parameter")]

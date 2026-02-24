@@ -39,6 +39,11 @@ namespace Oci.DnsService.Cmdlets
         public string OpcRequestId { get; set; }
 
         
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).", ParameterSetName = Default)]
+        public string OpcRetryToken { get; set; }
+
+        
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies to operate only on resources that have a matching DNS scope.", ParameterSetName = StatusParamSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies to operate only on resources that have a matching DNS scope.", ParameterSetName = Default)]
         public System.Nullable<Oci.DnsService.Models.Scope> Scope { get; set; }
@@ -75,6 +80,7 @@ namespace Oci.DnsService.Cmdlets
                     CompartmentId = CompartmentId,
                     CreateZoneFromZoneFileDetails = CreateZoneFromZoneFileDetails,
                     OpcRequestId = OpcRequestId,
+                    OpcRetryToken = OpcRetryToken,
                     Scope = Scope,
                     ViewId = ViewId
                 };

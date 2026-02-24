@@ -21,7 +21,7 @@ namespace Oci.WaaService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.WaaService.Models.WorkRequestErrorCollection), typeof(Oci.WaaService.Responses.ListWorkRequestErrorsResponse) })]
     public class GetOCIWaaWorkRequestErrorsList : OCIWorkRequestCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asynchronous request.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the asynchronous request.")]
         public string WorkRequestId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

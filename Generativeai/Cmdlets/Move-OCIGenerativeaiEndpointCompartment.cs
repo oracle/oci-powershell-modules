@@ -19,7 +19,7 @@ namespace Oci.GenerativeaiService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.GenerativeaiService.Responses.ChangeEndpointCompartmentResponse) })]
     public class MoveOCIGenerativeaiEndpointCompartment : OCIGenerativeAiCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.")]
         public string EndpointId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The endpoint information to be updated.")]

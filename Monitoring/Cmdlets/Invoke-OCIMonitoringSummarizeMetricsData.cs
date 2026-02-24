@@ -19,7 +19,7 @@ namespace Oci.MonitoringService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.MonitoringService.Models.MetricData), typeof(Oci.MonitoringService.Responses.SummarizeMetricsDataResponse) })]
     public class InvokeOCIMonitoringSummarizeMetricsData : OCIMonitoringCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.
 
 Example: `ocid1.compartment.oc1..exampleuniqueID`")]
         public string CompartmentId { get; set; }

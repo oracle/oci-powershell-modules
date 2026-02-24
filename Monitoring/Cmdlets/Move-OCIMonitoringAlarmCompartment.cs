@@ -19,7 +19,7 @@ namespace Oci.MonitoringService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.MonitoringService.Responses.ChangeAlarmCompartmentResponse) })]
     public class MoveOCIMonitoringAlarmCompartment : OCIMonitoringCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.")]
         public string AlarmId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The configuration details for moving an alarm.")]

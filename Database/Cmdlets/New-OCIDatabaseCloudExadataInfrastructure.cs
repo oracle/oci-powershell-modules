@@ -21,8 +21,8 @@ namespace Oci.DatabaseService.Cmdlets
     public class NewOCIDatabaseCloudExadataInfrastructure : OCIDatabaseCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create a cloud Exadata infrastructure resource in an [Exadata Cloud Service](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm) instance.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create a cloud Exadata infrastructure resource in an [Exadata Cloud Service](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm) instance.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create a cloud Exadata infrastructure resource in an [Exadata Cloud Service](https://docs.oracle.com/Content/Database/Concepts/exaoverview.htm) instance.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request to create a cloud Exadata infrastructure resource in an [Exadata Cloud Service](https://docs.oracle.com/Content/Database/Concepts/exaoverview.htm) instance.", ParameterSetName = Default)]
         public CreateCloudExadataInfrastructureDetails CreateCloudExadataInfrastructureDetails { get; set; }
 
         

@@ -21,7 +21,7 @@ namespace Oci.RedisService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.RedisService.Models.AttachedOciCacheUser), typeof(Oci.RedisService.Responses.ListAttachedOciCacheUsersResponse) })]
     public class GetOCIRedisAttachedOciCacheUsersList : OCIRedisClusterCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.")]
         public string RedisClusterId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]

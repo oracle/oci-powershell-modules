@@ -69,11 +69,11 @@ namespace Oci.PSModules.Common.Cmdlets.ClientManagement
         private const string PRIVATE_KEY_PROMPT = "Enter the location of your API Signing private key file";
         private const string PRIVATE_KEY_PROPERTY = "Private Key";
         private const string PASS_PHRASE_PROMPT = "Enter the passphrase for your private key:";
-        private const string UPLOAD_KEY_MESSAGE = " If you haven't already uploaded your public key through the console,\n follow the instructions on the page linked below in the section 'How to \n upload the public key':\n https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#How2";
+        private const string UPLOAD_KEY_MESSAGE = " If you haven't already uploaded your public key through the console,\n follow the instructions on the page linked below in the section 'How to \n upload the public key':\n https://docs.oracle.com/Content/API/Concepts/apisigningkey.htm#How2";
         private const string CONFIG_FILE_WRITTEN = "Config written to ";
-        private const string INVALID_OCID_FORMAT = "Invalid ocid format. Instructions to find OCIDs: https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#Other";
+        private const string INVALID_OCID_FORMAT = "Invalid ocid format. Instructions to find OCIDs: https://docs.oracle.com/Content/API/Concepts/apisigningkey.htm#Other";
         private const string UNRECOGNIZED_REGION_PROMPT = "Continue with unrecognized region? (Enter 'No' to re-enter region)";
-        private const string VALID_REGION_INFO = "Valid regions can be found here: https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm";
+        private const string VALID_REGION_INFO = "Valid regions can be found here: https://docs.oracle.com/Content/General/Concepts/regions.htm";
         private const string CONFIG_FILE_INFO = "Config will be saved at :";
 
         private static readonly string DEFAULT_CONFIG_PATH = Path.GetFullPath(Path.Combine(CmdletUtils.DEFAULT_OCI_DIR, DEFAULTCONFIGNAME));

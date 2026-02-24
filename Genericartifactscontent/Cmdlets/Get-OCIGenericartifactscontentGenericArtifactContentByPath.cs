@@ -23,7 +23,7 @@ namespace Oci.GenericartifactscontentService.Cmdlets
     [OutputType(new System.Type[] { typeof(System.IO.Stream), typeof(void), typeof(Oci.GenericartifactscontentService.Responses.GetGenericArtifactContentByPathResponse) })]
     public class GetOCIGenericartifactscontentGenericArtifactContentByPath : OCIGenericArtifactsContentCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
 
 Example: `ocid1.repository.oc1..exampleuniqueID`")]
         public string RepositoryId { get; set; }
@@ -38,7 +38,7 @@ Example: `project01/my-web-app/artifact-abc`")]
 Example: `1.1.2` or `1.2-beta-2`")]
         public string Version { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned [request ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned [request ID](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
 
 Example: `bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx` If you contact Oracle about a request, provide this request ID.")]
         public string OpcRequestId { get; set; }

@@ -21,7 +21,7 @@ namespace Oci.GoldengateService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.GoldengateService.Models.PipelineSchemaTableCollection), typeof(Oci.GoldengateService.Responses.ListPipelineSchemaTablesResponse) })]
     public class GetOCIGoldengatePipelineSchemaTablesList : OCIGoldenGateCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the pipeline created.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the pipeline created.")]
         public string PipelineId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Name of the source schema obtained from get schema endpoint of the created pipeline.")]

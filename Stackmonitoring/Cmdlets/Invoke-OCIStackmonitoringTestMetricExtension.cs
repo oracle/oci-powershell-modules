@@ -19,7 +19,7 @@ namespace Oci.StackmonitoringService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.StackmonitoringService.Models.TestMetricExtensionData), typeof(Oci.StackmonitoringService.Responses.TestMetricExtensionResponse) })]
     public class InvokeOCIStackmonitoringTestMetricExtension : OCIStackMonitoringCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the metric extension resource.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the metric extension resource.")]
         public string MetricExtensionId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"It contains OCID of resource.")]

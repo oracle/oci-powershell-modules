@@ -19,7 +19,7 @@ namespace Oci.JmsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.JmsService.Models.JmsPlugin), typeof(Oci.JmsService.Responses.UpdateJmsPluginResponse) })]
     public class UpdateOCIJmsPlugin : OCIJavaManagementServiceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the JmsPlugin.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the JmsPlugin.")]
         public string JmsPluginId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The new details for the JmsPlugin.")]

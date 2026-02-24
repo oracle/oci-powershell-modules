@@ -23,12 +23,12 @@ namespace Oci.GenericartifactscontentService.Cmdlets
     [OutputType(new System.Type[] { typeof(System.IO.Stream), typeof(void), typeof(Oci.GenericartifactscontentService.Responses.GetGenericArtifactContentResponse) })]
     public class GetOCIGenericartifactscontentGenericArtifactContent : OCIGenericArtifactsContentCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
 
 Example: `ocid1.genericartifact.oc1..exampleuniqueID`")]
         public string ArtifactId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned [request ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned [request ID](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
 
 Example: `bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx` If you contact Oracle about a request, provide this request ID.")]
         public string OpcRequestId { get; set; }

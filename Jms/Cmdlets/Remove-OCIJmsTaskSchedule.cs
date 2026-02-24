@@ -19,7 +19,7 @@ namespace Oci.JmsService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.JmsService.Responses.DeleteTaskScheduleResponse) })]
     public class RemoveOCIJmsTaskSchedule : OCIJavaManagementServiceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) to identify this task schedule.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) to identify this task schedule.")]
         public string TaskScheduleId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the Fleet.")]

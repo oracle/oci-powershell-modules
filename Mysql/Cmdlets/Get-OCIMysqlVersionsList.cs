@@ -19,7 +19,7 @@ namespace Oci.MysqlService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.MysqlService.Models.VersionSummary), typeof(Oci.MysqlService.Responses.ListVersionsResponse) })]
     public class GetOCIMysqlVersionsList : OCIMysqlaasCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Customer-defined unique identifier for the request. If you need to contact Oracle about a specific request, please provide the request ID that you supplied in this header with the request.")]

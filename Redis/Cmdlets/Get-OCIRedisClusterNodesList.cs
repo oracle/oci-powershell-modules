@@ -21,7 +21,7 @@ namespace Oci.RedisService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.RedisService.Models.RedisNodeCollection), typeof(Oci.RedisService.Responses.ListRedisClusterNodesResponse) })]
     public class GetOCIRedisClusterNodesList : OCIRedisClusterCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.")]
         public string RedisClusterId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given.")]

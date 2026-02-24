@@ -21,7 +21,7 @@ namespace Oci.DelegateaccesscontrolService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DelegateaccesscontrolService.Models.WorkRequestSummaryCollection), typeof(Oci.DelegateaccesscontrolService.Responses.ListWorkRequestsResponse) })]
     public class GetOCIDelegateaccesscontrolWorkRequestsList : OCIWorkRequestCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the asynchronous work request.")]

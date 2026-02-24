@@ -19,7 +19,7 @@ namespace Oci.ArtifactsService.Cmdlets
     [OutputType(new System.Type[] { typeof(void), typeof(Oci.ArtifactsService.Responses.DeleteContainerImageResponse) })]
     public class RemoveOCIArtifactsContainerImage : OCIArtifactsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.
 
 Example: `ocid1.containerimage.oc1..exampleuniqueID`")]
         public string ImageId { get; set; }

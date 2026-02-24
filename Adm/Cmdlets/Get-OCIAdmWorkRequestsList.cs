@@ -30,7 +30,7 @@ namespace Oci.AdmService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the specified OperationStatus.")]
         public System.Nullable<Oci.AdmService.Models.OperationStatus> Status { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the resource affected by the work request.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm)) of the resource affected by the work request.")]
         public string ResourceId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

@@ -21,7 +21,7 @@ namespace Oci.WlmsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.WlmsService.Models.ScanResultCollection), typeof(Oci.WlmsService.Responses.ListManagedInstanceScanResultsResponse) })]
     public class GetOCIWlmsManagedInstanceScanResultsList : OCIWeblogicManagementServiceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.")]
         public string ManagedInstanceId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
@@ -39,7 +39,7 @@ namespace Oci.WlmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field by which to sort the resource. Only one sort order may be provided. Default order for _timeOfServerCheck_ is **descending**. Default order for _serverName_ is **ascending**. If no value is specified, _timeOfServerCheck_ is default.")]
         public System.Nullable<Oci.WlmsService.Requests.ListManagedInstanceScanResultsRequest.SortByEnum> SortBy { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.")]
         public string WlsDomainId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the server.")]

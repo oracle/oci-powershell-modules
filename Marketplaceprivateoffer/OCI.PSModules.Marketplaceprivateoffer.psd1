@@ -11,13 +11,13 @@
 RootModule = 'assemblies/OCI.PSModules.Marketplaceprivateoffer.dll'
 
 # Version number of this module.
-ModuleVersion = '123.2.0'
+ModuleVersion = '124.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
 
 # ID used to uniquely identify this module
-GUID = '18d53499-afff-4406-90f6-9ce3e95e074d'
+GUID = '158c82e3-2c8a-45ae-ba55-0db012b9d704'
 
 # Author of this module
 Author = 'Oracle Cloud Infrastructure'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '123.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '124.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Marketplaceprivateoffer.dll'

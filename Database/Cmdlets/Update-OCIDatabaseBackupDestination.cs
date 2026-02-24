@@ -19,7 +19,7 @@ namespace Oci.DatabaseService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabaseService.Models.BackupDestination), typeof(Oci.DatabaseService.Responses.UpdateBackupDestinationResponse) })]
     public class UpdateOCIDatabaseBackupDestination : OCIDatabaseCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup destination.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the backup destination.")]
         public string BackupDestinationId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"For a RECOVERY_APPLIANCE backup destination, request to update the connection string and/or the list of VPC users. For an NFS backup destination, request to update the NFS location.")]

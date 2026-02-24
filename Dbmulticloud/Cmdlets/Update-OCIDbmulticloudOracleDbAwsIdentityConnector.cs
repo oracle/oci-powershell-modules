@@ -19,7 +19,7 @@ namespace Oci.DbmulticloudService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.DbmulticloudService.Responses.UpdateOracleDbAwsIdentityConnectorResponse) })]
     public class UpdateOCIDbmulticloudOracleDbAwsIdentityConnector : OCIDbMulticloudAwsProviderCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  of the Oracle DB AWS Identity Connector resource.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  of the Oracle DB AWS Identity Connector resource.")]
         public string OracleDbAwsIdentityConnectorId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for to update OracleDbAwsIdentityConnector.")]

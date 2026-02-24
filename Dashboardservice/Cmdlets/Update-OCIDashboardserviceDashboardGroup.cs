@@ -19,7 +19,7 @@ namespace Oci.DashboardService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DashboardService.Models.DashboardGroup), typeof(Oci.DashboardService.Responses.UpdateDashboardGroupResponse) })]
     public class UpdateOCIDashboardserviceDashboardGroup : OCIDashboardGroupCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard group.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard group.")]
         public string DashboardGroupId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The dashboard group details to be updated.")]

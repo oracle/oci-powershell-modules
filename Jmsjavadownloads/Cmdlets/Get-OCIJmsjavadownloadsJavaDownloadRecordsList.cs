@@ -21,7 +21,7 @@ namespace Oci.JmsjavadownloadsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.JmsjavadownloadsService.Models.JavaDownloadRecordCollection), typeof(Oci.JmsjavadownloadsService.Responses.ListJavaDownloadRecordsResponse) })]
     public class GetOCIJmsjavadownloadsJavaDownloadRecordsList : OCIJavaDownloadCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the tenancy.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the tenancy.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Java family version identifier.")]
