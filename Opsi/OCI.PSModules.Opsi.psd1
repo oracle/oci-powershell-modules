@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Opsi.dll'
 
 # Version number of this module.
-ModuleVersion = '124.0.0'
+ModuleVersion = '125.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '124.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '125.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Opsi.dll'
@@ -75,9 +75,11 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Disable-OCIOpsiAutonomousDatabaseInsightAdvancedFeatures', 
                'Disable-OCIOpsiAwrHubSource', 'Disable-OCIOpsiDatabaseInsight', 
                'Disable-OCIOpsiExadataInsight', 'Disable-OCIOpsiHostInsight', 
+               'Disable-OCIOpsiPlanExadataInsight', 
                'Enable-OCIOpsiAutonomousDatabaseInsightAdvancedFeatures', 
                'Enable-OCIOpsiAwrHubSource', 'Enable-OCIOpsiDatabaseInsight', 
                'Enable-OCIOpsiExadataInsight', 'Enable-OCIOpsiHostInsight', 
+               'Enable-OCIOpsiPlanExadataInsight', 
                'Get-OCIOpsiAddmDbFindingCategoriesList', 
                'Get-OCIOpsiAddmDbFindingsTimeSeriesList', 
                'Get-OCIOpsiAddmDbParameterCategoriesList', 
@@ -90,7 +92,11 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Get-OCIOpsiAwrHubObject', 'Get-OCIOpsiAwrHubObjectsList', 
                'Get-OCIOpsiAwrHubsList', 'Get-OCIOpsiAwrHubSource', 
                'Get-OCIOpsiAwrHubSourcesList', 'Get-OCIOpsiAwrReport', 
-               'Get-OCIOpsiAwrSnapshotsList', 'Get-OCIOpsiConfiguration', 
+               'Get-OCIOpsiAwrSnapshotsList', 'Get-OCIOpsiChargebackPlan', 
+               'Get-OCIOpsiChargebackPlanReport', 
+               'Get-OCIOpsiChargebackPlanReportContent', 
+               'Get-OCIOpsiChargebackPlanReportsList', 
+               'Get-OCIOpsiChargebackPlansList', 'Get-OCIOpsiConfiguration', 
                'Get-OCIOpsiConfigurationsList', 
                'Get-OCIOpsiDatabaseConfigurationsList', 
                'Get-OCIOpsiDatabaseInsight', 'Get-OCIOpsiDatabaseInsightsList', 
@@ -186,6 +192,7 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Invoke-OCIOpsiTestMacsManagedCloudDatabaseInsightConnection', 
                'Move-OCIOpsiAutonomousDatabaseInsightAdvancedFeatures', 
                'Move-OCIOpsiAwrHubSourceCompartment', 
+               'Move-OCIOpsiChargebackPlanCompartment', 
                'Move-OCIOpsiConfigurationCompartment', 
                'Move-OCIOpsiDatabaseInsightCompartment', 
                'Move-OCIOpsiEnterpriseManagerBridgeCompartment', 
@@ -198,7 +205,8 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Move-OCIOpsiOperationsInsightsPrivateEndpointCompartment', 
                'Move-OCIOpsiOperationsInsightsWarehouseCompartment', 
                'Move-OCIOpsiPeComanagedDatabaseInsight', 'New-OCIOpsiAwrHub', 
-               'New-OCIOpsiAwrHubSource', 'New-OCIOpsiConfiguration', 
+               'New-OCIOpsiAwrHubSource', 'New-OCIOpsiChargebackPlan', 
+               'New-OCIOpsiChargebackPlanReport', 'New-OCIOpsiConfiguration', 
                'New-OCIOpsiDatabaseInsight', 'New-OCIOpsiEnterpriseManagerBridge', 
                'New-OCIOpsiExadataInsight', 'New-OCIOpsiHostInsight', 
                'New-OCIOpsiNewsReport', 
@@ -206,7 +214,8 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'New-OCIOpsiOperationsInsightsWarehouse', 
                'New-OCIOpsiOperationsInsightsWarehouseUser', 
                'Remove-OCIOpsiAwrHub', 'Remove-OCIOpsiAwrHubObject', 
-               'Remove-OCIOpsiAwrHubSource', 'Remove-OCIOpsiConfiguration', 
+               'Remove-OCIOpsiAwrHubSource', 'Remove-OCIOpsiChargebackPlan', 
+               'Remove-OCIOpsiChargebackPlanReport', 'Remove-OCIOpsiConfiguration', 
                'Remove-OCIOpsiDatabaseInsight', 
                'Remove-OCIOpsiEnterpriseManagerBridge', 
                'Remove-OCIOpsiExadataInsight', 'Remove-OCIOpsiHostInsight', 
@@ -215,7 +224,9 @@ CmdletsToExport = 'Add-OCIOpsiExadataInsightMembers',
                'Remove-OCIOpsiOperationsInsightsWarehouse', 
                'Remove-OCIOpsiOperationsInsightsWarehouseUser', 
                'Update-OCIOpsiAwrHub', 'Update-OCIOpsiAwrHubSource', 
-               'Update-OCIOpsiConfiguration', 'Update-OCIOpsiDatabaseInsight', 
+               'Update-OCIOpsiChargebackPlan', 
+               'Update-OCIOpsiChargebackPlanReport', 'Update-OCIOpsiConfiguration', 
+               'Update-OCIOpsiDatabaseInsight', 
                'Update-OCIOpsiEnterpriseManagerBridge', 
                'Update-OCIOpsiExadataInsight', 'Update-OCIOpsiHostInsight', 
                'Update-OCIOpsiNewsReport', 
