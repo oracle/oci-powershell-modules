@@ -19,11 +19,11 @@ namespace Oci.OpsiService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.OpsiService.Responses.SynchronizeAutonomousDatabaseToExadataResponse) })]
     public class InvokeOCIOpsiSynchronizeAutonomousDatabaseToExadata : OCIOperationsInsightsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
-        public string CompartmentId { get; set; }
-
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated.")]
         public SynchronizeAutonomousDatabaseToExadataDetails SynchronizeAutonomousDatabaseToExadataDetails { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.")]
+        public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.")]
         public string DatabaseId { get; set; }
@@ -54,8 +54,8 @@ namespace Oci.OpsiService.Cmdlets
             {
                 request = new SynchronizeAutonomousDatabaseToExadataRequest
                 {
-                    CompartmentId = CompartmentId,
                     SynchronizeAutonomousDatabaseToExadataDetails = SynchronizeAutonomousDatabaseToExadataDetails,
+                    CompartmentId = CompartmentId,
                     DatabaseId = DatabaseId,
                     Id = Id,
                     ExadataInsightId = ExadataInsightId,
