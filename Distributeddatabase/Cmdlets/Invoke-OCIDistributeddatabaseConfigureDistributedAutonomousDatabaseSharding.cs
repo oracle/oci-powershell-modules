@@ -25,6 +25,12 @@ namespace Oci.DistributeddatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The flag to indicate whether chunks need to be re-balanced. This flag is not applicable for USER-defined sharding type.")]
         public System.Nullable<bool> IsRebalanceRequired { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the cluster certificate.")]
+        public string CertificateId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the Ca Bundle.")]
+        public string CaBundleId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
         public string OpcRetryToken { get; set; }
 
@@ -45,6 +51,8 @@ namespace Oci.DistributeddatabaseService.Cmdlets
                 {
                     DistributedAutonomousDatabaseId = DistributedAutonomousDatabaseId,
                     IsRebalanceRequired = IsRebalanceRequired,
+                    CertificateId = CertificateId,
+                    CaBundleId = CaBundleId,
                     OpcRetryToken = OpcRetryToken,
                     OpcRequestId = OpcRequestId,
                     IfMatch = IfMatch

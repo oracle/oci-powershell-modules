@@ -27,6 +27,9 @@ namespace Oci.OcvpService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the management appliance.")]
         public string ManagementApplianceId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.")]
+        public string SddcId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given display name exactly.")]
         public string DisplayName { get; set; }
 
@@ -64,6 +67,7 @@ namespace Oci.OcvpService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     ManagementApplianceId = ManagementApplianceId,
+                    SddcId = SddcId,
                     DisplayName = DisplayName,
                     LifecycleState = LifecycleState,
                     Limit = Limit,

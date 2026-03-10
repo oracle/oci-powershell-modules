@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Identitydomains.dll'
 
 # Version number of this module.
-ModuleVersion = '125.0.0'
+ModuleVersion = '125.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '125.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '125.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Identitydomains.dll'
@@ -105,6 +105,10 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'Get-OCIIdentitydomainsDynamicResourceGroupsList', 
                'Get-OCIIdentitydomainsGrant', 'Get-OCIIdentitydomainsGrantsList', 
                'Get-OCIIdentitydomainsGroup', 'Get-OCIIdentitydomainsGroupsList', 
+               'Get-OCIIdentitydomainsIdentityProofingProvider', 
+               'Get-OCIIdentitydomainsIdentityProofingProvidersList', 
+               'Get-OCIIdentitydomainsIdentityProofingProviderTemplate', 
+               'Get-OCIIdentitydomainsIdentityProofingProviderTemplatesList', 
                'Get-OCIIdentitydomainsIdentityPropagationTrust', 
                'Get-OCIIdentitydomainsIdentityPropagationTrustsList', 
                'Get-OCIIdentitydomainsIdentityProvider', 
@@ -194,6 +198,8 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'Invoke-OCIIdentitydomainsPatchDynamicResourceGroup', 
                'Invoke-OCIIdentitydomainsPatchGrant', 
                'Invoke-OCIIdentitydomainsPatchGroup', 
+               'Invoke-OCIIdentitydomainsPatchIdentityProofingProvider', 
+               'Invoke-OCIIdentitydomainsPatchIdentityProofingProviderTemplate', 
                'Invoke-OCIIdentitydomainsPatchIdentityPropagationTrust', 
                'Invoke-OCIIdentitydomainsPatchIdentityProvider', 
                'Invoke-OCIIdentitydomainsPatchIdentitySetting', 
@@ -236,6 +242,7 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'Invoke-OCIIdentitydomainsSearchDynamicResourceGroups', 
                'Invoke-OCIIdentitydomainsSearchGrants', 
                'Invoke-OCIIdentitydomainsSearchGroups', 
+               'Invoke-OCIIdentitydomainsSearchIdentityProofingProviders', 
                'Invoke-OCIIdentitydomainsSearchIdentityProviders', 
                'Invoke-OCIIdentitydomainsSearchIdentitySettings', 
                'Invoke-OCIIdentitydomainsSearchKmsiSettings', 
@@ -278,6 +285,8 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'New-OCIIdentitydomainsCustomerSecretKey', 
                'New-OCIIdentitydomainsDynamicResourceGroup', 
                'New-OCIIdentitydomainsGrant', 'New-OCIIdentitydomainsGroup', 
+               'New-OCIIdentitydomainsIdentityProofingProvider', 
+               'New-OCIIdentitydomainsIdentityProofingProviderTemplate', 
                'New-OCIIdentitydomainsIdentityPropagationTrust', 
                'New-OCIIdentitydomainsIdentityProvider', 
                'New-OCIIdentitydomainsMe', 'New-OCIIdentitydomainsMyApiKey', 
@@ -305,6 +314,7 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'New-OCIIdentitydomainsSocialIdentityProvider', 
                'New-OCIIdentitydomainsUser', 
                'New-OCIIdentitydomainsUserDbCredential', 
+               'New-OCIIdentitydomainsVerificationClaim', 
                'Remove-OCIIdentitydomainsApiKey', 'Remove-OCIIdentitydomainsApp', 
                'Remove-OCIIdentitydomainsAppRole', 
                'Remove-OCIIdentitydomainsApprovalWorkflow', 
@@ -318,6 +328,8 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'Remove-OCIIdentitydomainsCustomerSecretKey', 
                'Remove-OCIIdentitydomainsDynamicResourceGroup', 
                'Remove-OCIIdentitydomainsGrant', 'Remove-OCIIdentitydomainsGroup', 
+               'Remove-OCIIdentitydomainsIdentityProofingProvider', 
+               'Remove-OCIIdentitydomainsIdentityProofingProviderTemplate', 
                'Remove-OCIIdentitydomainsIdentityPropagationTrust', 
                'Remove-OCIIdentitydomainsIdentityProvider', 
                'Remove-OCIIdentitydomainsMyApiKey', 
@@ -352,6 +364,8 @@ CmdletsToExport = 'Get-OCIIdentitydomainsAccountMgmtInfo',
                'Write-OCIIdentitydomainsCondition', 
                'Write-OCIIdentitydomainsDynamicResourceGroup', 
                'Write-OCIIdentitydomainsGroup', 
+               'Write-OCIIdentitydomainsIdentityProofingProvider', 
+               'Write-OCIIdentitydomainsIdentityProofingProviderTemplate', 
                'Write-OCIIdentitydomainsIdentityPropagationTrust', 
                'Write-OCIIdentitydomainsIdentityProvider', 
                'Write-OCIIdentitydomainsIdentitySetting', 
