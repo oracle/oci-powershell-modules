@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Distributeddatabase.dll'
 
 # Version number of this module.
-ModuleVersion = '125.0.0'
+ModuleVersion = '125.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '125.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '125.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Distributeddatabase.dll'
@@ -74,19 +74,23 @@ FunctionsToExport = '*'
 CmdletsToExport = 
                'Add-OCIDistributeddatabaseDistributedAutonomousDatabaseGdsControlNode', 
                'Add-OCIDistributeddatabaseGdsControlNode', 
+               'Confirm-OCIDistributeddatabaseDistributedAutonomousDatabaseCaBundle', 
                'Confirm-OCIDistributeddatabaseDistributedAutonomousDatabaseNetwork', 
                'Confirm-OCIDistributeddatabaseNetwork', 
                'Get-OCIDistributeddatabase', 
                'Get-OCIDistributeddatabaseDistributedAutonomousDatabase', 
+               'Get-OCIDistributeddatabaseDistributedAutonomousDatabaseRaftMetric', 
                'Get-OCIDistributeddatabaseDistributedAutonomousDatabasesList', 
                'Get-OCIDistributeddatabasePrivateEndpoint', 
                'Get-OCIDistributeddatabasePrivateEndpointsList', 
+               'Get-OCIDistributeddatabaseRaftMetric', 
                'Get-OCIDistributeddatabasesList', 
                'Get-OCIDistributeddatabaseWorkRequest', 
                'Get-OCIDistributeddatabaseWorkRequestErrorsList', 
                'Get-OCIDistributeddatabaseWorkRequestLogsList', 
                'Get-OCIDistributeddatabaseWorkRequestsList', 
                'Invoke-OCIDistributeddatabaseConfigureDistributedAutonomousDatabaseGsms', 
+               'Invoke-OCIDistributeddatabaseConfigureDistributedAutonomousDatabaseGsmWallet', 
                'Invoke-OCIDistributeddatabaseConfigureDistributedAutonomousDatabaseSharding', 
                'Invoke-OCIDistributeddatabaseConfigureDistributedDatabaseGsms', 
                'Invoke-OCIDistributeddatabaseConfigureDistributedDatabaseSharding', 
@@ -94,14 +98,18 @@ CmdletsToExport =
                'Invoke-OCIDistributeddatabaseDownloadDistributedDatabaseGsmCertificateSigningRequest', 
                'Invoke-OCIDistributeddatabasePatchDistributedAutonomousDatabase', 
                'Invoke-OCIDistributeddatabasePatchDistributedDatabase', 
+               'Invoke-OCIDistributeddatabaseRecreateFailedDistributedAutonomousDatabaseResource', 
+               'Invoke-OCIDistributeddatabaseRecreateFailedDistributedDatabaseResource', 
                'Invoke-OCIDistributeddatabaseReinstateProxyInstance', 
                'Invoke-OCIDistributeddatabaseRotateDistributedAutonomousDatabasePasswords', 
                'Invoke-OCIDistributeddatabaseRotateDistributedDatabasePasswords', 
                'Move-OCIDistributeddatabaseCompartment', 
                'Move-OCIDistributeddatabaseDistributedAutonomousDatabaseCompartment', 
+               'Move-OCIDistributeddatabaseDistributedAutonomousDatabaseReplicationUnit', 
                'Move-OCIDistributeddatabaseDistributedAutonomousDbBackupConfig', 
                'Move-OCIDistributeddatabaseDistributedDbBackupConfig', 
                'Move-OCIDistributeddatabasePrivateEndpointCompartment', 
+               'Move-OCIDistributeddatabaseReplicationUnit', 
                'New-OCIDistributeddatabase', 
                'New-OCIDistributeddatabaseDistributedAutonomousDatabase', 
                'New-OCIDistributeddatabaseDistributedAutonomousDatabaseGsmCertificateSigningRequest', 

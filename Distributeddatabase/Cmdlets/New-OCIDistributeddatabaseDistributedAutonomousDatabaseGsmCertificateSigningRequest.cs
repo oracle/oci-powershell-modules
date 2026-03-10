@@ -22,9 +22,6 @@ namespace Oci.DistributeddatabaseService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Globally distributed autonomous database identifier")]
         public string DistributedAutonomousDatabaseId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the Ca Bundle.")]
-        public string CaBundleId { get; set; }
-
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
@@ -33,6 +30,9 @@ namespace Oci.DistributeddatabaseService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
         public string OpcRetryToken { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the Ca Bundle.")]
+        public string CaBundleId { get; set; }
 
         protected override void ProcessRecord()
         {
@@ -44,10 +44,10 @@ namespace Oci.DistributeddatabaseService.Cmdlets
                 request = new GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest
                 {
                     DistributedAutonomousDatabaseId = DistributedAutonomousDatabaseId,
-                    CaBundleId = CaBundleId,
                     OpcRequestId = OpcRequestId,
                     IfMatch = IfMatch,
-                    OpcRetryToken = OpcRetryToken
+                    OpcRetryToken = OpcRetryToken,
+                    CaBundleId = CaBundleId
                 };
 
                 response = client.GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequest(request).GetAwaiter().GetResult();

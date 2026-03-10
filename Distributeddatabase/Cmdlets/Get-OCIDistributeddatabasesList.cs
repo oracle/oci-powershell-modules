@@ -24,6 +24,9 @@ namespace Oci.DistributeddatabaseService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that are associated with the given privateEndpointId.")]
+        public string PrivateEndpointId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources their lifecycleState matches the given lifecycleState.")]
         public System.Nullable<Oci.DistributeddatabaseService.Models.DistributedDatabase.LifecycleStateEnum> LifecycleState { get; set; }
 
@@ -64,6 +67,7 @@ namespace Oci.DistributeddatabaseService.Cmdlets
                 request = new ListDistributedDatabasesRequest
                 {
                     CompartmentId = CompartmentId,
+                    PrivateEndpointId = PrivateEndpointId,
                     LifecycleState = LifecycleState,
                     Limit = Limit,
                     Page = Page,

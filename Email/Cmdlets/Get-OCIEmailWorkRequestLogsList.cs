@@ -33,6 +33,12 @@ namespace Oci.EmailService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. `1` is the minimum, `1000` is the maximum. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.")]
+        public System.Nullable<Oci.EmailService.Requests.ListWorkRequestLogsRequest.SortByEnum> SortBy { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending or descending order.")]
+        public System.Nullable<Oci.EmailService.Models.SortOrder> SortOrder { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -48,7 +54,9 @@ namespace Oci.EmailService.Cmdlets
                     WorkRequestId = WorkRequestId,
                     OpcRequestId = OpcRequestId,
                     Page = Page,
-                    Limit = Limit
+                    Limit = Limit,
+                    SortBy = SortBy,
+                    SortOrder = SortOrder
                 };
                 IEnumerable<ListWorkRequestLogsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
