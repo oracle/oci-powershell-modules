@@ -22,6 +22,9 @@ namespace Oci.DistributeddatabaseService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Globally distributed database identifier")]
         public string DistributedDatabaseId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The flag to indicate if infra like VmCluster & DbStorageVault associated with the resource should be deleted.")]
+        public System.Nullable<bool> MustDeleteInfra { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
@@ -50,6 +53,7 @@ namespace Oci.DistributeddatabaseService.Cmdlets
                 request = new DeleteDistributedDatabaseRequest
                 {
                     DistributedDatabaseId = DistributedDatabaseId,
+                    MustDeleteInfra = MustDeleteInfra,
                     OpcRequestId = OpcRequestId,
                     OpcRetryToken = OpcRetryToken,
                     IfMatch = IfMatch
