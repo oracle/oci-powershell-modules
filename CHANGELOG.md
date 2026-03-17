@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 125.2.0 - 2026-03-17
+### Added 
+- Support for additional node pools for ML and Coordinator nodes in the OpenSearch service
+
 ## 125.1.0 - 2026-03-10
 ### Added 
 - Support for the Guarded Data Pipelines (GDP) service 
