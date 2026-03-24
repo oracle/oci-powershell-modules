@@ -33,6 +33,9 @@ namespace Oci.GenerativeaiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field used to sort the results. Multiple fields aren't supported.")]
         public System.Nullable<Oci.GenerativeaiService.Requests.ListGenerativeAiPrivateEndpointsRequest.SortByEnum> SortBy { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Query by the resource type of Generative AI private endpoints.")]
+        public System.Nullable<Oci.GenerativeaiService.Models.GenerativeAiPrivateEndpoint.ResourceTypeEnum> ResourceType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given display name exactly.")]
         public string DisplayName { get; set; }
 
@@ -64,6 +67,7 @@ namespace Oci.GenerativeaiService.Cmdlets
                     Id = Id,
                     LifecycleState = LifecycleState,
                     SortBy = SortBy,
+                    ResourceType = ResourceType,
                     DisplayName = DisplayName,
                     Limit = Limit,
                     Page = Page,
