@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Generativeai.dll'
 
 # Version number of this module.
-ModuleVersion = '125.2.0'
+ModuleVersion = '125.3.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '125.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '125.3.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Generativeai.dll'
@@ -71,15 +71,32 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Generativeai.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIGenerativeaiApiKey', 'Get-OCIGenerativeaiApiKeysList', 
+CmdletsToExport = 'Add-OCIGenerativeaiArtifact', 'Get-OCIGenerativeaiApiKey', 
+               'Get-OCIGenerativeaiApiKeysList', 
                'Get-OCIGenerativeaiDedicatedAiCluster', 
                'Get-OCIGenerativeaiDedicatedAiClustersList', 
                'Get-OCIGenerativeaiEndpoint', 'Get-OCIGenerativeaiEndpointsList', 
+               'Get-OCIGenerativeaiHostedApplication', 
+               'Get-OCIGenerativeaiHostedApplicationsList', 
+               'Get-OCIGenerativeaiHostedApplicationStorage', 
+               'Get-OCIGenerativeaiHostedApplicationStoragesList', 
+               'Get-OCIGenerativeaiHostedDeployment', 
+               'Get-OCIGenerativeaiHostedDeploymentsList', 
                'Get-OCIGenerativeaiImportedModel', 
                'Get-OCIGenerativeaiImportedModelsList', 'Get-OCIGenerativeaiModel', 
                'Get-OCIGenerativeaiModelsList', 
                'Get-OCIGenerativeaiPrivateEndpoint', 
                'Get-OCIGenerativeaiPrivateEndpointsList', 
+               'Get-OCIGenerativeaiProject', 'Get-OCIGenerativeaiProjectsList', 
+               'Get-OCIGenerativeaiSemanticStore', 
+               'Get-OCIGenerativeaiSemanticStoresList', 
+               'Get-OCIGenerativeaiVectorStoreConnector', 
+               'Get-OCIGenerativeaiVectorStoreConnectorFileSync', 
+               'Get-OCIGenerativeaiVectorStoreConnectorFileSyncIngestionLogsList', 
+               'Get-OCIGenerativeaiVectorStoreConnectorFileSyncsList', 
+               'Get-OCIGenerativeaiVectorStoreConnectorIngestionLogsList', 
+               'Get-OCIGenerativeaiVectorStoreConnectorsList', 
+               'Get-OCIGenerativeaiVectorStoreConnectorStats', 
                'Get-OCIGenerativeaiWorkRequest', 
                'Get-OCIGenerativeaiWorkRequestErrorsList', 
                'Get-OCIGenerativeaiWorkRequestLogsList', 
@@ -89,25 +106,49 @@ CmdletsToExport = 'Get-OCIGenerativeaiApiKey', 'Get-OCIGenerativeaiApiKeysList',
                'Move-OCIGenerativeaiApiKeyCompartment', 
                'Move-OCIGenerativeaiDedicatedAiClusterCompartment', 
                'Move-OCIGenerativeaiEndpointCompartment', 
+               'Move-OCIGenerativeaiHostedApplicationCompartment', 
+               'Move-OCIGenerativeaiHostedApplicationStorageCompartment', 
                'Move-OCIGenerativeaiImportedModelCompartment', 
                'Move-OCIGenerativeaiModelCompartment', 
                'Move-OCIGenerativeaiPrivateEndpointCompartment', 
+               'Move-OCIGenerativeaiProjectCompartment', 
+               'Move-OCIGenerativeaiSemanticStoreCompartment', 
                'New-OCIGenerativeaiApiKey', 
                'New-OCIGenerativeaiDedicatedAiCluster', 
-               'New-OCIGenerativeaiEndpoint', 'New-OCIGenerativeaiImportedModel', 
-               'New-OCIGenerativeaiModel', 'New-OCIGenerativeaiPrivateEndpoint', 
+               'New-OCIGenerativeaiEndpoint', 
+               'New-OCIGenerativeaiHostedApplication', 
+               'New-OCIGenerativeaiHostedApplicationStorage', 
+               'New-OCIGenerativeaiHostedDeployment', 
+               'New-OCIGenerativeaiImportedModel', 'New-OCIGenerativeaiModel', 
+               'New-OCIGenerativeaiPrivateEndpoint', 'New-OCIGenerativeaiProject', 
+               'New-OCIGenerativeaiSemanticStore', 
+               'New-OCIGenerativeaiVectorStoreConnector', 
+               'New-OCIGenerativeaiVectorStoreConnectorFileSync', 
                'Remove-OCIGenerativeaiApiKey', 
                'Remove-OCIGenerativeaiDedicatedAiCluster', 
                'Remove-OCIGenerativeaiEndpoint', 
+               'Remove-OCIGenerativeaiHostedApplication', 
+               'Remove-OCIGenerativeaiHostedApplicationStorage', 
+               'Remove-OCIGenerativeaiHostedDeployment', 
+               'Remove-OCIGenerativeaiHostedDeploymentArtifact', 
                'Remove-OCIGenerativeaiImportedModel', 
                'Remove-OCIGenerativeaiModel', 
                'Remove-OCIGenerativeaiPrivateEndpoint', 
+               'Remove-OCIGenerativeaiProject', 
+               'Remove-OCIGenerativeaiSemanticStore', 
+               'Remove-OCIGenerativeaiVectorStoreConnector', 
+               'Stop-OCIGenerativeaiVectorStoreConnectorFileSync', 
                'Update-OCIGenerativeaiApiKey', 
                'Update-OCIGenerativeaiDedicatedAiCluster', 
                'Update-OCIGenerativeaiEndpoint', 
+               'Update-OCIGenerativeaiHostedApplication', 
+               'Update-OCIGenerativeaiHostedDeployment', 
                'Update-OCIGenerativeaiImportedModel', 
                'Update-OCIGenerativeaiModel', 
-               'Update-OCIGenerativeaiPrivateEndpoint'
+               'Update-OCIGenerativeaiPrivateEndpoint', 
+               'Update-OCIGenerativeaiProject', 
+               'Update-OCIGenerativeaiSemanticStore', 
+               'Update-OCIGenerativeaiVectorStoreConnector'
 
 # Variables to export from this module
 VariablesToExport = '*'

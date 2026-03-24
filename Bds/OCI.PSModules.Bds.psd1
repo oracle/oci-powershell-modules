@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Bds.dll'
 
 # Version number of this module.
-ModuleVersion = '125.2.0'
+ModuleVersion = '125.3.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '125.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '125.3.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Bds.dll'
@@ -80,6 +80,8 @@ CmdletsToExport = 'Add-OCIBdsAutoScalingConfiguration', 'Add-OCIBdsBlockStorage'
                'Enable-OCIBdsUpstConfiguration', 'Get-OCIBdsApiKey', 
                'Get-OCIBdsApiKeysList', 'Get-OCIBdsAutoScalingConfiguration', 
                'Get-OCIBdsAutoScalingConfigurationsList', 
+               'Get-OCIBdsCertificateConfiguration', 
+               'Get-OCIBdsCertificateConfigurationsList', 
                'Get-OCIBdsClusterVersionsList', 'Get-OCIBdsIdentityConfiguration', 
                'Get-OCIBdsIdentityConfigurationsList', 'Get-OCIBdsInstance', 
                'Get-OCIBdsInstancesList', 'Get-OCIBdsMetastoreConfiguration', 
@@ -95,6 +97,7 @@ CmdletsToExport = 'Add-OCIBdsAutoScalingConfiguration', 'Add-OCIBdsBlockStorage'
                'Get-OCIBdsSoftwareUpdate', 'Get-OCIBdsSoftwareUpdatesList', 
                'Get-OCIBdsWorkRequest', 'Get-OCIBdsWorkRequestErrorsList', 
                'Get-OCIBdsWorkRequestLogsList', 'Get-OCIBdsWorkRequestsList', 
+               'Invoke-OCIBdsBdsInstanceResetPassword', 
                'Invoke-OCIBdsCertificateServiceInfo', 
                'Invoke-OCIBdsDeactivateIamUserSyncConfiguration', 
                'Invoke-OCIBdsDeactivateUpstConfiguration', 
@@ -104,22 +107,26 @@ CmdletsToExport = 'Add-OCIBdsAutoScalingConfiguration', 'Add-OCIBdsBlockStorage'
                'Invoke-OCIBdsInstallSoftwareUpdates', 
                'Invoke-OCIBdsRefreshConfidentialApplication', 
                'Invoke-OCIBdsRefreshUpstTokenExchangeKeytab', 
-               'Invoke-OCIBdsRenewCertificate', 'Invoke-OCIBdsReplaceNode', 
+               'Invoke-OCIBdsRenewBdsCertificate', 'Invoke-OCIBdsRenewCertificate', 
+               'Invoke-OCIBdsReplaceNode', 
+               'Invoke-OCIBdsSetDefaultBdsCertificateConfiguration', 
                'Invoke-OCIBdsTestBdsMetastoreConfiguration', 
                'Invoke-OCIBdsTestBdsObjectStorageConnection', 
                'Move-OCIBdsInstanceCompartment', 'Move-OCIBdsShape', 
                'New-OCIBdsApiKey', 'New-OCIBdsCapacityReport', 
+               'New-OCIBdsCertificate', 'New-OCIBdsCertificateConfiguration', 
                'New-OCIBdsIdentityConfiguration', 'New-OCIBdsInstance', 
                'New-OCIBdsMetastoreConfiguration', 
                'New-OCIBdsNodeBackupConfiguration', 
                'New-OCIBdsNodeReplaceConfiguration', 
                'New-OCIBdsResourcePrincipalConfiguration', 'Remove-OCIBdsApiKey', 
-               'Remove-OCIBdsAutoScalingConfiguration', 'Remove-OCIBdsCloudSql', 
+               'Remove-OCIBdsAutoScalingConfiguration', 
+               'Remove-OCIBdsCertificateConfiguration', 'Remove-OCIBdsCloudSql', 
                'Remove-OCIBdsIdentityConfiguration', 'Remove-OCIBdsInstance', 
                'Remove-OCIBdsKafka', 'Remove-OCIBdsMetastoreConfiguration', 
                'Remove-OCIBdsNode', 'Remove-OCIBdsNodeBackup', 
                'Remove-OCIBdsNodeBackupConfiguration', 
-               'Remove-OCIBdsNodeReplaceConfiguration', 
+               'Remove-OCIBdsNodeReplaceConfiguration', 'Remove-OCIBdsNodes', 
                'Remove-OCIBdsResourcePrincipalConfiguration', 'Restart-OCIBdsNode', 
                'Start-OCIBdsInstance', 'Stop-OCIBdsInstance', 
                'Update-OCIBdsAutoScalingConfiguration', 
