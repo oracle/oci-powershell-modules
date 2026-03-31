@@ -31,9 +31,6 @@ namespace Oci.GenerativeaidataService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment.")]
-        public string OpcCompartmentId { get; set; }
-
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
         public string IfMatch { get; set; }
 
@@ -50,7 +47,6 @@ namespace Oci.GenerativeaidataService.Cmdlets
                     SemanticStoreId = SemanticStoreId,
                     OpcRetryToken = OpcRetryToken,
                     OpcRequestId = OpcRequestId,
-                    OpcCompartmentId = OpcCompartmentId,
                     IfMatch = IfMatch
                 };
 

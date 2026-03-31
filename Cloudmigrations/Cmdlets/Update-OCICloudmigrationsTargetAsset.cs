@@ -22,7 +22,7 @@ namespace Oci.CloudmigrationsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique target asset identifier")]
         public string TargetAssetId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtype <Oci.CloudmigrationsService.Models.UpdateVmTargetAssetDetails> of type <Oci.CloudmigrationsService.Models.UpdateTargetAssetDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The information to be updated. This parameter also accepts subtypes <Oci.CloudmigrationsService.Models.UpdateVmTargetAssetDetails>, <Oci.CloudmigrationsService.Models.UpdateOlvmTargetAssetDetails> of type <Oci.CloudmigrationsService.Models.UpdateTargetAssetDetails>.")]
         public UpdateTargetAssetDetails UpdateTargetAssetDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before that due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]

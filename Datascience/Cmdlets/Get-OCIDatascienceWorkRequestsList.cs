@@ -27,6 +27,9 @@ namespace Oci.DatascienceService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"<b>Filter</b> results by [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.")]
         public string Id { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"<b>Filter</b> results by the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource associated with the work request.")]
+        public string ResourceId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"<b>Filter</b> results by the type of the operation associated with the work request.")]
         public System.Nullable<Oci.DatascienceService.Requests.ListWorkRequestsRequest.OperationTypeEnum> OperationType { get; set; }
 
@@ -66,6 +69,7 @@ See [List Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usin
                 {
                     CompartmentId = CompartmentId,
                     Id = Id,
+                    ResourceId = ResourceId,
                     OperationType = OperationType,
                     Status = Status,
                     Limit = Limit,
