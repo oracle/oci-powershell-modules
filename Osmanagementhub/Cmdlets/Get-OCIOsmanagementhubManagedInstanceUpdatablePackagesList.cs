@@ -38,6 +38,9 @@ namespace Oci.OsmanagementhubService.Cmdlets
 Example: `ELSA-2020-5804`")]
         public System.Collections.Generic.List<string> AdvisoryName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The advisory severity.")]
+        public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.AdvisorySeverity> AdvisorySeverity { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.")]
         public string CompartmentId { get; set; }
 
@@ -77,6 +80,7 @@ Example: `3`")]
                     DisplayName = DisplayName,
                     DisplayNameContains = DisplayNameContains,
                     AdvisoryName = AdvisoryName,
+                    AdvisorySeverity = AdvisorySeverity,
                     CompartmentId = CompartmentId,
                     Limit = Limit,
                     Page = Page,

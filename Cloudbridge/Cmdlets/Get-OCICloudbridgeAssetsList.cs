@@ -60,6 +60,12 @@ namespace Oci.CloudbridgeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Inventory identifier.")]
         public string InventoryId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the asset class.")]
+        public string AssetClassName { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The version of the asset class.")]
+        public string AssetClassVersion { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -84,7 +90,9 @@ namespace Oci.CloudbridgeService.Cmdlets
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,
-                    InventoryId = InventoryId
+                    InventoryId = InventoryId,
+                    AssetClassName = AssetClassName,
+                    AssetClassVersion = AssetClassVersion
                 };
                 IEnumerable<ListAssetsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

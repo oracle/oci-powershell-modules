@@ -25,8 +25,14 @@ namespace Oci.OsmanagementhubService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This filter returns only resources contained within the specified compartment.")]
         public string CompartmentId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates whether to include subcompartments in the returned results. Default is false.")]
+        public System.Nullable<bool> CompartmentIdInSubtree { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.")]
         public string ManagedInstanceGroupId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.")]
+        public string DynamicSetId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment. This filter returns only resource contained with the specified lifecycle environment.")]
         public string LifecycleEnvironmentId { get; set; }
@@ -85,7 +91,9 @@ Example: `3`")]
                 {
                     MetricNames = MetricNames,
                     CompartmentId = CompartmentId,
+                    CompartmentIdInSubtree = CompartmentIdInSubtree,
                     ManagedInstanceGroupId = ManagedInstanceGroupId,
+                    DynamicSetId = DynamicSetId,
                     LifecycleEnvironmentId = LifecycleEnvironmentId,
                     LifecycleStageId = LifecycleStageId,
                     Status = Status,
