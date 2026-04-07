@@ -82,6 +82,9 @@ Example: `50`", ParameterSetName = LimitSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates whether to list only resources managed by the Autonomous Linux service.")]
         public System.Nullable<bool> IsManagedByAutonomousLinux { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates whether to include subcompartments in the returned results. Default is false.")]
+        public System.Nullable<bool> CompartmentIdInSubtree { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -112,7 +115,8 @@ Example: `50`", ParameterSetName = LimitSet)]
                     RerunOfId = RerunOfId,
                     TimeCreatedLessThan = TimeCreatedLessThan,
                     TimeCreatedGreaterThanOrEqualTo = TimeCreatedGreaterThanOrEqualTo,
-                    IsManagedByAutonomousLinux = IsManagedByAutonomousLinux
+                    IsManagedByAutonomousLinux = IsManagedByAutonomousLinux,
+                    CompartmentIdInSubtree = CompartmentIdInSubtree
                 };
                 IEnumerable<ListWorkRequestsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

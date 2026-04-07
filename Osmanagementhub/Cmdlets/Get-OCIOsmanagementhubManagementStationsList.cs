@@ -64,6 +64,9 @@ Example: `3`")]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.")]
         public string Id { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter that returns information for management stations in the specified health state.")]
+        public System.Nullable<Oci.OsmanagementhubService.Models.HealthState> HealthState { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -88,7 +91,8 @@ Example: `3`")]
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,
-                    Id = Id
+                    Id = Id,
+                    HealthState = HealthState
                 };
                 IEnumerable<ListManagementStationsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

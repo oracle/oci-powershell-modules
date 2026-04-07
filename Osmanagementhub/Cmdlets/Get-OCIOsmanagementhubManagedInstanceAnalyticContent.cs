@@ -26,8 +26,14 @@ namespace Oci.OsmanagementhubService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This filter returns only resources contained within the specified compartment.")]
         public string CompartmentId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates whether to include subcompartments in the returned results. Default is false.")]
+        public System.Nullable<bool> CompartmentIdInSubtree { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.")]
         public string ManagedInstanceGroupId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.")]
+        public string DynamicSetId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment. This filter returns only resource contained with the specified lifecycle environment.")]
         public string LifecycleEnvironmentId { get; set; }
@@ -50,11 +56,17 @@ namespace Oci.OsmanagementhubService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return instances that have the specified number of available bug updates.")]
         public System.Nullable<int> BugUpdatesAvailableEqualsTo { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return instances that have the specified number of available other updates.")]
+        public System.Nullable<int> OtherUpdatesAvailableEqualsTo { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return instances that have more available security updates than the number specified.")]
         public System.Nullable<int> SecurityUpdatesAvailableGreaterThan { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return instances that have more available bug updates than the number specified.")]
         public System.Nullable<int> BugUpdatesAvailableGreaterThan { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return instances that have more available other updates than the number specified.")]
+        public System.Nullable<int> OtherUpdatesAvailableGreaterThan { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose location matches the given value.")]
         public System.Collections.Generic.List<Oci.OsmanagementhubService.Models.ManagedInstanceLocation> Location { get; set; }
@@ -93,7 +105,9 @@ namespace Oci.OsmanagementhubService.Cmdlets
                 request = new GetManagedInstanceAnalyticContentRequest
                 {
                     CompartmentId = CompartmentId,
+                    CompartmentIdInSubtree = CompartmentIdInSubtree,
                     ManagedInstanceGroupId = ManagedInstanceGroupId,
+                    DynamicSetId = DynamicSetId,
                     LifecycleEnvironmentId = LifecycleEnvironmentId,
                     LifecycleStageId = LifecycleStageId,
                     Status = Status,
@@ -101,8 +115,10 @@ namespace Oci.OsmanagementhubService.Cmdlets
                     DisplayNameContains = DisplayNameContains,
                     SecurityUpdatesAvailableEqualsTo = SecurityUpdatesAvailableEqualsTo,
                     BugUpdatesAvailableEqualsTo = BugUpdatesAvailableEqualsTo,
+                    OtherUpdatesAvailableEqualsTo = OtherUpdatesAvailableEqualsTo,
                     SecurityUpdatesAvailableGreaterThan = SecurityUpdatesAvailableGreaterThan,
                     BugUpdatesAvailableGreaterThan = BugUpdatesAvailableGreaterThan,
+                    OtherUpdatesAvailableGreaterThan = OtherUpdatesAvailableGreaterThan,
                     Location = Location,
                     LocationNotEqualTo = LocationNotEqualTo,
                     OsFamily = OsFamily,

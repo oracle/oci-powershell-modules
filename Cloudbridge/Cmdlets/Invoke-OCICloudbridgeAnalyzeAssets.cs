@@ -55,6 +55,12 @@ namespace Oci.CloudbridgeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Inventory identifier.")]
         public string InventoryId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the asset class.")]
+        public string AssetClassName { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The version of the asset class.")]
+        public string AssetClassVersion { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -75,7 +81,9 @@ namespace Oci.CloudbridgeService.Cmdlets
                     SortOrder = SortOrder,
                     OpcRequestId = OpcRequestId,
                     GroupBy = GroupBy,
-                    InventoryId = InventoryId
+                    InventoryId = InventoryId,
+                    AssetClassName = AssetClassName,
+                    AssetClassVersion = AssetClassVersion
                 };
 
                 response = client.AnalyzeAssets(request).GetAwaiter().GetResult();
