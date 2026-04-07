@@ -98,6 +98,9 @@ Example: `3`")]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates whether to list only resources managed by the Autonomous Linux service.")]
         public System.Nullable<bool> IsManagedByAutonomousLinux { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.")]
+        public string DynamicSetId { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -132,7 +135,8 @@ Example: `3`")]
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
                     Location = Location,
                     LocationNotEqualTo = LocationNotEqualTo,
-                    IsManagedByAutonomousLinux = IsManagedByAutonomousLinux
+                    IsManagedByAutonomousLinux = IsManagedByAutonomousLinux,
+                    DynamicSetId = DynamicSetId
                 };
                 IEnumerable<ListScheduledJobsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
