@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Multicloud.dll'
 
 # Version number of this module.
-ModuleVersion = '127.0.0'
+ModuleVersion = '128.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '127.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '128.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Multicloud.dll'
@@ -71,13 +71,14 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Multicloud.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIMulticloudExternalLocationDetailsMetadataList', 
+CmdletsToExport = 'Get-OCIMulticloudAlertsList', 
+               'Get-OCIMulticloudExternalLocationDetailsMetadataList', 
                'Get-OCIMulticloudExternalLocationMappingMetadataList', 
                'Get-OCIMulticloudExternalLocationSummariesMetadataList', 
                'Get-OCIMulticloudMetadata', 'Get-OCIMulticloudMetadataList', 
                'Get-OCIMulticloudNetworkAnchor', 
                'Get-OCIMulticloudNetworkAnchorsList', 
-               'Get-OCIMulticloudResourceAnchor', 
+               'Get-OCIMulticloudPoliciesList', 'Get-OCIMulticloudResourceAnchor', 
                'Get-OCIMulticloudResourceAnchorsList', 
                'Get-OCIMulticloudResourcesList', 
                'Get-OCIMulticloudSubscriptionsList'
