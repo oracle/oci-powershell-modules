@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Core.dll'
 
 # Version number of this module.
-ModuleVersion = '128.0.0'
+ModuleVersion = '129.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '128.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '129.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Core.dll'
@@ -150,8 +150,8 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Get-OCIComputeGpuMemoryClusterInstancesList', 
                'Get-OCIComputeGpuMemoryClustersList', 
                'Get-OCIComputeGpuMemoryFabric', 
-               'Get-OCIComputeGpuMemoryFabricsList', 'Get-OCIComputeHostGroup', 
-               'Get-OCIComputeHostGroupsList', 'Get-OCIComputeHosts', 
+               'Get-OCIComputeGpuMemoryFabricsList', 'Get-OCIComputeHost', 
+               'Get-OCIComputeHostGroup', 'Get-OCIComputeHostGroupsList', 
                'Get-OCIComputeHostsList', 'Get-OCIComputeImage', 
                'Get-OCIComputeImageCapabilitySchema', 
                'Get-OCIComputeImageCapabilitySchemasList', 
@@ -470,8 +470,8 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Update-OCIComputeConsoleHistory', 
                'Update-OCIComputeDedicatedVmHost', 
                'Update-OCIComputeGpuMemoryCluster', 
-               'Update-OCIComputeGpuMemoryFabric', 'Update-OCIComputeHostGroup', 
-               'Update-OCIComputeHosts', 'Update-OCIComputeImage', 
+               'Update-OCIComputeGpuMemoryFabric', 'Update-OCIComputeHost', 
+               'Update-OCIComputeHostGroup', 'Update-OCIComputeImage', 
                'Update-OCIComputeImageCapabilitySchema', 
                'Update-OCIComputeInstance', 
                'Update-OCIComputeInstanceConsoleConnection', 

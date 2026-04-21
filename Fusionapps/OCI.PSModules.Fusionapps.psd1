@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Fusionapps.dll'
 
 # Version number of this module.
-ModuleVersion = '128.0.0'
+ModuleVersion = '129.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '128.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '129.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Fusionapps.dll'
@@ -71,9 +71,16 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Fusionapps.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIFusionappsAdminUsersList', 
+CmdletsToExport = 'Confirm-OCIFusionappsAndConfigureEmailSubdomainCertificate', 
+               'Confirm-OCIFusionappsAndConfigureEmailSubdomainDns', 
+               'Confirm-OCIFusionappsAndConfigureMicrositeDns', 
+               'Get-OCIFusionappsAdminUsersList', 
                'Get-OCIFusionappsDataMaskingActivitiesList', 
                'Get-OCIFusionappsDataMaskingActivity', 
+               'Get-OCIFusionappsEmailSubdomain', 
+               'Get-OCIFusionappsEmailSubdomainCsr', 
+               'Get-OCIFusionappsEmailSubdomainDnsConfig', 
+               'Get-OCIFusionappsEmailSubdomainsList', 
                'Get-OCIFusionappsFusionEnvironment', 
                'Get-OCIFusionappsFusionEnvironmentFamiliesList', 
                'Get-OCIFusionappsFusionEnvironmentFamily', 
@@ -81,6 +88,10 @@ CmdletsToExport = 'Get-OCIFusionappsAdminUsersList',
                'Get-OCIFusionappsFusionEnvironmentFamilySubscriptionDetail', 
                'Get-OCIFusionappsFusionEnvironmentsList', 
                'Get-OCIFusionappsFusionEnvironmentStatus', 
+               'Get-OCIFusionappsMarketingBrand', 
+               'Get-OCIFusionappsMarketingBrandsList', 
+               'Get-OCIFusionappsMicrosite', 'Get-OCIFusionappsMicrositeDnsConfig', 
+               'Get-OCIFusionappsMicrositesList', 
                'Get-OCIFusionappsRefreshActivitiesList', 
                'Get-OCIFusionappsRefreshActivity', 
                'Get-OCIFusionappsScheduledActivitiesList', 
@@ -93,25 +104,35 @@ CmdletsToExport = 'Get-OCIFusionappsAdminUsersList',
                'Get-OCIFusionappsWorkRequestLogsList', 
                'Get-OCIFusionappsWorkRequestsList', 
                'Invoke-OCIFusionappsInitiateExtract', 
+               'Invoke-OCIFusionappsRequestEmailSubdomainCsr', 
                'Invoke-OCIFusionappsVerifyServiceAttachment', 
                'Move-OCIFusionappsFusionEnvironmentCompartment', 
                'Move-OCIFusionappsFusionEnvironmentFamilyCompartment', 
                'New-OCIFusionappsDataMaskingActivity', 
+               'New-OCIFusionappsEmailSubdomain', 
                'New-OCIFusionappsExtractDetails', 
                'New-OCIFusionappsFusionEnvironment', 
                'New-OCIFusionappsFusionEnvironmentAdminUser', 
                'New-OCIFusionappsFusionEnvironmentFamily', 
+               'New-OCIFusionappsMarketingBrand', 'New-OCIFusionappsMicrosite', 
                'New-OCIFusionappsRefreshActivity', 
                'New-OCIFusionappsServiceAttachment', 
+               'Remove-OCIFusionappsEmailSubdomain', 
                'Remove-OCIFusionappsFusionEnvironment', 
                'Remove-OCIFusionappsFusionEnvironmentAdminUser', 
                'Remove-OCIFusionappsFusionEnvironmentFamily', 
+               'Remove-OCIFusionappsMarketingBrand', 
+               'Remove-OCIFusionappsMicrosite', 
                'Remove-OCIFusionappsRefreshActivity', 
                'Remove-OCIFusionappsServiceAttachment', 
                'Reset-OCIFusionappsFusionEnvironmentPassword', 
+               'Update-OCIFusionappsEmailSubdomain', 
                'Update-OCIFusionappsFusionEnvironment', 
                'Update-OCIFusionappsFusionEnvironmentFamily', 
-               'Update-OCIFusionappsRefreshActivity'
+               'Update-OCIFusionappsMarketingBrand', 
+               'Update-OCIFusionappsMicrosite', 
+               'Update-OCIFusionappsRefreshActivity', 
+               'Write-OCIFusionappsEmailSubdomainCertificate'
 
 # Variables to export from this module
 VariablesToExport = '*'

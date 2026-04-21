@@ -33,8 +33,8 @@ namespace Oci.GoldengateService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Return the deployments to which the specified connectionId may be assigned.")]
         public string AssignableConnectionId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the 'lifecycleState' given.")]
-        public System.Nullable<Oci.GoldengateService.Models.LifecycleState> LifecycleState { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the deployments having the 'lifecycleState' given.")]
+        public System.Nullable<Oci.GoldengateService.Models.Deployment.LifecycleStateEnum> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the 'lifecycleSubState' given.")]
         public System.Nullable<Oci.GoldengateService.Models.LifecycleSubState> LifecycleSubState { get; set; }
