@@ -22,13 +22,13 @@ namespace Oci.LoggingsearchService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Search request.")]
         public SearchLogsDetails SearchLogsDetails { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. The input value can be null but an empty string will return an error. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return in a response. Pagination is not supported in this API.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return in a response.")]
         public System.Nullable<int> Limit { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The value of the opc-next-page response header from the previous ""Search"" call. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/Content/API/Concepts/usingapi.htm#nine).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The value of the opc-next-page response header from the previous ""Search"" call. The input value can be null but an empty string will return an error. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/Content/API/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
 
         protected override void ProcessRecord()

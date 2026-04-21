@@ -24,8 +24,8 @@ namespace Oci.GoldengateService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"A unique Deployment identifier.")]
         public string DeploymentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the 'lifecycleState' given.")]
-        public System.Nullable<Oci.GoldengateService.Models.LifecycleState> LifecycleState { get; set; }
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the deployment peers having the 'lifecycleState' given.")]
+        public System.Nullable<Oci.GoldengateService.Models.DeploymentPeerSummary.LifecycleStateEnum> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the entire 'displayName' given.")]
         public string DisplayName { get; set; }

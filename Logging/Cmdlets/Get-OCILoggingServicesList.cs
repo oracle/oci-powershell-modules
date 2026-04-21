@@ -19,6 +19,9 @@ namespace Oci.LoggingService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.LoggingService.Models.ServiceSummary), typeof(Oci.LoggingService.Responses.ListServicesResponse) })]
     public class GetOCILoggingServicesList : OCILoggingManagementCmdlet
     {
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Compartment OCID to list resources in. Please see compartmentIdInSubtree      for nested compartments traversal.")]
+        public string CompartmentId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -31,6 +34,7 @@ namespace Oci.LoggingService.Cmdlets
             {
                 request = new ListServicesRequest
                 {
+                    CompartmentId = CompartmentId,
                     OpcRequestId = OpcRequestId
                 };
 

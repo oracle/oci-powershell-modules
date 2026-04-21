@@ -21,8 +21,8 @@ namespace Oci.CoreService.Cmdlets
     public class InvokeOCIVirtualNetworkBulkUpdatePrivateIps : OCIVirtualNetworkCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details of secondary IPv4 addresses to be updated.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details of secondary IPv4 addresses to be updated.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details of the secondary IPv4 addresses to update.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details of the secondary IPv4 addresses to update.", ParameterSetName = Default)]
         public BulkUpdatePrivateIpsDetails BulkUpdatePrivateIpsDetails { get; set; }
 
         

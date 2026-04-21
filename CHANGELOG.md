@@ -3,6 +3,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 129.0.0 - 2026-04-21
+### Added 
+- Support for Azure AD, Avro Metadata, and Microsoft Fabric Eventstream (Kafka-like) data sources in the GoldenGate service 
+- Support for creating branded email subdomains without delegating DNS subzone in the Fusion Apps as a Service 
+- Support for IPv6 endpoints in the Events service 
+- Support for IPv6 endpoints in the Logging service 
+- Support for IPv6 endpoints in the Logging Search service 
+- Support for IPv6 endpoints in the Logging Ingestion service 
+- Support for reserved private IP IDs in the Compute service 
+- Support for USAGE_ONLY query type in the Usage Api service 
+- Support for resizing Data, Reco, and Sparse disk groups in the Database service 
+- Support for logging line format in the Functions service 
+
+### Breaking Changes 
+- The model `UpdateOCIComputeHosts` renamed to `UpdateOCIComputeHost` in the Compute service 
+- The model `GetOCIComputeHosts` renamed to `GetOCIComputeHost` in the Compute service 
+- Type of field `WaitForLifecycleState` was changed to `LifecycleStateEnum[]` in the models `GetOCIGoldengateDeployment`, `GetOCIGoldengateDeploymentBackup`, `GetOCIGoldengateDeploymentBackupsList`, `GetOCIGoldengateDeploymentPeersList`, `GetOCIGoldengateDeploymentsList`, `GetOCIGoldengateDeploymentUpgrade`, and `GetOCIGoldengateDeploymentUpgradesList` in the GoldenGate service
+
 ## 128.0.0 - 2026-04-14
 ### Added 
 - Support for filesystem snapshot locking for ransomware protection in the File Storage service 
