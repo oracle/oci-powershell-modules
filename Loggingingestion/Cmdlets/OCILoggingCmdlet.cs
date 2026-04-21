@@ -16,6 +16,9 @@ namespace Oci.LoggingingestionService.Cmdlets
     public abstract class OCILoggingCmdlet : Oci.PSModules.Common.Cmdlets.OCICmdlet
     { 
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "If set, the service dual stack endpoint is used. The -Endpoint parameter takes precedence over this option.")]
+        public SwitchParameter EnableDualStackEndpoints { get; set; }
+
         protected override void BeginProcessing()
         {
             base.BeginProcessing();
@@ -45,6 +48,7 @@ namespace Oci.LoggingingestionService.Cmdlets
                     TimeoutMillis = timeout,
                     ClientUserAgent = PSUserAgent
                 });
+                client.EnableDualStackEndpoints(EnableDualStackEndpoints);
                 string region = GetPreferredRegion();
                 if (region != null)
                 {

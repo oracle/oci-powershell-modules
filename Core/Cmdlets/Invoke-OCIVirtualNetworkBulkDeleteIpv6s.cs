@@ -21,8 +21,8 @@ namespace Oci.CoreService.Cmdlets
     public class InvokeOCIVirtualNetworkBulkDeleteIpv6s : OCIVirtualNetworkCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Delete IPv6s details.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Delete IPv6s details.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details of the IPv6s to delete.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details of the IPv6s to delete.", ParameterSetName = Default)]
         public BulkDeleteIpv6sDetails BulkDeleteIpv6sDetails { get; set; }
 
         

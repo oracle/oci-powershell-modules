@@ -21,8 +21,8 @@ namespace Oci.CoreService.Cmdlets
     public class InvokeOCIVirtualNetworkBulkUpdateIpv6s : OCIVirtualNetworkCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Update IPv6s details.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Update IPv6s details.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details of the IPv6s to update.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details of the IPv6s to update.", ParameterSetName = Default)]
         public BulkUpdateIpv6sDetails BulkUpdateIpv6sDetails { get; set; }
 
         

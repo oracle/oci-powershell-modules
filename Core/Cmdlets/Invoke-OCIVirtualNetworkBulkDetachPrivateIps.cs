@@ -21,8 +21,8 @@ namespace Oci.CoreService.Cmdlets
     public class InvokeOCIVirtualNetworkBulkDetachPrivateIps : OCIVirtualNetworkCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Secondary IPv4 addresses to detach.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Secondary IPv4 addresses to detach.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The secondary IPv4 addresses to detach.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The secondary IPv4 addresses to detach.", ParameterSetName = Default)]
         public BulkDetachPrivateIpsDetails BulkDetachPrivateIpsDetails { get; set; }
 
         
