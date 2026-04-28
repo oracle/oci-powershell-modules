@@ -33,6 +33,9 @@ namespace Oci.BatchService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The value of the opc-next-page response header from the previous ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of a shape.")]
+        public System.Nullable<Oci.BatchService.Models.ShapeType> ShapeType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID. The only valid characters for request IDs are letters, numbers, underscore, and dash.")]
         public string OpcRequestId { get; set; }
 
@@ -52,6 +55,7 @@ namespace Oci.BatchService.Cmdlets
                     AvailabilityDomain = AvailabilityDomain,
                     Limit = Limit,
                     Page = Page,
+                    ShapeType = ShapeType,
                     OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListBatchContextShapesResponse> responses = GetRequestDelegate().Invoke(request);

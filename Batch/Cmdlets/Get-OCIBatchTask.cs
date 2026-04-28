@@ -26,8 +26,8 @@ namespace Oci.BatchService.Cmdlets
         public string BatchJobId { get; set; }
 
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the batch task.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the batch task.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The hierarchical name of the batch task. Mutually exclusive with the task id query parameter: you can't pass both.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The hierarchical name of the batch task. Mutually exclusive with the task id query parameter: you can't pass both.", ParameterSetName = Default)]
         public string TaskName { get; set; }
 
         

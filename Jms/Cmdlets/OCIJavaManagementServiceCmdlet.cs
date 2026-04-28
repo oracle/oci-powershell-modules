@@ -16,6 +16,9 @@ namespace Oci.JmsService.Cmdlets
     public abstract class OCIJavaManagementServiceCmdlet : Oci.PSModules.Common.Cmdlets.OCICmdlet
     { 
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "This service uses dual stack endpoints by default. If set, this parameter disables this behavior. The -Endpoint parameter takes precedence over this option.")]
+        public SwitchParameter DisableDualStackEndpoints { get; set; }
+
         protected override void BeginProcessing()
         {
             base.BeginProcessing();
@@ -45,6 +48,7 @@ namespace Oci.JmsService.Cmdlets
                     TimeoutMillis = timeout,
                     ClientUserAgent = PSUserAgent
                 });
+                client.EnableDualStackEndpoints(!DisableDualStackEndpoints);
                 string region = GetPreferredRegion();
                 if (region != null)
                 {
