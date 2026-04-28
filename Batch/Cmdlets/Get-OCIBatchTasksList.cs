@@ -30,8 +30,11 @@ namespace Oci.BatchService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.")]
         public System.Nullable<Oci.BatchService.Models.BatchTask.LifecycleStateEnum> LifecycleState { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the task.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The hierarchical name of the batch task. Mutually exclusive with the task id query parameter: you can't pass both.")]
         public string Name { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The UUID of the batch task. Mutually exclusive with the task name and group task name query parameters: you can't pass both.")]
+        public string TaskId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -64,6 +67,7 @@ namespace Oci.BatchService.Cmdlets
                     BatchJobId = BatchJobId,
                     LifecycleState = LifecycleState,
                     Name = Name,
+                    TaskId = TaskId,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,

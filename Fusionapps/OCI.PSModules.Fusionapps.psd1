@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Fusionapps.dll'
 
 # Version number of this module.
-ModuleVersion = '129.0.0'
+ModuleVersion = '130.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '129.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '130.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Fusionapps.dll'
@@ -99,12 +99,16 @@ CmdletsToExport = 'Confirm-OCIFusionappsAndConfigureEmailSubdomainCertificate',
                'Get-OCIFusionappsServiceAttachment', 
                'Get-OCIFusionappsServiceAttachmentsList', 
                'Get-OCIFusionappsTimeAvailableForRefreshesList', 
+               'Get-OCIFusionappsVanityDomain', 
+               'Get-OCIFusionappsVanityDomainActivity', 
+               'Get-OCIFusionappsVanityDomainsList', 
                'Get-OCIFusionappsWorkRequest', 
                'Get-OCIFusionappsWorkRequestErrorsList', 
                'Get-OCIFusionappsWorkRequestLogsList', 
                'Get-OCIFusionappsWorkRequestsList', 
                'Invoke-OCIFusionappsInitiateExtract', 
                'Invoke-OCIFusionappsRequestEmailSubdomainCsr', 
+               'Invoke-OCIFusionappsSubmitVanityDomainValidation', 
                'Invoke-OCIFusionappsVerifyServiceAttachment', 
                'Move-OCIFusionappsFusionEnvironmentCompartment', 
                'Move-OCIFusionappsFusionEnvironmentFamilyCompartment', 
@@ -117,6 +121,8 @@ CmdletsToExport = 'Confirm-OCIFusionappsAndConfigureEmailSubdomainCertificate',
                'New-OCIFusionappsMarketingBrand', 'New-OCIFusionappsMicrosite', 
                'New-OCIFusionappsRefreshActivity', 
                'New-OCIFusionappsServiceAttachment', 
+               'New-OCIFusionappsVanityDomain', 
+               'New-OCIFusionappsVanityDomainActivity', 
                'Remove-OCIFusionappsEmailSubdomain', 
                'Remove-OCIFusionappsFusionEnvironment', 
                'Remove-OCIFusionappsFusionEnvironmentAdminUser', 
@@ -125,6 +131,7 @@ CmdletsToExport = 'Confirm-OCIFusionappsAndConfigureEmailSubdomainCertificate',
                'Remove-OCIFusionappsMicrosite', 
                'Remove-OCIFusionappsRefreshActivity', 
                'Remove-OCIFusionappsServiceAttachment', 
+               'Remove-OCIFusionappsVanityDomainActivity', 
                'Reset-OCIFusionappsFusionEnvironmentPassword', 
                'Update-OCIFusionappsEmailSubdomain', 
                'Update-OCIFusionappsFusionEnvironment', 
@@ -132,7 +139,10 @@ CmdletsToExport = 'Confirm-OCIFusionappsAndConfigureEmailSubdomainCertificate',
                'Update-OCIFusionappsMarketingBrand', 
                'Update-OCIFusionappsMicrosite', 
                'Update-OCIFusionappsRefreshActivity', 
-               'Write-OCIFusionappsEmailSubdomainCertificate'
+               'Update-OCIFusionappsVanityDomain', 
+               'Update-OCIFusionappsVanityDomainActivity', 
+               'Write-OCIFusionappsEmailSubdomainCertificate', 
+               'Write-OCIFusionappsVanityDomainCertificate'
 
 # Variables to export from this module
 VariablesToExport = '*'

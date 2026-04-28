@@ -70,6 +70,9 @@ namespace Oci.JmsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter the list with path contains the given value.")]
         public string PathContains { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The security status of the Java Runtime.")]
+        public System.Nullable<Oci.JmsService.Models.JreSecurityStatus> JreSecurityStatus { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -95,7 +98,8 @@ namespace Oci.JmsService.Cmdlets
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,
                     OsFamily = OsFamily,
-                    PathContains = PathContains
+                    PathContains = PathContains,
+                    JreSecurityStatus = JreSecurityStatus
                 };
 
                 response = client.SummarizeInstallationUsage(request).GetAwaiter().GetResult();

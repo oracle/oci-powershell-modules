@@ -27,8 +27,20 @@ namespace Oci.BatchService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.")]
         public System.Nullable<Oci.BatchService.Models.BatchTask.LifecycleStateEnum> LifecycleState { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the task.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The hierarchical name of the batch task. Mutually exclusive with the task id query parameter: you can't pass both.")]
         public string Name { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The UUID of the batch task. Mutually exclusive with the task name and group task name query parameters: you can't pass both.")]
+        public string TaskId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Hierarchical name of the group task. A filter to return only tasks contained within the selected group task. Omit to return top-level tasks only. Can be combined with task name query parameter, in which case task name becomes a hierarchical name relative to the selected group task, e.g. ?groupTaskName=A.B&taskName=C.D is equal to ?taskName=A.B.C.D. Mutually exclusive with the task id query parameter: you can't pass both.")]
+        public string GroupTaskName { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter tasks by type. Valid values are: COMPUTE, GROUP.")]
+        public System.Nullable<Oci.BatchService.Models.BatchTask.TypeEnum> Type { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Defines the hierarchical scope of the tasks to be returned. When set to SHALLOW, which is default, only tasks contained directly (non-recursively) within current hierarchy entry are returned. When set to DEEP, tasks contained within current hierarchy entry and all its descendants recursively are returned. The default hierarchy entry is root, i.e. batch job itself. To use a different hierarchy entry, provide the group task name as a query parameter.  The specified group task becomes the entry point instead of the batch job.")]
+        public System.Nullable<Oci.BatchService.Models.BatchTaskHierarchyView> HierarchyView { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -60,6 +72,10 @@ namespace Oci.BatchService.Cmdlets
                     BatchJobId = BatchJobId,
                     LifecycleState = LifecycleState,
                     Name = Name,
+                    TaskId = TaskId,
+                    GroupTaskName = GroupTaskName,
+                    Type = Type,
+                    HierarchyView = HierarchyView,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,
