@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Databasetools.dll'
 
 # Version number of this module.
-ModuleVersion = '130.1.0'
+ModuleVersion = '131.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '130.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '131.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasetools.dll'
@@ -72,37 +72,70 @@ FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Add-OCIDatabasetoolsConnectionLock', 
+               'Add-OCIDatabasetoolsDatabaseApiGatewayConfigLock', 
                'Add-OCIDatabasetoolsIdentityLock', 
+               'Add-OCIDatabasetoolsMcpServerLock', 
+               'Add-OCIDatabasetoolsMcpToolsetLock', 
                'Add-OCIDatabasetoolsPrivateEndpointLock', 
+               'Add-OCIDatabasetoolsSqlReportLock', 
                'Confirm-OCIDatabasetoolsConnection', 
                'Confirm-OCIDatabasetoolsIdentityCredential', 
                'Get-OCIDatabasetoolsConnection', 
                'Get-OCIDatabasetoolsConnectionsList', 
+               'Get-OCIDatabasetoolsDatabaseApiGatewayConfig', 
+               'Get-OCIDatabasetoolsDatabaseApiGatewayConfigsList', 
                'Get-OCIDatabasetoolsEndpointService', 
                'Get-OCIDatabasetoolsEndpointServicesList', 
                'Get-OCIDatabasetoolsIdentitiesList', 
-               'Get-OCIDatabasetoolsIdentity', 
+               'Get-OCIDatabasetoolsIdentity', 'Get-OCIDatabasetoolsMcpServer', 
+               'Get-OCIDatabasetoolsMcpServersList', 
+               'Get-OCIDatabasetoolsMcpToolset', 
+               'Get-OCIDatabasetoolsMcpToolsetsList', 
+               'Get-OCIDatabasetoolsMcpToolsetVersionsList', 
                'Get-OCIDatabasetoolsPrivateEndpoint', 
                'Get-OCIDatabasetoolsPrivateEndpointsList', 
+               'Get-OCIDatabasetoolsSqlReport', 
+               'Get-OCIDatabasetoolsSqlReportsList', 
                'Get-OCIDatabasetoolsWorkRequest', 
                'Get-OCIDatabasetoolsWorkRequestErrorsList', 
                'Get-OCIDatabasetoolsWorkRequestLogsList', 
                'Get-OCIDatabasetoolsWorkRequestsList', 
+               'Invoke-OCIDatabasetoolsCascadingDeleteDatabaseToolsMcpServer', 
                'Invoke-OCIDatabasetoolsRefreshDatabaseToolsIdentityCredential', 
                'Move-OCIDatabasetoolsConnectionCompartment', 
+               'Move-OCIDatabasetoolsDatabaseApiGatewayConfigCompartment', 
                'Move-OCIDatabasetoolsIdentityCompartment', 
+               'Move-OCIDatabasetoolsMcpServerCompartment', 
+               'Move-OCIDatabasetoolsMcpToolsetCompartment', 
                'Move-OCIDatabasetoolsPrivateEndpointCompartment', 
-               'New-OCIDatabasetoolsConnection', 'New-OCIDatabasetoolsIdentity', 
+               'Move-OCIDatabasetoolsSqlReportCompartment', 
+               'New-OCIDatabasetoolsConnection', 
+               'New-OCIDatabasetoolsDatabaseApiGatewayConfig', 
+               'New-OCIDatabasetoolsIdentity', 'New-OCIDatabasetoolsMcpServer', 
+               'New-OCIDatabasetoolsMcpToolset', 
                'New-OCIDatabasetoolsPrivateEndpoint', 
+               'New-OCIDatabasetoolsSqlReport', 
                'Remove-OCIDatabasetoolsConnection', 
                'Remove-OCIDatabasetoolsConnectionLock', 
+               'Remove-OCIDatabasetoolsDatabaseApiGatewayConfig', 
+               'Remove-OCIDatabasetoolsDatabaseApiGatewayConfigLock', 
                'Remove-OCIDatabasetoolsIdentity', 
                'Remove-OCIDatabasetoolsIdentityLock', 
+               'Remove-OCIDatabasetoolsMcpServer', 
+               'Remove-OCIDatabasetoolsMcpServerLock', 
+               'Remove-OCIDatabasetoolsMcpToolset', 
+               'Remove-OCIDatabasetoolsMcpToolsetLock', 
                'Remove-OCIDatabasetoolsPrivateEndpoint', 
                'Remove-OCIDatabasetoolsPrivateEndpointLock', 
+               'Remove-OCIDatabasetoolsSqlReport', 
+               'Remove-OCIDatabasetoolsSqlReportLock', 
                'Update-OCIDatabasetoolsConnection', 
+               'Update-OCIDatabasetoolsDatabaseApiGatewayConfig', 
                'Update-OCIDatabasetoolsIdentity', 
-               'Update-OCIDatabasetoolsPrivateEndpoint'
+               'Update-OCIDatabasetoolsMcpServer', 
+               'Update-OCIDatabasetoolsMcpToolset', 
+               'Update-OCIDatabasetoolsPrivateEndpoint', 
+               'Update-OCIDatabasetoolsSqlReport'
 
 # Variables to export from this module
 VariablesToExport = '*'
