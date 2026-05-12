@@ -51,6 +51,9 @@ namespace Oci.IotService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter resources that match the specified URI (DTMI) of the digital twin model.")]
         public string DigitalTwinModelSpecUri { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter resources whose connectivityType matches the specified value.")]
+        public System.Nullable<Oci.IotService.Models.DigitalTwinInstanceConnectivityType> ConnectivityType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter resources by [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.")]
         public string Id { get; set; }
 
@@ -76,6 +79,7 @@ namespace Oci.IotService.Cmdlets
                     OpcRequestId = OpcRequestId,
                     DigitalTwinModelId = DigitalTwinModelId,
                     DigitalTwinModelSpecUri = DigitalTwinModelSpecUri,
+                    ConnectivityType = ConnectivityType,
                     Id = Id
                 };
                 IEnumerable<ListDigitalTwinInstancesResponse> responses = GetRequestDelegate().Invoke(request);

@@ -3,6 +3,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 131.0.0 - 2026-05-12
+### Added 
+- Support for the Database Tools Runtime service 
+- Support for multi modality models and their new capabilities in the Generative AI service 
+- Support for Indirectly Connected Devices in the OCI Internet of Things (OCI IoT) service 
+- Support for patch APIs to add and delete multiple IPv6 prefixes in the Virtual Cloud Network service 
+- Support for Model Context Protocol (MCP) servers in the Database Tools service 
+- Support for SQL reports in the Database Tools service 
+- Support for database API gateway configurations in the Database Tools service 
+- Support for Oracle database external authentication with OCI IAM and Azure Active Directory in the Database Tools service 
+
+### Breaking Changes 
+- Added a required parameter `AuthenticationType` for `DatabaseToolsConnectionOracleDatabase` operations in the Database Tools service in the .NET SDK 
+- Added a required parameter `ConnectivityType` for `DigitalTwinInstance` operations in the OCI Internet of Things (OCI IoT) service in the .NET SDK
+
 ## 130.1.0 - 2026-05-05
 ### Added 
 - Support for large generic v4 and v5 unit shapes in the Generative AI service
