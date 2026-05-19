@@ -16,7 +16,7 @@ using Oci.Common.Model;
 namespace Oci.StreamingService.Cmdlets
 {
     [Cmdlet("Move", "OCIStreamingConnectHarnessCompartment")]
-    [OutputType(new System.Type[] { typeof(void), typeof(Oci.StreamingService.Responses.ChangeConnectHarnessCompartmentResponse) })]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.StreamingService.Responses.ChangeConnectHarnessCompartmentResponse) })]
     public class MoveOCIStreamingConnectHarnessCompartment : OCIStreamAdminCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the connect harness.")]
@@ -47,7 +47,7 @@ namespace Oci.StreamingService.Cmdlets
                 };
 
                 response = client.ChangeConnectHarnessCompartment(request).GetAwaiter().GetResult();
-                WriteOutput(response);
+                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
             }
             catch (OciException ex)

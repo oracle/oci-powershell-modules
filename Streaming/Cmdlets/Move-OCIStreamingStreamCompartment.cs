@@ -16,7 +16,7 @@ using Oci.Common.Model;
 namespace Oci.StreamingService.Cmdlets
 {
     [Cmdlet("Move", "OCIStreamingStreamCompartment")]
-    [OutputType(new System.Type[] { typeof(void), typeof(Oci.StreamingService.Responses.ChangeStreamCompartmentResponse) })]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.StreamingService.Responses.ChangeStreamCompartmentResponse) })]
     public class MoveOCIStreamingStreamCompartment : OCIStreamAdminCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the stream.")]
@@ -47,7 +47,7 @@ namespace Oci.StreamingService.Cmdlets
                 };
 
                 response = client.ChangeStreamCompartment(request).GetAwaiter().GetResult();
-                WriteOutput(response);
+                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
             }
             catch (OciException ex)
