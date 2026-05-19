@@ -16,7 +16,7 @@ using Oci.Common.Model;
 namespace Oci.StreamingService.Cmdlets
 {
     [Cmdlet("Remove", "OCIStreamingStreamPool", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
-    [OutputType(new System.Type[] { typeof(void), typeof(Oci.StreamingService.Responses.DeleteStreamPoolResponse) })]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.StreamingService.Responses.DeleteStreamPoolResponse) })]
     public class RemoveOCIStreamingStreamPool : OCIStreamAdminCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the stream pool.")]
@@ -52,7 +52,7 @@ namespace Oci.StreamingService.Cmdlets
                 };
 
                 response = client.DeleteStreamPool(request).GetAwaiter().GetResult();
-                WriteOutput(response);
+                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
                 FinishProcessing(response);
             }
             catch (OciException ex)
