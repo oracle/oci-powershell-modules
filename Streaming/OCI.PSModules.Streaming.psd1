@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Streaming.dll'
 
 # Version number of this module.
-ModuleVersion = '131.0.0'
+ModuleVersion = '132.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '131.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '132.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Streaming.dll'
@@ -75,7 +75,11 @@ CmdletsToExport = 'Get-OCIStreamingConnectHarness',
                'Get-OCIStreamingConnectHarnessesList', 'Get-OCIStreamingGroup', 
                'Get-OCIStreamingMessages', 'Get-OCIStreamingStream', 
                'Get-OCIStreamingStreamPool', 'Get-OCIStreamingStreamPoolsList', 
-               'Get-OCIStreamingStreamsList', 'Invoke-OCIStreamingConsumerCommit', 
+               'Get-OCIStreamingStreamsList', 'Get-OCIStreamingWorkRequest', 
+               'Get-OCIStreamingWorkRequestErrorsList', 
+               'Get-OCIStreamingWorkRequestLogsList', 
+               'Get-OCIStreamingWorkRequestsList', 
+               'Invoke-OCIStreamingConsumerCommit', 
                'Invoke-OCIStreamingConsumerHeartbeat', 
                'Move-OCIStreamingConnectHarnessCompartment', 
                'Move-OCIStreamingStreamCompartment', 

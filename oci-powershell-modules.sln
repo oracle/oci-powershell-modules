@@ -339,6 +339,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Containerregi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Databasetoolsruntime", "Databasetoolsruntime\OCI.PSModules.Databasetoolsruntime.csproj", "{E870FACC-CDC3-4EC3-95D5-B77BBC46AC4E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Costad", "Costad\OCI.PSModules.Costad.csproj", "{A0E6C2D1-6D65-4105-A4F3-83512B0CD3AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2368,5 +2370,17 @@ Global
         {E870FACC-CDC3-4EC3-95D5-B77BBC46AC4E}.Release|x64.Build.0 = Release|Any CPU
         {E870FACC-CDC3-4EC3-95D5-B77BBC46AC4E}.Release|x86.ActiveCfg = Release|Any CPU
         {E870FACC-CDC3-4EC3-95D5-B77BBC46AC4E}.Release|x86.Build.0 = Release|Any CPU
+        {A0E6C2D1-6D65-4105-A4F3-83512B0CD3AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {A0E6C2D1-6D65-4105-A4F3-83512B0CD3AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {A0E6C2D1-6D65-4105-A4F3-83512B0CD3AE}.Debug|x64.ActiveCfg = Debug|Any CPU
+        {A0E6C2D1-6D65-4105-A4F3-83512B0CD3AE}.Debug|x64.Build.0 = Debug|Any CPU
+        {A0E6C2D1-6D65-4105-A4F3-83512B0CD3AE}.Debug|x86.ActiveCfg = Debug|Any CPU
+        {A0E6C2D1-6D65-4105-A4F3-83512B0CD3AE}.Debug|x86.Build.0 = Debug|Any CPU
+        {A0E6C2D1-6D65-4105-A4F3-83512B0CD3AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {A0E6C2D1-6D65-4105-A4F3-83512B0CD3AE}.Release|Any CPU.Build.0 = Release|Any CPU
+        {A0E6C2D1-6D65-4105-A4F3-83512B0CD3AE}.Release|x64.ActiveCfg = Release|Any CPU
+        {A0E6C2D1-6D65-4105-A4F3-83512B0CD3AE}.Release|x64.Build.0 = Release|Any CPU
+        {A0E6C2D1-6D65-4105-A4F3-83512B0CD3AE}.Release|x86.ActiveCfg = Release|Any CPU
+        {A0E6C2D1-6D65-4105-A4F3-83512B0CD3AE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
