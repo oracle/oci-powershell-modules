@@ -54,6 +54,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given Schedule Plan id exactly.")]
         public string Id { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given plan intent exactly.")]
+        public System.Nullable<Oci.DatabaseService.Requests.ListSchedulingPlansRequest.PlanIntentEnum> PlanIntent { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -76,7 +79,8 @@ namespace Oci.DatabaseService.Cmdlets
                     SchedulingPolicyId = SchedulingPolicyId,
                     DisplayName = DisplayName,
                     ResourceId = ResourceId,
-                    Id = Id
+                    Id = Id,
+                    PlanIntent = PlanIntent
                 };
                 IEnumerable<ListSchedulingPlansResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Goldengate.dll'
 
 # Version number of this module.
-ModuleVersion = '132.0.0'
+ModuleVersion = '133.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '132.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '133.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Goldengate.dll'
@@ -94,6 +94,7 @@ CmdletsToExport = 'Add-OCIGoldengateConnectionLock',
                'Get-OCIGoldengateDeploymentUpgradesList', 
                'Get-OCIGoldengateDeploymentVersionsList', 
                'Get-OCIGoldengateDeploymentWalletsOperationsList', 
+               'Get-OCIGoldengateDisasterRecoveryPrecheckReport', 
                'Get-OCIGoldengateMessagesList', 'Get-OCIGoldengatePipeline', 
                'Get-OCIGoldengatePipelineInitializationStepsList', 
                'Get-OCIGoldengatePipelineRunningProcessesList', 
@@ -107,6 +108,7 @@ CmdletsToExport = 'Add-OCIGoldengateConnectionLock',
                'Get-OCIGoldengateWorkRequestLogsList', 
                'Get-OCIGoldengateWorkRequestsList', 
                'Import-OCIGoldengateDeploymentWallet', 
+               'Invoke-OCIGoldengateClonePipeline', 
                'Invoke-OCIGoldengateCollectDeploymentDiagnostic', 
                'Invoke-OCIGoldengateCollectPipelineDiagnostic', 
                'Invoke-OCIGoldengateDeploymentWalletExists', 
@@ -132,6 +134,7 @@ CmdletsToExport = 'Add-OCIGoldengateConnectionLock',
                'New-OCIGoldengateConnectionAssignment', 
                'New-OCIGoldengateDatabaseRegistration', 
                'New-OCIGoldengateDeployment', 'New-OCIGoldengateDeploymentBackup', 
+               'New-OCIGoldengateDisasterRecoveryPrecheckReport', 
                'New-OCIGoldengateLibraryUrl', 'New-OCIGoldengatePipeline', 
                'Remove-OCIGoldengateCertificate', 'Remove-OCIGoldengateConnection', 
                'Remove-OCIGoldengateConnectionAssignment', 

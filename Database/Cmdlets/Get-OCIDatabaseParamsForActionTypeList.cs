@@ -24,6 +24,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The type of the scheduled action")]
         public System.Nullable<Oci.DatabaseService.Models.RecommendedScheduledActionSummary.ActionTypeEnum> Type { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The plan intent the action will be used for. Relevant to action type that can be used in multiple plans")]
+        public System.Nullable<Oci.DatabaseService.Requests.ListParamsForActionTypeRequest.PlanIntentEnum> PlanIntent { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return per page.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -46,6 +49,7 @@ namespace Oci.DatabaseService.Cmdlets
                 request = new ListParamsForActionTypeRequest
                 {
                     Type = Type,
+                    PlanIntent = PlanIntent,
                     Limit = Limit,
                     Page = Page,
                     OpcRequestId = OpcRequestId

@@ -25,6 +25,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm).")]
+        public string CompartmentId { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -35,7 +38,8 @@ namespace Oci.DatabaseService.Cmdlets
                 request = new ListDbSystemComputePerformancesRequest
                 {
                     DbSystemShape = DbSystemShape,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    CompartmentId = CompartmentId
                 };
 
                 response = client.ListDbSystemComputePerformances(request).GetAwaiter().GetResult();
