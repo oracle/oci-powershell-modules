@@ -63,6 +63,9 @@ Example: `50`", ParameterSetName = LimitSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The available OCPUs of the dedicated VM host.")]
         public System.Nullable<float> RemainingOcpusGreaterThanOrEqualTo { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The remaining local volume of the dedicated VM host, in GBs.")]
+        public System.Nullable<float> RemainingLocalVolumeInGBsGreaterThanOrEqualTo { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.")]
         public System.Nullable<bool> IsMemoryEncryptionEnabled { get; set; }
 
@@ -90,6 +93,7 @@ Example: `50`", ParameterSetName = LimitSet)]
                     SortOrder = SortOrder,
                     RemainingMemoryInGBsGreaterThanOrEqualTo = RemainingMemoryInGBsGreaterThanOrEqualTo,
                     RemainingOcpusGreaterThanOrEqualTo = RemainingOcpusGreaterThanOrEqualTo,
+                    RemainingLocalVolumeInGBsGreaterThanOrEqualTo = RemainingLocalVolumeInGBsGreaterThanOrEqualTo,
                     IsMemoryEncryptionEnabled = IsMemoryEncryptionEnabled
                 };
                 IEnumerable<ListDedicatedVmHostsResponse> responses = GetRequestDelegate().Invoke(request);
