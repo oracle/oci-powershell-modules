@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Datascience.dll'
 
 # Version number of this module.
-ModuleVersion = '132.0.0'
+ModuleVersion = '133.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '132.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '133.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Datascience.dll'
@@ -79,6 +79,9 @@ CmdletsToExport = 'Disable-OCIDatascienceMlApplicationInstanceViewTrigger',
                'Enable-OCIDatascienceNotebookSession', 
                'Enable-OCIDatascienceSchedule', 
                'Export-OCIDatascienceModelArtifact', 
+               'Get-OCIDatascienceComputeTarget', 
+               'Get-OCIDatascienceComputeTargetShapesList', 
+               'Get-OCIDatascienceComputeTargetsList', 
                'Get-OCIDatascienceContainersList', 
                'Get-OCIDatascienceFastLaunchJobConfigsList', 
                'Get-OCIDatascienceJob', 'Get-OCIDatascienceJobArtifactContent', 
@@ -141,6 +144,7 @@ CmdletsToExport = 'Disable-OCIDatascienceMlApplicationInstanceViewTrigger',
                'Invoke-OCIDatascienceHeadStepArtifact', 
                'Invoke-OCIDatascienceTriggerMlApplicationInstanceFlow', 
                'Invoke-OCIDatascienceTriggerMlApplicationInstanceViewFlow', 
+               'Move-OCIDatascienceComputeTargetCompartment', 
                'Move-OCIDatascienceJobCompartment', 
                'Move-OCIDatascienceJobRunCompartment', 
                'Move-OCIDatascienceMlApplicationCompartment', 
@@ -157,7 +161,8 @@ CmdletsToExport = 'Disable-OCIDatascienceMlApplicationInstanceViewTrigger',
                'Move-OCIDatasciencePipelineRunCompartment', 
                'Move-OCIDatasciencePrivateEndpointCompartment', 
                'Move-OCIDatascienceProjectCompartment', 
-               'Move-OCIDatascienceScheduleCompartment', 'New-OCIDatascienceJob', 
+               'Move-OCIDatascienceScheduleCompartment', 
+               'New-OCIDatascienceComputeTarget', 'New-OCIDatascienceJob', 
                'New-OCIDatascienceJobArtifact', 'New-OCIDatascienceJobRun', 
                'New-OCIDatascienceMlApplication', 
                'New-OCIDatascienceMlApplicationImplementation', 
@@ -175,8 +180,8 @@ CmdletsToExport = 'Disable-OCIDatascienceMlApplicationInstanceViewTrigger',
                'New-OCIDatasciencePrivateEndpoint', 'New-OCIDatascienceProject', 
                'New-OCIDatascienceSchedule', 'New-OCIDatascienceStepArtifact', 
                'Register-OCIDatascienceModelArtifactReference', 
-               'Remove-OCIDatascienceJob', 'Remove-OCIDatascienceJobRun', 
-               'Remove-OCIDatascienceMlApplication', 
+               'Remove-OCIDatascienceComputeTarget', 'Remove-OCIDatascienceJob', 
+               'Remove-OCIDatascienceJobRun', 'Remove-OCIDatascienceMlApplication', 
                'Remove-OCIDatascienceMlApplicationImplementation', 
                'Remove-OCIDatascienceMlApplicationInstance', 
                'Remove-OCIDatascienceModel', 
@@ -193,7 +198,8 @@ CmdletsToExport = 'Disable-OCIDatascienceMlApplicationInstanceViewTrigger',
                'Restore-OCIDatascienceArchivedModelArtifact', 
                'Restore-OCIDatascienceMlApplicationInstanceView', 
                'Stop-OCIDatascienceJobRun', 'Stop-OCIDatasciencePipelineRun', 
-               'Stop-OCIDatascienceWorkRequest', 'Update-OCIDatascienceJob', 
+               'Stop-OCIDatascienceWorkRequest', 
+               'Update-OCIDatascienceComputeTarget', 'Update-OCIDatascienceJob', 
                'Update-OCIDatascienceJobRun', 'Update-OCIDatascienceMlApplication', 
                'Update-OCIDatascienceMlApplicationImplementation', 
                'Update-OCIDatascienceMlApplicationImplementationVersion', 
