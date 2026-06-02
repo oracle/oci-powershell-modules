@@ -24,9 +24,6 @@ namespace Oci.CimsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the tenancy.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Customer Support Identifier (CSI) number associated with the support account. The CSI is optional for all support request types.")]
-        public string Csi { get; set; }
-
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The maximum number of results per page, or items to return in a paginated ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -35,6 +32,9 @@ namespace Oci.CimsService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The order to sort the results in.")]
         public System.Nullable<Oci.CimsService.Models.SortOrder> SortOrder { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter to return results updated only after the specified timestamp. Must be an RFC 3339 timestamp (e.g. 2025-12-07T17:42:54Z).")]
+        public System.Nullable<System.DateTime> TimeUpdatedGreaterThanOrEqualTo { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The current state of the ticket.")]
         public System.Nullable<Oci.CimsService.Models.LifecycleState> LifecycleState { get; set; }
@@ -79,10 +79,10 @@ namespace Oci.CimsService.Cmdlets
                 request = new ListIncidentsRequest
                 {
                     CompartmentId = CompartmentId,
-                    Csi = Csi,
                     Limit = Limit,
                     SortBy = SortBy,
                     SortOrder = SortOrder,
+                    TimeUpdatedGreaterThanOrEqualTo = TimeUpdatedGreaterThanOrEqualTo,
                     LifecycleState = LifecycleState,
                     Page = Page,
                     OpcRequestId = OpcRequestId,

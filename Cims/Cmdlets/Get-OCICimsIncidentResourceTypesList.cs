@@ -45,9 +45,6 @@ namespace Oci.CimsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The user-friendly name of the support request type.")]
         public string Name { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Customer Support Identifier (CSI) number associated with the support account. The CSI is optional for all support request types.")]
-        public string Csi { get; set; }
-
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for Multicloud users.")]
         public string Ocid { get; set; }
 
@@ -77,7 +74,6 @@ namespace Oci.CimsService.Cmdlets
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     Name = Name,
-                    Csi = Csi,
                     Ocid = Ocid,
                     Homeregion = Homeregion,
                     Domainid = Domainid

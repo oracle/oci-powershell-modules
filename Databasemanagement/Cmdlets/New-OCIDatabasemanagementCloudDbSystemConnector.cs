@@ -19,7 +19,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabasemanagementService.Models.CloudDbSystemConnector), typeof(Oci.DatabasemanagementService.Responses.CreateCloudDbSystemConnectorResponse) })]
     public class NewOCIDatabasemanagementCloudDbSystemConnector : OCIDbManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to create an cloud connector. This parameter also accepts subtype <Oci.DatabasemanagementService.Models.CreateCloudDbSystemMacsConnectorDetails> of type <Oci.DatabasemanagementService.Models.CreateCloudDbSystemConnectorDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to create a cloud connector. This parameter also accepts subtype <Oci.DatabasemanagementService.Models.CreateCloudDbSystemMacsConnectorDetails> of type <Oci.DatabasemanagementService.Models.CreateCloudDbSystemConnectorDetails>.")]
         public CreateCloudDbSystemConnectorDetails CreateCloudDbSystemConnectorDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

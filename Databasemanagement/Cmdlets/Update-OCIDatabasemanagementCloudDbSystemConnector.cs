@@ -22,7 +22,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud connector.")]
         public string CloudDbSystemConnectorId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to update an cloud connector. This parameter also accepts subtype <Oci.DatabasemanagementService.Models.UpdateCloudDbSystemMacsConnectorDetails> of type <Oci.DatabasemanagementService.Models.UpdateCloudDbSystemConnectorDetails>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to update a cloud connector. This parameter also accepts subtype <Oci.DatabasemanagementService.Models.UpdateCloudDbSystemMacsConnectorDetails> of type <Oci.DatabasemanagementService.Models.UpdateCloudDbSystemConnectorDetails>.")]
         public UpdateCloudDbSystemConnectorDetails UpdateCloudDbSystemConnectorDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

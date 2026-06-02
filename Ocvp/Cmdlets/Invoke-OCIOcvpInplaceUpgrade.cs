@@ -22,6 +22,9 @@ namespace Oci.OcvpService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host.")]
         public string EsxiHostId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details for upgrading ESXi host.")]
+        public InplaceUpgradeDetails InplaceUpgradeDetails { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).")]
         public string OpcRetryToken { get; set; }
 
@@ -41,6 +44,7 @@ namespace Oci.OcvpService.Cmdlets
                 request = new InplaceUpgradeRequest
                 {
                     EsxiHostId = EsxiHostId,
+                    InplaceUpgradeDetails = InplaceUpgradeDetails,
                     OpcRetryToken = OpcRetryToken,
                     IfMatch = IfMatch,
                     OpcRequestId = OpcRequestId
