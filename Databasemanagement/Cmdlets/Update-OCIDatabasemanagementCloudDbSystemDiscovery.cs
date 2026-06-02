@@ -22,7 +22,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud DB system discovery.")]
         public string CloudDbSystemDiscoveryId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to update an cloud DB system discovery.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to update a cloud DB system discovery.")]
         public UpdateCloudDbSystemDiscoveryDetails UpdateCloudDbSystemDiscoveryDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

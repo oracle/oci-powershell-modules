@@ -37,9 +37,6 @@ namespace Oci.CimsService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Set to `true` when the attachment contains personal information (PI) or protected health information (PHI).")]
         public System.Nullable<bool> IsRestrictedFlag { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Customer Support Identifier (CSI) number associated with the support account. The CSI is optional for all support request types.")]
-        public string Csi { get; set; }
-
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
         public string OpcRequestId { get; set; }
 
@@ -87,7 +84,6 @@ namespace Oci.CimsService.Cmdlets
                     AttachmentName = AttachmentName,
                     CompartmentId = CompartmentId,
                     IsRestrictedFlag = IsRestrictedFlag,
-                    Csi = Csi,
                     OpcRequestId = OpcRequestId,
                     Ocid = Ocid,
                     IfMatch = IfMatch,

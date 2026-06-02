@@ -19,7 +19,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.DatabasemanagementService.Models.CloudDbSystem), typeof(Oci.DatabasemanagementService.Responses.CreateCloudDbSystemResponse) })]
     public class NewOCIDatabasemanagementCloudDbSystem : OCIDbManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to create an cloud DB system.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to create a cloud DB system.")]
         public CreateCloudDbSystemDetails CreateCloudDbSystemDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

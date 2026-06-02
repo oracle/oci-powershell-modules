@@ -22,7 +22,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud ASM instance.")]
         public string CloudAsmInstanceId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to update an cloud ASM instance.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to update a cloud ASM instance.")]
         public UpdateCloudAsmInstanceDetails UpdateCloudAsmInstanceDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]

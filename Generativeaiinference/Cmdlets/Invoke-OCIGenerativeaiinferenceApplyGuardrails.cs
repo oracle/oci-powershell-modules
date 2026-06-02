@@ -20,7 +20,7 @@ namespace Oci.GenerativeaiinferenceService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.GenerativeaiinferenceService.Models.ApplyGuardrailsResult), typeof(Oci.GenerativeaiinferenceService.Responses.ApplyGuardrailsResponse) })]
     public class InvokeOCIGenerativeaiinferenceApplyGuardrails : OCIGenerativeAiInferenceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for applying guardrails to the input text.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for applying guardrails to the input content.")]
         public ApplyGuardrailsDetails ApplyGuardrailsDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before that, in case of conflicting operations. For example, if a resource is deleted and purged from the system, then a retry of the original creation request is rejected.")]

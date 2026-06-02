@@ -22,7 +22,7 @@ namespace Oci.DatabasemanagementService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud listener.")]
         public string CloudListenerId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to update an cloud listener.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details required to update a cloud listener.")]
         public UpdateCloudListenerDetails UpdateCloudListenerDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
