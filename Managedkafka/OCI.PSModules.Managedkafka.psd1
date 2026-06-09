@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Managedkafka.dll'
 
 # Version number of this module.
-ModuleVersion = '134.0.0'
+ModuleVersion = '134.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '134.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '134.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Managedkafka.dll'
@@ -72,8 +72,9 @@ FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Disable-OCIManagedkafkaSuperuser', 
-               'Enable-OCIManagedkafkaSuperuser', 
-               'Get-OCIManagedkafkaKafkaCluster', 
+               'Enable-OCIManagedkafkaSuperuser', 'Get-OCIManagedkafkaAddon', 
+               'Get-OCIManagedkafkaAddonOptionsList', 
+               'Get-OCIManagedkafkaAddonsList', 'Get-OCIManagedkafkaKafkaCluster', 
                'Get-OCIManagedkafkaKafkaClusterConfig', 
                'Get-OCIManagedkafkaKafkaClusterConfigsList', 
                'Get-OCIManagedkafkaKafkaClusterConfigVersion', 
@@ -84,6 +85,8 @@ CmdletsToExport = 'Disable-OCIManagedkafkaSuperuser',
                'Get-OCIManagedkafkaWorkRequestErrorsList', 
                'Get-OCIManagedkafkaWorkRequestLogsList', 
                'Get-OCIManagedkafkaWorkRequestsList', 
+               'Invoke-OCIManagedkafkaInstallAddon', 
+               'Invoke-OCIManagedkafkaUninstallAddon', 
                'Move-OCIManagedkafkaKafkaClusterCompartment', 
                'Move-OCIManagedkafkaKafkaClusterConfigCompartment', 
                'New-OCIManagedkafkaKafkaCluster', 
@@ -91,7 +94,7 @@ CmdletsToExport = 'Disable-OCIManagedkafkaSuperuser',
                'Remove-OCIManagedkafkaKafkaCluster', 
                'Remove-OCIManagedkafkaKafkaClusterConfig', 
                'Remove-OCIManagedkafkaKafkaClusterConfigVersion', 
-               'Stop-OCIManagedkafkaWorkRequest', 
+               'Stop-OCIManagedkafkaWorkRequest', 'Update-OCIManagedkafkaAddon', 
                'Update-OCIManagedkafkaKafkaCluster', 
                'Update-OCIManagedkafkaKafkaClusterConfig'
 

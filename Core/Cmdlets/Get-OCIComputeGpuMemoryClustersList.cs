@@ -30,6 +30,9 @@ namespace Oci.CoreService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the listings that matches the given GPU memory cluster id.")]
         public string ComputeGpuMemoryClusterId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the listings that matches the given GPU memory fabric id.")]
+        public string ComputeGpuMemoryFabricId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the availability domain.
 
 Example: `Uocm:PHX-AD-1`")]
@@ -72,6 +75,7 @@ Example: `50`", ParameterSetName = LimitSet)]
                     CompartmentId = CompartmentId,
                     OpcRequestId = OpcRequestId,
                     ComputeGpuMemoryClusterId = ComputeGpuMemoryClusterId,
+                    ComputeGpuMemoryFabricId = ComputeGpuMemoryFabricId,
                     AvailabilityDomain = AvailabilityDomain,
                     DisplayName = DisplayName,
                     ComputeClusterId = ComputeClusterId,

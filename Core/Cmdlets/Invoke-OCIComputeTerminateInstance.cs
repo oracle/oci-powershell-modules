@@ -12,30 +12,50 @@ using Oci.CoreService.Requests;
 using Oci.CoreService.Responses;
 using Oci.CoreService.Models;
 using Oci.Common.Model;
+using Oci.Common.Waiters;
 
 namespace Oci.CoreService.Cmdlets
 {
-    [Cmdlet("Invoke", "OCIComputeTerminateInstance", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High)]
-    [OutputType(new System.Type[] { typeof(void), typeof(Oci.CoreService.Responses.TerminateInstanceResponse) })]
+    [Cmdlet("Invoke", "OCIComputeTerminateInstance", SupportsShouldProcess = true, ConfirmImpact = ConfirmImpact.High, DefaultParameterSetName = Default)]
+    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.CoreService.Responses.TerminateInstanceResponse) })]
     public class InvokeOCIComputeTerminateInstance : OCIComputeCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.")]
+        
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.", ParameterSetName = Default)]
         public string InstanceId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.", ParameterSetName = Default)]
         public string IfMatch { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies whether to delete or preserve the boot volume when terminating an instance. When set to `true`, the boot volume is preserved. The default value is `false`.")]
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies whether to delete or preserve the boot volume when terminating an instance. When set to `true`, the boot volume is preserved. The default value is `false`.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies whether to delete or preserve the boot volume when terminating an instance. When set to `true`, the boot volume is preserved. The default value is `false`.", ParameterSetName = Default)]
         public System.Nullable<bool> PreserveBootVolume { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies whether to delete or preserve the data volumes created during launch when terminating an instance. When set to `true`, the data volumes are preserved. The default value is `true`.")]
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies whether to delete or preserve the data volumes created during launch when terminating an instance. When set to `true`, the data volumes are preserved. The default value is `true`.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Specifies whether to delete or preserve the data volumes created during launch when terminating an instance. When set to `true`, the data volumes are preserved. The default value is `true`.", ParameterSetName = Default)]
         public System.Nullable<bool> PreserveDataVolumesCreatedAtLaunch { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This optional parameter overrides recycle level for hosts. The parameter can be used when hosts are associated with a Capacity Reservation. * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.")]
+        
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This optional parameter overrides recycle level for hosts. The parameter can be used when hosts are associated with a Capacity Reservation. * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This optional parameter overrides recycle level for hosts. The parameter can be used when hosts are associated with a Capacity Reservation. * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.", ParameterSetName = Default)]
         public System.Nullable<Oci.CoreService.Requests.TerminateInstanceRequest.RecycleLevelEnum> RecycleLevel { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "Ignore confirmation and force the Cmdlet to complete action.")]
         public SwitchParameter Force { get; set; }
+
+        [Parameter(Mandatory = true, HelpMessage = @"This operation creates, modifies or deletes a resource that has a defined lifecycle state. Specify this option to perform the action and then wait until the resource reaches a given lifecycle state. Multiple states can be specified, returning on the first state.", ParameterSetName = StatusParamSet)]
+        public WorkrequestsService.Models.WorkRequest.StatusEnum[] WaitForStatus { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = @"Check every WaitIntervalSeconds to see whether the resource has reached a desired state.", ParameterSetName = StatusParamSet)]
+        public int WaitIntervalSeconds { get; set; } = WAIT_INTERVAL_SECONDS;
+
+        [Parameter(Mandatory = false, HelpMessage = @"Maximum number of attempts to be made until the resource reaches a desired state.", ParameterSetName = StatusParamSet)]
+        public int MaxWaitAttempts { get; set; } = MAX_WAITER_ATTEMPTS;
 
         protected override void ProcessRecord()
         {
@@ -59,8 +79,7 @@ namespace Oci.CoreService.Cmdlets
                     RecycleLevel = RecycleLevel
                 };
 
-                response = client.TerminateInstance(request).GetAwaiter().GetResult();
-                WriteOutput(response);
+                HandleOutput(request);
                 FinishProcessing(response);
             }
             catch (OciException ex)
@@ -79,6 +98,29 @@ namespace Oci.CoreService.Cmdlets
             TerminatingErrorDuringExecution(new OperationCanceledException("Cmdlet execution interrupted"));
         }
 
+        private void HandleOutput(TerminateInstanceRequest request)
+        {
+            var waiterConfig = new WaiterConfiguration
+            {
+                MaxAttempts = MaxWaitAttempts,
+                GetNextDelayInSeconds = (_) => WaitIntervalSeconds
+            };
+
+            switch (ParameterSetName)
+            { 
+                case StatusParamSet:
+                    response = client.Waiters.ForTerminateInstance(request, waiterConfig, WaitForStatus).Execute();
+                    break;
+
+                case Default:
+                    response = client.TerminateInstance(request).GetAwaiter().GetResult();
+                    break;
+            }
+            WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
+        }
+
         private TerminateInstanceResponse response;
+        private const string StatusParamSet = "StatusParamSet";
+        private const string Default = "Default";
     }
 }
