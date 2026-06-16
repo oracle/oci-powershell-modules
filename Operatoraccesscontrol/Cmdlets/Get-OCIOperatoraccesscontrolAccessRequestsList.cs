@@ -33,6 +33,9 @@ namespace Oci.OperatoraccesscontrolService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.")]
         public System.Nullable<Oci.OperatoraccesscontrolService.Models.AccessRequestLifecycleStates> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The number of days since when the user wants to search .")]
+        public System.Nullable<int> NumDays { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Query start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters are used together.")]
         public System.Nullable<System.DateTime> TimeStart { get; set; }
 
@@ -70,6 +73,7 @@ namespace Oci.OperatoraccesscontrolService.Cmdlets
                     ResourceName = ResourceName,
                     ResourceType = ResourceType,
                     LifecycleState = LifecycleState,
+                    NumDays = NumDays,
                     TimeStart = TimeStart,
                     TimeEnd = TimeEnd,
                     Limit = Limit,
