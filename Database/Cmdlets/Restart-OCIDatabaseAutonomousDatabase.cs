@@ -36,6 +36,11 @@ namespace Oci.DatabaseService.Cmdlets
         public System.Nullable<bool> IsOnlineRestart { get; set; }
 
         
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request details to restart the Autonomous Database with force option.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Request details to restart the Autonomous Database with force option.", ParameterSetName = Default)]
+        public RestartAutonomousDatabaseDetails RestartAutonomousDatabaseDetails { get; set; }
+
+        
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates that the request is a dry run, if set to ""true"". A dry run request does not actually creating or updating a resource and is used only to perform validation on the submitted data.", ParameterSetName = StatusParamSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Indicates that the request is a dry run, if set to ""true"". A dry run request does not actually creating or updating a resource and is used only to perform validation on the submitted data.", ParameterSetName = Default)]
         public System.Nullable<bool> OpcDryRun { get; set; }
@@ -61,6 +66,7 @@ namespace Oci.DatabaseService.Cmdlets
                     AutonomousDatabaseId = AutonomousDatabaseId,
                     IfMatch = IfMatch,
                     IsOnlineRestart = IsOnlineRestart,
+                    RestartAutonomousDatabaseDetails = RestartAutonomousDatabaseDetails,
                     OpcDryRun = OpcDryRun
                 };
 

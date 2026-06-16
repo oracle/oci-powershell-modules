@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Apmconfig.dll'
 
 # Version number of this module.
-ModuleVersion = '134.1.0'
+ModuleVersion = '135.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '134.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '135.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Apmconfig.dll'
@@ -74,14 +74,17 @@ FunctionsToExport = '*'
 CmdletsToExport = 'Confirm-OCIApmconfigSpanFilterPattern', 
                'Copy-OCIApmconfigConfiguration', 
                'Export-OCIApmconfigConfiguration', 'Get-OCIApmconfigConfig', 
-               'Get-OCIApmconfigConfigsList', 
+               'Get-OCIApmconfigConfigsList', 'Get-OCIApmconfigDataFile', 
+               'Get-OCIApmconfigDataFilesList', 
                'Get-OCIApmconfigMatchAgentsWithAttributeKey', 
                'Import-OCIApmconfigConfiguration', 
+               'Invoke-OCIApmconfigHeadDataFile', 
                'Invoke-OCIApmconfigRetrieveNamespaceMetrics', 
                'Invoke-OCIApmconfigRetrieveNamespaces', 'Invoke-OCIApmconfigTest', 
                'New-OCIApmconfigConfig', 'Remove-OCIApmconfigConfig', 
-               'Update-OCIApmconfigConfig', 
-               'Update-OCIApmconfigMatchAgentsWithAttributeKey'
+               'Remove-OCIApmconfigDataFile', 'Update-OCIApmconfigConfig', 
+               'Update-OCIApmconfigMatchAgentsWithAttributeKey', 
+               'Write-OCIApmconfigDataFile'
 
 # Variables to export from this module
 VariablesToExport = '*'

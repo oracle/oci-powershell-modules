@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Psql.dll'
 
 # Version number of this module.
-ModuleVersion = '134.1.0'
+ModuleVersion = '135.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '134.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '135.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Psql.dll'
@@ -74,19 +74,23 @@ FunctionsToExport = '*'
 CmdletsToExport = 'Backup-OCIPsqlCopy', 'Get-OCIPsqlBackup', 'Get-OCIPsqlBackupsList', 
                'Get-OCIPsqlConfiguration', 'Get-OCIPsqlConfigurationsList', 
                'Get-OCIPsqlConnectionDetails', 'Get-OCIPsqlDbSystem', 
-               'Get-OCIPsqlDbSystemsList', 'Get-OCIPsqlDefaultConfiguration', 
+               'Get-OCIPsqlDbSystemReplicasList', 'Get-OCIPsqlDbSystemsList', 
+               'Get-OCIPsqlDefaultConfiguration', 
                'Get-OCIPsqlDefaultConfigurationsList', 
+               'Get-OCIPsqlInsightCapabilitiesList', 
                'Get-OCIPsqlPrimaryDbInstance', 'Get-OCIPsqlShapesList', 
                'Get-OCIPsqlWorkRequest', 'Get-OCIPsqlWorkRequestErrorsList', 
                'Get-OCIPsqlWorkRequestLogsList', 'Get-OCIPsqlWorkRequestsList', 
                'Invoke-OCIPsqlFailoverDbSystem', 'Invoke-OCIPsqlPatchDbSystem', 
-               'Move-OCIPsqlBackupCompartment', 
+               'Invoke-OCIPsqlSwitchOver', 'Move-OCIPsqlBackupCompartment', 
                'Move-OCIPsqlConfigurationCompartment', 
-               'Move-OCIPsqlDbSystemCompartment', 'New-OCIPsqlBackup', 
+               'Move-OCIPsqlDbSystemCompartment', 'Move-OCIPsqlRoleToReplica', 
+               'Move-OCIPsqlRoleToStandalone', 'New-OCIPsqlBackup', 
                'New-OCIPsqlConfiguration', 'New-OCIPsqlDbSystem', 
                'Remove-OCIPsqlBackup', 'Remove-OCIPsqlConfiguration', 
                'Remove-OCIPsqlDbSystem', 'Reset-OCIPsqlMasterUserPassword', 
                'Restart-OCIPsqlDbInstanceInDbSystem', 'Restore-OCIPsqlDbSystem', 
+               'Start-OCIPsqlDbSystem', 'Stop-OCIPsqlDbSystem', 
                'Update-OCIPsqlBackup', 'Update-OCIPsqlConfiguration', 
                'Update-OCIPsqlDbSystem', 'Update-OCIPsqlDbSystemDbInstance'
 
