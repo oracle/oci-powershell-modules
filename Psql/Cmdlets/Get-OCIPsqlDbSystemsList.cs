@@ -45,6 +45,9 @@ namespace Oci.PsqlService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.")]
         public System.Nullable<Oci.PsqlService.Requests.ListDbSystemsRequest.SortByEnum> SortBy { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only DbSystem resources if their `systemRole` matches the given value.")]
+        public System.Nullable<Oci.PsqlService.Models.DbSystem.SystemRoleEnum> SystemRole { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
@@ -68,6 +71,7 @@ namespace Oci.PsqlService.Cmdlets
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
+                    SystemRole = SystemRole,
                     OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListDbSystemsResponse> responses = GetRequestDelegate().Invoke(request);

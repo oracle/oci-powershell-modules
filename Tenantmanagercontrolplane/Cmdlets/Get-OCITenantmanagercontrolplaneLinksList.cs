@@ -27,6 +27,9 @@ namespace Oci.TenantmanagercontrolplaneService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the child tenancy this link is associated with.")]
         public string ChildTenancyId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The feature associated with this link.")]
+        public string Feature { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The lifecycle state of the resource.")]
         public System.Nullable<Oci.TenantmanagercontrolplaneService.Models.LifecycleState> LifecycleState { get; set; }
 
@@ -56,6 +59,7 @@ namespace Oci.TenantmanagercontrolplaneService.Cmdlets
                 {
                     ParentTenancyId = ParentTenancyId,
                     ChildTenancyId = ChildTenancyId,
+                    Feature = Feature,
                     LifecycleState = LifecycleState,
                     OpcRequestId = OpcRequestId,
                     Page = Page,
