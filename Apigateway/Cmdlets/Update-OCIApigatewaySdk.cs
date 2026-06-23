@@ -16,7 +16,7 @@ using Oci.Common.Model;
 namespace Oci.ApigatewayService.Cmdlets
 {
     [Cmdlet("Update", "OCIApigatewaySdk")]
-    [OutputType(new System.Type[] { typeof(void), typeof(Oci.ApigatewayService.Responses.UpdateSdkResponse) })]
+    [OutputType(new System.Type[] { typeof(Oci.ApigatewayService.Models.Sdk), typeof(Oci.ApigatewayService.Responses.UpdateSdkResponse) })]
     public class UpdateOCIApigatewaySdk : OCIApiGatewayCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ocid of the SDK.")]
@@ -51,7 +51,7 @@ namespace Oci.ApigatewayService.Cmdlets
                 };
 
                 response = client.UpdateSdk(request).GetAwaiter().GetResult();
-                WriteOutput(response);
+                WriteOutput(response, response.Sdk);
                 FinishProcessing(response);
             }
             catch (OciException ex)
