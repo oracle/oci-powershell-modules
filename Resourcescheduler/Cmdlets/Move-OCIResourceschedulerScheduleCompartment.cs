@@ -22,7 +22,7 @@ namespace Oci.ResourceschedulerService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.")]
         public string ScheduleId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"This is the change schedule compartment details that will be updated.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"These are the change schedule compartment details that will be updated.")]
         public ChangeScheduleCompartmentDetails ChangeScheduleCompartmentDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This is used for optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
