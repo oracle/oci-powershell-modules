@@ -43,6 +43,9 @@ namespace Oci.PSModules.Common.Cmdlets
         [Parameter(Mandatory = false, HelpMessage = "Type of authentication to use for making API requests. Default is Key based Authentication.")]
         public AuthenticationType AuthType { get; set; } = default(AuthenticationType);
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "The auth service federation endpoint to use with instance principal authentication.")]
+        public string FederationEndpoint { get; set; }
+
         public const int MAX_WAITER_ATTEMPTS = 3;
 
         public const int WAIT_INTERVAL_SECONDS = 30;
@@ -62,7 +65,6 @@ namespace Oci.PSModules.Common.Cmdlets
             try
             {
                 SetLoggingPreferences();
-                this.AuthProvider = GetAuthenticationDetailsProvider();
                 DeveloperToolConfiguration.ReInitialize();
             }
             catch (Exception ex)
@@ -74,7 +76,15 @@ namespace Oci.PSModules.Common.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            WriteDebug("Choosing Parameter Set:" + ParameterSetName);
+            try
+            {
+                this.AuthProvider = GetAuthenticationDetailsProvider();
+                WriteDebug("Choosing Parameter Set:" + ParameterSetName);
+            }
+            catch (Exception ex)
+            {
+                TerminatingErrorDuringExecution(ex);
+            }
         }
 
         protected override void StopProcessing()
@@ -370,12 +380,17 @@ namespace Oci.PSModules.Common.Cmdlets
             try
             {
                 auth = GetPreferredAuthType();
+                ValidateFederationEndpointUsage((AuthenticationType)auth);
                 string config = GetPreferredConfig();
                 string profile = GetPreferredProfile();
                 switch (auth)
                 {
                     case AuthenticationType.InstancePrincipal:
                         WriteDebug($"Authentication Type: {AuthenticationType.InstancePrincipal}");
+                        if (!string.IsNullOrWhiteSpace(FederationEndpoint))
+                        {
+                            return GetInstancePrincipalsAuthenticationDetailsProvider(FederationEndpoint);
+                        }
                         return new InstancePrincipalsAuthenticationDetailsProvider();
 
                     case AuthenticationType.SessionToken:
@@ -413,6 +428,20 @@ namespace Oci.PSModules.Common.Cmdlets
             {
                 throw new Exception($"Error instantiating {auth} authentication provider. {ex.Message}");
             }
+        }
+
+        private void ValidateFederationEndpointUsage(AuthenticationType auth)
+        {
+            if (!string.IsNullOrWhiteSpace(FederationEndpoint) && auth != AuthenticationType.InstancePrincipal)
+            {
+                throw new ArgumentException("-FederationEndpoint can only be used with instance principal authentication.");
+            }
+        }
+
+        private IBasicAuthenticationDetailsProvider GetInstancePrincipalsAuthenticationDetailsProvider(string federationEndpoint)
+        {
+            WriteDebug("Choosing FederationEndpoint:" + federationEndpoint);
+            return new InstancePrincipalsAuthenticationDetailsProvider(federationEndpoint);
         }
         #endregion
 

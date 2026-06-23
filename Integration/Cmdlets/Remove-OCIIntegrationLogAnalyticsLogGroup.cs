@@ -22,6 +22,9 @@ namespace Oci.IntegrationService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Integration Instance identifier.")]
         public string IntegrationInstanceId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details to remove Log Group for given integration instance or Process Automation attached to integration instance.")]
+        public RemoveLogAnalyticsLogGroupDetails RemoveLogAnalyticsLogGroupDetails { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]
         public string IfMatch { get; set; }
 
@@ -41,6 +44,7 @@ namespace Oci.IntegrationService.Cmdlets
                 request = new RemoveLogAnalyticsLogGroupRequest
                 {
                     IntegrationInstanceId = IntegrationInstanceId,
+                    RemoveLogAnalyticsLogGroupDetails = RemoveLogAnalyticsLogGroupDetails,
                     IfMatch = IfMatch,
                     OpcRequestId = OpcRequestId,
                     OpcRetryToken = OpcRetryToken
