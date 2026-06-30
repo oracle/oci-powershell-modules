@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Psql.dll'
 
 # Version number of this module.
-ModuleVersion = '136.0.0'
+ModuleVersion = '137.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '136.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '137.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Psql.dll'
@@ -77,7 +77,7 @@ CmdletsToExport = 'Backup-OCIPsqlCopy', 'Get-OCIPsqlBackup', 'Get-OCIPsqlBackups
                'Get-OCIPsqlDbSystemReplicasList', 'Get-OCIPsqlDbSystemsList', 
                'Get-OCIPsqlDefaultConfiguration', 
                'Get-OCIPsqlDefaultConfigurationsList', 
-               'Get-OCIPsqlInsightCapabilitiesList', 
+               'Get-OCIPsqlInsightCapabilitiesList', 'Get-OCIPsqlPitrDetails', 
                'Get-OCIPsqlPrimaryDbInstance', 'Get-OCIPsqlShapesList', 
                'Get-OCIPsqlWorkRequest', 'Get-OCIPsqlWorkRequestErrorsList', 
                'Get-OCIPsqlWorkRequestLogsList', 'Get-OCIPsqlWorkRequestsList', 

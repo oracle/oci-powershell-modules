@@ -57,6 +57,9 @@ namespace Oci.PsqlService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only backups whose backupSourceType matches the given backupSourceType")]
+        public string BackupSourceType { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -80,7 +83,8 @@ namespace Oci.PsqlService.Cmdlets
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    BackupSourceType = BackupSourceType
                 };
                 IEnumerable<ListBackupsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
