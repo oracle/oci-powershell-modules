@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 137.0.0 - 2026-06-30
+### Added 
+- Support for Bitbucket Cloud email and API token configuration source providers in the Resource Manager service 
+- Support for configurable randomization windows for schedules in the Data Science service 
+- Support for partner-provided Windows licensing in the Compute service 
+- Support for Key Management service (KMS) bucket key in the Object Storage service 
+- Support for Point-In-Time Recovery (PITR) in the PostgreSQL service   
+
+### Breaking Changes 
+- The models `BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary`, `BitbucketCloudUsernameAppPasswordConfigurationSourceProvider`, `CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails`, and `UpdateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails` were removed in the Resource Manager service in the .NET SDK
+
 ## 136.0.0 - 2026-06-23
 ### Added 
 - Support for the `-FederationEndpoint` parameter for custom federation endpoints in instance principals authentication  
