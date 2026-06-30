@@ -25,6 +25,9 @@ namespace Oci.ObjectstorageService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`")]
         public string BucketName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If true, reencrypt only the intermediate bucket keys and skip everything else in the bucket.")]
+        public System.Nullable<bool> IsReencryptBucketKeyOnly { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcClientRequestId { get; set; }
 
@@ -39,6 +42,7 @@ namespace Oci.ObjectstorageService.Cmdlets
                 {
                     NamespaceName = NamespaceName,
                     BucketName = BucketName,
+                    IsReencryptBucketKeyOnly = IsReencryptBucketKeyOnly,
                     OpcClientRequestId = OpcClientRequestId
                 };
 
