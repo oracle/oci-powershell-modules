@@ -39,6 +39,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The category of the finding.")]
         public string Category { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only findings that match the specified risk level(s). Use containsOracleDefinedSeverity parameter if need to filter by one or multiple risk levels.")]
+        public System.Collections.Generic.List<Oci.DatasafeService.Requests.ListFindingsRequest.ContainsOracleDefinedSeverityEnum> ContainsOracleDefinedSeverity { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the findings that match the specified lifecycle states.")]
         public System.Nullable<Oci.DatasafeService.Models.FindingLifecycleState> LifecycleState { get; set; }
 
@@ -106,6 +109,7 @@ Supported fields: severity findingKey reference targetId isTopFinding title cate
                     Severity = Severity,
                     ContainsSeverity = ContainsSeverity,
                     Category = Category,
+                    ContainsOracleDefinedSeverity = ContainsOracleDefinedSeverity,
                     LifecycleState = LifecycleState,
                     References = References,
                     ContainsReferences = ContainsReferences,
