@@ -19,7 +19,7 @@ namespace Oci.CoreService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.CoreService.Models.InstanceConfiguration), typeof(Oci.CoreService.Responses.CreateInstanceConfigurationResponse) })]
     public class NewOCIComputeManagementInstanceConfiguration : OCIComputeManagementCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Instance configuration creation details. This parameter also accepts subtypes <Oci.CoreService.Models.CreateInstanceConfigurationDetails>, <Oci.CoreService.Models.CreateInstanceConfigurationFromInstanceDetails> of type <Oci.CoreService.Models.CreateInstanceConfigurationBase>.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Instance configuration creation details. This parameter also accepts subtypes <Oci.CoreService.Models.CreateGmcConfigurationDetails>, <Oci.CoreService.Models.CreateInstanceConfigurationDetails>, <Oci.CoreService.Models.CreateInstanceConfigurationFromInstanceDetails> of type <Oci.CoreService.Models.CreateInstanceConfigurationBase>.")]
         public CreateInstanceConfigurationBase CreateInstanceConfiguration { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations (for example, if a resource has been deleted and purged from the system, then a retry of the original creation request may be rejected).")]

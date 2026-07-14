@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Generativeai.dll'
 
 # Version number of this module.
-ModuleVersion = '137.1.0'
+ModuleVersion = '138.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '137.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '138.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Generativeai.dll'
@@ -77,6 +77,8 @@ CmdletsToExport = 'Add-OCIGenerativeaiArtifact', 'Get-OCIGenerativeaiApiKey',
                'Get-OCIGenerativeaiDedicatedAiClustersList', 
                'Get-OCIGenerativeaiEndpoint', 'Get-OCIGenerativeaiEndpointsList', 
                'Get-OCIGenerativeaiHostedApplication', 
+               'Get-OCIGenerativeaiHostedApplicationIam', 
+               'Get-OCIGenerativeaiHostedApplicationsIamList', 
                'Get-OCIGenerativeaiHostedApplicationsList', 
                'Get-OCIGenerativeaiHostedApplicationStorage', 
                'Get-OCIGenerativeaiHostedApplicationStoragesList', 
@@ -107,6 +109,7 @@ CmdletsToExport = 'Add-OCIGenerativeaiArtifact', 'Get-OCIGenerativeaiApiKey',
                'Move-OCIGenerativeaiDedicatedAiClusterCompartment', 
                'Move-OCIGenerativeaiEndpointCompartment', 
                'Move-OCIGenerativeaiHostedApplicationCompartment', 
+               'Move-OCIGenerativeaiHostedApplicationIamCompartment', 
                'Move-OCIGenerativeaiHostedApplicationStorageCompartment', 
                'Move-OCIGenerativeaiImportedModelCompartment', 
                'Move-OCIGenerativeaiModelCompartment', 
@@ -117,6 +120,7 @@ CmdletsToExport = 'Add-OCIGenerativeaiArtifact', 'Get-OCIGenerativeaiApiKey',
                'New-OCIGenerativeaiDedicatedAiCluster', 
                'New-OCIGenerativeaiEndpoint', 
                'New-OCIGenerativeaiHostedApplication', 
+               'New-OCIGenerativeaiHostedApplicationIam', 
                'New-OCIGenerativeaiHostedApplicationStorage', 
                'New-OCIGenerativeaiHostedDeployment', 
                'New-OCIGenerativeaiImportedModel', 'New-OCIGenerativeaiModel', 
@@ -128,6 +132,7 @@ CmdletsToExport = 'Add-OCIGenerativeaiArtifact', 'Get-OCIGenerativeaiApiKey',
                'Remove-OCIGenerativeaiDedicatedAiCluster', 
                'Remove-OCIGenerativeaiEndpoint', 
                'Remove-OCIGenerativeaiHostedApplication', 
+               'Remove-OCIGenerativeaiHostedApplicationIam', 
                'Remove-OCIGenerativeaiHostedApplicationStorage', 
                'Remove-OCIGenerativeaiHostedDeployment', 
                'Remove-OCIGenerativeaiHostedDeploymentArtifact', 
@@ -142,6 +147,7 @@ CmdletsToExport = 'Add-OCIGenerativeaiArtifact', 'Get-OCIGenerativeaiApiKey',
                'Update-OCIGenerativeaiDedicatedAiCluster', 
                'Update-OCIGenerativeaiEndpoint', 
                'Update-OCIGenerativeaiHostedApplication', 
+               'Update-OCIGenerativeaiHostedApplicationIam', 
                'Update-OCIGenerativeaiHostedDeployment', 
                'Update-OCIGenerativeaiImportedModel', 
                'Update-OCIGenerativeaiModel', 

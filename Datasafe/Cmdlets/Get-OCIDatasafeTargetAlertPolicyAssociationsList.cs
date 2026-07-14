@@ -48,6 +48,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort parameter may be provided.")]
         public System.Nullable<Oci.DatasafeService.Requests.ListTargetAlertPolicyAssociationsRequest.SortByEnum> SortBy { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A optional filter to return only resources that belong to the specified alert policy association type.")]
+        public System.Nullable<Oci.DatasafeService.Models.TargetAlertPolicyAssociation.TargetTypeEnum> TargetType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
@@ -88,6 +91,7 @@ namespace Oci.DatasafeService.Cmdlets
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
+                    TargetType = TargetType,
                     OpcRequestId = OpcRequestId,
                     TimeCreatedGreaterThanOrEqualTo = TimeCreatedGreaterThanOrEqualTo,
                     TimeCreatedLessThan = TimeCreatedLessThan,

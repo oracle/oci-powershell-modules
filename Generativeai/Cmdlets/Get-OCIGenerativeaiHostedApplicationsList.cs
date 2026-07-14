@@ -25,7 +25,7 @@ namespace Oci.GenerativeaiService.Cmdlets
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.")]
-        public System.Nullable<Oci.GenerativeaiService.Models.HostedApplication.LifecycleStateEnum> LifecycleState { get; set; }
+        public System.Nullable<Oci.GenerativeaiService.Models.HostedApplicationBase.LifecycleStateEnum> LifecycleState { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given display name exactly.")]
         public string DisplayName { get; set; }
