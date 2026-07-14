@@ -93,6 +93,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous ""List"" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the specified compartment OCID.")]
+        public string CompartmentId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending (ASC) or descending (DESC).")]
         public System.Nullable<Oci.DatasafeService.Requests.ListUsersRequest.SortOrderEnum> SortOrder { get; set; }
 
@@ -142,6 +145,7 @@ namespace Oci.DatasafeService.Cmdlets
                     TimePasswordExpiryGreaterThanOrEqualTo = TimePasswordExpiryGreaterThanOrEqualTo,
                     TimePasswordExpiryLessThan = TimePasswordExpiryLessThan,
                     Page = Page,
+                    CompartmentId = CompartmentId,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
                     OpcRequestId = OpcRequestId,
