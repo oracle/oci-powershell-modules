@@ -19,10 +19,10 @@ namespace Oci.AnalyticsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.AnalyticsService.Models.AnalyticsInstance), typeof(Oci.AnalyticsService.Responses.UpdateAnalyticsInstanceResponse) })]
     public class UpdateOCIAnalyticsInstance : OCIAnalyticsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the AnalyticsInstance.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the Analytics instance.")]
         public string AnalyticsInstanceId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Analytics Instance fields to update. Fields that are not provided will not be updated.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Update specified fields for an Analytics instance. Fields that aren't provided  won't be updated.")]
         public UpdateAnalyticsInstanceDetails UpdateAnalyticsInstanceDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.  The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.")]

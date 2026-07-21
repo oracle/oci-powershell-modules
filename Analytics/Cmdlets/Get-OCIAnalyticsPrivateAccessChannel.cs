@@ -19,10 +19,10 @@ namespace Oci.AnalyticsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.AnalyticsService.Models.PrivateAccessChannel), typeof(Oci.AnalyticsService.Responses.GetPrivateAccessChannelResponse) })]
     public class GetOCIAnalyticsPrivateAccessChannel : OCIAnalyticsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier key of the Private Access Channel.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The unique identifier key of the private access channel.")]
         public string PrivateAccessChannelKey { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the AnalyticsInstance.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the Analytics instance.")]
         public string AnalyticsInstanceId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

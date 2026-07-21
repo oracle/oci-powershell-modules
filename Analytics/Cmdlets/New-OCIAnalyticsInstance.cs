@@ -19,7 +19,7 @@ namespace Oci.AnalyticsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.AnalyticsService.Models.AnalyticsInstance), typeof(Oci.AnalyticsService.Responses.CreateAnalyticsInstanceResponse) })]
     public class NewOCIAnalyticsInstance : OCIAnalyticsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Analytics Instance details.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Analytics instance details.")]
         public CreateAnalyticsInstanceDetails CreateAnalyticsInstanceDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
