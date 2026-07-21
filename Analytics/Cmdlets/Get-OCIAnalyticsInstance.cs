@@ -21,8 +21,8 @@ namespace Oci.AnalyticsService.Cmdlets
     public class GetOCIAnalyticsInstance : OCIAnalyticsCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the AnalyticsInstance.", ParameterSetName = LifecycleStateParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the AnalyticsInstance.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the Analytics instance.", ParameterSetName = LifecycleStateParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the Analytics instance.", ParameterSetName = Default)]
         public string AnalyticsInstanceId { get; set; }
 
         

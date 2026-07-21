@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Analytics.dll'
 
 # Version number of this module.
-ModuleVersion = '138.0.0'
+ModuleVersion = '138.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '138.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '138.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Analytics.dll'
@@ -73,7 +73,8 @@ FunctionsToExport = '*'
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Get-OCIAnalyticsInstance', 'Get-OCIAnalyticsInstancesList', 
                'Get-OCIAnalyticsPrivateAccessChannel', 
-               'Get-OCIAnalyticsWorkRequest', 
+               'Get-OCIAnalyticsResourceGroup', 
+               'Get-OCIAnalyticsResourceGroupsList', 'Get-OCIAnalyticsWorkRequest', 
                'Get-OCIAnalyticsWorkRequestErrorsList', 
                'Get-OCIAnalyticsWorkRequestLogsList', 
                'Get-OCIAnalyticsWorkRequestsList', 
@@ -83,13 +84,14 @@ CmdletsToExport = 'Get-OCIAnalyticsInstance', 'Get-OCIAnalyticsInstancesList',
                'Move-OCIAnalyticsInstanceCompartment', 
                'Move-OCIAnalyticsInstanceNetworkEndpoint', 
                'New-OCIAnalyticsInstance', 'New-OCIAnalyticsPrivateAccessChannel', 
-               'New-OCIAnalyticsVanityUrl', 'Remove-OCIAnalyticsInstance', 
+               'New-OCIAnalyticsResourceGroup', 'New-OCIAnalyticsVanityUrl', 
+               'Remove-OCIAnalyticsInstance', 
                'Remove-OCIAnalyticsPrivateAccessChannel', 
-               'Remove-OCIAnalyticsVanityUrl', 'Remove-OCIAnalyticsWorkRequest', 
-               'Start-OCIAnalyticsInstance', 'Stop-OCIAnalyticsInstance', 
-               'Update-OCIAnalyticsInstance', 
+               'Remove-OCIAnalyticsResourceGroup', 'Remove-OCIAnalyticsVanityUrl', 
+               'Remove-OCIAnalyticsWorkRequest', 'Start-OCIAnalyticsInstance', 
+               'Stop-OCIAnalyticsInstance', 'Update-OCIAnalyticsInstance', 
                'Update-OCIAnalyticsPrivateAccessChannel', 
-               'Update-OCIAnalyticsVanityUrl'
+               'Update-OCIAnalyticsResourceGroup', 'Update-OCIAnalyticsVanityUrl'
 
 # Variables to export from this module
 VariablesToExport = '*'

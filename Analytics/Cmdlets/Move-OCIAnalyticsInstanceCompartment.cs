@@ -19,7 +19,7 @@ namespace Oci.AnalyticsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.AnalyticsService.Responses.ChangeAnalyticsInstanceCompartmentResponse) })]
     public class MoveOCIAnalyticsInstanceCompartment : OCIAnalyticsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the AnalyticsInstance.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the Analytics instance.")]
         public string AnalyticsInstanceId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Input payload to move the resource to a different compartment.")]

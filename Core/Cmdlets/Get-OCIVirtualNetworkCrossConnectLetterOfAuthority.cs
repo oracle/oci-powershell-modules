@@ -22,6 +22,9 @@ namespace Oci.CoreService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.")]
         public string CrossConnectId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
+        public string OpcRequestId { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -31,7 +34,8 @@ namespace Oci.CoreService.Cmdlets
             {
                 request = new GetCrossConnectLetterOfAuthorityRequest
                 {
-                    CrossConnectId = CrossConnectId
+                    CrossConnectId = CrossConnectId,
+                    OpcRequestId = OpcRequestId
                 };
 
                 response = client.GetCrossConnectLetterOfAuthority(request).GetAwaiter().GetResult();

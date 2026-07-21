@@ -19,7 +19,7 @@ namespace Oci.AnalyticsService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.AnalyticsService.Responses.CreatePrivateAccessChannelResponse) })]
     public class NewOCIAnalyticsPrivateAccessChannel : OCIAnalyticsCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the AnalyticsInstance.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the Analytics instance.")]
         public string AnalyticsInstanceId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Input payload for creating a private access channel for an Analytics instance.")]
