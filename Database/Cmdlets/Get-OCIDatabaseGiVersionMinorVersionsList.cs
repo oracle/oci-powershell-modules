@@ -33,6 +33,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If provided, filters the results for the given Exadata Infrastructure.")]
+        public string ExadataInfrastructureId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If provided, filters the results to the set of database versions which are supported for the given shape family.")]
         public System.Nullable<Oci.DatabaseService.Requests.ListGiVersionMinorVersionsRequest.ShapeFamilyEnum> ShapeFamily { get; set; }
 
@@ -70,6 +73,7 @@ namespace Oci.DatabaseService.Cmdlets
                     AvailabilityDomain = AvailabilityDomain,
                     CompartmentId = CompartmentId,
                     OpcRequestId = OpcRequestId,
+                    ExadataInfrastructureId = ExadataInfrastructureId,
                     ShapeFamily = ShapeFamily,
                     IsGiVersionForProvisioning = IsGiVersionForProvisioning,
                     Shape = Shape,
