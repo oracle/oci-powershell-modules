@@ -30,6 +30,12 @@ namespace Oci.GoldengateService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the connection.")]
         public string ConnectionId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The array of connection types.")]
+        public System.Collections.Generic.List<Oci.GoldengateService.Models.ConnectionType> ConnectionType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The array of connection types to exclude.")]
+        public System.Collections.Generic.List<Oci.GoldengateService.Models.ConnectionType> ConnectionTypeNotEqualTo { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The name of the connection in the assignment (aliasName).")]
         public string Name { get; set; }
 
@@ -66,6 +72,8 @@ namespace Oci.GoldengateService.Cmdlets
                     CompartmentId = CompartmentId,
                     DeploymentId = DeploymentId,
                     ConnectionId = ConnectionId,
+                    ConnectionType = ConnectionType,
+                    ConnectionTypeNotEqualTo = ConnectionTypeNotEqualTo,
                     Name = Name,
                     LifecycleState = LifecycleState,
                     Limit = Limit,

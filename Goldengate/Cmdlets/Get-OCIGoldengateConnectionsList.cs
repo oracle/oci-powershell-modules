@@ -30,6 +30,9 @@ namespace Oci.GoldengateService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The array of connection types.")]
         public System.Collections.Generic.List<Oci.GoldengateService.Models.ConnectionType> ConnectionType { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The array of connection types to exclude.")]
+        public System.Collections.Generic.List<Oci.GoldengateService.Models.ConnectionType> ConnectionTypeNotEqualTo { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the deployment which for the connection must be assigned.")]
         public string AssignedDeploymentId { get; set; }
 
@@ -75,6 +78,7 @@ namespace Oci.GoldengateService.Cmdlets
                     CompartmentId = CompartmentId,
                     TechnologyType = TechnologyType,
                     ConnectionType = ConnectionType,
+                    ConnectionTypeNotEqualTo = ConnectionTypeNotEqualTo,
                     AssignedDeploymentId = AssignedDeploymentId,
                     AssignableDeploymentId = AssignableDeploymentId,
                     AssignableDeploymentType = AssignableDeploymentType,

@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '138.1.0'
+ModuleVersion = '139.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '138.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '139.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -145,7 +145,12 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Get-OCIDatabaseAutonomousVmClustersList', 'Get-OCIDatabaseBackup', 
                'Get-OCIDatabaseBackupDestination', 
                'Get-OCIDatabaseBackupDestinationList', 
-               'Get-OCIDatabaseBackupsList', 
+               'Get-OCIDatabaseBackupsList', 'Get-OCIDatabaseBaseccVmCluster', 
+               'Get-OCIDatabaseBaseccVmClustersList', 
+               'Get-OCIDatabaseBaseccVmClusterUpdate', 
+               'Get-OCIDatabaseBaseccVmClusterUpdateHistoryEntriesList', 
+               'Get-OCIDatabaseBaseccVmClusterUpdateHistoryEntry', 
+               'Get-OCIDatabaseBaseccVmClusterUpdatesList', 
                'Get-OCIDatabaseCloudAutonomousVmCluster', 
                'Get-OCIDatabaseCloudAutonomousVmClusterAcdResourceUsageList', 
                'Get-OCIDatabaseCloudAutonomousVmClusterResourceUsage', 
@@ -333,6 +338,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Invoke-OCIDatabaseUnmountDbnodeSnapshot', 
                'Invoke-OCIDatabaseUnregisterCloudAutonomousVmClusterPkcs', 
                'Invoke-OCIDatabaseUnregisterCloudVmClusterPkcs', 
+               'Invoke-OCIDatabaseUnregisterExadbVmClusterPkcs', 
                'Invoke-OCIDatabaseUpgradeDatabase', 
                'Invoke-OCIDatabaseUpgradeDbSystem', 
                'Move-OCIDatabaseAutonomousContainerDatabaseCompartment', 
@@ -342,6 +348,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Move-OCIDatabaseAutonomousExadataInfrastructureCompartment', 
                'Move-OCIDatabaseAutonomousVmClusterCompartment', 
                'Move-OCIDatabaseBackupDestinationCompartment', 
+               'Move-OCIDatabaseBaseccVmClusterCompartment', 
                'Move-OCIDatabaseCloudAutonomousVmClusterCompartment', 
                'Move-OCIDatabaseCloudAutonomousVmClusterSubscription', 
                'Move-OCIDatabaseCloudDbSystemSubscription', 
@@ -379,6 +386,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'New-OCIDatabaseAutonomousDatabaseWallet', 
                'New-OCIDatabaseAutonomousVmCluster', 'New-OCIDatabaseBackup', 
                'New-OCIDatabaseBackupDestination', 
+               'New-OCIDatabaseBaseccVmCluster', 
                'New-OCIDatabaseCloudAutonomousVmCluster', 
                'New-OCIDatabaseCloudExadataInfrastructure', 
                'New-OCIDatabaseCloudVmCluster', 'New-OCIDatabaseConsoleConnection', 
@@ -403,7 +411,8 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'New-OCIDatabaseVmCluster', 'New-OCIDatabaseVmClusterNetwork', 
                'Register-OCIDatabaseAutonomousDatabaseDataSafe', 
                'Register-OCIDatabaseCloudAutonomousVmClusterPkcs', 
-               'Register-OCIDatabaseCloudVmClusterPkcs', 'Remove-OCIDatabase', 
+               'Register-OCIDatabaseCloudVmClusterPkcs', 
+               'Register-OCIDatabaseExadbVmClusterPkcs', 'Remove-OCIDatabase', 
                'Remove-OCIDatabaseAdvancedClusterFileSystem', 
                'Remove-OCIDatabaseApplicationVip', 
                'Remove-OCIDatabaseAutonomousDatabase', 
@@ -411,6 +420,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Remove-OCIDatabaseAutonomousDatabaseSoftwareImage', 
                'Remove-OCIDatabaseAutonomousVmCluster', 'Remove-OCIDatabaseBackup', 
                'Remove-OCIDatabaseBackupDestination', 
+               'Remove-OCIDatabaseBaseccVmCluster', 
                'Remove-OCIDatabaseCloudAutonomousVmCluster', 
                'Remove-OCIDatabaseCloudExadataInfrastructure', 
                'Remove-OCIDatabaseCloudVmCluster', 
@@ -460,6 +470,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Update-OCIDatabaseAutonomousExadataInfrastructure', 
                'Update-OCIDatabaseAutonomousVmCluster', 'Update-OCIDatabaseBackup', 
                'Update-OCIDatabaseBackupDestination', 
+               'Update-OCIDatabaseBaseccVmCluster', 
                'Update-OCIDatabaseCloudAutonomousVmCluster', 
                'Update-OCIDatabaseCloudExadataInfrastructure', 
                'Update-OCIDatabaseCloudVmCluster', 

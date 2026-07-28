@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Goldengate.dll'
 
 # Version number of this module.
-ModuleVersion = '138.1.0'
+ModuleVersion = '139.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '138.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '139.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Goldengate.dll'
@@ -77,6 +77,7 @@ CmdletsToExport = 'Add-OCIGoldengateConnectionLock',
                'Add-OCIGoldengateDeploymentLock', 
                'Copy-OCIGoldengateDeploymentBackup', 
                'Export-OCIGoldengateDeploymentWallet', 
+               'Get-OCIGoldengateAiModelsList', 'Get-OCIGoldengateAiProvidersList', 
                'Get-OCIGoldengateCertificate', 'Get-OCIGoldengateCertificatesList', 
                'Get-OCIGoldengateConnection', 
                'Get-OCIGoldengateConnectionAssignment', 
