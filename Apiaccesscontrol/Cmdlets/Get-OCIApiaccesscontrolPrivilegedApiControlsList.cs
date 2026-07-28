@@ -21,7 +21,7 @@ namespace Oci.ApiaccesscontrolService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.ApiaccesscontrolService.Models.PrivilegedApiControlCollection), typeof(Oci.ApiaccesscontrolService.Responses.ListPrivilegedApiControlsResponse) })]
     public class GetOCIApiaccesscontrolPrivilegedApiControlsList : OCIPrivilegedApiControlCmdlet
     {
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PrivilegedApiControl.")]
