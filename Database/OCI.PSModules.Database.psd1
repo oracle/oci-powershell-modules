@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '139.0.0'
+ModuleVersion = '140.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '139.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '140.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -111,6 +111,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Get-OCIDatabaseApplicationVip', 
                'Get-OCIDatabaseApplicationVipsList', 
                'Get-OCIDatabaseAutonomousContainerDatabase', 
+               'Get-OCIDatabaseAutonomousContainerDatabaseBackup', 
                'Get-OCIDatabaseAutonomousContainerDatabaseBackupsList', 
                'Get-OCIDatabaseAutonomousContainerDatabaseDataguardAssociation', 
                'Get-OCIDatabaseAutonomousContainerDatabaseDataguardAssociationsList', 
@@ -127,6 +128,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Get-OCIDatabaseAutonomousDatabasePeersList', 
                'Get-OCIDatabaseAutonomousDatabaseRefreshableClonesList', 
                'Get-OCIDatabaseAutonomousDatabaseRegionalWallet', 
+               'Get-OCIDatabaseAutonomousDatabasesInAutonomousContainerDatabaseBackupList', 
                'Get-OCIDatabaseAutonomousDatabasesList', 
                'Get-OCIDatabaseAutonomousDatabaseSoftwareImage', 
                'Get-OCIDatabaseAutonomousDatabaseSoftwareImagesList', 

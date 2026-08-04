@@ -48,6 +48,12 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire database name given. The match is not case sensitive.")]
         public string DbName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter the databases by managed auto failover param.")]
+        public System.Nullable<Oci.DatabaseService.Requests.ListDatabasesRequest.ManagedAutoFailoverEnum> ManagedAutoFailover { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter the databases by failoverTargets param.")]
+        public System.Nullable<Oci.DatabaseService.Requests.ListDatabasesRequest.FailoverTargetsEnum> FailoverTargets { get; set; }
+
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
 
@@ -68,7 +74,9 @@ namespace Oci.DatabaseService.Cmdlets
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     LifecycleState = LifecycleState,
-                    DbName = DbName
+                    DbName = DbName,
+                    ManagedAutoFailover = ManagedAutoFailover,
+                    FailoverTargets = FailoverTargets
                 };
                 IEnumerable<ListDatabasesResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)
