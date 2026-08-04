@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Marketplaceprivateoffer.dll'
 
 # Version number of this module.
-ModuleVersion = '139.0.0'
+ModuleVersion = '140.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '139.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '140.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Marketplaceprivateoffer.dll'
@@ -76,12 +76,28 @@ CmdletsToExport = 'Get-OCIMarketplaceprivateofferAttachment',
                'Get-OCIMarketplaceprivateofferAttachmentsList', 
                'Get-OCIMarketplaceprivateofferOffer', 
                'Get-OCIMarketplaceprivateofferOfferInternalDetail', 
+               'Get-OCIMarketplaceprivateofferOfferQuote', 
+               'Get-OCIMarketplaceprivateofferOfferQuoteInternalDetail', 
+               'Get-OCIMarketplaceprivateofferOfferQuotesList', 
                'Get-OCIMarketplaceprivateofferOffersList', 
+               'Get-OCIMarketplaceprivateofferQuoteAttachment', 
+               'Get-OCIMarketplaceprivateofferQuoteAttachmentContent', 
+               'Get-OCIMarketplaceprivateofferQuoteAttachmentsList', 
+               'Invoke-OCIMarketplaceprivateofferRespondToOfferQuote', 
+               'Invoke-OCIMarketplaceprivateofferSendOffer', 
+               'Invoke-OCIMarketplaceprivateofferSendOfferQuote', 
+               'Invoke-OCIMarketplaceprivateofferWithdrawOffer', 
+               'Invoke-OCIMarketplaceprivateofferWithdrawOfferQuote', 
                'New-OCIMarketplaceprivateofferAttachment', 
                'New-OCIMarketplaceprivateofferOffer', 
+               'New-OCIMarketplaceprivateofferOfferQuote', 
+               'New-OCIMarketplaceprivateofferQuoteAttachment', 
                'Remove-OCIMarketplaceprivateofferAttachment', 
                'Remove-OCIMarketplaceprivateofferOffer', 
-               'Update-OCIMarketplaceprivateofferOffer'
+               'Remove-OCIMarketplaceprivateofferOfferQuote', 
+               'Remove-OCIMarketplaceprivateofferQuoteAttachment', 
+               'Update-OCIMarketplaceprivateofferOffer', 
+               'Update-OCIMarketplaceprivateofferOfferQuote'
 
 # Variables to export from this module
 VariablesToExport = '*'
