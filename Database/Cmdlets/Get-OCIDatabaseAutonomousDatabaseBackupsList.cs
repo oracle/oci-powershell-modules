@@ -59,6 +59,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given Infrastructure Type.")]
         public System.Nullable<Oci.DatabaseService.Models.AutonomousDatabaseBackupSummary.InfrastructureTypeEnum> InfrastructureType { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.")]
+        public System.Nullable<bool> IsPitrEligible { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
@@ -86,6 +89,7 @@ namespace Oci.DatabaseService.Cmdlets
                     BackupDestinationId = BackupDestinationId,
                     KeyStoreId = KeyStoreId,
                     InfrastructureType = InfrastructureType,
+                    IsPitrEligible = IsPitrEligible,
                     OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListAutonomousDatabaseBackupsResponse> responses = GetRequestDelegate().Invoke(request);
