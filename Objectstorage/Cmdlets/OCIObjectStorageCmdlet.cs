@@ -19,6 +19,9 @@ namespace Oci.ObjectstorageService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "If set, the realm specific endpoint is used. The -Endpoint parameter takes precedence over this option.")]
         public SwitchParameter DisableRealmSpecificEndpoint { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = "If set, the service dual stack endpoint is used. The -Endpoint parameter takes precedence over this option.")]
+        public SwitchParameter EnableDualStackEndpoints { get; set; }
+
         protected override void BeginProcessing()
         {
             base.BeginProcessing();
@@ -49,6 +52,7 @@ namespace Oci.ObjectstorageService.Cmdlets
                     ClientUserAgent = PSUserAgent
                 });
                 client.UseRealmSpecificEndpointTemplate(!DisableRealmSpecificEndpoint);
+                client.EnableDualStackEndpoints(EnableDualStackEndpoints);
                 string region = GetPreferredRegion();
                 if (region != null)
                 {
