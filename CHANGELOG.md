@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 140.2.0 - 2026-08-18
+### Added 
+- Support for creating databases from another database with additional input fields and source encryption-key location details in the Database service 
+- Support for IPv6 dual-stack endpoints in the Compute Instance Agent service
+
 ## 140.1.0 - 2026-08-11
 ### Added 
 - Support for the OCI Device Data FHIR (Fast Healthcare Interoperability Resources) Service 
