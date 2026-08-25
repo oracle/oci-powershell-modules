@@ -17,7 +17,7 @@ namespace Oci.GenerativeaidataService.Cmdlets
 {
     [Cmdlet("New", "OCIGenerativeaidataEnrichmentJob")]
     [OutputType(new System.Type[] { typeof(Oci.GenerativeaidataService.Models.EnrichmentJob), typeof(Oci.GenerativeaidataService.Responses.GenerateEnrichmentJobResponse) })]
-    public class NewOCIGenerativeaidataEnrichmentJob : OCIGenerateEnrichmentJobCmdlet
+    public class NewOCIGenerativeaidataEnrichmentJob : OCIEnrichmentJobCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for the new EnrichmentJob.")]
         public GenerateEnrichmentJobDetails GenerateEnrichmentJobDetails { get; set; }

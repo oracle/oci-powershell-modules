@@ -21,7 +21,7 @@ namespace Oci.RecoveryService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.RecoveryService.Models.WorkRequestSummaryCollection), typeof(Oci.RecoveryService.Responses.ListWorkRequestsResponse) })]
     public class GetOCIRecoveryWorkRequestsList : OCIDatabaseRecoveryCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment OCID.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment OCID.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier of the work request.")]

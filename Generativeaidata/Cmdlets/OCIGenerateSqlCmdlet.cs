@@ -13,7 +13,7 @@ using Oci.GenerativeaidataService;
 
 namespace Oci.GenerativeaidataService.Cmdlets
 {
-    public abstract class OCIListEnrichmentJobsCmdlet : Oci.PSModules.Common.Cmdlets.OCICmdlet
+    public abstract class OCIGenerateSqlCmdlet : Oci.PSModules.Common.Cmdlets.OCICmdlet
     { 
 
         protected override void BeginProcessing()
@@ -39,7 +39,7 @@ namespace Oci.GenerativeaidataService.Cmdlets
                 client?.Dispose();
                 int timeout = GetPreferredTimeout();
                 WriteDebug($"Cmdlet Timeout : {timeout} milliseconds.");
-                client = new ListEnrichmentJobsClient(AuthProvider, new Oci.Common.ClientConfiguration
+                client = new GenerateSqlClient(AuthProvider, new Oci.Common.ClientConfiguration
                 {
                     RetryConfiguration = retryConfig,
                     TimeoutMillis = timeout,
@@ -80,7 +80,7 @@ namespace Oci.GenerativeaidataService.Cmdlets
             base.TerminatingErrorDuringExecution(ex);
         }
 
-        protected ListEnrichmentJobsClient client;
+        protected GenerateSqlClient client;
         private RetryConfiguration retryConfig;
     }
 }
