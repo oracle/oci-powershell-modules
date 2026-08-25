@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Recovery.dll'
 
 # Version number of this module.
-ModuleVersion = '140.2.0'
+ModuleVersion = '141.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '140.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '141.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Recovery.dll'
@@ -71,7 +71,9 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Recovery.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIRecoveryProtectedDatabase', 
+CmdletsToExport = 'Get-OCIRecoveryLongTermBackup', 
+               'Get-OCIRecoveryLongTermBackupsList', 
+               'Get-OCIRecoveryProtectedDatabase', 
                'Get-OCIRecoveryProtectedDatabasesList', 
                'Get-OCIRecoveryProtectionPoliciesList', 
                'Get-OCIRecoveryProtectionPolicy', 'Get-OCIRecoveryServiceSubnet', 
@@ -85,12 +87,14 @@ CmdletsToExport = 'Get-OCIRecoveryProtectedDatabase',
                'Move-OCIRecoveryProtectedDatabaseSubscription', 
                'Move-OCIRecoveryProtectionPolicyCompartment', 
                'Move-OCIRecoveryServiceSubnetCompartment', 
-               'New-OCIRecoveryProtectedDatabase', 
+               'New-OCIRecoveryLongTermBackup', 'New-OCIRecoveryProtectedDatabase', 
                'New-OCIRecoveryProtectionPolicy', 'New-OCIRecoveryServiceSubnet', 
+               'Remove-OCIRecoveryLongTermBackup', 
                'Remove-OCIRecoveryProtectedDatabase', 
                'Remove-OCIRecoveryProtectionPolicy', 
-               'Remove-OCIRecoveryServiceSubnet', 
+               'Remove-OCIRecoveryServiceSubnet', 'Stop-OCIRecoveryLongTermBackup', 
                'Stop-OCIRecoveryProtectedDatabaseDeletion', 
+               'Update-OCIRecoveryLongTermBackup', 
                'Update-OCIRecoveryProtectedDatabase', 
                'Update-OCIRecoveryProtectionPolicy', 
                'Update-OCIRecoveryServiceSubnet'

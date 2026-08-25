@@ -17,7 +17,7 @@ namespace Oci.GenerativeaidataService.Cmdlets
 {
     [Cmdlet("New", "OCIGenerativeaidataSqlFromNl")]
     [OutputType(new System.Type[] { typeof(Oci.GenerativeaidataService.Models.GenerateSqlFromNlJob), typeof(Oci.GenerativeaidataService.Responses.GenerateSqlFromNlResponse) })]
-    public class NewOCIGenerativeaidataSqlFromNl : OCIGenerateSqlFromNlJobCmdlet
+    public class NewOCIGenerativeaidataSqlFromNl : OCIGenerateSqlCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Details for generating SQL from natural language.")]
         public GenerateSqlFromNlDetails GenerateSqlFromNlDetails { get; set; }

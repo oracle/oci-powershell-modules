@@ -19,7 +19,7 @@ namespace Oci.GenerativeaidataService.Cmdlets
 {
     [Cmdlet("Get", "OCIGenerativeaidataEnrichmentJobsList")]
     [OutputType(new System.Type[] { typeof(Oci.GenerativeaidataService.Models.EnrichmentJobCollection), typeof(Oci.GenerativeaidataService.Responses.ListEnrichmentJobsResponse) })]
-    public class GetOCIGenerativeaidataEnrichmentJobsList : OCIListEnrichmentJobsCmdlet
+    public class GetOCIGenerativeaidataEnrichmentJobsList : OCIEnrichmentJobCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the semantic store")]
         public string SemanticStoreId { get; set; }

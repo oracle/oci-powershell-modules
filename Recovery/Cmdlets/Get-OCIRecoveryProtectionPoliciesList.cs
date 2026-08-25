@@ -21,7 +21,7 @@ namespace Oci.RecoveryService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.RecoveryService.Models.ProtectionPolicyCollection), typeof(Oci.RecoveryService.Responses.ListProtectionPoliciesResponse) })]
     public class GetOCIRecoveryProtectionPoliciesList : OCIDatabaseRecoveryCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment OCID.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment OCID.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources their lifecycleState matches the given lifecycleState.")]
@@ -35,6 +35,9 @@ namespace Oci.RecoveryService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the policies that match the owner as 'Customer' or 'Oracle'.")]
         public System.Nullable<Oci.RecoveryService.Requests.ListProtectionPoliciesRequest.OwnerEnum> Owner { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).")]
+        public System.Nullable<bool> MustEnforceCloudLocality { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return. Specify a value greater than 4.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -68,6 +71,7 @@ namespace Oci.RecoveryService.Cmdlets
                     DisplayName = DisplayName,
                     ProtectionPolicyId = ProtectionPolicyId,
                     Owner = Owner,
+                    MustEnforceCloudLocality = MustEnforceCloudLocality,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,

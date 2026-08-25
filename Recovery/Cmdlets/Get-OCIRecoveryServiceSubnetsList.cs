@@ -21,7 +21,7 @@ namespace Oci.RecoveryService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.RecoveryService.Models.RecoveryServiceSubnetCollection), typeof(Oci.RecoveryService.Responses.ListRecoveryServiceSubnetsResponse) })]
     public class GetOCIRecoveryServiceSubnetsList : OCIDatabaseRecoveryCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment OCID.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment OCID.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the specified lifecycle state.")]

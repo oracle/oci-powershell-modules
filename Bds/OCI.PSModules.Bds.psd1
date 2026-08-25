@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Bds.dll'
 
 # Version number of this module.
-ModuleVersion = '140.2.0'
+ModuleVersion = '141.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '140.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '141.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Bds.dll'
@@ -75,11 +75,17 @@ CmdletsToExport = 'Add-OCIBdsAutoScalingConfiguration', 'Add-OCIBdsBlockStorage'
                'Add-OCIBdsCloudSql', 'Add-OCIBdsKafka', 'Add-OCIBdsMasterNodes', 
                'Add-OCIBdsUtilityNodes', 'Add-OCIBdsWorkerNodes', 
                'Backup-OCIBdsNode', 'Disable-OCIBdsCertificate', 
+               'Enable-OCIBdsCapacityReservationConfiguration', 
                'Enable-OCIBdsCertificate', 'Enable-OCIBdsIamUserSyncConfiguration', 
                'Enable-OCIBdsMetastoreConfiguration', 
                'Enable-OCIBdsUpstConfiguration', 'Get-OCIBdsApiKey', 
                'Get-OCIBdsApiKeysList', 'Get-OCIBdsAutoScalingConfiguration', 
                'Get-OCIBdsAutoScalingConfigurationsList', 
+               'Get-OCIBdsCapacityReservation', 
+               'Get-OCIBdsCapacityReservationAssociatedConfigurationsList', 
+               'Get-OCIBdsCapacityReservationConfiguration', 
+               'Get-OCIBdsCapacityReservationConfigurationsList', 
+               'Get-OCIBdsCapacityReservationsList', 
                'Get-OCIBdsCertificateConfiguration', 
                'Get-OCIBdsCertificateConfigurationsList', 
                'Get-OCIBdsClusterVersionsList', 'Get-OCIBdsIdentityConfiguration', 
@@ -99,6 +105,7 @@ CmdletsToExport = 'Add-OCIBdsAutoScalingConfiguration', 'Add-OCIBdsBlockStorage'
                'Get-OCIBdsWorkRequestLogsList', 'Get-OCIBdsWorkRequestsList', 
                'Invoke-OCIBdsBdsInstanceResetPassword', 
                'Invoke-OCIBdsCertificateServiceInfo', 
+               'Invoke-OCIBdsDeactivateBdsCapacityReservationConfiguration', 
                'Invoke-OCIBdsDeactivateIamUserSyncConfiguration', 
                'Invoke-OCIBdsDeactivateUpstConfiguration', 
                'Invoke-OCIBdsExecuteBootstrapScript', 
@@ -112,8 +119,11 @@ CmdletsToExport = 'Add-OCIBdsAutoScalingConfiguration', 'Add-OCIBdsBlockStorage'
                'Invoke-OCIBdsSetDefaultBdsCertificateConfiguration', 
                'Invoke-OCIBdsTestBdsMetastoreConfiguration', 
                'Invoke-OCIBdsTestBdsObjectStorageConnection', 
+               'Move-OCIBdsCapacityReservationCompartment', 
                'Move-OCIBdsInstanceCompartment', 'Move-OCIBdsShape', 
                'New-OCIBdsApiKey', 'New-OCIBdsCapacityReport', 
+               'New-OCIBdsCapacityReservation', 
+               'New-OCIBdsCapacityReservationConfiguration', 
                'New-OCIBdsCertificate', 'New-OCIBdsCertificateConfiguration', 
                'New-OCIBdsIdentityConfiguration', 'New-OCIBdsInstance', 
                'New-OCIBdsMetastoreConfiguration', 
@@ -121,6 +131,8 @@ CmdletsToExport = 'Add-OCIBdsAutoScalingConfiguration', 'Add-OCIBdsBlockStorage'
                'New-OCIBdsNodeReplaceConfiguration', 
                'New-OCIBdsResourcePrincipalConfiguration', 'Remove-OCIBdsApiKey', 
                'Remove-OCIBdsAutoScalingConfiguration', 
+               'Remove-OCIBdsCapacityReservation', 
+               'Remove-OCIBdsCapacityReservationConfiguration', 
                'Remove-OCIBdsCertificateConfiguration', 'Remove-OCIBdsCloudSql', 
                'Remove-OCIBdsIdentityConfiguration', 'Remove-OCIBdsInstance', 
                'Remove-OCIBdsKafka', 'Remove-OCIBdsMetastoreConfiguration', 
@@ -130,6 +142,8 @@ CmdletsToExport = 'Add-OCIBdsAutoScalingConfiguration', 'Add-OCIBdsBlockStorage'
                'Remove-OCIBdsResourcePrincipalConfiguration', 'Restart-OCIBdsNode', 
                'Start-OCIBdsInstance', 'Stop-OCIBdsInstance', 
                'Update-OCIBdsAutoScalingConfiguration', 
+               'Update-OCIBdsCapacityReservation', 
+               'Update-OCIBdsCapacityReservationConfiguration', 
                'Update-OCIBdsIdentityConfiguration', 'Update-OCIBdsInstance', 
                'Update-OCIBdsMetastoreConfiguration', 
                'Update-OCIBdsNodeBackupConfiguration', 

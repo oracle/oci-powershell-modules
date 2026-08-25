@@ -16,8 +16,8 @@ using Oci.Common.Model;
 namespace Oci.GenerativeaidataService.Cmdlets
 {
     [Cmdlet("Stop", "OCIGenerativeaidataEnrichmentJob")]
-    [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.GenerativeaidataService.Responses.CancelEnrichmentJobResponse) })]
-    public class StopOCIGenerativeaidataEnrichmentJob : OCICancelEnrichmentJobCmdlet
+    [OutputType(new System.Type[] { typeof(Oci.GenerativeaidataService.Models.EnrichmentJob), typeof(Oci.GenerativeaidataService.Responses.CancelEnrichmentJobResponse) })]
+    public class StopOCIGenerativeaidataEnrichmentJob : OCIEnrichmentJobCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the semantic store")]
         public string SemanticStoreId { get; set; }
@@ -51,7 +51,7 @@ namespace Oci.GenerativeaidataService.Cmdlets
                 };
 
                 response = client.CancelEnrichmentJob(request).GetAwaiter().GetResult();
-                WriteOutput(response, CreateWorkRequestObject(response.OpcWorkRequestId));
+                WriteOutput(response, response.EnrichmentJob);
                 FinishProcessing(response);
             }
             catch (OciException ex)
