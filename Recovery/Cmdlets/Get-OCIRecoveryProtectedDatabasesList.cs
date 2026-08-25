@@ -21,7 +21,7 @@ namespace Oci.RecoveryService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.RecoveryService.Models.ProtectedDatabaseCollection), typeof(Oci.RecoveryService.Responses.ListProtectedDatabasesResponse) })]
     public class GetOCIRecoveryProtectedDatabasesList : OCIDatabaseRecoveryCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment OCID.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The compartment OCID.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only the resources that match the specified lifecycle state.")]
@@ -38,6 +38,9 @@ namespace Oci.RecoveryService.Cmdlets
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The recovery service subnet OCID.")]
         public string RecoveryServiceSubnetId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Filter for cloud location of protected database.")]
+        public System.Nullable<Oci.RecoveryService.Models.BackupCloudLocation> BackupCloudLocation { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return per page.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
@@ -72,6 +75,7 @@ namespace Oci.RecoveryService.Cmdlets
                     Id = Id,
                     ProtectionPolicyId = ProtectionPolicyId,
                     RecoveryServiceSubnetId = RecoveryServiceSubnetId,
+                    BackupCloudLocation = BackupCloudLocation,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,

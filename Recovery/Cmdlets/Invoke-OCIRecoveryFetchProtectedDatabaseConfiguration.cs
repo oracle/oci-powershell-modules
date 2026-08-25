@@ -29,6 +29,9 @@ namespace Oci.RecoveryService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Which configuration to get")]
         public FetchProtectedDatabaseConfigurationDetails FetchProtectedDatabaseConfigurationDetails { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
+        public string OpcRetryToken { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique identifier for the request.")]
         public string OpcRequestId { get; set; }
 
@@ -52,6 +55,7 @@ namespace Oci.RecoveryService.Cmdlets
                 {
                     ProtectedDatabaseId = ProtectedDatabaseId,
                     FetchProtectedDatabaseConfigurationDetails = FetchProtectedDatabaseConfigurationDetails,
+                    OpcRetryToken = OpcRetryToken,
                     OpcRequestId = OpcRequestId,
                     IfMatch = IfMatch
                 };

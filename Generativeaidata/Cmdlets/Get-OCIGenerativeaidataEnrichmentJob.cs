@@ -18,7 +18,7 @@ namespace Oci.GenerativeaidataService.Cmdlets
 {
     [Cmdlet("Get", "OCIGenerativeaidataEnrichmentJob", DefaultParameterSetName = Default)]
     [OutputType(new System.Type[] { typeof(Oci.GenerativeaidataService.Models.EnrichmentJob), typeof(Oci.GenerativeaidataService.Responses.GetEnrichmentJobResponse) })]
-    public class GetOCIGenerativeaidataEnrichmentJob : OCIGetEnrichmentJobCmdlet
+    public class GetOCIGenerativeaidataEnrichmentJob : OCIEnrichmentJobCmdlet
     {
         
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the semantic store", ParameterSetName = LifecycleStateParamSet)]
