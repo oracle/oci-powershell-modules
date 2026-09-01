@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '141.0.0'
+ModuleVersion = '141.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '141.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '141.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -144,8 +144,9 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Get-OCIDatabaseAutonomousVmCluster', 
                'Get-OCIDatabaseAutonomousVmClusterAcdResourceUsageList', 
                'Get-OCIDatabaseAutonomousVmClusterResourceUsage', 
-               'Get-OCIDatabaseAutonomousVmClustersList', 'Get-OCIDatabaseBackup', 
-               'Get-OCIDatabaseBackupDestination', 
+               'Get-OCIDatabaseAutonomousVmClustersList', 
+               'Get-OCIDatabaseAvailableMaintenanceWindowsList', 
+               'Get-OCIDatabaseBackup', 'Get-OCIDatabaseBackupDestination', 
                'Get-OCIDatabaseBackupDestinationList', 
                'Get-OCIDatabaseBackupsList', 'Get-OCIDatabaseBaseccVmCluster', 
                'Get-OCIDatabaseBaseccVmClustersList', 
@@ -223,7 +224,8 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Get-OCIDatabaseExternalNonContainerDatabasesList', 
                'Get-OCIDatabaseExternalPluggableDatabase', 
                'Get-OCIDatabaseExternalPluggableDatabasesList', 
-               'Get-OCIDatabaseFlexComponentsList', 
+               'Get-OCIDatabaseFlexComponentsList', 'Get-OCIDatabaseGiHome', 
+               'Get-OCIDatabaseGiHomesList', 
                'Get-OCIDatabaseGiVersionMinorVersionsList', 
                'Get-OCIDatabaseGiVersionsList', 
                'Get-OCIDatabaseInfrastructureTargetVersions', 
@@ -402,7 +404,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'New-OCIDatabaseExternalContainerDatabase', 
                'New-OCIDatabaseExternalDatabaseConnector', 
                'New-OCIDatabaseExternalNonContainerDatabase', 
-               'New-OCIDatabaseExternalPluggableDatabase', 
+               'New-OCIDatabaseExternalPluggableDatabase', 'New-OCIDatabaseGiHome', 
                'New-OCIDatabaseKeyStore', 'New-OCIDatabaseMaintenanceRun', 
                'New-OCIDatabaseOneoffPatch', 'New-OCIDatabasePluggableDatabase', 
                'New-OCIDatabasePluggableDatabaseSnapshot', 
@@ -438,7 +440,8 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Remove-OCIDatabaseExternalDatabaseConnector', 
                'Remove-OCIDatabaseExternalNonContainerDatabase', 
                'Remove-OCIDatabaseExternalPluggableDatabase', 
-               'Remove-OCIDatabaseKeyStore', 'Remove-OCIDatabaseOneoffPatch', 
+               'Remove-OCIDatabaseGiHome', 'Remove-OCIDatabaseKeyStore', 
+               'Remove-OCIDatabaseOneoffPatch', 
                'Remove-OCIDatabasePluggableDatabase', 
                'Remove-OCIDatabasePluggableDatabaseSnapshot', 
                'Remove-OCIDatabaseScheduledAction', 
@@ -492,8 +495,8 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Update-OCIDatabaseExternalDatabaseConnector', 
                'Update-OCIDatabaseExternalNonContainerDatabase', 
                'Update-OCIDatabaseExternalPluggableDatabase', 
-               'Update-OCIDatabaseKeyStore', 'Update-OCIDatabaseMaintenanceRun', 
-               'Update-OCIDatabaseOneoffPatch', 
+               'Update-OCIDatabaseGiHome', 'Update-OCIDatabaseKeyStore', 
+               'Update-OCIDatabaseMaintenanceRun', 'Update-OCIDatabaseOneoffPatch', 
                'Update-OCIDatabasePluggableDatabase', 
                'Update-OCIDatabaseScheduledAction', 
                'Update-OCIDatabaseSchedulingPolicy', 
