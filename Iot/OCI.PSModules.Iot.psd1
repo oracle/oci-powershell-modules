@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Iot.dll'
 
 # Version number of this module.
-ModuleVersion = '141.0.0'
+ModuleVersion = '141.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '141.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '141.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Iot.dll'
@@ -71,7 +71,8 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Iot.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-OCIIotDigitalTwinAdapter', 'Get-OCIIotDigitalTwinAdaptersList', 
+CmdletsToExport = 'Enable-OCIIotFlowRuntime', 'Get-OCIIotDigitalTwinAdapter', 
+               'Get-OCIIotDigitalTwinAdaptersList', 
                'Get-OCIIotDigitalTwinInstance', 
                'Get-OCIIotDigitalTwinInstanceContent', 
                'Get-OCIIotDigitalTwinInstancesList', 'Get-OCIIotDigitalTwinModel', 
@@ -79,23 +80,29 @@ CmdletsToExport = 'Get-OCIIotDigitalTwinAdapter', 'Get-OCIIotDigitalTwinAdapters
                'Get-OCIIotDigitalTwinRelationship', 
                'Get-OCIIotDigitalTwinRelationshipsList', 'Get-OCIIotDomain', 
                'Get-OCIIotDomainGroup', 'Get-OCIIotDomainGroupsList', 
-               'Get-OCIIotDomainsList', 'Get-OCIIotWorkRequest', 
-               'Get-OCIIotWorkRequestErrorsList', 'Get-OCIIotWorkRequestLogsList', 
-               'Get-OCIIotWorkRequestsList', 
+               'Get-OCIIotDomainsList', 'Get-OCIIotFlowRuntime', 
+               'Get-OCIIotFlowRuntimeFlows', 'Get-OCIIotFlowRuntimesList', 
+               'Get-OCIIotWorkRequest', 'Get-OCIIotWorkRequestErrorsList', 
+               'Get-OCIIotWorkRequestLogsList', 'Get-OCIIotWorkRequestsList', 
                'Invoke-OCIIotConfigureIotDomainDataAccess', 
                'Invoke-OCIIotConfigureIotDomainGroupDataAccess', 
-               'Invoke-OCIIotRawCommand', 'Move-OCIIotDomainCompartment', 
+               'Invoke-OCIIotDeactivateIotFlowRuntime', 'Invoke-OCIIotRawCommand', 
+               'Move-OCIIotDomainCompartment', 
                'Move-OCIIotDomainDataRetentionPeriod', 
-               'Move-OCIIotDomainGroupCompartment', 'New-OCIIotDigitalTwinAdapter', 
+               'Move-OCIIotDomainGroupCompartment', 
+               'Move-OCIIotFlowRuntimeCompartment', 'New-OCIIotDigitalTwinAdapter', 
                'New-OCIIotDigitalTwinInstance', 'New-OCIIotDigitalTwinModel', 
                'New-OCIIotDigitalTwinRelationship', 'New-OCIIotDomain', 
-               'New-OCIIotDomainGroup', 'Remove-OCIIotDigitalTwinAdapter', 
+               'New-OCIIotDomainGroup', 'New-OCIIotFlowRuntime', 
+               'Remove-OCIIotDigitalTwinAdapter', 
                'Remove-OCIIotDigitalTwinInstance', 'Remove-OCIIotDigitalTwinModel', 
                'Remove-OCIIotDigitalTwinRelationship', 'Remove-OCIIotDomain', 
-               'Remove-OCIIotDomainGroup', 'Update-OCIIotDigitalTwinAdapter', 
+               'Remove-OCIIotDomainGroup', 'Remove-OCIIotFlowRuntime', 
+               'Update-OCIIotDigitalTwinAdapter', 
                'Update-OCIIotDigitalTwinInstance', 'Update-OCIIotDigitalTwinModel', 
                'Update-OCIIotDigitalTwinRelationship', 'Update-OCIIotDomain', 
-               'Update-OCIIotDomainGroup'
+               'Update-OCIIotDomainGroup', 'Update-OCIIotFlowRuntime', 
+               'Update-OCIIotFlowRuntimeFlows'
 
 # Variables to export from this module
 VariablesToExport = '*'

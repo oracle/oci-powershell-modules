@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 141.1.0 - 2026-09-01
+### Added 
+- Support for the Cluster Health service 
+- Support for scheduling and canceling maintenance window changes after provisioning Autonomous Database Serverless instances in the Database service 
+- Support for quick launches of BaseDB Database systems in the Database service 
+- Support for IoT Flow Runtime (Node-RED) resources in the OCI Internet of Things (OCI IoT) service
+
 ## 141.0.0 - 2026-08-25
 ### Added 
 - Support for blue/green deployments in the MySQL HeatWave service 
