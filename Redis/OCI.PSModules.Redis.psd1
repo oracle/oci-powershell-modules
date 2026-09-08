@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Redis.dll'
 
 # Version number of this module.
-ModuleVersion = '141.1.0'
+ModuleVersion = '141.2.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '141.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '141.2.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Redis.dll'
@@ -86,7 +86,10 @@ CmdletsToExport = 'DisMount-OCIRedisOciCacheUsers',
                'Get-OCIRedisOciCacheUsersList', 'Get-OCIRedisWorkRequest', 
                'Get-OCIRedisWorkRequestErrorsList', 
                'Get-OCIRedisWorkRequestLogsList', 'Get-OCIRedisWorkRequestsList', 
-               'Mount-OCIRedisOciCacheUsers', 'Move-OCIRedisClusterCompartment', 
+               'Invoke-OCIRedisConvertToSecondaryCluster', 
+               'Invoke-OCIRedisConvertToStandaloneCluster', 
+               'Invoke-OCIRedisSwitchover', 'Mount-OCIRedisOciCacheUsers', 
+               'Move-OCIRedisClusterCompartment', 
                'Move-OCIRedisOciCacheBackupCompartment', 
                'Move-OCIRedisOciCacheConfigSetCompartment', 
                'Move-OCIRedisOciCacheUserCompartment', 'New-OCIRedisCluster', 
