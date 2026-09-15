@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Databasemigration.dll'
 
 # Version number of this module.
-ModuleVersion = '141.2.0'
+ModuleVersion = '142.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '141.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '142.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Databasemigration.dll'
@@ -89,6 +89,10 @@ CmdletsToExport = 'Add-OCIDatabasemigrationAssessmentObjects',
                'Get-OCIDatabasemigrationConnection', 
                'Get-OCIDatabasemigrationConnectionsList', 
                'Get-OCIDatabasemigrationDatabaseConnectionTypeList', 
+               'Get-OCIDatabasemigrationDataVerificationDetail', 
+               'Get-OCIDatabasemigrationDataVerificationObjectStatusesList', 
+               'Get-OCIDatabasemigrationDataVerificationObjectTypeCountsList', 
+               'Get-OCIDatabasemigrationDataVerificationTableRowCountsList', 
                'Get-OCIDatabasemigrationExcludedObjectsList', 
                'Get-OCIDatabasemigrationJob', 
                'Get-OCIDatabasemigrationJobOutputContent', 
@@ -116,6 +120,7 @@ CmdletsToExport = 'Add-OCIDatabasemigrationAssessmentObjects',
                'Invoke-OCIDatabasemigrationPerformAssessorCheckAction', 
                'Invoke-OCIDatabasemigrationResumeJob', 
                'Invoke-OCIDatabasemigrationRetrieveSupportedPhases', 
+               'Invoke-OCIDatabasemigrationRunDataVerification', 
                'Invoke-OCIDatabasemigrationSuspendJob', 
                'Move-OCIDatabasemigrationAssessmentCompartment', 
                'Move-OCIDatabasemigrationConnectionCompartment', 

@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 142.0.0 - 2026-09-15
+### Added 
+- Support for higher usage submission limits for metered SaaS listings and legacy subscription endpoints in the Service Enablement Lifecycle Framework service 
+- Support for customer-managed encryption keys for database systems and cross-region backup copies in the PostgreSQL service 
+- Support for listing available VMware binaries and generating download links in the Oracle Cloud VMware Solution service 
+- Support for data verification using database object counts, object statuses, and estimated table row counts in the Database Migration service 
+- Support for settings specific to online logical, offline logical, and online standby Oracle migrations in the Database Migration service   
+
+### Breaking Changes 
+- The `UsageRecordId` property was removed from the `CreateSubscriptionUsageRecordDetails` model in the Service Enablement Lifecycle Framework service in the .NET SDK
+
 ## 141.2.0 - 2026-09-08
 ### Added 
 - Support for configurable fault-domain preferences during provisioning in the Oracle Cloud VMware Solution service 

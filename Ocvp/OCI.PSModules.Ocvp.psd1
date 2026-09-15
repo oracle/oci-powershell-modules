@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Ocvp.dll'
 
 # Version number of this module.
-ModuleVersion = '141.2.0'
+ModuleVersion = '142.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '141.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '142.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Ocvp.dll'
@@ -91,7 +91,8 @@ CmdletsToExport = 'Add-OCIOcvpBlockVolumeToDatastore',
                'Invoke-OCIOcvpRefreshHcxLicenseStatus', 
                'Invoke-OCIOcvpReplaceHost', 
                'Invoke-OCIOcvpRetrieveByolRealmAllocations', 
-               'Invoke-OCIOcvpRetrievePassword', 'Invoke-OCIOcvpSwapBilling', 
+               'Invoke-OCIOcvpRetrievePassword', 
+               'Invoke-OCIOcvpRetrieveVmwareBinaries', 'Invoke-OCIOcvpSwapBilling', 
                'Invoke-OCIOcvpUpgradeHcx', 
                'Mount-OCIOcvpDatastoreClusterToCluster', 
                'Mount-OCIOcvpDatastoreClusterToEsxiHost', 
@@ -103,9 +104,9 @@ CmdletsToExport = 'Add-OCIOcvpBlockVolumeToDatastore',
                'New-OCIOcvpDatastore', 'New-OCIOcvpDatastoreCluster', 
                'New-OCIOcvpEsxiHost', 'New-OCIOcvpHostDistributionReport', 
                'New-OCIOcvpManagementAppliance', 'New-OCIOcvpSddc', 
-               'Remove-OCIOcvpByol', 'Remove-OCIOcvpByolAllocation', 
-               'Remove-OCIOcvpCluster', 'Remove-OCIOcvpDatastore', 
-               'Remove-OCIOcvpDatastoreCluster', 
+               'New-OCIOcvpVmwareBinaryDownloadInfo', 'Remove-OCIOcvpByol', 
+               'Remove-OCIOcvpByolAllocation', 'Remove-OCIOcvpCluster', 
+               'Remove-OCIOcvpDatastore', 'Remove-OCIOcvpDatastoreCluster', 
                'Remove-OCIOcvpDatastoreFromDatastoreCluster', 
                'Remove-OCIOcvpEsxiHost', 'Remove-OCIOcvpManagementAppliance', 
                'Remove-OCIOcvpSddc', 'Stop-OCIOcvpDowngradeHcx', 
