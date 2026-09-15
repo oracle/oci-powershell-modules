@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Self.dll'
 
 # Version number of this module.
-ModuleVersion = '141.2.0'
+ModuleVersion = '142.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '141.2.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '142.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Self.dll'
@@ -71,12 +71,16 @@ RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Self.dll'
 FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Enable-OCISelfSubscription', 'Get-OCISelfingSubscriptionsList', 
-               'Get-OCISelfPartnersList', 'Get-OCISelfSubscription', 
-               'Get-OCISelfSubscriptionsList', 'Get-OCISelfSubscriptionToken', 
-               'Get-OCISelfWorkRequest', 'Get-OCISelfWorkRequestErrorsList', 
+CmdletsToExport = 'Enable-OCISelfSubscription', 
+               'Enable-OCISelfSubscriptionDeprecated', 
+               'Get-OCISelfingSubscriptionsDeprecatedList', 
+               'Get-OCISelfingSubscriptionsList', 'Get-OCISelfPartnersList', 
+               'Get-OCISelfSubscription', 'Get-OCISelfSubscriptionsList', 
+               'Get-OCISelfSubscriptionToken', 'Get-OCISelfWorkRequest', 
+               'Get-OCISelfWorkRequestErrorsList', 
                'Get-OCISelfWorkRequestLogsList', 'Get-OCISelfWorkRequestsList', 
                'Invoke-OCISelfResolveSubscription', 
+               'Invoke-OCISelfResolveSubscriptionDeprecated', 
                'Invoke-OCISelfSubmitSubscriptionUsageBatch', 
                'Invoke-OCISelfSubmitSubscriptionUsageRecords', 
                'Move-OCISelfSubscriptionCompartment', 'New-OCISelfSubscription', 
