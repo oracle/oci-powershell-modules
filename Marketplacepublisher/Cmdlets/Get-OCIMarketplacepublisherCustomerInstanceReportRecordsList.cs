@@ -24,9 +24,6 @@ namespace Oci.MarketplacepublisherService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The ID of the compartment in which to list resources.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The date range of the report")]
-        public System.Nullable<Oci.MarketplacepublisherService.Requests.ListCustomerInstanceReportRecordsRequest.DateRangeEnum> DateRange { get; set; }
-
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
@@ -39,11 +36,47 @@ namespace Oci.MarketplacepublisherService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either 'ASC' or 'DESC'.")]
         public System.Nullable<Oci.MarketplacepublisherService.Models.SortOrder> SortOrder { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. Only one sort order may be provided. Default order for instance_id is ascending.")]
         public System.Nullable<Oci.MarketplacepublisherService.Requests.ListCustomerInstanceReportRecordsRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire name given.")]
         public string Name { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Listing OCID to query resource against.")]
+        public string ListingId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only report records that match the instance status.")]
+        public System.Nullable<Oci.MarketplacepublisherService.Requests.ListCustomerInstanceReportRecordsRequest.StatusEnum> Status { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only report records that match the instance shape.")]
+        public string Shape { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only report records that match the instance region.This property corresponds to Region parameter in the API.")]
+        public string MarketplacepublisherRegion { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only report records that match the instance realm.")]
+        public string Realm { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only report records that match the tenant administrator domain.")]
+        public string TenantAdminDomain { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only report records that match the package version.")]
+        public string PackageVersion { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only report records that match the instance OCID.")]
+        public string InstanceOcid { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The inclusive earliest instance creation time, in RFC 3339 format.")]
+        public System.Nullable<System.DateTime> TimeInstanceCreationFromDate { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The inclusive latest instance creation time, in RFC 3339 format.")]
+        public System.Nullable<System.DateTime> TimeInstanceCreationToDate { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The inclusive earliest instance termination time, in RFC 3339 format.")]
+        public System.Nullable<System.DateTime> TimeInstanceTerminationFromDate { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The inclusive latest instance termination time, in RFC 3339 format.")]
+        public System.Nullable<System.DateTime> TimeInstanceTerminationToDate { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Fetches all pages of results.", ParameterSetName = AllPageSet)]
         public SwitchParameter All { get; set; }
@@ -58,13 +91,24 @@ namespace Oci.MarketplacepublisherService.Cmdlets
                 request = new ListCustomerInstanceReportRecordsRequest
                 {
                     CompartmentId = CompartmentId,
-                    DateRange = DateRange,
                     OpcRequestId = OpcRequestId,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
-                    Name = Name
+                    Name = Name,
+                    ListingId = ListingId,
+                    Status = Status,
+                    Shape = Shape,
+                    Region = MarketplacepublisherRegion,
+                    Realm = Realm,
+                    TenantAdminDomain = TenantAdminDomain,
+                    PackageVersion = PackageVersion,
+                    InstanceOcid = InstanceOcid,
+                    TimeInstanceCreationFromDate = TimeInstanceCreationFromDate,
+                    TimeInstanceCreationToDate = TimeInstanceCreationToDate,
+                    TimeInstanceTerminationFromDate = TimeInstanceTerminationFromDate,
+                    TimeInstanceTerminationToDate = TimeInstanceTerminationToDate
                 };
                 IEnumerable<ListCustomerInstanceReportRecordsResponse> responses = GetRequestDelegate().Invoke(request);
                 foreach (var item in responses)

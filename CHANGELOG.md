@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a [Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 143.0.0 - 2026-09-22
+### Added 
+- Support for recurring maintenance windows in the Application Performance Monitoring Synthetics service 
+- Support for crypto posture assessments in the Data Safe service 
+- Support for customer-managed compute capacity reservations for model deployments, notebook sessions, jobs, and pipelines in the Data Science service 
+- Support for code-only functions with managed runtimes and automated image builds in the Functions service 
+- Support for routing profiles and model discovery in the Generative AI service 
+- Support for generating, filtering, and downloading Customer Instance Report exports in the Marketplace Publisher service   
+
+### Breaking Changes 
+- The Distributed Database V26 service was renamed to Distributed Database 
+- The Image and ImageDigest properties were removed from function create, update, and response models in the Functions service 
+- The TenantAdminName and TenantAdminEmail properties and the DateRange filter were removed from Customer Instance Reports in the Marketplace Publisher service
+
 ## 142.0.0 - 2026-09-15
 ### Added 
 - Support for higher usage submission limits for metered SaaS listings and legacy subscription endpoints in the Service Enablement Lifecycle Framework service 
