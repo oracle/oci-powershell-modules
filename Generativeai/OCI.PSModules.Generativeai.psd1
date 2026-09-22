@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Generativeai.dll'
 
 # Version number of this module.
-ModuleVersion = '142.0.0'
+ModuleVersion = '143.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '142.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '143.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Generativeai.dll'
@@ -86,10 +86,13 @@ CmdletsToExport = 'Add-OCIGenerativeaiArtifact', 'Get-OCIGenerativeaiApiKey',
                'Get-OCIGenerativeaiHostedDeploymentsList', 
                'Get-OCIGenerativeaiImportedModel', 
                'Get-OCIGenerativeaiImportedModelsList', 'Get-OCIGenerativeaiModel', 
+               'Get-OCIGenerativeaiModelDiscoveryList', 
                'Get-OCIGenerativeaiModelsList', 
                'Get-OCIGenerativeaiPrivateEndpoint', 
                'Get-OCIGenerativeaiPrivateEndpointsList', 
                'Get-OCIGenerativeaiProject', 'Get-OCIGenerativeaiProjectsList', 
+               'Get-OCIGenerativeaiRoutingProfile', 
+               'Get-OCIGenerativeaiRoutingProfilesList', 
                'Get-OCIGenerativeaiSemanticStore', 
                'Get-OCIGenerativeaiSemanticStoresList', 
                'Get-OCIGenerativeaiVectorStoreConnector', 
@@ -115,6 +118,7 @@ CmdletsToExport = 'Add-OCIGenerativeaiArtifact', 'Get-OCIGenerativeaiApiKey',
                'Move-OCIGenerativeaiModelCompartment', 
                'Move-OCIGenerativeaiPrivateEndpointCompartment', 
                'Move-OCIGenerativeaiProjectCompartment', 
+               'Move-OCIGenerativeaiRoutingProfileCompartment', 
                'Move-OCIGenerativeaiSemanticStoreCompartment', 
                'New-OCIGenerativeaiApiKey', 
                'New-OCIGenerativeaiDedicatedAiCluster', 
@@ -125,6 +129,7 @@ CmdletsToExport = 'Add-OCIGenerativeaiArtifact', 'Get-OCIGenerativeaiApiKey',
                'New-OCIGenerativeaiHostedDeployment', 
                'New-OCIGenerativeaiImportedModel', 'New-OCIGenerativeaiModel', 
                'New-OCIGenerativeaiPrivateEndpoint', 'New-OCIGenerativeaiProject', 
+               'New-OCIGenerativeaiRoutingProfile', 
                'New-OCIGenerativeaiSemanticStore', 
                'New-OCIGenerativeaiVectorStoreConnector', 
                'New-OCIGenerativeaiVectorStoreConnectorFileSync', 
@@ -140,6 +145,7 @@ CmdletsToExport = 'Add-OCIGenerativeaiArtifact', 'Get-OCIGenerativeaiApiKey',
                'Remove-OCIGenerativeaiModel', 
                'Remove-OCIGenerativeaiPrivateEndpoint', 
                'Remove-OCIGenerativeaiProject', 
+               'Remove-OCIGenerativeaiRoutingProfile', 
                'Remove-OCIGenerativeaiSemanticStore', 
                'Remove-OCIGenerativeaiVectorStoreConnector', 
                'Stop-OCIGenerativeaiVectorStoreConnectorFileSync', 
@@ -153,6 +159,7 @@ CmdletsToExport = 'Add-OCIGenerativeaiArtifact', 'Get-OCIGenerativeaiApiKey',
                'Update-OCIGenerativeaiModel', 
                'Update-OCIGenerativeaiPrivateEndpoint', 
                'Update-OCIGenerativeaiProject', 
+               'Update-OCIGenerativeaiRoutingProfile', 
                'Update-OCIGenerativeaiSemanticStore', 
                'Update-OCIGenerativeaiVectorStoreConnector'
 

@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Datasafe.dll'
 
 # Version number of this module.
-ModuleVersion = '142.0.0'
+ModuleVersion = '143.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '142.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '143.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Datasafe.dll'
@@ -97,7 +97,18 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'Get-OCIDatasafeColumnsList', 
                'Get-OCIDatasafeCompatibleFormatsForDataTypes', 
                'Get-OCIDatasafeCompatibleFormatsForSensitiveTypes', 
-               'Get-OCIDatasafeConfiguration', 
+               'Get-OCIDatasafeConfiguration', 'Get-OCIDatasafeCryptoAssessment', 
+               'Get-OCIDatasafeCryptoAssessmentBackupSetsList', 
+               'Get-OCIDatasafeCryptoAssessmentCbomItemsList', 
+               'Get-OCIDatasafeCryptoAssessmentCertificatesList', 
+               'Get-OCIDatasafeCryptoAssessmentFindingAnalyticsList', 
+               'Get-OCIDatasafeCryptoAssessmentFindingsList', 
+               'Get-OCIDatasafeCryptoAssessmentFindingTargetsList', 
+               'Get-OCIDatasafeCryptoAssessmentKeysList', 
+               'Get-OCIDatasafeCryptoAssessmentsList', 
+               'Get-OCIDatasafeCryptoAssessmentSqlnetParameters', 
+               'Get-OCIDatasafeCryptoAssessmentTdeObjectsList', 
+               'Get-OCIDatasafeCryptoAssessmentWalletsList', 
                'Get-OCIDatasafeDatabaseSecurityConfig', 
                'Get-OCIDatasafeDatabaseSecurityConfigsList', 
                'Get-OCIDatasafeDatabaseTableAccessEntriesList', 
@@ -225,6 +236,7 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'Invoke-OCIDatasafeDeactivateTargetDatabase', 
                'Invoke-OCIDatasafeDeploySecurityPolicyDeployment', 
                'Invoke-OCIDatasafeDiscoverAuditTrails', 
+               'Invoke-OCIDatasafeDownloadCryptoAssessmentReport', 
                'Invoke-OCIDatasafeDownloadDiscoveryReport', 
                'Invoke-OCIDatasafeDownloadMaskingLog', 
                'Invoke-OCIDatasafeDownloadMaskingPolicy', 
@@ -246,6 +258,7 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'Invoke-OCIDatasafePatchTargetAlertPolicyAssociation', 
                'Invoke-OCIDatasafeProvisionAuditPolicy', 
                'Invoke-OCIDatasafePurgeSqlCollectionLogs', 
+               'Invoke-OCIDatasafeRefreshCryptoAssessment', 
                'Invoke-OCIDatasafeRefreshDatabaseSecurityConfiguration', 
                'Invoke-OCIDatasafeRefreshSecurityAssessment', 
                'Invoke-OCIDatasafeRefreshSecurityPolicyDeployment', 
@@ -267,6 +280,7 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'Move-OCIDatasafeAuditArchiveRetrievalCompartment', 
                'Move-OCIDatasafeAuditPolicyCompartment', 
                'Move-OCIDatasafeAuditProfileCompartment', 
+               'Move-OCIDatasafeCryptoAssessmentCompartment', 
                'Move-OCIDatasafeDatabaseSecurityConfigCompartment', 
                'Move-OCIDatasafeDiscoveryJobCompartment', 
                'Move-OCIDatasafeLibraryMaskingFormatCompartment', 
@@ -297,7 +311,9 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'New-OCIDatasafeAlertPolicy', 'New-OCIDatasafeAlertPolicyRule', 
                'New-OCIDatasafeAttributeSet', 
                'New-OCIDatasafeAuditArchiveRetrieval', 
-               'New-OCIDatasafeAuditProfile', 'New-OCIDatasafeDiscoveryJob', 
+               'New-OCIDatasafeAuditProfile', 
+               'New-OCIDatasafeCryptoAssessmentReport', 
+               'New-OCIDatasafeDiscoveryJob', 
                'New-OCIDatasafeDiscoveryReportForDownload', 
                'New-OCIDatasafeHealthReport', 
                'New-OCIDatasafeLibraryMaskingFormat', 
@@ -333,6 +349,7 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'Remove-OCIDatasafeAttributeSet', 
                'Remove-OCIDatasafeAuditArchiveRetrieval', 
                'Remove-OCIDatasafeAuditProfile', 'Remove-OCIDatasafeAuditTrail', 
+               'Remove-OCIDatasafeCryptoAssessment', 
                'Remove-OCIDatasafeDiscoveryJob', 
                'Remove-OCIDatasafeDiscoveryJobResult', 
                'Remove-OCIDatasafeLibraryMaskingFormat', 
@@ -374,6 +391,7 @@ CmdletsToExport = 'Add-OCIDatasafeMaskingColumnsFromSdm',
                'Update-OCIDatasafeAuditArchiveRetrieval', 
                'Update-OCIDatasafeAuditPolicy', 'Update-OCIDatasafeAuditProfile', 
                'Update-OCIDatasafeAuditTrail', 
+               'Update-OCIDatasafeCryptoAssessment', 
                'Update-OCIDatasafeDatabaseSecurityConfig', 
                'Update-OCIDatasafeFinding', 
                'Update-OCIDatasafeLibraryMaskingFormat', 
