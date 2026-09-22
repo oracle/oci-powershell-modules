@@ -19,11 +19,11 @@ namespace Oci.DatasafeService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.PSModules.Common.Cmdlets.WorkRequest), typeof(Oci.DatasafeService.Responses.ActivateTargetDatabaseResponse) })]
     public class EnableOCIDatasafeTargetDatabase : OCIDataSafeCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details used to reactivate a target database in Data Safe.")]
-        public ActivateTargetDatabaseDetails ActivateTargetDatabaseDetails { get; set; }
-
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the Data Safe target database.")]
         public string TargetDatabaseId { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The details used to reactivate a target database in Data Safe.")]
+        public ActivateTargetDatabaseDetails ActivateTargetDatabaseDetails { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.")]
         public string OpcRetryToken { get; set; }
@@ -43,8 +43,8 @@ namespace Oci.DatasafeService.Cmdlets
             {
                 request = new ActivateTargetDatabaseRequest
                 {
-                    ActivateTargetDatabaseDetails = ActivateTargetDatabaseDetails,
                     TargetDatabaseId = TargetDatabaseId,
+                    ActivateTargetDatabaseDetails = ActivateTargetDatabaseDetails,
                     OpcRetryToken = OpcRetryToken,
                     IfMatch = IfMatch,
                     OpcRequestId = OpcRequestId

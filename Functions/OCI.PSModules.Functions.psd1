@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Functions.dll'
 
 # Version number of this module.
-ModuleVersion = '142.0.0'
+ModuleVersion = '143.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '142.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '143.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Functions.dll'
@@ -75,12 +75,18 @@ CmdletsToExport = 'Get-OCIFunctionsApplication', 'Get-OCIFunctionsApplicationsLi
                'Get-OCIFunctionsFunction', 'Get-OCIFunctionsList', 
                'Get-OCIFunctionsPbfListing', 'Get-OCIFunctionsPbfListingsList', 
                'Get-OCIFunctionsPbfListingVersion', 
-               'Get-OCIFunctionsPbfListingVersionsList', 
-               'Get-OCIFunctionsTriggersList', 'Invoke-OCIFunctionsFunction', 
+               'Get-OCIFunctionsPbfListingVersionsList', 'Get-OCIFunctionsRuntime', 
+               'Get-OCIFunctionsRuntimesList', 'Get-OCIFunctionsRuntimeVersion', 
+               'Get-OCIFunctionsRuntimeVersionsList', 
+               'Get-OCIFunctionsTriggersList', 'Get-OCIFunctionsWorkRequest', 
+               'Get-OCIFunctionsWorkRequestErrorsList', 
+               'Get-OCIFunctionsWorkRequestLogsList', 
+               'Get-OCIFunctionsWorkRequestsList', 'Invoke-OCIFunctionsFunction', 
                'Move-OCIFunctionsApplicationCompartment', 
                'New-OCIFunctionsApplication', 'New-OCIFunctionsFunction', 
                'Remove-OCIFunctionsApplication', 'Remove-OCIFunctionsFunction', 
-               'Update-OCIFunctionsApplication', 'Update-OCIFunctionsFunction'
+               'Stop-OCIFunctionsWorkRequest', 'Update-OCIFunctionsApplication', 
+               'Update-OCIFunctionsFunction'
 
 # Variables to export from this module
 VariablesToExport = '*'
