@@ -38,6 +38,9 @@ Example: `50`", ParameterSetName = LimitSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"For list pagination. The value of the `opc-next-page` response header from the previous ""List"" call. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).")]
         public string Page { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the DrgNatPolicy.")]
+        public string DrgNatPolicyId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.")]
         public string NetworkId { get; set; }
 
@@ -78,6 +81,7 @@ Example: `50`", ParameterSetName = LimitSet)]
                     DrgId = DrgId,
                     Limit = Limit,
                     Page = Page,
+                    DrgNatPolicyId = DrgNatPolicyId,
                     NetworkId = NetworkId,
                     AttachmentType = AttachmentType,
                     DrgRouteTableId = DrgRouteTableId,
