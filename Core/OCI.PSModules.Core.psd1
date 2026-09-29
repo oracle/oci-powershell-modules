@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Core.dll'
 
 # Version number of this module.
-ModuleVersion = '143.0.0'
+ModuleVersion = '143.1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '143.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '143.1.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Core.dll'
@@ -72,6 +72,7 @@ FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry', 
+               'Add-OCIVirtualNetworkDrgNatRules', 
                'Add-OCIVirtualNetworkDrgRouteDistributionStatements', 
                'Add-OCIVirtualNetworkDrgRouteRules', 
                'Add-OCIVirtualNetworkIpv4SubnetCidr', 
@@ -207,6 +208,9 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Get-OCIVirtualNetworkDhcpOptionsList', 'Get-OCIVirtualNetworkDrg', 
                'Get-OCIVirtualNetworkDrgAttachment', 
                'Get-OCIVirtualNetworkDrgAttachmentsList', 
+               'Get-OCIVirtualNetworkDrgNatPoliciesList', 
+               'Get-OCIVirtualNetworkDrgNatPolicy', 
+               'Get-OCIVirtualNetworkDrgNatRulesList', 
                'Get-OCIVirtualNetworkDrgRedundancyStatus', 
                'Get-OCIVirtualNetworkDrgRouteDistribution', 
                'Get-OCIVirtualNetworkDrgRouteDistributionsList', 
@@ -342,6 +346,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Move-OCIVirtualNetworkCrossConnectGroupCompartment', 
                'Move-OCIVirtualNetworkDhcpOptionsCompartment', 
                'Move-OCIVirtualNetworkDrgCompartment', 
+               'Move-OCIVirtualNetworkDrgNatPolicyCompartment', 
                'Move-OCIVirtualNetworkInternetGatewayCompartment', 
                'Move-OCIVirtualNetworkIPSecConnectionCompartment', 
                'Move-OCIVirtualNetworkLocalPeeringGatewayCompartment', 
@@ -381,6 +386,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'New-OCIVirtualNetworkCrossConnectGroup', 
                'New-OCIVirtualNetworkDhcpOptions', 'New-OCIVirtualNetworkDrg', 
                'New-OCIVirtualNetworkDrgAttachment', 
+               'New-OCIVirtualNetworkDrgNatPolicy', 
                'New-OCIVirtualNetworkDrgRouteDistribution', 
                'New-OCIVirtualNetworkDrgRouteTable', 
                'New-OCIVirtualNetworkInternetGateway', 
@@ -427,6 +433,8 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Remove-OCIVirtualNetworkDhcpOptions', 
                'Remove-OCIVirtualNetworkDrg', 
                'Remove-OCIVirtualNetworkDrgAttachment', 
+               'Remove-OCIVirtualNetworkDrgNatPolicy', 
+               'Remove-OCIVirtualNetworkDrgNatRules', 
                'Remove-OCIVirtualNetworkDrgRouteDistribution', 
                'Remove-OCIVirtualNetworkDrgRouteDistributionStatements', 
                'Remove-OCIVirtualNetworkDrgRouteRules', 
@@ -493,6 +501,8 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Update-OCIVirtualNetworkDhcpOptions', 
                'Update-OCIVirtualNetworkDrg', 
                'Update-OCIVirtualNetworkDrgAttachment', 
+               'Update-OCIVirtualNetworkDrgNatPolicy', 
+               'Update-OCIVirtualNetworkDrgNatRules', 
                'Update-OCIVirtualNetworkDrgRouteDistribution', 
                'Update-OCIVirtualNetworkDrgRouteDistributionStatements', 
                'Update-OCIVirtualNetworkDrgRouteRules', 
