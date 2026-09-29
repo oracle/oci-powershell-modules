@@ -27,6 +27,9 @@ namespace Oci.DatasafeService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the target databases that are associated to the resource id passed in as a parameter value.")]
         public string AssociatedResourceId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return target databases filtered by the enablementResourceOcid column (always a DbaasDatabase OCID).")]
+        public string EnablementResourceOcid { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return the target database that matches the specified OCID.")]
         public string TargetDatabaseId { get; set; }
 
@@ -77,6 +80,7 @@ namespace Oci.DatasafeService.Cmdlets
                 {
                     CompartmentId = CompartmentId,
                     AssociatedResourceId = AssociatedResourceId,
+                    EnablementResourceOcid = EnablementResourceOcid,
                     TargetDatabaseId = TargetDatabaseId,
                     DisplayName = DisplayName,
                     LifecycleState = LifecycleState,
