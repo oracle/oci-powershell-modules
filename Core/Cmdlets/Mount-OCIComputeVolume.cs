@@ -21,8 +21,8 @@ namespace Oci.CoreService.Cmdlets
     public class MountOCIComputeVolume : OCIComputeCmdlet
     {
         
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Attach volume request. This parameter also accepts subtypes <Oci.CoreService.Models.AttachServiceDeterminedVolumeDetails>, <Oci.CoreService.Models.AttachEmulatedVolumeDetails>, <Oci.CoreService.Models.AttachIScsiVolumeDetails>, <Oci.CoreService.Models.AttachParavirtualizedVolumeDetails> of type <Oci.CoreService.Models.AttachVolumeDetails>.", ParameterSetName = StatusParamSet)]
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Attach volume request. This parameter also accepts subtypes <Oci.CoreService.Models.AttachServiceDeterminedVolumeDetails>, <Oci.CoreService.Models.AttachEmulatedVolumeDetails>, <Oci.CoreService.Models.AttachIScsiVolumeDetails>, <Oci.CoreService.Models.AttachParavirtualizedVolumeDetails> of type <Oci.CoreService.Models.AttachVolumeDetails>.", ParameterSetName = Default)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Attach volume request. This parameter also accepts subtypes <Oci.CoreService.Models.AttachServiceDeterminedVolumeDetails>, <Oci.CoreService.Models.AttachEmulatedVolumeDetails>, <Oci.CoreService.Models.AttachIScsiVolumeDetails>, <Oci.CoreService.Models.AttachNvmeVolumeDetails>, <Oci.CoreService.Models.AttachParavirtualizedVolumeDetails> of type <Oci.CoreService.Models.AttachVolumeDetails>.", ParameterSetName = StatusParamSet)]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Attach volume request. This parameter also accepts subtypes <Oci.CoreService.Models.AttachServiceDeterminedVolumeDetails>, <Oci.CoreService.Models.AttachEmulatedVolumeDetails>, <Oci.CoreService.Models.AttachIScsiVolumeDetails>, <Oci.CoreService.Models.AttachNvmeVolumeDetails>, <Oci.CoreService.Models.AttachParavirtualizedVolumeDetails> of type <Oci.CoreService.Models.AttachVolumeDetails>.", ParameterSetName = Default)]
         public AttachVolumeDetails AttachVolumeDetails { get; set; }
 
         
