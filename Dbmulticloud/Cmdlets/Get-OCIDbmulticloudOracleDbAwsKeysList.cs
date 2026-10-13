@@ -36,6 +36,9 @@ namespace Oci.DbmulticloudService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return Oracle DB AWS Identity Connector resources that match the specified [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Identity Connector resource.")]
         public string OracleDbAwsConnectorId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given OCID](/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.")]
+        public string OracleDbAwsKeyPoolId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return.", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
@@ -68,6 +71,7 @@ namespace Oci.DbmulticloudService.Cmdlets
                     OracleDbAwsKeyId = OracleDbAwsKeyId,
                     LifecycleState = LifecycleState,
                     OracleDbAwsConnectorId = OracleDbAwsConnectorId,
+                    OracleDbAwsKeyPoolId = OracleDbAwsKeyPoolId,
                     Limit = Limit,
                     Page = Page,
                     SortOrder = SortOrder,

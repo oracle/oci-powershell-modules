@@ -31,6 +31,9 @@ namespace Oci.DbmulticloudService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The client request ID for tracing.")]
         public string OpcRequestId { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"If true, removes the key from its key pool even when it is currently in use; otherwise the request is rejected.")]
+        public System.Nullable<bool> IsForceDeleteFromKeyPool { get; set; }
+
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
@@ -43,7 +46,8 @@ namespace Oci.DbmulticloudService.Cmdlets
                     OracleDbAwsKeyId = OracleDbAwsKeyId,
                     UpdateOracleDbAwsKeyDetails = UpdateOracleDbAwsKeyDetails,
                     IfMatch = IfMatch,
-                    OpcRequestId = OpcRequestId
+                    OpcRequestId = OpcRequestId,
+                    IsForceDeleteFromKeyPool = IsForceDeleteFromKeyPool
                 };
 
                 response = client.UpdateOracleDbAwsKey(request).GetAwaiter().GetResult();
