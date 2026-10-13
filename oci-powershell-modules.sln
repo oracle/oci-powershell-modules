@@ -349,6 +349,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Distributedda
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Ociproductcatalog", "Ociproductcatalog\OCI.PSModules.Ociproductcatalog.csproj", "{34592711-FE6D-4D90-A4D9-9DC6297A8ADF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCI.PSModules.Ccdoffers", "Ccdoffers\OCI.PSModules.Ccdoffers.csproj", "{7B717C62-1D64-45CD-ADFD-2EF9A0C8C95A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2438,5 +2440,17 @@ Global
         {34592711-FE6D-4D90-A4D9-9DC6297A8ADF}.Release|x64.Build.0 = Release|Any CPU
         {34592711-FE6D-4D90-A4D9-9DC6297A8ADF}.Release|x86.ActiveCfg = Release|Any CPU
         {34592711-FE6D-4D90-A4D9-9DC6297A8ADF}.Release|x86.Build.0 = Release|Any CPU
+        {7B717C62-1D64-45CD-ADFD-2EF9A0C8C95A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {7B717C62-1D64-45CD-ADFD-2EF9A0C8C95A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {7B717C62-1D64-45CD-ADFD-2EF9A0C8C95A}.Debug|x64.ActiveCfg = Debug|Any CPU
+        {7B717C62-1D64-45CD-ADFD-2EF9A0C8C95A}.Debug|x64.Build.0 = Debug|Any CPU
+        {7B717C62-1D64-45CD-ADFD-2EF9A0C8C95A}.Debug|x86.ActiveCfg = Debug|Any CPU
+        {7B717C62-1D64-45CD-ADFD-2EF9A0C8C95A}.Debug|x86.Build.0 = Debug|Any CPU
+        {7B717C62-1D64-45CD-ADFD-2EF9A0C8C95A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {7B717C62-1D64-45CD-ADFD-2EF9A0C8C95A}.Release|Any CPU.Build.0 = Release|Any CPU
+        {7B717C62-1D64-45CD-ADFD-2EF9A0C8C95A}.Release|x64.ActiveCfg = Release|Any CPU
+        {7B717C62-1D64-45CD-ADFD-2EF9A0C8C95A}.Release|x64.Build.0 = Release|Any CPU
+        {7B717C62-1D64-45CD-ADFD-2EF9A0C8C95A}.Release|x86.ActiveCfg = Release|Any CPU
+        {7B717C62-1D64-45CD-ADFD-2EF9A0C8C95A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
