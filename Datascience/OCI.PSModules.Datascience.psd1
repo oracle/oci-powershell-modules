@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Datascience.dll'
 
 # Version number of this module.
-ModuleVersion = '144.1.0'
+ModuleVersion = '145.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '144.1.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '145.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Datascience.dll'
@@ -100,6 +100,8 @@ CmdletsToExport = 'Disable-OCIDatascienceMlApplicationInstanceViewTrigger',
                'Get-OCIDatascienceMlApplicationPackageContent', 
                'Get-OCIDatascienceMlApplicationsList', 'Get-OCIDatascienceModel', 
                'Get-OCIDatascienceModelArtifactContent', 
+               'Get-OCIDatascienceModelArtifactSignature', 
+               'Get-OCIDatascienceModelArtifactSignaturesList', 
                'Get-OCIDatascienceModelCustomMetadatumArtifactContent', 
                'Get-OCIDatascienceModelDefinedMetadatumArtifactContent', 
                'Get-OCIDatascienceModelDeployment', 
@@ -144,6 +146,7 @@ CmdletsToExport = 'Disable-OCIDatascienceMlApplicationInstanceViewTrigger',
                'Invoke-OCIDatascienceHeadStepArtifact', 
                'Invoke-OCIDatascienceTriggerMlApplicationInstanceFlow', 
                'Invoke-OCIDatascienceTriggerMlApplicationInstanceViewFlow', 
+               'Invoke-OCIDatascienceVerifyModelArtifactSignature', 
                'Move-OCIDatascienceComputeTargetCompartment', 
                'Move-OCIDatascienceJobCompartment', 
                'Move-OCIDatascienceJobRunCompartment', 
@@ -151,6 +154,7 @@ CmdletsToExport = 'Disable-OCIDatascienceMlApplicationInstanceViewTrigger',
                'Move-OCIDatascienceMlApplicationImplementationCompartment', 
                'Move-OCIDatascienceMlApplicationInstanceCompartment', 
                'Move-OCIDatascienceMlApplicationInstanceViewCompartment', 
+               'Move-OCIDatascienceModelArtifactSignatureCompartment', 
                'Move-OCIDatascienceModelCompartment', 
                'Move-OCIDatascienceModelDeploymentCompartment', 
                'Move-OCIDatascienceModelGroupCompartment', 
@@ -168,6 +172,7 @@ CmdletsToExport = 'Disable-OCIDatascienceMlApplicationInstanceViewTrigger',
                'New-OCIDatascienceMlApplicationImplementation', 
                'New-OCIDatascienceMlApplicationInstance', 
                'New-OCIDatascienceModel', 'New-OCIDatascienceModelArtifact', 
+               'New-OCIDatascienceModelArtifactSignature', 
                'New-OCIDatascienceModelCustomMetadatumArtifact', 
                'New-OCIDatascienceModelDefinedMetadatumArtifact', 
                'New-OCIDatascienceModelDeployment', 'New-OCIDatascienceModelGroup', 
@@ -185,6 +190,7 @@ CmdletsToExport = 'Disable-OCIDatascienceMlApplicationInstanceViewTrigger',
                'Remove-OCIDatascienceMlApplicationImplementation', 
                'Remove-OCIDatascienceMlApplicationInstance', 
                'Remove-OCIDatascienceModel', 
+               'Remove-OCIDatascienceModelArtifactSignature', 
                'Remove-OCIDatascienceModelCustomMetadatumArtifact', 
                'Remove-OCIDatascienceModelDefinedMetadatumArtifact', 
                'Remove-OCIDatascienceModelDeployment', 
@@ -206,6 +212,7 @@ CmdletsToExport = 'Disable-OCIDatascienceMlApplicationInstanceViewTrigger',
                'Update-OCIDatascienceMlApplicationInstance', 
                'Update-OCIDatascienceMlApplicationInstanceView', 
                'Update-OCIDatascienceModel', 
+               'Update-OCIDatascienceModelArtifactSignature', 
                'Update-OCIDatascienceModelCustomMetadatumArtifact', 
                'Update-OCIDatascienceModelDefinedMetadatumArtifact', 
                'Update-OCIDatascienceModelDeployment', 
