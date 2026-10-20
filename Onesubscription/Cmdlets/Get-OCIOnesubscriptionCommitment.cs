@@ -19,7 +19,7 @@ namespace Oci.OnesubscriptionService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OnesubscriptionService.Models.Commitment), typeof(Oci.OnesubscriptionService.Responses.GetCommitmentResponse) })]
     public class GetOCIOnesubscriptionCommitment : OCICommitmentCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Commitment Id")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The commitment ID.")]
         public string CommitmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

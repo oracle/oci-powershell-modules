@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Generativeai.dll'
 
 # Version number of this module.
-ModuleVersion = '145.0.0'
+ModuleVersion = '146.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '145.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '146.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Generativeai.dll'
@@ -74,6 +74,7 @@ FunctionsToExport = '*'
 CmdletsToExport = 'Add-OCIGenerativeaiArtifact', 'Get-OCIGenerativeaiApiKey', 
                'Get-OCIGenerativeaiApiKeysList', 
                'Get-OCIGenerativeaiDedicatedAiCluster', 
+               'Get-OCIGenerativeaiDedicatedAiClustersAllocatableGpusList', 
                'Get-OCIGenerativeaiDedicatedAiClustersList', 
                'Get-OCIGenerativeaiEndpoint', 'Get-OCIGenerativeaiEndpointsList', 
                'Get-OCIGenerativeaiHostedApplication', 
@@ -93,6 +94,8 @@ CmdletsToExport = 'Add-OCIGenerativeaiArtifact', 'Get-OCIGenerativeaiApiKey',
                'Get-OCIGenerativeaiProject', 'Get-OCIGenerativeaiProjectsList', 
                'Get-OCIGenerativeaiRoutingProfile', 
                'Get-OCIGenerativeaiRoutingProfilesList', 
+               'Get-OCIGenerativeaiSandboxWarmPool', 
+               'Get-OCIGenerativeaiSandboxWarmPoolsList', 
                'Get-OCIGenerativeaiSemanticStore', 
                'Get-OCIGenerativeaiSemanticStoresList', 
                'Get-OCIGenerativeaiVectorStoreConnector', 
@@ -130,6 +133,7 @@ CmdletsToExport = 'Add-OCIGenerativeaiArtifact', 'Get-OCIGenerativeaiApiKey',
                'New-OCIGenerativeaiImportedModel', 'New-OCIGenerativeaiModel', 
                'New-OCIGenerativeaiPrivateEndpoint', 'New-OCIGenerativeaiProject', 
                'New-OCIGenerativeaiRoutingProfile', 
+               'New-OCIGenerativeaiSandboxWarmPool', 
                'New-OCIGenerativeaiSemanticStore', 
                'New-OCIGenerativeaiVectorStoreConnector', 
                'New-OCIGenerativeaiVectorStoreConnectorFileSync', 
@@ -146,6 +150,7 @@ CmdletsToExport = 'Add-OCIGenerativeaiArtifact', 'Get-OCIGenerativeaiApiKey',
                'Remove-OCIGenerativeaiPrivateEndpoint', 
                'Remove-OCIGenerativeaiProject', 
                'Remove-OCIGenerativeaiRoutingProfile', 
+               'Remove-OCIGenerativeaiSandboxWarmPool', 
                'Remove-OCIGenerativeaiSemanticStore', 
                'Remove-OCIGenerativeaiVectorStoreConnector', 
                'Stop-OCIGenerativeaiVectorStoreConnectorFileSync', 
@@ -160,6 +165,7 @@ CmdletsToExport = 'Add-OCIGenerativeaiArtifact', 'Get-OCIGenerativeaiApiKey',
                'Update-OCIGenerativeaiPrivateEndpoint', 
                'Update-OCIGenerativeaiProject', 
                'Update-OCIGenerativeaiRoutingProfile', 
+               'Update-OCIGenerativeaiSandboxWarmPool', 
                'Update-OCIGenerativeaiSemanticStore', 
                'Update-OCIGenerativeaiVectorStoreConnector'
 

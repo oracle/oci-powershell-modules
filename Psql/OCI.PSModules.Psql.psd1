@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Psql.dll'
 
 # Version number of this module.
-ModuleVersion = '145.0.0'
+ModuleVersion = '146.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '145.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '146.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Psql.dll'
@@ -82,7 +82,8 @@ CmdletsToExport = 'Backup-OCIPsqlCopy', 'Get-OCIPsqlBackup', 'Get-OCIPsqlBackups
                'Get-OCIPsqlWorkRequest', 'Get-OCIPsqlWorkRequestErrorsList', 
                'Get-OCIPsqlWorkRequestLogsList', 'Get-OCIPsqlWorkRequestsList', 
                'Invoke-OCIPsqlFailoverDbSystem', 'Invoke-OCIPsqlPatchDbSystem', 
-               'Invoke-OCIPsqlSwitchOver', 'Move-OCIPsqlBackupCompartment', 
+               'Invoke-OCIPsqlSwitchOver', 'Invoke-OCIPsqlUpgradeDbSystem', 
+               'Move-OCIPsqlBackupCompartment', 
                'Move-OCIPsqlConfigurationCompartment', 
                'Move-OCIPsqlDbSystemCompartment', 'Move-OCIPsqlRoleToReplica', 
                'Move-OCIPsqlRoleToStandalone', 'New-OCIPsqlBackup', 

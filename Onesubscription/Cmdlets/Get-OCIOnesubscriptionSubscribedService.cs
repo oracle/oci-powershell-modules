@@ -19,10 +19,10 @@ namespace Oci.OnesubscriptionService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OnesubscriptionService.Models.SubscribedService), typeof(Oci.OnesubscriptionService.Responses.GetSubscribedServiceResponse) })]
     public class GetOCIOnesubscriptionSubscribedService : OCISubscribedServiceCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Subscribed Service Id")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The subscribed service ID.")]
         public string SubscribedServiceId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter used to control what fields to return should be a query string parameter called ""fields"" of type array, and usecollectionFormat")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter used to control which fields to return should be a query string parameter called ""fields"", of an array type, and use collectionFormat.")]
         public System.Collections.Generic.List<string> Fields { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]
