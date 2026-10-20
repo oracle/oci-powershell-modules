@@ -21,19 +21,19 @@ namespace Oci.OnesubscriptionService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OnesubscriptionService.Models.RateCardSummary), typeof(Oci.OnesubscriptionService.Responses.ListRateCardsResponse) })]
     public class GetOCIOnesubscriptionRateCardsList : OCIRatecardCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Line level Subscription Id")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Line-level subscription ID.")]
         public string SubscriptionId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the root compartment.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This param is used to get the rate card(s) whose effective start date starts on or after a particular date")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Gets the rate cards whose effective start date starts on or after a particular date.")]
         public System.Nullable<System.DateTime> TimeFrom { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This param is used to get the rate card(s) whose effective end date ends on or before a particular date")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Gets the rate cards whose effective end date ends on or before a particular date.")]
         public System.Nullable<System.DateTime> TimeTo { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"This param is used to get the rate card(s) filterd by the partNumber")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Gets the rate cards filterd by the part number.")]
         public string PartNumber { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return in a paginated ""List"" call. Default: (`50`)

@@ -24,13 +24,13 @@ namespace Oci.OnesubscriptionService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the root compartment.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Invoice Line Identifier - Primary Key SPM")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Invoice line identifier - Primary Key SPM (Subscription Plan Management).")]
         public string InvoiceLineId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The sort order to use, either ascending ('ASC') or descending ('DESC').")]
         public System.Nullable<Oci.OnesubscriptionService.Requests.ListInvoicelineComputedUsagesRequest.SortOrderEnum> SortOrder { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by Invoiced Computed Usages. You can provide one sort order (`sortOrder`).")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by invoiced computed usages. You can provide one sort order (`sortOrder`).")]
         public System.Nullable<Oci.OnesubscriptionService.Requests.ListInvoicelineComputedUsagesRequest.SortByEnum> SortBy { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of items to return in a paginated ""List"" call. Default: (`50`)
@@ -41,7 +41,7 @@ Example: '500'", ParameterSetName = LimitSet)]
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The value of the 'opc-next-page' response header from the previous ""List"" call.")]
         public string Page { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information (fields) required by the client. This parameter is used to control what fields to return.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. This parameter controls which fields to return.")]
         public System.Collections.Generic.List<string> Fields { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

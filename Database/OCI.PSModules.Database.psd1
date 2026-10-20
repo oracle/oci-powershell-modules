@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Database.dll'
 
 # Version number of this module.
-ModuleVersion = '145.0.0'
+ModuleVersion = '146.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '145.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '146.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Database.dll'
@@ -252,6 +252,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Get-OCIDatabaseSchedulingPolicy', 
                'Get-OCIDatabaseSchedulingWindow', 
                'Get-OCIDatabaseSchedulingWindowsList', 'Get-OCIDatabasesList', 
+               'Get-OCIDatabaseSnapshot', 'Get-OCIDatabaseSnapshotsList', 
                'Get-OCIDatabaseSoftwareImage', 'Get-OCIDatabaseSoftwareImagesList', 
                'Get-OCIDatabaseSystemVersionMinorVersionsList', 
                'Get-OCIDatabaseSystemVersionsList', 
@@ -411,8 +412,9 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'New-OCIDatabaseRecommendedVmClusterNetwork', 
                'New-OCIDatabaseScheduledAction', 'New-OCIDatabaseSchedulingPlan', 
                'New-OCIDatabaseSchedulingPolicy', 
-               'New-OCIDatabaseSchedulingWindow', 'New-OCIDatabaseSoftwareImage', 
-               'New-OCIDatabaseVmCluster', 'New-OCIDatabaseVmClusterNetwork', 
+               'New-OCIDatabaseSchedulingWindow', 'New-OCIDatabaseSnapshot', 
+               'New-OCIDatabaseSoftwareImage', 'New-OCIDatabaseVmCluster', 
+               'New-OCIDatabaseVmClusterNetwork', 
                'Register-OCIDatabaseAutonomousDatabaseDataSafe', 
                'Register-OCIDatabaseCloudAutonomousVmClusterPkcs', 
                'Register-OCIDatabaseCloudVmClusterPkcs', 
@@ -447,7 +449,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Remove-OCIDatabaseScheduledAction', 
                'Remove-OCIDatabaseSchedulingPlan', 
                'Remove-OCIDatabaseSchedulingPolicy', 
-               'Remove-OCIDatabaseSchedulingWindow', 
+               'Remove-OCIDatabaseSchedulingWindow', 'Remove-OCIDatabaseSnapshot', 
                'Remove-OCIDatabaseSoftwareImage', 
                'Remove-OCIDatabaseVirtualMachineFromCloudVmCluster', 
                'Remove-OCIDatabaseVirtualMachineFromExadbVmCluster', 
@@ -500,7 +502,7 @@ CmdletsToExport = 'Add-OCIDatabaseDbnodeSnapshotsForExadbVmCluster',
                'Update-OCIDatabasePluggableDatabase', 
                'Update-OCIDatabaseScheduledAction', 
                'Update-OCIDatabaseSchedulingPolicy', 
-               'Update-OCIDatabaseSchedulingWindow', 
+               'Update-OCIDatabaseSchedulingWindow', 'Update-OCIDatabaseSnapshot', 
                'Update-OCIDatabaseSoftwareImage', 'Update-OCIDatabaseVmCluster', 
                'Update-OCIDatabaseVmClusterNetwork'
 

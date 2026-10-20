@@ -19,13 +19,13 @@ namespace Oci.OnesubscriptionService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OnesubscriptionService.Models.ComputedUsage), typeof(Oci.OnesubscriptionService.Responses.GetComputedUsageResponse) })]
     public class GetOCIOnesubscriptionComputedUsage : OCIComputedUsageCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The Computed Usage Id")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The computed usage ID.")]
         public string ComputedUsageId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the root compartment.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information (fields) required by the client. This parameter is used to control what fields to return.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. This parameter controls which fields to return.")]
         public System.Collections.Generic.List<string> Fields { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.")]

@@ -21,7 +21,7 @@ namespace Oci.OnesubscriptionService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OnesubscriptionService.Models.CommitmentSummary), typeof(Oci.OnesubscriptionService.Responses.ListCommitmentsResponse) })]
     public class GetOCIOnesubscriptionCommitmentsList : OCICommitmentCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"This param is used to get the commitments for a particular subscribed service")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Obtains the commitments for a particular subscribed service.")]
         public string SubscribedServiceId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the root compartment.")]
