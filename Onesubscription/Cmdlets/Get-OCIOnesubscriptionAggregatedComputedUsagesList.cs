@@ -24,22 +24,22 @@ namespace Oci.OnesubscriptionService.Cmdlets
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The OCID of the root compartment.")]
         public string CompartmentId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Subscription ID is an identifier associated with the service, used for filtering the computed usage in SPM.")]
         public string SubscriptionId { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Initial date to filter computed usage data in SPM. For non-aggregated data, the time period between fromDate and toDate, expressed in RFC 3339 timestamp format.")]
         public System.Nullable<System.DateTime> TimeFrom { get; set; }
 
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format.")]
+        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"Final date to filter computed usage data in SPM, expressed in RFC 3339 timestamp format.")]
         public System.Nullable<System.DateTime> TimeTo { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Product part number for subscribed service line, called parent product.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Product part number for the subscribed service line, referred to as the parent product.")]
         public string ParentProduct { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Grouping criteria to use for aggregate the computed Usage, either hourly (`HOURLY`), daily (`DAILY`), monthly(`MONTHLY`) or none (`NONE`) to not follow a grouping criteria by date.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Grouping criteria to use for aggregating the computed usage, whether hourly (`HOURLY`), daily (`DAILY`), monthly (`MONTHLY`), or none (`NONE`), so as not to follow a grouping criteria by date.")]
         public System.Nullable<Oci.OnesubscriptionService.Requests.ListAggregatedComputedUsagesRequest.GroupingEnum> Grouping { get; set; }
 
-        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number aggregatedComputedUsages of items to return within the Subscription ""List"" call, this counts the overall count across all items Example: `500`", ParameterSetName = LimitSet)]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The maximum number of aggregatedComputedUsages items to return within the Subscription ""List"" call, this counts the overall count across all items. Example: `500`", ParameterSetName = LimitSet)]
         public System.Nullable<int> Limit { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The value of the 'opc-next-page' response header from the previous ""List"" call.")]

@@ -45,6 +45,9 @@ namespace Oci.GenerativeaiService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The field to sort by. You can provide only one sort order. Default order for `timeCreated` is descending. Default order for `displayName` is ascending.")]
         public System.Nullable<Oci.GenerativeaiService.Requests.ListDedicatedAiClustersRequest.SortByEnum> SortBy { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.")]
+        public string CapacityReservationId { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID. The only valid characters for request IDs are letters, numbers, underscore, and dash.")]
         public string OpcRequestId { get; set; }
 
@@ -68,6 +71,7 @@ namespace Oci.GenerativeaiService.Cmdlets
                     Page = Page,
                     SortOrder = SortOrder,
                     SortBy = SortBy,
+                    CapacityReservationId = CapacityReservationId,
                     OpcRequestId = OpcRequestId
                 };
                 IEnumerable<ListDedicatedAiClustersResponse> responses = GetRequestDelegate().Invoke(request);
