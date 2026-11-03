@@ -33,6 +33,12 @@ namespace Oci.ArtifactsService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given display name exactly.")]
         public string DisplayName { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given repository type exactly.")]
+        public string RepositoryType { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that match the isTopLevel value.")]
+        public System.Nullable<bool> IsTopLevel { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return resources that match the isPublic value.")]
         public System.Nullable<bool> IsPublic { get; set; }
 
@@ -74,6 +80,8 @@ Example: `50`", ParameterSetName = LimitSet)]
                     CompartmentIdInSubtree = CompartmentIdInSubtree,
                     RepositoryId = RepositoryId,
                     DisplayName = DisplayName,
+                    RepositoryType = RepositoryType,
+                    IsTopLevel = IsTopLevel,
                     IsPublic = IsPublic,
                     LifecycleState = LifecycleState,
                     Limit = Limit,
