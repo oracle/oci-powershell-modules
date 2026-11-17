@@ -21,7 +21,7 @@ namespace Oci.OcvpService.Cmdlets
     [OutputType(new System.Type[] { typeof(Oci.OcvpService.Models.DatastoreClusterCollection), typeof(Oci.OcvpService.Responses.ListDatastoreClustersResponse) })]
     public class GetOCIOcvpDatastoreClustersList : OCIDatastoreClusterCmdlet
     {
-        [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.")]
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"The [OCID](https://docs.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.")]
         public string CompartmentId { get; set; }
 
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given display name exactly.")]
