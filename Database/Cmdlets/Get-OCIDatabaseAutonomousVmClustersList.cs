@@ -42,6 +42,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given lifecycle state exactly.")]
         public System.Nullable<Oci.DatabaseService.Models.AutonomousVmClusterSummary.LifecycleStateEnum> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given kms exactly.")]
+        public System.Nullable<Oci.DatabaseService.Requests.ListAutonomousVmClustersRequest.KmsTypeEnum> KmsType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the entire display name given. The match is not case sensitive.")]
         public string DisplayName { get; set; }
 
@@ -67,6 +70,7 @@ namespace Oci.DatabaseService.Cmdlets
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     LifecycleState = LifecycleState,
+                    KmsType = KmsType,
                     DisplayName = DisplayName,
                     OpcRequestId = OpcRequestId
                 };
