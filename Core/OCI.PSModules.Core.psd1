@@ -11,7 +11,7 @@
 RootModule = 'assemblies/OCI.PSModules.Core.dll'
 
 # Version number of this module.
-ModuleVersion = '149.0.0'
+ModuleVersion = '150.0.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core'
@@ -50,7 +50,7 @@ PowerShellVersion = '6.0'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '149.0.0'; })
+RequiredModules = @(@{ModuleName = 'OCI.PSModules.Common'; GUID = 'b3061a0d-375b-4099-ae76-f92fb3cdcdae'; RequiredVersion = '150.0.0'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'assemblies/OCI.DotNetSDK.Core.dll'
@@ -175,6 +175,8 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Get-OCIComputeManagementInstancePoolInstance', 
                'Get-OCIComputeManagementInstancePoolInstancesList', 
                'Get-OCIComputeManagementInstancePoolLoadBalancerAttachment', 
+               'Get-OCIComputeManagementInstancePoolRefresh', 
+               'Get-OCIComputeManagementInstancePoolRefreshesList', 
                'Get-OCIComputeManagementInstancePoolsList', 
                'Get-OCIComputeMeasuredBootReport', 'Get-OCIComputeShapesList', 
                'Get-OCIComputeVnicAttachment', 'Get-OCIComputeVnicAttachmentsList', 
@@ -289,6 +291,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Invoke-OCIComputeCheckHostConfiguration', 
                'Invoke-OCIComputeInstanceAction', 
                'Invoke-OCIComputeManagementLaunchInstanceConfiguration', 
+               'Invoke-OCIComputeManagementRefreshInstancePool', 
                'Invoke-OCIComputeManagementSoftresetInstancePool', 
                'Invoke-OCIComputeManagementSoftstopInstancePool', 
                'Invoke-OCIComputeManagementTerminateClusterNetwork', 
@@ -467,6 +470,7 @@ CmdletsToExport = 'Add-OCIComputeImageShapeCompatibilityEntry',
                'Save-OCIComputeConsoleHistory', 
                'Start-OCIComputeManagementInstancePool', 
                'Stop-OCIComputeManagementInstancePool', 
+               'Stop-OCIComputeManagementInstancePoolRefresh', 
                'Update-OCIBlockstorageBootVolume', 
                'Update-OCIBlockstorageBootVolumeBackup', 
                'Update-OCIBlockstorageBootVolumeKmsKey', 

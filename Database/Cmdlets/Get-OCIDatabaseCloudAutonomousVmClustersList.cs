@@ -42,6 +42,9 @@ namespace Oci.DatabaseService.Cmdlets
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given lifecycle state exactly.")]
         public System.Nullable<Oci.DatabaseService.Models.CloudAutonomousVmClusterSummary.LifecycleStateEnum> LifecycleState { get; set; }
 
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given kms exactly.")]
+        public System.Nullable<Oci.DatabaseService.Requests.ListCloudAutonomousVmClustersRequest.KmsTypeEnum> KmsType { get; set; }
+
         [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true, HelpMessage = @"A filter to return only resources that match the given availability domain exactly.")]
         public string AvailabilityDomain { get; set; }
 
@@ -70,6 +73,7 @@ namespace Oci.DatabaseService.Cmdlets
                     SortBy = SortBy,
                     SortOrder = SortOrder,
                     LifecycleState = LifecycleState,
+                    KmsType = KmsType,
                     AvailabilityDomain = AvailabilityDomain,
                     DisplayName = DisplayName,
                     OpcRequestId = OpcRequestId
